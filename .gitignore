@@ -1,0 +1,106 @@
+# The repo is code + labels only. Everything a script can re-download or
+# recompute stays out — together it is ~3 GB, which GitHub will not take and
+# nobody wants in a clone. SETUP.md has the command that regenerates each item.
+
+# --------------------------------------------------------------------------
+# Python environment
+# --------------------------------------------------------------------------
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --------------------------------------------------------------------------
+# Node / frontend
+# --------------------------------------------------------------------------
+node_modules/
+frontend/dist/
+frontend/.vite/
+*.tsbuildinfo
+
+# --------------------------------------------------------------------------
+# Secrets
+#
+# Nothing here needs a token today — all four models are public — but an
+# ignored .env now is cheaper than a leaked one later.
+# --------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# --------------------------------------------------------------------------
+# FastF1 race cache          regenerate: python scripts/cache_sessions.py
+#
+# ~550 MB of parsed session data plus fastf1_http_cache.sqlite, FastF1's own
+# request cache. Both are pure download artifacts keyed on race identity, so a
+# fresh machine rebuilds them byte-for-byte.
+# --------------------------------------------------------------------------
+data/cache/
+
+# --------------------------------------------------------------------------
+# Radio audio               regenerate: python scripts/fetch_radio.py
+#
+# 446 mp3s, ~86 MB, fetched from the F1 live-timing service.
+#
+# index.csv is the exception and is COMMITTED below: it carries the `label`
+# column, which is hand annotation and the one thing in data/ that no script
+# can reproduce. Losing it means re-listening to 446 clips.
+# --------------------------------------------------------------------------
+data/clips/*
+!data/clips/index.csv
+
+# --------------------------------------------------------------------------
+# Analysis cache            regenerate: re-analyse the clip in the UI
+# --------------------------------------------------------------------------
+data/results/
+
+# --------------------------------------------------------------------------
+# Fusion training artifacts  regenerate: python scripts/fit_fusion.py
+#
+# features.json is a per-clip inference cache (STT + SER + text over every
+# labelled clip) — large, and meaningless without the mp3s that produced it.
+#
+# fusion_head.json and driver_baselines.json are deliberately NOT ignored.
+# They are a few KB, and rebuilding them needs the full clip set plus a model
+# pass over it — so committing them is what lets a fresh clone run the demo
+# with a trained head instead of falling back to population priors.
+# --------------------------------------------------------------------------
+data/labels/features.json
+
+# --------------------------------------------------------------------------
+# Local agent / tooling config — not part of the project
+# --------------------------------------------------------------------------
+.claude/
+
+# --------------------------------------------------------------------------
+# Hackathon handout material
+#
+# Organiser-supplied docs, not our work and not code. Kept local so the public
+# repo carries only what we wrote.
+# --------------------------------------------------------------------------
+*.docx
+*.pdf
+
+# --------------------------------------------------------------------------
+# Editor / OS
+# --------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --------------------------------------------------------------------------
+# Logs / scratch
+# --------------------------------------------------------------------------
+*.log
+tmp/
+scratch/

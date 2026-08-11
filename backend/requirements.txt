@@ -1,0 +1,28 @@
+# --- API layer -------------------------------------------------------------
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+python-multipart==0.0.20      # multipart form parsing for clip upload
+
+# --- Race data -------------------------------------------------------------
+fastf1==3.4.4                 # real lap times, stints, tyre compounds, track status
+pandas==2.2.3
+numpy==1.26.4                 # <2.0: several audio wheels still link against the 1.x ABI
+
+# --- Audio + features ------------------------------------------------------
+librosa==0.10.2.post1         # F0, RMS, spectral features
+soundfile==0.12.1
+audioread==3.0.1
+
+# --- Models ----------------------------------------------------------------
+# torch is CPU-only on purpose: the demo runs on a laptop with no GPU, so we
+# develop against the same hardware we present on. The CPU wheel is ~200 MB
+# instead of ~2.5 GB for the CUDA build.
+#
+# Install with:
+#   pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.5.1
+transformers==4.47.1
+scikit-learn==1.6.0           # the fusion head (logistic regression)
+onnxruntime==1.20.1           # Silero VAD runs as ONNX, not torch
+huggingface-hub==0.36.2

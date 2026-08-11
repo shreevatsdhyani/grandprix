@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Chart roles as custom properties so Recharts (which needs literal color
+   strings, not Tailwind classes) reads the same validated palette as the rest
+   of the UI. Values mirror tailwind.config.js — change both together. */
+:root {
+  color-scheme: dark;
+
+  --surface-1: #12120f;
+  --page-plane: #0a0a08;
+  --text-primary: #ffffff;
+  --text-secondary: #c3c2b7;
+  --text-muted: #898781;
+  --gridline: #26261f;
+  --axis: #383835;
+
+  --series-1: #3987e5; /* pace delta */
+  --series-2: #d95926; /* stress index */
+  --series-3: #199e70; /* text signal */
+
+  --status-good: #0ca30c;
+  --status-warning: #fab219;
+  --status-serious: #ec835a;
+  --status-critical: #d03b3b;
+
+  --brand: #e10600;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-plane text-ink-primary font-sans antialiased;
+}
+
+/* Axis ticks and table figures align vertically, so they take tabular figures.
+   Hero numbers deliberately do not — equal-width digits read loose at display
+   sizes. */
+.recharts-cartesian-axis-tick text,
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.card {
+  @apply bg-surface border border-hairline rounded-lg;
+}
+
+.card-title {
+  @apply text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-muted;
+}

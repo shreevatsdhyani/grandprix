@@ -88,31 +88,19 @@ is also the hardware we should be testing on.
 python scripts/warm_models.py
 ```
 
-Pulls three models to `~/.cache/huggingface`:
+Pulls all four models to `~/.cache/huggingface`:
 
 | Model | Size | Fetched by |
 |---|---|---|
 | `openai/whisper-small` | 927 MB | `warm_models.py` |
 | `superb/wav2vec2-base-superb-er` | 722 MB | `warm_models.py` |
 | `j-hartmann/emotion-english-distilroberta-base` | 630 MB | `warm_models.py` |
-| `istupakov/silero-vad-onnx` | 1.3 MB | **lazily — see below** |
+| `istupakov/silero-vad-onnx` | 1.3 MB | `warm_models.py` |
 
 All four are **public — no Hugging Face token needed.** (You still each need an
 account for Rule 03; that is separate from anything the code does.)
 
 *~10 minutes on a home connection. Run once — after this the app works offline.*
-
-**Pre-cache the VAD model too, or the offline demo degrades silently.** Silero is
-not in `warm_models.py`; it downloads on first analysis. `vad.py` loads it with
-`local_files_only=OFFLINE_MODE`, so with no wifi and nothing cached it does not
-crash — it falls back to untrimmed audio, which corrupts pause ratio and
-articulation rate, the two features fatigue is actually read from. One command
-closes the gap:
-
-```bash
-python -c "from huggingface_hub import hf_hub_download; \
-print(hf_hub_download('istupakov/silero-vad-onnx', 'silero_vad_16k_op15.onnx'))"
-```
 
 ---
 
@@ -194,13 +182,14 @@ You want:
 **`offline_ready: true` is the one that matters** — it means weights and race
 data are both on local disk, so the app will run at the venue with no wifi.
 
-Note `offline_ready` reflects the three `warm_models.py` models and the race
-cache; it does **not** check the Silero VAD file, so pre-cache that separately
-(step 2).
+`offline_ready` reflects all four models (including VAD, which is now warmed
+by `warm_models.py`) and the race cache. If any model is missing it shows
+`false`.
 
 In the browser you should see a dark dashboard, race and driver pickers, and a
 real pace chart. Upload any clip from `data/clips/` to exercise the full
-pipeline (~13 s the first time while models load into memory).
+pipeline (~13 s steady-state; models are warmed at startup so the first
+upload does not pay the cold-load penalty).
 
 ---
 
@@ -213,7 +202,7 @@ is one command away, and steps 1–5 above already run all of them in order.
 | Missing after clone | Size | Regenerate with |
 |---|---|---|
 | `backend/.venv/` | 2.0 GB | step 1 — `pip install -r requirements.txt --extra-index-url …` |
-| `~/.cache/huggingface/` | 2.3 GB | step 2 — `python scripts/warm_models.py` (+ the VAD one-liner) |
+| `~/.cache/huggingface/` | 2.3 GB | step 2 — `python scripts/warm_models.py` |
 | `data/cache/` — incl. `fastf1_http_cache.sqlite` | 553 MB | step 3 — `python scripts/cache_sessions.py` |
 | `data/clips/*.mp3` | 86 MB | step 4 — `python scripts/fetch_radio.py` |
 | `frontend/node_modules/`, `frontend/dist/` | 161 MB | step 5 — `npm install`, `npm run build` |
@@ -311,15 +300,30 @@ frontend/src/       React dashboard
 
 ## Next step after setup
 
-Nothing is labelled yet, so scoring runs on population priors and the fusion
-head is untrained — the UI says so honestly.
+Nothing is labelled yet and `data/results/` is empty, so scoring runs on
+population priors and the lead–lag panel has no data — the UI says so honestly.
+
+**Step A — pre-populate the result cache (run overnight):**
+
+```bash
+cd grandprix/backend
+python scripts/batch_analyse.py --session 2023-dutch-r
+# then run for the other sessions; use --force to re-analyse
+```
+
+This writes one JSON per clip to `data/results/`. The lead–lag panel and
+strategy feed go live as soon as there are enough results. Expect ~13 s per
+clip; 446 clips ≈ 1.5 hours total.
+
+**Step B — label clips and fit the fusion head:**
 
 Open `data/clips/index.csv`, fill the `label` column with **Calm / Stressed /
-Tired**, then:
+Tired** for ~80–100 clips, then:
 
 ```bash
 python scripts/fit_fusion.py
 ```
 
 That fits per-driver baselines and the fusion head, and prints cross-validated
-accuracy against the naive single-model baseline.
+accuracy against the naive single-model baseline. Commit
+`data/labels/fusion_head.json` and `data/labels/driver_baselines.json`.

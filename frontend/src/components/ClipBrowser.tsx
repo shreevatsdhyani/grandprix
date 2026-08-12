@@ -20,20 +20,37 @@ interface Props {
   driver: string
   selectedClipId: string | null
   onSelect: (clipId: string) => void
+  /** Bump to refetch — the mood/stress badges and the analysed count go stale
+   *  as soon as a clip is analysed live, and a list that still says
+   *  "unanalysed" next to a result on screen reads as a bug. */
+  refreshKey?: number
 }
 
-export function ClipBrowser({ sessionId, driver, selectedClipId, onSelect }: Props) {
+export function ClipBrowser({
+  sessionId,
+  driver,
+  selectedClipId,
+  onSelect,
+  refreshKey = 0,
+}: Props) {
   const [clips, setClips] = useState<ClipSummary[]>([])
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     if (!sessionId) return
-    setLoading(true)
+    let live = true
+    // Only the first load blanks the list. A refetch triggered by a finished
+    // analysis must not throw the browser back to "Loading…" and lose the
+    // user's scroll position.
+    if (!refreshKey) setLoading(true)
     getLibrary(sessionId, driver)
-      .then(setClips)
-      .catch(() => setClips([]))
-      .finally(() => setLoading(false))
-  }, [sessionId, driver])
+      .then((list) => live && setClips(list))
+      .catch(() => live && setClips([]))
+      .finally(() => live && setLoading(false))
+    return () => {
+      live = false
+    }
+  }, [sessionId, driver, refreshKey])
 
   if (loading) {
     return (

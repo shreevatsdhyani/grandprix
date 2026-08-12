@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import type { ClipAnalysis, ScoringMode } from '../types'
+import type { ClipAnalysis, ProgressEvent, ScoringMode } from '../types'
 import { MOOD_COLOR } from '../types'
+import { PipelineProgress } from './PipelineProgress'
 
 /**
  * Three of the brief's five named deliverables live in this panel: the
@@ -16,9 +17,25 @@ interface Props {
   busy: boolean
   uploadLap: string
   onUploadLapChange: (val: string) => void
+  /** Live stage events for the clip currently being analysed, oldest first. */
+  progress?: ProgressEvent[]
+  /** True while the WebSocket analysis stream is open. */
+  streaming?: boolean
+  /** Re-run the pipeline over the selected clip, streaming progress. */
+  onReanalyse?: () => void
 }
 
-export function RadioInspector({ clip, mode, onUpload, busy, uploadLap, onUploadLapChange }: Props) {
+export function RadioInspector({
+  clip,
+  mode,
+  onUpload,
+  busy,
+  uploadLap,
+  onUploadLapChange,
+  progress = [],
+  streaming = false,
+  onReanalyse,
+}: Props) {
   const inputRef = useRef<HTMLInputElement>(null)
   const audioRef = useRef<HTMLAudioElement>(null)
   const [, setPlaying] = useState(false)
@@ -73,7 +90,29 @@ export function RadioInspector({ clip, mode, onUpload, busy, uploadLap, onUpload
             e.target.value = ''
           }}
         />
+
+        {/* Re-run inference on a curated clip and watch it happen. The cached
+            result is what the timeline plots, so without this the honest
+            question "is that number live or was it precomputed?" has no answer
+            on screen. Uploads keep the REST path — the stream route only takes
+            clips that are already indexed on disk. */}
+        {/* Guarded on the callback alone, not on `clip`: a stream that fails
+            leaves no analysis to render, and that is exactly when the retry
+            button needs to be reachable. App decides eligibility. */}
+        {onReanalyse && (
+          <button
+            onClick={onReanalyse}
+            disabled={busy || streaming}
+            className="rounded border border-hairline px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-ink-secondary transition hover:bg-raised hover:text-ink-primary disabled:opacity-50"
+          >
+            {streaming ? 'Streaming…' : clip ? '⟳ Re-analyse live' : '⟳ Analyse this clip'}
+          </button>
+        )}
       </div>
+
+      {(streaming || progress.length > 0) && (
+        <PipelineProgress events={progress} running={streaming} />
+      )}
 
       {clip && (
         <audio

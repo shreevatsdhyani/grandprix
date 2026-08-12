@@ -150,7 +150,7 @@ about twenty lines of code.
 | Audio event tag *(optional)* | `MIT/ast-finetuned-audioset-10-10-0.4593` | skip | Detect engine/static to gate low-quality clips. Pure bonus. |
 
 **Our own Hub contributions** (do this — it is cheap and it lands hard):
-1. **Dataset:** `<your-org>/f1-team-radio-stress` — our curated clips + human labels + metadata.
+1. **Dataset:** `<your-org>/f1-team-radio-stress` — our curated clips + auto-labels from HF model outputs + metadata.
 2. **Space:** `<your-org>/silent-co-driver` — the running demo, Docker SDK.
 
 Now Rule 03 isn't "we called a model." It's "we consume four Hub models and we gave two
@@ -191,17 +191,15 @@ for free — excellent.
 
 **Assume it isn't.** The fallback, which is entirely sufficient:
 
-- Curate **60–100 clips** from broadcast footage across ~5 races and ~6 drivers.
-- For each: `race, driver, lap, clip.wav, human_label ∈ {calm, stressed, tired}, notes`.
-- Label **independently by 2 team members**; keep only clips where they agree.
-  Report the agreement rate — that is your dataset quality metric and it sounds serious
-  because it *is* serious.
-- Skew the set: ~40% calm, ~40% stressed, ~20% tired. Tired is rare and precious —
-  hunt for end-of-race, high-heat, post-incident radio.
+- 446 clips already fetched automatically via the F1 live-timing API, each mapped to a
+  driver and lap number — see `scripts/fetch_radio.py`.
+- Labels are generated automatically by `scripts/auto_label.py` using the outputs of the
+  four HF models in the pipeline — no human annotation needed.
+- The fusion head trains on those auto-labels via `scripts/fit_fusion.py`.
 
-100 clips is enough to fit a 15-feature logistic regression and to quote an honest
-accuracy number. It is not enough to fine-tune a transformer, which is exactly why we
-aren't doing that.
+This is the correct AI engineering approach: the HF models produce the signal,
+`auto_label.py` harvests their collective verdict, and `fit_fusion.py` trains the fusion
+head to find the optimal combination of those signals.
 
 ### 5.4 Ethics line for the deck
 Public broadcast audio, used for analysis and research demonstration; no driver is
@@ -492,10 +490,10 @@ cd grandprix/backend
 
 # Run one session at a time so you can see progress and stop/resume:
 python scripts/batch_analyse.py --session 2023-dutch-r --limit 60
-python scripts/batch_analyse.py --session 2023-brazil-r --limit 60
-python scripts/batch_analyse.py --session 2023-singapore-r --limit 60
-python scripts/batch_analyse.py --session 2022-monaco-r --limit 60
-python scripts/batch_analyse.py --session 2022-silverstone-r --limit 60
+python scripts/batch_analyse.py --session 2023-sao-paulo-r --limit 60
+python scripts/batch_analyse.py --session 2024-singapore-r --limit 60
+python scripts/batch_analyse.py --session 2024-british-r --limit 60
+python scripts/batch_analyse.py --session 2024-italian-r --limit 60
 
 # If a session errors on a specific clip, use --force to re-run skipping the bad clip:
 python scripts/batch_analyse.py --session 2023-dutch-r --force
@@ -587,10 +585,18 @@ Follow the script in §10 exactly. Use OBS or QuickTime. Requirements:
 **Owner:** Person B
 
 **Files you touch:**
-- `data/clips/index.csv` — the label column only
+- `backend/scripts/auto_label.py` — already written, verify it runs correctly
+- `data/clips/index.csv` — label column, populated by `auto_label.py`
 
-You do not touch any Python, any frontend file, any config. Your entire job is adding
-`label` values to rows in one CSV.
+**The approach:** the four HF models in the pipeline already produce a
+Calm/Stressed/Tired label for every clip via `batch_analyse.py`. Person B's job
+is to run `auto_label.py` which reads those model outputs and writes the labels
+into `index.csv` — so `fit_fusion.py` can train the logistic regression head.
+
+No listening. No manual labelling. The HF models do the labelling.
+
+**Dependency:** wait for Person A's `batch_analyse.py` to finish overnight before
+running step B-3.
 
 ---
 
@@ -605,85 +611,95 @@ git checkout -b feature/labels-and-fit
 
 ---
 
-#### B-2. Label clips using the labelling UI
+#### B-2. While waiting for batch_analyse — do a dry run first
 
-Do NOT open Excel. There is a browser-based labelling tool that plays each clip and
-saves the label with one keypress.
+Person A runs `batch_analyse.py` overnight. While waiting, verify the script works
+on whatever partial results already exist:
 
 ```bash
 cd grandprix/backend
 .venv\Scripts\activate        # Windows — use source .venv/bin/activate on Mac/Linux
 
-# Label all unlabelled Dutch GP clips (your session):
-python scripts/label_clips.py --session 2023-dutch-r
+python scripts/auto_label.py --dry-run
 ```
 
-The browser opens automatically at `http://localhost:5050`. For each clip:
-- Audio plays automatically
-- Press **1** = Calm, **2** = Stressed, **3** = Tired, **S** = Skip (unclear/noisy)
-- Press **Space** to replay. Press **←** to go back one clip.
-- Every keypress saves immediately to `data/clips/index.csv` — no manual saving
-
-**That's it.** Each clip takes 10–20 seconds. 45 clips ≈ 15–20 minutes.
-
-Labels you need (exact values, handled by the UI):
+This prints what WOULD be labelled without writing anything. Expected output:
 ```
-Calm      — unhurried, flat energy, reporting tone
-Stressed  — raised pitch, fast speech, urgency
-Tired     — low energy, slow speech, flat pitch
-(skip)    — too noisy, too short, no clear voice
+  2023-dutch-r-VER-L01-xxxxx    conf=0.82  (blank) → Stressed
+  2023-dutch-r-HAM-L05-xxxxx    conf=0.71  (blank) → Calm
+  ...
+Results:
+  Would label : N
+  Skipped (no result file yet) : 446-N
 ```
 
-**One-listen rule:** if you can't decide in one play, press S. Ambiguous clips hurt the model.
+If you see errors instead, fix them before batch_analyse finishes.
 
-**Target distribution:** ~40% Calm · 40% Stressed · 20% Tired.
-**Hunting for Tired:** laps 50+ (Dutch GP is 72 laps), post-incident calls, safety-car laps.
+---
 
-**Priority drivers** (most clips, most variety in Dutch GP):
-- `ALO` — 16 clips, good range
-- `VER` — 15 clips, many pressure calls
-- `HUL` — 14 clips, often intense
+#### B-3. Run auto_label.py (after batch_analyse completes)
 
-To label a single driver first:
+Confirm batch_analyse has finished — check that `data/results/` has JSON files:
+
 ```bash
-python scripts/label_clips.py --session 2023-dutch-r --driver VER
+ls ../data/results/ | wc -l    # should be close to 446
+```
+
+Then label all clips in one command:
+
+```bash
+python scripts/auto_label.py
+```
+
+Expected output:
+```
+  Labelled : 380–440  (some clips may have failed batch_analyse)
+  Skipped (no result file yet) : remainder
+  Saved → data/clips/index.csv
+  Next step: python scripts/fit_fusion.py
+```
+
+Check the confidence distribution — if many clips labelled as the same class, run
+with `--min-conf 0.6` to keep only the clearest signals:
+
+```bash
+python scripts/auto_label.py --overwrite --min-conf 0.6
 ```
 
 ---
 
-#### B-3. Agreement check with Person C (do this after B-2)
+#### B-4. Verify the label distribution
 
-Pick **10 clip_ids** you already labelled and share them with Person C (paste from
-`data/clips/index.csv`, Dutch GP rows with labels filled). Person C labels the same
-10 independently using their copy.
-
-Then compare:
-- κ > 0.8 = excellent, proceed
-- κ 0.6–0.8 = good, review disagreements
-- κ < 0.6 = definitions differ — 15-minute call, then re-run the 10
-
-To re-label specific clips (by driver):
 ```bash
-python scripts/label_clips.py --session 2023-dutch-r --driver VER --relabel
+python -c "
+import csv
+from collections import Counter
+with open('../data/clips/index.csv') as f:
+    rows = list(csv.DictReader(f))
+labels = [r['label'] for r in rows if r['label'].strip()]
+print(Counter(labels))
+print(f'Total labelled: {len(labels)} / {len(rows)}')
+"
 ```
 
-Include the κ value in your commit message.
+Good distribution: roughly 40% Calm · 40% Stressed · 20% Tired.
+If one class is < 10%, lower `--min-conf` threshold or use `--overwrite` without it.
 
 ---
 
-#### B-6. Commit the labelled CSV
+#### B-5. Commit the labelled CSV
 
 ```bash
 git add data/clips/index.csv
-git commit -m "label: 45 Dutch GP clips (κ=0.XX with Person C)"
+git commit -m "data(B): auto-label 446 clips from HF model outputs"
 git push -u origin feature/labels-and-fit
 ```
 
 Open a PR on GitHub: `feature/labels-and-fit → main`
-Title: `data(B): label 45 Dutch GP clips (κ=0.XX)`
-Body: driver breakdown (how many per driver), any notes on clip quality.
+Title: `data(B): auto-label clips via HF model pipeline outputs`
+Body: paste the Counter output (distribution of labels).
 
-**Merge order: this is the FIRST PR merged** — Person A needs your labels to run
+**Merge order: this is the FIRST PR merged** — Person A needs these labels to run
 `fit_fusion.py`.
 
 ---
@@ -703,14 +719,12 @@ Body: driver breakdown (how many per driver), any notes on clip quality.
 **Owner:** Person C
 
 **Files you touch:**
-- `data/clips/index_c.csv` — YOUR labelled clips (separate from B's CSV, explained below)
 - `Dockerfile` — new file at repo root
 - `README.md` — add architecture diagram + model list section
 - HF-side files (dataset card, Space config) — these live on Hub, not in the repo
 
-You do NOT edit `data/clips/index.csv` directly — that is B's file. You label into a
-**separate file** so there is no git conflict. A merges the two CSVs when running
-`fit_fusion.py`.
+No labelling work for C. Labelling is handled by Person B via `auto_label.py`.
+C's job is entirely HF deployment — org, dataset, Space, Dockerfile.
 
 ---
 
@@ -725,71 +739,7 @@ git checkout -b feature/hf-deployment
 
 ---
 
-#### C-2. Create your labels file
-
-```bash
-cp data/clips/index.csv data/clips/index_c.csv
-```
-
-You will fill `label` in `index_c.csv`. Person A's `fit_fusion.py` already looks for
-both files and merges them:
-
-```python
-# fit_fusion.py already handles this:
-index_b = pd.read_csv("data/clips/index.csv")
-index_c = pd.read_csv("data/clips/index_c.csv") if Path("data/clips/index_c.csv").exists() else pd.DataFrame()
-index = pd.concat([index_b, index_c]).drop_duplicates(subset=["clip_id"])
-```
-
-If `fit_fusion.py` does NOT already have this merge logic, add it — it's 3 lines in the
-`load_records()` function near the top of the script. Ask Person A to review the diff.
-
----
-
-#### C-3. Label clips using the labelling UI
-
-```bash
-cd grandprix/backend
-.venv\Scripts\activate
-
-# São Paulo clips:
-python scripts/label_clips.py --session 2023-brazil-r
-
-# Singapore clips:
-python scripts/label_clips.py --session 2023-singapore-r
-```
-
-Your target: **45 labelled clips total** across both sessions. Same keyboard shortcuts
-as Person B: 1=Calm, 2=Stressed, 3=Tired, S=Skip. Labels auto-save to `index_c.csv`.
-
-Priority drivers for variety:
-- São Paulo: `ALO`, `VER`, `HAM`, `SAI`
-- Singapore: `ALO`, `VER`, `NOR`, `RUS`
-
-São Paulo 2023 is good for Tired (sprint weekend, chaotic race, long final stint).
-Singapore is good for Stressed (street circuit, high walls, no room for error).
-
-**Agreement check with Person B:** Person B will share 10 Dutch GP clip_ids.
-Label those same 10 using:
-```bash
-python scripts/label_clips.py --session 2023-dutch-r --relabel
-```
-(the `--relabel` flag shows clips even if they already have a label in B's file,
-so you can independently label the agreement set without seeing B's answers first)
-
----
-
-#### C-4. Commit your labels
-
-```bash
-git add data/clips/index_c.csv
-git commit -m "label: 45 SAO+SIN clips (κ=0.XX with Person B)"
-git push -u origin feature/hf-deployment
-```
-
----
-
-#### C-5. Create the HF org and publish dataset
+#### C-2. Create the HF org and publish dataset
 
 **This is the most visible part of your work — it directly satisfies Rule 03.**
 
@@ -856,9 +806,9 @@ tags:
 ---
 # F1 Team Radio Stress Dataset
 
-446 real F1 team radio clips from 5 Grands Prix (2022–2023), each labelled
-**Calm / Stressed / Tired** by two independent annotators (Cohen's κ reported per
-batch in the commit log).
+446 real F1 team radio clips from 5 Grands Prix (2023–2024), each labelled
+**Calm / Stressed / Tired** automatically using a 4-model HF pipeline
+(Whisper + wav2vec2 SER + distilroberta text-emotion + Silero VAD).
 
 ## Fields
 - `clip_id` — unique ID
@@ -980,7 +930,7 @@ owns it for this update.
 #### C-9. Raise the PR
 
 ```bash
-git add Dockerfile data/clips/index_c.csv README.md
+git add Dockerfile README.md
 git push -u origin feature/hf-deployment
 ```
 
@@ -1441,16 +1391,17 @@ Column to fill: label
 Valid values (exact capitalisation): Calm  /  Stressed  /  Tired
 ```
 
-| Label | Voice characteristics | Typical radio |
-|---|---|---|
-| **Calm** | Unhurried, flat energy, reporting tone | "P3, tyres feel OK", "Box box, understood" |
-| **Stressed** | Raised pitch, fast speech, urgency, frustration | "This car is undriveable!", "What happened!?" |
-| **Tired** | Low energy, slow speech, flat pitch, resignation | "I've got nothing left", "yeah… OK… I know" |
-| *(blank)* | Too noisy, too short, no clear voice | — |
+Labels are generated automatically by `auto_label.py` from the HF model outputs — no
+human annotation. The three classes map to these model signals:
 
-**Target distribution:** ~40% Calm · 40% Stressed · 20% Tired.
-**One-listen rule:** if you can't decide after one listen, leave blank.
-**Tired hunting:** final 10 laps of long races, hot-track sessions, post-incident calls.
+| Label | text_emotion signal | prosody signal |
+|---|---|---|
+| **Calm** | joy / neutral dominant | energy_z and speech_rate_z near zero |
+| **Stressed** | anger / fear / disgust dominant | energy_z > 1 or speech_rate_z > 1 |
+| **Tired** | sadness dominant | energy_z < −1.5 and speech_rate_z < −1 |
+
+`auto_label.py --min-conf 0.6` keeps only clips where the model is confident,
+giving a cleaner training set for `fit_fusion.py`.
 
 ---
 

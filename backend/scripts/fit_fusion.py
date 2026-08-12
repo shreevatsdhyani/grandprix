@@ -113,8 +113,10 @@ def build_baselines(records, cache, dry_run: bool) -> None:
     print(f"\nBaselines from {len(samples)} {source} clip(s): {len(stats)} reference set(s)")
     for driver in sorted(stats):
         if driver != baseline.COHORT_KEY:
-            print(f"  {driver}: f0 {stats[driver]['f0_mean'][0]:.1f} Hz, "
-                  f"rate {stats[driver]['speech_rate'][0]:.2f} w/s")
+            f0_str = f"f0 {stats[driver]['f0_mean'][0]:.1f} Hz" if "f0_mean" in stats[driver] else "f0 N/A"
+            rate = stats[driver].get("speech_rate")
+            rate_str = f"rate {rate[0]:.2f} w/s" if rate else "rate N/A (no word timestamps)"
+            print(f"  {driver}: {f0_str}, {rate_str}")
     if not dry_run:
         baseline.save(stats)
 

@@ -21,14 +21,23 @@ from app.schemas import Transcript, Word
 log = logging.getLogger(__name__)
 
 
+def _gen_kwargs() -> dict:
+    # English-only distil-whisper models (model id ends with .en) reject task
+    # and language parameters — passing them raises ValueError at generate().
+    if config.STT_MODEL.endswith(".en"):
+        return {}
+    return {"language": "en", "task": "transcribe"}
+
+
 def transcribe(audio: np.ndarray) -> Transcript:
     pipe = models.stt()
+    gen_kwargs = _gen_kwargs()
 
     try:
         result = pipe(
             {"raw": audio, "sampling_rate": config.TARGET_SR},
             return_timestamps="word",
-            generate_kwargs={"language": "en", "task": "transcribe"},
+            generate_kwargs=gen_kwargs,
         )
     except Exception as exc:
         # Word timestamps need the model's alignment heads and are not
@@ -37,7 +46,7 @@ def transcribe(audio: np.ndarray) -> Transcript:
         log.warning("Word timestamps unavailable (%s); falling back to plain decode", exc)
         result = pipe(
             {"raw": audio, "sampling_rate": config.TARGET_SR},
-            generate_kwargs={"language": "en", "task": "transcribe"},
+            generate_kwargs=gen_kwargs,
         )
 
     text = (result.get("text") or "").strip()

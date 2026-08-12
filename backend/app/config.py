@@ -38,7 +38,7 @@ for _d in (FASTF1_CACHE_DIR, CLIPS_DIR, LABELS_DIR, RESULTS_DIR):
 # stage is worse than a small one that answers.
 # --------------------------------------------------------------------------
 
-STT_MODEL = os.getenv("GP_STT_MODEL", "openai/whisper-small")
+STT_MODEL = os.getenv("GP_STT_MODEL", "distil-whisper/distil-small.en")
 SER_MODEL = os.getenv("GP_SER_MODEL", "superb/wav2vec2-base-superb-er")
 TEXT_EMOTION_MODEL = os.getenv(
     "GP_TEXT_MODEL", "j-hartmann/emotion-english-distilroberta-base"

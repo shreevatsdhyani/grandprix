@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from 'react'
-import { analyseClip, getHealth, getSessions, getTimeline } from './api'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { analyseClip, analyseViaWebSocket, getHealth, getSessions, getTimeline } from './api'
 import { ClipBrowser } from './components/ClipBrowser'
 import { LeadLagPanel } from './components/LeadLagPanel'
 import { RaceTimeline } from './components/RaceTimeline'
@@ -9,6 +9,7 @@ import { StrategyCalls } from './components/StrategyCalls'
 import type {
   ClipAnalysis,
   HealthResponse,
+  ProgressEvent,
   ScoringMode,
   SessionMeta,
   Timeline,
@@ -27,6 +28,16 @@ export default function App() {
   const [uploadLap, setUploadLap] = useState<string>('')
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
+
+  // Live-analysis stream state. `analysed` holds results that came back over the
+  // WebSocket, keyed by clip_id: the timeline is only refetched on
+  // session/driver/mode change, so a freshly analysed clip would otherwise
+  // vanish from the inspector the moment the stream closed.
+  const [progress, setProgress] = useState<ProgressEvent[]>([])
+  const [streamingClipId, setStreamingClipId] = useState<string | null>(null)
+  const [analysed, setAnalysed] = useState<Record<string, ClipAnalysis>>({})
+  const [libraryVersion, setLibraryVersion] = useState(0)
+  const socketRef = useRef<WebSocket | null>(null)
 
   // Sessions come from the backend rather than a constant, so the picker works
   // against whatever races are actually cached on this machine.
@@ -75,8 +86,48 @@ export default function App() {
 
   const selectedClip = useMemo(() => {
     if (uploaded && uploaded.clip_id === selectedClipId) return uploaded
+    if (selectedClipId && analysed[selectedClipId]) return analysed[selectedClipId]
     return timeline?.clips.find((c) => c.clip_id === selectedClipId) ?? null
-  }, [timeline, selectedClipId, uploaded])
+  }, [timeline, selectedClipId, uploaded, analysed])
+
+  // Close any open socket on unmount, and whenever the run is superseded. An
+  // orphaned socket keeps a worker thread busy on the backend and would push
+  // stage events for a clip nobody is looking at any more.
+  const closeSocket = useCallback(() => {
+    socketRef.current?.close()
+    socketRef.current = null
+  }, [])
+
+  useEffect(() => closeSocket, [closeSocket])
+
+  const streamAnalysis = useCallback(
+    (clipId: string) => {
+      if (!clipId || clipId.startsWith('upload-')) return
+      closeSocket()
+      setProgress([])
+      setStreamingClipId(clipId)
+      setError(null)
+
+      socketRef.current = analyseViaWebSocket(clipId, {
+        onProgress: (event) => setProgress((prev) => [...prev, event]),
+        onResult: (result) => {
+          setAnalysed((prev) => ({ ...prev, [result.clip_id]: result }))
+          setSelectedClipId(result.clip_id)
+          setStreamingClipId(null)
+          // The backend cached this result, so the library's badges and the
+          // analysed/total counter are now behind by one.
+          setLibraryVersion((v) => v + 1)
+          socketRef.current = null
+        },
+        onError: (message) => {
+          setError(message)
+          setStreamingClipId(null)
+          socketRef.current = null
+        },
+      })
+    },
+    [closeSocket],
+  )
 
   async function handleUpload(file: File) {
     if (!sessionId) return
@@ -95,15 +146,24 @@ export default function App() {
   }
 
   function handleBrowseSelect(clipId: string) {
-    // If it's in the timeline's analysed clips, select directly.
-    const inTimeline = timeline?.clips.find((c) => c.clip_id === clipId)
-    if (inTimeline) {
-      setSelectedClipId(clipId)
+    setSelectedClipId(clipId)
+    setProgress([])
+
+    // Already analysed — from the timeline's cache or an earlier stream — so
+    // show it instantly rather than paying ~13s to recompute the same answer.
+    const known =
+      timeline?.clips.some((c) => c.clip_id === clipId) || analysed[clipId] != null
+    if (known) {
+      closeSocket()
+      setStreamingClipId(null)
       return
     }
-    // Otherwise just navigate to it — RadioInspector shows the audio player even
-    // without an analysis, and the WS route can analyse it on demand.
-    setSelectedClipId(clipId)
+
+    // Unanalysed: run it now and stream the stages. This is what makes the 446
+    // curated clips reachable — the timeline only plots clips that already have
+    // a cached analysis, so before this there was no way to create one from the
+    // UI except by uploading a file we already had on disk.
+    streamAnalysis(clipId)
   }
 
   function selectLap(lap: number) {
@@ -228,6 +288,15 @@ export default function App() {
                 busy={busy}
                 uploadLap={uploadLap}
                 onUploadLapChange={setUploadLap}
+                progress={progress}
+                streaming={streamingClipId != null}
+                // Uploads are excluded: the stream route resolves clips through
+                // the index, and an upload isn't in it.
+                onReanalyse={
+                  selectedClipId && !selectedClipId.startsWith('upload-')
+                    ? () => streamAnalysis(selectedClipId)
+                    : undefined
+                }
               />
               <SignalBars clip={selectedClip} />
               {sessionId && (
@@ -236,6 +305,7 @@ export default function App() {
                   driver={driver}
                   selectedClipId={selectedClipId}
                   onSelect={handleBrowseSelect}
+                  refreshKey={libraryVersion}
                 />
               )}
             </div>

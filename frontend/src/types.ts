@@ -168,6 +168,34 @@ export interface HealthResponse {
 }
 
 /**
+ * Progress streaming — mirror of PipelineStage / ProgressEvent in schemas.py.
+ *
+ * `received` and `error` are declared by the backend enum; only `error` is ever
+ * emitted in practice (pipeline/run.py starts at `preprocess`).
+ */
+export type PipelineStage =
+  | 'received'
+  | 'preprocess'
+  | 'vad'
+  | 'stt'
+  | 'prosody'
+  | 'acoustic'
+  | 'text'
+  | 'fusion'
+  | 'align'
+  | 'done'
+  | 'error'
+
+export interface ProgressEvent {
+  clip_id: string
+  stage: PipelineStage
+  message: string
+  /** Cumulative, from the moment the socket opened — not per-stage. */
+  elapsed_ms: number
+  detail?: Record<string, string | number>
+}
+
+/**
  * Mood is a *state*, so it takes status colors — but red/green fail CVD
  * separation (ΔE 4.1 deutan), so these are never allowed to carry meaning
  * alone. Every use pairs the color with the mood word, and on chart marks with

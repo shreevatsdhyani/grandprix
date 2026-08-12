@@ -20,6 +20,7 @@ import time
 from collections.abc import Callable
 from pathlib import Path
 
+from app import config
 from app.pipeline import baseline, fusion, models, preprocess, prosody, ser, stt, text_emotion, vad
 from app.schemas import (
     ClipAnalysis,
@@ -66,7 +67,10 @@ def analyse_clip(
 
     emit(PipelineStage.PROSODY, "Extracting pitch, energy and articulation rate")
     raw_feats = prosody.extract(
-        speech, transcript.words, len(speech) / 16_000, speech_ratio=speech_ratio
+        speech,
+        transcript.words,
+        len(speech) / config.TARGET_SR,
+        speech_ratio=speech_ratio,
     )
     z = baseline.z_scores(driver, raw_feats)
 

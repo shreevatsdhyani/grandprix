@@ -1,4 +1,4 @@
-import type { ClipAnalysis, HealthResponse, ScoringMode, SessionMeta, Timeline } from './types'
+import type { ClipAnalysis, ClipSummary, HealthResponse, ScoringMode, SessionMeta, Timeline } from './types'
 
 /** Relative base: Vite proxies /api in dev, same-origin in the Space build. */
 const BASE = '/api'
@@ -10,6 +10,9 @@ async function get<T>(path: string): Promise<T> {
 }
 
 export const getHealth = () => get<HealthResponse>('/health')
+
+export const getLibrary = (sessionId: string, driver: string) =>
+  get<ClipSummary[]>(`/clips/library?session_id=${sessionId}&driver=${driver}`)
 
 export const getSessions = () => get<SessionMeta[]>('/sessions')
 

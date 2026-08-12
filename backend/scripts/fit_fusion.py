@@ -40,7 +40,7 @@ import numpy as np  # noqa: E402
 
 from app import config  # noqa: E402
 from app.data import store  # noqa: E402
-from app.pipeline import baseline, fusion, preprocess, prosody, ser, stt, text_emotion  # noqa: E402
+from app.pipeline import baseline, fusion, preprocess, prosody, ser, stt, text_emotion, vad  # noqa: E402
 from app.schemas import Mood, ProsodySignal  # noqa: E402
 
 FEATURE_CACHE = config.LABELS_DIR / "features.json"
@@ -60,10 +60,20 @@ def extract_all(records: list[store.ClipRecord], refresh: bool = False) -> dict[
     for i, record in enumerate(todo, start=1):
         try:
             audio, duration = preprocess.prepare(str(record.path))
+            # Must mirror run.py exactly: prosody runs on VAD-trimmed speech-only
+            # audio and receives the speech_ratio from the original clip.
+            # The old code passed the full clip without VAD, so features like
+            # pause_ratio and rms_mean were measured over engine noise during
+            # training but over speech at inference — a distribution mismatch
+            # that made the fitted coefficients systematically wrong.
+            speech, speech_ratio = vad.apply(audio)
             transcript = stt.transcribe(audio)
             cache[record.clip_id] = {
                 "driver": record.driver.upper(),
-                "raw": prosody.extract(audio, transcript.words, duration),
+                "raw": prosody.extract(
+                    speech, transcript.words, len(speech) / config.TARGET_SR,
+                    speech_ratio=speech_ratio,
+                ),
                 "acoustic": ser.analyse(audio).model_dump(mode="json"),
                 "text": text_emotion.analyse(transcript.text).model_dump(mode="json"),
                 "transcript": transcript.text,
@@ -153,6 +163,14 @@ def fit(records, cache, dry_run: bool) -> None:
     if len(set(y)) < 2:
         print("  Only one class present — cannot fit.")
         return
+    if len(set(y)) < 3:
+        print(
+            "  WARNING: only two classes present in the labelled set "
+            f"({sorted(set(y))}). The fitted head will be a binary classifier. "
+            "The inference path handles this correctly (binary sigmoid, not "
+            "1-class softmax), but the missing class will always score 0 — "
+            "add more labels covering the third class before shipping the demo."
+        )
 
     model = LogisticRegression(max_iter=2000, C=1.0, class_weight="balanced")
 

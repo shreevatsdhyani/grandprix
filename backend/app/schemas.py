@@ -147,13 +147,41 @@ class MoodResult(BaseModel):
     probabilities: dict[Mood, float]
     mode: ScoringMode
     fitted: bool = Field(
-        default=True,
+        # Defaults to False so that claiming a trained model is something a
+        # caller has to do on purpose. The default used to be True, which meant
+        # the demo fixtures — which never set this field — silently asserted a
+        # fitted head, suppressing the very UI banner that exists to admit there
+        # isn't one. An honesty flag must fail closed.
+        default=False,
         description=(
-            "False when the fusion head has not been trained on annotations yet "
-            "and the interpretable fallback produced this result. Surfaced in the "
+            "True only when a fusion head fitted on our own annotations produced "
+            "this result. False for the interpretable fallback. Surfaced in the "
             "UI so we never imply a trained model where there isn't one."
         ),
     )
+
+
+class ClipSummary(BaseModel):
+    """One row in the clip library the user picks from.
+
+    The brief's first deliverable is "play *or* upload a radio clip". Upload was
+    built; play had no list endpoint and no UI, so the 446 curated clips on disk
+    were unreachable. This is what makes them browsable without paying for
+    inference on all of them up front.
+    """
+
+    clip_id: str
+    session_id: str
+    driver: str
+    lap: int | None = None
+    audio_url: str
+    label: str | None = Field(default=None, description="Hand annotation, if any")
+    analysed: bool = Field(
+        default=False,
+        description="True when a cached analysis exists, so the UI can show it instantly",
+    )
+    mood: Mood | None = Field(default=None, description="From the cached analysis, if present")
+    stress_index: float | None = None
 
 
 class ClipAnalysis(BaseModel):
@@ -252,7 +280,16 @@ class StrategyCall(BaseModel):
 
 class LeadLagPoint(BaseModel):
     lag_laps: int = Field(description="Negative means stress precedes the pace drop")
-    correlation: float
+    correlation: float | None = Field(
+        default=None,
+        description=(
+            "None when too few clip/lap pairs exist at this offset to compute r. "
+            "Deliberately not 0.0: an unmeasured lag reported as zero is "
+            "indistinguishable from a measured absence of correlation, and the "
+            "peak-picker would then select it."
+        ),
+    )
+    n_pairs: int = Field(default=0, description="Clip/lap pairs behind this coefficient")
 
 
 class LeadLagAnalysis(BaseModel):

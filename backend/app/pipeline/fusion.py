@@ -192,11 +192,24 @@ def fuse(
 
     if head:
         x = np.array(feature_vector(prosody, acoustic, text))
-        coef = np.array(head["coef"])  # (3, n_features)
+        coef = np.array(head["coef"])  # (n_classes, n_features), or (1, n) if binary
         intercept = np.array(head["intercept"])
-        probs_arr = _softmax(coef @ x + intercept)
         classes = [Mood(c) for c in head["classes"]]
-        probs = {m: round(float(p), 3) for m, p in zip(classes, probs_arr)}
+        scores = coef @ x + intercept
+
+        if len(classes) == 2 and scores.size == 1:
+            # sklearn's binary convention: one row of coefficients scoring the
+            # POSITIVE class (classes_[1]), not one row per class. Softmaxing a
+            # single logit returns [1.0], and zipping that against two classes
+            # silently drops the second — so every clip came back as classes_[0]
+            # with 100% confidence, which is both degenerate and inverted.
+            # This fires exactly when Tired is too rare to appear in the labels.
+            p1 = 1.0 / (1.0 + float(np.exp(-scores[0])))
+            probs_arr = np.array([1.0 - p1, p1])
+        else:
+            probs_arr = _softmax(scores)
+
+        probs = {m: round(float(p), 3) for m, p in zip(classes, probs_arr, strict=True)}
         for m in Mood:
             probs.setdefault(m, 0.0)
         stress_index = float(

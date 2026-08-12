@@ -44,6 +44,13 @@ TEXT_EMOTION_MODEL = os.getenv(
     "GP_TEXT_MODEL", "j-hartmann/emotion-english-distilroberta-base"
 )
 
+# Silero VAD, as ONNX. Lives here rather than inside pipeline/vad.py so that
+# warm_models.py and /api/health can both see it: it is a fourth model the demo
+# depends on, and when it is missing offline the pipeline degrades silently to
+# untrimmed audio rather than failing loudly.
+VAD_MODEL = os.getenv("GP_VAD_MODEL", "istupakov/silero-vad-onnx")
+VAD_FILE = "silero_vad_16k_op15.onnx"
+
 # Backups, swapped in if a primary is gated or underperforms on our labels.
 SER_MODEL_ALT = "ehcalabres/wav2vec2-lg-xlsr-en-speech-emotion-recognition"
 STT_MODEL_ALT = "distil-whisper/distil-small.en"
@@ -83,9 +90,24 @@ LEAD_LAG_RANGE = range(-4, 5)  # laps
 # --------------------------------------------------------------------------
 
 OFFLINE_MODE = os.getenv("GP_OFFLINE", "0") == "1"
-USE_FIXTURES = os.getenv("GP_USE_FIXTURES", "1") == "1"  # until the pipeline lands
+
+# Fixtures default to OFF now that the pipeline has landed.
+#
+# This default used to be "1", which was correct while the frontend was being
+# built against a frozen contract and wrong the moment real inference worked:
+# with fixtures on, POST /api/analyse returns a canned result WITHOUT READING
+# THE UPLOADED FILE, /api/sessions advertises one race that isn't cached, and
+# /api/laps 501s. A judge uploading their own clip would have been shown a
+# pre-baked answer. Nothing may silently substitute demo data for real output.
+#
+# Set GP_USE_FIXTURES=1 deliberately for frontend work with no models present.
+USE_FIXTURES = os.getenv("GP_USE_FIXTURES", "0") == "1"
 
 CORS_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    # `vite preview` — how the built bundle gets demoed if the dev server is not
+    # what we run on stage.
+    "http://localhost:4173",
+    "http://127.0.0.1:4173",
 ]

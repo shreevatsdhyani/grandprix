@@ -28,15 +28,21 @@ def _model_cached(model_id: str) -> bool:
 
 @router.get("/health", response_model=HealthResponse)
 def health() -> HealthResponse:
+    # All four models, VAD included. Leaving VAD out made `offline_ready` claim
+    # more than it knew: a missing VAD file does not crash the pipeline, it
+    # degrades it silently, so it is exactly the one that must be reported.
     models = {
         config.STT_MODEL: _model_cached(config.STT_MODEL),
         config.SER_MODEL: _model_cached(config.SER_MODEL),
         config.TEXT_EMOTION_MODEL: _model_cached(config.TEXT_EMOTION_MODEL),
+        config.VAD_MODEL: _model_cached(config.VAD_MODEL),
     }
     sessions_cached = any(config.FASTF1_CACHE_DIR.iterdir())
 
+    # `status` no longer passes just because fixtures are on — that made a
+    # model-less install look healthy.
     return HealthResponse(
-        status="ok" if config.USE_FIXTURES or all(models.values()) else "degraded",
+        status="ok" if all(models.values()) else "degraded",
         version=config.VERSION,
         models_loaded=models,
         offline_ready=all(models.values()) and sessions_cached,

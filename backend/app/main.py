@@ -6,11 +6,47 @@ Docs: http://localhost:8000/docs
 
 from __future__ import annotations
 
+import asyncio
+import contextlib
+import logging
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app import config
 from app.routers import analyse, clips, health, session
+
+log = logging.getLogger(__name__)
+
+
+@contextlib.asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Load the models before anyone asks for them.
+
+    `pipeline.models.warm` documented that it was "called at startup to pay the
+    cost before anyone is watching" — and nothing called it. The bill therefore
+    landed on the first upload of the demo: ~20 s of model loading on top of
+    inference, behind a button that just says "Analysing…". Warming here moves
+    that cost to `uvicorn` boot.
+
+    Off-thread and best-effort: a model that fails to load must not stop the API
+    from starting, because /api/health is exactly how we'd diagnose it.
+    """
+    from app.pipeline import models
+
+    async def _warm() -> None:
+        try:
+            loaded = await asyncio.to_thread(models.warm)
+            log.info("Models warmed: %s", loaded)
+        except Exception:
+            log.exception("Model warm-up failed; endpoints will load lazily")
+
+    task = asyncio.create_task(_warm())
+    yield
+    task.cancel()
+    with contextlib.suppress(asyncio.CancelledError):
+        await task
+
 
 app = FastAPI(
     title="The Silent Co-Driver",
@@ -19,6 +55,7 @@ app = FastAPI(
         "strategy calls. AI Race Month · GrandPrix, problem statement 1."
     ),
     version=config.VERSION,
+    lifespan=lifespan,
 )
 
 app.add_middleware(

@@ -16,9 +16,31 @@ TARGETS = [
     ("Text emotion", config.TEXT_EMOTION_MODEL, "text-classification"),
 ]
 
+def warm_vad() -> bool:
+    """Fetch the Silero ONNX file.
+
+    Not a `transformers` pipeline, so it needs its own path. It matters as much
+    as the others: without it, an offline run does not crash — `vad.apply` falls
+    back to untrimmed audio, which quietly corrupts pause ratio and articulation
+    rate, the two features fatigue is actually read from.
+    """
+    from huggingface_hub import hf_hub_download
+    print(f"→ VAD: {config.VAD_MODEL}", flush=True)
+    t0 = time.perf_counter()
+    try:
+        hf_hub_download(config.VAD_MODEL, config.VAD_FILE)
+        print(f"  ✓ ready in {time.perf_counter() - t0:.1f}s", flush=True)
+        return True
+    except Exception as exc:
+        print(f"  ✗ {type(exc).__name__}: {exc}", flush=True)
+        return False
+
+
 def main() -> int:
     from transformers import pipeline
     failed = []
+    if not warm_vad():
+        failed.append(config.VAD_MODEL)
     for label, model_id, task in TARGETS:
         print(f"→ {label}: {model_id}", flush=True)
         t0 = time.perf_counter()

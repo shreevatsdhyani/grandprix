@@ -65,7 +65,8 @@ export function LeadLagPanel({ analysis }: { analysis: LeadLagAnalysis | null })
             />
             <YAxis
               width={34}
-              domain={[0, 'auto']}
+              domain={[-1, 1]}
+              ticks={[-1, -0.5, 0, 0.5, 1]}
               tick={{ fill: 'var(--text-muted)', fontSize: 10 }}
               axisLine={false}
               tickLine={false}
@@ -75,7 +76,10 @@ export function LeadLagPanel({ analysis }: { analysis: LeadLagAnalysis | null })
               content={({ active, payload }: any) =>
                 active && payload?.length ? (
                   <div className="card px-2 py-1 text-[11px] tabular">
-                    lag {payload[0].payload.lag_laps} · r = {payload[0].payload.correlation.toFixed(2)}
+                    lag {payload[0].payload.lag_laps} ·{' '}
+                    {payload[0].payload.correlation != null
+                      ? `r = ${payload[0].payload.correlation.toFixed(2)}`
+                      : 'n < 4 pairs'}
                   </div>
                 ) : null
               }

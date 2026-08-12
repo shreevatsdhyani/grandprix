@@ -32,8 +32,8 @@ from app import config
 
 log = logging.getLogger(__name__)
 
-VAD_MODEL = "istupakov/silero-vad-onnx"
-VAD_FILE = "silero_vad_16k_op15.onnx"
+VAD_MODEL = config.VAD_MODEL
+VAD_FILE = config.VAD_FILE
 
 # Silero v5 advances 512 samples (32 ms) at a time, but each forward pass must
 # be fed 576: the 64 samples immediately preceding the hop are carried in as

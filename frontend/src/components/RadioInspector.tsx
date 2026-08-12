@@ -14,9 +14,11 @@ interface Props {
   mode: ScoringMode
   onUpload: (file: File) => void
   busy: boolean
+  uploadLap: string
+  onUploadLapChange: (val: string) => void
 }
 
-export function RadioInspector({ clip, mode, onUpload, busy }: Props) {
+export function RadioInspector({ clip, mode, onUpload, busy, uploadLap, onUploadLapChange }: Props) {
   const inputRef = useRef<HTMLInputElement>(null)
   const audioRef = useRef<HTMLAudioElement>(null)
   const [, setPlaying] = useState(false)
@@ -37,14 +39,29 @@ export function RadioInspector({ clip, mode, onUpload, busy }: Props) {
           thing the brief asks for. Playback uses the native control rather than
           a second custom button: one obvious way to play, and it degrades
           gracefully if a clip fails to load mid-demo. */}
-      <div className="mb-2">
-        <button
-          onClick={() => inputRef.current?.click()}
-          disabled={busy}
-          className="w-full rounded border border-brand/60 bg-brand/10 px-3 py-2 text-xs font-semibold uppercase tracking-wider text-ink-primary transition hover:bg-brand/20 disabled:opacity-50"
-        >
-          {busy ? 'Analysing…' : '↑ Upload radio clip'}
-        </button>
+      <div className="mb-2 flex flex-col gap-1.5">
+        <div className="flex gap-2">
+          <button
+            onClick={() => inputRef.current?.click()}
+            disabled={busy}
+            className="flex-1 rounded border border-brand/60 bg-brand/10 px-3 py-2 text-xs font-semibold uppercase tracking-wider text-ink-primary transition hover:bg-brand/20 disabled:opacity-50"
+          >
+            {busy ? 'Analysing…' : '↑ Upload clip'}
+          </button>
+          {/* Lap number lets the uploaded clip appear on the timeline chart — without
+              it the analysis is correct but disconnected from the pace context that
+              is the whole point of the project. */}
+          <input
+            type="number"
+            min={1}
+            max={99}
+            placeholder="Lap?"
+            value={uploadLap}
+            onChange={(e) => onUploadLapChange(e.target.value)}
+            className="w-16 rounded border border-hairline bg-raised px-2 py-2 text-center text-xs text-ink-secondary"
+            aria-label="Lap number for uploaded clip"
+          />
+        </div>
         <input
           ref={inputRef}
           type="file"

@@ -105,6 +105,13 @@ def lap_series(session_id: str, driver: str) -> list[Lap]:
 
     out: list[Lap] = []
     for row in df.itertuples(index=False):
+        if pd.isna(row.lap):
+            # `lap` is Int64, so a retirement mid-lap or a partially-parsed cache
+            # entry can leave it as pd.NA. Every other field is guarded; this one
+            # wasn't, and int(pd.NA) raises TypeError — which surfaced as a bare
+            # 500 on /api/timeline and froze the dashboard on "Loading session…".
+            # A lap with no number carries no information, so drop the row.
+            continue
         out.append(
             Lap(
                 lap=int(row.lap),

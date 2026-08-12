@@ -104,7 +104,22 @@ export interface StrategyCall {
 
 export interface LeadLagPoint {
   lag_laps: number
-  correlation: number
+  /** null when too few clip/lap pairs exist at this offset — not the same as 0. */
+  correlation: number | null
+  n_pairs: number
+}
+
+/** One row in the clip library. Returned by GET /api/clips/library. */
+export interface ClipSummary {
+  clip_id: string
+  session_id: string
+  driver: string
+  lap: number | null
+  audio_url: string
+  label: string | null
+  analysed: boolean
+  mood: Mood | null
+  stress_index: number | null
 }
 
 export interface LeadLagAnalysis {

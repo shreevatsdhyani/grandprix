@@ -120,7 +120,7 @@ Rule 03 requires the Hub in the build, and an account per team member.
 **Consumed:** Whisper (STT) · wav2vec2 SER (acoustic emotion) · DistilRoBERTa
 (text emotion) · VAD segmentation.
 
-**Contributed back:** our curated radio-stress dataset, and a Space running this demo.
+**Planned contribution:** curated radio-stress dataset and a Space running this demo (in progress).
 
 ---
 
@@ -128,8 +128,9 @@ Rule 03 requires the Hub in the build, and an account per team member.
 
 - Off-the-shelf SER accuracy on compressed, engine-noise-saturated radio audio is poor.
   That is the premise of the project, not a defect — it is why fusion exists.
-- The lead–lag correlation is computed over ~100 labelled clips. It is **indicative,
-  not conclusive**, and the UI says so wherever the number appears.
+- The lead–lag correlation is computed over the analysed clips in the selected session.
+  With a small sample it is **indicative, not conclusive**, and the UI says so wherever
+  the number appears.
 - Public broadcast audio, used for analysis and demonstration. No driver is diagnosed;
   the output is decision support for engineers, not a medical or disciplinary judgement.
 

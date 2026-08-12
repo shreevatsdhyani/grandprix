@@ -85,13 +85,27 @@ def build(samples: list[tuple[str, dict[str, float]]]) -> dict[str, dict[str, li
             continue
         stats: dict[str, list[float]] = {}
         for name in FEATURE_NAMES:
-            values = [r.get(name, 0.0) for r in rows]
+            # Absent features are SKIPPED, not imputed as 0.0. Defaulting to
+            # zero here is the same mistake `z_scores` documents avoiding, and it
+            # is worse in this direction: a feature missing from every calm clip
+            # (pitch tracking failing on noisy radio, or pause_ratio when the
+            # caller passed no speech ratio) produced a baseline of mean 0, sd 1.
+            # A later real pause_ratio of 0.25 then z-scores to +0.25 against
+            # that fiction instead of 0.0 against the prior — a standing bias
+            # toward Tired, frozen into the committed driver_baselines.json.
+            values = [r[name] for r in rows if name in r and r[name] is not None]
+            if len(values) < config.MIN_BASELINE_CLIPS:
+                # Not enough measurements of *this* feature to characterise it,
+                # even if the driver has plenty of clips overall. Fall through to
+                # the population prior rather than inventing a reference.
+                continue
             mean = statistics.fmean(values)
             # A zero stdev (identical values) would divide by zero; 1.0 makes
             # the z-score reduce to a plain difference, which is safe.
             sd = statistics.pstdev(values) if len(values) > 1 else 0.0
             stats[name] = [round(mean, 6), round(sd if sd > 1e-9 else 1.0, 6)]
-        out[driver] = stats
+        if stats:
+            out[driver] = stats
     return out
 
 

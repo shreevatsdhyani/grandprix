@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { analyseClip, getHealth, getSessions, getTimeline } from './api'
+import { ClipBrowser } from './components/ClipBrowser'
 import { LeadLagPanel } from './components/LeadLagPanel'
 import { RaceTimeline } from './components/RaceTimeline'
 import { RadioInspector } from './components/RadioInspector'
@@ -19,9 +20,11 @@ export default function App() {
   const [sessionId, setSessionId] = useState<string | null>(null)
   const [driver, setDriver] = useState('HAM')
   const [timeline, setTimeline] = useState<Timeline | null>(null)
+  const [timelineLoaded, setTimelineLoaded] = useState(false)
   const [health, setHealth] = useState<HealthResponse | null>(null)
   const [selectedClipId, setSelectedClipId] = useState<string | null>(null)
   const [uploaded, setUploaded] = useState<ClipAnalysis | null>(null)
+  const [uploadLap, setUploadLap] = useState<string>('')
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -50,14 +53,21 @@ export default function App() {
   useEffect(() => {
     if (!sessionId) return
     let live = true
+    setTimelineLoaded(false)
+    setTimeline(null)
     getTimeline(sessionId, driver, mode)
       .then((t) => {
         if (!live) return
         setTimeline(t)
+        setTimelineLoaded(true)
         setError(null)
         setSelectedClipId(t.clips.at(-1)?.clip_id ?? null)
       })
-      .catch((e: Error) => live && setError(e.message))
+      .catch((e: Error) => {
+        if (!live) return
+        setTimelineLoaded(true)
+        setError(e.message)
+      })
     return () => {
       live = false
     }
@@ -73,7 +83,8 @@ export default function App() {
     setBusy(true)
     setError(null)
     try {
-      const result = await analyseClip(file, driver, sessionId)
+      const lap = uploadLap ? parseInt(uploadLap, 10) : undefined
+      const result = await analyseClip(file, driver, sessionId, lap)
       setUploaded(result)
       setSelectedClipId(result.clip_id)
     } catch (e) {
@@ -81,6 +92,18 @@ export default function App() {
     } finally {
       setBusy(false)
     }
+  }
+
+  function handleBrowseSelect(clipId: string) {
+    // If it's in the timeline's analysed clips, select directly.
+    const inTimeline = timeline?.clips.find((c) => c.clip_id === clipId)
+    if (inTimeline) {
+      setSelectedClipId(clipId)
+      return
+    }
+    // Otherwise just navigate to it — RadioInspector shows the audio player even
+    // without an analysis, and the WS route can analyse it on demand.
+    setSelectedClipId(clipId)
   }
 
   function selectLap(lap: number) {
@@ -189,13 +212,32 @@ export default function App() {
           </div>
         )}
 
-        {!timeline ? (
+        {!timelineLoaded ? (
           <div className="py-24 text-center text-sm text-ink-muted">Loading session…</div>
-        ) : (
+        ) : error && !timeline ? (
+          <div className="py-24 text-center text-sm text-status-critical">
+            {error}
+          </div>
+        ) : timeline == null ? null : (
           <div className="grid grid-cols-1 gap-3 lg:grid-cols-[340px_1fr_300px]">
             <div className="flex flex-col gap-3">
-              <RadioInspector clip={selectedClip} mode={mode} onUpload={handleUpload} busy={busy} />
+              <RadioInspector
+                clip={selectedClip}
+                mode={mode}
+                onUpload={handleUpload}
+                busy={busy}
+                uploadLap={uploadLap}
+                onUploadLapChange={setUploadLap}
+              />
               <SignalBars clip={selectedClip} />
+              {sessionId && (
+                <ClipBrowser
+                  sessionId={sessionId}
+                  driver={driver}
+                  selectedClipId={selectedClipId}
+                  onSelect={handleBrowseSelect}
+                />
+              )}
             </div>
 
             <div className="flex flex-col gap-3">

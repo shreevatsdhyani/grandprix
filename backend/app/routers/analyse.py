@@ -19,7 +19,6 @@ from fastapi import APIRouter, File, Form, HTTPException, UploadFile, WebSocket,
 
 from app import config
 from app.data import store
-from app.fixtures import demo
 from app.pipeline import run
 from app.pipeline.preprocess import AudioTooShort
 from app.schemas import ClipAnalysis, PipelineStage, ProgressEvent
@@ -54,12 +53,12 @@ async def analyse(
     session_id: str = Form("2024-british-r"),
     lap: int | None = Form(None),
 ) -> ClipAnalysis:
-    if config.USE_FIXTURES:
-        result = demo.DEMO_CLIPS[-1].model_copy(deep=True)
-        result.clip_id = f"upload-{int(time.time())}"
-        result.driver, result.lap, result.cached = driver, lap, False
-        return result
-
+    # No fixture branch here, deliberately. Upload is the one path where a judge
+    # supplies input we have never seen, so it is the one path that must never
+    # answer from canned data. The old short-circuit returned DEMO_CLIPS[-1]
+    # without opening the file at all: upload a Verstappen clip, read back a
+    # scripted Hamilton transcript. GP_USE_FIXTURES still stubs the dashboard for
+    # offline frontend work, but it can no longer fake an analysis.
     clip_id = f"upload-{uuid.uuid4().hex[:10]}"
     path = await _save_upload(file, clip_id)
 

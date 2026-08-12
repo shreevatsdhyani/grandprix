@@ -28,4 +28,14 @@ export default defineConfig({
       '/api': { target: 'http://localhost:8000', changeOrigin: true, ws: true },
     },
   },
+  // `vite preview` serves the production build. Without this the proxy that
+  // dev mode uses to reach the backend is absent, so every /api call 404s.
+  // Also add port 4173 to CORS_ORIGINS in config.py — this is the other half
+  // of the fix (already done).
+  preview: {
+    port: 4173,
+    proxy: {
+      '/api': { target: 'http://localhost:8000', changeOrigin: true, ws: true },
+    },
+  },
 })

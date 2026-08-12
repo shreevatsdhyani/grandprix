@@ -69,16 +69,38 @@ def compute(
                 xs.append(stress)
                 ys.append(delta_by_lap[target])
         r = _pearson(xs, ys)
-        curve.append(LeadLagPoint(lag_laps=lag, correlation=round(r, 3) if r else 0.0))
+        curve.append(
+            LeadLagPoint(
+                lag_laps=lag,
+                correlation=round(r, 3) if r is not None else None,
+                n_pairs=len(xs),
+            )
+        )
 
-    if not any(p.correlation for p in curve):
+    # Pick the peak among *measured* lags only. Coercing an unmeasurable lag to
+    # 0.0 and then taking max() meant that when every measurable offset came back
+    # negative — entirely possible, a driver can sound worst on his fastest laps
+    # — the winner was a lag with no data behind it, and the headline read
+    # "stress peaks N laps before pace loss (r = 0.00)". A claim manufactured
+    # from missing data is the one failure mode this panel cannot survive.
+    measured = [p for p in curve if p.correlation is not None]
+    if not measured:
         return None
 
-    peak = max(curve, key=lambda p: p.correlation)
+    peak = max(measured, key=lambda p: p.correlation)
     n = len(stress_by_lap)
     significant = n >= config.MIN_SAMPLES_FOR_SIGNIFICANCE and peak.correlation > 0
 
-    if peak.lag_laps < 0:
+    if peak.correlation <= 0:
+        # Even the best offset shows no positive relationship. Saying so is the
+        # whole point of measuring: the alternative is to narrate a lag as if it
+        # were a finding when the data refused to produce one.
+        headline = (
+            f"No positive stress-to-pace relationship at any offset in "
+            f"±{max(abs(l) for l in lag_range)} laps "
+            f"(best r = {peak.correlation:.2f} at {peak.lag_laps:+d})."
+        )
+    elif peak.lag_laps < 0:
         headline = (
             f"Voice stress peaks about {abs(peak.lag_laps)} lap"
             f"{'s' if abs(peak.lag_laps) != 1 else ''} before pace loss "

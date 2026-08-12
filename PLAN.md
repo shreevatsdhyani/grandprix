@@ -753,10 +753,10 @@ cd grandprix/backend
 .venv\Scripts\activate
 
 # São Paulo clips:
-python scripts/label_clips.py --session 2023-brazil-r
+python scripts/label_clips.py --session 2023-brazil-r --output data/clips/index_c.csv
 
 # Singapore clips:
-python scripts/label_clips.py --session 2023-singapore-r
+python scripts/label_clips.py --session 2023-singapore-r --output data/clips/index_c.csv
 ```
 
 Your target: **45 labelled clips total** across both sessions. Same keyboard shortcuts
@@ -772,10 +772,10 @@ Singapore is good for Stressed (street circuit, high walls, no room for error).
 **Agreement check with Person B:** Person B will share 10 Dutch GP clip_ids.
 Label those same 10 using:
 ```bash
-python scripts/label_clips.py --session 2023-dutch-r --relabel
+python scripts/label_clips.py --session 2023-dutch-r --relabel --output data/clips/index_c.csv
 ```
-(the `--relabel` flag shows clips even if they already have a label in B's file,
-so you can independently label the agreement set without seeing B's answers first)
+(the `--relabel` flag shows clips even if already labelled in B's file;
+`--output` keeps your answers in your own file so there is no git conflict with B)
 
 ---
 

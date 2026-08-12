@@ -2,12 +2,13 @@
 """Interactive clip labelling tool.
 
 Opens a browser-based UI: one clip at a time, audio player, three buttons.
-Labels are saved back to data/clips/index.csv immediately on click.
+Labels are saved back to the output CSV immediately on every keypress.
 
-    python scripts/label_clips.py                          # all unlabelled clips
+    python scripts/label_clips.py                          # all unlabelled clips → index.csv
     python scripts/label_clips.py --session 2023-dutch-r   # one session only
     python scripts/label_clips.py --driver HAM             # one driver only
     python scripts/label_clips.py --relabel                # include already-labelled clips too
+    python scripts/label_clips.py --output index_c.csv     # Person C: write to separate file
 
 Keyboard shortcuts in the browser:
     1  →  Calm
@@ -15,6 +16,7 @@ Keyboard shortcuts in the browser:
     3  →  Tired
     s  →  Skip (leave blank, move on)
     Space  →  play / pause
+    ←  →  go back one clip
 
 Port 5050 — open http://localhost:5050 after starting.
 """
@@ -23,7 +25,6 @@ from __future__ import annotations
 
 import argparse
 import csv
-import json
 import sys
 import threading
 import webbrowser
@@ -37,31 +38,43 @@ INDEX_CSV = config.CLIPS_DIR / "index.csv"
 CLIPS_DIR = config.CLIPS_DIR
 
 # ──────────────────────────────────────────────────────────────────────────────
-# CSV helpers
+# CSV helpers — fieldnames are read from the file header, never hardcoded
 # ──────────────────────────────────────────────────────────────────────────────
 
-FIELDNAMES = ["clip_id", "session_id", "driver", "lap", "path", "label", "notes"]
+def load_index(path: Path) -> tuple[list[dict], list[str]]:
+    """Return (rows, fieldnames). fieldnames preserves the original column order."""
+    if not path.exists():
+        # Person C starting fresh: copy structure from index.csv
+        src = INDEX_CSV
+        if not src.exists():
+            return [], []
+        with src.open(newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            fieldnames = list(reader.fieldnames or [])
+            rows = list(reader)
+        return rows, fieldnames
+    with path.open(newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        fieldnames = list(reader.fieldnames or [])
+        rows = list(reader)
+    return rows, fieldnames
 
 
-def load_index() -> list[dict]:
-    if not INDEX_CSV.exists():
-        return []
-    with INDEX_CSV.open(newline="", encoding="utf-8") as f:
-        return list(csv.DictReader(f))
-
-
-def save_index(rows: list[dict]) -> None:
-    with INDEX_CSV.open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=FIELDNAMES, extrasaction="ignore")
+def save_index(rows: list[dict], path: Path, fieldnames: list[str]) -> None:
+    with path.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(rows)
 
 
 def find_audio(row: dict) -> Path | None:
-    p = CLIPS_DIR / row.get("path", "")
-    if p.exists():
-        return p
-    # fallback: glob by clip_id
+    # Primary: use the filename column (actual column name in index.csv)
+    fname = row.get("filename", "")
+    if fname:
+        p = CLIPS_DIR / fname
+        if p.exists():
+            return p
+    # Fallback: glob by clip_id with any audio extension
     clip_id = row.get("clip_id", "")
     for ext in (".mp3", ".wav", ".m4a", ".ogg", ".flac"):
         candidate = CLIPS_DIR / f"{clip_id}{ext}"
@@ -102,10 +115,10 @@ HTML = """<!doctype html>
            letter-spacing: .06em; text-transform: uppercase; cursor: pointer;
            transition: background .12s, color .12s, border-color .12s; }
   button:hover, button:focus { outline: none; }
-  #btn-calm:hover, #btn-calm.active    { background: #14532d; border-color: #22c55e; color: #86efac; }
+  #btn-calm:hover, #btn-calm.active     { background: #14532d; border-color: #22c55e; color: #86efac; }
   #btn-stressed:hover, #btn-stressed.active { background: #7f1d1d; border-color: #ef4444; color: #fca5a5; }
-  #btn-tired:hover, #btn-tired.active  { background: #1e3a5f; border-color: #60a5fa; color: #bfdbfe; }
-  #btn-skip:hover, #btn-skip.active    { background: #2a2a2a; border-color: #666; color: #aaa; }
+  #btn-tired:hover, #btn-tired.active   { background: #1e3a5f; border-color: #60a5fa; color: #bfdbfe; }
+  #btn-skip:hover, #btn-skip.active     { background: #2a2a2a; border-color: #666; color: #aaa; }
   .hint { font-size: .68rem; color: #555; text-align: center; }
   .hint kbd { background: #222; border: 1px solid #444; border-radius: 3px;
               padding: 0 .3rem; color: #999; }
@@ -148,7 +161,7 @@ async function loadClip() {
   const data = await res.json();
   if (data.done) {
     document.getElementById('main-card').innerHTML =
-      '<div class="done-banner">All clips labelled!<p>Close this window and commit index.csv.</p></div>';
+      '<div class="done-banner">All clips labelled!<p>Close this window and commit the CSV.</p></div>';
     document.getElementById('progress').textContent = 'Done';
     return;
   }
@@ -169,7 +182,7 @@ async function loadClip() {
   player.play().catch(() => {});
   ['calm','stressed','tired','skip'].forEach(b =>
     document.getElementById('btn-' + b).classList.remove('active'));
-  if (data.existing_label) {
+  if (data.existing_label !== undefined) {
     const map = {'Calm':'calm','Stressed':'stressed','Tired':'tired','':'skip'};
     const b = document.getElementById('btn-' + (map[data.existing_label] ?? 'skip'));
     if (b) b.classList.add('active');
@@ -223,7 +236,13 @@ loadClip();
 # Server
 # ──────────────────────────────────────────────────────────────────────────────
 
-def run_server(queue: list[dict], all_rows: list[dict], port: int) -> None:
+def run_server(
+    queue: list[dict],
+    all_rows: list[dict],
+    fieldnames: list[str],
+    output_path: Path,
+    port: int,
+) -> None:
     from fastapi import FastAPI, HTTPException
     from fastapi.responses import HTMLResponse, Response
     from pydantic import BaseModel
@@ -231,7 +250,6 @@ def run_server(queue: list[dict], all_rows: list[dict], port: int) -> None:
 
     app = FastAPI()
 
-    # mutable cursor
     state = {"idx": 0}
 
     @app.get("/", response_class=HTMLResponse)
@@ -260,7 +278,6 @@ def run_server(queue: list[dict], all_rows: list[dict], port: int) -> None:
 
     @app.get("/api/audio/{clip_id}")
     def audio(clip_id: str):
-        # find the row
         row = next((r for r in all_rows if r["clip_id"] == clip_id), None)
         if row is None:
             raise HTTPException(404, "clip not found")
@@ -279,19 +296,17 @@ def run_server(queue: list[dict], all_rows: list[dict], port: int) -> None:
 
     class LabelRequest(BaseModel):
         clip_id: str
-        label: str  # "Calm" | "Stressed" | "Tired" | "" (skip)
+        label: str
 
     @app.post("/api/label")
     def save_label(req: LabelRequest):
-        valid = {"Calm", "Stressed", "Tired", ""}
-        if req.label not in valid:
-            raise HTTPException(400, f"label must be one of {valid}")
-        # update in-memory rows
+        if req.label not in {"Calm", "Stressed", "Tired", ""}:
+            raise HTTPException(400, "label must be Calm, Stressed, Tired, or empty")
         for row in all_rows:
             if row["clip_id"] == req.clip_id:
                 row["label"] = req.label
                 break
-        save_index(all_rows)
+        save_index(all_rows, output_path, fieldnames)
         state["idx"] += 1
         return {"ok": True}
 
@@ -313,12 +328,19 @@ def main() -> None:
     parser.add_argument("--driver", help="Filter to one driver (3-letter code)")
     parser.add_argument("--relabel", action="store_true",
                         help="Include already-labelled clips (default: unlabelled only)")
+    parser.add_argument("--output", default=None,
+                        help="CSV file to write labels into (default: data/clips/index.csv). "
+                             "Person C should pass: --output data/clips/index_c.csv")
     parser.add_argument("--port", type=int, default=5050)
     args = parser.parse_args()
 
-    all_rows = load_index()
+    output_path = Path(args.output) if args.output else INDEX_CSV
+    if not output_path.is_absolute():
+        output_path = Path(__file__).resolve().parent.parent / output_path
+
+    all_rows, fieldnames = load_index(output_path)
     if not all_rows:
-        print("No clips in index.csv — run fetch_radio.py first.")
+        print(f"No clips found in {output_path} — run fetch_radio.py first.")
         sys.exit(1)
 
     queue = all_rows[:]
@@ -329,7 +351,6 @@ def main() -> None:
     if not args.relabel:
         queue = [r for r in queue if not r.get("label", "").strip()]
 
-    # sort by session, driver, lap
     def sort_key(r: dict):
         lap = r.get("lap")
         try:
@@ -346,18 +367,18 @@ def main() -> None:
         sys.exit(0)
 
     already = sum(1 for r in all_rows if r.get("label", "").strip())
-    print(f"Labelling tool — {len(queue)} clips queued ({already} already labelled across full index)")
-    print(f"  Filter: session={args.session or 'all'}  driver={args.driver or 'all'}")
-    print(f"  Labels save to: {INDEX_CSV}")
+    print(f"Labelling tool — {len(queue)} clips queued  ({already} already labelled in this file)")
+    print(f"  Filter : session={args.session or 'all'}  driver={args.driver or 'all'}")
+    print(f"  Saving : {output_path}")
     print()
     url = f"http://localhost:{args.port}"
     print(f"  Opening {url}")
-    print("  Keyboard: 1=Calm  2=Stressed  3=Tired  S=Skip  Space=play/pause  ←=previous")
-    print("  Ctrl-C to stop (progress is already saved)")
+    print("  Keys: 1=Calm  2=Stressed  3=Tired  S=Skip  Space=play/pause  ←=previous")
+    print("  Ctrl-C to stop (labels already saved)")
     print()
 
     threading.Timer(1.0, lambda: webbrowser.open(url)).start()
-    run_server(queue, all_rows, args.port)
+    run_server(queue, all_rows, fieldnames, output_path, args.port)
 
 
 if __name__ == "__main__":

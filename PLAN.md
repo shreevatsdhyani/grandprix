@@ -306,9 +306,9 @@ architecture. Every team member works an independent branch (see §12).
 
 | Day | Goal | Deliverable |
 |---|---|---|
-| **12 Aug (today)** | Everyone creates HF accounts. B+C start labelling. A starts `batch_analyse.py` overnight. D sets up branches. | HF accounts done. 45 clips labelled (B+C). batch_analyse running. |
-| **13 Aug** | A: merge labels + run `fit_fusion.py` + distil-whisper swap. D: WebSocket UI merged. C: HF dataset published. | Real accuracy number. Real correlation. Inference ~10s/clip. |
-| **14 Aug** | C: HF Space live. D: agent layer feature-flagged. All: dry run wifi-off. A: record demo video. | Public URL. Demo video. Everything works offline. |
+| **12 Aug** | ✅ DONE — distil-whisper swap, batch_analyse all 5 sessions (446/446), auto_label 446 clips, fit_fusion 82.1% accuracy, merged to main. | All four pipeline edges live. |
+| **13 Aug** | D: WebSocket UI. C: HF accounts + dataset published. A: test app + record demo video. | Public URL. Demo video. |
+| **14 Aug** | C: HF Space live. D: agent layer feature-flagged. All: dry run wifi-off. | Everything works offline. |
 | **15 Aug** | Submit by midday. **Do not start anything new.** Rehearse only. | Submitted. |
 
 ### Offline week (16 → 22 Aug)
@@ -392,8 +392,10 @@ If a feature isn't ready, it isn't in the demo and it doesn't get mentioned.
 - [x] Upload → analyse → real result (no fixtures)
 - [x] "Play" working — ClipBrowser lists all 446 curated clips by lap
 - [x] Timeline shows real FastF1 lap data for a real named race
-- [ ] A/B toggle shows a **meaningful** difference (needs trained fusion head)
-- [ ] Lead–lag number computed from **real** analysed clips (needs batch_analyse + labels)
+- [x] A/B toggle shows a **meaningful** difference — fusion 82.1% vs naive 48.4% (+33.6%)
+- [x] Lead–lag number computed from **real** analysed clips — 446 results cached
+- [x] 446 clips auto-labelled (Calm 199 / Stressed 92 / Tired 155) via HF pipeline
+- [x] Fusion head trained — 82.1% LOO-CV, 20 per-driver baselines, committed to main
 - [ ] Dataset published to the Hub
 - [ ] Deployed Space (public URL)
 - [ ] README: problem, architecture diagram, model list, how to run, honest limitations

@@ -4,43 +4,69 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Surfaces — near-black F1 pit-wall feel. Validated as the chart
-        // surface for every palette in src/index.css.
-        plane: '#0a0a08',
-        surface: '#12120f',
-        raised: '#1a1a17',
-        hairline: '#26261f',
+        // Premium F1 Pit Wall surfaces - Carbon fiber & titanium
+        plane: '#050505',
+        surface: '#0f0f0f',
+        raised: '#1a1a1a',
+        hairline: '#2a2a2a',
 
         ink: {
           primary: '#ffffff',
-          secondary: '#c3c2b7',
-          muted: '#898781',
+          secondary: '#b8b8b8',
+          muted: '#6b6b6b',
         },
 
-        // Categorical series slots 1–3. Validated all-pairs against #12120f:
-        // worst CVD ΔE 9.4, worst normal-vision ΔE 20.9, all ≥3:1 contrast.
+        // Racing series colors - High energy, high contrast
         series: {
-          1: '#3987e5', // pace delta
-          2: '#d95926', // stress index
-          3: '#199e70', // text signal
+          1: '#00d9ff', // Cyan - Pace delta
+          2: '#ff0050', // Racing red - Stress
+          3: '#00ff88', // Neon green - Performance
         },
 
-        // Status = state, never identity. Red/green fail CVD separation
-        // (ΔE 4.1 deutan), so these NEVER carry meaning alone — every use is
-        // paired with a text label and, on chart marks, a distinct shape.
+        // Status colors - Mission critical indicators
         status: {
-          good: '#0ca30c',
-          warning: '#fab219',
-          serious: '#ec835a',
-          critical: '#d03b3b',
+          good: '#00ff88',
+          warning: '#ffaa00',
+          serious: '#ff6b00',
+          critical: '#ff0050',
         },
 
-        // Brand red is chrome only — wordmark, rules, accents. Deliberately
-        // never used as a series or status color so it cannot impersonate data.
-        brand: '#e10600',
+        // Brand colors - Racing identity
+        brand: '#ff0050',
+        accent: {
+          cyan: '#00d9ff',
+          purple: '#b000ff',
+          green: '#00ff88',
+        },
       },
       fontFamily: {
-        sans: ['system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
+        sans: [
+          'Inter',
+          'system-ui',
+          '-apple-system',
+          'Segoe UI',
+          'Roboto',
+          'sans-serif',
+        ],
+        mono: [
+          'JetBrains Mono',
+          'Fira Code',
+          'Consolas',
+          'monospace',
+        ],
+      },
+      animation: {
+        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'spin-slow': 'spin 3s linear infinite',
+      },
+      boxShadow: {
+        'glow-red': '0 0 24px rgba(255, 0, 80, 0.4)',
+        'glow-cyan': '0 0 24px rgba(0, 217, 255, 0.4)',
+        'glow-green': '0 0 24px rgba(0, 255, 136, 0.4)',
+      },
+      backgroundImage: {
+        'racing-gradient': 'linear-gradient(135deg, #ff0050 0%, #00d9ff 100%)',
+        'racing-gradient-vertical': 'linear-gradient(180deg, #ff0050 0%, #00d9ff 100%)',
       },
     },
   },

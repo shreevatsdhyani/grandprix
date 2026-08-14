@@ -2,54 +2,347 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Chart roles as custom properties so Recharts (which needs literal color
-   strings, not Tailwind classes) reads the same validated palette as the rest
-   of the UI. Values mirror tailwind.config.js — change both together. */
+/* ═══════════════════════════════════════════════════════════════════════════
+   F1 PIT WALL COMMAND CENTER - PREMIUM DESIGN SYSTEM
+   ═══════════════════════════════════════════════════════════════════════════ */
+
 :root {
   color-scheme: dark;
 
-  --surface-1: #12120f;
-  --page-plane: #0a0a08;
+  /* Core surfaces - Carbon fiber & titanium */
+  --surface-1: #0f0f0f;
+  --page-plane: #050505;
   --text-primary: #ffffff;
-  --text-secondary: #c3c2b7;
-  --text-muted: #898781;
-  --gridline: #26261f;
-  --axis: #383835;
+  --text-secondary: #b8b8b8;
+  --text-muted: #6b6b6b;
+  --gridline: #1a1a1a;
+  --axis: #2a2a2a;
 
-  --series-1: #3987e5; /* pace delta */
-  --series-2: #d95926; /* stress index */
-  --series-3: #199e70; /* text signal */
+  /* Racing series colors - High contrast, energetic */
+  --series-1: #00d9ff; /* Cyan - Pace delta */
+  --series-2: #ff0050; /* Racing red - Stress */
+  --series-3: #00ff88; /* Neon green - Performance */
 
-  --status-good: #0ca30c;
-  --status-warning: #fab219;
-  --status-serious: #ec835a;
-  --status-critical: #d03b3b;
+  /* Status colors */
+  --status-good: #00ff88;
+  --status-warning: #ffaa00;
+  --status-serious: #ff6b00;
+  --status-critical: #ff0050;
 
-  --brand: #e10600;
+  /* Brand colors */
+  --brand: #ff0050;
+  --brand-glow: rgba(255, 0, 80, 0.4);
+  --accent-cyan: #00d9ff;
+  --accent-cyan-glow: rgba(0, 217, 255, 0.3);
 }
 
-html,
-body,
-#root {
+/* ═══════════════════════════════════════════════════════════════════════════
+   BASE STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+html, body, #root {
   height: 100%;
 }
 
 body {
   @apply bg-plane text-ink-primary font-sans antialiased;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(255, 0, 80, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 217, 255, 0.05) 0%, transparent 50%);
+  background-attachment: fixed;
 }
 
-/* Axis ticks and table figures align vertically, so they take tabular figures.
-   Hero numbers deliberately do not — equal-width digits read loose at display
-   sizes. */
+/* ═══════════════════════════════════════════════════════════════════════════
+   TYPOGRAPHY
+   ═══════════════════════════════════════════════════════════════════════════ */
+
 .recharts-cartesian-axis-tick text,
 .tabular {
   font-variant-numeric: tabular-nums;
 }
 
+/* Racing-style headings */
+.racing-title {
+  @apply text-2xl font-black uppercase tracking-wider;
+  background: linear-gradient(135deg, #fff 0%, #00d9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(0, 217, 255, 0.3);
+}
+
+.racing-subtitle {
+  @apply text-xs font-bold uppercase tracking-widest text-ink-muted;
+  letter-spacing: 0.2em;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CARD COMPONENTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
 .card {
-  @apply bg-surface border border-hairline rounded-lg;
+  @apply bg-surface border border-hairline rounded-xl;
+  background: linear-gradient(145deg, rgba(15, 15, 15, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  border-color: rgba(0, 217, 255, 0.3);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    0 0 24px rgba(0, 217, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
 }
 
 .card-title {
-  @apply text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-muted;
+  @apply text-[10px] font-bold uppercase tracking-[0.2em] text-ink-muted;
+  letter-spacing: 0.15em;
+}
+
+/* Premium card variant */
+.card-premium {
+  @apply card;
+  background: linear-gradient(145deg, rgba(20, 20, 20, 0.95) 0%, rgba(15, 15, 15, 0.98) 100%);
+  border: 1px solid rgba(255, 0, 80, 0.2);
+}
+
+.card-premium:hover {
+  border-color: rgba(255, 0, 80, 0.4);
+  box-shadow:
+    0 8px 32px rgba(255, 0, 80, 0.2),
+    0 0 24px rgba(255, 0, 80, 0.15);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BUTTONS & INPUTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.btn-primary {
+  @apply px-4 py-2 rounded-lg font-semibold uppercase tracking-wider text-xs;
+  background: linear-gradient(135deg, #ff0050 0%, #ff3366 100%);
+  border: 1px solid rgba(255, 0, 80, 0.5);
+  box-shadow:
+    0 4px 16px rgba(255, 0, 80, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 24px rgba(255, 0, 80, 0.5),
+    0 0 32px rgba(255, 0, 80, 0.3);
+}
+
+.btn-secondary {
+  @apply px-4 py-2 rounded-lg font-semibold uppercase tracking-wider text-xs;
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.1) 0%, rgba(0, 217, 255, 0.2) 100%);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.2) 0%, rgba(0, 217, 255, 0.3) 100%);
+  border-color: rgba(0, 217, 255, 0.5);
+  box-shadow: 0 0 24px rgba(0, 217, 255, 0.2);
+}
+
+/* Input fields */
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  @apply bg-raised border border-hairline rounded-lg px-3 py-2 text-sm;
+  transition: all 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  @apply outline-none;
+  border-color: rgba(0, 217, 255, 0.5);
+  box-shadow: 0 0 16px rgba(0, 217, 255, 0.2);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RACING ACCENTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Racing stripe */
+.racing-stripe {
+  position: relative;
+}
+
+.racing-stripe::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #ff0050 0%, #00d9ff 100%);
+  border-radius: 2px;
+  box-shadow: 0 0 16px rgba(255, 0, 80, 0.5);
+}
+
+/* Glow effect */
+.glow-red {
+  box-shadow: 0 0 24px rgba(255, 0, 80, 0.3);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 24px rgba(0, 217, 255, 0.3);
+}
+
+/* Pulse animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 40px rgba(0, 217, 255, 0.6);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   STATUS INDICATORS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.status-indicator {
+  @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider;
+}
+
+.status-good {
+  @apply status-indicator;
+  background: rgba(0, 255, 136, 0.15);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  color: #00ff88;
+}
+
+.status-warning {
+  @apply status-indicator;
+  background: rgba(255, 170, 0, 0.15);
+  border: 1px solid rgba(255, 170, 0, 0.3);
+  color: #ffaa00;
+}
+
+.status-critical {
+  @apply status-indicator;
+  background: rgba(255, 0, 80, 0.15);
+  border: 1px solid rgba(255, 0, 80, 0.3);
+  color: #ff0050;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CHARTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.recharts-wrapper {
+  @apply rounded-lg;
+}
+
+.recharts-cartesian-grid line {
+  stroke: var(--gridline);
+  stroke-opacity: 0.5;
+}
+
+.recharts-cartesian-axis-line {
+  stroke: var(--axis);
+}
+
+/* Chart tooltips */
+.recharts-default-tooltip {
+  @apply rounded-lg border-0;
+  background: linear-gradient(145deg, rgba(15, 15, 15, 0.98) 0%, rgba(10, 10, 10, 1) 100%) !important;
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.6),
+    0 0 24px rgba(0, 217, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 217, 255, 0.3) !important;
+  padding: 12px 16px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LOADING & ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.loading-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  border: 3px solid rgba(0, 217, 255, 0.2);
+  border-top-color: #00d9ff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 0.8s linear infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SCROLLBAR STYLING
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff0050 0%, #00d9ff 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff3366 0%, #00ffcc 100%);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE UTILITIES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  .card:hover {
+    transform: none;
+  }
 }

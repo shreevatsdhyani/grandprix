@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { analyseClip, analyseViaWebSocket, getHealth, getSessions, getTimeline } from './api'
 import { ClipBrowser } from './components/ClipBrowser'
+import { Header } from './components/Header'
 import { LeadLagPanel } from './components/LeadLagPanel'
 import { PitWallChat } from './components/PitWallChat'
 import { RaceTimeline } from './components/RaceTimeline'
@@ -176,112 +177,72 @@ export default function App() {
 
   return (
     <div className="min-h-full bg-plane">
-      <header className="border-b border-hairline bg-surface">
-        <div className="mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-3 px-5 py-3">
-          <div className="flex items-baseline gap-3">
-            <span className="h-4 w-1 rounded-sm bg-brand" aria-hidden />
-            <h1 className="text-sm font-bold uppercase tracking-[0.18em] text-ink-primary">
-              The Silent Co-Driver
-            </h1>
-          </div>
+      {/* Professional Header */}
+      <Header
+        sessions={sessions}
+        sessionId={sessionId}
+        driver={driver}
+        mode={mode}
+        health={health}
+        onSessionChange={setSessionId}
+        onDriverChange={setDriver}
+        onModeChange={setMode}
+        currentSession={session}
+      />
 
-          {/* One filter row above everything it scopes — never per-card. */}
-          <div className="flex flex-wrap items-center gap-3">
-            <select
-              value={sessionId ?? ''}
-              onChange={(e) => setSessionId(e.target.value)}
-              aria-label="Race"
-              className="rounded border border-hairline bg-raised px-2 py-1.5 text-[11px] text-ink-secondary"
-            >
-              {sessions.map((s) => (
-                <option key={s.session_id} value={s.session_id}>
-                  {s.year} {s.event_name}
-                </option>
-              ))}
-            </select>
-
-            <select
-              value={driver}
-              onChange={(e) => setDriver(e.target.value)}
-              aria-label="Driver"
-              className="rounded border border-hairline bg-raised px-2 py-1.5 text-[11px] text-ink-secondary"
-            >
-              {(session?.drivers ?? [driver]).map((d) => (
-                <option key={d} value={d}>
-                  {d}
-                </option>
-              ))}
-            </select>
-
-            <div
-              className="flex overflow-hidden rounded border border-hairline text-[11px]"
-              role="group"
-              aria-label="Scoring mode"
-            >
-              {(['naive', 'fusion'] as const).map((m) => (
-                <button
-                  key={m}
-                  onClick={() => setMode(m)}
-                  aria-pressed={mode === m}
-                  className={`px-3 py-1.5 font-semibold uppercase tracking-wider transition ${
-                    mode === m
-                      ? 'bg-brand/20 text-ink-primary'
-                      : 'text-ink-muted hover:text-ink-secondary'
-                  }`}
-                >
-                  {m === 'naive' ? 'Single model' : 'Fusion (ours)'}
-                </button>
-              ))}
-            </div>
-
-            {health && (
-              <span
-                className="flex items-center gap-1.5 text-[10px] text-ink-muted"
-                title={Object.entries(health.models_loaded)
-                  .map(([m, ok]) => `${ok ? '✓' : '✗'} ${m}`)
-                  .join('\n')}
-              >
-                <span
-                  className="inline-block h-1.5 w-1.5 rounded-full"
-                  style={{
-                    background: health.offline_ready
-                      ? 'var(--status-good)'
-                      : 'var(--status-warning)',
-                  }}
-                  aria-hidden
-                />
-                {health.offline_ready ? 'Offline ready' : 'Degraded'}
-              </span>
-            )}
-          </div>
-        </div>
-      </header>
-
-      <main className="mx-auto max-w-[1400px] px-5 py-4">
+      <main className="mx-auto max-w-[1600px] px-6 py-6">
         {error && (
-          <div className="mb-3 rounded border border-status-critical/40 bg-status-critical/10 px-3 py-2 text-xs text-ink-secondary">
-            {error}
+          <div className="mb-4 rounded-xl border border-status-critical/40 bg-status-critical/10 px-4 py-3 shadow-glow-red backdrop-blur">
+            <div className="flex items-center gap-3">
+              <div className="h-8 w-8 flex-shrink-0 rounded-full bg-status-critical/20 flex items-center justify-center">
+                <svg className="h-5 w-5 text-status-critical" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <p className="text-sm font-medium text-status-critical">{error}</p>
+            </div>
           </div>
         )}
 
         {noClips && (
-          <div className="mb-3 rounded border border-hairline bg-raised px-3 py-2 text-xs text-ink-secondary">
-            <strong className="text-ink-primary">Real lap data, no radio clips yet.</strong>{' '}
-            The pace panel below is {timeline?.session.event_name}, {timeline?.driver} — real
-            FastF1 timing. Stress, strategy and correlation stay empty until clips are added to{' '}
-            <code className="text-ink-muted">data/clips/</code>, or you upload one on the left.
+          <div className="mb-4 rounded-xl border border-accent-cyan/30 bg-accent-cyan/5 px-4 py-3 shadow-glow-cyan backdrop-blur">
+            <div className="flex items-center gap-3">
+              <div className="h-8 w-8 flex-shrink-0 rounded-full bg-accent-cyan/20 flex items-center justify-center">
+                <svg className="h-5 w-5 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-accent-cyan">Real lap data, no radio clips yet.</p>
+                <p className="text-xs text-ink-muted mt-1">
+                  The pace panel below is {timeline?.session.event_name}, {timeline?.driver} — real
+                  FastF1 timing. Stress, strategy and correlation stay empty until clips are added to{' '}
+                  <code className="rounded bg-raised px-1.5 py-0.5 text-ink-secondary">data/clips/</code>, or you upload one on the left.
+                </p>
+              </div>
+            </div>
           </div>
         )}
 
         {!timelineLoaded ? (
-          <div className="py-24 text-center text-sm text-ink-muted">Loading session…</div>
+          <div className="flex flex-col items-center justify-center py-32">
+            <div className="spinner mb-6" />
+            <p className="text-sm font-medium text-ink-secondary">Loading session data...</p>
+            <p className="text-xs text-ink-muted mt-1">Initializing AI models and race telemetry</p>
+          </div>
         ) : error && !timeline ? (
-          <div className="py-24 text-center text-sm text-status-critical">
-            {error}
+          <div className="flex flex-col items-center justify-center py-32">
+            <div className="mb-6 h-16 w-16 rounded-full bg-status-critical/10 flex items-center justify-center">
+              <svg className="h-8 w-8 text-status-critical" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <p className="text-sm font-medium text-status-critical">{error}</p>
           </div>
         ) : timeline == null ? null : (
-          <div className="grid grid-cols-1 gap-3 lg:grid-cols-[340px_1fr_300px]">
-            <div className="flex flex-col gap-3">
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-[360px_1fr_340px]">
+            {/* Left Column: Radio Inspector & Clip Browser */}
+            <div className="flex flex-col gap-4">
               <RadioInspector
                 clip={selectedClip}
                 mode={mode}
@@ -311,7 +272,8 @@ export default function App() {
               )}
             </div>
 
-            <div className="flex flex-col gap-3">
+            {/* Center Column: Timeline & Lead-Lag Analysis */}
+            <div className="flex flex-col gap-4">
               <RaceTimeline
                 timeline={timeline}
                 selectedClipId={selectedClipId}
@@ -320,7 +282,8 @@ export default function App() {
               <LeadLagPanel analysis={timeline.lead_lag} />
             </div>
 
-            <div className="flex flex-col gap-3">
+            {/* Right Column: Strategy Calls & Driver Baseline */}
+            <div className="flex flex-col gap-4">
               <StrategyCalls calls={timeline.strategy_calls} onSelectLap={selectLap} />
 
               <section className="card p-4" aria-label="Driver baseline">

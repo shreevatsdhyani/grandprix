@@ -158,7 +158,7 @@ export function PitWallChat({ sessionId, driver }: Props) {
 
       {/* Chat Modal */}
       {isOpen && (
-        <div className="fixed bottom-8 right-8 z-50 flex h-[680px] w-[450px] flex-col overflow-hidden rounded-2xl border border-hairline bg-surface/98 backdrop-blur-xl shadow-2xl animate-in slide-in-from-bottom-4">
+        <div className="fixed bottom-8 right-8 z-50 flex h-[600px] w-[400px] flex-col overflow-hidden rounded-2xl border border-hairline bg-surface/98 backdrop-blur-xl shadow-2xl animate-in slide-in-from-bottom-4">
           {/* Header */}
           <div className="relative border-b border-hairline bg-gradient-to-r from-surface via-raised to-surface px-5 py-4">
             {/* Racing stripe accent */}
@@ -168,11 +168,11 @@ export function PitWallChat({ sessionId, driver }: Props) {
               <div>
                 <h3 className="text-base font-black uppercase tracking-wider">
                   <span className="bg-racing-gradient bg-clip-text text-transparent">
-                    Ask the Pit Wall
+                    AI Pit Wall
                   </span>
                 </h3>
                 <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-widest text-ink-muted">
-                  AI Race Engineer • {driver} • {sessionId}
+                  The Silent Co-Driver • {driver} • {sessionId}
                 </p>
               </div>
 
@@ -201,7 +201,7 @@ export function PitWallChat({ sessionId, driver }: Props) {
                 {/* Welcome message */}
                 <div className="rounded-xl border border-accent-cyan/20 bg-accent-cyan/5 p-4">
                   <p className="text-sm font-medium text-ink-primary">
-                    👋 I'm your AI Race Engineer
+                    🏎️ AI Pit Wall - Your Silent Co-Driver
                   </p>
                   <p className="mt-2 text-xs leading-relaxed text-ink-muted">
                     I can analyze {driver}'s stress levels, lap performance, radio transcripts, and correlations between stress and pace.

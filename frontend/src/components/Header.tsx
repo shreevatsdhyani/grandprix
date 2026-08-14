@@ -41,7 +41,7 @@ export function Header({
           <div className="flex items-center gap-4">
             <div className="flex h-12 w-1 rounded-full bg-racing-gradient shadow-glow-red" />
             <div>
-              <h1 className="text-2xl font-black uppercase tracking-wider text-white">
+              <h1 className="text-3xl font-black uppercase tracking-wider text-white">
                 <span className="bg-racing-gradient bg-clip-text text-transparent">
                   The Silent Co-Driver
                 </span>
@@ -52,25 +52,13 @@ export function Header({
             </div>
           </div>
 
-          {/* System Health */}
-          {health && (
-            <div className="flex items-center gap-3">
-              <div className="text-right">
-                <p className="text-xs font-semibold text-ink-secondary">System Status</p>
-                <p className="text-[10px] uppercase tracking-wider text-ink-muted">
-                  {health.offline_ready ? 'All Systems Online' : 'Degraded Mode'}
-                </p>
-              </div>
-              <div
-                className={`h-3 w-3 rounded-full ${
-                  health.offline_ready
-                    ? 'animate-pulse-glow bg-status-good shadow-glow-green'
-                    : 'bg-status-warning'
-                }`}
-                title={Object.entries(health.models_loaded)
-                  .map(([m, ok]) => `${ok ? '✓' : '✗'} ${m}`)
-                  .join('\n')}
-              />
+          {/* LIVE Indicator */}
+          {health && health.offline_ready && (
+            <div className="flex items-center gap-2 rounded-full bg-status-good/10 px-4 py-2 shadow-glow-green border border-status-good/20">
+              <div className="h-2.5 w-2.5 animate-pulse rounded-full bg-status-good" />
+              <span className="text-sm font-bold uppercase tracking-wider text-status-good">
+                LIVE
+              </span>
             </div>
           )}
         </div>
@@ -133,14 +121,6 @@ export function Header({
                 </button>
               ))}
             </div>
-          </div>
-
-          {/* Live indicator */}
-          <div className="ml-auto flex items-center gap-2 rounded-full bg-status-good/10 px-4 py-2 shadow-glow-green">
-            <div className="h-2 w-2 animate-pulse rounded-full bg-status-good" />
-            <span className="text-xs font-bold uppercase tracking-wider text-status-good">
-              Live
-            </span>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import type { ClipAnalysis, ProgressEvent, ScoringMode } from '../types'
+import type { ClipAnalysis, ProgressEvent, ScoringMode, Timeline } from '../types'
 import { MOOD_COLOR } from '../types'
 import { PipelineProgress } from './PipelineProgress'
 
@@ -23,6 +23,8 @@ interface Props {
   streaming?: boolean
   /** Re-run the pipeline over the selected clip, streaming progress. */
   onReanalyse?: () => void
+  /** Timeline data for lap validation */
+  timeline: Timeline | null
 }
 
 export function RadioInspector({
@@ -35,13 +37,44 @@ export function RadioInspector({
   progress = [],
   streaming = false,
   onReanalyse,
+  timeline,
 }: Props) {
   const inputRef = useRef<HTMLInputElement>(null)
   const audioRef = useRef<HTMLAudioElement>(null)
   const [, setPlaying] = useState(false)
   const [audioError, setAudioError] = useState(false)
+  const [lapError, setLapError] = useState<string | null>(null)
 
   useEffect(() => setAudioError(false), [clip?.clip_id])
+
+  // Get valid lap range from timeline
+  const validLapRange = timeline ? {
+    min: Math.min(...timeline.points.map(p => p.lap)),
+    max: Math.max(...timeline.points.map(p => p.lap))
+  } : null
+
+  // Validate lap input
+  const handleLapChange = (val: string) => {
+    onUploadLapChange(val)
+
+    if (!val) {
+      setLapError(null)
+      return
+    }
+
+    const lapNum = parseInt(val)
+    if (isNaN(lapNum)) {
+      setLapError('Please enter a valid lap number')
+      return
+    }
+
+    if (validLapRange && (lapNum < validLapRange.min || lapNum > validLapRange.max)) {
+      setLapError(`Please enter a lap between ${validLapRange.min} and ${validLapRange.max}`)
+      return
+    }
+
+    setLapError(null)
+  }
 
   const result = clip ? (mode === 'fusion' ? clip.fusion : clip.naive) : null
 
@@ -70,15 +103,22 @@ export function RadioInspector({
               is the whole point of the project. */}
           <input
             type="number"
-            min={1}
-            max={99}
+            min={validLapRange?.min ?? 1}
+            max={validLapRange?.max ?? 99}
             placeholder="Lap?"
             value={uploadLap}
-            onChange={(e) => onUploadLapChange(e.target.value)}
-            className="w-16 rounded border border-hairline bg-raised px-2 py-2 text-center text-xs text-ink-secondary"
+            onChange={(e) => handleLapChange(e.target.value)}
+            className={`w-16 rounded border px-2 py-2 text-center text-xs ${
+              lapError
+                ? 'border-status-critical bg-status-critical/10 text-status-critical'
+                : 'border-hairline bg-raised text-ink-secondary'
+            }`}
             aria-label="Lap number for uploaded clip"
           />
         </div>
+        {lapError && (
+          <p className="text-[10px] text-status-critical">{lapError}</p>
+        )}
         <input
           ref={inputRef}
           type="file"

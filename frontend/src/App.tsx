@@ -252,6 +252,7 @@ export default function App() {
                 onUploadLapChange={setUploadLap}
                 progress={progress}
                 streaming={streamingClipId != null}
+                timeline={timeline}
                 // Uploads are excluded: the stream route resolves clips through
                 // the index, and an upload isn't in it.
                 onReanalyse={
@@ -321,11 +322,19 @@ export default function App() {
               </section>
 
               {selectedClip && !selectedClip.fusion.fitted && mode === 'fusion' && (
-                <p className="rounded border border-status-warning/40 bg-status-warning/10 px-3 py-2 text-[10px] leading-snug text-ink-secondary">
-                  <span aria-hidden>▲ </span>
-                  Fusion head not trained yet — this verdict comes from the interpretable
-                  fallback rule. Run <code>scripts/fit_fusion.py</code> once clips are labelled.
-                </p>
+                <div className="rounded-xl border border-status-warning/40 bg-status-warning/10 px-4 py-3">
+                  <div className="flex items-start gap-3">
+                    <svg className="h-5 w-5 flex-shrink-0 text-status-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    <div>
+                      <p className="text-xs font-semibold text-status-warning">Fusion AI Using Fallback Mode</p>
+                      <p className="mt-1 text-[10px] leading-relaxed text-ink-muted">
+                        The AI is using interpretable rules. For best accuracy, train the fusion model by running <code className="rounded bg-raised px-1.5 py-0.5 text-ink-secondary">scripts/fit_fusion.py</code> after labeling clips.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               )}
             </div>
           </div>

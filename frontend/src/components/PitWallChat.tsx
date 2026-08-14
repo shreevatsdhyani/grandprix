@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { CHAT, UI } from '../constants'
 
 /**
  * Premium F1 Pit Wall AI Assistant
@@ -118,7 +119,8 @@ export function PitWallChat({ sessionId, driver }: Props) {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-8 right-8 z-50 group"
+          className="fixed bottom-8 right-8 group"
+          style={{ zIndex: UI.Z_CHAT }}
           aria-label="Open pit wall AI assistant"
         >
           {/* Glassmorphism background ring */}
@@ -141,14 +143,16 @@ export function PitWallChat({ sessionId, driver }: Props) {
 
           {/* Main gradient button */}
           <div
-            className="relative h-16 w-16 rounded-full flex items-center justify-center transform transition-all group-hover:scale-105"
+            className="relative rounded-full flex items-center justify-center transform transition-all group-hover:scale-105"
+            style={{ width: `${UI.CHAT_BUTTON_SIZE}px`, height: `${UI.CHAT_BUTTON_SIZE}px` }}
             style={{
               background: 'linear-gradient(135deg, #ff0050 0%, #00d9ff 100%)',
               boxShadow: '0 4px 20px rgba(255, 0, 80, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
             }}
           >
             <svg
-              className="h-7 w-7 text-white"
+              className="text-white"
+              style={{ width: `${UI.CHAT_ICON_SIZE}px`, height: `${UI.CHAT_ICON_SIZE}px` }}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -190,7 +194,12 @@ export function PitWallChat({ sessionId, driver }: Props) {
       {/* Chat Modal */}
       {isOpen && (
         <div
-          className="fixed bottom-8 right-8 z-50 flex h-[600px] w-[400px] flex-col overflow-hidden rounded-2xl animate-in slide-in-from-bottom-4"
+          className={`fixed bottom-8 right-8 flex flex-col overflow-hidden rounded-2xl animate-in slide-in-from-bottom-4`}
+          style={{
+            zIndex: UI.Z_CHAT,
+            width: `${UI.CHAT_WIDTH}px`,
+            height: `${UI.CHAT_HEIGHT}px`,
+          }}
           style={{
             background: 'linear-gradient(145deg, rgba(15, 15, 15, 0.85) 0%, rgba(10, 10, 10, 0.9) 100%)',
             backdropFilter: 'blur(20px)',

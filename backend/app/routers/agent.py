@@ -22,15 +22,12 @@ from typing import Any
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
-from app import config
+from app import agent_config, config
 from app.data import store, timeline as timeline_module
+from app.routers.agent_cache import get_cache
 
 log = logging.getLogger(__name__)
 router = APIRouter(prefix="/api/agent", tags=["agent"])
-
-# Groq models that support tool calling (function calling)
-# Updated to latest stable model with tool calling support
-GROQ_MODEL = "llama-3.3-70b-versatile"
 
 
 class AgentRequest(BaseModel):
@@ -267,7 +264,20 @@ async def ask_agent(req: AgentRequest) -> AgentResponse:
     The agent can call tools to retrieve stress data, lap times, transcripts,
     and correlation analysis. Every answer is grounded in real data from
     data/results/ — no hallucination.
+
+    Responses are cached for 1 hour to improve performance.
     """
+    # Input validation
+    if not req.question or not req.question.strip():
+        raise HTTPException(400, "Question cannot be empty")
+
+    # Check cache first
+    cache = get_cache()
+    cached = cache.get(req.question, req.session_id, req.driver)
+    if cached is not None:
+        log.info(f"Returning cached response for: {req.question[:50]}...")
+        return AgentResponse(**cached)
+
     api_key = os.getenv("GROQ_API_KEY")
     if not api_key:
         raise HTTPException(500, "GROQ_API_KEY not set")
@@ -280,27 +290,10 @@ async def ask_agent(req: AgentRequest) -> AgentResponse:
     client = Groq(api_key=api_key)
 
     # System prompt that prevents hallucination
-    system_prompt = f"""You are a race engineer assistant analyzing F1 driver stress and performance data.
-
-Current context:
-- Driver: {req.driver}
-- Session: {req.session_id}
-
-You have access to 5 tools that retrieve REAL data from our analysis pipeline:
-1. get_stress_series - stress index per lap
-2. get_lap_deltas - pace deltas per lap
-3. get_transcript - what driver said in a clip
-4. find_stressed_moments - find high-stress radio calls
-5. get_lead_lag_info - correlation between stress and pace
-
-CRITICAL RULES:
-- ONLY use the tools provided - never guess or make up data
-- If you don't have a tool for something, say "I don't have access to that data"
-- Be concise - 2-3 sentences max
-- Cite lap numbers when discussing specific moments
-- When discussing correlation, mention the sample size to be honest about confidence
-
-Answer the user's question using the tools."""
+    system_prompt = agent_config.SYSTEM_PROMPT_TEMPLATE.format(
+        driver=req.driver,
+        session_id=req.session_id
+    )
 
     messages = [
         {"role": "system", "content": system_prompt},
@@ -308,17 +301,16 @@ Answer the user's question using the tools."""
     ]
 
     tools_used = []
-    max_iterations = 5  # Prevent infinite loops
 
-    for iteration in range(max_iterations):
+    for iteration in range(agent_config.AGENT_MAX_ITERATIONS):
         try:
             response = client.chat.completions.create(
-                model=GROQ_MODEL,
+                model=agent_config.GROQ_MODEL,
                 messages=messages,
                 tools=TOOLS,
                 tool_choice="auto",
-                max_tokens=1024,
-                temperature=0.1,  # Low temperature = more deterministic, less creative
+                max_tokens=agent_config.AGENT_MAX_TOKENS,
+                temperature=agent_config.AGENT_TEMPERATURE,
             )
         except Exception as e:
             log.error(f"Groq API call failed: {e}")
@@ -329,7 +321,12 @@ Answer the user's question using the tools."""
         # If no tool calls, we have the final answer
         if not assistant_message.tool_calls:
             final_answer = assistant_message.content or "I couldn't generate an answer."
-            return AgentResponse(answer=final_answer, tools_used=tools_used)
+            response = AgentResponse(answer=final_answer, tools_used=tools_used)
+
+            # Cache the response
+            cache.set(req.question, req.session_id, req.driver, response.model_dump())
+
+            return response
 
         # Execute tool calls
         messages.append({
@@ -374,7 +371,12 @@ Answer the user's question using the tools."""
                 })
 
     # Max iterations reached
-    return AgentResponse(
+    response = AgentResponse(
         answer="I couldn't complete the analysis - too many steps required.",
         tools_used=tools_used,
     )
+
+    # Cache even failed responses to avoid retrying
+    cache.set(req.question, req.session_id, req.driver, response.model_dump())
+
+    return response

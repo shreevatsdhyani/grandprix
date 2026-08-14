@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { analyseClip, analyseViaWebSocket, getHealth, getSessions, getTimeline } from './api'
 import { ClipBrowser } from './components/ClipBrowser'
+import { ComponentErrorBoundary, ErrorBoundary } from './components/ErrorBoundary'
 import { Header } from './components/Header'
 import { LeadLagPanel } from './components/LeadLagPanel'
 import { PitWallChat } from './components/PitWallChat'
@@ -17,7 +18,7 @@ import type {
   Timeline,
 } from './types'
 
-export default function App() {
+function AppContent() {
   const [mode, setMode] = useState<ScoringMode>('fusion')
   const [sessions, setSessions] = useState<SessionMeta[]>([])
   const [sessionId, setSessionId] = useState<string | null>(null)
@@ -243,7 +244,8 @@ export default function App() {
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-[360px_1fr_340px]">
             {/* Left Column: Radio Inspector & Clip Browser */}
             <div className="flex flex-col gap-4">
-              <RadioInspector
+              <ComponentErrorBoundary>
+                <RadioInspector
                 clip={selectedClip}
                 mode={mode}
                 onUpload={handleUpload}
@@ -261,31 +263,45 @@ export default function App() {
                     : undefined
                 }
               />
-              <SignalBars clip={selectedClip} />
+              </ComponentErrorBoundary>
+
+              <ComponentErrorBoundary>
+                <SignalBars clip={selectedClip} />
+              </ComponentErrorBoundary>
+
               {sessionId && (
-                <ClipBrowser
+                <ComponentErrorBoundary>
+                  <ClipBrowser
                   sessionId={sessionId}
                   driver={driver}
                   selectedClipId={selectedClipId}
                   onSelect={handleBrowseSelect}
                   refreshKey={libraryVersion}
                 />
+                </ComponentErrorBoundary>
               )}
             </div>
 
             {/* Center Column: Timeline & Lead-Lag Analysis */}
             <div className="flex flex-col gap-4">
-              <RaceTimeline
+              <ComponentErrorBoundary>
+                <RaceTimeline
                 timeline={timeline}
                 selectedClipId={selectedClipId}
                 onSelectClip={setSelectedClipId}
               />
-              <LeadLagPanel analysis={timeline.lead_lag} />
+              </ComponentErrorBoundary>
+
+              <ComponentErrorBoundary>
+                <LeadLagPanel analysis={timeline.lead_lag} />
+              </ComponentErrorBoundary>
             </div>
 
             {/* Right Column: Strategy Calls & Driver Baseline */}
             <div className="flex flex-col gap-4">
-              <StrategyCalls calls={timeline.strategy_calls} onSelectLap={selectLap} />
+              <ComponentErrorBoundary>
+                <StrategyCalls calls={timeline.strategy_calls} onSelectLap={selectLap} />
+              </ComponentErrorBoundary>
 
               <section className="card p-4" aria-label="Driver baseline">
                 <h2 className="card-title mb-2">Driver baseline</h2>
@@ -342,7 +358,22 @@ export default function App() {
       </main>
 
       {/* Floating chat - available everywhere once a session is selected */}
-      <PitWallChat sessionId={sessionId} driver={driver} />
+      <ComponentErrorBoundary>
+        <PitWallChat sessionId={sessionId} driver={driver} />
+      </ComponentErrorBoundary>
     </div>
+  )
+}
+
+export default function App() {
+  return (
+    <ErrorBoundary
+      onError={(error, errorInfo) => {
+        // In production, send to error tracking service (e.g., Sentry)
+        console.error('App error:', error, errorInfo)
+      }}
+    >
+      <AppContent />
+    </ErrorBoundary>
   )
 }

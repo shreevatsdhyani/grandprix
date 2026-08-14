@@ -104,3 +104,21 @@ desktop.ini
 *.log
 tmp/
 scratch/
+
+# --------------------------------------------------------------------------
+# Internal documentation / planning files
+#
+# Development documentation not meant for public repo:
+# - Planning documents
+# - Status reports
+# - Test reports
+# - Architecture notes
+# - Design documentation
+# --------------------------------------------------------------------------
+PLAN.md
+STATUS.md
+TEST_REPORT.md
+understand.md
+CRITICAL_TECHNICAL_AUDIT.md
+FRONTEND_REDESIGN.md
+GLASSMORPHISM_REDESIGN.md

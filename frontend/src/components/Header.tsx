@@ -64,13 +64,11 @@ export function Header({
 
             {/* Brand text */}
             <div className="min-w-0">
-              <p className="text-[9px] font-semibold uppercase tracking-[0.15em] text-ink-muted mb-0.5">
+              <p className="text-[9px] font-semibold uppercase tracking-[0.15em] text-white/70 mb-0.5">
                 AI-Powered Race Strategy System
               </p>
-              <h1 className="text-xl font-black tracking-tight">
-                <span className="bg-racing-gradient bg-clip-text text-transparent">
-                  The Silent Co-Driver
-                </span>
+              <h1 className="text-xl font-black tracking-tight text-white">
+                The Silent Co-Driver
               </h1>
             </div>
           </div>

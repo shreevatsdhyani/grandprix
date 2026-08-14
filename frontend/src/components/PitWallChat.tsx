@@ -121,73 +121,150 @@ export function PitWallChat({ sessionId, driver }: Props) {
           className="fixed bottom-8 right-8 z-50 group"
           aria-label="Open pit wall AI assistant"
         >
-          {/* Blurred background for visibility */}
-          <div className="absolute inset-[-8px] rounded-full bg-surface/80 backdrop-blur-md border border-hairline/50" />
+          {/* Glassmorphism background ring */}
+          <div
+            className="absolute inset-[-10px] rounded-full backdrop-blur-xl"
+            style={{
+              background: 'linear-gradient(135deg, rgba(15, 15, 15, 0.9) 0%, rgba(20, 20, 20, 0.85) 100%)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
+            }}
+          />
 
-          {/* Outer glow ring */}
-          <div className="absolute inset-0 rounded-full bg-racing-gradient blur-xl opacity-50 group-hover:opacity-70 transition-opacity" />
+          {/* Animated outer glow */}
+          <div
+            className="absolute inset-0 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity animate-pulse"
+            style={{
+              background: 'radial-gradient(circle, rgba(255, 0, 80, 0.6) 0%, rgba(0, 217, 255, 0.3) 100%)',
+            }}
+          />
 
-          {/* Main button */}
-          <div className="relative h-16 w-16 rounded-full bg-racing-gradient shadow-2xl flex items-center justify-center transform transition-all group-hover:scale-110">
+          {/* Main gradient button */}
+          <div
+            className="relative h-16 w-16 rounded-full flex items-center justify-center transform transition-all group-hover:scale-105"
+            style={{
+              background: 'linear-gradient(135deg, #ff0050 0%, #00d9ff 100%)',
+              boxShadow: '0 4px 20px rgba(255, 0, 80, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
+            }}
+          >
             <svg
-              className="h-8 w-8 text-white drop-shadow-lg"
+              className="h-7 w-7 text-white"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
+              strokeWidth={2.5}
             >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth={2}
                 d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
               />
             </svg>
 
-            {/* Pulse indicator for new users */}
+            {/* Pulse badge for new users */}
             {messages.length === 0 && (
               <span className="absolute -top-1 -right-1 flex h-4 w-4">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-status-good opacity-75" />
-                <span className="relative inline-flex h-4 w-4 rounded-full bg-status-good shadow-glow-green" />
+                <span
+                  className="relative inline-flex h-4 w-4 rounded-full bg-status-good"
+                  style={{ boxShadow: '0 0 12px rgba(0, 255, 136, 0.8)' }}
+                />
               </span>
             )}
           </div>
 
-          {/* Tooltip */}
-          <span className="absolute bottom-full mb-3 right-0 px-4 py-2 bg-surface/95 backdrop-blur-lg rounded-xl border border-hairline text-xs font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-xl">
-            Ask the Pit Wall AI
+          {/* Glassmorphism tooltip */}
+          <span
+            className="absolute bottom-full mb-3 right-0 px-3 py-1.5 rounded-lg text-[11px] font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-xl"
+            style={{
+              background: 'linear-gradient(135deg, rgba(15, 15, 15, 0.95) 0%, rgba(20, 20, 20, 0.9) 100%)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.5)',
+            }}
+          >
+            Ask the Pit Wall
           </span>
         </button>
       )}
 
       {/* Chat Modal */}
       {isOpen && (
-        <div className="fixed bottom-8 right-8 z-50 flex h-[600px] w-[400px] flex-col overflow-hidden rounded-2xl border border-hairline bg-surface/98 backdrop-blur-xl shadow-2xl animate-in slide-in-from-bottom-4">
-          {/* Header */}
-          <div className="relative border-b border-hairline bg-gradient-to-r from-surface via-raised to-surface px-5 py-5">
-            {/* Racing stripe accent */}
-            <div className="absolute left-0 top-0 h-full w-1.5 bg-racing-gradient-vertical shadow-glow-red" />
+        <div
+          className="fixed bottom-8 right-8 z-50 flex h-[600px] w-[400px] flex-col overflow-hidden rounded-2xl animate-in slide-in-from-bottom-4"
+          style={{
+            background: 'linear-gradient(145deg, rgba(15, 15, 15, 0.85) 0%, rgba(10, 10, 10, 0.9) 100%)',
+            backdropFilter: 'blur(20px)',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
+            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.5), 0 0 1px rgba(255, 0, 80, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05)',
+          }}
+        >
+          {/* Glassmorphism Header */}
+          <div
+            className="relative px-4 py-3.5 backdrop-blur-md"
+            style={{
+              background: 'linear-gradient(145deg, rgba(20, 20, 20, 0.7) 0%, rgba(15, 15, 15, 0.8) 100%)',
+              borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
+            }}
+          >
+            {/* Subtle gradient accent */}
+            <div
+              className="absolute left-0 top-0 h-full w-[3px]"
+              style={{
+                background: 'linear-gradient(180deg, rgba(255, 0, 80, 0.6) 0%, rgba(0, 217, 255, 0.4) 100%)',
+                boxShadow: '0 0 12px rgba(255, 0, 80, 0.3)',
+              }}
+            />
 
-            <div className="flex items-start justify-between gap-4">
-              <div className="flex-1">
-                <h3 className="mb-2 text-xl font-black tracking-tight">
-                  <span className="bg-racing-gradient bg-clip-text text-transparent">
+            <div className="flex items-start justify-between gap-3">
+              {/* Icon + Text */}
+              <div className="flex items-start gap-3 flex-1 min-w-0">
+                {/* Refined icon in gradient circle */}
+                <div className="relative flex-shrink-0 mt-0.5">
+                  <div
+                    className="absolute inset-0 rounded-full blur-lg"
+                    style={{
+                      background: 'radial-gradient(circle, rgba(255, 0, 80, 0.4) 0%, transparent 70%)',
+                    }}
+                  />
+                  <div
+                    className="relative h-9 w-9 rounded-full flex items-center justify-center"
+                    style={{
+                      background: 'radial-gradient(circle, rgba(255, 0, 80, 0.2) 0%, rgba(0, 217, 255, 0.1) 100%)',
+                      border: '1px solid rgba(255, 0, 80, 0.3)',
+                    }}
+                  >
+                    <svg className="h-4.5 w-4.5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Text hierarchy */}
+                <div className="flex-1 min-w-0">
+                  <h3 className="mb-1 text-base font-bold tracking-tight text-white">
                     AI Pit Wall
-                  </span>
-                </h3>
-                <p className="mb-1.5 text-xs font-medium leading-relaxed text-ink-secondary">
-                  The Silent Co-Driver
-                </p>
-                <p className="text-[10px] font-medium text-ink-muted">
-                  I can analyze {driver}'s stress levels, lap performance, radio transcripts, and correlations.
-                </p>
+                  </h3>
+                  <p className="text-[10px] font-medium text-ink-muted leading-relaxed">
+                    The Silent Co-Driver • {driver}
+                  </p>
+                  <p className="mt-1.5 text-[10px] leading-snug text-ink-muted">
+                    Stress, pace, transcripts & correlations
+                  </p>
+                </div>
               </div>
 
+              {/* Close button */}
               <button
                 onClick={() => setIsOpen(false)}
-                className="flex-shrink-0 rounded-lg p-2 text-ink-muted transition-all hover:bg-raised hover:text-ink-primary"
+                className="flex-shrink-0 rounded-lg p-1.5 text-ink-muted transition-all hover:bg-white/5 hover:text-ink-primary"
                 aria-label="Close chat"
               >
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -206,7 +283,7 @@ export function PitWallChat({ sessionId, driver }: Props) {
               <div className="space-y-4">
                 {/* Suggested questions */}
                 <div>
-                  <p className="mb-3 text-[10px] font-bold uppercase tracking-widest text-ink-muted">
+                  <p className="mb-3 text-[10px] font-semibold uppercase tracking-wider text-ink-muted">
                     Quick Questions
                   </p>
                   <div className="space-y-2">
@@ -214,14 +291,22 @@ export function PitWallChat({ sessionId, driver }: Props) {
                       <button
                         key={i}
                         onClick={() => handleSuggestionClick(item.q)}
-                        className="w-full group flex items-center gap-3 rounded-lg border border-hairline bg-raised/50 px-4 py-3 text-left transition-all hover:border-accent-cyan/50 hover:bg-accent-cyan/10 hover:shadow-glow-cyan"
+                        className="relative w-full group flex items-center gap-3 rounded-lg border border-white/5 bg-white/[0.02] px-3 py-2.5 text-left transition-all hover:border-accent-cyan/30 hover:bg-accent-cyan/5"
                       >
-                        <span className="text-xl">{item.icon}</span>
-                        <span className="flex-1 text-sm font-medium text-ink-secondary group-hover:text-accent-cyan transition-colors">
+                        {/* Animated left accent bar */}
+                        <div
+                          className="absolute left-0 top-0 h-full w-[2px] rounded-r-full bg-accent-cyan opacity-0 group-hover:opacity-100 transition-all"
+                          style={{
+                            boxShadow: '0 0 8px rgba(0, 217, 255, 0.6)',
+                          }}
+                        />
+
+                        <span className="text-base">{item.icon}</span>
+                        <span className="flex-1 text-xs font-medium text-ink-secondary group-hover:text-ink-primary transition-colors">
                           {item.q}
                         </span>
                         <svg
-                          className="h-4 w-4 text-ink-muted group-hover:text-accent-cyan transition-colors"
+                          className="h-3.5 w-3.5 text-ink-muted group-hover:text-accent-cyan transition-all group-hover:translate-x-0.5"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"

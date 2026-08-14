@@ -121,13 +121,16 @@ export function PitWallChat({ sessionId, driver }: Props) {
           className="fixed bottom-8 right-8 z-50 group"
           aria-label="Open pit wall AI assistant"
         >
+          {/* Blurred background for visibility */}
+          <div className="absolute inset-[-8px] rounded-full bg-surface/80 backdrop-blur-md border border-hairline/50" />
+
           {/* Outer glow ring */}
           <div className="absolute inset-0 rounded-full bg-racing-gradient blur-xl opacity-50 group-hover:opacity-70 transition-opacity" />
 
           {/* Main button */}
           <div className="relative h-16 w-16 rounded-full bg-racing-gradient shadow-2xl flex items-center justify-center transform transition-all group-hover:scale-110">
             <svg
-              className="h-8 w-8 text-white"
+              className="h-8 w-8 text-white drop-shadow-lg"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -150,7 +153,7 @@ export function PitWallChat({ sessionId, driver }: Props) {
           </div>
 
           {/* Tooltip */}
-          <span className="absolute bottom-full mb-2 right-0 px-3 py-1.5 bg-surface/95 backdrop-blur rounded-lg border border-hairline text-xs font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-xl">
+          <span className="absolute bottom-full mb-3 right-0 px-4 py-2 bg-surface/95 backdrop-blur-lg rounded-xl border border-hairline text-xs font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-xl">
             Ask the Pit Wall AI
           </span>
         </button>
@@ -160,25 +163,28 @@ export function PitWallChat({ sessionId, driver }: Props) {
       {isOpen && (
         <div className="fixed bottom-8 right-8 z-50 flex h-[600px] w-[400px] flex-col overflow-hidden rounded-2xl border border-hairline bg-surface/98 backdrop-blur-xl shadow-2xl animate-in slide-in-from-bottom-4">
           {/* Header */}
-          <div className="relative border-b border-hairline bg-gradient-to-r from-surface via-raised to-surface px-5 py-4">
+          <div className="relative border-b border-hairline bg-gradient-to-r from-surface via-raised to-surface px-5 py-5">
             {/* Racing stripe accent */}
-            <div className="absolute left-0 top-0 h-full w-1 bg-racing-gradient-vertical" />
+            <div className="absolute left-0 top-0 h-full w-1.5 bg-racing-gradient-vertical shadow-glow-red" />
 
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="text-base font-black uppercase tracking-wider">
+            <div className="flex items-start justify-between gap-4">
+              <div className="flex-1">
+                <h3 className="mb-2 text-xl font-black tracking-tight">
                   <span className="bg-racing-gradient bg-clip-text text-transparent">
                     AI Pit Wall
                   </span>
                 </h3>
-                <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-widest text-ink-muted">
-                  The Silent Co-Driver • {driver} • {sessionId}
+                <p className="mb-1.5 text-xs font-medium leading-relaxed text-ink-secondary">
+                  The Silent Co-Driver
+                </p>
+                <p className="text-[10px] font-medium text-ink-muted">
+                  I can analyze {driver}'s stress levels, lap performance, radio transcripts, and correlations.
                 </p>
               </div>
 
               <button
                 onClick={() => setIsOpen(false)}
-                className="rounded-lg p-2 text-ink-muted transition-all hover:bg-raised hover:text-ink-primary"
+                className="flex-shrink-0 rounded-lg p-2 text-ink-muted transition-all hover:bg-raised hover:text-ink-primary"
                 aria-label="Close chat"
               >
                 <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -195,19 +201,9 @@ export function PitWallChat({ sessionId, driver }: Props) {
 
           {/* Messages Container */}
           <div className="flex-1 overflow-y-auto px-5 py-4 space-y-4">
-            {/* Welcome & Suggestions */}
+            {/* Suggested Questions */}
             {messages.length === 0 && !loading && (
               <div className="space-y-4">
-                {/* Welcome message */}
-                <div className="rounded-xl border border-accent-cyan/20 bg-accent-cyan/5 p-4">
-                  <p className="text-sm font-medium text-ink-primary">
-                    🏎️ AI Pit Wall - Your Silent Co-Driver
-                  </p>
-                  <p className="mt-2 text-xs leading-relaxed text-ink-muted">
-                    I can analyze {driver}'s stress levels, lap performance, radio transcripts, and correlations between stress and pace.
-                  </p>
-                </div>
-
                 {/* Suggested questions */}
                 <div>
                   <p className="mb-3 text-[10px] font-bold uppercase tracking-widest text-ink-muted">

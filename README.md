@@ -80,10 +80,11 @@ round on 22 Aug.** It checks that model weights and session cache are both on di
 
 | Var | Default | Purpose |
 |---|---|---|
-| `GP_USE_FIXTURES` | `1` | serve synthetic data; set `0` once the pipeline lands |
+| `GP_USE_FIXTURES` | `0` | serve synthetic data (set `1` for frontend dev without models) |
 | `GP_OFFLINE` | `0` | forbid any network call at inference time |
-| `GP_STT_MODEL` | `openai/whisper-small` | override without touching code |
+| `GP_STT_MODEL` | `distil-whisper/distil-small.en` | override without touching code |
 | `GP_SER_MODEL` | `superb/wav2vec2-base-superb-er` | |
+| `GP_AGENT` | `0` | enable "Ask the Pit Wall" agent layer (feature-flagged) |
 
 ---
 
@@ -100,6 +101,12 @@ backend/
     fixtures/           synthetic data for frontend dev — never shipped in the demo
   scripts/
     cache_sessions.py   pull real races to disk
+    warm_models.py      pre-download HF models for offline use
+    fetch_radio.py      download 446 team radio clips from F1 API
+    batch_analyse.py    run pipeline on all clips → data/results/
+    auto_label.py       extract labels from HF model outputs → index.csv
+    fit_fusion.py       train fusion head on labelled clips
+    label_clips.py      optional browser UI for manual label correction
 frontend/
   src/
     types.ts            mirror of schemas.py — change both together
@@ -117,10 +124,27 @@ data/
 
 Rule 03 requires the Hub in the build, and an account per team member.
 
-**Consumed:** Whisper (STT) · wav2vec2 SER (acoustic emotion) · DistilRoBERTa
-(text emotion) · VAD segmentation.
+**Models Used (4 from Hub):**
+- `distil-whisper/distil-small.en` — Speech-to-text (8s/clip on CPU)
+- `superb/wav2vec2-base-superb-er` — Acoustic emotion recognition
+- `j-hartmann/emotion-english-distilroberta-base` — Text emotion
+- `istupakov/silero-vad-onnx` — Voice activity detection
 
-**Planned contribution:** curated radio-stress dataset and a Space running this demo (in progress).
+**Dataset Published:**
+[Shreevats/f1-team-radio-stress](https://huggingface.co/datasets/Shreevats/f1-team-radio-stress) — 446 team radio clips from 5 Grands Prix (2023–2024), auto-labelled Calm/Stressed/Tired using our 4-model pipeline.
+
+---
+
+## Results
+
+**Fusion Head Accuracy:** 82.1% leave-one-out cross-validation on 446 auto-labelled clips, vs 48.4% naive single-model baseline (+33.6% improvement).
+
+**Label Distribution:**
+- Calm: 199 clips (44.6%)
+- Stressed: 92 clips (20.6%)  
+- Tired: 155 clips (34.8%)
+
+**Per-Driver Calibration:** 20 driver baselines fitted from 199 Calm-labelled clips.
 
 ---
 
@@ -128,9 +152,10 @@ Rule 03 requires the Hub in the build, and an account per team member.
 
 - Off-the-shelf SER accuracy on compressed, engine-noise-saturated radio audio is poor.
   That is the premise of the project, not a defect — it is why fusion exists.
-- The lead–lag correlation is computed over the analysed clips in the selected session.
-  With a small sample it is **indicative, not conclusive**, and the UI says so wherever
+- The lead–lag correlation is computed over 446 analysed clips across 5 sessions.
+  With this sample size it is **indicative, not conclusive**, and the UI says so wherever
   the number appears.
+- `distil-whisper/distil-small.en` does not produce word-level timestamps, so the `speech_rate` prosody feature falls back to population prior (z-score 0.0). The other 7 prosody features are fully calibrated per driver.
 - Public broadcast audio, used for analysis and demonstration. No driver is diagnosed;
   the output is decision support for engineers, not a medical or disciplinary judgement.
 

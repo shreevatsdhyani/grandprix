@@ -9,9 +9,14 @@ from __future__ import annotations
 import asyncio
 import contextlib
 import logging
+import os
 
+from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+
+# Load environment variables from .env file
+load_dotenv()
 
 from app import config
 from app.routers import analyse, clips, health, session
@@ -70,6 +75,12 @@ app.include_router(health.router)
 app.include_router(session.router)
 app.include_router(analyse.router)
 app.include_router(clips.router)
+
+# Agent layer (feature-flagged)
+if os.getenv("GP_AGENT", "0") == "1":
+    from app.routers import agent
+    app.include_router(agent.router)
+    log.info("Agent layer enabled (GP_AGENT=1)")
 
 
 @app.get("/", include_in_schema=False)

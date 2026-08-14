@@ -26,3 +26,7 @@ transformers==4.47.1
 scikit-learn==1.6.0           # the fusion head (logistic regression)
 onnxruntime==1.20.1           # Silero VAD runs as ONNX, not torch
 huggingface-hub==0.36.2
+
+# --- Agent layer (optional, feature-flagged) ------------------------------
+groq==0.11.0                  # Fast free LLM API with tool calling
+python-dotenv==1.2.2          # Load .env file for GROQ_API_KEY and GP_AGENT

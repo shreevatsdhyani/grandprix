@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { analyseClip, analyseViaWebSocket, getHealth, getSessions, getTimeline } from './api'
 import { ClipBrowser } from './components/ClipBrowser'
 import { LeadLagPanel } from './components/LeadLagPanel'
+import { PitWallChat } from './components/PitWallChat'
 import { RaceTimeline } from './components/RaceTimeline'
 import { RadioInspector } from './components/RadioInspector'
 import { SignalBars } from './components/SignalBars'
@@ -367,6 +368,9 @@ export default function App() {
           </div>
         )}
       </main>
+
+      {/* Floating chat - available everywhere once a session is selected */}
+      <PitWallChat sessionId={sessionId} driver={driver} />
     </div>
   )
 }

@@ -380,7 +380,7 @@ MIT License - See [LICENSE](LICENSE) file for details
 
 - **Issues:** [GitHub Issues](https://github.com/shreevatsdhyani/grandprix/issues)
 - **Documentation:** See `/docs` folder
-- **Email:** shreevatsdhyani@example.com
+- **Email:**
 
 ---
 

@@ -28,10 +28,14 @@ frontend/.vite/
 #
 # Nothing here needs a token today — all four models are public — but an
 # ignored .env now is cheaper than a leaked one later.
+#
+# .env.example is ignored too, and deliberately not exempted. It once held a
+# real GROQ_API_KEY, which is exactly how template files leak: they look inert,
+# so nobody checks them before committing. SETUP.md spells out the two lines
+# the file would have contained.
 # --------------------------------------------------------------------------
 .env
 .env.*
-!.env.example
 *.pem
 *.key
 

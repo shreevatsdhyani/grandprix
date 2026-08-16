@@ -20,11 +20,17 @@ import { MOOD_COLOR } from '../types'
  * (0–100) have unrelated scales, and overlaying them on two y-axes lets the
  * arbitrary scale alignment invent a correlation that isn't in the data.
  *
- * Instead: two panels stacked on a shared lap axis with a synchronised
+ * Instead: two panels stacked on the same lap scale with a synchronised
  * crosshair. This is also strictly better for our headline claim — when the
  * two series sit vertically aligned on the same x-scale, the reader can *see*
  * the stress peak sitting to the left of the pace collapse. A dual axis would
  * have let us fake that offset, which is exactly why it isn't trustworthy.
+ *
+ * Both panels carry their own labelled x and y axes. Drawing the lap axis once
+ * under panel 2 saved ~30px and cost every reader who looked at the top chart
+ * in isolation: an unlabelled line against an unlabelled scale is not a chart,
+ * it is a decoration. Stacked panels stay aligned on lap number regardless, so
+ * the shared-scale argument survives the duplication.
  */
 
 interface Props {
@@ -178,27 +184,42 @@ export function RaceTimeline({ timeline, selectedClipId, onSelectClip }: Props) 
         </div>
       </header>
 
-      {/* PANEL 1 — pace delta. No x labels: the shared axis is drawn once,
-          under panel 2. */}
-      <p className="mb-0.5 pl-[52px] text-[10px] text-ink-muted">
-        Pace delta vs clean-lap median · higher is slower
+      {/* PANEL 1 — pace delta, fully self-describing. */}
+      <p className="mb-1 text-xs font-semibold text-ink-secondary">
+        1 · Race pace
+        <span className="ml-2 font-normal text-ink-muted">
+          seconds vs this driver&apos;s clean-lap median · higher is slower
+        </span>
       </p>
-      <div className="h-[150px]">
+      <div className="h-[200px]">
         <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={data} syncId="race" margin={{ top: 4, right: 12, bottom: 0, left: 4 }}>
+          <LineChart data={data} syncId="race" margin={{ top: 4, right: 12, bottom: 4, left: 4 }}>
             <CartesianGrid stroke={GRID} strokeWidth={1} vertical={false} />
-            <XAxis dataKey="lap" hide />
-            {/* No rotated axis title: at this panel height it collides with the
-                tick values. The signed tick format and the caption above carry
-                the direction instead. */}
+            <XAxis
+              dataKey="lap"
+              tick={{ fill: MUTED, fontSize: 11 }}
+              axisLine={{ stroke: AXIS }}
+              tickLine={false}
+              interval={4}
+              height={32}
+              label={{ value: 'Lap', position: 'insideBottom', offset: -1, fill: MUTED, fontSize: 10 }}
+            />
             <YAxis
-              width={48}
+              width={68}
               domain={paceDomain}
               allowDataOverflow
               tick={{ fill: MUTED, fontSize: 11 }}
               axisLine={{ stroke: AXIS }}
               tickLine={false}
               tickFormatter={(v: number) => `${v > 0 ? '+' : ''}${v.toFixed(1)}s`}
+              label={{
+                value: 'Pace delta (s)',
+                angle: -90,
+                position: 'insideLeft',
+                fill: MUTED,
+                fontSize: 10,
+                style: { textAnchor: 'middle' },
+              }}
             />
             <Tooltip content={<ChartTooltip />} cursor={{ stroke: AXIS, strokeWidth: 1 }} />
             {selected?.lap != null && (
@@ -219,11 +240,16 @@ export function RaceTimeline({ timeline, selectedClipId, onSelectClip }: Props) 
         </ResponsiveContainer>
       </div>
 
-      {/* PANEL 2 — stress index, with the shared x-axis. Container height
-          includes the axis band so the card never grows a nested scrollbar.
-          An empty grid reads as "broken"; when there is nothing to plot the
-          panel says why instead. */}
-      <div className="relative h-[176px]">
+      {/* PANEL 2 — stress index. Container height includes the axis band so the
+          card never grows a nested scrollbar. An empty grid reads as "broken";
+          when there is nothing to plot the panel says why instead. */}
+      <p className="mb-1 mt-4 text-xs font-semibold text-ink-secondary">
+        2 · Voice stress
+        <span className="ml-2 font-normal text-ink-muted">
+          0–100 from the fusion head · marker shape is the mood
+        </span>
+      </p>
+      <div className="relative h-[210px]">
         {!hasStress && (
           <div className="absolute inset-0 z-10 flex items-center justify-center px-6 text-center">
             <p className="text-xs leading-snug text-ink-muted">
@@ -247,16 +273,24 @@ export function RaceTimeline({ timeline, selectedClipId, onSelectClip }: Props) 
               axisLine={{ stroke: AXIS }}
               tickLine={false}
               interval={4}
-              height={30}
-              label={{ value: 'Lap', position: 'insideBottom', offset: 0, fill: MUTED, fontSize: 10 }}
+              height={32}
+              label={{ value: 'Lap', position: 'insideBottom', offset: -1, fill: MUTED, fontSize: 10 }}
             />
             <YAxis
-              width={48}
+              width={68}
               domain={[0, 100]}
-              ticks={[0, 50, 100]}
+              ticks={[0, 25, 50, 75, 100]}
               tick={{ fill: MUTED, fontSize: 11 }}
               axisLine={{ stroke: AXIS }}
               tickLine={false}
+              label={{
+                value: 'Stress index',
+                angle: -90,
+                position: 'insideLeft',
+                fill: MUTED,
+                fontSize: 10,
+                style: { textAnchor: 'middle' },
+              }}
             />
             <Tooltip content={<ChartTooltip />} cursor={{ stroke: AXIS, strokeWidth: 1 }} />
             {selected?.lap != null && (

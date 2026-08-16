@@ -144,8 +144,9 @@ export function PitWallChat({ sessionId, driver }: Props) {
           {/* Main gradient button */}
           <div
             className="relative rounded-full flex items-center justify-center transform transition-all group-hover:scale-105"
-            style={{ width: `${UI.CHAT_BUTTON_SIZE}px`, height: `${UI.CHAT_BUTTON_SIZE}px` }}
             style={{
+              width: `${UI.CHAT_BUTTON_SIZE}px`,
+              height: `${UI.CHAT_BUTTON_SIZE}px`,
               background: 'linear-gradient(135deg, #ff0050 0%, #00d9ff 100%)',
               boxShadow: '0 4px 20px rgba(255, 0, 80, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
             }}
@@ -199,8 +200,6 @@ export function PitWallChat({ sessionId, driver }: Props) {
             zIndex: UI.Z_CHAT,
             width: `${UI.CHAT_WIDTH}px`,
             height: `${UI.CHAT_HEIGHT}px`,
-          }}
-          style={{
             background: 'linear-gradient(145deg, rgba(15, 15, 15, 0.85) 0%, rgba(10, 10, 10, 0.9) 100%)',
             backdropFilter: 'blur(20px)',
             border: '1px solid rgba(255, 255, 255, 0.08)',

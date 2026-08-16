@@ -3,356 +3,545 @@
 @tailwind utilities;
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   F1 PIT WALL COMMAND CENTER - PREMIUM DESIGN SYSTEM
+   THE SILENT CO-DRIVER — pit wall design system
+
+   Three faces, three jobs. Archivo carries the voice of the page and is the
+   only face allowed to stretch: headlines run wide (wdth 112) so they read as
+   signage, while lap numbers and deltas run condensed (wdth 75) so they read as
+   a timing tower. Inter carries prose. JetBrains Mono carries anything a
+   machine emitted verbatim — model ids, transcripts of telemetry.
+
+   All three are self-hosted variable fonts: the demo is judged offline and a
+   webfont request that fails takes the whole type system with it.
    ═══════════════════════════════════════════════════════════════════════════ */
+
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/archivo-var-latin.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'InterVar';
+  src: url('/fonts/inter-var-latin.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrainsMonoVar';
+  src: url('/fonts/jetbrainsmono-var-latin.woff2') format('woff2-variations');
+  font-weight: 100 800;
+  font-display: swap;
+}
 
 :root {
   color-scheme: dark;
 
-  /* Core surfaces - Carbon fiber & titanium */
-  --surface-1: #0f0f0f;
-  --page-plane: #050505;
-  --text-primary: #ffffff;
-  --text-secondary: #b8b8b8;
-  --text-muted: #6b6b6b;
-  --gridline: #1a1a1a;
-  --axis: #2a2a2a;
+  /* ── Surfaces. A blue-black carbon rather than a dead grey-black: the cyan
+     and red the data uses both sit on the cool side, and a neutral ground made
+     them look like stickers. ─────────────────────────────────────────────── */
+  --carbon: #07080b;
+  --panel: #0e1015;
+  --panel-2: #161a21;
+  --edge: #232833;
+  --edge-bright: #38404f;
 
-  /* Racing series colors - High contrast, energetic */
-  --series-1: #00d9ff; /* Cyan - Pace delta */
-  --series-2: #ff0050; /* Racing red - Stress */
-  --series-3: #00ff88; /* Neon green - Performance */
+  --ice: #eef2f8;
+  --ash: #98a2b3;
+  --slate: #626c7c;
 
-  /* Status colors */
+  /* ── Data colours. Unchanged hues: they are load-bearing across the charts,
+     the mood chips and the clip library, and the mapping is already learned. */
+  --series-1: #00d9ff; /* pace delta */
+  --series-2: #ff0050; /* stress index */
+  --series-3: #00ff88; /* transcript signal */
+
   --status-good: #00ff88;
   --status-warning: #ffaa00;
   --status-serious: #ff6b00;
   --status-critical: #ff0050;
 
-  /* Brand colors */
-  --brand: #ff0050;
-  --brand-glow: rgba(255, 0, 80, 0.4);
+  --brand: #e6002b; /* Haas red */
   --accent-cyan: #00d9ff;
+
+  /* ── Legacy aliases kept so existing chart code keeps resolving. ───────── */
+  --surface-1: var(--panel);
+  --page-plane: var(--carbon);
+  --text-primary: var(--ice);
+  --text-secondary: var(--ash);
+  --text-muted: var(--slate);
+  --gridline: #1a1f27;
+  --axis: #2b323d;
+  --brand-glow: rgba(230, 0, 43, 0.45);
   --accent-cyan-glow: rgba(0, 217, 255, 0.3);
+
+  /* Team colour of the driver on screen. Set from JS; every accent that should
+     follow the driver reads this instead of hardcoding a hue. */
+  --team: #00d9ff;
+  --team-ink: #04121a;
+
+  --font-display: 'Archivo', 'Archivo Expanded', system-ui, sans-serif;
+  --font-body: 'InterVar', Inter, system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrainsMonoVar', 'JetBrains Mono', ui-monospace, monospace;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   BASE STYLES
+   BASE
    ═══════════════════════════════════════════════════════════════════════════ */
 
-html, body, #root {
-  height: 100%;
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  @apply text-ink-primary font-sans antialiased;
-  background: linear-gradient(135deg, #050505 0%, #0a0a08 50%, #050505 100%);
-  background-attachment: fixed;
-  position: relative;
+  font-family: var(--font-body);
+  color: var(--ice);
+  background: var(--carbon);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
+/* Carbon weave. Two opposed hairline gratings at 4px — at arm's length it is a
+   texture, not a pattern, and it stops the large dark areas reading as a void. */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image:
-    radial-gradient(circle at 20% 30%, rgba(255, 0, 80, 0.04) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(0, 217, 255, 0.04) 0%, transparent 50%);
-  pointer-events: none;
   z-index: 0;
+  pointer-events: none;
+  opacity: 0.55;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.016) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.016) 0 1px, transparent 1px 4px);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
    TYPOGRAPHY
    ═══════════════════════════════════════════════════════════════════════════ */
 
-.recharts-cartesian-axis-tick text,
-.tabular {
+.display {
+  font-family: var(--font-display);
+  font-variation-settings: 'wdth' 112;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 0.95;
+}
+
+/* Timing-tower voice: condensed, heavy, lining figures. Lap numbers, deltas,
+   driver codes — anything that would appear on a live timing screen. */
+.tower {
+  font-family: var(--font-display);
+  font-variation-settings: 'wdth' 74;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-variation-settings: 'wdth' 100;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--slate);
+}
+
+.mono {
+  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
 }
 
-/* Racing-style headings */
-.racing-title {
-  @apply text-2xl font-black uppercase tracking-wider;
-  background: linear-gradient(135deg, #fff 0%, #00d9ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 0 30px rgba(0, 217, 255, 0.3);
-}
-
-.racing-subtitle {
-  @apply text-xs font-bold uppercase tracking-widest text-ink-muted;
-  letter-spacing: 0.2em;
+.tabular,
+.recharts-cartesian-axis-tick text {
+  font-variant-numeric: tabular-nums;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   CARD COMPONENTS
+   PANELS
+
+   The bevel is one hairline of light along the top edge and a dark rim below,
+   which is how a machined titanium panel actually catches light. Cheaper than a
+   border and it survives on a projector.
    ═══════════════════════════════════════════════════════════════════════════ */
 
+/* `.card` is the same thing under its older name — components still ask for it. */
+.panel,
 .card {
-  @apply bg-surface border border-hairline rounded-xl;
-  background: linear-gradient(145deg, rgba(15, 15, 15, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%);
-  backdrop-filter: blur(10px);
+  position: relative;
+  border-radius: 14px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.026) 0%, transparent 42%),
+    var(--panel);
+  border: 1px solid var(--edge);
   box-shadow:
-    0 4px 24px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.card:hover {
-  border-color: rgba(0, 217, 255, 0.3);
-  box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.5),
-    0 0 24px rgba(0, 217, 255, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  transform: translateY(-2px);
+    0 1px 0 rgba(255, 255, 255, 0.05) inset,
+    0 18px 40px -24px rgba(0, 0, 0, 0.9);
 }
 
 .card-title {
-  @apply text-[10px] font-bold uppercase tracking-[0.2em] text-ink-muted;
-  letter-spacing: 0.15em;
+  font-family: var(--font-display);
+  font-variation-settings: 'wdth' 100;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--slate);
 }
 
-/* Premium card variant */
-.card-premium {
-  @apply card;
-  background: linear-gradient(145deg, rgba(20, 20, 20, 0.95) 0%, rgba(15, 15, 15, 0.98) 100%);
-  border: 1px solid rgba(255, 0, 80, 0.2);
-}
-
-.card-premium:hover {
-  border-color: rgba(255, 0, 80, 0.4);
-  box-shadow:
-    0 8px 32px rgba(255, 0, 80, 0.2),
-    0 0 24px rgba(255, 0, 80, 0.15);
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   BUTTONS & INPUTS
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-.btn-primary {
-  @apply px-4 py-2 rounded-lg font-semibold uppercase tracking-wider text-xs;
-  background: linear-gradient(135deg, #ff0050 0%, #ff3366 100%);
-  border: 1px solid rgba(255, 0, 80, 0.5);
-  box-shadow:
-    0 4px 16px rgba(255, 0, 80, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  transition: all 0.2s ease;
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 6px 24px rgba(255, 0, 80, 0.5),
-    0 0 32px rgba(255, 0, 80, 0.3);
-}
-
-.btn-secondary {
-  @apply px-4 py-2 rounded-lg font-semibold uppercase tracking-wider text-xs;
-  background: linear-gradient(135deg, rgba(0, 217, 255, 0.1) 0%, rgba(0, 217, 255, 0.2) 100%);
-  border: 1px solid rgba(0, 217, 255, 0.3);
-  transition: all 0.2s ease;
-}
-
-.btn-secondary:hover {
-  background: linear-gradient(135deg, rgba(0, 217, 255, 0.2) 0%, rgba(0, 217, 255, 0.3) 100%);
-  border-color: rgba(0, 217, 255, 0.5);
-  box-shadow: 0 0 24px rgba(0, 217, 255, 0.2);
-}
-
-/* Input fields */
-input[type="text"],
-input[type="number"],
-select,
-textarea {
-  @apply bg-raised border border-hairline rounded-lg px-3 py-2 text-sm;
-  transition: all 0.2s ease;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  @apply outline-none;
-  border-color: rgba(0, 217, 255, 0.5);
-  box-shadow: 0 0 16px rgba(0, 217, 255, 0.2);
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   RACING ACCENTS
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-/* Racing stripe */
-.racing-stripe {
-  position: relative;
-}
-
-.racing-stripe::before {
+/* A panel whose left edge is painted in the current driver's livery. Used only
+   where the content is genuinely driver-specific. */
+.panel-team::after {
   content: '';
   position: absolute;
   left: 0;
-  top: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(180deg, #ff0050 0%, #00d9ff 100%);
-  border-radius: 2px;
-  box-shadow: 0 0 16px rgba(255, 0, 80, 0.5);
-}
-
-/* Glow effect */
-.glow-red {
-  box-shadow: 0 0 24px rgba(255, 0, 80, 0.3);
-}
-
-.glow-cyan {
-  box-shadow: 0 0 24px rgba(0, 217, 255, 0.3);
-}
-
-/* Pulse animation */
-@keyframes pulse-glow {
-  0%, 100% {
-    opacity: 1;
-    box-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
-  }
-  50% {
-    opacity: 0.8;
-    box-shadow: 0 0 40px rgba(0, 217, 255, 0.6);
-  }
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+  top: 14px;
+  bottom: 14px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--team);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--team) 55%, transparent);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   STATUS INDICATORS
+   CONTROLS
    ═══════════════════════════════════════════════════════════════════════════ */
 
-.status-indicator {
-  @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider;
+.field-label {
+  font-family: var(--font-display);
+  font-variation-settings: 'wdth' 100;
+  font-weight: 700;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slate);
 }
 
-.status-good {
-  @apply status-indicator;
-  background: rgba(0, 255, 136, 0.15);
-  border: 1px solid rgba(0, 255, 136, 0.3);
-  color: #00ff88;
+.control {
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--edge);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, transparent 60%),
+    var(--panel-2);
+  color: var(--ice);
+  font-size: 13px;
+  font-weight: 500;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
 }
 
-.status-warning {
-  @apply status-indicator;
-  background: rgba(255, 170, 0, 0.15);
-  border: 1px solid rgba(255, 170, 0, 0.3);
-  color: #ffaa00;
+.control:hover {
+  border-color: var(--edge-bright);
 }
 
-.status-critical {
-  @apply status-indicator;
-  background: rgba(255, 0, 80, 0.15);
-  border: 1px solid rgba(255, 0, 80, 0.3);
-  color: #ff0050;
+.control:focus-visible {
+  border-color: var(--accent-cyan);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.18);
+}
+
+/* Native select chevrons differ per platform and none of them match this UI. */
+select.control {
+  appearance: none;
+  padding: 0 34px 0 12px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--ash) 50%),
+    linear-gradient(135deg, var(--ash) 50%, transparent 50%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, transparent 60%),
+    linear-gradient(0deg, var(--panel-2), var(--panel-2));
+  background-position:
+    right 15px center,
+    right 10px center,
+    0 0,
+    0 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    100% 100%,
+    100% 100%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+select.control option {
+  background: #12151b;
+  color: var(--ice);
+}
+
+input.control {
+  padding: 0 12px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 10px;
+  font-family: var(--font-display);
+  font-variation-settings: 'wdth' 100;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, #ff1b46 0%, var(--brand) 100%);
+  border-color: rgba(255, 90, 120, 0.5);
+  color: #fff;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.25) inset,
+    0 8px 22px -10px rgba(230, 0, 43, 0.9);
+}
+
+.btn-primary:hover:not(:disabled) {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.3) inset,
+    0 12px 28px -10px rgba(230, 0, 43, 1);
+}
+
+.btn-ghost {
+  background: var(--panel-2);
+  border-color: var(--edge);
+  color: var(--ash);
+}
+
+.btn-ghost:hover:not(:disabled) {
+  border-color: var(--edge-bright);
+  color: var(--ice);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CHIPS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-variation-settings: 'wdth' 100;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+  background: color-mix(in srgb, currentColor 14%, transparent);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
    CHARTS
    ═══════════════════════════════════════════════════════════════════════════ */
 
-.recharts-wrapper {
-  @apply rounded-lg;
-}
-
 .recharts-cartesian-grid line {
   stroke: var(--gridline);
-  stroke-opacity: 0.5;
 }
 
 .recharts-cartesian-axis-line {
   stroke: var(--axis);
 }
 
-/* Chart tooltips */
-.recharts-default-tooltip {
-  @apply rounded-lg border-0;
-  background: linear-gradient(145deg, rgba(15, 15, 15, 0.98) 0%, rgba(10, 10, 10, 1) 100%) !important;
-  backdrop-filter: blur(10px);
-  box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.6),
-    0 0 24px rgba(0, 217, 255, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(0, 217, 255, 0.3) !important;
-  padding: 12px 16px !important;
+.recharts-surface {
+  overflow: visible;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   LOADING & ANIMATIONS
+   MOTION
+
+   Everything here is either a state change the reader needs to notice, or the
+   start-lights loader. There is no ambient decoration that runs forever.
    ═══════════════════════════════════════════════════════════════════════════ */
 
-@keyframes shimmer {
-  0% {
-    background-position: -1000px 0;
+@keyframes gp-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
   }
-  100% {
-    background-position: 1000px 0;
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
 
-.loading-shimmer {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.05) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  background-size: 1000px 100%;
-  animation: shimmer 2s infinite;
+@keyframes gp-wipe-in {
+  from {
+    opacity: 0;
+    transform: translateX(-26px) skewX(-9deg);
+  }
+  60% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-/* Spinner */
-@keyframes spin {
+@keyframes gp-flare {
+  from {
+    opacity: 0.9;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  55% {
+    opacity: 0.9;
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  56% {
+    transform-origin: right;
+  }
+  to {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+
+@keyframes gp-spin {
   to {
     transform: rotate(360deg);
   }
 }
 
+@keyframes gp-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* A car running the lap: a short dash travelling along a pathLength-normalised
+   circuit, so every venue runs at the same visual speed. */
+@keyframes gp-lap {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -1000;
+  }
+}
+
+.gp-car {
+  stroke-dasharray: 26 974;
+  animation: gp-lap 7s linear infinite;
+  animation-delay: var(--gp-lap-delay, 0s);
+}
+
+.gp-car--chase {
+  stroke-dasharray: 11 989;
+  animation-duration: 7.7s;
+  opacity: 0.8;
+}
+
+.anim-rise {
+  animation: gp-rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.anim-wipe {
+  animation: gp-wipe-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Broadcast lower-third flare: a bar of livery colour that sweeps across the
+   driver plate once, when the driver changes. */
+.anim-flare {
+  animation: gp-flare 0.85s cubic-bezier(0.5, 0, 0.2, 1) both;
+}
+
+.anim-pulse {
+  animation: gp-pulse 1.6s ease-in-out infinite;
+}
+
 .spinner {
-  border: 3px solid rgba(0, 217, 255, 0.2);
-  border-top-color: #00d9ff;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 0.8s linear infinite;
+  border: 3px solid rgba(0, 217, 255, 0.18);
+  border-top-color: var(--accent-cyan);
+  animation: gp-spin 0.8s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   SCROLLBAR STYLING
+   SCROLLBARS
    ═══════════════════════════════════════════════════════════════════════════ */
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--edge-bright) transparent;
+}
+
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #ff0050 0%, #00d9ff 100%);
-  border-radius: 4px;
+  background: var(--edge);
+  border-radius: 99px;
+  border: 2px solid var(--carbon);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #ff3366 0%, #00ffcc 100%);
+  background: var(--edge-bright);
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   RESPONSIVE UTILITIES
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-@media (max-width: 1024px) {
-  .card:hover {
-    transform: none;
-  }
+/* Native audio players are chrome-coloured and enormous next to this UI. */
+audio {
+  width: 100%;
+  height: 34px;
+  filter: invert(0.92) hue-rotate(180deg) saturate(0.5) contrast(0.95);
+  border-radius: 8px;
 }

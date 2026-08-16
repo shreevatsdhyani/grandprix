@@ -3,8 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>frontend</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#07080b" />
+    <meta
+      name="description"
+      content="Reads Formula 1 team radio and flags a driver losing their grip a lap before the stopwatch shows it."
+    />
+    <title>The Silent Co-Driver — F1 radio stress on the pit wall</title>
+
+    <!-- Self-hosted so the demo survives with no network. Preloaded because the
+         display face sets the first paint of the hero. -->
+    <link rel="preload" href="/fonts/archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <style>
+      /* Painted before React mounts so the first frame is the app's own black,
+         not the browser's white. */
+      html { background: #07080b; }
+    </style>
   </head>
   <body>
     <div id="root"></div>

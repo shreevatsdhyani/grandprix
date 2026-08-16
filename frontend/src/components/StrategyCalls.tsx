@@ -1,53 +1,78 @@
-import type { StrategyCall } from '../types'
+import type { StrategyCall, Urgency } from '../types'
 import { URGENCY_COLOR } from '../types'
 
 /**
- * The theme of the brief is "Racing Strategy & Decision-Making", so no screen
- * ends at a mood label. This panel is where the analysis becomes an instruction
- * a race engineer could actually act on.
+ * Where the analysis becomes an instruction a race engineer could act on.
  *
- * Status colour never carries the meaning alone — every row has an icon and the
- * instruction in words.
+ * The theme of the brief is "Racing Strategy & Decision-Making", so no screen
+ * ends at a mood label. Status colour never carries the meaning alone — every
+ * row has a glyph and the instruction in words.
  */
 
-const ICON: Record<string, string> = {
-  BOX_NOW: '▼',
-  PIT_WINDOW_OPENING: '◆',
-  HOLD: '■',
-  REDUCE_RADIO_LOAD: '≡',
-  MONITOR: '·',
+/** Urgency in words, so the colour of the rail is never the only signal. */
+const URGENCY_WORD: Record<Urgency, string> = {
+  critical: 'Act now',
+  warning: 'Prepare',
+  info: 'Note',
 }
 
-export function StrategyCalls({ calls, onSelectLap }: { calls: StrategyCall[]; onSelectLap?: (lap: number) => void }) {
+export function StrategyCalls({
+  calls,
+  onSelectLap,
+}: {
+  calls: StrategyCall[]
+  onSelectLap?: (lap: number) => void
+}) {
   return (
-    <section className="card flex flex-col p-4" aria-label="Strategy calls">
-      <h2 className="card-title mb-3">Strategy calls</h2>
+    <section className="panel flex flex-col p-4 sm:p-5" aria-label="Strategy calls">
+      <div className="flex items-baseline justify-between gap-3">
+        <h2 className="card-title">What the pit wall should do</h2>
+        {calls.length > 0 && (
+          <span className="mono text-[11px] text-ink-muted">
+            {calls.length} call{calls.length === 1 ? '' : 's'}
+          </span>
+        )}
+      </div>
 
       {calls.length === 0 ? (
-        <p className="text-sm text-ink-muted">
-          No calls triggered. The single-model baseline detects no fatigue, so the strategy
-          layer has nothing to fire on.
+        <p className="mt-2.5 text-sm leading-relaxed text-ink-muted">
+          Nothing triggered. No scored call crossed a threshold, so the strategy layer stays
+          quiet — which is the correct output, not a missing one.
         </p>
       ) : (
-        <ol className="space-y-2">
-          {calls.map((c) => {
+        <ol className="mt-3 space-y-2">
+          {/* Index is part of the key: the backend can emit the same code twice
+              on one lap, so lap+code is not unique. */}
+          {calls.map((c, i) => {
             const color = URGENCY_COLOR[c.urgency]
             return (
-              <li key={`${c.lap}-${c.code}`}>
+              <li key={`${c.lap}-${c.code}-${i}`}>
                 <button
                   onClick={() => onSelectLap?.(c.lap)}
-                  className="w-full rounded border border-hairline bg-raised px-3 py-2 text-left transition hover:border-ink-muted"
+                  className="w-full overflow-hidden rounded-lg border border-hairline bg-raised text-left transition hover:border-hairline-bright"
                 >
-                  <div className="flex items-baseline gap-2">
-                    <span className="tabular text-[11px] text-ink-muted">L{c.lap}</span>
-                    <span aria-hidden style={{ color }}>
-                      {ICON[c.code] ?? '·'}
-                    </span>
-                    <span className="text-xs font-semibold leading-snug" style={{ color }}>
-                      {c.headline}
-                    </span>
+                  <div className="flex">
+                    <span className="w-1 shrink-0" style={{ background: color }} aria-hidden />
+                    <div className="min-w-0 flex-1 px-3 py-2.5">
+                      <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                        <span className="tower text-ink-muted" style={{ fontSize: 12 }}>
+                          LAP {c.lap}
+                        </span>
+                        <span className="chip" style={{ color }}>
+                          {URGENCY_WORD[c.urgency]}
+                        </span>
+                      </div>
+                      <p
+                        className="mt-1.5 text-[13px] font-semibold leading-snug"
+                        style={{ color }}
+                      >
+                        {c.headline}
+                      </p>
+                      <p className="mt-1 text-[11px] leading-relaxed text-ink-muted">
+                        {c.rationale}
+                      </p>
+                    </div>
                   </div>
-                  <p className="mt-1 pl-7 text-[11px] leading-snug text-ink-muted">{c.rationale}</p>
                 </button>
               </li>
             )
@@ -55,8 +80,8 @@ export function StrategyCalls({ calls, onSelectLap }: { calls: StrategyCall[]; o
         </ol>
       )}
 
-      <p className="mt-3 border-t border-hairline pt-2 text-[10px] leading-tight text-ink-muted">
-        Deterministic thresholds, not a language model — the pit wall needs the same input to
+      <p className="mt-3 border-t border-hairline pt-2.5 text-[10px] leading-relaxed text-ink-muted">
+        Deterministic thresholds, not a language model. The pit wall needs the same input to
         produce the same call every time.
       </p>
     </section>

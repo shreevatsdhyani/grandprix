@@ -8,6 +8,10 @@ import { PipelineProgress } from './PipelineProgress'
  * upload/play control, the readable transcript, and the mood label. All three
  * stay visible without scrolling or opening a tab — a judge working from the
  * spec looks for these before anything we invented.
+ *
+ * The mood is set at headline size against a livery-weight bar because it is a
+ * verdict, not a field. A small coloured chip reads as metadata, and this is
+ * the thing the panel exists to say.
  */
 
 interface Props {
@@ -23,7 +27,6 @@ interface Props {
   streaming?: boolean
   /** Re-run the pipeline over the selected clip, streaming progress. */
   onReanalyse?: () => void
-  /** Timeline data for lap validation */
   timeline: Timeline | null
 }
 
@@ -41,84 +44,77 @@ export function RadioInspector({
 }: Props) {
   const inputRef = useRef<HTMLInputElement>(null)
   const audioRef = useRef<HTMLAudioElement>(null)
-  const [, setPlaying] = useState(false)
   const [audioError, setAudioError] = useState(false)
   const [lapError, setLapError] = useState<string | null>(null)
 
   useEffect(() => setAudioError(false), [clip?.clip_id])
 
-  // Get valid lap range from timeline
-  const validLapRange = timeline ? {
-    min: Math.min(...timeline.points.map(p => p.lap)),
-    max: Math.max(...timeline.points.map(p => p.lap))
-  } : null
+  const lapRange = timeline?.points.length
+    ? {
+        min: Math.min(...timeline.points.map((p) => p.lap)),
+        max: Math.max(...timeline.points.map((p) => p.lap)),
+      }
+    : null
 
-  // Validate lap input
-  const handleLapChange = (val: string) => {
+  function handleLapChange(val: string) {
     onUploadLapChange(val)
+    if (!val) return setLapError(null)
 
-    if (!val) {
-      setLapError(null)
-      return
+    const lap = parseInt(val, 10)
+    if (Number.isNaN(lap)) return setLapError('Enter a lap number')
+    if (lapRange && (lap < lapRange.min || lap > lapRange.max)) {
+      return setLapError(`This race ran laps ${lapRange.min}–${lapRange.max}`)
     }
-
-    const lapNum = parseInt(val)
-    if (isNaN(lapNum)) {
-      setLapError('Please enter a valid lap number')
-      return
-    }
-
-    if (validLapRange && (lapNum < validLapRange.min || lapNum > validLapRange.max)) {
-      setLapError(`Please enter a lap between ${validLapRange.min} and ${validLapRange.max}`)
-      return
-    }
-
     setLapError(null)
   }
 
   const result = clip ? (mode === 'fusion' ? clip.fusion : clip.naive) : null
+  const stress = Math.round(result?.stress_index ?? 0)
 
   return (
-    <section className="card flex flex-col p-4" aria-label="Radio inspector">
-      <div className="mb-3 flex items-center justify-between">
+    <section className="panel panel-team flex flex-col p-4 sm:p-5" aria-label="Radio inspector">
+      <div className="flex items-baseline justify-between gap-3">
         <h2 className="card-title">Radio call</h2>
-        {clip?.lap != null && <span className="text-xs text-ink-muted tabular">Lap {clip.lap}</span>}
+        {clip?.lap != null && (
+          <span className="tower text-ink-secondary" style={{ fontSize: 14 }}>
+            LAP&nbsp;&nbsp;{clip.lap}
+          </span>
+        )}
       </div>
 
       {/* Upload is always on screen, never behind a menu — it is the first
-          thing the brief asks for. Playback uses the native control rather than
-          a second custom button: one obvious way to play, and it degrades
-          gracefully if a clip fails to load mid-demo. */}
-      <div className="mb-2 flex flex-col gap-1.5">
+          thing the brief asks for. */}
+      <div className="mt-3 flex flex-col gap-2">
         <div className="flex gap-2">
           <button
             onClick={() => inputRef.current?.click()}
             disabled={busy}
-            className="flex-1 rounded border border-brand/60 bg-brand/10 px-3 py-2 text-xs font-semibold uppercase tracking-wider text-ink-primary transition hover:bg-brand/20 disabled:opacity-50"
+            className="btn btn-primary flex-1"
           >
-            {busy ? 'Analysing…' : '↑ Upload clip'}
+            {busy ? 'Analysing…' : 'Upload a clip'}
           </button>
-          {/* Lap number lets the uploaded clip appear on the timeline chart — without
-              it the analysis is correct but disconnected from the pace context that
-              is the whole point of the project. */}
+          {/* The lap number is what puts an uploaded clip on the timeline;
+              without it the analysis is correct but disconnected from the pace
+              context that is the whole point. */}
           <input
             type="number"
-            min={validLapRange?.min ?? 1}
-            max={validLapRange?.max ?? 99}
-            placeholder="Lap?"
+            inputMode="numeric"
+            min={lapRange?.min ?? 1}
+            max={lapRange?.max ?? 99}
+            placeholder="Lap"
             value={uploadLap}
             onChange={(e) => handleLapChange(e.target.value)}
-            className={`w-16 rounded border px-2 py-2 text-center text-xs ${
+            aria-label="Lap number for the uploaded clip"
+            className="control w-[74px] text-center"
+            style={
               lapError
-                ? 'border-status-critical bg-status-critical/10 text-status-critical'
-                : 'border-hairline bg-raised text-ink-secondary'
-            }`}
-            aria-label="Lap number for uploaded clip"
+                ? { borderColor: 'var(--status-critical)', color: 'var(--status-critical)' }
+                : undefined
+            }
           />
         </div>
-        {lapError && (
-          <p className="text-[10px] text-status-critical">{lapError}</p>
-        )}
+        {lapError && <p className="text-[11px] text-status-critical">{lapError}</p>}
+
         <input
           ref={inputRef}
           type="file"
@@ -131,90 +127,111 @@ export function RadioInspector({
           }}
         />
 
-        {/* Re-run inference on a curated clip and watch it happen. The cached
-            result is what the timeline plots, so without this the honest
-            question "is that number live or was it precomputed?" has no answer
-            on screen. Uploads keep the REST path — the stream route only takes
-            clips that are already indexed on disk. */}
-        {/* Guarded on the callback alone, not on `clip`: a stream that fails
-            leaves no analysis to render, and that is exactly when the retry
-            button needs to be reachable. App decides eligibility. */}
+        {/* Re-run inference on a curated clip and watch it happen. The timeline
+            plots cached results, so without this the honest question "is that
+            number live or precomputed?" has no answer on screen. Guarded on the
+            callback alone, not on `clip`: a stream that fails leaves nothing to
+            render, and that is exactly when retry must be reachable. */}
         {onReanalyse && (
-          <button
-            onClick={onReanalyse}
-            disabled={busy || streaming}
-            className="rounded border border-hairline px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-ink-secondary transition hover:bg-raised hover:text-ink-primary disabled:opacity-50"
-          >
-            {streaming ? 'Streaming…' : clip ? '⟳ Re-analyse live' : '⟳ Analyse this clip'}
+          <button onClick={onReanalyse} disabled={busy || streaming} className="btn btn-ghost">
+            {streaming ? 'Streaming…' : clip ? 'Re-analyse live' : 'Analyse this clip'}
           </button>
         )}
       </div>
 
       {(streaming || progress.length > 0) && (
-        <PipelineProgress events={progress} running={streaming} />
-      )}
-
-      {clip && (
-        <audio
-          ref={audioRef}
-          src={clip.audio_url}
-          onPlay={() => setPlaying(true)}
-          onPause={() => setPlaying(false)}
-          onEnded={() => setPlaying(false)}
-          onError={() => setAudioError(true)}
-          className="mb-3 h-9 w-full"
-          controls
-          preload="none"
-        />
-      )}
-      {clip && audioError && (
-        <p className="mb-3 text-[10px] text-ink-muted">
-          Audio not yet on disk for this clip — curated clips land with the dataset.
-        </p>
+        <div className="mt-3">
+          <PipelineProgress events={progress} running={streaming} />
+        </div>
       )}
 
       {!clip ? (
-        <p className="flex-1 text-sm text-ink-muted">
-          Select a radio call on the timeline, or upload a clip.
+        <p className="mt-4 text-sm leading-relaxed text-ink-muted">
+          Nothing open. Click a marker on the stress track, pick a call from the radio library
+          below, or upload your own clip.
         </p>
       ) : (
         <>
-          {/* The mood label — large and unmissable. A small coloured chip reads
-              as decoration; this is a primary deliverable. Colour is always
-              paired with the word, because the status palette's red/green pair
-              is not distinguishable under deuteranopia. */}
+          {/* The verdict for this one call. */}
           <div
-            className="mb-3 rounded border-l-4 bg-raised px-3 py-2.5"
-            style={{ borderColor: result ? MOOD_COLOR[result.mood] : 'transparent' }}
+            className="mt-4 overflow-hidden rounded-xl border"
+            style={{
+              borderColor: result
+                ? `color-mix(in srgb, ${MOOD_COLOR[result.mood]} 40%, transparent)`
+                : 'var(--edge)',
+              background: result
+                ? `linear-gradient(150deg, color-mix(in srgb, ${MOOD_COLOR[result.mood]} 13%, transparent) 0%, transparent 70%)`
+                : undefined,
+            }}
           >
-            <div className="flex items-baseline justify-between">
+            <div className="flex items-end justify-between gap-3 px-3.5 pt-3">
               <span
-                className="text-2xl font-bold uppercase tracking-wide"
+                className="display text-[34px] uppercase leading-none"
                 style={{ color: result ? MOOD_COLOR[result.mood] : undefined }}
               >
                 {result?.mood}
               </span>
-              <span className="text-xs text-ink-muted tabular">
-                confidence {result ? (result.confidence * 100).toFixed(0) : '–'}%
+              <span className="text-[11px] text-ink-muted">
+                {result ? `${(result.confidence * 100).toFixed(0)}% confident` : '–'}
               </span>
             </div>
-            <div className="mt-1 text-[11px] text-ink-muted">
-              Stress index <span className="tabular text-ink-secondary">{Math.round(result?.stress_index ?? 0)}</span>/100
-              {mode === 'naive' && (
-                <span className="ml-2 text-status-warning">single-model baseline</span>
-              )}
+
+            <div className="px-3.5 pb-3.5 pt-2.5">
+              <div className="flex items-baseline justify-between text-[11px]">
+                <span className="text-ink-muted">Stress index</span>
+                <span className="mono text-ink-primary">
+                  <span className="text-[15px] font-semibold">{stress}</span>
+                  <span className="text-ink-muted">/100</span>
+                </span>
+              </div>
+              <div
+                className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-raised"
+                role="meter"
+                aria-valuenow={stress}
+                aria-valuemin={0}
+                aria-valuemax={100}
+                aria-label={`Stress index ${stress} of 100`}
+              >
+                <div
+                  className="h-full rounded-full transition-[width] duration-500"
+                  style={{
+                    width: `${stress}%`,
+                    background: result ? MOOD_COLOR[result.mood] : 'var(--edge-bright)',
+                  }}
+                />
+              </div>
             </div>
           </div>
 
-          <div className="mb-2 card-title">Transcript</div>
-          <p className="flex-1 text-sm leading-relaxed text-ink-primary">
-            “{clip.transcript.text}”
-          </p>
+          {clip && (
+            <audio
+              ref={audioRef}
+              src={clip.audio_url}
+              onError={() => setAudioError(true)}
+              className="mt-3"
+              controls
+              preload="none"
+            />
+          )}
+          {audioError && (
+            <p className="mt-1.5 text-[11px] text-ink-muted">
+              No audio on disk for this clip yet — curated clips land with the dataset.
+            </p>
+          )}
 
-          <div className="mt-3 border-t border-hairline pt-2 text-[10px] text-ink-muted">
+          <p className="card-title mt-4">What was said</p>
+          <blockquote
+            className="mt-1.5 border-l-2 pl-3 text-sm leading-relaxed text-ink-primary"
+            style={{ borderColor: 'var(--team)' }}
+          >
+            “{clip.transcript.text}”
+          </blockquote>
+
+          <p className="mono mt-3 border-t border-hairline pt-2.5 text-[10px] text-ink-muted">
             {clip.transcript.stt_model}
-            {clip.processing_ms > 0 && <span className="tabular"> · {clip.processing_ms}ms</span>}
-          </div>
+            {clip.processing_ms > 0 && ` · ${clip.processing_ms}ms`}
+            {clip.cached && ' · cached'}
+          </p>
         </>
       )}
     </section>

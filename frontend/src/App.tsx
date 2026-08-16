@@ -8,7 +8,12 @@ import { PitWallChat } from './components/PitWallChat'
 import { RaceTimeline } from './components/RaceTimeline'
 import { RadioInspector } from './components/RadioInspector'
 import { SignalBars } from './components/SignalBars'
+import { StartLights } from './components/StartLights'
 import { StrategyCalls } from './components/StrategyCalls'
+import { VerdictHero } from './components/VerdictHero'
+import { getCircuit } from './lib/circuits'
+import { getDriver } from './lib/drivers'
+import { readVerdict } from './lib/verdict'
 import type {
   ClipAnalysis,
   HealthResponse,
@@ -17,6 +22,30 @@ import type {
   SessionMeta,
   Timeline,
 } from './types'
+
+/**
+ * Hold a transient state on screen for a minimum time.
+ *
+ * Cached sessions resolve in under 100ms, and a loader that appears and
+ * vanishes inside two frames reads as a flicker, not as feedback. Switching
+ * driver is the main interaction on this page, so it gets a beat long enough to
+ * register as "that worked" — and the beat is the same length whether the
+ * answer came from cache or from a cold read.
+ */
+function useHeldFlag(active: boolean, ms = 620): boolean {
+  const [held, setHeld] = useState(active)
+
+  useEffect(() => {
+    if (active) {
+      setHeld(true)
+      return
+    }
+    const id = setTimeout(() => setHeld(false), ms)
+    return () => clearTimeout(id)
+  }, [active, ms])
+
+  return held
+}
 
 function AppContent() {
   const [mode, setMode] = useState<ScoringMode>('fusion')
@@ -174,11 +203,22 @@ function AppContent() {
     if (clip) setSelectedClipId(clip.clip_id)
   }
 
+  const driverCard = getDriver(driver)
+  const circuit = getCircuit(sessionId)
+  const verdict = readVerdict(timeline)
+  const loading = useHeldFlag(!timelineLoaded)
+
+  // Every livery-coloured accent in the tree reads these instead of taking the
+  // driver as a prop, so a new accent never needs threading through.
+  const teamVars = {
+    ['--team' as string]: driverCard.team.color,
+    ['--team-ink' as string]: driverCard.team.ink,
+  }
+
   const noClips = timeline != null && timeline.clips.length === 0 && uploaded == null
 
   return (
-    <div className="min-h-full bg-plane">
-      {/* Professional Header */}
+    <div className="relative z-10 min-h-full" style={teamVars}>
       <Header
         sessions={sessions}
         sessionId={sessionId}
@@ -189,175 +229,179 @@ function AppContent() {
         onDriverChange={setDriver}
         onModeChange={setMode}
         currentSession={session}
+        busy={loading}
       />
 
-      <main className="mx-auto max-w-[1600px] px-6 py-6">
+      <main className="mx-auto max-w-[1680px] space-y-4 px-4 py-4 sm:px-6 sm:py-5 lg:space-y-5">
         {error && (
-          <div className="mb-4 rounded-xl border border-status-critical/40 bg-status-critical/10 px-4 py-3 shadow-glow-red backdrop-blur">
-            <div className="flex items-center gap-3">
-              <div className="h-8 w-8 flex-shrink-0 rounded-full bg-status-critical/20 flex items-center justify-center">
-                <svg className="h-5 w-5 text-status-critical" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <p className="text-sm font-medium text-status-critical">{error}</p>
-            </div>
+          <div
+            className="flex items-start gap-3 rounded-xl border px-4 py-3"
+            style={{
+              borderColor: 'color-mix(in srgb, var(--status-critical) 40%, transparent)',
+              background: 'color-mix(in srgb, var(--status-critical) 9%, transparent)',
+            }}
+            role="alert"
+          >
+            <svg
+              className="mt-0.5 h-5 w-5 shrink-0 text-status-critical"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <p className="text-sm text-status-critical">{error}</p>
           </div>
         )}
 
-        {noClips && (
-          <div className="mb-4 rounded-xl border border-accent-cyan/30 bg-accent-cyan/5 px-4 py-3 shadow-glow-cyan backdrop-blur">
-            <div className="flex items-center gap-3">
-              <div className="h-8 w-8 flex-shrink-0 rounded-full bg-accent-cyan/20 flex items-center justify-center">
-                <svg className="h-5 w-5 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-accent-cyan">Real lap data, no radio clips yet.</p>
-                <p className="text-xs text-ink-muted mt-1">
-                  The pace panel below is {timeline?.session.event_name}, {timeline?.driver} — real
-                  FastF1 timing. Stress, strategy and correlation stay empty until clips are added to{' '}
-                  <code className="rounded bg-raised px-1.5 py-0.5 text-ink-secondary">data/clips/</code>, or you upload one on the left.
-                </p>
-              </div>
+        {loading ? (
+          <div className="panel">
+            <StartLights
+              label={
+                session ? `Loading ${session.event_name}` : 'Reaching the pit wall'
+              }
+              detail={
+                session
+                  ? `${driverCard.first} ${driverCard.last} · ${
+                      mode === 'fusion' ? 'fusion scoring' : 'single-model scoring'
+                    } · real FastF1 timing`
+                  : 'Fetching cached race sessions'
+              }
+            />
+          </div>
+        ) : timeline == null || verdict == null ? (
+          error ? null : (
+            <div className="panel px-6 py-20 text-center text-sm text-ink-muted">
+              No session selected.
             </div>
-          </div>
-        )}
-
-        {!timelineLoaded ? (
-          <div className="flex flex-col items-center justify-center py-32">
-            <div className="spinner mb-6" />
-            <p className="text-sm font-medium text-ink-secondary">Loading session data...</p>
-            <p className="text-xs text-ink-muted mt-1">Initializing AI models and race telemetry</p>
-          </div>
-        ) : error && !timeline ? (
-          <div className="flex flex-col items-center justify-center py-32">
-            <div className="mb-6 h-16 w-16 rounded-full bg-status-critical/10 flex items-center justify-center">
-              <svg className="h-8 w-8 text-status-critical" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <p className="text-sm font-medium text-status-critical">{error}</p>
-          </div>
-        ) : timeline == null ? null : (
-          <div className="grid grid-cols-1 gap-4 lg:grid-cols-[360px_1fr_340px]">
-            {/* Left Column: Radio Inspector & Clip Browser */}
-            <div className="flex flex-col gap-4">
-              <ComponentErrorBoundary>
-                <RadioInspector
-                clip={selectedClip}
+          )
+        ) : (
+          <>
+            {/* Keyed on driver so the plate's entrance animation replays and the
+                switch is visible, not just true. */}
+            <ComponentErrorBoundary>
+              <VerdictHero
+                key={`${sessionId}-${driver}`}
+                verdict={verdict}
+                driver={driverCard}
+                circuit={circuit}
+                eventName={timeline.session.event_name}
+                year={timeline.session.year}
                 mode={mode}
-                onUpload={handleUpload}
-                busy={busy}
-                uploadLap={uploadLap}
-                onUploadLapChange={setUploadLap}
-                progress={progress}
-                streaming={streamingClipId != null}
-                timeline={timeline}
-                // Uploads are excluded: the stream route resolves clips through
-                // the index, and an upload isn't in it.
-                onReanalyse={
-                  selectedClipId && !selectedClipId.startsWith('upload-')
-                    ? () => streamAnalysis(selectedClipId)
-                    : undefined
-                }
-              />
-              </ComponentErrorBoundary>
-
-              <ComponentErrorBoundary>
-                <SignalBars clip={selectedClip} />
-              </ComponentErrorBoundary>
-
-              {sessionId && (
-                <ComponentErrorBoundary>
-                  <ClipBrowser
-                  sessionId={sessionId}
-                  driver={driver}
-                  selectedClipId={selectedClipId}
-                  onSelect={handleBrowseSelect}
-                  refreshKey={libraryVersion}
-                />
-                </ComponentErrorBoundary>
-              )}
-            </div>
-
-            {/* Center Column: Timeline & Lead-Lag Analysis */}
-            <div className="flex flex-col gap-4">
-              <ComponentErrorBoundary>
-                <RaceTimeline
-                timeline={timeline}
-                selectedClipId={selectedClipId}
                 onSelectClip={setSelectedClipId}
               />
-              </ComponentErrorBoundary>
+            </ComponentErrorBoundary>
 
-              <ComponentErrorBoundary>
-                <LeadLagPanel analysis={timeline.lead_lag} />
-              </ComponentErrorBoundary>
-            </div>
-
-            {/* Right Column: Strategy Calls & Driver Baseline */}
-            <div className="flex flex-col gap-4">
-              <ComponentErrorBoundary>
-                <StrategyCalls calls={timeline.strategy_calls} onSelectLap={selectLap} />
-              </ComponentErrorBoundary>
-
-              <section className="card p-4" aria-label="Driver baseline">
-                <h2 className="card-title mb-2">Driver baseline</h2>
-                {timeline.baseline ? (
-                  <>
-                    <p className="mb-2 text-[11px] leading-snug text-ink-muted">
-                      {timeline.baseline.source === 'driver'
-                        ? `Features are scored against ${timeline.baseline.driver}’s own calm calls, so a naturally loud driver doesn’t read as permanently stressed.`
-                        : timeline.baseline.source === 'cohort'
-                          ? 'Scored against the pooled cohort — this driver has too few calm clips for an individual baseline yet.'
-                          : 'Population priors, not this driver. No annotated clips exist yet, so nothing is individually calibrated.'}
-                    </p>
-                    <dl className="space-y-1 text-[11px]">
-                      {[
-                        ['Reference', timeline.baseline.source],
-                        ['Baseline clips', String(timeline.baseline.n_baseline_clips)],
-                        ['Mean pitch (z)', timeline.baseline.f0_mean.toFixed(2)],
-                        ['Mean energy (z)', timeline.baseline.rms_mean.toFixed(3)],
-                        ['Speech rate (z)', timeline.baseline.speech_rate.toFixed(2)],
-                      ].map(([k, v]) => (
-                        <div key={k} className="flex justify-between">
-                          <dt className="text-ink-muted">{k}</dt>
-                          <dd className="tabular text-ink-secondary">{v}</dd>
-                        </div>
-                      ))}
-                    </dl>
-                  </>
-                ) : (
-                  <p className="text-[11px] leading-snug text-ink-muted">
-                    No calm clips analysed yet, so there is no reference to calibrate against.
-                    Scoring currently uses population priors.
+            {noClips && (
+              <div
+                className="flex items-start gap-3 rounded-xl border px-4 py-3"
+                style={{
+                  borderColor: 'rgba(0,217,255,0.3)',
+                  background: 'rgba(0,217,255,0.05)',
+                }}
+              >
+                <svg
+                  className="mt-0.5 h-5 w-5 shrink-0 text-accent-cyan"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <div>
+                  <p className="text-sm font-semibold text-accent-cyan">
+                    Real lap data, no radio scored yet.
                   </p>
-                )}
-              </section>
-
-              {selectedClip && !selectedClip.fusion.fitted && mode === 'fusion' && (
-                <div className="rounded-xl border border-status-warning/40 bg-status-warning/10 px-4 py-3">
-                  <div className="flex items-start gap-3">
-                    <svg className="h-5 w-5 flex-shrink-0 text-status-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                    </svg>
-                    <div>
-                      <p className="text-xs font-semibold text-status-warning">Fusion AI Using Fallback Mode</p>
-                      <p className="mt-1 text-[10px] leading-relaxed text-ink-muted">
-                        The AI is using interpretable rules. For best accuracy, train the fusion model by running <code className="rounded bg-raised px-1.5 py-0.5 text-ink-secondary">scripts/fit_fusion.py</code> after labeling clips.
-                      </p>
-                    </div>
-                  </div>
+                  <p className="mt-1 text-xs leading-relaxed text-ink-muted">
+                    The pace panel is genuine FastF1 timing for {timeline.session.event_name},{' '}
+                    {timeline.driver}. Stress, strategy and correlation stay empty until a clip is
+                    scored — pick one from the radio library, or upload your own.
+                  </p>
                 </div>
-              )}
+              </div>
+            )}
+
+            <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_minmax(340px,390px)] lg:gap-5">
+              {/* Analysis: what the session shows. */}
+              <div className="min-w-0 space-y-4 lg:space-y-5">
+                <ComponentErrorBoundary>
+                  <RaceTimeline
+                    timeline={timeline}
+                    selectedClipId={selectedClipId}
+                    onSelectClip={setSelectedClipId}
+                    verdict={verdict}
+                  />
+                </ComponentErrorBoundary>
+
+                <div className="grid gap-4 md:grid-cols-2 lg:gap-5">
+                  <ComponentErrorBoundary>
+                    <StrategyCalls calls={timeline.strategy_calls} onSelectLap={selectLap} />
+                  </ComponentErrorBoundary>
+                  <ComponentErrorBoundary>
+                    <LeadLagPanel analysis={timeline.lead_lag} />
+                  </ComponentErrorBoundary>
+                </div>
+
+                {/* Full width and last: it is a footnote to everything above,
+                    and putting it here is what stops the two columns ending
+                    half a screen apart at desktop widths. */}
+                <Baseline timeline={timeline} />
+              </div>
+
+              {/* Detail: the single call currently open, and why it scored. */}
+              <aside className="min-w-0 space-y-4 lg:space-y-5">
+                <ComponentErrorBoundary>
+                  <RadioInspector
+                    clip={selectedClip}
+                    mode={mode}
+                    onUpload={handleUpload}
+                    busy={busy}
+                    uploadLap={uploadLap}
+                    onUploadLapChange={setUploadLap}
+                    progress={progress}
+                    streaming={streamingClipId != null}
+                    timeline={timeline}
+                    // Uploads are excluded: the stream route resolves clips
+                    // through the index, and an upload isn't in it.
+                    onReanalyse={
+                      selectedClipId && !selectedClipId.startsWith('upload-')
+                        ? () => streamAnalysis(selectedClipId)
+                        : undefined
+                    }
+                  />
+                </ComponentErrorBoundary>
+
+                <ComponentErrorBoundary>
+                  <SignalBars clip={selectedClip} mode={mode} />
+                </ComponentErrorBoundary>
+
+                {sessionId && (
+                  <ComponentErrorBoundary>
+                    <ClipBrowser
+                      sessionId={sessionId}
+                      driver={driver}
+                      selectedClipId={selectedClipId}
+                      onSelect={handleBrowseSelect}
+                      refreshKey={libraryVersion}
+                      streamingClipId={streamingClipId}
+                    />
+                  </ComponentErrorBoundary>
+                )}
+              </aside>
             </div>
-          </div>
+          </>
         )}
       </main>
 
-      {/* Floating chat - available everywhere once a session is selected */}
+      <footer className="mx-auto max-w-[1680px] px-4 pb-24 pt-2 text-[10px] leading-relaxed text-ink-muted sm:px-6">
+        Lap timing and circuit geometry from FastF1, cached on disk. Driver portraits are
+        freely-licensed photographs from Wikimedia Commons — see{' '}
+        <span className="mono">public/drivers/CREDITS.md</span>. No official Formula 1 or team
+        imagery is used.
+      </footer>
+
       <ComponentErrorBoundary>
         <PitWallChat sessionId={sessionId} driver={driver} />
       </ComponentErrorBoundary>
@@ -365,11 +409,61 @@ function AppContent() {
   )
 }
 
+/**
+ * What the stress score is measured against.
+ *
+ * Small, and last on the page, but it is the difference between "this driver
+ * sounds loud" and "this driver sounds loud *for them*" — so it says which of
+ * the three references is actually in play rather than implying the best case.
+ */
+function Baseline({ timeline }: { timeline: Timeline }) {
+  const b = timeline.baseline
+
+  return (
+    <section
+      className="panel flex flex-col gap-4 p-4 sm:p-5 lg:flex-row lg:items-center lg:gap-8"
+      aria-label="Driver baseline"
+    >
+      <div className="lg:max-w-[46ch]">
+        <h2 className="card-title">Scored against</h2>
+        <p className="mt-2 text-[12px] leading-relaxed text-ink-secondary">
+          {!b
+            ? 'Population priors. No calm calls have been scored for this driver, so there is no personal reference to calibrate against yet.'
+            : b.source === 'driver'
+              ? `${b.driver}’s own calm calls, so a naturally loud driver doesn’t read as permanently stressed.`
+              : b.source === 'cohort'
+                ? 'The pooled cohort — this driver has too few calm calls for an individual baseline yet.'
+                : 'Population priors, not this driver. No annotated calls exist yet, so nothing is individually calibrated.'}
+        </p>
+      </div>
+
+      {b && (
+        <dl className="grid flex-1 grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3 lg:grid-cols-5">
+          {[
+            ['Reference', b.source],
+            ['Baseline clips', String(b.n_baseline_clips)],
+            ['Mean pitch (z)', b.f0_mean.toFixed(2)],
+            ['Mean energy (z)', b.rms_mean.toFixed(3)],
+            ['Speech rate (z)', b.speech_rate.toFixed(2)],
+          ].map(([k, v]) => (
+            <div key={k}>
+              <dt className="eyebrow" style={{ fontSize: 9 }}>
+                {k}
+              </dt>
+              <dd className="mono mt-1 text-[15px] text-ink-primary">{v}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
+    </section>
+  )
+}
+
 export default function App() {
   return (
     <ErrorBoundary
       onError={(error, errorInfo) => {
-        // In production, send to error tracking service (e.g., Sentry)
+        // In production, send to error tracking service (e.g. Sentry).
         console.error('App error:', error, errorInfo)
       }}
     >

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import type { ClipAnalysis, ProgressEvent, ScoringMode, Timeline } from '../types'
 import { MOOD_COLOR } from '../types'
 import { PipelineProgress } from './PipelineProgress'
+import { CustomAudioPlayer } from './CustomAudioPlayer'
 
 /**
  * Three of the brief's five named deliverables live in this panel: the
@@ -43,7 +44,6 @@ export function RadioInspector({
   timeline,
 }: Props) {
   const inputRef = useRef<HTMLInputElement>(null)
-  const audioRef = useRef<HTMLAudioElement>(null)
   const [audioError, setAudioError] = useState(false)
   const [lapError, setLapError] = useState<string | null>(null)
 
@@ -204,13 +204,10 @@ export function RadioInspector({
           </div>
 
           {clip && (
-            <audio
-              ref={audioRef}
+            <CustomAudioPlayer
               src={clip.audio_url}
               onError={() => setAudioError(true)}
               className="mt-3"
-              controls
-              preload="none"
             />
           )}
           {audioError && (

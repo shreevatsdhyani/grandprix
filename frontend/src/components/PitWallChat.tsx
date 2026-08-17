@@ -88,16 +88,17 @@ export function PitWallChat({ sessionId, driver }: Props) {
 
   if (!available || !sessionId) return null
 
+  // Floating button when closed
   if (!open) {
     return (
       <button
         onClick={() => setOpen(true)}
         className="group fixed bottom-5 right-5 z-50 flex h-14 items-center gap-2.5 rounded-full border border-hairline pl-4 pr-5 shadow-lg backdrop-blur-xl transition hover:border-hairline-bright sm:bottom-7 sm:right-7"
-        style={{ background: 'linear-gradient(150deg, #171b22 0%, #0b0d12 100%)' }}
+        style={{ background: "linear-gradient(150deg, #171b22 0%, #0b0d12 100%)" }}
       >
         <span
           className="grid h-8 w-8 place-items-center rounded-full"
-          style={{ background: 'var(--team)', color: 'var(--team-ink)' }}
+          style={{ background: "var(--team)", color: "var(--team-ink)" }}
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
             <path
@@ -107,21 +108,22 @@ export function PitWallChat({ sessionId, driver }: Props) {
             />
           </svg>
         </span>
-        <span className="display text-[12px] uppercase text-ink-primary">Ask the pit wall</span>
+        <span className="font-racing text-[12px] font-bold uppercase text-ink-primary">Ask the pit wall</span>
       </button>
     )
   }
 
+  // Floating dialog when open
   return (
     <div
       className="fixed inset-x-3 bottom-3 top-20 z-50 flex flex-col overflow-hidden rounded-2xl border border-hairline shadow-2xl backdrop-blur-xl sm:inset-auto sm:bottom-7 sm:right-7 sm:top-auto sm:h-[620px] sm:w-[400px]"
-      style={{ background: 'linear-gradient(160deg, rgba(20,24,31,0.97) 0%, rgba(9,11,15,0.98) 100%)' }}
+      style={{ background: "linear-gradient(160deg, rgba(20,24,31,0.97) 0%, rgba(9,11,15,0.98) 100%)" }}
       role="dialog"
       aria-label="Pit wall assistant"
     >
       <header className="flex items-start justify-between gap-3 border-b border-hairline px-4 py-3.5">
         <div className="min-w-0">
-          <p className="display text-[14px] uppercase text-ink-primary">Ask the pit wall</p>
+          <p className="font-racing text-[14px] font-bold uppercase text-ink-primary">Ask the pit wall</p>
           <p className="mt-1 truncate text-[11px] text-ink-muted">
             Answers grounded in this session’s own data · {driver}
           </p>
@@ -242,7 +244,7 @@ export function PitWallChat({ sessionId, driver }: Props) {
         <button
           type="submit"
           disabled={loading || !input.trim()}
-          className="btn btn-primary w-11 px-0"
+          className="grid h-10 w-10 place-items-center rounded-lg border border-hairline bg-accent-cyan/10 text-accent-cyan transition hover:bg-accent-cyan/20 disabled:opacity-40"
           aria-label="Send"
         >
           <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">

@@ -63,25 +63,35 @@ export function VerdictHero({
       )}
 
       {/* ── Venue strip ─────────────────────────────────────────────────── */}
-      <div className="relative flex flex-wrap items-center gap-x-3 gap-y-1.5 border-b border-hairline px-4 py-2.5 sm:px-5">
+      <div
+        className="relative flex flex-wrap items-center gap-x-3 gap-y-1.5 border-b px-4 py-2.5 sm:px-5"
+        style={{
+          borderColor: 'var(--hairline)',
+          borderTopWidth: '2px',
+          borderTopColor: 'color-mix(in srgb, var(--team) 60%, transparent)',
+        }}
+      >
         <span className="text-base leading-none" aria-hidden>
           {circuit?.flag ?? '🏁'}
         </span>
-        <span className="tower text-ink-primary" style={{ fontSize: 15, letterSpacing: '0.05em' }}>
+        <span className="mono text-ink-primary" style={{ fontSize: 15, letterSpacing: '0.08em', fontWeight: 700 }}>
           {eventName.toUpperCase()} {year}
         </span>
         {circuit && (
-          <span className="hidden text-[11px] text-ink-muted sm:inline">
-            {circuit.short} · {circuit.laps} laps · {circuit.km.toFixed(3)} km ·{' '}
-            {circuit.turns} turns
+          <span className="mono hidden text-[10.5px] text-ink-muted sm:inline">
+            {circuit.short} · {circuit.laps} LAPS · {circuit.km.toFixed(3)} KM ·{' '}
+            {circuit.turns} TURNS
           </span>
         )}
         <span className="ml-auto flex items-center gap-2">
           <span
-            className="chip"
-            style={{ color: mode === 'fusion' ? 'var(--series-1)' : 'var(--status-warning)' }}
+            className="chip font-racing text-[10px] font-bold"
+            style={{
+              color: mode === 'fusion' ? 'var(--series-1)' : 'var(--status-warning)',
+              background: mode === 'fusion' ? 'color-mix(in srgb, var(--series-1) 12%, transparent)' : 'color-mix(in srgb, var(--status-warning) 12%, transparent)',
+            }}
           >
-            {mode === 'fusion' ? 'Fusion model' : 'Single model'}
+            {mode === 'fusion' ? 'FUSION MODEL' : 'SINGLE MODEL'}
           </span>
         </span>
       </div>
@@ -91,16 +101,19 @@ export function VerdictHero({
         <DriverPlate driver={driver} />
 
         <div className="relative min-w-0 self-center">
-          <p className="eyebrow">The finding</p>
+          <p className="eyebrow font-racing font-bold tracking-[0.12em]" style={{ fontSize: '11px' }}>
+            THE FINDING
+          </p>
 
           <h1
-            className="display mt-2 text-balance text-ink-primary"
-            style={{ fontSize: 'clamp(26px, 3.2vw, 42px)' }}
+            className="font-racing mt-3 text-balance font-bold text-ink-primary"
+            style={{ fontSize: 'clamp(28px, 3.4vw, 44px)', lineHeight: 1.15 }}
           >
             {lead ? (
               <>
                 The voice cracked{' '}
                 <span
+                  className="mono font-black"
                   style={{
                     color: 'var(--status-critical)',
                     textShadow: '0 0 34px rgba(255,0,80,0.45)',
@@ -115,7 +128,7 @@ export function VerdictHero({
             )}
           </h1>
 
-          <p className="mt-3 max-w-[62ch] text-[13px] leading-relaxed text-ink-secondary sm:text-sm">
+          <p className="mt-4 max-w-[62ch] text-[13.5px] leading-[1.65] text-ink-secondary sm:text-[14px]">
             {verdict.support}
           </p>
 
@@ -193,14 +206,24 @@ function Stat({
 }) {
   const body = (
     <>
-      <p className="eyebrow">{label}</p>
-      <p className="mt-1.5 flex items-baseline gap-1.5">
-        <span className="tower" style={{ fontSize: 'clamp(30px, 4vw, 40px)', color: tone }}>
+      <p className="eyebrow font-racing text-[10px] font-semibold tracking-[0.14em] opacity-60">
+        {label.toUpperCase()}
+      </p>
+      <p className="mt-2 flex items-baseline gap-2">
+        <span
+          className="mono font-black tabular-nums"
+          style={{
+            fontSize: 'clamp(32px, 4.2vw, 44px)',
+            color: tone,
+            textShadow: `0 0 20px ${tone}40`,
+            fontVariantNumeric: 'tabular-nums',
+          }}
+        >
           {value}
         </span>
-        {unit && <span className="text-xs font-medium text-ink-muted">{unit}</span>}
+        {unit && <span className="mono text-xs font-semibold text-ink-muted">{unit}</span>}
       </p>
-      <p className="mt-1 truncate text-[11px] text-ink-muted" title={note}>
+      <p className="mt-1.5 truncate text-[11px] leading-snug text-ink-muted" title={note}>
         {note}
       </p>
     </>

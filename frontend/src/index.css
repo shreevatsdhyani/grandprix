@@ -64,8 +64,8 @@
   --status-serious: #ff6b00;
   --status-critical: #ff0050;
 
-  --brand: #e6002b; /* Haas red */
-  --accent-cyan: #00d9ff;
+  --brand: #00d9ff; /* Racing cyan - red reserved for critical states */
+  --accent-cyan: #00E5FF; /* Brighter cyan for better visibility */
 
   /* ── Legacy aliases kept so existing chart code keeps resolving. ───────── */
   --surface-1: var(--panel);
@@ -164,6 +164,38 @@ body::before {
   color: var(--slate);
 }
 
+/* Racing section titles - condensed, technical display font */
+.section-title {
+  font-family: 'Titillium Web', 'Barlow Condensed', var(--font-display);
+  font-weight: 900;
+  font-size: clamp(20px, 2.5vw, 28px);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+/* Timing tower numbers - tabular monospace for consistency */
+.timing-number {
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+}
+
+/* Racing divider - thin colored accent line */
+.racing-divider {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--team) 20%,
+    var(--accent-cyan) 50%,
+    var(--team) 80%,
+    transparent 100%
+  );
+  opacity: 0.4;
+}
+
 .mono {
   font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
@@ -197,13 +229,21 @@ body::before {
 }
 
 .card-title {
-  font-family: var(--font-display);
-  font-variation-settings: 'wdth' 100;
+  font-family: 'Titillium Web', 'Barlow Condensed', var(--font-display);
   font-weight: 700;
-  font-size: 10px;
-  letter-spacing: 0.2em;
+  font-size: 11px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--slate);
+  color: var(--ash);
+}
+
+/* Evidence panel - subtle visual distinction as core proof section */
+.panel-evidence {
+  border-top: 2px solid color-mix(in srgb, var(--accent-cyan) 50%, transparent);
+  background:
+    linear-gradient(180deg, rgba(0, 229, 255, 0.02) 0%, transparent 40%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.026) 0%, transparent 42%),
+    var(--panel);
 }
 
 /* A panel whose left edge is painted in the current driver's livery. Used only

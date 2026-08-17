@@ -323,8 +323,9 @@ function AppContent() {
               </div>
             )}
 
-            <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_minmax(340px,390px)] lg:gap-5">
-              {/* Analysis: what the session shows. */}
+            {/* Redesigned 2-column layout: 65-70% evidence + 30-35% sticky sidebar */}
+            <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(340px,420px)] lg:gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(360px,450px)]">
+              {/* LEFT PANEL: Evidence charts, strategies, methodology */}
               <div className="min-w-0 space-y-4 lg:space-y-5">
                 <ComponentErrorBoundary>
                   <RaceTimeline
@@ -344,14 +345,17 @@ function AppContent() {
                   </ComponentErrorBoundary>
                 </div>
 
-                {/* Full width and last: it is a footnote to everything above,
-                    and putting it here is what stops the two columns ending
-                    half a screen apart at desktop widths. */}
                 <Baseline timeline={timeline} />
+
+                {selectedClip && (
+                  <ComponentErrorBoundary>
+                    <SignalBars clip={selectedClip} mode={mode} />
+                  </ComponentErrorBoundary>
+                )}
               </div>
 
-              {/* Detail: the single call currently open, and why it scored. */}
-              <aside className="min-w-0 space-y-4 lg:space-y-5">
+              {/* RIGHT PANEL: Sticky sidebar with Radio Inspector and Library */}
+              <aside className="min-w-0 space-y-6 lg:sticky lg:top-[88px] lg:h-fit lg:space-y-6">
                 <ComponentErrorBoundary>
                   <RadioInspector
                     clip={selectedClip}
@@ -363,8 +367,6 @@ function AppContent() {
                     progress={progress}
                     streaming={streamingClipId != null}
                     timeline={timeline}
-                    // Uploads are excluded: the stream route resolves clips
-                    // through the index, and an upload isn't in it.
                     onReanalyse={
                       selectedClipId && !selectedClipId.startsWith('upload-')
                         ? () => streamAnalysis(selectedClipId)
@@ -373,20 +375,18 @@ function AppContent() {
                   />
                 </ComponentErrorBoundary>
 
-                <ComponentErrorBoundary>
-                  <SignalBars clip={selectedClip} mode={mode} />
-                </ComponentErrorBoundary>
-
                 {sessionId && (
                   <ComponentErrorBoundary>
-                    <ClipBrowser
-                      sessionId={sessionId}
-                      driver={driver}
-                      selectedClipId={selectedClipId}
-                      onSelect={handleBrowseSelect}
-                      refreshKey={libraryVersion}
-                      streamingClipId={streamingClipId}
-                    />
+                    <div style={{ maxHeight: '400px' }}>
+                      <ClipBrowser
+                        sessionId={sessionId}
+                        driver={driver}
+                        selectedClipId={selectedClipId}
+                        onSelect={handleBrowseSelect}
+                        refreshKey={libraryVersion}
+                        streamingClipId={streamingClipId}
+                      />
+                    </div>
                   </ComponentErrorBoundary>
                 )}
               </aside>
@@ -395,13 +395,11 @@ function AppContent() {
         )}
       </main>
 
-      <footer className="mx-auto max-w-[1680px] px-4 pb-24 pt-2 text-[10px] leading-relaxed text-ink-muted sm:px-6">
-        Lap timing and circuit geometry from FastF1, cached on disk. Driver portraits are
-        freely-licensed photographs from Wikimedia Commons — see{' '}
-        <span className="mono">public/drivers/CREDITS.md</span>. No official Formula 1 or team
-        imagery is used.
+      <footer className="mx-auto max-w-[1680px] px-4 pb-24 pt-2" aria-hidden="true">
+        {/* Footer removed per user request */}
       </footer>
 
+      {/* Floating Ask the Pit Wall - restored as separate element */}
       <ComponentErrorBoundary>
         <PitWallChat sessionId={sessionId} driver={driver} />
       </ComponentErrorBoundary>
@@ -438,7 +436,7 @@ function Baseline({ timeline }: { timeline: Timeline }) {
       </div>
 
       {b && (
-        <dl className="grid flex-1 grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3 lg:grid-cols-5">
+        <dl className="grid flex-1 gap-x-6 gap-y-3" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))' }}>
           {[
             ['Reference', b.source],
             ['Baseline clips', String(b.n_baseline_clips)],
@@ -446,7 +444,7 @@ function Baseline({ timeline }: { timeline: Timeline }) {
             ['Mean energy (z)', b.rms_mean.toFixed(3)],
             ['Speech rate (z)', b.speech_rate.toFixed(2)],
           ].map(([k, v]) => (
-            <div key={k}>
+            <div key={k} style={{ minWidth: '140px' }}>
               <dt className="eyebrow" style={{ fontSize: 9 }}>
                 {k}
               </dt>

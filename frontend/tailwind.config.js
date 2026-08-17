@@ -26,17 +26,19 @@ export default {
         },
 
         status: {
-          good: '#00ff88',
-          warning: '#ffaa00',
-          serious: '#ff6b00',
-          critical: '#ff0050',
+          good: '#00ff88',      // Green = calm/good
+          warning: '#ffaa00',   // Amber/orange = stressed
+          serious: '#ff6b00',   // Orange = serious warning
+          critical: '#ff0050',  // Red = critical ONLY
         },
 
-        brand: '#e6002b', // Haas red
+        // Brand color changed from red to cyan (red reserved for critical states)
+        brand: '#00d9ff', // Racing cyan (neutral, not alarming)
         accent: {
-          cyan: '#00d9ff',
+          cyan: '#00E5FF',      // Brighter cyan for pace/neutral data
           purple: '#b000ff',
-          green: '#00ff88',
+          green: '#00ff88',     // Green for calm/good states
+          amber: '#ffaa00',     // Amber for stressed states
         },
 
         // Livery colour of the driver currently on screen, set from JS.
@@ -45,6 +47,10 @@ export default {
       fontFamily: {
         sans: ['InterVar', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
         display: ['Archivo', 'system-ui', 'sans-serif'],
+        // Racing-style condensed fonts for headlines, driver names, section titles
+        racing: ['Titillium Web', 'Barlow Condensed', 'system-ui', 'sans-serif'],
+        condensed: ['Barlow Condensed', 'Titillium Web', 'system-ui', 'sans-serif'],
+        // Tabular monospace for timing-tower style numbers
         mono: ['JetBrainsMonoVar', 'JetBrains Mono', 'ui-monospace', 'monospace'],
       },
       boxShadow: {

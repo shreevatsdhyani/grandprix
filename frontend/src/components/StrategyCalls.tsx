@@ -68,7 +68,7 @@ export function StrategyCalls({
                       >
                         {c.headline}
                       </p>
-                      <p className="mt-1 text-[11px] leading-relaxed text-ink-muted">
+                      <p className="mt-1 text-[11px] leading-relaxed" style={{ color: "#C5CCD6" }}>
                         {c.rationale}
                       </p>
                     </div>

@@ -47,10 +47,10 @@ export function Header({
         <div className="flex min-w-0 items-center gap-3">
           <Mark />
           <div className="min-w-0">
-            <p className="display text-[15px] uppercase leading-none tracking-tight text-ink-primary">
+            <p className="font-racing text-[20px] font-bold uppercase leading-none tracking-tight text-ink-primary">
               Silent Co-Driver
             </p>
-            <p className="mt-1 truncate text-[11px] leading-none text-ink-muted">
+            <p className="mt-1.5 truncate text-[12px] leading-none text-ink-secondary">
               Hears the driver crack before the lap time does
             </p>
           </div>
@@ -130,8 +130,8 @@ function Mark() {
     <span
       className="relative grid h-9 w-9 shrink-0 place-items-center rounded-lg"
       style={{
-        background: 'linear-gradient(150deg, #ff1b46 0%, var(--brand) 55%, #7a0018 100%)',
-        boxShadow: '0 1px 0 rgba(255,255,255,0.3) inset, 0 8px 20px -10px rgba(230,0,43,0.9)',
+        background: 'linear-gradient(150deg, #00E5FF 0%, #00d9ff 55%, #0099b3 100%)',
+        boxShadow: '0 1px 0 rgba(255,255,255,0.3) inset, 0 8px 20px -10px rgba(0,217,255,0.6)',
       }}
       aria-hidden
     >

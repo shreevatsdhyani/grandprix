@@ -215,7 +215,7 @@ export const MOOD_SHAPE: Record<Mood, 'circle' | 'triangle' | 'square'> = {
 }
 
 export const URGENCY_COLOR: Record<Urgency, string> = {
-  info: 'var(--text-muted)',
+  info: '#A8B0BF', // Brightened from text-muted for better visibility as status tag
   warning: 'var(--status-warning)',
   critical: 'var(--status-critical)',
 }

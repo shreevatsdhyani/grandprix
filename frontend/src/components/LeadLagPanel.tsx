@@ -76,7 +76,7 @@ export function LeadLagPanel({ analysis }: { analysis: LeadLagAnalysis | null })
             <CartesianGrid stroke="var(--gridline)" vertical={false} />
             <XAxis
               dataKey="lag_laps"
-              tick={{ fill: 'var(--text-muted)', fontSize: 10 }}
+              tick={{ fill: '#7A8290', fontSize: 10 }}
               axisLine={{ stroke: 'var(--axis)' }}
               tickLine={false}
               label={{
@@ -91,7 +91,7 @@ export function LeadLagPanel({ analysis }: { analysis: LeadLagAnalysis | null })
               width={30}
               domain={[-1, 1]}
               ticks={[-1, 0, 1]}
-              tick={{ fill: 'var(--text-muted)', fontSize: 10 }}
+              tick={{ fill: '#7A8290', fontSize: 10 }}
               axisLine={false}
               tickLine={false}
             />
@@ -127,7 +127,7 @@ export function LeadLagPanel({ analysis }: { analysis: LeadLagAnalysis | null })
 
       {/* Honesty line. With a small sample this must hedge — a judge who hears
           us state our own limitation trusts the rest of the claims. */}
-      <p className="mt-1.5 text-[11px] leading-relaxed text-ink-secondary">
+      <p className="mt-1.5 text-[11px] leading-relaxed" style={{ color: '#C5CCD6' }}>
         {analysis.interpretation}
       </p>
       {!analysis.is_significant && (

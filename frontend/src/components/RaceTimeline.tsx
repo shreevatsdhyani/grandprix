@@ -43,7 +43,7 @@ interface Props {
 
 const AXIS = 'var(--axis)'
 const GRID = 'var(--gridline)'
-const MUTED = 'var(--text-muted)'
+const MUTED = '#7A8290' // Slightly brighter than text-muted for better tick label visibility
 
 /** Mood markers are shape-coded as well as colour-coded: the status red/green
  *  pair fails CVD separation, so colour may never be the only channel. */

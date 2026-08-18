@@ -35,8 +35,12 @@ AVAILABLE = [
     (2024, "British Grand Prix", "R"),
     (2024, "Italian Grand Prix", "R"),
     (2024, "Singapore Grand Prix", "R"),
+    (2024, "Monaco Grand Prix", "R"),
     (2023, "Dutch Grand Prix", "R"),
     (2023, "São Paulo Grand Prix", "R"),
+    (2023, "Bahrain Grand Prix", "R"),
+    (2023, "Monaco Grand Prix", "R"),
+    (2023, "Singapore Grand Prix", "R"),
 ]
 
 

@@ -26,9 +26,18 @@ AGENT_RATE_LIMIT_PER_HOUR = 100  # Requests per hour per IP
 AGENT_STREAM_ENABLED = False  # Enable streaming responses
 AGENT_STREAM_CHUNK_SIZE = 50  # Characters per chunk
 
-# Model selection
-GROQ_MODEL = "llama-3.3-70b-versatile"  # Primary model
-GROQ_FALLBACK_MODEL = "llama-3.1-70b-versatile"  # Fallback if primary fails
+# Model selection.
+#
+# Both of the Llama models this used to name have been retired from Groq's
+# catalogue, and the endpoint answered every question with a 404 wrapped in a
+# 500 as a result. Groq removes hosted models on notice, so treat the name as
+# perishable: the fallback below is now actually tried (agent.py), which is what
+# the constant always claimed.
+#
+# Verified against `client.models.list()` on this key — both support tool
+# calling, which the loop depends on.
+GROQ_MODEL = "openai/gpt-oss-120b"  # Primary model
+GROQ_FALLBACK_MODEL = "openai/gpt-oss-20b"  # Fallback if primary fails
 
 # System prompt template
 SYSTEM_PROMPT_TEMPLATE = """You are a race engineer assistant analyzing F1 driver stress and performance data.

@@ -3,6 +3,15 @@
 
 Emits an SVG path per session, normalised into a 1000x1000 box, so the frontend
 can draw the actual track geometry instead of a hand-drawn approximation.
+
+Usage:
+    python scripts/extract_circuits.py                    # every cached session
+    python scripts/extract_circuits.py 2023-monaco-r ...  # only these ids
+
+Emitting one session at a time matters: `session.load(telemetry=True)` pulls the
+full position stream, which is minutes and ~120 MB per race on a cold cache. The
+runtime app never does this — see `app.data.fastf1_client`, which loads with
+telemetry=False.
 """
 from __future__ import annotations
 
@@ -10,20 +19,25 @@ import json
 import sys
 from pathlib import Path
 
-ROOT = Path("/Users/akshatsaraswat/Desktop/grandprix")
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "backend"))
 
 import fastf1  # noqa: E402
 import numpy as np  # noqa: E402
 
-fastf1.Cache.enable_cache(str(ROOT / "data" / "cache"))
+from app import config  # noqa: E402
+
+# The session list is not duplicated here on purpose. It used to be a local copy
+# that silently went stale at five entries while the app grew to nine, so four
+# circuits had no geometry at all. There is one list, and it lives with the code
+# that serves it.
+from app.data.fastf1_client import AVAILABLE, make_session_id  # noqa: E402
+
+fastf1.Cache.enable_cache(str(config.FASTF1_CACHE_DIR))
 
 SESSIONS = [
-    ("2024-british-r", 2024, "British Grand Prix", "R"),
-    ("2024-italian-r", 2024, "Italian Grand Prix", "R"),
-    ("2024-singapore-r", 2024, "Singapore Grand Prix", "R"),
-    ("2023-dutch-r", 2023, "Dutch Grand Prix", "R"),
-    ("2023-sao-paulo-r", 2023, "São Paulo Grand Prix", "R"),
+    (make_session_id(year, event, kind), year, event, kind)
+    for year, event, kind in AVAILABLE
 ]
 
 
@@ -48,8 +62,21 @@ def to_path(x: np.ndarray, y: np.ndarray) -> tuple[str, float]:
     return "M" + "L".join(pts) + "Z", round(float(y.max()), 1)
 
 
+wanted = sys.argv[1:]
+if wanted:
+    known = {sid for sid, *_ in SESSIONS}
+    unknown = [w for w in wanted if w not in known]
+    if unknown:
+        sys.exit(
+            f"Unknown session id(s): {', '.join(unknown)}\n"
+            f"Known: {', '.join(sorted(known))}"
+        )
+    targets = [row for row in SESSIONS if row[0] in wanted]
+else:
+    targets = SESSIONS
+
 out = {}
-for sid, year, event, kind in SESSIONS:
+for sid, year, event, kind in targets:
     s = fastf1.get_session(year, event, kind)
     s.load(laps=True, telemetry=True, weather=False, messages=False)
     lap = s.laps.pick_fastest()

@@ -206,7 +206,17 @@ class ClipAnalysis(BaseModel):
     cached: bool = False
 
     def result_for(self, mode: ScoringMode) -> MoodResult:
-        return self.fusion if mode is ScoringMode.FUSION else self.naive
+        # `==`, not `is`. `ScoringMode` subclasses `str` so that the plain
+        # `"fusion"` a caller has in hand compares equal to the member, and an
+        # identity test throws that away: it answered every string caller with
+        # `naive` and returned it as though it were the mode they asked for.
+        #
+        # That is exactly what happened to the agent tools, which passed
+        # `mode="fusion"` with a `# type: ignore` over the warning. They read
+        # naive scores for months while the same panel on screen read fusion, so
+        # the two disagreed about which lap was the driver's worst — the one
+        # failure the agent's tool-only design is meant to make impossible.
+        return self.fusion if mode == ScoringMode.FUSION else self.naive
 
 
 # --------------------------------------------------------------------------
@@ -392,4 +402,31 @@ class HealthResponse(BaseModel):
     offline_ready: bool = Field(
         description="True when weights and session cache are on local disk. "
         "The GrandPrix venue is offline; this must be True on demo day."
+    )
+
+
+class ModelCard(BaseModel):
+    """What the fusion head actually scored, read off the fitted weights.
+
+    The A/B toggle's whole claim is that fusion beats a single off-the-shelf
+    emotion model. The UI used to state that as a static label, which is a
+    number that can silently stop being true the moment the head is refitted.
+    Serving it from the same file the runtime scores with means the headline and
+    the model can never disagree.
+    """
+
+    n_train: int = Field(description="Labelled clips the head was fitted on")
+    cv_accuracy: float = Field(
+        ge=0, le=1, description="Cross-validated accuracy of the fusion head"
+    )
+    naive_accuracy: float = Field(
+        ge=0,
+        le=1,
+        description=(
+            "Same labels, single acoustic SER model — the baseline fusion is "
+            "measured against, not a published figure."
+        ),
+    )
+    features: list[str] = Field(
+        description="Feature vector, in the positional order the coefficients are stored in"
     )

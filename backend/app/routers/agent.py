@@ -24,6 +24,7 @@ from pydantic import BaseModel
 
 from app import agent_config, config
 from app.data import store, timeline as timeline_module
+from app.schemas import ScoringMode
 from app.routers.agent_cache import get_cache
 
 log = logging.getLogger(__name__)
@@ -46,6 +47,20 @@ class AgentResponse(BaseModel):
 # ═══════════════════════════════════════════════════════════════════════════
 
 
+def _mode(name: str) -> ScoringMode:
+    """The model picked this string, so it may be anything.
+
+    An unrecognised mode falls back to fusion rather than raising: the question
+    was about stress, not about scoring paths, and answering it from the
+    dashboard's own mode beats a tool error the agent has to apologise for.
+    """
+    try:
+        return ScoringMode(name)
+    except ValueError:
+        log.warning(f"Agent asked for unknown scoring mode {name!r} — using fusion")
+        return ScoringMode.FUSION
+
+
 def get_stress_series(driver: str, session_id: str, mode: str = "fusion") -> dict[int, float]:
     """Get stress index (0-100) per lap for a driver in a session.
 
@@ -53,7 +68,7 @@ def get_stress_series(driver: str, session_id: str, mode: str = "fusion") -> dic
     {35: 78.2, 36: 82.1, 37: 75.3}
     """
     try:
-        timeline = timeline_module.build(session_id, driver, mode)  # type: ignore
+        timeline = timeline_module.build(session_id, driver, _mode(mode))
         return {
             p.lap: round(p.stress_index, 1)
             for p in timeline.points
@@ -71,7 +86,7 @@ def get_lap_deltas(driver: str, session_id: str) -> dict[int, float]:
     Returns: {lap: delta_s, ...}
     """
     try:
-        timeline = timeline_module.build(session_id, driver, mode="fusion")  # type: ignore
+        timeline = timeline_module.build(session_id, driver, ScoringMode.FUSION)
         return {
             p.lap: round(p.delta_s, 3)
             for p in timeline.points
@@ -103,7 +118,7 @@ def find_stressed_moments(driver: str, session_id: str, min_stress: float = 70.0
     Returns list of {lap, stress, clip_id, mood} for moments above min_stress.
     """
     try:
-        timeline = timeline_module.build(session_id, driver, mode="fusion")  # type: ignore
+        timeline = timeline_module.build(session_id, driver, ScoringMode.FUSION)
         moments = []
         for p in timeline.points:
             if p.stress_index and p.stress_index >= min_stress and p.clip_id:
@@ -125,7 +140,7 @@ def get_lead_lag_info(driver: str, session_id: str) -> dict[str, Any]:
     Returns peak correlation lag, correlation coefficient, and sample size.
     """
     try:
-        timeline = timeline_module.build(session_id, driver, mode="fusion")  # type: ignore
+        timeline = timeline_module.build(session_id, driver, ScoringMode.FUSION)
         if not timeline.lead_lag:
             return {"error": "Not enough data for lead-lag analysis"}
 
@@ -302,10 +317,17 @@ async def ask_agent(req: AgentRequest) -> AgentResponse:
 
     tools_used = []
 
+    # Try the primary model, then the fallback. Groq retires hosted models on
+    # notice and a retired name comes back as a 404, so a single hardcoded model
+    # is a scheduled outage: this endpoint was already dead that way. Sticky per
+    # request rather than per call — switching models mid-conversation would hand
+    # a second model someone else's half-finished tool loop.
+    model = agent_config.GROQ_MODEL
+
     for iteration in range(agent_config.AGENT_MAX_ITERATIONS):
         try:
             response = client.chat.completions.create(
-                model=agent_config.GROQ_MODEL,
+                model=model,
                 messages=messages,
                 tools=TOOLS,
                 tool_choice="auto",
@@ -313,14 +335,49 @@ async def ask_agent(req: AgentRequest) -> AgentResponse:
                 temperature=agent_config.AGENT_TEMPERATURE,
             )
         except Exception as e:
-            log.error(f"Groq API call failed: {e}")
-            raise HTTPException(500, f"Agent failed: {str(e)}")
+            fallback = agent_config.GROQ_FALLBACK_MODEL
+            if model == fallback:
+                log.error(f"Groq API call failed on {model}: {e}")
+                raise HTTPException(500, f"Agent failed: {str(e)}")
+            log.warning(f"Groq model {model} failed ({e}) — retrying on {fallback}")
+            model = fallback
+            try:
+                response = client.chat.completions.create(
+                    model=model,
+                    messages=messages,
+                    tools=TOOLS,
+                    tool_choice="auto",
+                    max_tokens=agent_config.AGENT_MAX_TOKENS,
+                    temperature=agent_config.AGENT_TEMPERATURE,
+                )
+            except Exception as e2:
+                log.error(f"Groq API call failed on fallback {model}: {e2}")
+                raise HTTPException(500, f"Agent failed: {str(e2)}")
 
         assistant_message = response.choices[0].message
 
         # If no tool calls, we have the final answer
         if not assistant_message.tool_calls:
-            final_answer = assistant_message.content or "I couldn't generate an answer."
+            final_answer = (assistant_message.content or "").strip()
+            # A turn that is all reasoning and no prose is not an answer. These
+            # models put their working in a separate `reasoning` field and
+            # occasionally stop there, and the old code shipped the placeholder
+            # to the user *and cached it for an hour* — so one empty turn made
+            # that question permanently unanswerable. Ask again instead; the
+            # tool results are still in `messages`, so it costs one round trip
+            # and the loop's own iteration cap bounds it.
+            if not final_answer:
+                log.warning(f"{model} returned no prose on iteration {iteration} — re-prompting")
+                messages.append(
+                    {
+                        "role": "user",
+                        "content": (
+                            "Answer now, in prose, using only the tool results above."
+                        ),
+                    }
+                )
+                continue
+
             response = AgentResponse(answer=final_answer, tools_used=tools_used)
 
             # Cache the response
@@ -370,13 +427,10 @@ async def ask_agent(req: AgentRequest) -> AgentResponse:
                     "content": json.dumps({"error": str(e)}),
                 })
 
-    # Max iterations reached
-    response = AgentResponse(
+    # Max iterations reached. Deliberately not cached: this is a failure of the
+    # loop, not a property of the question, and an hour of serving it instantly
+    # would make a transient stall look like a permanent refusal.
+    return AgentResponse(
         answer="I couldn't complete the analysis - too many steps required.",
         tools_used=tools_used,
     )
-
-    # Cache even failed responses to avoid retrying
-    cache.set(req.question, req.session_id, req.driver, response.model_dump())
-
-    return response

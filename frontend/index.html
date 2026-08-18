@@ -4,27 +4,39 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#07080b" />
+    <meta name="theme-color" content="#0A0B0D" />
     <meta
       name="description"
       content="Reads Formula 1 team radio and flags a driver losing their grip a lap before the stopwatch shows it."
     />
     <title>The Silent Co-Driver — F1 radio stress on the pit wall</title>
 
-    <!-- Self-hosted so the demo survives with no network. Preloaded because the
-         display face sets the first paint of the hero. -->
-    <link rel="preload" href="/fonts/archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Self-hosted, no CDN: the demo is judged offline and a webfont request
+         that fails takes the whole type system with it. Only the two faces that
+         set the first paint are preloaded — the condensed 700 carries every
+         heading, the mono carries every number. See public/fonts/CREDITS.md. -->
+    <link rel="preload" href="/fonts/barlow-cond-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/robotomono-var-latin.woff2" as="font" type="font/woff2" crossorigin />
 
-    <!-- Racing-style display fonts for headlines and driver names -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700;900&family=Barlow+Condensed:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+    <script>
+      // Resolve the theme before first paint. Doing this in React instead means
+      // one frame of the wrong background on every load, which on the light
+      // theme is a full-screen white-to-dark flash.
+      (function () {
+        try {
+          var t = localStorage.getItem('gp-theme')
+          document.documentElement.dataset.theme = t === 'light' ? 'light' : 'dark'
+        } catch (e) {
+          document.documentElement.dataset.theme = 'dark'
+        }
+      })()
+    </script>
 
     <style>
-      /* Painted before React mounts so the first frame is the app's own black,
-         not the browser's white. */
-      html { background: #07080b; }
+      /* Painted before the stylesheet loads so the first frame is the app's own
+         ground, not the browser's white. Kept in sync with --bg in index.css. */
+      html { background: #0A0B0D; }
+      html[data-theme='light'] { background: #ECEEF1; }
     </style>
   </head>
   <body>

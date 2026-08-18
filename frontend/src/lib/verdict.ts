@@ -18,6 +18,13 @@ export interface Verdict {
   state: 'lead' | 'no-lead' | 'no-clips'
   /** Laps of warning: how far the stress peak sits ahead of the pace drop. */
   leadLaps: number | null
+  /**
+   * The backend's peak lag, signed and untouched: negative means the voice moved
+   * first, positive means the pace did. Carried separately from `leadLaps`
+   * because "no lead" and "not measurable" are different answers, and a panel
+   * showing a dash for the first needs to be able to say which one it means.
+   */
+  lagLaps: number | null
   headline: string
   /** The qualifying line under the headline, in the interface's voice. */
   support: string
@@ -61,6 +68,7 @@ export function readVerdict(timeline: Timeline | null): Verdict | null {
   const base = {
     significant,
     peakStress: peak,
+    lagLaps: lag?.peak_lag_laps ?? null,
     correlation: lag?.peak_correlation ?? null,
     nSamples: lag?.n_samples ?? 0,
     callCount: calls.length,
@@ -88,7 +96,12 @@ export function readVerdict(timeline: Timeline | null): Verdict | null {
       headline: `Peak stress ${Math.round(peak.value)} at lap ${peak.lap}`,
       support:
         lag && lag.n_samples > 0
-          ? `No lead detected across ${lag.n_samples} scored calls — the voice moves with the stopwatch here, not ahead of it.`
+          ? // "laps", not "calls". leadlag.py counts distinct laps carrying a
+            // stress score, so several radio calls on one lap collapse to one
+            // sample — and the KPI caption beside this line already says laps.
+            `No lead detected across ${lag.n_samples} scored ${
+              lag.n_samples === 1 ? 'lap' : 'laps'
+            } — the voice moves with the stopwatch here, not ahead of it.`
           : 'Too few scored calls in this session to test whether the voice moves first.',
     }
   }

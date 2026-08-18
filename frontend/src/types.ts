@@ -196,26 +196,16 @@ export interface ProgressEvent {
 }
 
 /**
- * Mood is a *state*, so it takes status colors — but red/green fail CVD
- * separation (ΔE 4.1 deutan), so these are never allowed to carry meaning
- * alone. Every use pairs the color with the mood word, and on chart marks with
- * a distinct shape too.
+ * The fusion head's own scorecard, from GET /api/model-card.
+ *
+ * Read straight out of `data/labels/fusion_head.json` by the backend, so the
+ * accuracy on screen is the one the model was actually fitted at — not a number
+ * typed into the UI that goes stale the next time the head is refitted.
  */
-export const MOOD_COLOR: Record<Mood, string> = {
-  Calm: 'var(--status-good)',
-  Stressed: 'var(--status-warning)',
-  Tired: 'var(--status-critical)',
+export interface ModelCard {
+  n_train: number
+  cv_accuracy: number
+  naive_accuracy: number
+  features: string[]
 }
 
-/** The secondary encoding that makes mood readable without color. */
-export const MOOD_SHAPE: Record<Mood, 'circle' | 'triangle' | 'square'> = {
-  Calm: 'circle',
-  Stressed: 'triangle',
-  Tired: 'square',
-}
-
-export const URGENCY_COLOR: Record<Urgency, string> = {
-  info: '#A8B0BF', // Brightened from text-muted for better visibility as status tag
-  warning: 'var(--status-warning)',
-  critical: 'var(--status-critical)',
-}

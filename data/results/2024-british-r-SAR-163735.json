@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-british-r-SAR-163735",
+  "driver": "SAR",
+  "session_id": "2024-british-r",
+  "lap": 52,
+  "duration_s": 30.0,
+  "audio_url": "/api/clips/2024-british-r-SAR-163735",
+  "transcript": {
+    "text": "Is that it? Yep, that's P11, my P11. This was another fun race. Good job of that, good job. Alex, P9, so that P10 was nicer ahead of us. Yeah, good job guys. It's a shame we got caught out a little bit with that interstop, but yeah, it is, but it is, good work this weekend. I think it was a good recovery considering we missed P1, so thank you guys. Let's keep pushing. Well on, Logan, good, good, really strong race. Really strong race.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 13.8,
+      "f0_mean_z": 0.372,
+      "f0_std_z": 0.857,
+      "rms_mean_z": 0.33,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.169,
+      "jitter_z": 0.459
+    },
+    "acoustic": {
+      "score": 32.0,
+      "probabilities": {
+        "hap": 0.7504,
+        "sad": 0.205,
+        "neu": 0.0406,
+        "ang": 0.004
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 15.0,
+      "probabilities": {
+        "joy": 0.7814,
+        "neutral": 0.1338,
+        "sadness": 0.0392,
+        "surprise": 0.0278,
+        "disgust": 0.0121,
+        "anger": 0.0042,
+        "fear": 0.0016
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.719,
+    "stress_index": 27.3,
+    "probabilities": {
+      "Calm": 0.719,
+      "Stressed": 0.208,
+      "Tired": 0.072
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.75,
+    "stress_index": 32.0,
+    "probabilities": {
+      "Calm": 0.936,
+      "Stressed": 0.004,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 4383,
+  "cached": false
+}

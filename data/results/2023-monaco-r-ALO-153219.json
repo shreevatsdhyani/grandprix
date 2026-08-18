@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-ALO-153219",
+  "driver": "ALO",
+  "session_id": "2023-monaco-r",
+  "lap": 66,
+  "duration_s": 5.38,
+  "audio_url": "/api/clips/2023-monaco-r-ALO-153219",
+  "transcript": {
+    "text": "Yeah I will do. So last lap, Occam 2.2 seconds, slower than you. He's got a lot of pressure from the two Mercedes behind him.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 42.9,
+      "f0_mean_z": -1.31,
+      "f0_std_z": -1.112,
+      "rms_mean_z": -1.187,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.751,
+      "jitter_z": -0.174
+    },
+    "acoustic": {
+      "score": 24.1,
+      "probabilities": {
+        "neu": 0.8142,
+        "ang": 0.103,
+        "hap": 0.0818,
+        "sad": 0.001
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 22.4,
+      "probabilities": {
+        "neutral": 0.8462,
+        "surprise": 0.0539,
+        "disgust": 0.036,
+        "sadness": 0.0234,
+        "anger": 0.022,
+        "fear": 0.0147,
+        "joy": 0.0037
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.554,
+    "stress_index": 40.2,
+    "probabilities": {
+      "Calm": 0.554,
+      "Stressed": 0.002,
+      "Tired": 0.444
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.814,
+    "stress_index": 24.1,
+    "probabilities": {
+      "Calm": 0.843,
+      "Stressed": 0.097,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1802,
+  "cached": false
+}

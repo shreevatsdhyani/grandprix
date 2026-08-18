@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-RUS-142501",
+  "driver": "RUS",
+  "session_id": "2023-monaco-r",
+  "lap": 17,
+  "duration_s": 1.03,
+  "audio_url": "/api/clips/2023-monaco-r-RUS-142501",
+  "transcript": {
+    "text": "you know.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 100.0,
+      "f0_mean_z": 0.0,
+      "f0_std_z": 0.0,
+      "rms_mean_z": -12.16,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 6.266,
+      "jitter_z": 0.0
+    },
+    "acoustic": {
+      "score": 94.5,
+      "probabilities": {
+        "ang": 0.9933,
+        "hap": 0.0065,
+        "neu": 0.0002,
+        "sad": 0.0
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 28.7,
+      "probabilities": {
+        "neutral": 0.7134,
+        "disgust": 0.1395,
+        "joy": 0.041,
+        "anger": 0.0394,
+        "sadness": 0.0319,
+        "surprise": 0.0176,
+        "fear": 0.0172
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.99,
+    "stress_index": 89.8,
+    "probabilities": {
+      "Calm": 0.002,
+      "Stressed": 0.007,
+      "Tired": 0.99
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.993,
+    "stress_index": 94.5,
+    "probabilities": {
+      "Calm": 0.006,
+      "Stressed": 0.934,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2093,
+  "cached": false
+}

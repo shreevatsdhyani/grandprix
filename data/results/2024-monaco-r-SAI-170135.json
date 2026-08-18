@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-SAI-170135",
+  "driver": "SAI",
+  "session_id": "2024-monaco-r",
+  "lap": 59,
+  "duration_s": 4.45,
+  "audio_url": "/api/clips/2024-monaco-r-SAI-170135",
+  "transcript": {
+    "text": "If London puts a million months of shots, it's bigger.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 35.4,
+      "f0_mean_z": 2.108,
+      "f0_std_z": -0.738,
+      "rms_mean_z": 1.199,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.377,
+      "jitter_z": -0.507
+    },
+    "acoustic": {
+      "score": 30.2,
+      "probabilities": {
+        "hap": 0.5019,
+        "neu": 0.3117,
+        "sad": 0.1358,
+        "ang": 0.0506
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 20.6,
+      "probabilities": {
+        "neutral": 0.8285,
+        "surprise": 0.1162,
+        "joy": 0.0203,
+        "anger": 0.0135,
+        "disgust": 0.0128,
+        "sadness": 0.0067,
+        "fear": 0.0019
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.514,
+    "stress_index": 62.3,
+    "probabilities": {
+      "Calm": 0.365,
+      "Stressed": 0.514,
+      "Tired": 0.121
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.502,
+    "stress_index": 30.2,
+    "probabilities": {
+      "Calm": 0.892,
+      "Stressed": 0.048,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2614,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-NOR-152011",
+  "driver": "NOR",
+  "session_id": "2023-dutch-r",
+  "lap": 56,
+  "duration_s": 4.03,
+  "audio_url": "/api/clips/2023-dutch-r-NOR-152011",
+  "transcript": {
+    "text": "Yeah, but I'm just so much-blown at the middle, so I can't do it.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 100.0,
+      "f0_mean_z": 18.126,
+      "f0_std_z": -2.03,
+      "rms_mean_z": -1.353,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.674,
+      "jitter_z": -3.605
+    },
+    "acoustic": {
+      "score": 24.0,
+      "probabilities": {
+        "hap": 0.7756,
+        "neu": 0.1977,
+        "sad": 0.0259,
+        "ang": 0.0009
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 45.1,
+      "probabilities": {
+        "neutral": 0.4534,
+        "disgust": 0.1729,
+        "anger": 0.1483,
+        "surprise": 0.1158,
+        "sadness": 0.0729,
+        "fear": 0.0332,
+        "joy": 0.0035
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 1.0,
+    "stress_index": 100.0,
+    "probabilities": {
+      "Calm": 0.0,
+      "Stressed": 1.0,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.776,
+    "stress_index": 24.0,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2454,
+  "cached": false
+}

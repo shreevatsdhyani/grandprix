@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-RUS-211546",
+  "driver": "RUS",
+  "session_id": "2024-singapore-r",
+  "lap": 44,
+  "duration_s": 8.8,
+  "audio_url": "/api/clips/2024-singapore-r-RUS-211546",
+  "transcript": {
+    "text": "So the clerk's still doing high 36 is out there. Is a chance of interacting with the very end of the race if he can keep that pace up.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 34.8,
+      "f0_mean_z": -1.366,
+      "f0_std_z": -0.616,
+      "rms_mean_z": -0.691,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.677,
+      "jitter_z": 0.955
+    },
+    "acoustic": {
+      "score": 36.8,
+      "probabilities": {
+        "hap": 0.6638,
+        "sad": 0.2725,
+        "ang": 0.0363,
+        "neu": 0.0273
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.8,
+      "probabilities": {
+        "neutral": 0.8884,
+        "surprise": 0.0826,
+        "sadness": 0.0083,
+        "joy": 0.0067,
+        "anger": 0.0056,
+        "disgust": 0.0044,
+        "fear": 0.0041
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.523,
+    "stress_index": 49.2,
+    "probabilities": {
+      "Calm": 0.456,
+      "Stressed": 0.021,
+      "Tired": 0.523
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.664,
+    "stress_index": 36.8,
+    "probabilities": {
+      "Calm": 0.906,
+      "Stressed": 0.034,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2284,
+  "cached": false
+}

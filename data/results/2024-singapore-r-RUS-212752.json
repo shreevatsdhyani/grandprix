@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-RUS-212752",
+  "driver": "RUS",
+  "session_id": "2024-singapore-r",
+  "lap": 52,
+  "duration_s": 2.91,
+  "audio_url": "/api/clips/2024-singapore-r-RUS-212752",
+  "transcript": {
+    "text": "I have understood and I have I ever seen.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 59.2,
+      "f0_mean_z": 3.323,
+      "f0_std_z": 0.528,
+      "rms_mean_z": 0.274,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -3.272,
+      "jitter_z": 1.284
+    },
+    "acoustic": {
+      "score": 41.7,
+      "probabilities": {
+        "sad": 0.4633,
+        "hap": 0.3231,
+        "neu": 0.1806,
+        "ang": 0.033
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 35.9,
+      "probabilities": {
+        "surprise": 0.4803,
+        "neutral": 0.3954,
+        "anger": 0.0437,
+        "disgust": 0.0251,
+        "joy": 0.0247,
+        "fear": 0.0208,
+        "sadness": 0.0101
+      },
+      "top_label": "surprise",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.923,
+    "stress_index": 96.0,
+    "probabilities": {
+      "Calm": 0.037,
+      "Stressed": 0.923,
+      "Tired": 0.041
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.463,
+    "stress_index": 41.7,
+    "probabilities": {
+      "Calm": 0.909,
+      "Stressed": 0.031,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1971,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-SAI-152606",
+  "driver": "SAI",
+  "session_id": "2024-italian-r",
+  "lap": 17,
+  "duration_s": 2.88,
+  "audio_url": "/api/clips/2024-italian-r-SAI-152606",
+  "transcript": {
+    "text": "It's going to struggle to go to him.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 27.0,
+      "f0_mean_z": 1.462,
+      "f0_std_z": -0.654,
+      "rms_mean_z": -0.469,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.794,
+      "jitter_z": 0.835
+    },
+    "acoustic": {
+      "score": 24.7,
+      "probabilities": {
+        "hap": 0.8082,
+        "neu": 0.1609,
+        "sad": 0.0258,
+        "ang": 0.0051
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 25.3,
+      "probabilities": {
+        "neutral": 0.8074,
+        "sadness": 0.0971,
+        "fear": 0.0426,
+        "disgust": 0.0271,
+        "surprise": 0.0133,
+        "anger": 0.0085,
+        "joy": 0.0041
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.489,
+    "stress_index": 58.0,
+    "probabilities": {
+      "Calm": 0.371,
+      "Stressed": 0.14,
+      "Tired": 0.489
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.808,
+    "stress_index": 24.7,
+    "probabilities": {
+      "Calm": 0.935,
+      "Stressed": 0.005,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1555,
+  "cached": false
+}

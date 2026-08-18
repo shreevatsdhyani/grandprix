@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-TSU-211013",
+  "driver": "TSU",
+  "session_id": "2024-singapore-r",
+  "lap": 40,
+  "duration_s": 12.93,
+  "audio_url": "/api/clips/2024-singapore-r-TSU-211013",
+  "transcript": {
+    "text": "Mate! Yoki, we need to stay calm, we need to stay calm. It's clear. Okay, I tell you what we're doing, we close up and then we swap. We close up and then we swap. Yeah, we're tired of dumbest.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 89.3,
+      "f0_mean_z": 4.055,
+      "f0_std_z": 5.677,
+      "rms_mean_z": -1.032,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.399,
+      "jitter_z": 0.926
+    },
+    "acoustic": {
+      "score": 27.9,
+      "probabilities": {
+        "hap": 0.7657,
+        "neu": 0.1614,
+        "ang": 0.0558,
+        "sad": 0.0171
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 57.9,
+      "probabilities": {
+        "disgust": 0.4323,
+        "neutral": 0.2804,
+        "anger": 0.1909,
+        "sadness": 0.0547,
+        "fear": 0.0273,
+        "joy": 0.0081,
+        "surprise": 0.0064
+      },
+      "top_label": "disgust",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.991,
+    "stress_index": 99.1,
+    "probabilities": {
+      "Calm": 0.009,
+      "Stressed": 0.991,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.766,
+    "stress_index": 27.9,
+    "probabilities": {
+      "Calm": 0.888,
+      "Stressed": 0.052,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2670,
+  "cached": false
+}

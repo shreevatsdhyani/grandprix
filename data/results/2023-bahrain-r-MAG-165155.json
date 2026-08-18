@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-MAG-165155",
+  "driver": "MAG",
+  "session_id": "2023-bahrain-r",
+  "lap": 56,
+  "duration_s": 28.48,
+  "audio_url": "/api/clips/2023-bahrain-r-MAG-165155",
+  "transcript": {
+    "text": "Okay Kevin, that's the check and flag. Very good race, Kevin. Well done. Yeah, not as bad as I expected. Obviously not what it want to be, but it's a tough track for us as one and let's just keep our heads down. We have a good car. Let's have a good season. Yeah, copy back, Kevin. You've been a very good job and it's work. We'll find out. Make a big step forwards. Thank you.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 53.0,
+      "f0_mean_z": 1.398,
+      "f0_std_z": 0.962,
+      "rms_mean_z": 1.609,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 2.658,
+      "jitter_z": 0.392
+    },
+    "acoustic": {
+      "score": 48.7,
+      "probabilities": {
+        "sad": 0.6696,
+        "hap": 0.3045,
+        "neu": 0.0197,
+        "ang": 0.0061
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.2,
+      "probabilities": {
+        "neutral": 0.8601,
+        "joy": 0.0923,
+        "anger": 0.0137,
+        "sadness": 0.0135,
+        "disgust": 0.01,
+        "surprise": 0.0077,
+        "fear": 0.0028
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.774,
+    "stress_index": 78.8,
+    "probabilities": {
+      "Calm": 0.211,
+      "Stressed": 0.774,
+      "Tired": 0.016
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.67,
+    "stress_index": 48.7,
+    "probabilities": {
+      "Calm": 0.934,
+      "Stressed": 0.006,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 5021,
+  "cached": false
+}

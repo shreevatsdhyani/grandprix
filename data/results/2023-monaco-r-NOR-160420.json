@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-NOR-160420",
+  "driver": "NOR",
+  "session_id": "2023-monaco-r",
+  "lap": 77,
+  "duration_s": 18.91,
+  "audio_url": "/api/clips/2023-monaco-r-NOR-160420",
+  "transcript": {
+    "text": "Yeah, good job everyone. Good, good, little couple points. Best we could do today. Pace is good obviously. So yeah, let's keep it up. Thank you very much.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 35.0,
+      "f0_mean_z": 1.003,
+      "f0_std_z": 1.632,
+      "rms_mean_z": 0.13,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.607,
+      "jitter_z": 0.426
+    },
+    "acoustic": {
+      "score": 30.8,
+      "probabilities": {
+        "hap": 0.826,
+        "sad": 0.1669,
+        "neu": 0.0067,
+        "ang": 0.0005
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 13.0,
+      "probabilities": {
+        "joy": 0.7375,
+        "neutral": 0.2314,
+        "disgust": 0.0087,
+        "anger": 0.0072,
+        "sadness": 0.007,
+        "surprise": 0.007,
+        "fear": 0.0012
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.721,
+    "stress_index": 27.9,
+    "probabilities": {
+      "Calm": 0.721,
+      "Stressed": 0.273,
+      "Tired": 0.007
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.826,
+    "stress_index": 30.8,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2556,
+  "cached": false
+}

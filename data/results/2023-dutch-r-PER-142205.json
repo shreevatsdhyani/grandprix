@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-PER-142205",
+  "driver": "PER",
+  "session_id": "2023-dutch-r",
+  "lap": 14,
+  "duration_s": 3.07,
+  "audio_url": "/api/clips/2023-dutch-r-PER-142205",
+  "transcript": {
+    "text": "Get back Thunder Cutter? Yes, back Thunder Cutter's.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 56.0,
+      "f0_mean_z": 3.547,
+      "f0_std_z": 2.735,
+      "rms_mean_z": -0.109,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.614,
+      "jitter_z": 3.292
+    },
+    "acoustic": {
+      "score": 47.8,
+      "probabilities": {
+        "hap": 0.4965,
+        "ang": 0.3485,
+        "neu": 0.1549,
+        "sad": 0.0
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 24.9,
+      "probabilities": {
+        "neutral": 0.7033,
+        "surprise": 0.1882,
+        "joy": 0.0378,
+        "anger": 0.0295,
+        "sadness": 0.02,
+        "disgust": 0.0155,
+        "fear": 0.0058
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.984,
+    "stress_index": 98.7,
+    "probabilities": {
+      "Calm": 0.013,
+      "Stressed": 0.984,
+      "Tired": 0.003
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.496,
+    "stress_index": 47.8,
+    "probabilities": {
+      "Calm": 0.612,
+      "Stressed": 0.328,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1485,
+  "cached": false
+}

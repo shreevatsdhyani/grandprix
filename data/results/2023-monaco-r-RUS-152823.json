@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-RUS-152823",
+  "driver": "RUS",
+  "session_id": "2023-monaco-r",
+  "lap": 63,
+  "duration_s": 17.25,
+  "audio_url": "/api/clips/2023-monaco-r-RUS-152823",
+  "transcript": {
+    "text": "If a club gets close, could we potentially in both positions? And I don't go more than a five ahead of Lewis. If he didn't obviously get, uh, Esteban. Don't need to answer and no obligation. This place is very good at five.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 45.6,
+      "f0_mean_z": 1.974,
+      "f0_std_z": 1.946,
+      "rms_mean_z": 1.466,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.316,
+      "jitter_z": 0.142
+    },
+    "acoustic": {
+      "score": 55.0,
+      "probabilities": {
+        "sad": 0.8403,
+        "hap": 0.1507,
+        "ang": 0.0085,
+        "neu": 0.0005
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 22.1,
+      "probabilities": {
+        "neutral": 0.8775,
+        "disgust": 0.0406,
+        "fear": 0.0298,
+        "anger": 0.024,
+        "sadness": 0.0128,
+        "surprise": 0.0126,
+        "joy": 0.0027
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.967,
+    "stress_index": 96.7,
+    "probabilities": {
+      "Calm": 0.032,
+      "Stressed": 0.967,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.84,
+    "stress_index": 55.0,
+    "probabilities": {
+      "Calm": 0.932,
+      "Stressed": 0.008,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2562,
+  "cached": false
+}

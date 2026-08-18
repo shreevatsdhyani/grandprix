@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-ALO-190042",
+  "driver": "ALO",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 71,
+  "duration_s": 3.17,
+  "audio_url": "/api/clips/2023-sao-paulo-r-ALO-190042",
+  "transcript": {
+    "text": "Okay, my push and hold, push and hold, you got loads of energy, hold it down.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 30.4,
+      "f0_mean_z": -0.623,
+      "f0_std_z": -0.808,
+      "rms_mean_z": -0.434,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.929,
+      "jitter_z": -0.128
+    },
+    "acoustic": {
+      "score": 35.8,
+      "probabilities": {
+        "hap": 0.5312,
+        "neu": 0.2742,
+        "ang": 0.1927,
+        "sad": 0.0018
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 80.1,
+      "probabilities": {
+        "anger": 0.7234,
+        "fear": 0.1104,
+        "neutral": 0.1006,
+        "disgust": 0.0448,
+        "sadness": 0.0094,
+        "joy": 0.0058,
+        "surprise": 0.0056
+      },
+      "top_label": "anger",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.978,
+    "stress_index": 88.4,
+    "probabilities": {
+      "Calm": 0.017,
+      "Stressed": 0.004,
+      "Tired": 0.978
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.531,
+    "stress_index": 35.8,
+    "probabilities": {
+      "Calm": 0.759,
+      "Stressed": 0.181,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1880,
+  "cached": false
+}

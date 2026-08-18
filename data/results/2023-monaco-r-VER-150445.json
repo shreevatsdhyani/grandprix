@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-VER-150445",
+  "driver": "VER",
+  "session_id": "2023-monaco-r",
+  "lap": 49,
+  "duration_s": 4.06,
+  "audio_url": "/api/clips/2023-monaco-r-VER-150445",
+  "transcript": {
+    "text": "There are some pockets of rain a few kilometers away from the track we're monitoring.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 22.1,
+      "f0_mean_z": -0.298,
+      "f0_std_z": -0.302,
+      "rms_mean_z": -0.563,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.603,
+      "jitter_z": 1.299
+    },
+    "acoustic": {
+      "score": 24.6,
+      "probabilities": {
+        "hap": 0.9292,
+        "neu": 0.0649,
+        "sad": 0.0058,
+        "ang": 0.0001
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.3,
+      "probabilities": {
+        "neutral": 0.9342,
+        "disgust": 0.0204,
+        "sadness": 0.0197,
+        "surprise": 0.009,
+        "anger": 0.0072,
+        "fear": 0.0056,
+        "joy": 0.0039
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.625,
+    "stress_index": 33.9,
+    "probabilities": {
+      "Calm": 0.625,
+      "Stressed": 0.016,
+      "Tired": 0.359
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.929,
+    "stress_index": 24.6,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2560,
+  "cached": false
+}

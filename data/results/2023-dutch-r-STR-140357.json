@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-STR-140357",
+  "driver": "STR",
+  "session_id": "2023-dutch-r",
+  "lap": 1,
+  "duration_s": 1.41,
+  "audio_url": "/api/clips/2023-dutch-r-STR-140357",
+  "transcript": {
+    "text": "Training harder talk 11",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 44.6,
+      "f0_mean_z": 1.566,
+      "f0_std_z": -0.915,
+      "rms_mean_z": -1.386,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.706,
+      "jitter_z": -1.092
+    },
+    "acoustic": {
+      "score": 26.6,
+      "probabilities": {
+        "hap": 0.8421,
+        "neu": 0.1159,
+        "ang": 0.0358,
+        "sad": 0.0062
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 23.1,
+      "probabilities": {
+        "neutral": 0.8531,
+        "disgust": 0.0543,
+        "fear": 0.0337,
+        "sadness": 0.0263,
+        "anger": 0.0143,
+        "surprise": 0.0126,
+        "joy": 0.0057
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.529,
+    "stress_index": 44.4,
+    "probabilities": {
+      "Calm": 0.529,
+      "Stressed": 0.199,
+      "Tired": 0.272
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.842,
+    "stress_index": 26.6,
+    "probabilities": {
+      "Calm": 0.906,
+      "Stressed": 0.034,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1216,
+  "cached": false
+}

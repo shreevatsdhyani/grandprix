@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-OCO-141835",
+  "driver": "OCO",
+  "session_id": "2023-monaco-r",
+  "lap": 12,
+  "duration_s": 2.82,
+  "audio_url": "/api/clips/2023-monaco-r-OCO-141835",
+  "transcript": {
+    "text": "There's a yellow flag after turn one, could be debris.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 52.9,
+      "f0_mean_z": -0.612,
+      "f0_std_z": -1.552,
+      "rms_mean_z": -2.324,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -2.123,
+      "jitter_z": 0.489
+    },
+    "acoustic": {
+      "score": 17.1,
+      "probabilities": {
+        "neu": 0.8869,
+        "hap": 0.0978,
+        "ang": 0.0119,
+        "sad": 0.0034
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 22.1,
+      "probabilities": {
+        "neutral": 0.8641,
+        "disgust": 0.0583,
+        "surprise": 0.0287,
+        "sadness": 0.0187,
+        "fear": 0.0143,
+        "anger": 0.0143,
+        "joy": 0.0016
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.797,
+    "stress_index": 71.8,
+    "probabilities": {
+      "Calm": 0.202,
+      "Stressed": 0.001,
+      "Tired": 0.797
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.887,
+    "stress_index": 17.1,
+    "probabilities": {
+      "Calm": 0.929,
+      "Stressed": 0.011,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2604,
+  "cached": false
+}

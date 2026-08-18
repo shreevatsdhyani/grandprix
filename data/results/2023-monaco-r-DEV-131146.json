@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-DEV-131146",
+  "driver": "DEV",
+  "session_id": "2023-monaco-r",
+  "lap": null,
+  "duration_s": 3.1,
+  "audio_url": "/api/clips/2023-monaco-r-DEV-131146",
+  "transcript": {
+    "text": "Box box box box box and keep the pace up for timing",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 76.7,
+      "f0_mean_z": 3.926,
+      "f0_std_z": 2.462,
+      "rms_mean_z": -2.243,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.961,
+      "jitter_z": 2.601
+    },
+    "acoustic": {
+      "score": 33.9,
+      "probabilities": {
+        "hap": 0.6213,
+        "neu": 0.2184,
+        "ang": 0.1568,
+        "sad": 0.0035
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 29.3,
+      "probabilities": {
+        "neutral": 0.9358,
+        "surprise": 0.036,
+        "joy": 0.0093,
+        "anger": 0.0089,
+        "sadness": 0.0057,
+        "fear": 0.0031,
+        "disgust": 0.0013
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.99,
+    "stress_index": 99.1,
+    "probabilities": {
+      "Calm": 0.008,
+      "Stressed": 0.99,
+      "Tired": 0.001
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.621,
+    "stress_index": 33.9,
+    "probabilities": {
+      "Calm": 0.793,
+      "Stressed": 0.147,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1601,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-singapore-r-ZHO-150120",
+  "driver": "ZHO",
+  "session_id": "2023-singapore-r",
+  "lap": 62,
+  "duration_s": 21.06,
+  "audio_url": "/api/clips/2023-singapore-r-ZHO-150120",
+  "transcript": {
+    "text": "Joe we finished P12 solid race from your side start from the garage from the bit lane very good race bit unfortunately with the safety car but yeah good good performance Joe P12 yeah thank you guys was a good try we find lasting quiet positive going for next year of event",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 38.8,
+      "f0_mean_z": 3.756,
+      "f0_std_z": 0.001,
+      "rms_mean_z": -0.756,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.333,
+      "jitter_z": -0.182
+    },
+    "acoustic": {
+      "score": 37.5,
+      "probabilities": {
+        "hap": 0.6408,
+        "sad": 0.3565,
+        "neu": 0.0018,
+        "ang": 0.0009
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 20.7,
+      "probabilities": {
+        "joy": 0.5528,
+        "neutral": 0.2556,
+        "sadness": 0.1127,
+        "surprise": 0.0675,
+        "fear": 0.007,
+        "anger": 0.0024,
+        "disgust": 0.002
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.969,
+    "stress_index": 97.4,
+    "probabilities": {
+      "Calm": 0.025,
+      "Stressed": 0.969,
+      "Tired": 0.006
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.641,
+    "stress_index": 37.5,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2791,
+  "cached": false
+}

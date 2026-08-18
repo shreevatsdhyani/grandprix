@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-OCO-145425",
+  "driver": "OCO",
+  "session_id": "2023-dutch-r",
+  "lap": 36,
+  "duration_s": 3.68,
+  "audio_url": "/api/clips/2023-dutch-r-OCO-145425",
+  "transcript": {
+    "text": "Okay, man, some of these switch changes are related to that shift. We're trying to improve it.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 85.8,
+      "f0_mean_z": -0.721,
+      "f0_std_z": -2.057,
+      "rms_mean_z": 0.148,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -7.804,
+      "jitter_z": 1.177
+    },
+    "acoustic": {
+      "score": 22.9,
+      "probabilities": {
+        "hap": 0.6805,
+        "neu": 0.3039,
+        "ang": 0.0113,
+        "sad": 0.0043
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 20.9,
+      "probabilities": {
+        "neutral": 0.896,
+        "disgust": 0.0538,
+        "anger": 0.0276,
+        "sadness": 0.0077,
+        "surprise": 0.0065,
+        "fear": 0.0051,
+        "joy": 0.0033
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.753,
+    "stress_index": 68.7,
+    "probabilities": {
+      "Calm": 0.238,
+      "Stressed": 0.009,
+      "Tired": 0.753
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.68,
+    "stress_index": 22.9,
+    "probabilities": {
+      "Calm": 0.929,
+      "Stressed": 0.011,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1768,
+  "cached": false
+}

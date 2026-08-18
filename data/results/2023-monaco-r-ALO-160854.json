@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-ALO-160854",
+  "driver": "ALO",
+  "session_id": "2023-monaco-r",
+  "lap": 78,
+  "duration_s": 27.26,
+  "audio_url": "/api/clips/2023-monaco-r-ALO-160854",
+  "transcript": {
+    "text": "Yeah, that's a problem baby. Well done guys. Not an easy race. Well executed. Bravo! Well done mate. Well done, that's P2. We're getting a next race. P1. Well done. Yes, yes, yes. I'm very happy mate. I know it's not a win, but I tell you it was not easy to drive with the rain. So... Yeah, exactly. Well done guys. Bravo!",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 47.2,
+      "f0_mean_z": 2.155,
+      "f0_std_z": 2.281,
+      "rms_mean_z": 0.545,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.92,
+      "jitter_z": 0.565
+    },
+    "acoustic": {
+      "score": 32.0,
+      "probabilities": {
+        "hap": 0.6712,
+        "sad": 0.2279,
+        "neu": 0.0999,
+        "ang": 0.001
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 14.2,
+      "probabilities": {
+        "joy": 0.8922,
+        "sadness": 0.0421,
+        "neutral": 0.0287,
+        "surprise": 0.0252,
+        "anger": 0.0071,
+        "disgust": 0.0037,
+        "fear": 0.0009
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.785,
+    "stress_index": 78.6,
+    "probabilities": {
+      "Calm": 0.214,
+      "Stressed": 0.785,
+      "Tired": 0.001
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.671,
+    "stress_index": 32.0,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3550,
+  "cached": false
+}

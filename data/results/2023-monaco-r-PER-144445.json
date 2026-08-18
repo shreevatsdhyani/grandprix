@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-PER-144445",
+  "driver": "PER",
+  "session_id": "2023-monaco-r",
+  "lap": 32,
+  "duration_s": 0.93,
+  "audio_url": "/api/clips/2023-monaco-r-PER-144445",
+  "transcript": {
+    "text": "So stay with Max.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 46.1,
+      "f0_mean_z": -1.707,
+      "f0_std_z": -1.553,
+      "rms_mean_z": -1.337,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.164,
+      "jitter_z": -0.265
+    },
+    "acoustic": {
+      "score": 22.4,
+      "probabilities": {
+        "hap": 0.5567,
+        "neu": 0.4208,
+        "ang": 0.0225,
+        "sad": 0.0
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.8,
+      "probabilities": {
+        "neutral": 0.9472,
+        "sadness": 0.0164,
+        "anger": 0.0155,
+        "disgust": 0.0088,
+        "joy": 0.0063,
+        "fear": 0.0039,
+        "surprise": 0.0019
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.536,
+    "stress_index": 48.3,
+    "probabilities": {
+      "Calm": 0.463,
+      "Stressed": 0.001,
+      "Tired": 0.536
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.557,
+    "stress_index": 22.4,
+    "probabilities": {
+      "Calm": 0.919,
+      "Stressed": 0.021,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2344,
+  "cached": false
+}

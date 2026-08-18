@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-RIC-172303",
+  "driver": "RIC",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 1,
+  "duration_s": 12.19,
+  "audio_url": "/api/clips/2023-sao-paulo-r-RIC-172303",
+  "transcript": {
+    "text": "Okay yeah, definitely hit my real wing. That's broken. Yeah I tried to miss it, I think because a piece of a tire in the ear, but got my real wing. Yeah, copy that's.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 50.4,
+      "f0_mean_z": -0.151,
+      "f0_std_z": 5.203,
+      "rms_mean_z": -0.286,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.66,
+      "jitter_z": 3.534
+    },
+    "acoustic": {
+      "score": 37.0,
+      "probabilities": {
+        "hap": 0.6563,
+        "sad": 0.3411,
+        "neu": 0.0022,
+        "ang": 0.0005
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 47.5,
+      "probabilities": {
+        "neutral": 0.3717,
+        "sadness": 0.224,
+        "surprise": 0.1395,
+        "anger": 0.0966,
+        "disgust": 0.0848,
+        "fear": 0.0745,
+        "joy": 0.0089
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.663,
+    "stress_index": 68.7,
+    "probabilities": {
+      "Calm": 0.31,
+      "Stressed": 0.663,
+      "Tired": 0.027
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.656,
+    "stress_index": 37.0,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2166,
+  "cached": false
+}

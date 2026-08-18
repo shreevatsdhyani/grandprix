@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-LEC-145557",
+  "driver": "LEC",
+  "session_id": "2024-italian-r",
+  "lap": null,
+  "duration_s": 4.96,
+  "audio_url": "/api/clips/2024-italian-r-LEC-145557",
+  "transcript": {
+    "text": "Update on weather terms. So, low chance of rain for now.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 36.7,
+      "f0_mean_z": -0.287,
+      "f0_std_z": -1.737,
+      "rms_mean_z": 1.078,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.487,
+      "jitter_z": -0.964
+    },
+    "acoustic": {
+      "score": 24.9,
+      "probabilities": {
+        "hap": 0.9176,
+        "neu": 0.0715,
+        "ang": 0.0064,
+        "sad": 0.0045
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 22.8,
+      "probabilities": {
+        "neutral": 0.8327,
+        "sadness": 0.1112,
+        "surprise": 0.0162,
+        "joy": 0.0134,
+        "fear": 0.0131,
+        "anger": 0.007,
+        "disgust": 0.0065
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.496,
+    "stress_index": 45.5,
+    "probabilities": {
+      "Calm": 0.496,
+      "Stressed": 0.016,
+      "Tired": 0.488
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.918,
+    "stress_index": 24.9,
+    "probabilities": {
+      "Calm": 0.934,
+      "Stressed": 0.006,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1984,
+  "cached": false
+}

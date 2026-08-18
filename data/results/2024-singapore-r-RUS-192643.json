@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-RUS-192643",
+  "driver": "RUS",
+  "session_id": "2024-singapore-r",
+  "lap": null,
+  "duration_s": 8.61,
+  "audio_url": "/api/clips/2024-singapore-r-RUS-192643",
+  "transcript": {
+    "text": "Chris the weight rep sound a bit weird. We went around 9-2 it sounds much higher in pitch.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 34.6,
+      "f0_mean_z": 1.858,
+      "f0_std_z": -0.334,
+      "rms_mean_z": 0.716,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.414,
+      "jitter_z": -0.244
+    },
+    "acoustic": {
+      "score": 49.9,
+      "probabilities": {
+        "sad": 0.4309,
+        "hap": 0.3732,
+        "ang": 0.1477,
+        "neu": 0.0482
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 61.3,
+      "probabilities": {
+        "disgust": 0.4838,
+        "surprise": 0.2708,
+        "fear": 0.1427,
+        "neutral": 0.0718,
+        "sadness": 0.0145,
+        "anger": 0.0123,
+        "joy": 0.0041
+      },
+      "top_label": "disgust",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.483,
+    "stress_index": 90.0,
+    "probabilities": {
+      "Calm": 0.054,
+      "Stressed": 0.483,
+      "Tired": 0.463
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.431,
+    "stress_index": 49.9,
+    "probabilities": {
+      "Calm": 0.801,
+      "Stressed": 0.139,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2257,
+  "cached": false
+}

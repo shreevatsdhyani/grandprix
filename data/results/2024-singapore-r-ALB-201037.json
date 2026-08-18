@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-ALB-201037",
+  "driver": "ALB",
+  "session_id": "2024-singapore-r",
+  "lap": 5,
+  "duration_s": 3.23,
+  "audio_url": "/api/clips/2024-singapore-r-ALB-201037",
+  "transcript": {
+    "text": "I think who just died from! What's he doing?",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 67.4,
+      "f0_mean_z": 4.062,
+      "f0_std_z": 2.618,
+      "rms_mean_z": -0.73,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.009,
+      "jitter_z": 3.275
+    },
+    "acoustic": {
+      "score": 76.6,
+      "probabilities": {
+        "ang": 0.7264,
+        "hap": 0.2531,
+        "sad": 0.0202,
+        "neu": 0.0003
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 46.1,
+      "probabilities": {
+        "surprise": 0.9083,
+        "neutral": 0.0251,
+        "disgust": 0.0217,
+        "anger": 0.0203,
+        "sadness": 0.0168,
+        "fear": 0.0051,
+        "joy": 0.0026
+      },
+      "top_label": "surprise",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.997,
+    "stress_index": 99.9,
+    "probabilities": {
+      "Calm": 0.001,
+      "Stressed": 0.997,
+      "Tired": 0.002
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.726,
+    "stress_index": 76.6,
+    "probabilities": {
+      "Calm": 0.257,
+      "Stressed": 0.683,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1436,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-HAM-152523",
+  "driver": "HAM",
+  "session_id": "2023-dutch-r",
+  "lap": 60,
+  "duration_s": 7.84,
+  "audio_url": "/api/clips/2023-dutch-r-HAM-152523",
+  "transcript": {
+    "text": "And George left the last part from him on a much different tie strategy too. Yep, we're trying to get the message to him. Should be this straight.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 25.5,
+      "f0_mean_z": 1.619,
+      "f0_std_z": 0.566,
+      "rms_mean_z": -0.169,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.836,
+      "jitter_z": 1.251
+    },
+    "acoustic": {
+      "score": 26.4,
+      "probabilities": {
+        "hap": 0.9404,
+        "sad": 0.0243,
+        "neu": 0.0242,
+        "ang": 0.0111
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.5,
+      "probabilities": {
+        "neutral": 0.943,
+        "surprise": 0.0207,
+        "disgust": 0.0118,
+        "sadness": 0.0104,
+        "anger": 0.0076,
+        "joy": 0.0046,
+        "fear": 0.0019
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.527,
+    "stress_index": 45.9,
+    "probabilities": {
+      "Calm": 0.527,
+      "Stressed": 0.328,
+      "Tired": 0.145
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.94,
+    "stress_index": 26.4,
+    "probabilities": {
+      "Calm": 0.93,
+      "Stressed": 0.01,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2233,
+  "cached": false
+}

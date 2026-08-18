@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-RUS-142531",
+  "driver": "RUS",
+  "session_id": "2023-monaco-r",
+  "lap": 18,
+  "duration_s": 2.4,
+  "audio_url": "/api/clips/2023-monaco-r-RUS-142531",
+  "transcript": {
+    "text": "Yeah, but you're off with the manage peaks.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 6.9,
+      "f0_mean_z": 0.0,
+      "f0_std_z": 0.0,
+      "rms_mean_z": 0.547,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.316,
+      "jitter_z": 0.0
+    },
+    "acoustic": {
+      "score": 28.7,
+      "probabilities": {
+        "hap": 0.8997,
+        "ang": 0.0422,
+        "sad": 0.0302,
+        "neu": 0.0279
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 23.2,
+      "probabilities": {
+        "neutral": 0.8379,
+        "disgust": 0.0723,
+        "sadness": 0.0308,
+        "anger": 0.0227,
+        "surprise": 0.0195,
+        "joy": 0.0106,
+        "fear": 0.0062
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.802,
+    "stress_index": 18.3,
+    "probabilities": {
+      "Calm": 0.802,
+      "Stressed": 0.048,
+      "Tired": 0.15
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.9,
+    "stress_index": 28.7,
+    "probabilities": {
+      "Calm": 0.9,
+      "Stressed": 0.04,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2375,
+  "cached": false
+}

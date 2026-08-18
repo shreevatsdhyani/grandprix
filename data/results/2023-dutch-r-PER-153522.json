@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-PER-153522",
+  "driver": "PER",
+  "session_id": "2023-dutch-r",
+  "lap": 64,
+  "duration_s": 27.84,
+  "audio_url": "/api/clips/2023-dutch-r-PER-153522",
+  "transcript": {
+    "text": "I clip the wall on the entry to the pit lane with the right hand. Copy? On the right. Copy? Will have a look. What was it? Just the tire, the front wing? Just the tire. Okay. We'll get some fresh bubble on anyway. So are we going back a lap or not? Stand by, we'll let you know when we have all the details. That's a normal thing. It's how we've done it before.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 15.5,
+      "f0_mean_z": -0.248,
+      "f0_std_z": -0.507,
+      "rms_mean_z": 0.466,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.711,
+      "jitter_z": -0.078
+    },
+    "acoustic": {
+      "score": 28.5,
+      "probabilities": {
+        "hap": 0.8915,
+        "sad": 0.0701,
+        "neu": 0.02,
+        "ang": 0.0184
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 21.4,
+      "probabilities": {
+        "neutral": 0.8878,
+        "anger": 0.0413,
+        "disgust": 0.0291,
+        "surprise": 0.0211,
+        "fear": 0.0122,
+        "sadness": 0.0055,
+        "joy": 0.003
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.645,
+    "stress_index": 32.4,
+    "probabilities": {
+      "Calm": 0.645,
+      "Stressed": 0.048,
+      "Tired": 0.307
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.891,
+    "stress_index": 28.5,
+    "probabilities": {
+      "Calm": 0.923,
+      "Stressed": 0.017,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3916,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-ALB-145655",
+  "driver": "ALB",
+  "session_id": "2023-dutch-r",
+  "lap": 38,
+  "duration_s": 3.3,
+  "audio_url": "/api/clips/2023-dutch-r-ALB-145655",
+  "transcript": {
+    "text": "Alex went to a really good place so we're still extending. This is an awesome job.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 27.3,
+      "f0_mean_z": -0.452,
+      "f0_std_z": -0.793,
+      "rms_mean_z": -0.708,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.457,
+      "jitter_z": 1.89
+    },
+    "acoustic": {
+      "score": 32.4,
+      "probabilities": {
+        "hap": 0.8695,
+        "ang": 0.1064,
+        "neu": 0.0208,
+        "sad": 0.0033
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 12.8,
+      "probabilities": {
+        "joy": 0.8362,
+        "neutral": 0.1068,
+        "surprise": 0.0469,
+        "sadness": 0.0039,
+        "anger": 0.0027,
+        "disgust": 0.0026,
+        "fear": 0.0009
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.58,
+    "stress_index": 55.2,
+    "probabilities": {
+      "Calm": 0.389,
+      "Stressed": 0.03,
+      "Tired": 0.58
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.87,
+    "stress_index": 32.4,
+    "probabilities": {
+      "Calm": 0.84,
+      "Stressed": 0.1,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1911,
+  "cached": false
+}

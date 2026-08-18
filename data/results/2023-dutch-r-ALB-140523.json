@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-ALB-140523",
+  "driver": "ALB",
+  "session_id": "2023-dutch-r",
+  "lap": 2,
+  "duration_s": 5.57,
+  "audio_url": "/api/clips/2023-dutch-r-ALB-140523",
+  "transcript": {
+    "text": "Okay, six cars have been put into, but our aim is still to survive. Just three laps.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 12.7,
+      "f0_mean_z": -0.044,
+      "f0_std_z": -1.188,
+      "rms_mean_z": 0.165,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.187,
+      "jitter_z": 0.843
+    },
+    "acoustic": {
+      "score": 69.4,
+      "probabilities": {
+        "ang": 0.6437,
+        "hap": 0.2476,
+        "neu": 0.0993,
+        "sad": 0.0094
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.7,
+      "probabilities": {
+        "neutral": 0.9565,
+        "sadness": 0.0117,
+        "surprise": 0.0088,
+        "joy": 0.0087,
+        "disgust": 0.0065,
+        "anger": 0.0063,
+        "fear": 0.0014
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.557,
+    "stress_index": 77.6,
+    "probabilities": {
+      "Calm": 0.168,
+      "Stressed": 0.275,
+      "Tired": 0.557
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.644,
+    "stress_index": 69.4,
+    "probabilities": {
+      "Calm": 0.335,
+      "Stressed": 0.605,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1613,
+  "cached": false
+}

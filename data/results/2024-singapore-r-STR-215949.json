@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-STR-215949",
+  "driver": "STR",
+  "session_id": "2024-singapore-r",
+  "lap": 61,
+  "duration_s": 3.81,
+  "audio_url": "/api/clips/2024-singapore-r-STR-215949",
+  "transcript": {
+    "text": "That's P14 at the end. There's no real instance there, that's a shame.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 44.4,
+      "f0_mean_z": -1.869,
+      "f0_std_z": -0.552,
+      "rms_mean_z": -2.451,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.673,
+      "jitter_z": 1.424
+    },
+    "acoustic": {
+      "score": 25.7,
+      "probabilities": {
+        "hap": 0.7723,
+        "neu": 0.1881,
+        "ang": 0.034,
+        "sad": 0.0056
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 63.3,
+      "probabilities": {
+        "disgust": 0.8112,
+        "neutral": 0.1187,
+        "anger": 0.0259,
+        "surprise": 0.0258,
+        "sadness": 0.0122,
+        "fear": 0.0047,
+        "joy": 0.0016
+      },
+      "top_label": "disgust",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.977,
+    "stress_index": 87.9,
+    "probabilities": {
+      "Calm": 0.022,
+      "Stressed": 0.0,
+      "Tired": 0.977
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.772,
+    "stress_index": 25.7,
+    "probabilities": {
+      "Calm": 0.908,
+      "Stressed": 0.032,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1928,
+  "cached": false
+}

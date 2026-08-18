@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-NOR-212320",
+  "driver": "NOR",
+  "session_id": "2024-singapore-r",
+  "lap": 49,
+  "duration_s": 2.75,
+  "audio_url": "/api/clips/2024-singapore-r-NOR-212320",
+  "transcript": {
+    "text": "Okay, so call concentration. I'll take a drink.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 22.7,
+      "f0_mean_z": 0.373,
+      "f0_std_z": 0.659,
+      "rms_mean_z": -0.909,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.901,
+      "jitter_z": 1.9
+    },
+    "acoustic": {
+      "score": 20.8,
+      "probabilities": {
+        "neu": 0.5066,
+        "hap": 0.4806,
+        "ang": 0.012,
+        "sad": 0.0008
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 28.6,
+      "probabilities": {
+        "neutral": 0.7496,
+        "disgust": 0.1386,
+        "anger": 0.045,
+        "sadness": 0.0276,
+        "joy": 0.0194,
+        "fear": 0.0181,
+        "surprise": 0.0016
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.513,
+    "stress_index": 44.6,
+    "probabilities": {
+      "Calm": 0.513,
+      "Stressed": 0.08,
+      "Tired": 0.407
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.507,
+    "stress_index": 20.8,
+    "probabilities": {
+      "Calm": 0.929,
+      "Stressed": 0.011,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1736,
+  "cached": false
+}

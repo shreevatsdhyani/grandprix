@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-VER-161139",
+  "driver": "VER",
+  "session_id": "2023-dutch-r",
+  "lap": 64,
+  "duration_s": 28.32,
+  "audio_url": "/api/clips/2023-dutch-r-VER-161139",
+  "transcript": {
+    "text": "radio check? Loud and clear, Max. That's three and a half minutes until the race resumes for you. Now in one and a half minutes the lap cars will leave the pit lane, will then move you back into the fast lane once they will left the pit lane and you will then follow the same car out eventually. I can confirm it is a rolling start procedure that the same car will stay out for two laps, two laps. That would leave six racing laps.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 12.0,
+      "f0_mean_z": -0.36,
+      "f0_std_z": 0.615,
+      "rms_mean_z": 0.323,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.203,
+      "jitter_z": 0.833
+    },
+    "acoustic": {
+      "score": 24.8,
+      "probabilities": {
+        "hap": 0.9546,
+        "neu": 0.0405,
+        "sad": 0.0046,
+        "ang": 0.0003
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.5,
+      "probabilities": {
+        "neutral": 0.942,
+        "surprise": 0.0291,
+        "anger": 0.01,
+        "sadness": 0.0065,
+        "disgust": 0.0059,
+        "fear": 0.0035,
+        "joy": 0.003
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.802,
+    "stress_index": 18.4,
+    "probabilities": {
+      "Calm": 0.802,
+      "Stressed": 0.063,
+      "Tired": 0.135
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.955,
+    "stress_index": 24.8,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 4605,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-SAI-160045",
+  "driver": "SAI",
+  "session_id": "2023-monaco-r",
+  "lap": 78,
+  "duration_s": 6.98,
+  "audio_url": "/api/clips/2023-monaco-r-SAI-160045",
+  "transcript": {
+    "text": "Yeah, sorry guys, we recorded it here. A small mistake, but it was very trick-y-d'er.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 27.6,
+      "f0_mean_z": -0.246,
+      "f0_std_z": 1.695,
+      "rms_mean_z": 1.018,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.488,
+      "jitter_z": 0.959
+    },
+    "acoustic": {
+      "score": 52.7,
+      "probabilities": {
+        "sad": 0.7916,
+        "hap": 0.2053,
+        "neu": 0.0031,
+        "ang": 0.0
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 54.5,
+      "probabilities": {
+        "sadness": 0.5754,
+        "neutral": 0.2251,
+        "disgust": 0.0984,
+        "fear": 0.0418,
+        "surprise": 0.0299,
+        "anger": 0.0201,
+        "joy": 0.0093
+      },
+      "top_label": "sadness",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.444,
+    "stress_index": 70.7,
+    "probabilities": {
+      "Calm": 0.264,
+      "Stressed": 0.444,
+      "Tired": 0.292
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.792,
+    "stress_index": 52.7,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1915,
+  "cached": false
+}

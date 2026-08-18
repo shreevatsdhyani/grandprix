@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-singapore-r-NOR-130714",
+  "driver": "NOR",
+  "session_id": "2023-singapore-r",
+  "lap": 3,
+  "duration_s": 18.94,
+  "audio_url": "/api/clips/2023-singapore-r-NOR-130714",
+  "transcript": {
+    "text": "Lewis needs to give the position back. He just breaks way too late. He committed to it, so he needs to give two positions back. Understood Lander, we've already raised it with the race director. Yeah, but they're going to do it for George, but he just committed to going off. So of course he could break a lot later than me, you know.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 23.6,
+      "f0_mean_z": 0.025,
+      "f0_std_z": 1.649,
+      "rms_mean_z": -1.001,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.269,
+      "jitter_z": 0.287
+    },
+    "acoustic": {
+      "score": 33.3,
+      "probabilities": {
+        "hap": 0.7816,
+        "sad": 0.1959,
+        "ang": 0.0206,
+        "neu": 0.0019
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 25.3,
+      "probabilities": {
+        "neutral": 0.8152,
+        "disgust": 0.0661,
+        "anger": 0.0443,
+        "sadness": 0.0354,
+        "surprise": 0.0267,
+        "fear": 0.0105,
+        "joy": 0.0018
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.853,
+    "stress_index": 14.4,
+    "probabilities": {
+      "Calm": 0.853,
+      "Stressed": 0.127,
+      "Tired": 0.019
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.782,
+    "stress_index": 33.3,
+    "probabilities": {
+      "Calm": 0.921,
+      "Stressed": 0.019,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 4485,
+  "cached": false
+}

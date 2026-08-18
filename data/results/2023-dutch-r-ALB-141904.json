@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-ALB-141904",
+  "driver": "ALB",
+  "session_id": "2023-dutch-r",
+  "lap": 11,
+  "duration_s": 5.38,
+  "audio_url": "/api/clips/2023-dutch-r-ALB-141904",
+  "transcript": {
+    "text": "HPP on, HPP on, and some people are now hitting back onto dries, they're going to struggle with warm up.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 34.6,
+      "f0_mean_z": 0.154,
+      "f0_std_z": -0.84,
+      "rms_mean_z": -1.873,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.457,
+      "jitter_z": 0.906
+    },
+    "acoustic": {
+      "score": 33.5,
+      "probabilities": {
+        "hap": 0.5908,
+        "neu": 0.2507,
+        "ang": 0.1551,
+        "sad": 0.0035
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 20.3,
+      "probabilities": {
+        "neutral": 0.8983,
+        "disgust": 0.036,
+        "sadness": 0.023,
+        "surprise": 0.018,
+        "anger": 0.0127,
+        "fear": 0.0101,
+        "joy": 0.0019
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.617,
+    "stress_index": 60.5,
+    "probabilities": {
+      "Calm": 0.333,
+      "Stressed": 0.05,
+      "Tired": 0.617
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.591,
+    "stress_index": 33.5,
+    "probabilities": {
+      "Calm": 0.794,
+      "Stressed": 0.146,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1811,
+  "cached": false
+}

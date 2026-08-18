@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-VER-161318",
+  "driver": "VER",
+  "session_id": "2023-dutch-r",
+  "lap": 64,
+  "duration_s": 7.74,
+  "audio_url": "/api/clips/2023-dutch-r-VER-161318",
+  "transcript": {
+    "text": "And during this first lap behind the safety car max, I could ask you to use all gears just to make sure we would retain sick, if you can.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 28.9,
+      "f0_mean_z": -1.102,
+      "f0_std_z": -0.856,
+      "rms_mean_z": 1.289,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.363,
+      "jitter_z": -0.508
+    },
+    "acoustic": {
+      "score": 24.9,
+      "probabilities": {
+        "hap": 0.8741,
+        "neu": 0.1081,
+        "ang": 0.0099,
+        "sad": 0.0079
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.3,
+      "probabilities": {
+        "neutral": 0.933,
+        "surprise": 0.0185,
+        "disgust": 0.0131,
+        "fear": 0.0122,
+        "sadness": 0.0119,
+        "anger": 0.0081,
+        "joy": 0.0032
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.742,
+    "stress_index": 23.5,
+    "probabilities": {
+      "Calm": 0.742,
+      "Stressed": 0.016,
+      "Tired": 0.243
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.874,
+    "stress_index": 24.9,
+    "probabilities": {
+      "Calm": 0.931,
+      "Stressed": 0.009,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2749,
+  "cached": false
+}

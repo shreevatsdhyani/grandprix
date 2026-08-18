@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-ALO-190444",
+  "driver": "ALO",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 71,
+  "duration_s": 26.78,
+  "audio_url": "/api/clips/2023-sao-paulo-r-ALO-190444",
+  "transcript": {
+    "text": "Yes! That is a hello. Go to cool and run such cool. Nice to slow and away and loads of pick up. Unbelievable. Yeah, copy guys. This is for you guys. This is for you. All of you guys. All the factory. Everyone. Everyone. This is for you. Thank you very much. Well done, mate. I'm well impressed.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 56.6,
+      "f0_mean_z": 0.84,
+      "f0_std_z": 1.177,
+      "rms_mean_z": 1.669,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 3.386,
+      "jitter_z": 1.451
+    },
+    "acoustic": {
+      "score": 27.9,
+      "probabilities": {
+        "hap": 0.8064,
+        "sad": 0.1073,
+        "neu": 0.086,
+        "ang": 0.0003
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 54.4,
+      "probabilities": {
+        "surprise": 0.7452,
+        "neutral": 0.129,
+        "joy": 0.0457,
+        "anger": 0.0442,
+        "disgust": 0.0287,
+        "sadness": 0.0036,
+        "fear": 0.0035
+      },
+      "top_label": "surprise",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.544,
+    "stress_index": 67.4,
+    "probabilities": {
+      "Calm": 0.272,
+      "Stressed": 0.184,
+      "Tired": 0.544
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.806,
+    "stress_index": 27.9,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3643,
+  "cached": false
+}

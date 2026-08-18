@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-LEC-210330",
+  "driver": "LEC",
+  "session_id": "2024-singapore-r",
+  "lap": 37,
+  "duration_s": 3.01,
+  "audio_url": "/api/clips/2024-singapore-r-LEC-210330",
+  "transcript": {
+    "text": "It will be very tight with Holkenberg. Come on.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 26.2,
+      "f0_mean_z": 1.835,
+      "f0_std_z": 0.588,
+      "rms_mean_z": -0.158,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.697,
+      "jitter_z": -1.491
+    },
+    "acoustic": {
+      "score": 25.1,
+      "probabilities": {
+        "hap": 0.9186,
+        "neu": 0.0697,
+        "ang": 0.0101,
+        "sad": 0.0017
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 32.2,
+      "probabilities": {
+        "neutral": 0.9025,
+        "fear": 0.0305,
+        "surprise": 0.0215,
+        "anger": 0.0141,
+        "sadness": 0.0138,
+        "disgust": 0.0124,
+        "joy": 0.0053
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.5,
+    "stress_index": 49.5,
+    "probabilities": {
+      "Calm": 0.5,
+      "Stressed": 0.441,
+      "Tired": 0.06
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.919,
+    "stress_index": 25.1,
+    "probabilities": {
+      "Calm": 0.931,
+      "Stressed": 0.009,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1706,
+  "cached": false
+}

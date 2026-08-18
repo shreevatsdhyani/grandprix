@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-british-r-LEC-152706",
+  "driver": "LEC",
+  "session_id": "2024-british-r",
+  "lap": 16,
+  "duration_s": 3.36,
+  "audio_url": "/api/clips/2024-british-r-LEC-152706",
+  "transcript": {
+    "text": "We expect heavy rain now, it's going to happen soon.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 33.6,
+      "f0_mean_z": -1.153,
+      "f0_std_z": -0.851,
+      "rms_mean_z": -1.334,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.867,
+      "jitter_z": -0.144
+    },
+    "acoustic": {
+      "score": 23.6,
+      "probabilities": {
+        "hap": 0.6533,
+        "neu": 0.3204,
+        "ang": 0.0259,
+        "sad": 0.0003
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 19.5,
+      "probabilities": {
+        "neutral": 0.8772,
+        "surprise": 0.0528,
+        "sadness": 0.0268,
+        "joy": 0.0184,
+        "anger": 0.0099,
+        "fear": 0.0088,
+        "disgust": 0.006
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.588,
+    "stress_index": 37.2,
+    "probabilities": {
+      "Calm": 0.588,
+      "Stressed": 0.01,
+      "Tired": 0.402
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.653,
+    "stress_index": 23.6,
+    "probabilities": {
+      "Calm": 0.916,
+      "Stressed": 0.024,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1717,
+  "cached": false
+}

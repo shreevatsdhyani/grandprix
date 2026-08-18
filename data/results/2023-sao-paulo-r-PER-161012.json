@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-PER-161012",
+  "driver": "PER",
+  "session_id": "2023-sao-paulo-r",
+  "lap": null,
+  "duration_s": 3.33,
+  "audio_url": "/api/clips/2023-sao-paulo-r-PER-161012",
+  "transcript": {
+    "text": "Reminde, we can't be imputing anyone, we can stay to the left.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 59.6,
+      "f0_mean_z": -3.721,
+      "f0_std_z": -2.038,
+      "rms_mean_z": 0.044,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.648,
+      "jitter_z": -2.295
+    },
+    "acoustic": {
+      "score": 24.2,
+      "probabilities": {
+        "hap": 0.896,
+        "neu": 0.0986,
+        "sad": 0.0052,
+        "ang": 0.0001
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 23.2,
+      "probabilities": {
+        "neutral": 0.8604,
+        "disgust": 0.0871,
+        "anger": 0.027,
+        "fear": 0.0131,
+        "sadness": 0.0071,
+        "surprise": 0.0027,
+        "joy": 0.0027
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.613,
+    "stress_index": 34.8,
+    "probabilities": {
+      "Calm": 0.613,
+      "Stressed": 0.001,
+      "Tired": 0.386
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.896,
+    "stress_index": 24.2,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2005,
+  "cached": false
+}

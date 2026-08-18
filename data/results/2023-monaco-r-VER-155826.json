@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-VER-155826",
+  "driver": "VER",
+  "session_id": "2023-monaco-r",
+  "lap": 78,
+  "duration_s": 7.14,
+  "audio_url": "/api/clips/2023-monaco-r-VER-155826",
+  "transcript": {
+    "text": "Fernando is bringing it home 27 to you are the race leader you have nothing to prove let Norris through please",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 19.8,
+      "f0_mean_z": -0.797,
+      "f0_std_z": -0.644,
+      "rms_mean_z": 0.503,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.525,
+      "jitter_z": 0.608
+    },
+    "acoustic": {
+      "score": 32.2,
+      "probabilities": {
+        "hap": 0.8181,
+        "sad": 0.147,
+        "ang": 0.0304,
+        "neu": 0.0045
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.8,
+      "probabilities": {
+        "neutral": 0.9159,
+        "surprise": 0.0498,
+        "joy": 0.0126,
+        "anger": 0.0097,
+        "sadness": 0.0076,
+        "disgust": 0.0022,
+        "fear": 0.0021
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.558,
+    "stress_index": 39.8,
+    "probabilities": {
+      "Calm": 0.558,
+      "Stressed": 0.01,
+      "Tired": 0.431
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.818,
+    "stress_index": 32.2,
+    "probabilities": {
+      "Calm": 0.911,
+      "Stressed": 0.029,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1848,
+  "cached": false
+}

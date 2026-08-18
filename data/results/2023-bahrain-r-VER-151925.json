@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-VER-151925",
+  "driver": "VER",
+  "session_id": "2023-bahrain-r",
+  "lap": 10,
+  "duration_s": 3.49,
+  "audio_url": "/api/clips/2023-bahrain-r-VER-151925",
+  "transcript": {
+    "text": "Go back to Strat 8, Max, and let me know if the downshifts change.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 59.3,
+      "f0_mean_z": -1.598,
+      "f0_std_z": -1.262,
+      "rms_mean_z": -2.947,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.603,
+      "jitter_z": -1.737
+    },
+    "acoustic": {
+      "score": 19.0,
+      "probabilities": {
+        "neu": 0.6256,
+        "hap": 0.3712,
+        "ang": 0.0031,
+        "sad": 0.0002
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.8,
+      "probabilities": {
+        "neutral": 0.9551,
+        "surprise": 0.0181,
+        "sadness": 0.0114,
+        "joy": 0.0046,
+        "anger": 0.0045,
+        "fear": 0.0034,
+        "disgust": 0.0028
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.869,
+    "stress_index": 11.8,
+    "probabilities": {
+      "Calm": 0.869,
+      "Stressed": 0.001,
+      "Tired": 0.13
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.626,
+    "stress_index": 19.0,
+    "probabilities": {
+      "Calm": 0.937,
+      "Stressed": 0.003,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2424,
+  "cached": false
+}

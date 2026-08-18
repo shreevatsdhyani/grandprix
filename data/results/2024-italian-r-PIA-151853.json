@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-PIA-151853",
+  "driver": "PIA",
+  "session_id": "2024-italian-r",
+  "lap": 12,
+  "duration_s": 5.25,
+  "audio_url": "/api/clips/2024-italian-r-PIA-151853",
+  "transcript": {
+    "text": "And Oscar, do you have an opinion on plan A versus plan B? Yeah. I think plan A is so far.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 16.0,
+      "f0_mean_z": 1.046,
+      "f0_std_z": 0.306,
+      "rms_mean_z": 0.583,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.063,
+      "jitter_z": -0.082
+    },
+    "acoustic": {
+      "score": 16.1,
+      "probabilities": {
+        "neu": 0.9384,
+        "hap": 0.0548,
+        "ang": 0.0066,
+        "sad": 0.0001
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.1,
+      "probabilities": {
+        "neutral": 0.944,
+        "surprise": 0.0287,
+        "disgust": 0.0075,
+        "joy": 0.0065,
+        "anger": 0.0062,
+        "sadness": 0.005,
+        "fear": 0.0022
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.8,
+    "stress_index": 19.2,
+    "probabilities": {
+      "Calm": 0.8,
+      "Stressed": 0.121,
+      "Tired": 0.079
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.938,
+    "stress_index": 16.1,
+    "probabilities": {
+      "Calm": 0.934,
+      "Stressed": 0.006,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1725,
+  "cached": false
+}

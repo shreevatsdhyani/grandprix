@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-PIA-151235",
+  "driver": "PIA",
+  "session_id": "2024-italian-r",
+  "lap": 7,
+  "duration_s": 7.3,
+  "audio_url": "/api/clips/2024-italian-r-PIA-151235",
+  "transcript": {
+    "text": "Oscar we don't see graining on any cars yet. We think we need to get to at least plan B target lap to clear traffic.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 24.6,
+      "f0_mean_z": 0.123,
+      "f0_std_z": -0.447,
+      "rms_mean_z": -1.168,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.337,
+      "jitter_z": 0.44
+    },
+    "acoustic": {
+      "score": 17.3,
+      "probabilities": {
+        "neu": 0.9423,
+        "hap": 0.0288,
+        "ang": 0.0218,
+        "sad": 0.007
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.7,
+      "probabilities": {
+        "neutral": 0.9428,
+        "surprise": 0.0203,
+        "anger": 0.0118,
+        "disgust": 0.0111,
+        "sadness": 0.0065,
+        "fear": 0.0047,
+        "joy": 0.0029
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.668,
+    "stress_index": 30.2,
+    "probabilities": {
+      "Calm": 0.668,
+      "Stressed": 0.032,
+      "Tired": 0.3
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.942,
+    "stress_index": 17.3,
+    "probabilities": {
+      "Calm": 0.92,
+      "Stressed": 0.02,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1819,
+  "cached": false
+}

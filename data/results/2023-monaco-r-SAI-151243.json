@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-SAI-151243",
+  "driver": "SAI",
+  "session_id": "2023-monaco-r",
+  "lap": 54,
+  "duration_s": 4.93,
+  "audio_url": "/api/clips/2023-monaco-r-SAI-151243",
+  "transcript": {
+    "text": "He's really mean old space? You need to do something about it. We're gonna crush?",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 39.2,
+      "f0_mean_z": 3.977,
+      "f0_std_z": 0.732,
+      "rms_mean_z": 0.149,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.036,
+      "jitter_z": 0.623
+    },
+    "acoustic": {
+      "score": 65.7,
+      "probabilities": {
+        "sad": 0.6604,
+        "ang": 0.2517,
+        "hap": 0.0854,
+        "neu": 0.0025
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 71.9,
+      "probabilities": {
+        "disgust": 0.4127,
+        "anger": 0.3393,
+        "surprise": 0.123,
+        "fear": 0.0529,
+        "neutral": 0.036,
+        "sadness": 0.0285,
+        "joy": 0.0076
+      },
+      "top_label": "disgust",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.985,
+    "stress_index": 99.8,
+    "probabilities": {
+      "Calm": 0.0,
+      "Stressed": 0.985,
+      "Tired": 0.014
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.66,
+    "stress_index": 65.7,
+    "probabilities": {
+      "Calm": 0.703,
+      "Stressed": 0.237,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2695,
+  "cached": false
+}

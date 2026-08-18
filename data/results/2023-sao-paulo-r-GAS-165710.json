@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-GAS-165710",
+  "driver": "GAS",
+  "session_id": "2023-sao-paulo-r",
+  "lap": null,
+  "duration_s": 1.63,
+  "audio_url": "/api/clips/2023-sao-paulo-r-GAS-165710",
+  "transcript": {
+    "text": "you know.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 100.0,
+      "f0_mean_z": 0.0,
+      "f0_std_z": 0.0,
+      "rms_mean_z": -11.687,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 7.32,
+      "jitter_z": 0.0
+    },
+    "acoustic": {
+      "score": 52.3,
+      "probabilities": {
+        "hap": 0.5653,
+        "ang": 0.3951,
+        "neu": 0.0396,
+        "sad": 0.0
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 28.7,
+      "probabilities": {
+        "neutral": 0.7134,
+        "disgust": 0.1395,
+        "joy": 0.041,
+        "anger": 0.0394,
+        "sadness": 0.0319,
+        "surprise": 0.0176,
+        "fear": 0.0172
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.927,
+    "stress_index": 84.2,
+    "probabilities": {
+      "Calm": 0.065,
+      "Stressed": 0.008,
+      "Tired": 0.927
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.565,
+    "stress_index": 52.3,
+    "probabilities": {
+      "Calm": 0.569,
+      "Stressed": 0.371,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1699,
+  "cached": false
+}

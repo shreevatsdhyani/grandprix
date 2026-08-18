@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-BOT-150250",
+  "driver": "BOT",
+  "session_id": "2023-dutch-r",
+  "lap": 42,
+  "duration_s": 3.58,
+  "audio_url": "/api/clips/2023-dutch-r-BOT-150250",
+  "transcript": {
+    "text": "A couple of drops here of water and ros the frog a sink.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 89.3,
+      "f0_mean_z": 5.813,
+      "f0_std_z": -0.941,
+      "rms_mean_z": -1.79,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 2.617,
+      "jitter_z": 1.171
+    },
+    "acoustic": {
+      "score": 28.8,
+      "probabilities": {
+        "hap": 0.8671,
+        "sad": 0.0641,
+        "neu": 0.0402,
+        "ang": 0.0285
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 67.4,
+      "probabilities": {
+        "disgust": 0.9113,
+        "neutral": 0.0469,
+        "sadness": 0.0203,
+        "anger": 0.0113,
+        "fear": 0.0051,
+        "surprise": 0.003,
+        "joy": 0.0021
+      },
+      "top_label": "disgust",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.569,
+    "stress_index": 93.6,
+    "probabilities": {
+      "Calm": 0.007,
+      "Stressed": 0.424,
+      "Tired": 0.569
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.867,
+    "stress_index": 28.8,
+    "probabilities": {
+      "Calm": 0.913,
+      "Stressed": 0.027,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1749,
+  "cached": false
+}

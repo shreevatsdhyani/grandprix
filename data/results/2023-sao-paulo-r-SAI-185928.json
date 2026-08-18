@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-SAI-185928",
+  "driver": "SAI",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 71,
+  "duration_s": 11.07,
+  "audio_url": "/api/clips/2023-sao-paulo-r-SAI-185928",
+  "transcript": {
+    "text": "So nothing strange on the gearbox or fine we are checking anyway if there is anything else. Oh it's what I had before this sticky photo stick. Yeah copy, might be stealing.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 14.1,
+      "f0_mean_z": -0.484,
+      "f0_std_z": 0.002,
+      "rms_mean_z": -0.565,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.709,
+      "jitter_z": 0.577
+    },
+    "acoustic": {
+      "score": 23.0,
+      "probabilities": {
+        "hap": 0.6872,
+        "neu": 0.2875,
+        "sad": 0.0245,
+        "ang": 0.0008
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 26.5,
+      "probabilities": {
+        "neutral": 0.7651,
+        "disgust": 0.104,
+        "surprise": 0.0774,
+        "anger": 0.0204,
+        "fear": 0.0192,
+        "sadness": 0.0111,
+        "joy": 0.0029
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.605,
+    "stress_index": 35.9,
+    "probabilities": {
+      "Calm": 0.605,
+      "Stressed": 0.032,
+      "Tired": 0.363
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.687,
+    "stress_index": 23.0,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3124,
+  "cached": false
+}

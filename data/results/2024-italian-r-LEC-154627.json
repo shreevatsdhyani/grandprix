@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-LEC-154627",
+  "driver": "LEC",
+  "session_id": "2024-italian-r",
+  "lap": 31,
+  "duration_s": 5.5,
+  "audio_url": "/api/clips/2024-italian-r-LEC-154627",
+  "transcript": {
+    "text": "Nora is starting to struggle. This is when Red Bull started to have graining around lap 15 in the stint.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 14.0,
+      "f0_mean_z": -0.432,
+      "f0_std_z": -0.24,
+      "rms_mean_z": -0.302,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.77,
+      "jitter_z": 1.14
+    },
+    "acoustic": {
+      "score": 20.9,
+      "probabilities": {
+        "neu": 0.5418,
+        "hap": 0.4313,
+        "sad": 0.0176,
+        "ang": 0.0094
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 56.0,
+      "probabilities": {
+        "sadness": 0.3099,
+        "neutral": 0.2921,
+        "fear": 0.1962,
+        "disgust": 0.1349,
+        "anger": 0.053,
+        "surprise": 0.0116,
+        "joy": 0.0023
+      },
+      "top_label": "sadness",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.89,
+    "stress_index": 80.9,
+    "probabilities": {
+      "Calm": 0.102,
+      "Stressed": 0.008,
+      "Tired": 0.89
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.542,
+    "stress_index": 20.9,
+    "probabilities": {
+      "Calm": 0.931,
+      "Stressed": 0.009,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1793,
+  "cached": false
+}

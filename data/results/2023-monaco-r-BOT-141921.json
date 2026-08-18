@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-BOT-141921",
+  "driver": "BOT",
+  "session_id": "2023-monaco-r",
+  "lap": 13,
+  "duration_s": 3.94,
+  "audio_url": "/api/clips/2023-monaco-r-BOT-141921",
+  "transcript": {
+    "text": "The Williams front of me is having some real left grading",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 35.4,
+      "f0_mean_z": 2.642,
+      "f0_std_z": 1.045,
+      "rms_mean_z": -0.443,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.295,
+      "jitter_z": 1.311
+    },
+    "acoustic": {
+      "score": 27.5,
+      "probabilities": {
+        "hap": 0.9208,
+        "sad": 0.059,
+        "neu": 0.0123,
+        "ang": 0.008
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 19.0,
+      "probabilities": {
+        "neutral": 0.8951,
+        "surprise": 0.0416,
+        "sadness": 0.0309,
+        "disgust": 0.0124,
+        "joy": 0.0119,
+        "anger": 0.0055,
+        "fear": 0.0026
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.802,
+    "stress_index": 81.8,
+    "probabilities": {
+      "Calm": 0.181,
+      "Stressed": 0.802,
+      "Tired": 0.018
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.921,
+    "stress_index": 27.5,
+    "probabilities": {
+      "Calm": 0.932,
+      "Stressed": 0.008,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2610,
+  "cached": false
+}

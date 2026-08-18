@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-TSU-151817",
+  "driver": "TSU",
+  "session_id": "2023-monaco-r",
+  "lap": 56,
+  "duration_s": 2.72,
+  "audio_url": "/api/clips/2023-monaco-r-TSU-151817",
+  "transcript": {
+    "text": "Your kids, it's difficult for everybody. We're doing a good job.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 90.1,
+      "f0_mean_z": 2.453,
+      "f0_std_z": 7.95,
+      "rms_mean_z": 0.186,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.676,
+      "jitter_z": -0.086
+    },
+    "acoustic": {
+      "score": 76.3,
+      "probabilities": {
+        "ang": 0.7243,
+        "hap": 0.2185,
+        "neu": 0.0304,
+        "sad": 0.0267
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.7,
+      "probabilities": {
+        "neutral": 0.9291,
+        "joy": 0.0207,
+        "disgust": 0.015,
+        "anger": 0.0104,
+        "surprise": 0.0087,
+        "sadness": 0.0084,
+        "fear": 0.0076
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 1.0,
+    "stress_index": 100.0,
+    "probabilities": {
+      "Calm": 0.0,
+      "Stressed": 1.0,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.724,
+    "stress_index": 76.3,
+    "probabilities": {
+      "Calm": 0.259,
+      "Stressed": 0.681,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2596,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-SAI-152620",
+  "driver": "SAI",
+  "session_id": "2023-monaco-r",
+  "lap": 61,
+  "duration_s": 2.18,
+  "audio_url": "/api/clips/2023-monaco-r-SAI-152620",
+  "transcript": {
+    "text": "You tell me the photos and I tell you, tell you, tell you.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 25.3,
+      "f0_mean_z": 1.164,
+      "f0_std_z": 0.092,
+      "rms_mean_z": 1.707,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.194,
+      "jitter_z": 1.425
+    },
+    "acoustic": {
+      "score": 25.8,
+      "probabilities": {
+        "hap": 0.7119,
+        "neu": 0.2305,
+        "ang": 0.0305,
+        "sad": 0.027
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 39.2,
+      "probabilities": {
+        "neutral": 0.5957,
+        "anger": 0.2101,
+        "fear": 0.0675,
+        "joy": 0.0494,
+        "disgust": 0.0487,
+        "sadness": 0.0202,
+        "surprise": 0.0083
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.61,
+    "stress_index": 70.1,
+    "probabilities": {
+      "Calm": 0.238,
+      "Stressed": 0.152,
+      "Tired": 0.61
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.712,
+    "stress_index": 25.8,
+    "probabilities": {
+      "Calm": 0.911,
+      "Stressed": 0.029,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2246,
+  "cached": false
+}

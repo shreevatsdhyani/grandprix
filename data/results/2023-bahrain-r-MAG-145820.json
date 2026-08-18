@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-MAG-145820",
+  "driver": "MAG",
+  "session_id": "2023-bahrain-r",
+  "lap": null,
+  "duration_s": 6.05,
+  "audio_url": "/api/clips/2023-bahrain-r-MAG-145820",
+  "transcript": {
+    "text": "So just a quick reminder that don't be surprised if you hear me talking to you on the formation up because I am allowed to do that now.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 57.4,
+      "f0_mean_z": -2.692,
+      "f0_std_z": -1.101,
+      "rms_mean_z": -2.874,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.504,
+      "jitter_z": -0.878
+    },
+    "acoustic": {
+      "score": 39.7,
+      "probabilities": {
+        "neu": 0.5716,
+        "ang": 0.2223,
+        "sad": 0.1392,
+        "hap": 0.067
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 44.7,
+      "probabilities": {
+        "surprise": 0.9675,
+        "neutral": 0.0191,
+        "anger": 0.0065,
+        "joy": 0.0031,
+        "disgust": 0.0016,
+        "fear": 0.0012,
+        "sadness": 0.001
+      },
+      "top_label": "surprise",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.923,
+    "stress_index": 83.1,
+    "probabilities": {
+      "Calm": 0.077,
+      "Stressed": 0.0,
+      "Tired": 0.923
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.572,
+    "stress_index": 39.7,
+    "probabilities": {
+      "Calm": 0.731,
+      "Stressed": 0.209,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1932,
+  "cached": false
+}

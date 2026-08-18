@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-british-r-PIA-160344",
+  "driver": "PIA",
+  "session_id": "2024-british-r",
+  "lap": 41,
+  "duration_s": 7.33,
+  "audio_url": "/api/clips/2024-british-r-PIA-160344",
+  "transcript": {
+    "text": "competitor cars do not have medium. Currently we think medium is the right tie. 15 laps to go. Yes, yes, it's the best.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 16.2,
+      "f0_mean_z": -0.303,
+      "f0_std_z": -0.301,
+      "rms_mean_z": -0.839,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.582,
+      "jitter_z": -0.529
+    },
+    "acoustic": {
+      "score": 45.8,
+      "probabilities": {
+        "neu": 0.5249,
+        "ang": 0.3711,
+        "hap": 0.1008,
+        "sad": 0.0033
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.8,
+      "probabilities": {
+        "neutral": 0.9537,
+        "surprise": 0.0179,
+        "joy": 0.0079,
+        "anger": 0.0068,
+        "disgust": 0.0062,
+        "sadness": 0.0052,
+        "fear": 0.0021
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.621,
+    "stress_index": 35.7,
+    "probabilities": {
+      "Calm": 0.621,
+      "Stressed": 0.155,
+      "Tired": 0.224
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.525,
+    "stress_index": 45.8,
+    "probabilities": {
+      "Calm": 0.591,
+      "Stressed": 0.349,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2181,
+  "cached": false
+}

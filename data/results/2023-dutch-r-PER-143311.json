@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-PER-143311",
+  "driver": "PER",
+  "session_id": "2023-dutch-r",
+  "lap": 20,
+  "duration_s": 16.19,
+  "audio_url": "/api/clips/2023-dutch-r-PER-143311",
+  "transcript": {
+    "text": "So, it will be plan A not? From here? Yeah, there might be some rain in 15 laps, a question of 25 laps. Hard to say how strong that will be at this point.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 28.1,
+      "f0_mean_z": 0.41,
+      "f0_std_z": -0.254,
+      "rms_mean_z": 1.249,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.597,
+      "jitter_z": -1.052
+    },
+    "acoustic": {
+      "score": 28.0,
+      "probabilities": {
+        "hap": 0.9381,
+        "ang": 0.0416,
+        "neu": 0.0138,
+        "sad": 0.0065
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 20.5,
+      "probabilities": {
+        "neutral": 0.88,
+        "surprise": 0.0536,
+        "disgust": 0.03,
+        "anger": 0.0145,
+        "sadness": 0.0109,
+        "fear": 0.0084,
+        "joy": 0.0026
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.768,
+    "stress_index": 22.1,
+    "probabilities": {
+      "Calm": 0.768,
+      "Stressed": 0.11,
+      "Tired": 0.123
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.938,
+    "stress_index": 28.0,
+    "probabilities": {
+      "Calm": 0.901,
+      "Stressed": 0.039,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2319,
+  "cached": false
+}

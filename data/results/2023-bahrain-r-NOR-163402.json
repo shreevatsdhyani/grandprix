@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-NOR-163402",
+  "driver": "NOR",
+  "session_id": "2023-bahrain-r",
+  "lap": 54,
+  "duration_s": 5.18,
+  "audio_url": "/api/clips/2023-bahrain-r-NOR-163402",
+  "transcript": {
+    "text": "Lander, we've had our third strike, track limits, turn seven. We must not get any more.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 28.1,
+      "f0_mean_z": 0.62,
+      "f0_std_z": -0.394,
+      "rms_mean_z": -1.489,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.014,
+      "jitter_z": 0.07
+    },
+    "acoustic": {
+      "score": 24.4,
+      "probabilities": {
+        "hap": 0.7714,
+        "neu": 0.2013,
+        "sad": 0.0145,
+        "ang": 0.0128
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 23.4,
+      "probabilities": {
+        "neutral": 0.854,
+        "anger": 0.0532,
+        "sadness": 0.0403,
+        "surprise": 0.0213,
+        "disgust": 0.0156,
+        "fear": 0.0134,
+        "joy": 0.0023
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.637,
+    "stress_index": 33.2,
+    "probabilities": {
+      "Calm": 0.637,
+      "Stressed": 0.054,
+      "Tired": 0.309
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.771,
+    "stress_index": 24.4,
+    "probabilities": {
+      "Calm": 0.928,
+      "Stressed": 0.012,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2787,
+  "cached": false
+}

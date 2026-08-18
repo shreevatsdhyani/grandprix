@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-SAI-141028",
+  "driver": "SAI",
+  "session_id": "2023-monaco-r",
+  "lap": 6,
+  "duration_s": 4.06,
+  "audio_url": "/api/clips/2023-monaco-r-SAI-141028",
+  "transcript": {
+    "text": "Let me know when no gun starts struggling. Who dies?",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 23.4,
+      "f0_mean_z": 0.599,
+      "f0_std_z": 1.775,
+      "rms_mean_z": -0.294,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.261,
+      "jitter_z": 0.179
+    },
+    "acoustic": {
+      "score": 61.3,
+      "probabilities": {
+        "sad": 0.7897,
+        "ang": 0.1238,
+        "hap": 0.0838,
+        "neu": 0.0027
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 52.5,
+      "probabilities": {
+        "neutral": 0.6046,
+        "fear": 0.2559,
+        "anger": 0.048,
+        "sadness": 0.0477,
+        "surprise": 0.0242,
+        "disgust": 0.0164,
+        "joy": 0.0032
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.869,
+    "stress_index": 91.3,
+    "probabilities": {
+      "Calm": 0.082,
+      "Stressed": 0.869,
+      "Tired": 0.049
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.79,
+    "stress_index": 61.3,
+    "probabilities": {
+      "Calm": 0.824,
+      "Stressed": 0.116,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2351,
+  "cached": false
+}

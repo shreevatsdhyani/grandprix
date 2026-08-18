@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-HAM-145133",
+  "driver": "HAM",
+  "session_id": "2023-dutch-r",
+  "lap": 33,
+  "duration_s": 3.42,
+  "audio_url": "/api/clips/2023-dutch-r-HAM-145133",
+  "transcript": {
+    "text": "It's a little bit of grain, I'm right, man. Okay, copy.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 28.2,
+      "f0_mean_z": 0.0,
+      "f0_std_z": 0.0,
+      "rms_mean_z": 1.806,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.717,
+      "jitter_z": 0.0
+    },
+    "acoustic": {
+      "score": 18.8,
+      "probabilities": {
+        "neu": 0.7502,
+        "hap": 0.2287,
+        "ang": 0.0166,
+        "sad": 0.0045
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 24.9,
+      "probabilities": {
+        "neutral": 0.8262,
+        "disgust": 0.1231,
+        "anger": 0.0301,
+        "sadness": 0.0072,
+        "fear": 0.0065,
+        "joy": 0.0037,
+        "surprise": 0.003
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.768,
+    "stress_index": 21.4,
+    "probabilities": {
+      "Calm": 0.768,
+      "Stressed": 0.047,
+      "Tired": 0.185
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.75,
+    "stress_index": 18.8,
+    "probabilities": {
+      "Calm": 0.924,
+      "Stressed": 0.016,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1934,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-singapore-r-RUS-140935",
+  "driver": "RUS",
+  "session_id": "2023-singapore-r",
+  "lap": 39,
+  "duration_s": 6.18,
+  "audio_url": "/api/clips/2023-singapore-r-RUS-140935",
+  "transcript": {
+    "text": "Science reporting, he still has a second of pace in hand.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 17.9,
+      "f0_mean_z": 0.145,
+      "f0_std_z": 1.427,
+      "rms_mean_z": -0.155,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.505,
+      "jitter_z": 2.529
+    },
+    "acoustic": {
+      "score": 29.0,
+      "probabilities": {
+        "hap": 0.5749,
+        "neu": 0.3114,
+        "ang": 0.0896,
+        "sad": 0.024
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.7,
+      "probabilities": {
+        "neutral": 0.9498,
+        "surprise": 0.0336,
+        "joy": 0.0045,
+        "disgust": 0.0041,
+        "anger": 0.004,
+        "sadness": 0.0032,
+        "fear": 0.0009
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.787,
+    "stress_index": 20.1,
+    "probabilities": {
+      "Calm": 0.787,
+      "Stressed": 0.097,
+      "Tired": 0.116
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.575,
+    "stress_index": 29.0,
+    "probabilities": {
+      "Calm": 0.856,
+      "Stressed": 0.084,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3049,
+  "cached": false
+}

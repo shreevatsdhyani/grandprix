@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-GAS-141854",
+  "driver": "GAS",
+  "session_id": "2023-monaco-r",
+  "lap": 13,
+  "duration_s": 4.77,
+  "audio_url": "/api/clips/2023-monaco-r-GAS-141854",
+  "transcript": {
+    "text": "To go over the day, bring me potants, please just check the tires, please. Yep, we're looking at it.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 40.3,
+      "f0_mean_z": 2.873,
+      "f0_std_z": 1.588,
+      "rms_mean_z": -0.169,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.407,
+      "jitter_z": -1.075
+    },
+    "acoustic": {
+      "score": 32.0,
+      "probabilities": {
+        "neu": 0.4673,
+        "sad": 0.3112,
+        "hap": 0.2108,
+        "ang": 0.0108
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 21.1,
+      "probabilities": {
+        "neutral": 0.8836,
+        "disgust": 0.0553,
+        "surprise": 0.0178,
+        "sadness": 0.0144,
+        "fear": 0.0129,
+        "anger": 0.0126,
+        "joy": 0.0034
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.903,
+    "stress_index": 90.3,
+    "probabilities": {
+      "Calm": 0.097,
+      "Stressed": 0.903,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.467,
+    "stress_index": 32.0,
+    "probabilities": {
+      "Calm": 0.93,
+      "Stressed": 0.01,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2635,
+  "cached": false
+}

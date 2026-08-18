@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-RUS-173520",
+  "driver": "RUS",
+  "session_id": "2023-dutch-r",
+  "lap": 72,
+  "duration_s": 4.35,
+  "audio_url": "/api/clips/2023-dutch-r-RUS-173520",
+  "transcript": {
+    "text": "Yeah, I think my self-strancy today. I'll do it very quick before we can.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 26.8,
+      "f0_mean_z": 1.059,
+      "f0_std_z": -0.992,
+      "rms_mean_z": 0.879,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.419,
+      "jitter_z": -1.027
+    },
+    "acoustic": {
+      "score": 36.8,
+      "probabilities": {
+        "hap": 0.5906,
+        "sad": 0.2748,
+        "neu": 0.0905,
+        "ang": 0.0442
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.1,
+      "probabilities": {
+        "neutral": 0.9523,
+        "surprise": 0.0167,
+        "anger": 0.0102,
+        "fear": 0.0073,
+        "joy": 0.006,
+        "disgust": 0.0044,
+        "sadness": 0.0031
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.556,
+    "stress_index": 42.6,
+    "probabilities": {
+      "Calm": 0.556,
+      "Stressed": 0.262,
+      "Tired": 0.182
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.591,
+    "stress_index": 36.8,
+    "probabilities": {
+      "Calm": 0.898,
+      "Stressed": 0.042,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2060,
+  "cached": false
+}

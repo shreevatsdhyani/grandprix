@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-singapore-r-SAI-142659",
+  "driver": "SAI",
+  "session_id": "2023-singapore-r",
+  "lap": 48,
+  "duration_s": 4.9,
+  "audio_url": "/api/clips/2023-singapore-r-SAI-142659",
+  "transcript": {
+    "text": "Sorry, space. Need faster if you can till the end.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 31.7,
+      "f0_mean_z": 0.0,
+      "f0_std_z": 0.0,
+      "rms_mean_z": 2.508,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.456,
+      "jitter_z": 0.0
+    },
+    "acoustic": {
+      "score": 24.9,
+      "probabilities": {
+        "hap": 0.9172,
+        "neu": 0.0666,
+        "sad": 0.0152,
+        "ang": 0.001
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 61.1,
+      "probabilities": {
+        "sadness": 0.8956,
+        "neutral": 0.0694,
+        "surprise": 0.0202,
+        "disgust": 0.006,
+        "joy": 0.0035,
+        "fear": 0.0031,
+        "anger": 0.0022
+      },
+      "top_label": "sadness",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.86,
+    "stress_index": 79.0,
+    "probabilities": {
+      "Calm": 0.124,
+      "Stressed": 0.016,
+      "Tired": 0.86
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.917,
+    "stress_index": 24.9,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2781,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-PER-144546",
+  "driver": "PER",
+  "session_id": "2023-monaco-r",
+  "lap": 33,
+  "duration_s": 5.54,
+  "audio_url": "/api/clips/2023-monaco-r-PER-144546",
+  "transcript": {
+    "text": "It's too push me off. Yeah, we saw that. What the fuck with that? He learned that loud.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 100.0,
+      "f0_mean_z": 5.179,
+      "f0_std_z": 7.017,
+      "rms_mean_z": 1.287,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.767,
+      "jitter_z": 3.333
+    },
+    "acoustic": {
+      "score": 55.9,
+      "probabilities": {
+        "hap": 0.4915,
+        "ang": 0.4153,
+        "sad": 0.0605,
+        "neu": 0.0327
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 93.0,
+      "probabilities": {
+        "anger": 0.6232,
+        "disgust": 0.3223,
+        "neutral": 0.0186,
+        "surprise": 0.0151,
+        "sadness": 0.0109,
+        "fear": 0.0072,
+        "joy": 0.0027
+      },
+      "top_label": "anger",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 1.0,
+    "stress_index": 100.0,
+    "probabilities": {
+      "Calm": 0.0,
+      "Stressed": 1.0,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.491,
+    "stress_index": 55.9,
+    "probabilities": {
+      "Calm": 0.55,
+      "Stressed": 0.39,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2869,
+  "cached": false
+}

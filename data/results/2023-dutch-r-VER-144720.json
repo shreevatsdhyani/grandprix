@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-VER-144720",
+  "driver": "VER",
+  "session_id": "2023-dutch-r",
+  "lap": 30,
+  "duration_s": 8.64,
+  "audio_url": "/api/clips/2023-dutch-r-VER-144720",
+  "transcript": {
+    "text": "Delta Lap times check out two and a half tents. There's another two and a half tents worth of saving that you're doing instead of an eight, which is working well, so keep it up.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 28.0,
+      "f0_mean_z": -0.658,
+      "f0_std_z": -0.518,
+      "rms_mean_z": 1.955,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.369,
+      "jitter_z": 0.545
+    },
+    "acoustic": {
+      "score": 22.2,
+      "probabilities": {
+        "hap": 0.626,
+        "neu": 0.3544,
+        "sad": 0.0193,
+        "ang": 0.0003
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.6,
+      "probabilities": {
+        "neutral": 0.9384,
+        "surprise": 0.031,
+        "joy": 0.0184,
+        "sadness": 0.0056,
+        "anger": 0.0033,
+        "disgust": 0.0023,
+        "fear": 0.0009
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.744,
+    "stress_index": 23.2,
+    "probabilities": {
+      "Calm": 0.744,
+      "Stressed": 0.027,
+      "Tired": 0.228
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.626,
+    "stress_index": 22.2,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2196,
+  "cached": false
+}

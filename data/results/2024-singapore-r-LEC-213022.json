@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-LEC-213022",
+  "driver": "LEC",
+  "session_id": "2024-singapore-r",
+  "lap": 53,
+  "duration_s": 8.48,
+  "audio_url": "/api/clips/2024-singapore-r-LEC-213022",
+  "transcript": {
+    "text": "Russell P1 366. What do you mean Russell? I meant Norris, but I don't want to speak in the corner. I don't care about always keeping Russell.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 23.0,
+      "f0_mean_z": 1.452,
+      "f0_std_z": 1.163,
+      "rms_mean_z": -0.04,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.226,
+      "jitter_z": 0.306
+    },
+    "acoustic": {
+      "score": 24.1,
+      "probabilities": {
+        "neu": 0.6025,
+        "hap": 0.2891,
+        "sad": 0.0698,
+        "ang": 0.0385
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 40.8,
+      "probabilities": {
+        "neutral": 0.4916,
+        "surprise": 0.1852,
+        "disgust": 0.1653,
+        "anger": 0.1297,
+        "sadness": 0.0137,
+        "fear": 0.0106,
+        "joy": 0.004
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.452,
+    "stress_index": 53.1,
+    "probabilities": {
+      "Calm": 0.452,
+      "Stressed": 0.38,
+      "Tired": 0.168
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.603,
+    "stress_index": 24.1,
+    "probabilities": {
+      "Calm": 0.904,
+      "Stressed": 0.036,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3050,
+  "cached": false
+}

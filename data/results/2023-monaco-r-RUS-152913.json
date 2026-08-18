@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-RUS-152913",
+  "driver": "RUS",
+  "session_id": "2023-monaco-r",
+  "lap": 63,
+  "duration_s": 3.26,
+  "audio_url": "/api/clips/2023-monaco-r-RUS-152913",
+  "transcript": {
+    "text": "A rain intensity is going to be reducing from here on.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 19.8,
+      "f0_mean_z": -0.814,
+      "f0_std_z": -0.349,
+      "rms_mean_z": -0.312,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.0,
+      "jitter_z": -0.286
+    },
+    "acoustic": {
+      "score": 24.2,
+      "probabilities": {
+        "neu": 0.7033,
+        "hap": 0.1793,
+        "ang": 0.0614,
+        "sad": 0.056
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 24.3,
+      "probabilities": {
+        "neutral": 0.8146,
+        "sadness": 0.0881,
+        "disgust": 0.0412,
+        "anger": 0.0203,
+        "surprise": 0.016,
+        "joy": 0.0106,
+        "fear": 0.0091
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.819,
+    "stress_index": 16.3,
+    "probabilities": {
+      "Calm": 0.819,
+      "Stressed": 0.008,
+      "Tired": 0.172
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.703,
+    "stress_index": 24.2,
+    "probabilities": {
+      "Calm": 0.882,
+      "Stressed": 0.058,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1475,
+  "cached": false
+}

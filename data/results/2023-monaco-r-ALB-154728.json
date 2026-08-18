@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-ALB-154728",
+  "driver": "ALB",
+  "session_id": "2023-monaco-r",
+  "lap": 74,
+  "duration_s": 5.86,
+  "audio_url": "/api/clips/2023-monaco-r-ALB-154728",
+  "transcript": {
+    "text": "Well these break changes, you're changing the way the car's feeling every single time.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 20.1,
+      "f0_mean_z": 1.63,
+      "f0_std_z": 0.295,
+      "rms_mean_z": -0.382,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.2,
+      "jitter_z": 1.43
+    },
+    "acoustic": {
+      "score": 59.1,
+      "probabilities": {
+        "sad": 0.9202,
+        "hap": 0.0511,
+        "ang": 0.0267,
+        "neu": 0.002
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 19.4,
+      "probabilities": {
+        "neutral": 0.9052,
+        "surprise": 0.0426,
+        "disgust": 0.0215,
+        "anger": 0.0196,
+        "sadness": 0.0047,
+        "fear": 0.0034,
+        "joy": 0.003
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.873,
+    "stress_index": 93.2,
+    "probabilities": {
+      "Calm": 0.06,
+      "Stressed": 0.873,
+      "Tired": 0.066
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.92,
+    "stress_index": 59.1,
+    "probabilities": {
+      "Calm": 0.915,
+      "Stressed": 0.025,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1724,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-BOT-173907",
+  "driver": "BOT",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 8,
+  "duration_s": 9.02,
+  "audio_url": "/api/clips/2023-sao-paulo-r-BOT-173907",
+  "transcript": {
+    "text": "The dragon gets the house and at least will take a couple of laps. Yep, copy. Pays, feels good. Copy, good. Cuz play Holkenberg when you come.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 3.8,
+      "f0_mean_z": 0.0,
+      "f0_std_z": 0.0,
+      "rms_mean_z": -0.448,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.033,
+      "jitter_z": 0.0
+    },
+    "acoustic": {
+      "score": 32.7,
+      "probabilities": {
+        "hap": 0.7035,
+        "sad": 0.1231,
+        "neu": 0.1099,
+        "ang": 0.0635
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 14.9,
+      "probabilities": {
+        "joy": 0.5616,
+        "neutral": 0.3861,
+        "disgust": 0.0194,
+        "sadness": 0.0175,
+        "surprise": 0.0076,
+        "anger": 0.0067,
+        "fear": 0.0011
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.733,
+    "stress_index": 25.1,
+    "probabilities": {
+      "Calm": 0.733,
+      "Stressed": 0.102,
+      "Tired": 0.165
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.704,
+    "stress_index": 32.7,
+    "probabilities": {
+      "Calm": 0.88,
+      "Stressed": 0.06,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1966,
+  "cached": false
+}

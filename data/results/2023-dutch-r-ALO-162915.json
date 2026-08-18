@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-ALO-162915",
+  "driver": "ALO",
+  "session_id": "2023-dutch-r",
+  "lap": 72,
+  "duration_s": 15.68,
+  "audio_url": "/api/clips/2023-dutch-r-ALO-162915",
+  "transcript": {
+    "text": "That's it mate, P2, well done. I think that's my favourite one. A fast is that as well. Yeah, I take this one. Not the best one yet. But we will win one race soon. We are getting closer. Well done guys.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 32.9,
+      "f0_mean_z": 1.52,
+      "f0_std_z": 1.436,
+      "rms_mean_z": -0.434,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.721,
+      "jitter_z": 1.288
+    },
+    "acoustic": {
+      "score": 33.7,
+      "probabilities": {
+        "hap": 0.4759,
+        "sad": 0.3058,
+        "neu": 0.2158,
+        "ang": 0.0026
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.0,
+      "probabilities": {
+        "joy": 0.4831,
+        "neutral": 0.4293,
+        "surprise": 0.0601,
+        "sadness": 0.0123,
+        "disgust": 0.0071,
+        "anger": 0.0069,
+        "fear": 0.0013
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.533,
+    "stress_index": 57.8,
+    "probabilities": {
+      "Calm": 0.417,
+      "Stressed": 0.533,
+      "Tired": 0.05
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.476,
+    "stress_index": 33.7,
+    "probabilities": {
+      "Calm": 0.938,
+      "Stressed": 0.002,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3042,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-PIA-183935",
+  "driver": "PIA",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 53,
+  "duration_s": 4.19,
+  "audio_url": "/api/clips/2023-sao-paulo-r-PIA-183935",
+  "transcript": {
+    "text": "Oscar do not interfere with Lando's race. Ocon is three and a half seconds behind.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 16.3,
+      "f0_mean_z": 0.008,
+      "f0_std_z": -0.534,
+      "rms_mean_z": -0.509,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.992,
+      "jitter_z": 0.058
+    },
+    "acoustic": {
+      "score": 30.6,
+      "probabilities": {
+        "neu": 0.4871,
+        "hap": 0.3621,
+        "ang": 0.1486,
+        "sad": 0.0022
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.8,
+      "probabilities": {
+        "neutral": 0.9344,
+        "anger": 0.0215,
+        "sadness": 0.0184,
+        "fear": 0.0103,
+        "surprise": 0.008,
+        "disgust": 0.0056,
+        "joy": 0.0018
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.616,
+    "stress_index": 35.2,
+    "probabilities": {
+      "Calm": 0.616,
+      "Stressed": 0.071,
+      "Tired": 0.312
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.487,
+    "stress_index": 30.6,
+    "probabilities": {
+      "Calm": 0.8,
+      "Stressed": 0.14,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1973,
+  "cached": false
+}

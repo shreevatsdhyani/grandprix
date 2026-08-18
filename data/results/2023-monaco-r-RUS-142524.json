@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-RUS-142524",
+  "driver": "RUS",
+  "session_id": "2023-monaco-r",
+  "lap": 17,
+  "duration_s": 4.03,
+  "audio_url": "/api/clips/2023-monaco-r-RUS-142524",
+  "transcript": {
+    "text": "If we increase those peak break pressures that will help load up the fronts.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 35.8,
+      "f0_mean_z": -1.366,
+      "f0_std_z": -0.93,
+      "rms_mean_z": -1.124,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.053,
+      "jitter_z": -0.72
+    },
+    "acoustic": {
+      "score": 25.8,
+      "probabilities": {
+        "hap": 0.9558,
+        "neu": 0.021,
+        "sad": 0.0163,
+        "ang": 0.0069
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.1,
+      "probabilities": {
+        "neutral": 0.957,
+        "surprise": 0.0123,
+        "anger": 0.0106,
+        "disgust": 0.0061,
+        "sadness": 0.0056,
+        "fear": 0.005,
+        "joy": 0.0033
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.815,
+    "stress_index": 16.7,
+    "probabilities": {
+      "Calm": 0.815,
+      "Stressed": 0.002,
+      "Tired": 0.183
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.956,
+    "stress_index": 25.8,
+    "probabilities": {
+      "Calm": 0.934,
+      "Stressed": 0.006,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2866,
+  "cached": false
+}

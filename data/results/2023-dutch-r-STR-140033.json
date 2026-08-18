@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-STR-140033",
+  "driver": "STR",
+  "session_id": "2023-dutch-r",
+  "lap": null,
+  "duration_s": 6.37,
+  "audio_url": "/api/clips/2023-dutch-r-STR-140033",
+  "transcript": {
+    "text": "Okay, last, make some space before term one and then lean on the tires up to turn two.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 24.6,
+      "f0_mean_z": 1.129,
+      "f0_std_z": 0.938,
+      "rms_mean_z": 0.602,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.409,
+      "jitter_z": 0.779
+    },
+    "acoustic": {
+      "score": 25.7,
+      "probabilities": {
+        "hap": 0.9277,
+        "neu": 0.0407,
+        "sad": 0.0301,
+        "ang": 0.0014
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.2,
+      "probabilities": {
+        "neutral": 0.9443,
+        "disgust": 0.0227,
+        "anger": 0.013,
+        "fear": 0.009,
+        "sadness": 0.0051,
+        "surprise": 0.0036,
+        "joy": 0.0024
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.629,
+    "stress_index": 36.4,
+    "probabilities": {
+      "Calm": 0.629,
+      "Stressed": 0.301,
+      "Tired": 0.07
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.928,
+    "stress_index": 25.7,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2217,
+  "cached": false
+}

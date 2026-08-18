@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-british-r-STR-163339",
+  "driver": "STR",
+  "session_id": "2024-british-r",
+  "lap": 52,
+  "duration_s": 11.36,
+  "audio_url": "/api/clips/2024-british-r-STR-163339",
+  "transcript": {
+    "text": "Yeah, good effort. It was tricky there at one point in the race. I couldn't see very well with the visor and stuff, so I got classing a lot of time, but so good points.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 29.0,
+      "f0_mean_z": -0.55,
+      "f0_std_z": -1.841,
+      "rms_mean_z": 0.338,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.902,
+      "jitter_z": -2.276
+    },
+    "acoustic": {
+      "score": 36.2,
+      "probabilities": {
+        "hap": 0.6766,
+        "sad": 0.3209,
+        "neu": 0.0024,
+        "ang": 0.0002
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.9,
+      "probabilities": {
+        "neutral": 0.7483,
+        "joy": 0.1845,
+        "fear": 0.0203,
+        "disgust": 0.0173,
+        "surprise": 0.0125,
+        "sadness": 0.0098,
+        "anger": 0.0074
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.654,
+    "stress_index": 31.4,
+    "probabilities": {
+      "Calm": 0.654,
+      "Stressed": 0.031,
+      "Tired": 0.315
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.677,
+    "stress_index": 36.2,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2512,
+  "cached": false
+}

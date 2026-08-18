@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-VER-155007",
+  "driver": "VER",
+  "session_id": "2023-bahrain-r",
+  "lap": 29,
+  "duration_s": 3.97,
+  "audio_url": "/api/clips/2023-bahrain-r-VER-155007",
+  "transcript": {
+    "text": "If I love Cruddice keeping up a little bit... Anderson, I keep...",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 49.7,
+      "f0_mean_z": 3.454,
+      "f0_std_z": -0.686,
+      "rms_mean_z": -0.682,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.386,
+      "jitter_z": -1.263
+    },
+    "acoustic": {
+      "score": 22.2,
+      "probabilities": {
+        "hap": 0.5307,
+        "neu": 0.4285,
+        "sad": 0.0405,
+        "ang": 0.0003
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 20.0,
+      "probabilities": {
+        "neutral": 0.6668,
+        "joy": 0.2028,
+        "sadness": 0.0712,
+        "surprise": 0.0396,
+        "anger": 0.0092,
+        "disgust": 0.0087,
+        "fear": 0.0016
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.807,
+    "stress_index": 82.4,
+    "probabilities": {
+      "Calm": 0.173,
+      "Stressed": 0.807,
+      "Tired": 0.019
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.531,
+    "stress_index": 22.2,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2775,
+  "cached": false
+}

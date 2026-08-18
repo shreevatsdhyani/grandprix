@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-HAM-175533",
+  "driver": "HAM",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 20,
+  "duration_s": 4.54,
+  "audio_url": "/api/clips/2023-sao-paulo-r-HAM-175533",
+  "transcript": {
+    "text": "I got from it on my left frontless, start to steer right. Okay, copy, we're looking at it.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 12.2,
+      "f0_mean_z": 0.563,
+      "f0_std_z": -0.291,
+      "rms_mean_z": -0.386,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.286,
+      "jitter_z": 0.517
+    },
+    "acoustic": {
+      "score": 68.9,
+      "probabilities": {
+        "ang": 0.6248,
+        "hap": 0.35,
+        "neu": 0.0154,
+        "sad": 0.0098
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 25.5,
+      "probabilities": {
+        "neutral": 0.8333,
+        "fear": 0.0636,
+        "anger": 0.0474,
+        "disgust": 0.033,
+        "surprise": 0.0112,
+        "sadness": 0.0065,
+        "joy": 0.005
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.603,
+    "stress_index": 84.2,
+    "probabilities": {
+      "Calm": 0.131,
+      "Stressed": 0.603,
+      "Tired": 0.266
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.625,
+    "stress_index": 68.9,
+    "probabilities": {
+      "Calm": 0.353,
+      "Stressed": 0.587,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1705,
+  "cached": false
+}

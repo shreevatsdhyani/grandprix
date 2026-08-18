@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-LEC-172844",
+  "driver": "LEC",
+  "session_id": "2024-monaco-r",
+  "lap": 78,
+  "duration_s": 22.24,
+  "audio_url": "/api/clips/2024-monaco-r-LEC-172844",
+  "transcript": {
+    "text": "I need to call down myself as well. Yeah, don't worry. We'll think about that later with some champagne. Tonight is going to be a big night. I think no one's going back home. I didn't understand that. We all stay here. You better, you better stay. I hope Jimmy's is ready.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 10.9,
+      "f0_mean_z": 0.106,
+      "f0_std_z": -1.119,
+      "rms_mean_z": -0.042,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.098,
+      "jitter_z": -0.387
+    },
+    "acoustic": {
+      "score": 32.5,
+      "probabilities": {
+        "hap": 0.7818,
+        "sad": 0.2114,
+        "neu": 0.0043,
+        "ang": 0.0025
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 65.9,
+      "probabilities": {
+        "fear": 0.6405,
+        "neutral": 0.2335,
+        "sadness": 0.036,
+        "anger": 0.0357,
+        "surprise": 0.0302,
+        "disgust": 0.0126,
+        "joy": 0.0114
+      },
+      "top_label": "fear",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.988,
+    "stress_index": 89.1,
+    "probabilities": {
+      "Calm": 0.01,
+      "Stressed": 0.002,
+      "Tired": 0.988
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.782,
+    "stress_index": 32.5,
+    "probabilities": {
+      "Calm": 0.938,
+      "Stressed": 0.002,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3190,
+  "cached": false
+}

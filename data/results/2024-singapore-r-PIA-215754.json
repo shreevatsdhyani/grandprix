@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-PIA-215754",
+  "driver": "PIA",
+  "session_id": "2024-singapore-r",
+  "lap": 62,
+  "duration_s": 19.3,
+  "audio_url": "/api/clips/2024-singapore-r-PIA-215754",
+  "transcript": {
+    "text": "Yes, just got a P3. Well done mate. Really good. Yep, well done everyone. I think that was the best I could have done today, so thank you. Well done on the strategy. Worked out nicely. And yeah, great points for the team, so thank you. And doing a little break.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 16.8,
+      "f0_mean_z": 0.532,
+      "f0_std_z": 1.118,
+      "rms_mean_z": 0.092,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.356,
+      "jitter_z": 0.596
+    },
+    "acoustic": {
+      "score": 34.7,
+      "probabilities": {
+        "hap": 0.6106,
+        "sad": 0.3007,
+        "neu": 0.0878,
+        "ang": 0.001
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 13.3,
+      "probabilities": {
+        "joy": 0.7948,
+        "neutral": 0.1463,
+        "surprise": 0.0404,
+        "sadness": 0.0089,
+        "anger": 0.0049,
+        "disgust": 0.004,
+        "fear": 0.0007
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.659,
+    "stress_index": 33.6,
+    "probabilities": {
+      "Calm": 0.659,
+      "Stressed": 0.287,
+      "Tired": 0.054
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.611,
+    "stress_index": 34.7,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3253,
+  "cached": false
+}

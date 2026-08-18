@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-NOR-153418",
+  "driver": "NOR",
+  "session_id": "2024-monaco-r",
+  "lap": 1,
+  "duration_s": 7.33,
+  "audio_url": "/api/clips/2024-monaco-r-NOR-153418",
+  "transcript": {
+    "text": "Is everyone okay? Everyone's okay. Quite a few cars are out.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 29.7,
+      "f0_mean_z": 1.302,
+      "f0_std_z": 1.21,
+      "rms_mean_z": 0.286,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.919,
+      "jitter_z": 1.087
+    },
+    "acoustic": {
+      "score": 43.5,
+      "probabilities": {
+        "hap": 0.7111,
+        "ang": 0.249,
+        "sad": 0.0323,
+        "neu": 0.0076
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.5,
+      "probabilities": {
+        "neutral": 0.8842,
+        "joy": 0.0644,
+        "sadness": 0.0227,
+        "disgust": 0.0125,
+        "anger": 0.0075,
+        "surprise": 0.0045,
+        "fear": 0.0042
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.684,
+    "stress_index": 70.5,
+    "probabilities": {
+      "Calm": 0.293,
+      "Stressed": 0.684,
+      "Tired": 0.023
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.711,
+    "stress_index": 43.5,
+    "probabilities": {
+      "Calm": 0.706,
+      "Stressed": 0.234,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2809,
+  "cached": false
+}

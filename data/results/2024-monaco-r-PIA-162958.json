@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-PIA-162958",
+  "driver": "PIA",
+  "session_id": "2024-monaco-r",
+  "lap": 35,
+  "duration_s": 19.84,
+  "audio_url": "/api/clips/2024-monaco-r-PIA-162958",
+  "transcript": {
+    "text": "I feel like that strategy for Ferrari to try and catch us out with Carlos. Because I don't really get why they'd want to keep Russell in the window. The medium of science was damaged on lap one so he does not have a medium only this hard and some soft. We think they want to avoid Lando trying anything.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 11.2,
+      "f0_mean_z": -0.414,
+      "f0_std_z": -0.031,
+      "rms_mean_z": -0.82,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.132,
+      "jitter_z": 0.595
+    },
+    "acoustic": {
+      "score": 54.0,
+      "probabilities": {
+        "sad": 0.8185,
+        "hap": 0.1736,
+        "ang": 0.0053,
+        "neu": 0.0025
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 45.7,
+      "probabilities": {
+        "neutral": 0.6454,
+        "disgust": 0.1368,
+        "surprise": 0.0797,
+        "anger": 0.0655,
+        "sadness": 0.0448,
+        "fear": 0.0237,
+        "joy": 0.0041
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.871,
+    "stress_index": 83.1,
+    "probabilities": {
+      "Calm": 0.083,
+      "Stressed": 0.047,
+      "Tired": 0.871
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.819,
+    "stress_index": 54.0,
+    "probabilities": {
+      "Calm": 0.935,
+      "Stressed": 0.005,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 4357,
+  "cached": false
+}

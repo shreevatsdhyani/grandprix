@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-MAG-153511",
+  "driver": "MAG",
+  "session_id": "2023-bahrain-r",
+  "lap": 19,
+  "duration_s": 6.85,
+  "audio_url": "/api/clips/2023-bahrain-r-MAG-153511",
+  "transcript": {
+    "text": "If your pace is very good, you're quicker than everybody ahead of you up to P9. So let's just look after the tires and play the long game.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 20.5,
+      "f0_mean_z": -1.085,
+      "f0_std_z": -0.789,
+      "rms_mean_z": 0.456,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.237,
+      "jitter_z": 0.195
+    },
+    "acoustic": {
+      "score": 19.3,
+      "probabilities": {
+        "neu": 0.8304,
+        "hap": 0.1258,
+        "ang": 0.031,
+        "sad": 0.0128
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.0,
+      "probabilities": {
+        "neutral": 0.9696,
+        "joy": 0.0108,
+        "surprise": 0.0066,
+        "anger": 0.0059,
+        "disgust": 0.0036,
+        "sadness": 0.0019,
+        "fear": 0.0015
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.773,
+    "stress_index": 20.5,
+    "probabilities": {
+      "Calm": 0.773,
+      "Stressed": 0.003,
+      "Tired": 0.224
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.83,
+    "stress_index": 19.3,
+    "probabilities": {
+      "Calm": 0.911,
+      "Stressed": 0.029,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3056,
+  "cached": false
+}

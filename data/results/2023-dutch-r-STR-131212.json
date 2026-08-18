@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-STR-131212",
+  "driver": "STR",
+  "session_id": "2023-dutch-r",
+  "lap": null,
+  "duration_s": 11.26,
+  "audio_url": "/api/clips/2023-dutch-r-STR-131212",
+  "transcript": {
+    "text": "Okay last that was within our numbers, turn 7 management, turn 7 management within our targets, a strong tail win there. It's 15 up to 20 kp H in 7, tailwind.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 17.6,
+      "f0_mean_z": 1.255,
+      "f0_std_z": -0.194,
+      "rms_mean_z": 0.317,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.435,
+      "jitter_z": 0.134
+    },
+    "acoustic": {
+      "score": 25.1,
+      "probabilities": {
+        "hap": 0.9423,
+        "neu": 0.0459,
+        "sad": 0.0071,
+        "ang": 0.0047
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.5,
+      "probabilities": {
+        "neutral": 0.9186,
+        "surprise": 0.0526,
+        "joy": 0.0134,
+        "anger": 0.0053,
+        "sadness": 0.0053,
+        "disgust": 0.0033,
+        "fear": 0.0016
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.634,
+    "stress_index": 35.0,
+    "probabilities": {
+      "Calm": 0.634,
+      "Stressed": 0.205,
+      "Tired": 0.161
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.942,
+    "stress_index": 25.1,
+    "probabilities": {
+      "Calm": 0.936,
+      "Stressed": 0.004,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2693,
+  "cached": false
+}

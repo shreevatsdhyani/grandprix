@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-NOR-152319",
+  "driver": "NOR",
+  "session_id": "2024-italian-r",
+  "lap": 15,
+  "duration_s": 3.39,
+  "audio_url": "/api/clips/2024-italian-r-NOR-152319",
+  "transcript": {
+    "text": "Lando suggests we do box to overtake on the clerk, box to overtake.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 22.9,
+      "f0_mean_z": 0.936,
+      "f0_std_z": -0.686,
+      "rms_mean_z": 0.242,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.998,
+      "jitter_z": 0.923
+    },
+    "acoustic": {
+      "score": 22.0,
+      "probabilities": {
+        "neu": 0.6583,
+        "hap": 0.2896,
+        "ang": 0.0512,
+        "sad": 0.0009
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.0,
+      "probabilities": {
+        "neutral": 0.9454,
+        "fear": 0.019,
+        "surprise": 0.0113,
+        "anger": 0.0093,
+        "disgust": 0.007,
+        "sadness": 0.0058,
+        "joy": 0.0022
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.538,
+    "stress_index": 42.5,
+    "probabilities": {
+      "Calm": 0.538,
+      "Stressed": 0.092,
+      "Tired": 0.37
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.658,
+    "stress_index": 22.0,
+    "probabilities": {
+      "Calm": 0.892,
+      "Stressed": 0.048,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1612,
+  "cached": false
+}

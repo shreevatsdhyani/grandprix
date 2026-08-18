@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-ALO-175732",
+  "driver": "ALO",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 22,
+  "duration_s": 8.78,
+  "audio_url": "/api/clips/2023-sao-paulo-r-ALO-175732",
+  "transcript": {
+    "text": "Happy for the elements. Yeah, happy. No problem with Hamilton. We won't raise money. Yeah, copy man, yeah. Agreed. Perridge is the race now.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 22.6,
+      "f0_mean_z": 0.443,
+      "f0_std_z": 1.497,
+      "rms_mean_z": 0.011,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.879,
+      "jitter_z": 1.307
+    },
+    "acoustic": {
+      "score": 18.9,
+      "probabilities": {
+        "neu": 0.659,
+        "hap": 0.3303,
+        "sad": 0.0071,
+        "ang": 0.0037
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 11.3,
+      "probabilities": {
+        "joy": 0.9592,
+        "neutral": 0.0156,
+        "surprise": 0.0125,
+        "sadness": 0.0062,
+        "anger": 0.0045,
+        "disgust": 0.0017,
+        "fear": 0.0003
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.845,
+    "stress_index": 15.0,
+    "probabilities": {
+      "Calm": 0.845,
+      "Stressed": 0.109,
+      "Tired": 0.046
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.659,
+    "stress_index": 18.9,
+    "probabilities": {
+      "Calm": 0.937,
+      "Stressed": 0.003,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2044,
+  "cached": false
+}

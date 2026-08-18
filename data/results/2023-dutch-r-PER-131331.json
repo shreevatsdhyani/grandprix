@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-PER-131331",
+  "driver": "PER",
+  "session_id": "2023-dutch-r",
+  "lap": null,
+  "duration_s": 4.1,
+  "audio_url": "/api/clips/2023-dutch-r-PER-131331",
+  "transcript": {
+    "text": "Okay, we're seeing a strong tailwind into turn 10. Think about the push toggle for turn 10.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 55.3,
+      "f0_mean_z": -1.774,
+      "f0_std_z": -0.981,
+      "rms_mean_z": -2.51,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.648,
+      "jitter_z": -0.612
+    },
+    "acoustic": {
+      "score": 35.2,
+      "probabilities": {
+        "neu": 0.4926,
+        "hap": 0.1991,
+        "sad": 0.1837,
+        "ang": 0.1246
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.3,
+      "probabilities": {
+        "neutral": 0.9532,
+        "surprise": 0.0145,
+        "anger": 0.0119,
+        "disgust": 0.0105,
+        "fear": 0.0039,
+        "sadness": 0.0033,
+        "joy": 0.0026
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.554,
+    "stress_index": 40.2,
+    "probabilities": {
+      "Calm": 0.554,
+      "Stressed": 0.01,
+      "Tired": 0.436
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.493,
+    "stress_index": 35.2,
+    "probabilities": {
+      "Calm": 0.823,
+      "Stressed": 0.117,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2105,
+  "cached": false
+}

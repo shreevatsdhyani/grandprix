@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-STR-140729",
+  "driver": "STR",
+  "session_id": "2023-monaco-r",
+  "lap": 4,
+  "duration_s": 4.61,
+  "audio_url": "/api/clips/2023-monaco-r-STR-140729",
+  "transcript": {
+    "text": "So much contact my... that... share of character.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 100.0,
+      "f0_mean_z": 11.272,
+      "f0_std_z": -3.227,
+      "rms_mean_z": -1.903,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.142,
+      "jitter_z": -5.942
+    },
+    "acoustic": {
+      "score": 25.0,
+      "probabilities": {
+        "hap": 0.97,
+        "neu": 0.0241,
+        "sad": 0.0056,
+        "ang": 0.0003
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.7,
+      "probabilities": {
+        "neutral": 0.9212,
+        "surprise": 0.0404,
+        "joy": 0.0129,
+        "sadness": 0.0119,
+        "anger": 0.006,
+        "disgust": 0.0046,
+        "fear": 0.003
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 1.0,
+    "stress_index": 100.0,
+    "probabilities": {
+      "Calm": 0.0,
+      "Stressed": 1.0,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.97,
+    "stress_index": 25.0,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2439,
+  "cached": false
+}

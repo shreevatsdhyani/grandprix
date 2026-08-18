@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-british-r-SAR-150723",
+  "driver": "SAR",
+  "session_id": "2024-british-r",
+  "lap": 3,
+  "duration_s": 1.89,
+  "audio_url": "/api/clips/2024-british-r-SAR-150723",
+  "transcript": {
+    "text": "Alex had a big piece of bodywork come off.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 45.4,
+      "f0_mean_z": 3.329,
+      "f0_std_z": -0.828,
+      "rms_mean_z": 0.162,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.362,
+      "jitter_z": 1.561
+    },
+    "acoustic": {
+      "score": 21.1,
+      "probabilities": {
+        "neu": 0.6495,
+        "hap": 0.3092,
+        "ang": 0.0328,
+        "sad": 0.0086
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 41.5,
+      "probabilities": {
+        "neutral": 0.4229,
+        "surprise": 0.2407,
+        "disgust": 0.2252,
+        "anger": 0.0548,
+        "sadness": 0.0356,
+        "fear": 0.0149,
+        "joy": 0.0059
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.614,
+    "stress_index": 84.2,
+    "probabilities": {
+      "Calm": 0.097,
+      "Stressed": 0.289,
+      "Tired": 0.614
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.649,
+    "stress_index": 21.1,
+    "probabilities": {
+      "Calm": 0.909,
+      "Stressed": 0.031,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1322,
+  "cached": false
+}

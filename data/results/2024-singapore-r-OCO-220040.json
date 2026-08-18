@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-OCO-220040",
+  "driver": "OCO",
+  "session_id": "2024-singapore-r",
+  "lap": 61,
+  "duration_s": 6.59,
+  "audio_url": "/api/clips/2024-singapore-r-OCO-220040",
+  "transcript": {
+    "text": "Yeah, we're done to get to the finish there. And a well-driven and well-managed race, so thank you for that.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 14.1,
+      "f0_mean_z": -1.035,
+      "f0_std_z": 0.512,
+      "rms_mean_z": -0.221,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.0,
+      "jitter_z": -0.098
+    },
+    "acoustic": {
+      "score": 49.6,
+      "probabilities": {
+        "sad": 0.6459,
+        "hap": 0.3071,
+        "ang": 0.0303,
+        "neu": 0.0166
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.0,
+      "probabilities": {
+        "neutral": 0.5646,
+        "joy": 0.3753,
+        "surprise": 0.0288,
+        "anger": 0.0153,
+        "disgust": 0.0088,
+        "sadness": 0.0058,
+        "fear": 0.0014
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.717,
+    "stress_index": 27.1,
+    "probabilities": {
+      "Calm": 0.717,
+      "Stressed": 0.151,
+      "Tired": 0.133
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.646,
+    "stress_index": 49.6,
+    "probabilities": {
+      "Calm": 0.912,
+      "Stressed": 0.028,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2161,
+  "cached": false
+}

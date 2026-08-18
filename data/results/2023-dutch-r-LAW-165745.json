@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-LAW-165745",
+  "driver": "LAW",
+  "session_id": "2023-dutch-r",
+  "lap": 64,
+  "duration_s": 10.24,
+  "audio_url": "/api/clips/2023-dutch-r-LAW-165745",
+  "transcript": {
+    "text": "So now we have a break in the rain, we have a break in the rain, it's stopping on next one expected in 15 minutes from now, 15 to 20 minutes.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 40.6,
+      "f0_mean_z": 2.712,
+      "f0_std_z": 1.143,
+      "rms_mean_z": -0.627,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.597,
+      "jitter_z": -0.046
+    },
+    "acoustic": {
+      "score": 25.2,
+      "probabilities": {
+        "hap": 0.9875,
+        "sad": 0.0059,
+        "neu": 0.0059,
+        "ang": 0.0007
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.4,
+      "probabilities": {
+        "neutral": 0.9376,
+        "surprise": 0.0329,
+        "sadness": 0.0085,
+        "anger": 0.0077,
+        "joy": 0.0057,
+        "disgust": 0.005,
+        "fear": 0.0027
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.675,
+    "stress_index": 69.2,
+    "probabilities": {
+      "Calm": 0.306,
+      "Stressed": 0.675,
+      "Tired": 0.019
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.988,
+    "stress_index": 25.2,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2670,
+  "cached": false
+}

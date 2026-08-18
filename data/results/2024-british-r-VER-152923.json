@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-british-r-VER-152923",
+  "driver": "VER",
+  "session_id": "2024-british-r",
+  "lap": 18,
+  "duration_s": 8.48,
+  "audio_url": "/api/clips/2024-british-r-VER-152923",
+  "transcript": {
+    "text": "So target would be to try to survive this pocket of brain max if you can. Obviously your call if conditions worsen too much.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 21.2,
+      "f0_mean_z": 0.73,
+      "f0_std_z": 1.02,
+      "rms_mean_z": 0.559,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.341,
+      "jitter_z": 0.674
+    },
+    "acoustic": {
+      "score": 25.3,
+      "probabilities": {
+        "hap": 0.9221,
+        "neu": 0.0644,
+        "ang": 0.0126,
+        "sad": 0.0009
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 25.3,
+      "probabilities": {
+        "neutral": 0.8249,
+        "disgust": 0.0516,
+        "anger": 0.0452,
+        "sadness": 0.0403,
+        "fear": 0.0276,
+        "surprise": 0.0062,
+        "joy": 0.0043
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.662,
+    "stress_index": 32.6,
+    "probabilities": {
+      "Calm": 0.662,
+      "Stressed": 0.23,
+      "Tired": 0.107
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.922,
+    "stress_index": 25.3,
+    "probabilities": {
+      "Calm": 0.928,
+      "Stressed": 0.012,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1936,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-HAM-145751",
+  "driver": "HAM",
+  "session_id": "2023-monaco-r",
+  "lap": 43,
+  "duration_s": 1.18,
+  "audio_url": "/api/clips/2023-monaco-r-HAM-145751",
+  "transcript": {
+    "text": "Everybody needs to pick up the pace.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 16.7,
+      "f0_mean_z": 0.0,
+      "f0_std_z": 0.0,
+      "rms_mean_z": -0.523,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.567,
+      "jitter_z": 0.0
+    },
+    "acoustic": {
+      "score": 39.0,
+      "probabilities": {
+        "neu": 0.4875,
+        "ang": 0.2679,
+        "hap": 0.2421,
+        "sad": 0.0024
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.8,
+      "probabilities": {
+        "neutral": 0.9611,
+        "surprise": 0.0125,
+        "disgust": 0.008,
+        "anger": 0.008,
+        "sadness": 0.005,
+        "fear": 0.0028,
+        "joy": 0.0026
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.803,
+    "stress_index": 18.9,
+    "probabilities": {
+      "Calm": 0.803,
+      "Stressed": 0.115,
+      "Tired": 0.082
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.487,
+    "stress_index": 39.0,
+    "probabilities": {
+      "Calm": 0.688,
+      "Stressed": 0.252,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2341,
+  "cached": false
+}

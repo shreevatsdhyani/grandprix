@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-RUS-160942",
+  "driver": "RUS",
+  "session_id": "2024-italian-r",
+  "lap": 47,
+  "duration_s": 6.46,
+  "audio_url": "/api/clips/2024-italian-r-RUS-160942",
+  "transcript": {
+    "text": "We're happy to pick this up. Push the tires more. Currently, forecast the catch right on the last lap.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 21.8,
+      "f0_mean_z": -1.299,
+      "f0_std_z": -1.075,
+      "rms_mean_z": 0.248,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.097,
+      "jitter_z": -0.216
+    },
+    "acoustic": {
+      "score": 27.8,
+      "probabilities": {
+        "hap": 0.8983,
+        "neu": 0.0427,
+        "ang": 0.0335,
+        "sad": 0.0255
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 11.2,
+      "probabilities": {
+        "joy": 0.9561,
+        "surprise": 0.0199,
+        "neutral": 0.017,
+        "sadness": 0.0033,
+        "anger": 0.0024,
+        "disgust": 0.001,
+        "fear": 0.0003
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.714,
+    "stress_index": 25.9,
+    "probabilities": {
+      "Calm": 0.714,
+      "Stressed": 0.012,
+      "Tired": 0.274
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.898,
+    "stress_index": 27.8,
+    "probabilities": {
+      "Calm": 0.909,
+      "Stressed": 0.031,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2072,
+  "cached": false
+}

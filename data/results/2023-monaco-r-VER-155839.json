@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-VER-155839",
+  "driver": "VER",
+  "session_id": "2023-monaco-r",
+  "lap": 78,
+  "duration_s": 1.76,
+  "audio_url": "/api/clips/2023-monaco-r-VER-155839",
+  "transcript": {
+    "text": "Compar is it not!",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 46.4,
+      "f0_mean_z": 4.505,
+      "f0_std_z": -0.346,
+      "rms_mean_z": 0.335,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.619,
+      "jitter_z": 1.9
+    },
+    "acoustic": {
+      "score": 31.5,
+      "probabilities": {
+        "hap": 0.833,
+        "ang": 0.086,
+        "neu": 0.0521,
+        "sad": 0.0289
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 56.2,
+      "probabilities": {
+        "surprise": 0.5617,
+        "anger": 0.2113,
+        "disgust": 0.1352,
+        "neutral": 0.0664,
+        "sadness": 0.0122,
+        "fear": 0.0071,
+        "joy": 0.0061
+      },
+      "top_label": "surprise",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.567,
+    "stress_index": 95.4,
+    "probabilities": {
+      "Calm": 0.003,
+      "Stressed": 0.567,
+      "Tired": 0.43
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.833,
+    "stress_index": 31.5,
+    "probabilities": {
+      "Calm": 0.859,
+      "Stressed": 0.081,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1572,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-LEC-152652",
+  "driver": "LEC",
+  "session_id": "2024-italian-r",
+  "lap": 17,
+  "duration_s": 3.17,
+  "audio_url": "/api/clips/2024-italian-r-LEC-152652",
+  "transcript": {
+    "text": "What was that? Why do we teach if we undercut?",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 47.3,
+      "f0_mean_z": 4.2,
+      "f0_std_z": 0.514,
+      "rms_mean_z": 0.184,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.016,
+      "jitter_z": 3.552
+    },
+    "acoustic": {
+      "score": 66.2,
+      "probabilities": {
+        "ang": 0.6,
+        "hap": 0.2401,
+        "neu": 0.1419,
+        "sad": 0.018
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 48.8,
+      "probabilities": {
+        "surprise": 0.7523,
+        "anger": 0.1104,
+        "neutral": 0.0846,
+        "disgust": 0.0333,
+        "fear": 0.0103,
+        "sadness": 0.0075,
+        "joy": 0.0017
+      },
+      "top_label": "surprise",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.931,
+    "stress_index": 99.1,
+    "probabilities": {
+      "Calm": 0.002,
+      "Stressed": 0.931,
+      "Tired": 0.067
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.6,
+    "stress_index": 66.2,
+    "probabilities": {
+      "Calm": 0.376,
+      "Stressed": 0.564,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1545,
+  "cached": false
+}

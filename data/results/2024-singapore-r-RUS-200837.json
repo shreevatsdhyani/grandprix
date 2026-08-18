@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-RUS-200837",
+  "driver": "RUS",
+  "session_id": "2024-singapore-r",
+  "lap": 4,
+  "duration_s": 3.46,
+  "audio_url": "/api/clips/2024-singapore-r-RUS-200837",
+  "transcript": {
+    "text": "Hey, he needs to increase the pace a bit as a guy that's front to get in the way.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 37.9,
+      "f0_mean_z": 1.565,
+      "f0_std_z": -0.993,
+      "rms_mean_z": 0.776,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.399,
+      "jitter_z": 0.187
+    },
+    "acoustic": {
+      "score": 54.6,
+      "probabilities": {
+        "sad": 0.7952,
+        "hap": 0.1414,
+        "neu": 0.0339,
+        "ang": 0.0295
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 22.7,
+      "probabilities": {
+        "neutral": 0.8558,
+        "disgust": 0.0616,
+        "anger": 0.0333,
+        "sadness": 0.02,
+        "surprise": 0.0172,
+        "joy": 0.0066,
+        "fear": 0.0054
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.615,
+    "stress_index": 82.5,
+    "probabilities": {
+      "Calm": 0.152,
+      "Stressed": 0.615,
+      "Tired": 0.233
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.795,
+    "stress_index": 54.6,
+    "probabilities": {
+      "Calm": 0.912,
+      "Stressed": 0.028,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1517,
+  "cached": false
+}

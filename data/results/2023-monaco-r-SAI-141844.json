@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-SAI-141844",
+  "driver": "SAI",
+  "session_id": "2023-monaco-r",
+  "lap": 13,
+  "duration_s": 9.12,
+  "audio_url": "/api/clips/2023-monaco-r-SAI-141844",
+  "transcript": {
+    "text": "I need to know the damage. How much longer? We are checking. I think he moved a bit later, I'm doing it to be honest. Probably that. Try your best.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 17.2,
+      "f0_mean_z": 1.123,
+      "f0_std_z": 0.291,
+      "rms_mean_z": 0.649,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.086,
+      "jitter_z": 0.496
+    },
+    "acoustic": {
+      "score": 47.3,
+      "probabilities": {
+        "sad": 0.6245,
+        "hap": 0.266,
+        "neu": 0.0907,
+        "ang": 0.0189
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 29.7,
+      "probabilities": {
+        "neutral": 0.9407,
+        "surprise": 0.0218,
+        "disgust": 0.0133,
+        "sadness": 0.0097,
+        "anger": 0.0083,
+        "fear": 0.0037,
+        "joy": 0.0026
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.632,
+    "stress_index": 76.1,
+    "probabilities": {
+      "Calm": 0.225,
+      "Stressed": 0.632,
+      "Tired": 0.143
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.625,
+    "stress_index": 47.3,
+    "probabilities": {
+      "Calm": 0.922,
+      "Stressed": 0.018,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3102,
+  "cached": false
+}

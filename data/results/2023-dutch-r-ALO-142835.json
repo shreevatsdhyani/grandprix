@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-ALO-142835",
+  "driver": "ALO",
+  "session_id": "2023-dutch-r",
+  "lap": 18,
+  "duration_s": 8.83,
+  "audio_url": "/api/clips/2023-dutch-r-ALO-142835",
+  "transcript": {
+    "text": "Just while we got time, just take your error balance thoughts on that first part of the race.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 80.7,
+      "f0_mean_z": -0.209,
+      "f0_std_z": -1.163,
+      "rms_mean_z": 3.98,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 4.735,
+      "jitter_z": -0.661
+    },
+    "acoustic": {
+      "score": 55.2,
+      "probabilities": {
+        "ang": 0.4859,
+        "neu": 0.3867,
+        "hap": 0.1264,
+        "sad": 0.001
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.4,
+      "probabilities": {
+        "neutral": 0.9723,
+        "surprise": 0.0076,
+        "anger": 0.0075,
+        "disgust": 0.0059,
+        "sadness": 0.0027,
+        "fear": 0.0022,
+        "joy": 0.0018
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.515,
+    "stress_index": 45.7,
+    "probabilities": {
+      "Calm": 0.515,
+      "Stressed": 0.208,
+      "Tired": 0.277
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.486,
+    "stress_index": 55.2,
+    "probabilities": {
+      "Calm": 0.483,
+      "Stressed": 0.457,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1845,
+  "cached": false
+}

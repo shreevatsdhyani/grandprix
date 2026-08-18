@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-HAM-145614",
+  "driver": "HAM",
+  "session_id": "2023-monaco-r",
+  "lap": 41,
+  "duration_s": 2.98,
+  "audio_url": "/api/clips/2023-monaco-r-HAM-145614",
+  "transcript": {
+    "text": "There's anyone else still out on the hood.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 21.8,
+      "f0_mean_z": 1.026,
+      "f0_std_z": -0.697,
+      "rms_mean_z": -0.847,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.157,
+      "jitter_z": -0.412
+    },
+    "acoustic": {
+      "score": 39.1,
+      "probabilities": {
+        "hap": 0.7052,
+        "ang": 0.1982,
+        "neu": 0.0693,
+        "sad": 0.0273
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.2,
+      "probabilities": {
+        "neutral": 0.9369,
+        "surprise": 0.0413,
+        "sadness": 0.0066,
+        "disgust": 0.0051,
+        "joy": 0.0046,
+        "anger": 0.004,
+        "fear": 0.0015
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.527,
+    "stress_index": 45.0,
+    "probabilities": {
+      "Calm": 0.527,
+      "Stressed": 0.242,
+      "Tired": 0.231
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.705,
+    "stress_index": 39.1,
+    "probabilities": {
+      "Calm": 0.754,
+      "Stressed": 0.186,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2412,
+  "cached": false
+}

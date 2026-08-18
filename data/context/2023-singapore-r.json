@@ -1,0 +1,5342 @@
+{
+ "session_id": "2023-singapore-r",
+ "built_at": "2026-08-18T13:11:48.211951+00:00",
+ "source": "fastf1-cache+openf1-team-radio",
+ "lap_count": 62,
+ "circuit_corners": 19,
+ "lap_length_m": null,
+ "track_evolution": [
+  {
+   "lap": 1,
+   "grip_proxy_s": null,
+   "track_temp_c": 36.8,
+   "air_temp_c": 29.8,
+   "rainfall": false
+  },
+  {
+   "lap": 2,
+   "grip_proxy_s": 102.1,
+   "track_temp_c": 36.7,
+   "air_temp_c": 29.8,
+   "rainfall": false
+  },
+  {
+   "lap": 3,
+   "grip_proxy_s": 101.476,
+   "track_temp_c": 37.3,
+   "air_temp_c": 29.9,
+   "rainfall": false
+  },
+  {
+   "lap": 4,
+   "grip_proxy_s": 101.355,
+   "track_temp_c": 37.3,
+   "air_temp_c": 29.9,
+   "rainfall": false
+  },
+  {
+   "lap": 5,
+   "grip_proxy_s": 101.278,
+   "track_temp_c": 37.2,
+   "air_temp_c": 29.9,
+   "rainfall": false
+  },
+  {
+   "lap": 6,
+   "grip_proxy_s": 101.291,
+   "track_temp_c": 36.7,
+   "air_temp_c": 30.0,
+   "rainfall": false
+  },
+  {
+   "lap": 7,
+   "grip_proxy_s": 100.804,
+   "track_temp_c": 36.8,
+   "air_temp_c": 30.0,
+   "rainfall": false
+  },
+  {
+   "lap": 8,
+   "grip_proxy_s": 100.593,
+   "track_temp_c": 36.8,
+   "air_temp_c": 30.0,
+   "rainfall": false
+  },
+  {
+   "lap": 9,
+   "grip_proxy_s": 100.514,
+   "track_temp_c": 36.3,
+   "air_temp_c": 30.0,
+   "rainfall": false
+  },
+  {
+   "lap": 10,
+   "grip_proxy_s": 100.561,
+   "track_temp_c": 36.6,
+   "air_temp_c": 30.0,
+   "rainfall": false
+  },
+  {
+   "lap": 11,
+   "grip_proxy_s": 100.478,
+   "track_temp_c": 36.8,
+   "air_temp_c": 30.0,
+   "rainfall": false
+  },
+  {
+   "lap": 12,
+   "grip_proxy_s": 100.464,
+   "track_temp_c": 36.8,
+   "air_temp_c": 30.1,
+   "rainfall": false
+  },
+  {
+   "lap": 13,
+   "grip_proxy_s": 100.667,
+   "track_temp_c": 36.8,
+   "air_temp_c": 30.0,
+   "rainfall": false
+  },
+  {
+   "lap": 14,
+   "grip_proxy_s": 100.63,
+   "track_temp_c": 36.6,
+   "air_temp_c": 30.1,
+   "rainfall": false
+  },
+  {
+   "lap": 15,
+   "grip_proxy_s": 100.5,
+   "track_temp_c": 36.4,
+   "air_temp_c": 30.1,
+   "rainfall": false
+  },
+  {
+   "lap": 16,
+   "grip_proxy_s": 100.636,
+   "track_temp_c": 36.4,
+   "air_temp_c": 30.1,
+   "rainfall": false
+  },
+  {
+   "lap": 17,
+   "grip_proxy_s": 100.624,
+   "track_temp_c": 36.5,
+   "air_temp_c": 30.1,
+   "rainfall": false
+  },
+  {
+   "lap": 18,
+   "grip_proxy_s": 100.724,
+   "track_temp_c": 36.5,
+   "air_temp_c": 30.0,
+   "rainfall": false
+  },
+  {
+   "lap": 19,
+   "grip_proxy_s": 101.034,
+   "track_temp_c": 36.4,
+   "air_temp_c": 30.0,
+   "rainfall": false
+  },
+  {
+   "lap": 20,
+   "grip_proxy_s": 124.66,
+   "track_temp_c": 36.3,
+   "air_temp_c": 30.0,
+   "rainfall": false
+  },
+  {
+   "lap": 21,
+   "grip_proxy_s": 135.091,
+   "track_temp_c": 36.2,
+   "air_temp_c": 30.0,
+   "rainfall": false
+  },
+  {
+   "lap": 22,
+   "grip_proxy_s": 142.499,
+   "track_temp_c": 36.4,
+   "air_temp_c": 30.0,
+   "rainfall": false
+  },
+  {
+   "lap": 23,
+   "grip_proxy_s": 103.273,
+   "track_temp_c": 36.0,
+   "air_temp_c": 30.0,
+   "rainfall": false
+  },
+  {
+   "lap": 24,
+   "grip_proxy_s": 102.375,
+   "track_temp_c": 36.1,
+   "air_temp_c": 29.9,
+   "rainfall": false
+  },
+  {
+   "lap": 25,
+   "grip_proxy_s": 100.928,
+   "track_temp_c": 35.9,
+   "air_temp_c": 29.9,
+   "rainfall": false
+  },
+  {
+   "lap": 26,
+   "grip_proxy_s": 100.827,
+   "track_temp_c": 36.0,
+   "air_temp_c": 29.8,
+   "rainfall": false
+  },
+  {
+   "lap": 27,
+   "grip_proxy_s": 100.386,
+   "track_temp_c": 36.2,
+   "air_temp_c": 29.9,
+   "rainfall": false
+  },
+  {
+   "lap": 28,
+   "grip_proxy_s": 101.436,
+   "track_temp_c": 36.1,
+   "air_temp_c": 30.0,
+   "rainfall": false
+  },
+  {
+   "lap": 29,
+   "grip_proxy_s": 101.374,
+   "track_temp_c": 35.7,
+   "air_temp_c": 30.0,
+   "rainfall": false
+  },
+  {
+   "lap": 30,
+   "grip_proxy_s": 100.252,
+   "track_temp_c": 35.9,
+   "air_temp_c": 30.0,
+   "rainfall": false
+  },
+  {
+   "lap": 31,
+   "grip_proxy_s": 100.038,
+   "track_temp_c": 35.9,
+   "air_temp_c": 30.0,
+   "rainfall": false
+  },
+  {
+   "lap": 32,
+   "grip_proxy_s": 100.179,
+   "track_temp_c": 35.9,
+   "air_temp_c": 30.0,
+   "rainfall": false
+  },
+  {
+   "lap": 33,
+   "grip_proxy_s": 100.125,
+   "track_temp_c": 35.9,
+   "air_temp_c": 30.0,
+   "rainfall": false
+  },
+  {
+   "lap": 34,
+   "grip_proxy_s": 100.524,
+   "track_temp_c": 35.9,
+   "air_temp_c": 30.0,
+   "rainfall": false
+  },
+  {
+   "lap": 35,
+   "grip_proxy_s": 100.584,
+   "track_temp_c": 35.9,
+   "air_temp_c": 30.0,
+   "rainfall": false
+  },
+  {
+   "lap": 36,
+   "grip_proxy_s": 100.844,
+   "track_temp_c": 35.5,
+   "air_temp_c": 30.0,
+   "rainfall": false
+  },
+  {
+   "lap": 37,
+   "grip_proxy_s": 100.495,
+   "track_temp_c": 35.5,
+   "air_temp_c": 29.9,
+   "rainfall": false
+  },
+  {
+   "lap": 38,
+   "grip_proxy_s": 100.847,
+   "track_temp_c": 35.5,
+   "air_temp_c": 29.8,
+   "rainfall": false
+  },
+  {
+   "lap": 39,
+   "grip_proxy_s": 101.209,
+   "track_temp_c": 35.5,
+   "air_temp_c": 29.8,
+   "rainfall": false
+  },
+  {
+   "lap": 40,
+   "grip_proxy_s": 100.29,
+   "track_temp_c": 35.5,
+   "air_temp_c": 29.7,
+   "rainfall": false
+  },
+  {
+   "lap": 41,
+   "grip_proxy_s": 100.122,
+   "track_temp_c": 35.5,
+   "air_temp_c": 29.8,
+   "rainfall": false
+  },
+  {
+   "lap": 42,
+   "grip_proxy_s": 99.913,
+   "track_temp_c": 35.5,
+   "air_temp_c": 29.8,
+   "rainfall": false
+  },
+  {
+   "lap": 43,
+   "grip_proxy_s": 112.356,
+   "track_temp_c": 35.3,
+   "air_temp_c": 29.8,
+   "rainfall": false
+  },
+  {
+   "lap": 44,
+   "grip_proxy_s": 138.212,
+   "track_temp_c": 34.9,
+   "air_temp_c": 29.7,
+   "rainfall": false
+  },
+  {
+   "lap": 45,
+   "grip_proxy_s": 111.238,
+   "track_temp_c": 35.3,
+   "air_temp_c": 29.6,
+   "rainfall": false
+  },
+  {
+   "lap": 46,
+   "grip_proxy_s": 98.277,
+   "track_temp_c": 35.1,
+   "air_temp_c": 29.6,
+   "rainfall": false
+  },
+  {
+   "lap": 47,
+   "grip_proxy_s": 98.403,
+   "track_temp_c": 35.0,
+   "air_temp_c": 29.5,
+   "rainfall": false
+  },
+  {
+   "lap": 48,
+   "grip_proxy_s": 98.496,
+   "track_temp_c": 34.9,
+   "air_temp_c": 29.5,
+   "rainfall": false
+  },
+  {
+   "lap": 49,
+   "grip_proxy_s": 98.453,
+   "track_temp_c": 34.8,
+   "air_temp_c": 29.6,
+   "rainfall": false
+  },
+  {
+   "lap": 50,
+   "grip_proxy_s": 98.439,
+   "track_temp_c": 34.9,
+   "air_temp_c": 29.6,
+   "rainfall": false
+  },
+  {
+   "lap": 51,
+   "grip_proxy_s": 98.215,
+   "track_temp_c": 35.2,
+   "air_temp_c": 29.6,
+   "rainfall": false
+  },
+  {
+   "lap": 52,
+   "grip_proxy_s": 98.774,
+   "track_temp_c": 35.6,
+   "air_temp_c": 29.6,
+   "rainfall": false
+  },
+  {
+   "lap": 53,
+   "grip_proxy_s": 98.745,
+   "track_temp_c": 35.3,
+   "air_temp_c": 29.7,
+   "rainfall": false
+  },
+  {
+   "lap": 54,
+   "grip_proxy_s": 98.601,
+   "track_temp_c": 34.8,
+   "air_temp_c": 29.6,
+   "rainfall": false
+  },
+  {
+   "lap": 55,
+   "grip_proxy_s": 98.517,
+   "track_temp_c": 34.6,
+   "air_temp_c": 29.6,
+   "rainfall": false
+  },
+  {
+   "lap": 56,
+   "grip_proxy_s": 98.543,
+   "track_temp_c": 34.8,
+   "air_temp_c": 29.5,
+   "rainfall": false
+  },
+  {
+   "lap": 57,
+   "grip_proxy_s": 99.235,
+   "track_temp_c": 34.8,
+   "air_temp_c": 29.5,
+   "rainfall": false
+  },
+  {
+   "lap": 58,
+   "grip_proxy_s": 99.94,
+   "track_temp_c": 34.8,
+   "air_temp_c": 29.6,
+   "rainfall": false
+  },
+  {
+   "lap": 59,
+   "grip_proxy_s": 100.319,
+   "track_temp_c": 34.9,
+   "air_temp_c": 29.5,
+   "rainfall": false
+  },
+  {
+   "lap": 60,
+   "grip_proxy_s": 99.681,
+   "track_temp_c": 35.2,
+   "air_temp_c": 29.5,
+   "rainfall": false
+  },
+  {
+   "lap": 61,
+   "grip_proxy_s": 99.563,
+   "track_temp_c": 35.0,
+   "air_temp_c": 29.5,
+   "rainfall": false
+  },
+  {
+   "lap": 62,
+   "grip_proxy_s": 100.946,
+   "track_temp_c": 34.9,
+   "air_temp_c": 29.5,
+   "rainfall": false
+  }
+ ],
+ "wet_dry_crossovers": [],
+ "stints_by_driver": {
+  "ALB": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 20,
+    "n_laps": 20,
+    "best_lap_s": 100.363,
+    "deg_slope_s_per_lap": -0.091,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 21,
+    "lap_end": 43,
+    "n_laps": 23,
+    "best_lap_s": 100.469,
+    "deg_slope_s_per_lap": -0.067,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "MEDIUM",
+    "lap_start": 44,
+    "lap_end": 62,
+    "n_laps": 19,
+    "best_lap_s": 97.342,
+    "deg_slope_s_per_lap": 0.213,
+    "basis": "modelled"
+   }
+  ],
+  "ALO": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 20,
+    "n_laps": 20,
+    "best_lap_s": 100.095,
+    "deg_slope_s_per_lap": -0.067,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 21,
+    "lap_end": 44,
+    "n_laps": 24,
+    "best_lap_s": 99.636,
+    "deg_slope_s_per_lap": -0.052,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "SOFT",
+    "lap_start": 45,
+    "lap_end": 62,
+    "n_laps": 18,
+    "best_lap_s": 96.456,
+    "deg_slope_s_per_lap": 0.029,
+    "basis": "modelled"
+   }
+  ],
+  "BOT": [
+   {
+    "stint_number": 1,
+    "compound": "HARD",
+    "lap_start": 1,
+    "lap_end": 40,
+    "n_laps": 40,
+    "best_lap_s": 100.793,
+    "deg_slope_s_per_lap": 0.001,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "MEDIUM",
+    "lap_start": 41,
+    "lap_end": 52,
+    "n_laps": 12,
+    "best_lap_s": 98.075,
+    "deg_slope_s_per_lap": -0.174,
+    "basis": "modelled"
+   }
+  ],
+  "GAS": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 20,
+    "n_laps": 20,
+    "best_lap_s": 100.378,
+    "deg_slope_s_per_lap": -0.047,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 21,
+    "lap_end": 62,
+    "n_laps": 42,
+    "best_lap_s": 98.277,
+    "deg_slope_s_per_lap": -0.077,
+    "basis": "modelled"
+   }
+  ],
+  "HAM": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 20,
+    "n_laps": 20,
+    "best_lap_s": 99.394,
+    "deg_slope_s_per_lap": -0.06,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 21,
+    "lap_end": 44,
+    "n_laps": 24,
+    "best_lap_s": 99.142,
+    "deg_slope_s_per_lap": -0.066,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "MEDIUM",
+    "lap_start": 45,
+    "lap_end": 62,
+    "n_laps": 18,
+    "best_lap_s": 95.867,
+    "deg_slope_s_per_lap": 0.187,
+    "basis": "modelled"
+   }
+  ],
+  "HUL": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 20,
+    "n_laps": 20,
+    "best_lap_s": 100.479,
+    "deg_slope_s_per_lap": -0.054,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 21,
+    "lap_end": 62,
+    "n_laps": 42,
+    "best_lap_s": 99.923,
+    "deg_slope_s_per_lap": 0.006,
+    "basis": "modelled"
+   }
+  ],
+  "LAW": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 20,
+    "n_laps": 20,
+    "best_lap_s": 100.454,
+    "deg_slope_s_per_lap": -0.051,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 21,
+    "lap_end": 62,
+    "n_laps": 42,
+    "best_lap_s": 99.028,
+    "deg_slope_s_per_lap": -0.022,
+    "basis": "modelled"
+   }
+  ],
+  "LEC": [
+   {
+    "stint_number": 1,
+    "compound": "SOFT",
+    "lap_start": 1,
+    "lap_end": 20,
+    "n_laps": 20,
+    "best_lap_s": 99.613,
+    "deg_slope_s_per_lap": -0.045,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 21,
+    "lap_end": 62,
+    "n_laps": 42,
+    "best_lap_s": 98.275,
+    "deg_slope_s_per_lap": -0.001,
+    "basis": "modelled"
+   }
+  ],
+  "MAG": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 20,
+    "n_laps": 20,
+    "best_lap_s": 100.415,
+    "deg_slope_s_per_lap": -0.058,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 21,
+    "lap_end": 43,
+    "n_laps": 23,
+    "best_lap_s": 100.03,
+    "deg_slope_s_per_lap": -0.012,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "SOFT",
+    "lap_start": 44,
+    "lap_end": 62,
+    "n_laps": 19,
+    "best_lap_s": 98.107,
+    "deg_slope_s_per_lap": 0.035,
+    "basis": "modelled"
+   }
+  ],
+  "NOR": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 20,
+    "n_laps": 20,
+    "best_lap_s": 99.693,
+    "deg_slope_s_per_lap": -0.052,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 21,
+    "lap_end": 62,
+    "n_laps": 42,
+    "best_lap_s": 98.046,
+    "deg_slope_s_per_lap": -0.054,
+    "basis": "modelled"
+   }
+  ],
+  "OCO": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 20,
+    "n_laps": 20,
+    "best_lap_s": 100.085,
+    "deg_slope_s_per_lap": -0.059,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 21,
+    "lap_end": 43,
+    "n_laps": 23,
+    "best_lap_s": 99.93,
+    "deg_slope_s_per_lap": -0.082,
+    "basis": "modelled"
+   }
+  ],
+  "PER": [
+   {
+    "stint_number": 1,
+    "compound": "HARD",
+    "lap_start": 1,
+    "lap_end": 39,
+    "n_laps": 39,
+    "best_lap_s": 100.205,
+    "deg_slope_s_per_lap": -0.004,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "MEDIUM",
+    "lap_start": 40,
+    "lap_end": 62,
+    "n_laps": 23,
+    "best_lap_s": 97.108,
+    "deg_slope_s_per_lap": 0.15,
+    "basis": "modelled"
+   }
+  ],
+  "PIA": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 20,
+    "n_laps": 20,
+    "best_lap_s": 100.307,
+    "deg_slope_s_per_lap": -0.089,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 21,
+    "lap_end": 62,
+    "n_laps": 42,
+    "best_lap_s": 98.492,
+    "deg_slope_s_per_lap": -0.078,
+    "basis": "modelled"
+   }
+  ],
+  "RUS": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 20,
+    "n_laps": 20,
+    "best_lap_s": 99.686,
+    "deg_slope_s_per_lap": -0.051,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 21,
+    "lap_end": 44,
+    "n_laps": 24,
+    "best_lap_s": 99.169,
+    "deg_slope_s_per_lap": -0.053,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "MEDIUM",
+    "lap_start": 45,
+    "lap_end": 62,
+    "n_laps": 18,
+    "best_lap_s": 96.273,
+    "deg_slope_s_per_lap": 0.189,
+    "basis": "modelled"
+   }
+  ],
+  "SAI": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 20,
+    "n_laps": 20,
+    "best_lap_s": 98.992,
+    "deg_slope_s_per_lap": -0.081,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 21,
+    "lap_end": 62,
+    "n_laps": 42,
+    "best_lap_s": 97.666,
+    "deg_slope_s_per_lap": -0.048,
+    "basis": "modelled"
+   }
+  ],
+  "SAR": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 19,
+    "n_laps": 19,
+    "best_lap_s": 100.554,
+    "deg_slope_s_per_lap": -0.062,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 20,
+    "lap_end": 43,
+    "n_laps": 24,
+    "best_lap_s": 99.69,
+    "deg_slope_s_per_lap": -0.003,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "MEDIUM",
+    "lap_start": 44,
+    "lap_end": 62,
+    "n_laps": 19,
+    "best_lap_s": 98.531,
+    "deg_slope_s_per_lap": 0.067,
+    "basis": "modelled"
+   }
+  ],
+  "TSU": [
+   {
+    "stint_number": 1,
+    "compound": "SOFT",
+    "lap_start": 1,
+    "lap_end": 1,
+    "n_laps": 1,
+    "best_lap_s": null,
+    "deg_slope_s_per_lap": null,
+    "basis": "modelled"
+   }
+  ],
+  "VER": [
+   {
+    "stint_number": 1,
+    "compound": "HARD",
+    "lap_start": 1,
+    "lap_end": 40,
+    "n_laps": 40,
+    "best_lap_s": 100.033,
+    "deg_slope_s_per_lap": -0.009,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "MEDIUM",
+    "lap_start": 41,
+    "lap_end": 62,
+    "n_laps": 22,
+    "best_lap_s": 96.575,
+    "deg_slope_s_per_lap": -0.037,
+    "basis": "modelled"
+   }
+  ],
+  "ZHO": [
+   {
+    "stint_number": 1,
+    "compound": "SOFT",
+    "lap_start": 1,
+    "lap_end": 2,
+    "n_laps": 2,
+    "best_lap_s": 109.969,
+    "deg_slope_s_per_lap": null,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 3,
+    "lap_end": 20,
+    "n_laps": 18,
+    "best_lap_s": 99.869,
+    "deg_slope_s_per_lap": 0.01,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "MEDIUM",
+    "lap_start": 21,
+    "lap_end": 62,
+    "n_laps": 42,
+    "best_lap_s": 99.316,
+    "deg_slope_s_per_lap": -0.008,
+    "basis": "modelled"
+   }
+  ]
+ },
+ "clip_contexts": {
+  "2023-singapore-r-ZHO-121303": {
+   "clip_id": "2023-singapore-r-ZHO-121303",
+   "utc": "2023-09-17T11:13:15.176000",
+   "lap": null,
+   "phase": "pre_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 30.0,
+    "track_temp_c": 38.1,
+    "rainfall": false,
+    "humidity_pct": 67.0,
+    "pressure_hpa": 1008.0,
+    "wind_speed_ms": 1.1,
+    "wind_direction_deg": 179,
+    "track_temp_delta_from_start_c": -0.2,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-VER-125540": {
+   "clip_id": "2023-singapore-r-VER-125540",
+   "utc": "2023-09-17T11:56:04.711000",
+   "lap": null,
+   "phase": "pre_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.7,
+    "track_temp_c": 37.3,
+    "rainfall": false,
+    "humidity_pct": 70.0,
+    "pressure_hpa": 1008.5,
+    "wind_speed_ms": 0.8,
+    "wind_direction_deg": 150,
+    "track_temp_delta_from_start_c": -1.0,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T11:57:11",
+      "lap": 1,
+      "category": "Drs",
+      "flag": null,
+      "scope": null,
+      "message": "DRS DISABLED",
+      "offset_s": 66.3
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-VER-130002": {
+   "clip_id": "2023-singapore-r-VER-130002",
+   "utc": "2023-09-17T12:00:34.238000",
+   "lap": null,
+   "phase": "pre_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.8,
+    "track_temp_c": 36.9,
+    "rainfall": false,
+    "humidity_pct": 71.0,
+    "pressure_hpa": 1008.5,
+    "wind_speed_ms": 1.2,
+    "wind_direction_deg": 159,
+    "track_temp_delta_from_start_c": -1.4,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-OCO-130022": {
+   "clip_id": "2023-singapore-r-OCO-130022",
+   "utc": "2023-09-17T12:00:34.238000",
+   "lap": null,
+   "phase": "pre_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.8,
+    "track_temp_c": 36.9,
+    "rainfall": false,
+    "humidity_pct": 71.0,
+    "pressure_hpa": 1008.5,
+    "wind_speed_ms": 1.2,
+    "wind_direction_deg": 159,
+    "track_temp_delta_from_start_c": -1.4,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-RUS-130449": {
+   "clip_id": "2023-singapore-r-RUS-130449",
+   "utc": "2023-09-17T12:04:59.985000",
+   "lap": 1,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.8,
+    "track_temp_c": 36.7,
+    "rainfall": false,
+    "humidity_pct": 72.0,
+    "pressure_hpa": 1008.7,
+    "wind_speed_ms": 1.0,
+    "wind_direction_deg": 180,
+    "track_temp_delta_from_start_c": -1.6,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "MEDIUM",
+    "tyre_age_laps": 1,
+    "stint_number": 1,
+    "laps_into_stint": 1,
+    "deg_slope_s_per_lap": -0.051,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3141.1,
+    "lap_length_m": 4761.2,
+    "pct_of_lap": 66.0,
+    "nearest_corner": 13,
+    "distance_to_corner_m": -122.4,
+    "sector": 2,
+    "speed_kph": 240.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 6,
+    "rpm": 11326,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": "12",
+    "active_flags": [
+     "YELLOW",
+     "CLEAR",
+     "GREEN"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T12:03:45",
+      "lap": 1,
+      "category": "Flag",
+      "flag": "GREEN",
+      "scope": "Track",
+      "message": "GREEN LIGHT - PIT EXIT OPEN",
+      "offset_s": -75.0
+     },
+     {
+      "utc": "2023-09-17T12:05:21",
+      "lap": 1,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 13",
+      "offset_s": 21.0
+     },
+     {
+      "utc": "2023-09-17T12:05:26",
+      "lap": 1,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Sector",
+      "message": "CLEAR IN TRACK SECTOR 13",
+      "offset_s": 26.0
+     },
+     {
+      "utc": "2023-09-17T12:05:38",
+      "lap": 2,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 13",
+      "offset_s": 38.0
+     },
+     {
+      "utc": "2023-09-17T12:05:55",
+      "lap": 2,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Sector",
+      "message": "CLEAR IN TRACK SECTOR 13",
+      "offset_s": 55.0
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-NOR-130714": {
+   "clip_id": "2023-singapore-r-NOR-130714",
+   "utc": "2023-09-17T12:07:47.624000",
+   "lap": 3,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.9,
+    "track_temp_c": 37.3,
+    "rainfall": false,
+    "humidity_pct": 71.0,
+    "pressure_hpa": 1008.7,
+    "wind_speed_ms": 1.0,
+    "wind_direction_deg": 168,
+    "track_temp_delta_from_start_c": -1.0,
+    "grip_proxy_s": 101.476,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "MEDIUM",
+    "tyre_age_laps": 3,
+    "stint_number": 1,
+    "laps_into_stint": 3,
+    "deg_slope_s_per_lap": -0.052,
+    "stint_vs_driver_median_laps": -11,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 1844.6,
+    "lap_length_m": 4876.4,
+    "pct_of_lap": 37.8,
+    "nearest_corner": 7,
+    "distance_to_corner_m": -82.4,
+    "sector": 2,
+    "speed_kph": 140.0,
+    "throttle_pct": 81.0,
+    "brake": false,
+    "gear": 3,
+    "rpm": 10386,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 5,
+    "gap_ahead_s": 0.667,
+    "gap_to_leader_s": 3.711,
+    "track_status": "1",
+    "active_flags": [
+     "CLEAR"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T12:05:55",
+      "lap": 2,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Sector",
+      "message": "CLEAR IN TRACK SECTOR 13",
+      "offset_s": -112.6
+     },
+     {
+      "utc": "2023-09-17T12:07:13",
+      "lap": 3,
+      "category": "Drs",
+      "flag": null,
+      "scope": null,
+      "message": "DRS ENABLED",
+      "offset_s": -34.6
+     },
+     {
+      "utc": "2023-09-17T12:08:46",
+      "lap": 3,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "TURN 2 INCIDENT INVOLVING CAR 44 (HAM) NOTED - LEAVING THE TRACK AND GAINING AN ADVANTAGE",
+      "offset_s": 58.4
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-HAM-131017": {
+   "clip_id": "2023-singapore-r-HAM-131017",
+   "utc": "2023-09-17T12:10:35.919000",
+   "lap": 4,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.9,
+    "track_temp_c": 37.2,
+    "rainfall": false,
+    "humidity_pct": 71.0,
+    "pressure_hpa": 1008.7,
+    "wind_speed_ms": 1.7,
+    "wind_direction_deg": 196,
+    "track_temp_delta_from_start_c": -1.1,
+    "grip_proxy_s": 101.355,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "MEDIUM",
+    "tyre_age_laps": 4,
+    "stint_number": 1,
+    "laps_into_stint": 4,
+    "deg_slope_s_per_lap": -0.06,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 4851.5,
+    "lap_length_m": 4880.7,
+    "pct_of_lap": 99.4,
+    "nearest_corner": 19,
+    "distance_to_corner_m": -103.1,
+    "sector": 3,
+    "speed_kph": 241.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 6,
+    "rpm": 11467,
+    "drs_active": true,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 5,
+    "gap_ahead_s": 0.516,
+    "gap_to_leader_s": 5.325,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T12:08:46",
+      "lap": 3,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "TURN 2 INCIDENT INVOLVING CAR 44 (HAM) NOTED - LEAVING THE TRACK AND GAINING AN ADVANTAGE",
+      "offset_s": -109.9
+     },
+     {
+      "utc": "2023-09-17T12:10:53",
+      "lap": 5,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 2 INCIDENT INVOLVING CAR 44 (HAM) REVIEWED NO FURTHER INVESTIGATION - LEAVING THE TRACK AND GAINING AN ADVANTAGE",
+      "offset_s": 17.1
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-TSU-131053": {
+   "clip_id": "2023-singapore-r-TSU-131053",
+   "utc": "2023-09-17T12:11:10.997000",
+   "lap": 1,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.9,
+    "track_temp_c": 37.0,
+    "rainfall": false,
+    "humidity_pct": 71.0,
+    "pressure_hpa": 1008.7,
+    "wind_speed_ms": 1.2,
+    "wind_direction_deg": 163,
+    "track_temp_delta_from_start_c": -1.3,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 1,
+    "stint_number": 1,
+    "laps_into_stint": 1,
+    "deg_slope_s_per_lap": null,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": null,
+    "lap_length_m": 3617.8,
+    "pct_of_lap": null,
+    "nearest_corner": null,
+    "distance_to_corner_m": null,
+    "sector": null,
+    "speed_kph": null,
+    "throttle_pct": null,
+    "brake": null,
+    "gear": null,
+    "rpm": null,
+    "drs_active": null,
+    "zone": null
+   },
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": "12",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T12:10:53",
+      "lap": 5,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 2 INCIDENT INVOLVING CAR 44 (HAM) REVIEWED NO FURTHER INVESTIGATION - LEAVING THE TRACK AND GAINING AN ADVANTAGE",
+      "offset_s": -18.0
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-ALB-131550": {
+   "clip_id": "2023-singapore-r-ALB-131550",
+   "utc": "2023-09-17T12:16:11.884000",
+   "lap": 8,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 30.0,
+    "track_temp_c": 36.5,
+    "rainfall": false,
+    "humidity_pct": 72.0,
+    "pressure_hpa": 1008.9,
+    "wind_speed_ms": 1.7,
+    "wind_direction_deg": 161,
+    "track_temp_delta_from_start_c": -1.8,
+    "grip_proxy_s": 100.593,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "MEDIUM",
+    "tyre_age_laps": 8,
+    "stint_number": 1,
+    "laps_into_stint": 8,
+    "deg_slope_s_per_lap": -0.091,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 1067.9,
+    "lap_length_m": 4835.5,
+    "pct_of_lap": 22.1,
+    "nearest_corner": 5,
+    "distance_to_corner_m": -96.0,
+    "sector": 1,
+    "speed_kph": 181.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 4,
+    "rpm": 11473,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 15,
+    "gap_ahead_s": 1.442,
+    "gap_to_leader_s": 18.443,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-LEC-131913": {
+   "clip_id": "2023-singapore-r-LEC-131913",
+   "utc": "2023-09-17T12:19:32.491000",
+   "lap": 10,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 30.0,
+    "track_temp_c": 36.2,
+    "rainfall": false,
+    "humidity_pct": 73.0,
+    "pressure_hpa": 1009.0,
+    "wind_speed_ms": 1.2,
+    "wind_direction_deg": 175,
+    "track_temp_delta_from_start_c": -2.1,
+    "grip_proxy_s": 100.561,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 13,
+    "stint_number": 1,
+    "laps_into_stint": 10,
+    "deg_slope_s_per_lap": -0.045,
+    "stint_vs_driver_median_laps": -11,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2006.6,
+    "lap_length_m": 4876.0,
+    "pct_of_lap": 41.2,
+    "nearest_corner": 8,
+    "distance_to_corner_m": -13.2,
+    "sector": 2,
+    "speed_kph": 77.0,
+    "throttle_pct": 46.0,
+    "brake": false,
+    "gear": 2,
+    "rpm": 7350,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 2,
+    "gap_ahead_s": 1.325,
+    "gap_to_leader_s": 1.325,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T12:20:39",
+      "lap": 11,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 10 (GAS) TIME 1:41.829 DELETED - TRACK LIMITS AT TURN 7 LAP 6 20:12:55",
+      "offset_s": 66.5
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-SAI-132058": {
+   "clip_id": "2023-singapore-r-SAI-132058",
+   "utc": "2023-09-17T12:21:12.802000",
+   "lap": 11,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 30.0,
+    "track_temp_c": 36.8,
+    "rainfall": false,
+    "humidity_pct": 72.0,
+    "pressure_hpa": 1009.0,
+    "wind_speed_ms": 1.1,
+    "wind_direction_deg": 145,
+    "track_temp_delta_from_start_c": -1.5,
+    "grip_proxy_s": 100.478,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "MEDIUM",
+    "tyre_age_laps": 11,
+    "stint_number": 1,
+    "laps_into_stint": 11,
+    "deg_slope_s_per_lap": -0.081,
+    "stint_vs_driver_median_laps": -11,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2027.7,
+    "lap_length_m": 4878.2,
+    "pct_of_lap": 41.6,
+    "nearest_corner": 8,
+    "distance_to_corner_m": -34.3,
+    "sector": 2,
+    "speed_kph": 104.0,
+    "throttle_pct": 59.0,
+    "brake": false,
+    "gear": 3,
+    "rpm": 8063,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 1,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": 0.0,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T12:20:39",
+      "lap": 11,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 10 (GAS) TIME 1:41.829 DELETED - TRACK LIMITS AT TURN 7 LAP 6 20:12:55",
+      "offset_s": -33.8
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-RUS-132140": {
+   "clip_id": "2023-singapore-r-RUS-132140",
+   "utc": "2023-09-17T12:24:33.331000",
+   "lap": 13,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 30.1,
+    "track_temp_c": 36.6,
+    "rainfall": false,
+    "humidity_pct": 72.0,
+    "pressure_hpa": 1009.0,
+    "wind_speed_ms": 1.5,
+    "wind_direction_deg": 158,
+    "track_temp_delta_from_start_c": -1.7,
+    "grip_proxy_s": 100.667,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "MEDIUM",
+    "tyre_age_laps": 13,
+    "stint_number": 1,
+    "laps_into_stint": 13,
+    "deg_slope_s_per_lap": -0.051,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 1934.6,
+    "lap_length_m": 4860.5,
+    "pct_of_lap": 39.8,
+    "nearest_corner": 8,
+    "distance_to_corner_m": 58.8,
+    "sector": 2,
+    "speed_kph": 112.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 5,
+    "rpm": 8259,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 3,
+    "gap_ahead_s": 2.011,
+    "gap_to_leader_s": 3.102,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-LEC-132415": {
+   "clip_id": "2023-singapore-r-LEC-132415",
+   "utc": "2023-09-17T12:24:33.331000",
+   "lap": 13,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 30.1,
+    "track_temp_c": 36.6,
+    "rainfall": false,
+    "humidity_pct": 72.0,
+    "pressure_hpa": 1009.0,
+    "wind_speed_ms": 1.5,
+    "wind_direction_deg": 158,
+    "track_temp_delta_from_start_c": -1.7,
+    "grip_proxy_s": 100.667,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 16,
+    "stint_number": 1,
+    "laps_into_stint": 13,
+    "deg_slope_s_per_lap": -0.045,
+    "stint_vs_driver_median_laps": -11,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 1985.9,
+    "lap_length_m": 4875.5,
+    "pct_of_lap": 40.7,
+    "nearest_corner": 8,
+    "distance_to_corner_m": 7.5,
+    "sector": 2,
+    "speed_kph": 73.0,
+    "throttle_pct": 18.0,
+    "brake": false,
+    "gear": 2,
+    "rpm": 6751,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 2,
+    "gap_ahead_s": 1.091,
+    "gap_to_leader_s": 1.091,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-VER-132539": {
+   "clip_id": "2023-singapore-r-VER-132539",
+   "utc": "2023-09-17T12:26:13.612000",
+   "lap": 14,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 30.1,
+    "track_temp_c": 36.4,
+    "rainfall": false,
+    "humidity_pct": 72.0,
+    "pressure_hpa": 1009.0,
+    "wind_speed_ms": 1.2,
+    "wind_direction_deg": 156,
+    "track_temp_delta_from_start_c": -1.9,
+    "grip_proxy_s": 100.63,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 14,
+    "stint_number": 1,
+    "laps_into_stint": 14,
+    "deg_slope_s_per_lap": -0.009,
+    "stint_vs_driver_median_laps": 9,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 1583.0,
+    "lap_length_m": 4868.4,
+    "pct_of_lap": 32.5,
+    "nearest_corner": 7,
+    "distance_to_corner_m": 179.2,
+    "sector": 1,
+    "speed_kph": 293.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 7,
+    "rpm": 11432,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 8,
+    "gap_ahead_s": 1.931,
+    "gap_to_leader_s": 11.165,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-LEC-132720": {
+   "clip_id": "2023-singapore-r-LEC-132720",
+   "utc": "2023-09-17T12:27:53.892000",
+   "lap": 15,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 30.1,
+    "track_temp_c": 36.4,
+    "rainfall": false,
+    "humidity_pct": 72.0,
+    "pressure_hpa": 1009.0,
+    "wind_speed_ms": 1.6,
+    "wind_direction_deg": 169,
+    "track_temp_delta_from_start_c": -1.9,
+    "grip_proxy_s": 100.5,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 18,
+    "stint_number": 1,
+    "laps_into_stint": 15,
+    "deg_slope_s_per_lap": -0.045,
+    "stint_vs_driver_median_laps": -11,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 1963.0,
+    "lap_length_m": 4874.2,
+    "pct_of_lap": 40.3,
+    "nearest_corner": 8,
+    "distance_to_corner_m": 30.3,
+    "sector": 2,
+    "speed_kph": 84.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 2,
+    "rpm": 6823,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 2,
+    "gap_ahead_s": 1.991,
+    "gap_to_leader_s": 1.991,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-LEC-133119": {
+   "clip_id": "2023-singapore-r-LEC-133119",
+   "utc": "2023-09-17T12:31:49.514000",
+   "lap": 17,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 30.1,
+    "track_temp_c": 36.5,
+    "rainfall": false,
+    "humidity_pct": 73.0,
+    "pressure_hpa": 1009.0,
+    "wind_speed_ms": 1.2,
+    "wind_direction_deg": 189,
+    "track_temp_delta_from_start_c": -1.8,
+    "grip_proxy_s": 100.624,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 20,
+    "stint_number": 1,
+    "laps_into_stint": 17,
+    "deg_slope_s_per_lap": -0.045,
+    "stint_vs_driver_median_laps": -11,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3520.6,
+    "lap_length_m": 4880.2,
+    "pct_of_lap": 72.1,
+    "nearest_corner": 14,
+    "distance_to_corner_m": 57.8,
+    "sector": 3,
+    "speed_kph": 117.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 3,
+    "rpm": 8453,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 2,
+    "gap_ahead_s": 2.57,
+    "gap_to_leader_s": 2.57,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-RUS-133240": {
+   "clip_id": "2023-singapore-r-RUS-133240",
+   "utc": "2023-09-17T12:32:55.326000",
+   "lap": 18,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 30.0,
+    "track_temp_c": 36.4,
+    "rainfall": false,
+    "humidity_pct": 73.0,
+    "pressure_hpa": 1009.0,
+    "wind_speed_ms": 1.3,
+    "wind_direction_deg": 185,
+    "track_temp_delta_from_start_c": -1.9,
+    "grip_proxy_s": 100.724,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "MEDIUM",
+    "tyre_age_laps": 18,
+    "stint_number": 1,
+    "laps_into_stint": 18,
+    "deg_slope_s_per_lap": -0.051,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 1956.1,
+    "lap_length_m": 4863.5,
+    "pct_of_lap": 40.2,
+    "nearest_corner": 8,
+    "distance_to_corner_m": 37.3,
+    "sector": 2,
+    "speed_kph": 79.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 3,
+    "rpm": 5484,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 3,
+    "gap_ahead_s": 2.238,
+    "gap_to_leader_s": 5.429,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-PIA-133316": {
+   "clip_id": "2023-singapore-r-PIA-133316",
+   "utc": "2023-09-17T12:34:02.625000",
+   "lap": 18,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 30.0,
+    "track_temp_c": 36.3,
+    "rainfall": false,
+    "humidity_pct": 73.0,
+    "pressure_hpa": 1009.0,
+    "wind_speed_ms": 1.1,
+    "wind_direction_deg": 187,
+    "track_temp_delta_from_start_c": -2.0,
+    "grip_proxy_s": 100.724,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "MEDIUM",
+    "tyre_age_laps": 18,
+    "stint_number": 1,
+    "laps_into_stint": 18,
+    "deg_slope_s_per_lap": -0.089,
+    "stint_vs_driver_median_laps": -11,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 4212.0,
+    "lap_length_m": 4873.8,
+    "pct_of_lap": 86.4,
+    "nearest_corner": 16,
+    "distance_to_corner_m": 80.7,
+    "sector": 3,
+    "speed_kph": 205.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 7,
+    "rpm": 9150,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 14,
+    "gap_ahead_s": 1.146,
+    "gap_to_leader_s": 24.369,
+    "track_status": "1",
+    "active_flags": [
+     "YELLOW",
+     "DOUBLE YELLOW",
+     "CLEAR"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T12:35:04",
+      "lap": 19,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 7",
+      "offset_s": 61.4
+     },
+     {
+      "utc": "2023-09-17T12:35:04",
+      "lap": 19,
+      "category": "Flag",
+      "flag": "DOUBLE YELLOW",
+      "scope": "Sector",
+      "message": "DOUBLE YELLOW IN TRACK SECTOR 7",
+      "offset_s": 61.4
+     },
+     {
+      "utc": "2023-09-17T12:35:24",
+      "lap": 19,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Sector",
+      "message": "CLEAR IN TRACK SECTOR 7",
+      "offset_s": 81.4
+     },
+     {
+      "utc": "2023-09-17T12:35:36",
+      "lap": 20,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "TRACK SURFACE SLIPPERY IN TRACK SECTOR 7",
+      "offset_s": 93.4
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-LEC-133931": {
+   "clip_id": "2023-singapore-r-LEC-133931",
+   "utc": "2023-09-17T12:39:40.805000",
+   "lap": 21,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 30.0,
+    "track_temp_c": 36.3,
+    "rainfall": false,
+    "humidity_pct": 72.0,
+    "pressure_hpa": 1009.2,
+    "wind_speed_ms": 1.2,
+    "wind_direction_deg": 174,
+    "track_temp_delta_from_start_c": -2.0,
+    "grip_proxy_s": 135.091,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 1,
+    "stint_number": 2,
+    "laps_into_stint": 1,
+    "deg_slope_s_per_lap": -0.001,
+    "stint_vs_driver_median_laps": 11,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2957.9,
+    "lap_length_m": 4890.7,
+    "pct_of_lap": 60.5,
+    "nearest_corner": 13,
+    "distance_to_corner_m": 60.8,
+    "sector": 2,
+    "speed_kph": 97.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 2,
+    "rpm": 8420,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": "4",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T12:39:51",
+      "lap": 21,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "INCIDENT INVOLVING CAR 14 (ALO) NOTED - FAILING TO FOLLOW RACE DIRECTORS INSTRUCTIONS – CROSSING THE LINE AT PIT ENTRY",
+      "offset_s": 10.2
+     },
+     {
+      "utc": "2023-09-17T12:40:52",
+      "lap": 22,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 14 (ALO) UNDER INVESTIGATION - FAILING TO FOLLOW RACE DIRECTORS INSTRUCTIONS – CROSSING THE LINE AT PIT ENTRY",
+      "offset_s": 71.2
+     },
+     {
+      "utc": "2023-09-17T12:41:01",
+      "lap": 22,
+      "category": "SafetyCar",
+      "flag": null,
+      "scope": null,
+      "message": "SAFETY CAR IN THIS LAP",
+      "offset_s": 80.2
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-SAI-134156": {
+   "clip_id": "2023-singapore-r-SAI-134156",
+   "utc": "2023-09-17T12:42:27.303000",
+   "lap": 22,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.9,
+    "track_temp_c": 36.0,
+    "rainfall": false,
+    "humidity_pct": 72.0,
+    "pressure_hpa": 1009.2,
+    "wind_speed_ms": 1.2,
+    "wind_direction_deg": 159,
+    "track_temp_delta_from_start_c": -2.3,
+    "grip_proxy_s": 142.499,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 2,
+    "stint_number": 2,
+    "laps_into_stint": 2,
+    "deg_slope_s_per_lap": -0.048,
+    "stint_vs_driver_median_laps": 11,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3568.0,
+    "lap_length_m": 4903.7,
+    "pct_of_lap": 72.8,
+    "nearest_corner": 14,
+    "distance_to_corner_m": 10.5,
+    "sector": 3,
+    "speed_kph": 43.0,
+    "throttle_pct": 0.0,
+    "brake": false,
+    "gear": 1,
+    "rpm": 4782,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": "41",
+    "active_flags": [
+     "CLEAR"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T12:40:52",
+      "lap": 22,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 14 (ALO) UNDER INVESTIGATION - FAILING TO FOLLOW RACE DIRECTORS INSTRUCTIONS – CROSSING THE LINE AT PIT ENTRY",
+      "offset_s": -95.3
+     },
+     {
+      "utc": "2023-09-17T12:41:01",
+      "lap": 22,
+      "category": "SafetyCar",
+      "flag": null,
+      "scope": null,
+      "message": "SAFETY CAR IN THIS LAP",
+      "offset_s": -86.3
+     },
+     {
+      "utc": "2023-09-17T12:42:50",
+      "lap": 22,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Track",
+      "message": "TRACK CLEAR",
+      "offset_s": 22.7
+     },
+     {
+      "utc": "2023-09-17T12:43:50",
+      "lap": 23,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 5 SECOND TIME PENALTY FOR CAR 14 (ALO) - FAILING TO FOLLOW RACE DIRECTORS INSTRUCTIONS – CROSSING THE LINE AT PIT ENTRY",
+      "offset_s": 82.7
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-HAM-134223": {
+   "clip_id": "2023-singapore-r-HAM-134223",
+   "utc": "2023-09-17T12:43:02.412000",
+   "lap": 22,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 30.0,
+    "track_temp_c": 36.0,
+    "rainfall": false,
+    "humidity_pct": 72.0,
+    "pressure_hpa": 1009.2,
+    "wind_speed_ms": 1.6,
+    "wind_direction_deg": 160,
+    "track_temp_delta_from_start_c": -2.3,
+    "grip_proxy_s": 142.499,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 2,
+    "stint_number": 2,
+    "laps_into_stint": 2,
+    "deg_slope_s_per_lap": -0.066,
+    "stint_vs_driver_median_laps": 4,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 4462.8,
+    "lap_length_m": 4901.1,
+    "pct_of_lap": 91.1,
+    "nearest_corner": 17,
+    "distance_to_corner_m": -92.6,
+    "sector": 3,
+    "speed_kph": 176.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 4,
+    "rpm": 11470,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 6,
+    "gap_ahead_s": 0.513,
+    "gap_to_leader_s": 2.23,
+    "track_status": "41",
+    "active_flags": [
+     "CLEAR"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T12:42:50",
+      "lap": 22,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Track",
+      "message": "TRACK CLEAR",
+      "offset_s": -12.4
+     },
+     {
+      "utc": "2023-09-17T12:43:50",
+      "lap": 23,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 5 SECOND TIME PENALTY FOR CAR 14 (ALO) - FAILING TO FOLLOW RACE DIRECTORS INSTRUCTIONS – CROSSING THE LINE AT PIT ENTRY",
+      "offset_s": 47.6
+     },
+     {
+      "utc": "2023-09-17T12:45:01",
+      "lap": 24,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 16 (LEC) TIME 1:43.955 DELETED - TRACK LIMITS AT TURN 7 LAP 23 20:43:44",
+      "offset_s": 118.6
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-HUL-134414": {
+   "clip_id": "2023-singapore-r-HUL-134414",
+   "utc": "2023-09-17T12:44:42.692000",
+   "lap": 23,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.9,
+    "track_temp_c": 36.1,
+    "rainfall": false,
+    "humidity_pct": 72.0,
+    "pressure_hpa": 1009.2,
+    "wind_speed_ms": 1.5,
+    "wind_direction_deg": 152,
+    "track_temp_delta_from_start_c": -2.2,
+    "grip_proxy_s": 103.273,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 3,
+    "stint_number": 2,
+    "laps_into_stint": 3,
+    "deg_slope_s_per_lap": 0.006,
+    "stint_vs_driver_median_laps": 11,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 4195.0,
+    "lap_length_m": 4857.8,
+    "pct_of_lap": 86.4,
+    "nearest_corner": 16,
+    "distance_to_corner_m": 97.8,
+    "sector": 3,
+    "speed_kph": 198.0,
+    "throttle_pct": 1.0,
+    "brake": true,
+    "gear": 7,
+    "rpm": 8921,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 15,
+    "gap_ahead_s": 0.211,
+    "gap_to_leader_s": 7.989,
+    "track_status": "1",
+    "active_flags": [
+     "CLEAR"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T12:42:50",
+      "lap": 22,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Track",
+      "message": "TRACK CLEAR",
+      "offset_s": -112.7
+     },
+     {
+      "utc": "2023-09-17T12:43:50",
+      "lap": 23,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 5 SECOND TIME PENALTY FOR CAR 14 (ALO) - FAILING TO FOLLOW RACE DIRECTORS INSTRUCTIONS – CROSSING THE LINE AT PIT ENTRY",
+      "offset_s": -52.7
+     },
+     {
+      "utc": "2023-09-17T12:45:01",
+      "lap": 24,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 16 (LEC) TIME 1:43.955 DELETED - TRACK LIMITS AT TURN 7 LAP 23 20:43:44",
+      "offset_s": 18.3
+     },
+     {
+      "utc": "2023-09-17T12:46:31",
+      "lap": 25,
+      "category": "Drs",
+      "flag": null,
+      "scope": null,
+      "message": "DRS ENABLED",
+      "offset_s": 108.3
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-SAI-134649": {
+   "clip_id": "2023-singapore-r-SAI-134649",
+   "utc": "2023-09-17T12:47:28.161000",
+   "lap": 25,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.9,
+    "track_temp_c": 36.0,
+    "rainfall": false,
+    "humidity_pct": 72.0,
+    "pressure_hpa": 1009.2,
+    "wind_speed_ms": 1.7,
+    "wind_direction_deg": 171,
+    "track_temp_delta_from_start_c": -2.3,
+    "grip_proxy_s": 100.928,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 5,
+    "stint_number": 2,
+    "laps_into_stint": 5,
+    "deg_slope_s_per_lap": -0.048,
+    "stint_vs_driver_median_laps": 11,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2831.5,
+    "lap_length_m": 4882.5,
+    "pct_of_lap": 58.0,
+    "nearest_corner": 12,
+    "distance_to_corner_m": 21.8,
+    "sector": 2,
+    "speed_kph": 161.0,
+    "throttle_pct": 68.0,
+    "brake": false,
+    "gear": 4,
+    "rpm": 10193,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 1,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": 0.0,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T12:46:31",
+      "lap": 25,
+      "category": "Drs",
+      "flag": null,
+      "scope": null,
+      "message": "DRS ENABLED",
+      "offset_s": -57.2
+     },
+     {
+      "utc": "2023-09-17T12:47:24",
+      "lap": 25,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 44 (HAM) TIME 1:40.957 DELETED - TRACK LIMITS AT TURN 7 LAP 24 20:45:28",
+      "offset_s": -4.2
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-PER-134757": {
+   "clip_id": "2023-singapore-r-PER-134757",
+   "utc": "2023-09-17T12:48:36.127000",
+   "lap": 26,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.8,
+    "track_temp_c": 36.0,
+    "rainfall": false,
+    "humidity_pct": 72.0,
+    "pressure_hpa": 1009.2,
+    "wind_speed_ms": 1.2,
+    "wind_direction_deg": 161,
+    "track_temp_delta_from_start_c": -2.3,
+    "grip_proxy_s": 100.827,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 26,
+    "stint_number": 1,
+    "laps_into_stint": 26,
+    "deg_slope_s_per_lap": -0.004,
+    "stint_vs_driver_median_laps": 8,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 937.0,
+    "lap_length_m": 4871.0,
+    "pct_of_lap": 19.2,
+    "nearest_corner": 5,
+    "distance_to_corner_m": 34.9,
+    "sector": 1,
+    "speed_kph": 145.0,
+    "throttle_pct": 5.0,
+    "brake": true,
+    "gear": 4,
+    "rpm": 8330,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 7,
+    "gap_ahead_s": 1.953,
+    "gap_to_leader_s": 9.59,
+    "track_status": "1",
+    "active_flags": [
+     "BLACK AND WHITE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T12:47:24",
+      "lap": 25,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 44 (HAM) TIME 1:40.957 DELETED - TRACK LIMITS AT TURN 7 LAP 24 20:45:28",
+      "offset_s": -72.1
+     },
+     {
+      "utc": "2023-09-17T12:49:48",
+      "lap": 26,
+      "category": "Flag",
+      "flag": "BLACK AND WHITE",
+      "scope": "Driver",
+      "message": "BLACK AND WHITE FLAG FOR CAR 20 (MAG) - FORCING ANOTHER DRIVER OFF THE TRACK",
+      "offset_s": 71.9
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-RUS-135333": {
+   "clip_id": "2023-singapore-r-RUS-135333",
+   "utc": "2023-09-17T12:54:10.483000",
+   "lap": 29,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 30.0,
+    "track_temp_c": 35.9,
+    "rainfall": false,
+    "humidity_pct": 74.0,
+    "pressure_hpa": 1009.4,
+    "wind_speed_ms": 1.0,
+    "wind_direction_deg": 179,
+    "track_temp_delta_from_start_c": -2.4,
+    "grip_proxy_s": 101.374,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 9,
+    "stint_number": 2,
+    "laps_into_stint": 9,
+    "deg_slope_s_per_lap": -0.053,
+    "stint_vs_driver_median_laps": 4,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2875.7,
+    "lap_length_m": 4871.8,
+    "pct_of_lap": 59.0,
+    "nearest_corner": 12,
+    "distance_to_corner_m": -22.5,
+    "sector": 2,
+    "speed_kph": 191.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 4,
+    "rpm": 12040,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 2,
+    "gap_ahead_s": 1.105,
+    "gap_to_leader_s": 1.105,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T12:55:40",
+      "lap": 30,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 14 (ALO) TIME 1:41.292 DELETED - TRACK LIMITS AT TURN 2 LAP 29 20:53:28",
+      "offset_s": 89.5
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-RUS-135551": {
+   "clip_id": "2023-singapore-r-RUS-135551",
+   "utc": "2023-09-17T12:56:24.856000",
+   "lap": 30,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 30.0,
+    "track_temp_c": 35.9,
+    "rainfall": false,
+    "humidity_pct": 74.0,
+    "pressure_hpa": 1009.5,
+    "wind_speed_ms": 0.8,
+    "wind_direction_deg": 188,
+    "track_temp_delta_from_start_c": -2.4,
+    "grip_proxy_s": 100.252,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 10,
+    "stint_number": 2,
+    "laps_into_stint": 10,
+    "deg_slope_s_per_lap": -0.053,
+    "stint_vs_driver_median_laps": 4,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 4520.3,
+    "lap_length_m": 4857.0,
+    "pct_of_lap": 93.1,
+    "nearest_corner": 18,
+    "distance_to_corner_m": 114.1,
+    "sector": 3,
+    "speed_kph": 233.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 6,
+    "rpm": 11135,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 2,
+    "gap_ahead_s": 0.955,
+    "gap_to_leader_s": 0.955,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T12:55:40",
+      "lap": 30,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 14 (ALO) TIME 1:41.292 DELETED - TRACK LIMITS AT TURN 2 LAP 29 20:53:28",
+      "offset_s": -44.9
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-VER-135804": {
+   "clip_id": "2023-singapore-r-VER-135804",
+   "utc": "2023-09-17T13:00:52.244000",
+   "lap": 33,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 30.0,
+    "track_temp_c": 35.9,
+    "rainfall": false,
+    "humidity_pct": 74.0,
+    "pressure_hpa": 1009.5,
+    "wind_speed_ms": 1.5,
+    "wind_direction_deg": 168,
+    "track_temp_delta_from_start_c": -2.4,
+    "grip_proxy_s": 100.125,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 33,
+    "stint_number": 1,
+    "laps_into_stint": 33,
+    "deg_slope_s_per_lap": -0.009,
+    "stint_vs_driver_median_laps": 9,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2673.5,
+    "lap_length_m": 4856.8,
+    "pct_of_lap": 55.0,
+    "nearest_corner": 10,
+    "distance_to_corner_m": -66.4,
+    "sector": 2,
+    "speed_kph": 143.0,
+    "throttle_pct": 61.0,
+    "brake": false,
+    "gear": 4,
+    "rpm": 9058,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 6,
+    "gap_ahead_s": 5.361,
+    "gap_to_leader_s": 10.1,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-RUS-140022": {
+   "clip_id": "2023-singapore-r-RUS-140022",
+   "utc": "2023-09-17T13:00:52.646000",
+   "lap": 33,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 30.0,
+    "track_temp_c": 35.9,
+    "rainfall": false,
+    "humidity_pct": 74.0,
+    "pressure_hpa": 1009.5,
+    "wind_speed_ms": 1.5,
+    "wind_direction_deg": 168,
+    "track_temp_delta_from_start_c": -2.4,
+    "grip_proxy_s": 100.125,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 13,
+    "stint_number": 2,
+    "laps_into_stint": 13,
+    "deg_slope_s_per_lap": -0.053,
+    "stint_vs_driver_median_laps": 4,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3009.1,
+    "lap_length_m": 4870.4,
+    "pct_of_lap": 61.8,
+    "nearest_corner": 13,
+    "distance_to_corner_m": 9.6,
+    "sector": 2,
+    "speed_kph": 65.0,
+    "throttle_pct": 0.0,
+    "brake": false,
+    "gear": 2,
+    "rpm": 5318,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 2,
+    "gap_ahead_s": 1.028,
+    "gap_to_leader_s": 1.028,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-SAI-140828": {
+   "clip_id": "2023-singapore-r-SAI-140828",
+   "utc": "2023-09-17T13:08:41.895000",
+   "lap": 38,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.8,
+    "track_temp_c": 35.5,
+    "rainfall": false,
+    "humidity_pct": 74.0,
+    "pressure_hpa": 1009.7,
+    "wind_speed_ms": 1.8,
+    "wind_direction_deg": 183,
+    "track_temp_delta_from_start_c": -2.8,
+    "grip_proxy_s": 100.847,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 18,
+    "stint_number": 2,
+    "laps_into_stint": 18,
+    "deg_slope_s_per_lap": -0.048,
+    "stint_vs_driver_median_laps": 11,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 1873.3,
+    "lap_length_m": 4884.8,
+    "pct_of_lap": 38.3,
+    "nearest_corner": 7,
+    "distance_to_corner_m": -111.1,
+    "sector": 2,
+    "speed_kph": 173.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 4,
+    "rpm": 11039,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 1,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": 0.0,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:07:10",
+      "lap": 37,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 20 (MAG) TIME 1:42.612 DELETED - TRACK LIMITS AT TURN 7 LAP 35 21:04:00",
+      "offset_s": -91.9
+     },
+     {
+      "utc": "2023-09-17T13:07:47",
+      "lap": 37,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 20 (MAG) TIME 1:48.130 DELETED - TRACK LIMITS AT TURN 2 LAP 36 21:05:18",
+      "offset_s": -54.9
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-PER-140907": {
+   "clip_id": "2023-singapore-r-PER-140907",
+   "utc": "2023-09-17T13:09:14.879000",
+   "lap": 38,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.8,
+    "track_temp_c": 35.5,
+    "rainfall": false,
+    "humidity_pct": 74.0,
+    "pressure_hpa": 1009.7,
+    "wind_speed_ms": 2.2,
+    "wind_direction_deg": 168,
+    "track_temp_delta_from_start_c": -2.8,
+    "grip_proxy_s": 100.847,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 38,
+    "stint_number": 1,
+    "laps_into_stint": 38,
+    "deg_slope_s_per_lap": -0.004,
+    "stint_vs_driver_median_laps": 8,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2286.6,
+    "lap_length_m": 4865.7,
+    "pct_of_lap": 47.0,
+    "nearest_corner": 9,
+    "distance_to_corner_m": -103.6,
+    "sector": 2,
+    "speed_kph": 181.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 4,
+    "rpm": 10916,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 7,
+    "gap_ahead_s": 8.966,
+    "gap_to_leader_s": 21.974,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:07:47",
+      "lap": 37,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 20 (MAG) TIME 1:48.130 DELETED - TRACK LIMITS AT TURN 2 LAP 36 21:05:18",
+      "offset_s": -87.9
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-RUS-140935": {
+   "clip_id": "2023-singapore-r-RUS-140935",
+   "utc": "2023-09-17T13:09:49.066000",
+   "lap": 39,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.8,
+    "track_temp_c": 35.5,
+    "rainfall": false,
+    "humidity_pct": 74.0,
+    "pressure_hpa": 1009.7,
+    "wind_speed_ms": 2.2,
+    "wind_direction_deg": 168,
+    "track_temp_delta_from_start_c": -2.8,
+    "grip_proxy_s": 101.209,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 19,
+    "stint_number": 2,
+    "laps_into_stint": 19,
+    "deg_slope_s_per_lap": -0.053,
+    "stint_vs_driver_median_laps": 4,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 95.2,
+    "lap_length_m": 4882.5,
+    "pct_of_lap": 2.0,
+    "nearest_corner": 1,
+    "distance_to_corner_m": 302.4,
+    "sector": 1,
+    "speed_kph": 277.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 7,
+    "rpm": 10260,
+    "drs_active": true,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 2,
+    "gap_ahead_s": 0.834,
+    "gap_to_leader_s": 0.834,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-ALO-141557": {
+   "clip_id": "2023-singapore-r-ALO-141557",
+   "utc": "2023-09-17T13:16:29.686000",
+   "lap": 42,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.8,
+    "track_temp_c": 35.3,
+    "rainfall": false,
+    "humidity_pct": 74.0,
+    "pressure_hpa": 1009.9,
+    "wind_speed_ms": 1.7,
+    "wind_direction_deg": 161,
+    "track_temp_delta_from_start_c": -3.0,
+    "grip_proxy_s": 99.913,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 22,
+    "stint_number": 2,
+    "laps_into_stint": 22,
+    "deg_slope_s_per_lap": -0.052,
+    "stint_vs_driver_median_laps": 4,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3588.8,
+    "lap_length_m": 4861.1,
+    "pct_of_lap": 73.8,
+    "nearest_corner": 14,
+    "distance_to_corner_m": -10.4,
+    "sector": 3,
+    "speed_kph": 112.0,
+    "throttle_pct": 63.0,
+    "brake": false,
+    "gear": 3,
+    "rpm": 8878,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 7,
+    "gap_ahead_s": 2.49,
+    "gap_to_leader_s": 27.403,
+    "track_status": "1",
+    "active_flags": [
+     "DOUBLE YELLOW",
+     "YELLOW"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:17:10",
+      "lap": 43,
+      "category": "Flag",
+      "flag": "DOUBLE YELLOW",
+      "scope": "Sector",
+      "message": "DOUBLE YELLOW IN TRACK SECTOR 2",
+      "offset_s": 40.3
+     },
+     {
+      "utc": "2023-09-17T13:17:12",
+      "lap": 43,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "DRS DISABLED IN ZONE 3",
+      "offset_s": 42.3
+     },
+     {
+      "utc": "2023-09-17T13:17:27",
+      "lap": 43,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 1",
+      "offset_s": 57.3
+     },
+     {
+      "utc": "2023-09-17T13:18:06",
+      "lap": 44,
+      "category": "SafetyCar",
+      "flag": null,
+      "scope": null,
+      "message": "VIRTUAL SAFETY CAR DEPLOYED",
+      "offset_s": 96.3
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-RUS-141635": {
+   "clip_id": "2023-singapore-r-RUS-141635",
+   "utc": "2023-09-17T13:17:04.201000",
+   "lap": 43,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.7,
+    "track_temp_c": 34.8,
+    "rainfall": false,
+    "humidity_pct": 74.0,
+    "pressure_hpa": 1009.9,
+    "wind_speed_ms": 2.4,
+    "wind_direction_deg": 183,
+    "track_temp_delta_from_start_c": -3.5,
+    "grip_proxy_s": 112.356,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 23,
+    "stint_number": 2,
+    "laps_into_stint": 23,
+    "deg_slope_s_per_lap": -0.053,
+    "stint_vs_driver_median_laps": 4,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 1991.0,
+    "lap_length_m": 4874.5,
+    "pct_of_lap": 40.8,
+    "nearest_corner": 8,
+    "distance_to_corner_m": 2.4,
+    "sector": 2,
+    "speed_kph": 69.0,
+    "throttle_pct": 20.0,
+    "brake": false,
+    "gear": 3,
+    "rpm": 5124,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 2,
+    "gap_ahead_s": 0.908,
+    "gap_to_leader_s": 0.908,
+    "track_status": "12",
+    "active_flags": [
+     "DOUBLE YELLOW",
+     "YELLOW"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:17:10",
+      "lap": 43,
+      "category": "Flag",
+      "flag": "DOUBLE YELLOW",
+      "scope": "Sector",
+      "message": "DOUBLE YELLOW IN TRACK SECTOR 2",
+      "offset_s": 5.8
+     },
+     {
+      "utc": "2023-09-17T13:17:12",
+      "lap": 43,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "DRS DISABLED IN ZONE 3",
+      "offset_s": 7.8
+     },
+     {
+      "utc": "2023-09-17T13:17:27",
+      "lap": 43,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 1",
+      "offset_s": 22.8
+     },
+     {
+      "utc": "2023-09-17T13:18:06",
+      "lap": 44,
+      "category": "SafetyCar",
+      "flag": null,
+      "scope": null,
+      "message": "VIRTUAL SAFETY CAR DEPLOYED",
+      "offset_s": 61.8
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-OCO-141721": {
+   "clip_id": "2023-singapore-r-OCO-141721",
+   "utc": "2023-09-17T13:17:38.498000",
+   "lap": 43,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.7,
+    "track_temp_c": 34.8,
+    "rainfall": false,
+    "humidity_pct": 74.0,
+    "pressure_hpa": 1009.9,
+    "wind_speed_ms": 2.4,
+    "wind_direction_deg": 183,
+    "track_temp_delta_from_start_c": -3.5,
+    "grip_proxy_s": 112.356,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 23,
+    "stint_number": 2,
+    "laps_into_stint": 23,
+    "deg_slope_s_per_lap": -0.082,
+    "stint_vs_driver_median_laps": 2,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": null,
+    "lap_length_m": 490.5,
+    "pct_of_lap": null,
+    "nearest_corner": null,
+    "distance_to_corner_m": null,
+    "sector": null,
+    "speed_kph": null,
+    "throttle_pct": null,
+    "brake": null,
+    "gear": null,
+    "rpm": null,
+    "drs_active": null,
+    "zone": null
+   },
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": "12",
+    "active_flags": [
+     "YELLOW",
+     "DOUBLE YELLOW"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:17:10",
+      "lap": 43,
+      "category": "Flag",
+      "flag": "DOUBLE YELLOW",
+      "scope": "Sector",
+      "message": "DOUBLE YELLOW IN TRACK SECTOR 2",
+      "offset_s": -28.5
+     },
+     {
+      "utc": "2023-09-17T13:17:12",
+      "lap": 43,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "DRS DISABLED IN ZONE 3",
+      "offset_s": -26.5
+     },
+     {
+      "utc": "2023-09-17T13:17:27",
+      "lap": 43,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 1",
+      "offset_s": -11.5
+     },
+     {
+      "utc": "2023-09-17T13:18:06",
+      "lap": 44,
+      "category": "SafetyCar",
+      "flag": null,
+      "scope": null,
+      "message": "VIRTUAL SAFETY CAR DEPLOYED",
+      "offset_s": 27.5
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-RUS-142007": {
+   "clip_id": "2023-singapore-r-RUS-142007",
+   "utc": "2023-09-17T13:20:25.105000",
+   "lap": 44,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.6,
+    "track_temp_c": 35.3,
+    "rainfall": false,
+    "humidity_pct": 74.0,
+    "pressure_hpa": 1009.9,
+    "wind_speed_ms": 2.2,
+    "wind_direction_deg": 175,
+    "track_temp_delta_from_start_c": -3.0,
+    "grip_proxy_s": 138.212,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 24,
+    "stint_number": 2,
+    "laps_into_stint": 24,
+    "deg_slope_s_per_lap": -0.053,
+    "stint_vs_driver_median_laps": 4,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 4755.8,
+    "lap_length_m": 4840.8,
+    "pct_of_lap": 98.2,
+    "nearest_corner": 19,
+    "distance_to_corner_m": -7.4,
+    "sector": 3,
+    "speed_kph": 59.0,
+    "throttle_pct": 76.0,
+    "brake": false,
+    "gear": 1,
+    "rpm": 6746,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 4,
+    "gap_ahead_s": 2.632,
+    "gap_to_leader_s": 7.225,
+    "track_status": "26",
+    "active_flags": [
+     "CLEAR"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:21:23",
+      "lap": 45,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Sector",
+      "message": "CLEAR IN TRACK SECTOR 1",
+      "offset_s": 57.9
+     },
+     {
+      "utc": "2023-09-17T13:21:26",
+      "lap": 45,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Sector",
+      "message": "CLEAR IN TRACK SECTOR 2",
+      "offset_s": 60.9
+     },
+     {
+      "utc": "2023-09-17T13:21:29",
+      "lap": 45,
+      "category": "SafetyCar",
+      "flag": null,
+      "scope": null,
+      "message": "VIRTUAL SAFETY CAR ENDING",
+      "offset_s": 63.9
+     },
+     {
+      "utc": "2023-09-17T13:21:44",
+      "lap": 45,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Track",
+      "message": "TRACK CLEAR",
+      "offset_s": 78.9
+     },
+     {
+      "utc": "2023-09-17T13:21:55",
+      "lap": 45,
+      "category": "Drs",
+      "flag": null,
+      "scope": null,
+      "message": "DRS ENABLED",
+      "offset_s": 89.9
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-HUL-142158": {
+   "clip_id": "2023-singapore-r-HUL-142158",
+   "utc": "2023-09-17T13:22:05.557000",
+   "lap": 45,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.6,
+    "track_temp_c": 35.1,
+    "rainfall": false,
+    "humidity_pct": 74.0,
+    "pressure_hpa": 1009.9,
+    "wind_speed_ms": 2.5,
+    "wind_direction_deg": 174,
+    "track_temp_delta_from_start_c": -3.2,
+    "grip_proxy_s": 111.238,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 25,
+    "stint_number": 2,
+    "laps_into_stint": 25,
+    "deg_slope_s_per_lap": 0.006,
+    "stint_vs_driver_median_laps": 11,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2240.8,
+    "lap_length_m": 4900.6,
+    "pct_of_lap": 45.7,
+    "nearest_corner": 9,
+    "distance_to_corner_m": -57.8,
+    "sector": 2,
+    "speed_kph": 129.0,
+    "throttle_pct": 64.0,
+    "brake": false,
+    "gear": 3,
+    "rpm": 9881,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 9,
+    "gap_ahead_s": 2.233,
+    "gap_to_leader_s": 35.941,
+    "track_status": "671",
+    "active_flags": [
+     "CLEAR"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:21:23",
+      "lap": 45,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Sector",
+      "message": "CLEAR IN TRACK SECTOR 1",
+      "offset_s": -42.6
+     },
+     {
+      "utc": "2023-09-17T13:21:26",
+      "lap": 45,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Sector",
+      "message": "CLEAR IN TRACK SECTOR 2",
+      "offset_s": -39.6
+     },
+     {
+      "utc": "2023-09-17T13:21:29",
+      "lap": 45,
+      "category": "SafetyCar",
+      "flag": null,
+      "scope": null,
+      "message": "VIRTUAL SAFETY CAR ENDING",
+      "offset_s": -36.6
+     },
+     {
+      "utc": "2023-09-17T13:21:44",
+      "lap": 45,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Track",
+      "message": "TRACK CLEAR",
+      "offset_s": -21.6
+     },
+     {
+      "utc": "2023-09-17T13:21:55",
+      "lap": 45,
+      "category": "Drs",
+      "flag": null,
+      "scope": null,
+      "message": "DRS ENABLED",
+      "offset_s": -10.6
+     },
+     {
+      "utc": "2023-09-17T13:22:57",
+      "lap": 46,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 7 INCIDENT INVOLVING CARS 10 (GAS) AND 20 (MAG) REVIEWED NO FURTHER INVESTIGATION - FORCING ANOTHER DRIVER OFF THE TRACK",
+      "offset_s": 51.4
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-LEC-142213": {
+   "clip_id": "2023-singapore-r-LEC-142213",
+   "utc": "2023-09-17T13:22:40.119000",
+   "lap": 46,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.6,
+    "track_temp_c": 35.1,
+    "rainfall": false,
+    "humidity_pct": 74.0,
+    "pressure_hpa": 1009.9,
+    "wind_speed_ms": 2.5,
+    "wind_direction_deg": 174,
+    "track_temp_delta_from_start_c": -3.2,
+    "grip_proxy_s": 98.277,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 26,
+    "stint_number": 2,
+    "laps_into_stint": 26,
+    "deg_slope_s_per_lap": -0.001,
+    "stint_vs_driver_median_laps": 11,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 590.9,
+    "lap_length_m": 4878.2,
+    "pct_of_lap": 12.1,
+    "nearest_corner": 3,
+    "distance_to_corner_m": -54.6,
+    "sector": 1,
+    "speed_kph": 106.0,
+    "throttle_pct": 64.0,
+    "brake": false,
+    "gear": 3,
+    "rpm": 8425,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 3,
+    "gap_ahead_s": 2.967,
+    "gap_to_leader_s": 4.477,
+    "track_status": "1",
+    "active_flags": [
+     "CLEAR"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:21:23",
+      "lap": 45,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Sector",
+      "message": "CLEAR IN TRACK SECTOR 1",
+      "offset_s": -77.1
+     },
+     {
+      "utc": "2023-09-17T13:21:26",
+      "lap": 45,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Sector",
+      "message": "CLEAR IN TRACK SECTOR 2",
+      "offset_s": -74.1
+     },
+     {
+      "utc": "2023-09-17T13:21:29",
+      "lap": 45,
+      "category": "SafetyCar",
+      "flag": null,
+      "scope": null,
+      "message": "VIRTUAL SAFETY CAR ENDING",
+      "offset_s": -71.1
+     },
+     {
+      "utc": "2023-09-17T13:21:44",
+      "lap": 45,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Track",
+      "message": "TRACK CLEAR",
+      "offset_s": -56.1
+     },
+     {
+      "utc": "2023-09-17T13:21:55",
+      "lap": 45,
+      "category": "Drs",
+      "flag": null,
+      "scope": null,
+      "message": "DRS ENABLED",
+      "offset_s": -45.1
+     },
+     {
+      "utc": "2023-09-17T13:22:57",
+      "lap": 46,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 7 INCIDENT INVOLVING CARS 10 (GAS) AND 20 (MAG) REVIEWED NO FURTHER INVESTIGATION - FORCING ANOTHER DRIVER OFF THE TRACK",
+      "offset_s": 16.9
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-SAI-142659": {
+   "clip_id": "2023-singapore-r-SAI-142659",
+   "utc": "2023-09-17T13:27:07.085000",
+   "lap": 48,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.6,
+    "track_temp_c": 34.8,
+    "rainfall": false,
+    "humidity_pct": 75.0,
+    "pressure_hpa": 1009.9,
+    "wind_speed_ms": 1.7,
+    "wind_direction_deg": 167,
+    "track_temp_delta_from_start_c": -3.5,
+    "grip_proxy_s": 98.496,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 28,
+    "stint_number": 2,
+    "laps_into_stint": 28,
+    "deg_slope_s_per_lap": -0.048,
+    "stint_vs_driver_median_laps": 11,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 4303.2,
+    "lap_length_m": 4882.1,
+    "pct_of_lap": 88.1,
+    "nearest_corner": 16,
+    "distance_to_corner_m": -10.5,
+    "sector": 3,
+    "speed_kph": 102.0,
+    "throttle_pct": 38.0,
+    "brake": false,
+    "gear": 4,
+    "rpm": 6558,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 1,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": 0.0,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:25:29",
+      "lap": 47,
+      "category": "CarEvent",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 14 (ALO) OFF TRACK AND CONTINUED AT TURN 14",
+      "offset_s": -98.1
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-BOT-143709": {
+   "clip_id": "2023-singapore-r-BOT-143709",
+   "utc": "2023-09-17T13:37:40.126000",
+   "lap": 52,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.6,
+    "track_temp_c": 34.6,
+    "rainfall": false,
+    "humidity_pct": 76.0,
+    "pressure_hpa": 1009.9,
+    "wind_speed_ms": 1.3,
+    "wind_direction_deg": 174,
+    "track_temp_delta_from_start_c": -3.7,
+    "grip_proxy_s": 98.774,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "MEDIUM",
+    "tyre_age_laps": 12,
+    "stint_number": 2,
+    "laps_into_stint": 12,
+    "deg_slope_s_per_lap": -0.174,
+    "stint_vs_driver_median_laps": -14,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": null,
+    "lap_length_m": 3639.8,
+    "pct_of_lap": null,
+    "nearest_corner": null,
+    "distance_to_corner_m": null,
+    "sector": null,
+    "speed_kph": null,
+    "throttle_pct": null,
+    "brake": null,
+    "gear": null,
+    "rpm": null,
+    "drs_active": null,
+    "zone": null
+   },
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": "12",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:37:49",
+      "lap": 55,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:43.808 DELETED - TRACK LIMITS AT TURN 7 LAP 53 21:35:18",
+      "offset_s": 8.9
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-HAM-143747": {
+   "clip_id": "2023-singapore-r-HAM-143747",
+   "utc": "2023-09-17T13:38:14.031000",
+   "lap": 55,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.5,
+    "track_temp_c": 34.8,
+    "rainfall": false,
+    "humidity_pct": 76.0,
+    "pressure_hpa": 1010.0,
+    "wind_speed_ms": 1.8,
+    "wind_direction_deg": 157,
+    "track_temp_delta_from_start_c": -3.5,
+    "grip_proxy_s": 98.517,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "MEDIUM",
+    "tyre_age_laps": 11,
+    "stint_number": 3,
+    "laps_into_stint": 11,
+    "deg_slope_s_per_lap": 0.187,
+    "stint_vs_driver_median_laps": -2,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2854.7,
+    "lap_length_m": 4864.8,
+    "pct_of_lap": 58.7,
+    "nearest_corner": 12,
+    "distance_to_corner_m": -1.5,
+    "sector": 2,
+    "speed_kph": 175.0,
+    "throttle_pct": 91.0,
+    "brake": false,
+    "gear": 4,
+    "rpm": 11276,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 4,
+    "gap_ahead_s": 1.9,
+    "gap_to_leader_s": 6.987,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:37:49",
+      "lap": 55,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:43.808 DELETED - TRACK LIMITS AT TURN 7 LAP 53 21:35:18",
+      "offset_s": -25.0
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-LEC-143958": {
+   "clip_id": "2023-singapore-r-LEC-143958",
+   "utc": "2023-09-17T13:40:28.154000",
+   "lap": 56,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.5,
+    "track_temp_c": 34.8,
+    "rainfall": false,
+    "humidity_pct": 76.0,
+    "pressure_hpa": 1010.0,
+    "wind_speed_ms": 1.7,
+    "wind_direction_deg": 177,
+    "track_temp_delta_from_start_c": -3.5,
+    "grip_proxy_s": 98.543,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 36,
+    "stint_number": 2,
+    "laps_into_stint": 36,
+    "deg_slope_s_per_lap": -0.001,
+    "stint_vs_driver_median_laps": 11,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 4249.7,
+    "lap_length_m": 4874.8,
+    "pct_of_lap": 87.2,
+    "nearest_corner": 16,
+    "distance_to_corner_m": 43.1,
+    "sector": 3,
+    "speed_kph": 138.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 5,
+    "rpm": 10044,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 5,
+    "gap_ahead_s": 10.923,
+    "gap_to_leader_s": 15.801,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-SAI-144032": {
+   "clip_id": "2023-singapore-r-SAI-144032",
+   "utc": "2023-09-17T13:41:03.247000",
+   "lap": 57,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.6,
+    "track_temp_c": 34.8,
+    "rainfall": false,
+    "humidity_pct": 76.0,
+    "pressure_hpa": 1010.0,
+    "wind_speed_ms": 2.0,
+    "wind_direction_deg": 179,
+    "track_temp_delta_from_start_c": -3.5,
+    "grip_proxy_s": 99.235,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 37,
+    "stint_number": 2,
+    "laps_into_stint": 37,
+    "deg_slope_s_per_lap": -0.048,
+    "stint_vs_driver_median_laps": 11,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 1983.8,
+    "lap_length_m": 4876.2,
+    "pct_of_lap": 40.7,
+    "nearest_corner": 8,
+    "distance_to_corner_m": 9.6,
+    "sector": 2,
+    "speed_kph": 69.0,
+    "throttle_pct": 11.0,
+    "brake": false,
+    "gear": 2,
+    "rpm": 6114,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 1,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": 0.0,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-NOR-144218": {
+   "clip_id": "2023-singapore-r-NOR-144218",
+   "utc": "2023-09-17T13:42:43.543000",
+   "lap": 58,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.6,
+    "track_temp_c": 34.8,
+    "rainfall": false,
+    "humidity_pct": 76.0,
+    "pressure_hpa": 1010.0,
+    "wind_speed_ms": 1.7,
+    "wind_direction_deg": 173,
+    "track_temp_delta_from_start_c": -3.5,
+    "grip_proxy_s": 99.94,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 38,
+    "stint_number": 2,
+    "laps_into_stint": 38,
+    "deg_slope_s_per_lap": -0.054,
+    "stint_vs_driver_median_laps": 11,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2005.1,
+    "lap_length_m": 4873.0,
+    "pct_of_lap": 41.1,
+    "nearest_corner": 8,
+    "distance_to_corner_m": -11.7,
+    "sector": 2,
+    "speed_kph": 75.0,
+    "throttle_pct": 27.0,
+    "brake": false,
+    "gear": 2,
+    "rpm": 7223,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 2,
+    "gap_ahead_s": 0.645,
+    "gap_to_leader_s": 0.645,
+    "track_status": "1",
+    "active_flags": [
+     "YELLOW",
+     "DOUBLE YELLOW",
+     "CLEAR"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:44:06",
+      "lap": 59,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 11",
+      "offset_s": 82.5
+     },
+     {
+      "utc": "2023-09-17T13:44:09",
+      "lap": 59,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "DRS DISABLED IN ZONE 2",
+      "offset_s": 85.5
+     },
+     {
+      "utc": "2023-09-17T13:44:15",
+      "lap": 59,
+      "category": "Flag",
+      "flag": "DOUBLE YELLOW",
+      "scope": "Sector",
+      "message": "DOUBLE YELLOW IN TRACK SECTOR 11",
+      "offset_s": 91.5
+     },
+     {
+      "utc": "2023-09-17T13:44:17",
+      "lap": 59,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 10",
+      "offset_s": 93.5
+     },
+     {
+      "utc": "2023-09-17T13:44:22",
+      "lap": 59,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Sector",
+      "message": "CLEAR IN TRACK SECTOR 11",
+      "offset_s": 98.5
+     },
+     {
+      "utc": "2023-09-17T13:44:22",
+      "lap": 59,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "DRS ENABLED IN ZONE 2",
+      "offset_s": 98.5
+     },
+     {
+      "utc": "2023-09-17T13:44:27",
+      "lap": 59,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Sector",
+      "message": "CLEAR IN TRACK SECTOR 10",
+      "offset_s": 103.5
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-SAI-144255": {
+   "clip_id": "2023-singapore-r-SAI-144255",
+   "utc": "2023-09-17T13:43:18.652000",
+   "lap": 58,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.5,
+    "track_temp_c": 34.9,
+    "rainfall": false,
+    "humidity_pct": 76.0,
+    "pressure_hpa": 1010.2,
+    "wind_speed_ms": 2.0,
+    "wind_direction_deg": 160,
+    "track_temp_delta_from_start_c": -3.4,
+    "grip_proxy_s": 99.94,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 38,
+    "stint_number": 2,
+    "laps_into_stint": 38,
+    "deg_slope_s_per_lap": -0.048,
+    "stint_vs_driver_median_laps": 11,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3541.3,
+    "lap_length_m": 4877.8,
+    "pct_of_lap": 72.6,
+    "nearest_corner": 14,
+    "distance_to_corner_m": 37.1,
+    "sector": 3,
+    "speed_kph": 80.0,
+    "throttle_pct": 0.0,
+    "brake": false,
+    "gear": 3,
+    "rpm": 5958,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 1,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": 0.0,
+    "track_status": "1",
+    "active_flags": [
+     "YELLOW",
+     "DOUBLE YELLOW",
+     "CLEAR"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:44:06",
+      "lap": 59,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 11",
+      "offset_s": 47.3
+     },
+     {
+      "utc": "2023-09-17T13:44:09",
+      "lap": 59,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "DRS DISABLED IN ZONE 2",
+      "offset_s": 50.3
+     },
+     {
+      "utc": "2023-09-17T13:44:15",
+      "lap": 59,
+      "category": "Flag",
+      "flag": "DOUBLE YELLOW",
+      "scope": "Sector",
+      "message": "DOUBLE YELLOW IN TRACK SECTOR 11",
+      "offset_s": 56.3
+     },
+     {
+      "utc": "2023-09-17T13:44:17",
+      "lap": 59,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 10",
+      "offset_s": 58.3
+     },
+     {
+      "utc": "2023-09-17T13:44:22",
+      "lap": 59,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Sector",
+      "message": "CLEAR IN TRACK SECTOR 11",
+      "offset_s": 63.3
+     },
+     {
+      "utc": "2023-09-17T13:44:22",
+      "lap": 59,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "DRS ENABLED IN ZONE 2",
+      "offset_s": 63.3
+     },
+     {
+      "utc": "2023-09-17T13:44:27",
+      "lap": 59,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Sector",
+      "message": "CLEAR IN TRACK SECTOR 10",
+      "offset_s": 68.3
+     },
+     {
+      "utc": "2023-09-17T13:45:13",
+      "lap": 59,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "TURN 13 INCIDENT INVOLVING CARS 11 (PER) AND 23 (ALB) NOTED - CAUSING A COLLISION",
+      "offset_s": 114.3
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-LEC-144551": {
+   "clip_id": "2023-singapore-r-LEC-144551",
+   "utc": "2023-09-17T13:46:04.306000",
+   "lap": 60,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.5,
+    "track_temp_c": 35.1,
+    "rainfall": false,
+    "humidity_pct": 76.0,
+    "pressure_hpa": 1010.2,
+    "wind_speed_ms": 1.8,
+    "wind_direction_deg": 191,
+    "track_temp_delta_from_start_c": -3.2,
+    "grip_proxy_s": 99.681,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 40,
+    "stint_number": 2,
+    "laps_into_stint": 40,
+    "deg_slope_s_per_lap": -0.001,
+    "stint_vs_driver_median_laps": 11,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 1111.3,
+    "lap_length_m": 4869.9,
+    "pct_of_lap": 22.8,
+    "nearest_corner": 5,
+    "distance_to_corner_m": -139.4,
+    "sector": 1,
+    "speed_kph": 221.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 5,
+    "rpm": 11633,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 5,
+    "gap_ahead_s": 16.806,
+    "gap_to_leader_s": 18.853,
+    "track_status": "1",
+    "active_flags": [
+     "CLEAR",
+     "YELLOW",
+     "DOUBLE YELLOW"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:44:06",
+      "lap": 59,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 11",
+      "offset_s": -118.3
+     },
+     {
+      "utc": "2023-09-17T13:44:09",
+      "lap": 59,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "DRS DISABLED IN ZONE 2",
+      "offset_s": -115.3
+     },
+     {
+      "utc": "2023-09-17T13:44:15",
+      "lap": 59,
+      "category": "Flag",
+      "flag": "DOUBLE YELLOW",
+      "scope": "Sector",
+      "message": "DOUBLE YELLOW IN TRACK SECTOR 11",
+      "offset_s": -109.3
+     },
+     {
+      "utc": "2023-09-17T13:44:17",
+      "lap": 59,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 10",
+      "offset_s": -107.3
+     },
+     {
+      "utc": "2023-09-17T13:44:22",
+      "lap": 59,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Sector",
+      "message": "CLEAR IN TRACK SECTOR 11",
+      "offset_s": -102.3
+     },
+     {
+      "utc": "2023-09-17T13:44:22",
+      "lap": 59,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "DRS ENABLED IN ZONE 2",
+      "offset_s": -102.3
+     },
+     {
+      "utc": "2023-09-17T13:44:27",
+      "lap": 59,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Sector",
+      "message": "CLEAR IN TRACK SECTOR 10",
+      "offset_s": -97.3
+     },
+     {
+      "utc": "2023-09-17T13:45:13",
+      "lap": 59,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "TURN 13 INCIDENT INVOLVING CARS 11 (PER) AND 23 (ALB) NOTED - CAUSING A COLLISION",
+      "offset_s": -51.3
+     },
+     {
+      "utc": "2023-09-17T13:45:38",
+      "lap": 60,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 13 INCIDENT INVOLVING CARS 11 (PER) AND 23 (ALB) WILL BE INVESTIGATED AFTER THE RACE - CAUSING A COLLISION",
+      "offset_s": -26.3
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-HAM-144803": {
+   "clip_id": "2023-singapore-r-HAM-144803",
+   "utc": "2023-09-17T13:48:19.492000",
+   "lap": 61,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.5,
+    "track_temp_c": 34.9,
+    "rainfall": false,
+    "humidity_pct": 76.0,
+    "pressure_hpa": 1010.0,
+    "wind_speed_ms": 1.7,
+    "wind_direction_deg": 171,
+    "track_temp_delta_from_start_c": -3.4,
+    "grip_proxy_s": 99.563,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "MEDIUM",
+    "tyre_age_laps": 17,
+    "stint_number": 3,
+    "laps_into_stint": 17,
+    "deg_slope_s_per_lap": 0.187,
+    "stint_vs_driver_median_laps": -2,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3543.5,
+    "lap_length_m": 4867.5,
+    "pct_of_lap": 72.8,
+    "nearest_corner": 14,
+    "distance_to_corner_m": 34.9,
+    "sector": 3,
+    "speed_kph": 74.0,
+    "throttle_pct": 7.0,
+    "brake": false,
+    "gear": 3,
+    "rpm": 5846,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 4,
+    "gap_ahead_s": 0.415,
+    "gap_to_leader_s": 1.851,
+    "track_status": "1",
+    "active_flags": [
+     "YELLOW",
+     "DOUBLE YELLOW"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:48:42",
+      "lap": 61,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "TURN 7 INCIDENT INVOLVING CARS 11 (PER) AND 40 (LAW) NOTED - CAUSING A COLLISION",
+      "offset_s": 22.5
+     },
+     {
+      "utc": "2023-09-17T13:49:08",
+      "lap": 62,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 11 (PER) TIME 1:39.147 DELETED - TRACK LIMITS AT TURN 7 LAP 60 21:46:56",
+      "offset_s": 48.5
+     },
+     {
+      "utc": "2023-09-17T13:49:38",
+      "lap": 62,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 9",
+      "offset_s": 78.5
+     },
+     {
+      "utc": "2023-09-17T13:49:46",
+      "lap": 62,
+      "category": "Flag",
+      "flag": "DOUBLE YELLOW",
+      "scope": "Sector",
+      "message": "DOUBLE YELLOW IN TRACK SECTOR 9",
+      "offset_s": 86.5
+     },
+     {
+      "utc": "2023-09-17T13:49:49",
+      "lap": 62,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 8",
+      "offset_s": 89.5
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-RUS-145001": {
+   "clip_id": "2023-singapore-r-RUS-145001",
+   "utc": "2023-09-17T13:50:34.897000",
+   "lap": 62,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.4,
+    "track_temp_c": 34.8,
+    "rainfall": false,
+    "humidity_pct": 76.0,
+    "pressure_hpa": 1010.0,
+    "wind_speed_ms": 2.0,
+    "wind_direction_deg": 176,
+    "track_temp_delta_from_start_c": -3.5,
+    "grip_proxy_s": 100.946,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "MEDIUM",
+    "tyre_age_laps": 18,
+    "stint_number": 3,
+    "laps_into_stint": 18,
+    "deg_slope_s_per_lap": 0.189,
+    "stint_vs_driver_median_laps": -2,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": null,
+    "lap_length_m": 2613.6,
+    "pct_of_lap": null,
+    "nearest_corner": null,
+    "distance_to_corner_m": null,
+    "sector": null,
+    "speed_kph": null,
+    "throttle_pct": null,
+    "brake": null,
+    "gear": null,
+    "rpm": null,
+    "drs_active": null,
+    "zone": null
+   },
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": "1",
+    "active_flags": [
+     "CHEQUERED",
+     "YELLOW",
+     "DOUBLE YELLOW"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:48:42",
+      "lap": 61,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "TURN 7 INCIDENT INVOLVING CARS 11 (PER) AND 40 (LAW) NOTED - CAUSING A COLLISION",
+      "offset_s": -112.9
+     },
+     {
+      "utc": "2023-09-17T13:49:08",
+      "lap": 62,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 11 (PER) TIME 1:39.147 DELETED - TRACK LIMITS AT TURN 7 LAP 60 21:46:56",
+      "offset_s": -86.9
+     },
+     {
+      "utc": "2023-09-17T13:49:38",
+      "lap": 62,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 9",
+      "offset_s": -56.9
+     },
+     {
+      "utc": "2023-09-17T13:49:46",
+      "lap": 62,
+      "category": "Flag",
+      "flag": "DOUBLE YELLOW",
+      "scope": "Sector",
+      "message": "DOUBLE YELLOW IN TRACK SECTOR 9",
+      "offset_s": -48.9
+     },
+     {
+      "utc": "2023-09-17T13:49:49",
+      "lap": 62,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 8",
+      "offset_s": -45.9
+     },
+     {
+      "utc": "2023-09-17T13:50:26",
+      "lap": 62,
+      "category": "Flag",
+      "flag": "CHEQUERED",
+      "scope": "Track",
+      "message": "CHEQUERED FLAG",
+      "offset_s": -8.9
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-SAI-145110": {
+   "clip_id": "2023-singapore-r-SAI-145110",
+   "utc": "2023-09-17T13:51:40.214000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.5,
+    "track_temp_c": 34.9,
+    "rainfall": false,
+    "humidity_pct": 76.0,
+    "pressure_hpa": 1010.0,
+    "wind_speed_ms": 2.5,
+    "wind_direction_deg": 184,
+    "track_temp_delta_from_start_c": -3.4,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "CHEQUERED",
+     "YELLOW",
+     "DOUBLE YELLOW"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:49:46",
+      "lap": 62,
+      "category": "Flag",
+      "flag": "DOUBLE YELLOW",
+      "scope": "Sector",
+      "message": "DOUBLE YELLOW IN TRACK SECTOR 9",
+      "offset_s": -114.2
+     },
+     {
+      "utc": "2023-09-17T13:49:49",
+      "lap": 62,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 8",
+      "offset_s": -111.2
+     },
+     {
+      "utc": "2023-09-17T13:50:26",
+      "lap": 62,
+      "category": "Flag",
+      "flag": "CHEQUERED",
+      "scope": "Track",
+      "message": "CHEQUERED FLAG",
+      "offset_s": -74.2
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-NOR-145200": {
+   "clip_id": "2023-singapore-r-NOR-145200",
+   "utc": "2023-09-17T13:52:47.099000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.5,
+    "track_temp_c": 35.0,
+    "rainfall": false,
+    "humidity_pct": 76.0,
+    "pressure_hpa": 1010.0,
+    "wind_speed_ms": 2.0,
+    "wind_direction_deg": 170,
+    "track_temp_delta_from_start_c": -3.3,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-HAM-145306": {
+   "clip_id": "2023-singapore-r-HAM-145306",
+   "utc": "2023-09-17T13:53:21.161000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.5,
+    "track_temp_c": 35.0,
+    "rainfall": false,
+    "humidity_pct": 76.0,
+    "pressure_hpa": 1010.2,
+    "wind_speed_ms": 1.7,
+    "wind_direction_deg": 188,
+    "track_temp_delta_from_start_c": -3.3,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-NOR-145420": {
+   "clip_id": "2023-singapore-r-NOR-145420",
+   "utc": "2023-09-17T13:55:03.003000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.5,
+    "track_temp_c": 35.0,
+    "rainfall": false,
+    "humidity_pct": 76.0,
+    "pressure_hpa": 1010.2,
+    "wind_speed_ms": 1.5,
+    "wind_direction_deg": 0,
+    "track_temp_delta_from_start_c": -3.3,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "YELLOW"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:57:01",
+      "lap": 62,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 7",
+      "offset_s": 118.0
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-SAI-145442": {
+   "clip_id": "2023-singapore-r-SAI-145442",
+   "utc": "2023-09-17T13:55:03.287000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.5,
+    "track_temp_c": 35.0,
+    "rainfall": false,
+    "humidity_pct": 76.0,
+    "pressure_hpa": 1010.2,
+    "wind_speed_ms": 1.5,
+    "wind_direction_deg": 0,
+    "track_temp_delta_from_start_c": -3.3,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "YELLOW"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:57:01",
+      "lap": 62,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 7",
+      "offset_s": 117.7
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-LEC-145547": {
+   "clip_id": "2023-singapore-r-LEC-145547",
+   "utc": "2023-09-17T13:56:10.846000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.4,
+    "track_temp_c": 35.0,
+    "rainfall": false,
+    "humidity_pct": 77.0,
+    "pressure_hpa": 1010.2,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 171,
+    "track_temp_delta_from_start_c": -3.3,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "YELLOW"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:57:01",
+      "lap": 62,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 7",
+      "offset_s": 50.2
+     },
+     {
+      "utc": "2023-09-17T13:58:01",
+      "lap": 62,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 7 INCIDENT INVOLVING CARS 11 (PER) AND 40 (LAW) REVIEWED NO FURTHER INVESTIGATION - CAUSING A COLLISION",
+      "offset_s": 110.2
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-HAM-145611": {
+   "clip_id": "2023-singapore-r-HAM-145611",
+   "utc": "2023-09-17T13:56:45.955000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.4,
+    "track_temp_c": 35.0,
+    "rainfall": false,
+    "humidity_pct": 77.0,
+    "pressure_hpa": 1010.2,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 171,
+    "track_temp_delta_from_start_c": -3.3,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "YELLOW"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:57:01",
+      "lap": 62,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 7",
+      "offset_s": 15.0
+     },
+     {
+      "utc": "2023-09-17T13:58:01",
+      "lap": 62,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 7 INCIDENT INVOLVING CARS 11 (PER) AND 40 (LAW) REVIEWED NO FURTHER INVESTIGATION - CAUSING A COLLISION",
+      "offset_s": 75.0
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-RUS-145729": {
+   "clip_id": "2023-singapore-r-RUS-145729",
+   "utc": "2023-09-17T13:58:01.642000",
+   "lap": 62,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.4,
+    "track_temp_c": 35.0,
+    "rainfall": false,
+    "humidity_pct": 77.0,
+    "pressure_hpa": 1010.2,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 171,
+    "track_temp_delta_from_start_c": -3.3,
+    "grip_proxy_s": 100.946,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "MEDIUM",
+    "tyre_age_laps": 18,
+    "stint_number": 3,
+    "laps_into_stint": 18,
+    "deg_slope_s_per_lap": 0.189,
+    "stint_vs_driver_median_laps": -2,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": null,
+    "lap_length_m": 2613.6,
+    "pct_of_lap": null,
+    "nearest_corner": null,
+    "distance_to_corner_m": null,
+    "sector": null,
+    "speed_kph": null,
+    "throttle_pct": null,
+    "brake": null,
+    "gear": null,
+    "rpm": null,
+    "drs_active": null,
+    "zone": null
+   },
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": "1",
+    "active_flags": [
+     "YELLOW"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:57:01",
+      "lap": 62,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 7",
+      "offset_s": -60.6
+     },
+     {
+      "utc": "2023-09-17T13:58:01",
+      "lap": 62,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 7 INCIDENT INVOLVING CARS 11 (PER) AND 40 (LAW) REVIEWED NO FURTHER INVESTIGATION - CAUSING A COLLISION",
+      "offset_s": -0.6
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-VER-145743": {
+   "clip_id": "2023-singapore-r-VER-145743",
+   "utc": "2023-09-17T13:58:01.642000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.4,
+    "track_temp_c": 35.0,
+    "rainfall": false,
+    "humidity_pct": 77.0,
+    "pressure_hpa": 1010.2,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 171,
+    "track_temp_delta_from_start_c": -3.3,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "YELLOW"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:57:01",
+      "lap": 62,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 7",
+      "offset_s": -60.6
+     },
+     {
+      "utc": "2023-09-17T13:58:01",
+      "lap": 62,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 7 INCIDENT INVOLVING CARS 11 (PER) AND 40 (LAW) REVIEWED NO FURTHER INVESTIGATION - CAUSING A COLLISION",
+      "offset_s": -0.6
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-PIA-145840": {
+   "clip_id": "2023-singapore-r-PIA-145840",
+   "utc": "2023-09-17T13:58:01.642000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.4,
+    "track_temp_c": 35.0,
+    "rainfall": false,
+    "humidity_pct": 77.0,
+    "pressure_hpa": 1010.2,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 171,
+    "track_temp_delta_from_start_c": -3.3,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "YELLOW"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:57:01",
+      "lap": 62,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 7",
+      "offset_s": -60.6
+     },
+     {
+      "utc": "2023-09-17T13:58:01",
+      "lap": 62,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 7 INCIDENT INVOLVING CARS 11 (PER) AND 40 (LAW) REVIEWED NO FURTHER INVESTIGATION - CAUSING A COLLISION",
+      "offset_s": -0.6
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-GAS-145936": {
+   "clip_id": "2023-singapore-r-GAS-145936",
+   "utc": "2023-09-17T13:58:01.642000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.4,
+    "track_temp_c": 35.0,
+    "rainfall": false,
+    "humidity_pct": 77.0,
+    "pressure_hpa": 1010.2,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 171,
+    "track_temp_delta_from_start_c": -3.3,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "YELLOW"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:57:01",
+      "lap": 62,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 7",
+      "offset_s": -60.6
+     },
+     {
+      "utc": "2023-09-17T13:58:01",
+      "lap": 62,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 7 INCIDENT INVOLVING CARS 11 (PER) AND 40 (LAW) REVIEWED NO FURTHER INVESTIGATION - CAUSING A COLLISION",
+      "offset_s": -0.6
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-MAG-150041": {
+   "clip_id": "2023-singapore-r-MAG-150041",
+   "utc": "2023-09-17T13:58:01.642000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.4,
+    "track_temp_c": 35.0,
+    "rainfall": false,
+    "humidity_pct": 77.0,
+    "pressure_hpa": 1010.2,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 171,
+    "track_temp_delta_from_start_c": -3.3,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "YELLOW"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:57:01",
+      "lap": 62,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 7",
+      "offset_s": -60.6
+     },
+     {
+      "utc": "2023-09-17T13:58:01",
+      "lap": 62,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 7 INCIDENT INVOLVING CARS 11 (PER) AND 40 (LAW) REVIEWED NO FURTHER INVESTIGATION - CAUSING A COLLISION",
+      "offset_s": -0.6
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-ZHO-150120": {
+   "clip_id": "2023-singapore-r-ZHO-150120",
+   "utc": "2023-09-17T13:58:01.642000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.4,
+    "track_temp_c": 35.0,
+    "rainfall": false,
+    "humidity_pct": 77.0,
+    "pressure_hpa": 1010.2,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 171,
+    "track_temp_delta_from_start_c": -3.3,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "YELLOW"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:57:01",
+      "lap": 62,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 7",
+      "offset_s": -60.6
+     },
+     {
+      "utc": "2023-09-17T13:58:01",
+      "lap": 62,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 7 INCIDENT INVOLVING CARS 11 (PER) AND 40 (LAW) REVIEWED NO FURTHER INVESTIGATION - CAUSING A COLLISION",
+      "offset_s": -0.6
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-HUL-150135": {
+   "clip_id": "2023-singapore-r-HUL-150135",
+   "utc": "2023-09-17T13:58:01.642000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.4,
+    "track_temp_c": 35.0,
+    "rainfall": false,
+    "humidity_pct": 77.0,
+    "pressure_hpa": 1010.2,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 171,
+    "track_temp_delta_from_start_c": -3.3,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "YELLOW"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:57:01",
+      "lap": 62,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 7",
+      "offset_s": -60.6
+     },
+     {
+      "utc": "2023-09-17T13:58:01",
+      "lap": 62,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 7 INCIDENT INVOLVING CARS 11 (PER) AND 40 (LAW) REVIEWED NO FURTHER INVESTIGATION - CAUSING A COLLISION",
+      "offset_s": -0.6
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-PER-150344": {
+   "clip_id": "2023-singapore-r-PER-150344",
+   "utc": "2023-09-17T13:58:01.642000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.4,
+    "track_temp_c": 35.0,
+    "rainfall": false,
+    "humidity_pct": 77.0,
+    "pressure_hpa": 1010.2,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 171,
+    "track_temp_delta_from_start_c": -3.3,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "YELLOW"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:57:01",
+      "lap": 62,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 7",
+      "offset_s": -60.6
+     },
+     {
+      "utc": "2023-09-17T13:58:01",
+      "lap": 62,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 7 INCIDENT INVOLVING CARS 11 (PER) AND 40 (LAW) REVIEWED NO FURTHER INVESTIGATION - CAUSING A COLLISION",
+      "offset_s": -0.6
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-ALB-150442": {
+   "clip_id": "2023-singapore-r-ALB-150442",
+   "utc": "2023-09-17T13:58:01.642000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.4,
+    "track_temp_c": 35.0,
+    "rainfall": false,
+    "humidity_pct": 77.0,
+    "pressure_hpa": 1010.2,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 171,
+    "track_temp_delta_from_start_c": -3.3,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "YELLOW"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:57:01",
+      "lap": 62,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 7",
+      "offset_s": -60.6
+     },
+     {
+      "utc": "2023-09-17T13:58:01",
+      "lap": 62,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 7 INCIDENT INVOLVING CARS 11 (PER) AND 40 (LAW) REVIEWED NO FURTHER INVESTIGATION - CAUSING A COLLISION",
+      "offset_s": -0.6
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-SAR-150657": {
+   "clip_id": "2023-singapore-r-SAR-150657",
+   "utc": "2023-09-17T13:58:01.642000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.4,
+    "track_temp_c": 35.0,
+    "rainfall": false,
+    "humidity_pct": 77.0,
+    "pressure_hpa": 1010.2,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 171,
+    "track_temp_delta_from_start_c": -3.3,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "YELLOW"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:57:01",
+      "lap": 62,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 7",
+      "offset_s": -60.6
+     },
+     {
+      "utc": "2023-09-17T13:58:01",
+      "lap": 62,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 7 INCIDENT INVOLVING CARS 11 (PER) AND 40 (LAW) REVIEWED NO FURTHER INVESTIGATION - CAUSING A COLLISION",
+      "offset_s": -0.6
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-singapore-r-LAW-150631": {
+   "clip_id": "2023-singapore-r-LAW-150631",
+   "utc": "2023-09-17T13:58:01.642000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.4,
+    "track_temp_c": 35.0,
+    "rainfall": false,
+    "humidity_pct": 77.0,
+    "pressure_hpa": 1010.2,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 171,
+    "track_temp_delta_from_start_c": -3.3,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "YELLOW"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-09-17T13:57:01",
+      "lap": 62,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 7",
+      "offset_s": -60.6
+     },
+     {
+      "utc": "2023-09-17T13:58:01",
+      "lap": 62,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 7 INCIDENT INVOLVING CARS 11 (PER) AND 40 (LAW) REVIEWED NO FURTHER INVESTIGATION - CAUSING A COLLISION",
+      "offset_s": -0.6
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  }
+ },
+ "unmatched_clips": [
+  "2023-singapore-r-MAG-150015"
+ ]
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-SAI-172307",
+  "driver": "SAI",
+  "session_id": "2023-dutch-r",
+  "lap": 69,
+  "duration_s": 3.17,
+  "audio_url": "/api/clips/2023-dutch-r-SAI-172307",
+  "transcript": {
+    "text": "Four laps to go, four laps to go. There's radio! Copy.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 62.0,
+      "f0_mean_z": 3.053,
+      "f0_std_z": 2.556,
+      "rms_mean_z": -0.754,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.387,
+      "jitter_z": 1.092
+    },
+    "acoustic": {
+      "score": 21.9,
+      "probabilities": {
+        "hap": 0.6881,
+        "neu": 0.3115,
+        "ang": 0.0003,
+        "sad": 0.0001
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 28.6,
+      "probabilities": {
+        "neutral": 0.6263,
+        "surprise": 0.2244,
+        "anger": 0.0461,
+        "sadness": 0.044,
+        "joy": 0.0369,
+        "disgust": 0.0143,
+        "fear": 0.008
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.841,
+    "stress_index": 84.8,
+    "probabilities": {
+      "Calm": 0.15,
+      "Stressed": 0.841,
+      "Tired": 0.008
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.688,
+    "stress_index": 21.9,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1806,
+  "cached": false
+}

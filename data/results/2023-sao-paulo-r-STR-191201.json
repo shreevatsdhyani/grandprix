@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-STR-191201",
+  "driver": "STR",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 71,
+  "duration_s": 9.1,
+  "audio_url": "/api/clips/2023-sao-paulo-r-STR-191201",
+  "transcript": {
+    "text": "Lance at P5. P5. P5. Fernando P3. Got Checo back last lap. P3. P5 for the team. Fantastic.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 26.7,
+      "f0_mean_z": 1.872,
+      "f0_std_z": 0.137,
+      "rms_mean_z": -0.253,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.071,
+      "jitter_z": 0.511
+    },
+    "acoustic": {
+      "score": 36.7,
+      "probabilities": {
+        "hap": 0.5056,
+        "neu": 0.2687,
+        "ang": 0.186,
+        "sad": 0.0398
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 12.2,
+      "probabilities": {
+        "joy": 0.8559,
+        "neutral": 0.1071,
+        "surprise": 0.0263,
+        "fear": 0.0035,
+        "sadness": 0.0031,
+        "anger": 0.0027,
+        "disgust": 0.0014
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.567,
+    "stress_index": 63.5,
+    "probabilities": {
+      "Calm": 0.357,
+      "Stressed": 0.567,
+      "Tired": 0.076
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.506,
+    "stress_index": 36.7,
+    "probabilities": {
+      "Calm": 0.765,
+      "Stressed": 0.175,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2785,
+  "cached": false
+}

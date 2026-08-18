@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-LEC-144953",
+  "driver": "LEC",
+  "session_id": "2023-dutch-r",
+  "lap": 32,
+  "duration_s": 4.42,
+  "audio_url": "/api/clips/2023-dutch-r-LEC-144953",
+  "transcript": {
+    "text": "And we are expecting drops to a light shower in around 10 minutes.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 21.3,
+      "f0_mean_z": 0.855,
+      "f0_std_z": -0.887,
+      "rms_mean_z": -0.291,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.632,
+      "jitter_z": -0.254
+    },
+    "acoustic": {
+      "score": 49.6,
+      "probabilities": {
+        "hap": 0.3893,
+        "ang": 0.3799,
+        "neu": 0.2248,
+        "sad": 0.006
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 21.1,
+      "probabilities": {
+        "neutral": 0.7718,
+        "surprise": 0.1652,
+        "joy": 0.0414,
+        "anger": 0.0082,
+        "sadness": 0.0079,
+        "disgust": 0.0033,
+        "fear": 0.0023
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.341,
+    "stress_index": 64.8,
+    "probabilities": {
+      "Calm": 0.318,
+      "Stressed": 0.341,
+      "Tired": 0.341
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.389,
+    "stress_index": 49.6,
+    "probabilities": {
+      "Calm": 0.583,
+      "Stressed": 0.357,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1679,
+  "cached": false
+}

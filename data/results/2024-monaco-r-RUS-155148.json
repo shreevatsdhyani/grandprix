@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-RUS-155148",
+  "driver": "RUS",
+  "session_id": "2024-monaco-r",
+  "lap": 6,
+  "duration_s": 6.14,
+  "audio_url": "/api/clips/2024-monaco-r-RUS-155148",
+  "transcript": {
+    "text": "George, no need to stick this close to Norris. We just manage these tires at this stage. This is the only opportunity.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 14.5,
+      "f0_mean_z": 0.263,
+      "f0_std_z": 0.905,
+      "rms_mean_z": -0.093,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.546,
+      "jitter_z": 0.951
+    },
+    "acoustic": {
+      "score": 30.6,
+      "probabilities": {
+        "hap": 0.892,
+        "ang": 0.0803,
+        "neu": 0.0213,
+        "sad": 0.0065
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.4,
+      "probabilities": {
+        "neutral": 0.9696,
+        "surprise": 0.0097,
+        "anger": 0.0068,
+        "sadness": 0.0038,
+        "disgust": 0.0038,
+        "joy": 0.0036,
+        "fear": 0.0027
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.844,
+    "stress_index": 15.2,
+    "probabilities": {
+      "Calm": 0.844,
+      "Stressed": 0.114,
+      "Tired": 0.042
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.892,
+    "stress_index": 30.6,
+    "probabilities": {
+      "Calm": 0.865,
+      "Stressed": 0.075,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2798,
+  "cached": false
+}

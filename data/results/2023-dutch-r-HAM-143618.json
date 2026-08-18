@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-HAM-143618",
+  "driver": "HAM",
+  "session_id": "2023-dutch-r",
+  "lap": 22,
+  "duration_s": 13.66,
+  "audio_url": "/api/clips/2023-dutch-r-HAM-143618",
+  "transcript": {
+    "text": "Do you have reports that the clerk may have had some damage missing some rear downforce? Do you hear me? The clerk car ahead. He was a 1.7 slower than before the safety car.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 31.4,
+      "f0_mean_z": -1.377,
+      "f0_std_z": -0.779,
+      "rms_mean_z": -1.578,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.187,
+      "jitter_z": -0.197
+    },
+    "acoustic": {
+      "score": 25.0,
+      "probabilities": {
+        "hap": 0.9618,
+        "neu": 0.0328,
+        "ang": 0.0029,
+        "sad": 0.0025
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 47.5,
+      "probabilities": {
+        "surprise": 0.489,
+        "neutral": 0.4127,
+        "disgust": 0.0327,
+        "sadness": 0.0226,
+        "fear": 0.0207,
+        "anger": 0.0192,
+        "joy": 0.0031
+      },
+      "top_label": "surprise",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.843,
+    "stress_index": 76.2,
+    "probabilities": {
+      "Calm": 0.154,
+      "Stressed": 0.003,
+      "Tired": 0.843
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.962,
+    "stress_index": 25.0,
+    "probabilities": {
+      "Calm": 0.937,
+      "Stressed": 0.003,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2416,
+  "cached": false
+}

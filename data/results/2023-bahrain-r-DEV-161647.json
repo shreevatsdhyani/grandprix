@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-DEV-161647",
+  "driver": "DEV",
+  "session_id": "2023-bahrain-r",
+  "lap": 44,
+  "duration_s": 7.46,
+  "audio_url": "/api/clips/2023-bahrain-r-DEV-161647",
+  "transcript": {
+    "text": "Why did we not double stack? Okay, keep the head down now please, keep the head down, you focus on your race.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 62.9,
+      "f0_mean_z": 5.595,
+      "f0_std_z": 0.772,
+      "rms_mean_z": 1.08,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.411,
+      "jitter_z": 1.618
+    },
+    "acoustic": {
+      "score": 35.7,
+      "probabilities": {
+        "hap": 0.5622,
+        "neu": 0.1957,
+        "sad": 0.1219,
+        "ang": 0.1201
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 75.3,
+      "probabilities": {
+        "anger": 0.6397,
+        "neutral": 0.1407,
+        "disgust": 0.1215,
+        "fear": 0.0581,
+        "sadness": 0.0252,
+        "surprise": 0.0119,
+        "joy": 0.0029
+      },
+      "top_label": "anger",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.976,
+    "stress_index": 99.7,
+    "probabilities": {
+      "Calm": 0.0,
+      "Stressed": 0.976,
+      "Tired": 0.023
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.562,
+    "stress_index": 35.7,
+    "probabilities": {
+      "Calm": 0.827,
+      "Stressed": 0.113,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3112,
+  "cached": false
+}

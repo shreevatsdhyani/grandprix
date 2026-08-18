@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-GAS-183457",
+  "driver": "GAS",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 51,
+  "duration_s": 6.27,
+  "audio_url": "/api/clips/2023-sao-paulo-r-GAS-183457",
+  "transcript": {
+    "text": "How far? The line is on, and is on, Elton. Hamilton is one second behind. He does have DRS. Nearly broke him.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 40.0,
+      "f0_mean_z": 0.828,
+      "f0_std_z": 1.752,
+      "rms_mean_z": -1.346,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.075,
+      "jitter_z": -0.339
+    },
+    "acoustic": {
+      "score": 31.2,
+      "probabilities": {
+        "hap": 0.4442,
+        "neu": 0.3983,
+        "ang": 0.1325,
+        "sad": 0.025
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 44.0,
+      "probabilities": {
+        "surprise": 0.5905,
+        "neutral": 0.2293,
+        "fear": 0.0696,
+        "sadness": 0.0548,
+        "anger": 0.0417,
+        "disgust": 0.0106,
+        "joy": 0.0035
+      },
+      "top_label": "surprise",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.471,
+    "stress_index": 51.8,
+    "probabilities": {
+      "Calm": 0.471,
+      "Stressed": 0.417,
+      "Tired": 0.112
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.444,
+    "stress_index": 31.2,
+    "probabilities": {
+      "Calm": 0.815,
+      "Stressed": 0.125,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2106,
+  "cached": false
+}

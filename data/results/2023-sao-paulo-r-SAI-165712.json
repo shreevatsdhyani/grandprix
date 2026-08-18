@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-SAI-165712",
+  "driver": "SAI",
+  "session_id": "2023-sao-paulo-r",
+  "lap": null,
+  "duration_s": 6.69,
+  "audio_url": "/api/clips/2023-sao-paulo-r-SAI-165712",
+  "transcript": {
+    "text": "Struct 10.47.47. It is meant to drop through the race 4 degrees.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 27.4,
+      "f0_mean_z": -0.637,
+      "f0_std_z": -0.293,
+      "rms_mean_z": -2.173,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.328,
+      "jitter_z": -0.057
+    },
+    "acoustic": {
+      "score": 37.1,
+      "probabilities": {
+        "hap": 0.6418,
+        "sad": 0.3392,
+        "neu": 0.014,
+        "ang": 0.0051
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 19.0,
+      "probabilities": {
+        "neutral": 0.8951,
+        "surprise": 0.0675,
+        "sadness": 0.0126,
+        "anger": 0.01,
+        "disgust": 0.0077,
+        "joy": 0.0045,
+        "fear": 0.0026
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.587,
+    "stress_index": 37.8,
+    "probabilities": {
+      "Calm": 0.587,
+      "Stressed": 0.049,
+      "Tired": 0.365
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.642,
+    "stress_index": 37.1,
+    "probabilities": {
+      "Calm": 0.935,
+      "Stressed": 0.005,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2184,
+  "cached": false
+}

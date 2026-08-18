@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-SAI-142859",
+  "driver": "SAI",
+  "session_id": "2023-monaco-r",
+  "lap": 21,
+  "duration_s": 3.36,
+  "audio_url": "/api/clips/2023-monaco-r-SAI-142859",
+  "transcript": {
+    "text": "I'm boxed to overtake outcome. Boxed to overtake outcome.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 18.6,
+      "f0_mean_z": -0.137,
+      "f0_std_z": 0.465,
+      "rms_mean_z": -0.992,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.736,
+      "jitter_z": 1.061
+    },
+    "acoustic": {
+      "score": 18.9,
+      "probabilities": {
+        "neu": 0.6207,
+        "hap": 0.3769,
+        "sad": 0.0016,
+        "ang": 0.0008
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 24.3,
+      "probabilities": {
+        "neutral": 0.8154,
+        "surprise": 0.0684,
+        "fear": 0.0517,
+        "anger": 0.0288,
+        "sadness": 0.0169,
+        "disgust": 0.0112,
+        "joy": 0.0076
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.787,
+    "stress_index": 19.4,
+    "probabilities": {
+      "Calm": 0.787,
+      "Stressed": 0.019,
+      "Tired": 0.194
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.621,
+    "stress_index": 18.9,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2727,
+  "cached": false
+}

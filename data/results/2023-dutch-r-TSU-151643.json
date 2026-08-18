@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-TSU-151643",
+  "driver": "TSU",
+  "session_id": "2023-dutch-r",
+  "lap": 53,
+  "duration_s": 2.69,
+  "audio_url": "/api/clips/2023-dutch-r-TSU-151643",
+  "transcript": {
+    "text": "Something was damaged. Check me. Copy.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 100.0,
+      "f0_mean_z": 13.66,
+      "f0_std_z": 5.562,
+      "rms_mean_z": -0.843,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.658,
+      "jitter_z": 11.011
+    },
+    "acoustic": {
+      "score": 47.4,
+      "probabilities": {
+        "hap": 0.4953,
+        "ang": 0.3372,
+        "neu": 0.1572,
+        "sad": 0.0104
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 47.3,
+      "probabilities": {
+        "neutral": 0.6371,
+        "sadness": 0.1201,
+        "anger": 0.0936,
+        "surprise": 0.0556,
+        "disgust": 0.0483,
+        "fear": 0.0422,
+        "joy": 0.0032
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 1.0,
+    "stress_index": 100.0,
+    "probabilities": {
+      "Calm": 0.0,
+      "Stressed": 1.0,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.495,
+    "stress_index": 47.4,
+    "probabilities": {
+      "Calm": 0.623,
+      "Stressed": 0.317,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1891,
+  "cached": false
+}

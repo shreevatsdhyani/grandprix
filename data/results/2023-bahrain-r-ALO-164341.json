@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-ALO-164341",
+  "driver": "ALO",
+  "session_id": "2023-bahrain-r",
+  "lap": 57,
+  "duration_s": 7.42,
+  "audio_url": "/api/clips/2023-bahrain-r-ALO-164341",
+  "transcript": {
+    "text": "And by the way, Lance is my hero. Amazing performance. Well done everyone. Absolutely, man. Absolutely.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 11.0,
+      "f0_mean_z": 0.276,
+      "f0_std_z": 0.979,
+      "rms_mean_z": -0.095,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.021,
+      "jitter_z": 0.275
+    },
+    "acoustic": {
+      "score": 31.8,
+      "probabilities": {
+        "neu": 0.4309,
+        "sad": 0.3151,
+        "hap": 0.253,
+        "ang": 0.001
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 24.2,
+      "probabilities": {
+        "joy": 0.4007,
+        "surprise": 0.308,
+        "neutral": 0.2607,
+        "anger": 0.0144,
+        "disgust": 0.0084,
+        "sadness": 0.0056,
+        "fear": 0.0022
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.818,
+    "stress_index": 17.7,
+    "probabilities": {
+      "Calm": 0.818,
+      "Stressed": 0.136,
+      "Tired": 0.046
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.431,
+    "stress_index": 31.8,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2991,
+  "cached": false
+}

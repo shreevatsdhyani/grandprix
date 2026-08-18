@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-NOR-143359",
+  "driver": "NOR",
+  "session_id": "2023-monaco-r",
+  "lap": 24,
+  "duration_s": 1.76,
+  "audio_url": "/api/clips/2023-monaco-r-NOR-143359",
+  "transcript": {
+    "text": "happy to do less like her.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 12.7,
+      "f0_mean_z": 0.248,
+      "f0_std_z": -0.277,
+      "rms_mean_z": -0.501,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.563,
+      "jitter_z": 0.095
+    },
+    "acoustic": {
+      "score": 31.9,
+      "probabilities": {
+        "hap": 0.6189,
+        "neu": 0.2453,
+        "ang": 0.1327,
+        "sad": 0.0031
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 11.3,
+      "probabilities": {
+        "joy": 0.9719,
+        "surprise": 0.0123,
+        "sadness": 0.0097,
+        "anger": 0.0026,
+        "neutral": 0.0023,
+        "disgust": 0.0009,
+        "fear": 0.0003
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.836,
+    "stress_index": 15.4,
+    "probabilities": {
+      "Calm": 0.836,
+      "Stressed": 0.066,
+      "Tired": 0.098
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.619,
+    "stress_index": 31.9,
+    "probabilities": {
+      "Calm": 0.815,
+      "Stressed": 0.125,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2147,
+  "cached": false
+}

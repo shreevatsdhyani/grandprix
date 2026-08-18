@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-BOT-163733",
+  "driver": "BOT",
+  "session_id": "2023-dutch-r",
+  "lap": 72,
+  "duration_s": 19.1,
+  "audio_url": "/api/clips/2023-dutch-r-BOT-163733",
+  "transcript": {
+    "text": "Okay, so that was P17 for us in the end. Yeah, company. Just really, we did warm up again and faction. It's only getting better at the last two lots. But yeah, like I said, we've missed a bigger opportunity today in the beginning. Yeah, understood. Okay, I'll see correction. I was P15. As you know that I had a penalty and there was Russell behind.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 26.5,
+      "f0_mean_z": -0.921,
+      "f0_std_z": 0.949,
+      "rms_mean_z": -0.897,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.544,
+      "jitter_z": 0.578
+    },
+    "acoustic": {
+      "score": 34.1,
+      "probabilities": {
+        "hap": 0.7022,
+        "sad": 0.2573,
+        "neu": 0.0339,
+        "ang": 0.0066
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 20.5,
+      "probabilities": {
+        "neutral": 0.8978,
+        "disgust": 0.0364,
+        "sadness": 0.0294,
+        "anger": 0.0206,
+        "surprise": 0.0062,
+        "joy": 0.0055,
+        "fear": 0.004
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.778,
+    "stress_index": 20.7,
+    "probabilities": {
+      "Calm": 0.778,
+      "Stressed": 0.073,
+      "Tired": 0.149
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.702,
+    "stress_index": 34.1,
+    "probabilities": {
+      "Calm": 0.934,
+      "Stressed": 0.006,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3556,
+  "cached": false
+}

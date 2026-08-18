@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-PER-155209",
+  "driver": "PER",
+  "session_id": "2023-bahrain-r",
+  "lap": 30,
+  "duration_s": 2.66,
+  "audio_url": "/api/clips/2023-bahrain-r-PER-155209",
+  "transcript": {
+    "text": "This is possible to be the maxedinger 376.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 9.8,
+      "f0_mean_z": 0.0,
+      "f0_std_z": 0.0,
+      "rms_mean_z": -0.08,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.149,
+      "jitter_z": 0.0
+    },
+    "acoustic": {
+      "score": 28.4,
+      "probabilities": {
+        "neu": 0.5059,
+        "hap": 0.3733,
+        "ang": 0.1202,
+        "sad": 0.0007
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.3,
+      "probabilities": {
+        "neutral": 0.9217,
+        "surprise": 0.0553,
+        "joy": 0.0115,
+        "anger": 0.0045,
+        "disgust": 0.003,
+        "sadness": 0.003,
+        "fear": 0.0012
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.883,
+    "stress_index": 11.0,
+    "probabilities": {
+      "Calm": 0.883,
+      "Stressed": 0.048,
+      "Tired": 0.069
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.506,
+    "stress_index": 28.4,
+    "probabilities": {
+      "Calm": 0.827,
+      "Stressed": 0.113,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2244,
+  "cached": false
+}

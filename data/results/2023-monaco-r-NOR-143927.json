@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-NOR-143927",
+  "driver": "NOR",
+  "session_id": "2023-monaco-r",
+  "lap": 28,
+  "duration_s": 14.43,
+  "audio_url": "/api/clips/2023-monaco-r-NOR-143927",
+  "transcript": {
+    "text": "How's the balance? How's the balance? Well, yeah, not great obviously. The front graining is just hard to not get the radius yet to manage the bit, but the front grins is the bigger problem.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 13.5,
+      "f0_mean_z": 0.239,
+      "f0_std_z": 0.519,
+      "rms_mean_z": -0.002,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.927,
+      "jitter_z": 1.282
+    },
+    "acoustic": {
+      "score": 36.5,
+      "probabilities": {
+        "hap": 0.6839,
+        "sad": 0.2624,
+        "ang": 0.0353,
+        "neu": 0.0184
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 34.1,
+      "probabilities": {
+        "neutral": 0.6286,
+        "disgust": 0.1338,
+        "sadness": 0.115,
+        "surprise": 0.062,
+        "anger": 0.0378,
+        "fear": 0.0191,
+        "joy": 0.0037
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.561,
+    "stress_index": 60.3,
+    "probabilities": {
+      "Calm": 0.341,
+      "Stressed": 0.098,
+      "Tired": 0.561
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.684,
+    "stress_index": 36.5,
+    "probabilities": {
+      "Calm": 0.907,
+      "Stressed": 0.033,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3326,
+  "cached": false
+}

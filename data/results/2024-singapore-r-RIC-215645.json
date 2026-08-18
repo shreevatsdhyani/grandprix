@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-RIC-215645",
+  "driver": "RIC",
+  "session_id": "2024-singapore-r",
+  "lap": 61,
+  "duration_s": 23.87,
+  "audio_url": "/api/clips/2024-singapore-r-RIC-215645",
+  "transcript": {
+    "text": "Okay, obviously we tried. And nothing up another, so it didn't work out. But I'm glad we tried. And I think that was a very well managed change on the medium. Very, very well managed. So we've done all the right things there. And you've got the fastest up.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 47.6,
+      "f0_mean_z": 1.323,
+      "f0_std_z": 1.654,
+      "rms_mean_z": 1.478,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.493,
+      "jitter_z": 0.418
+    },
+    "acoustic": {
+      "score": 27.3,
+      "probabilities": {
+        "hap": 0.932,
+        "sad": 0.0662,
+        "neu": 0.0014,
+        "ang": 0.0004
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 11.8,
+      "probabilities": {
+        "joy": 0.93,
+        "neutral": 0.0375,
+        "surprise": 0.0158,
+        "sadness": 0.0097,
+        "anger": 0.0036,
+        "disgust": 0.0027,
+        "fear": 0.0006
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.585,
+    "stress_index": 41.3,
+    "probabilities": {
+      "Calm": 0.585,
+      "Stressed": 0.4,
+      "Tired": 0.014
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.932,
+    "stress_index": 27.3,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3423,
+  "cached": false
+}

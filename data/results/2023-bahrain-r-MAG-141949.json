@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-MAG-141949",
+  "driver": "MAG",
+  "session_id": "2023-bahrain-r",
+  "lap": null,
+  "duration_s": 2.91,
+  "audio_url": "/api/clips/2023-bahrain-r-MAG-141949",
+  "transcript": {
+    "text": "30 seconds to green light 30 seconds to green light",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 27.8,
+      "f0_mean_z": -1.844,
+      "f0_std_z": -0.883,
+      "rms_mean_z": -0.033,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.709,
+      "jitter_z": -1.007
+    },
+    "acoustic": {
+      "score": 20.3,
+      "probabilities": {
+        "neu": 0.6854,
+        "hap": 0.2833,
+        "ang": 0.0313,
+        "sad": 0.0
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 19.6,
+      "probabilities": {
+        "neutral": 0.8899,
+        "surprise": 0.0648,
+        "anger": 0.0156,
+        "sadness": 0.0145,
+        "disgust": 0.0059,
+        "fear": 0.0058,
+        "joy": 0.0034
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.885,
+    "stress_index": 10.4,
+    "probabilities": {
+      "Calm": 0.885,
+      "Stressed": 0.001,
+      "Tired": 0.114
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.685,
+    "stress_index": 20.3,
+    "probabilities": {
+      "Calm": 0.911,
+      "Stressed": 0.029,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1644,
+  "cached": false
+}

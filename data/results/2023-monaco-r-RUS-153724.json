@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-RUS-153724",
+  "driver": "RUS",
+  "session_id": "2023-monaco-r",
+  "lap": 68,
+  "duration_s": 2.27,
+  "audio_url": "/api/clips/2023-monaco-r-RUS-153724",
+  "transcript": {
+    "text": "I'm just stuck right up low to scale up to it.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 59.5,
+      "f0_mean_z": 3.295,
+      "f0_std_z": 1.659,
+      "rms_mean_z": -1.297,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.189,
+      "jitter_z": 0.106
+    },
+    "acoustic": {
+      "score": 27.2,
+      "probabilities": {
+        "hap": 0.9356,
+        "sad": 0.0616,
+        "neu": 0.002,
+        "ang": 0.0007
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.1,
+      "probabilities": {
+        "neutral": 0.9527,
+        "surprise": 0.0214,
+        "disgust": 0.0089,
+        "anger": 0.0069,
+        "sadness": 0.0059,
+        "fear": 0.0024,
+        "joy": 0.0019
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.92,
+    "stress_index": 92.1,
+    "probabilities": {
+      "Calm": 0.08,
+      "Stressed": 0.92,
+      "Tired": 0.001
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.936,
+    "stress_index": 27.2,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1561,
+  "cached": false
+}

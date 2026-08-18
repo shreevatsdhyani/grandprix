@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-TSU-202148",
+  "driver": "TSU",
+  "session_id": "2024-singapore-r",
+  "lap": 12,
+  "duration_s": 5.6,
+  "audio_url": "/api/clips/2024-singapore-r-TSU-202148",
+  "transcript": {
+    "text": "parents and callopinto are fighting there could be something coming to us. Let's be on it.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 57.5,
+      "f0_mean_z": 3.29,
+      "f0_std_z": 3.192,
+      "rms_mean_z": -0.057,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.649,
+      "jitter_z": -0.471
+    },
+    "acoustic": {
+      "score": 26.4,
+      "probabilities": {
+        "neu": 0.7965,
+        "ang": 0.1323,
+        "hap": 0.0693,
+        "sad": 0.0019
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 23.5,
+      "probabilities": {
+        "neutral": 0.8622,
+        "anger": 0.0543,
+        "fear": 0.0382,
+        "sadness": 0.0186,
+        "surprise": 0.011,
+        "disgust": 0.0093,
+        "joy": 0.0063
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.912,
+    "stress_index": 91.3,
+    "probabilities": {
+      "Calm": 0.087,
+      "Stressed": 0.912,
+      "Tired": 0.001
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.796,
+    "stress_index": 26.4,
+    "probabilities": {
+      "Calm": 0.816,
+      "Stressed": 0.124,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1699,
+  "cached": false
+}

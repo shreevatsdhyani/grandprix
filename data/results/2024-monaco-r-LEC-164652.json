@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-LEC-164652",
+  "driver": "LEC",
+  "session_id": "2024-monaco-r",
+  "lap": 48,
+  "duration_s": 19.62,
+  "audio_url": "/api/clips/2024-monaco-r-LEC-164652",
+  "transcript": {
+    "text": "Just for your info, I think you have a round. I mean, do you want to know the mountain? No, Charles, we're not interested, we know. He said, all right. No, we are not interested. That's rude. Sorry.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 34.1,
+      "f0_mean_z": -0.105,
+      "f0_std_z": -1.443,
+      "rms_mean_z": 2.186,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.528,
+      "jitter_z": 0.302
+    },
+    "acoustic": {
+      "score": 29.6,
+      "probabilities": {
+        "hap": 0.8732,
+        "sad": 0.1,
+        "ang": 0.0169,
+        "neu": 0.0099
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 62.1,
+      "probabilities": {
+        "disgust": 0.4879,
+        "anger": 0.2054,
+        "neutral": 0.2001,
+        "sadness": 0.0735,
+        "surprise": 0.0224,
+        "fear": 0.0071,
+        "joy": 0.0036
+      },
+      "top_label": "disgust",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.993,
+    "stress_index": 89.5,
+    "probabilities": {
+      "Calm": 0.007,
+      "Stressed": 0.001,
+      "Tired": 0.993
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.873,
+    "stress_index": 29.6,
+    "probabilities": {
+      "Calm": 0.924,
+      "Stressed": 0.016,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 4368,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-PER-142328",
+  "driver": "PER",
+  "session_id": "2023-dutch-r",
+  "lap": 15,
+  "duration_s": 4.06,
+  "audio_url": "/api/clips/2023-dutch-r-PER-142328",
+  "transcript": {
+    "text": "Okay, so there's light rain on the star from the strait. This is a bad, civil gap.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 40.0,
+      "f0_mean_z": -1.794,
+      "f0_std_z": -1.22,
+      "rms_mean_z": -1.406,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.585,
+      "jitter_z": 0.306
+    },
+    "acoustic": {
+      "score": 17.7,
+      "probabilities": {
+        "neu": 0.7569,
+        "hap": 0.2394,
+        "ang": 0.003,
+        "sad": 0.0007
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 69.7,
+      "probabilities": {
+        "disgust": 0.9185,
+        "anger": 0.04,
+        "neutral": 0.0195,
+        "sadness": 0.011,
+        "fear": 0.0091,
+        "surprise": 0.0013,
+        "joy": 0.0007
+      },
+      "top_label": "disgust",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.98,
+    "stress_index": 88.2,
+    "probabilities": {
+      "Calm": 0.02,
+      "Stressed": 0.0,
+      "Tired": 0.98
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.757,
+    "stress_index": 17.7,
+    "probabilities": {
+      "Calm": 0.937,
+      "Stressed": 0.003,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1665,
+  "cached": false
+}

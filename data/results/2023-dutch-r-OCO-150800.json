@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-OCO-150800",
+  "driver": "OCO",
+  "session_id": "2023-dutch-r",
+  "lap": 46,
+  "duration_s": 6.78,
+  "audio_url": "/api/clips/2023-dutch-r-OCO-150800",
+  "transcript": {
+    "text": "Are we doing back to push on these tires? Status 3 for now please, Norris 1.4 behind, 26 laps to go.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 77.3,
+      "f0_mean_z": 4.084,
+      "f0_std_z": 1.583,
+      "rms_mean_z": -1.755,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -2.245,
+      "jitter_z": -0.013
+    },
+    "acoustic": {
+      "score": 53.4,
+      "probabilities": {
+        "hap": 0.5802,
+        "ang": 0.4045,
+        "neu": 0.0106,
+        "sad": 0.0047
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 19.6,
+      "probabilities": {
+        "neutral": 0.8996,
+        "surprise": 0.0352,
+        "sadness": 0.0322,
+        "disgust": 0.0139,
+        "anger": 0.01,
+        "fear": 0.0065,
+        "joy": 0.0026
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.989,
+    "stress_index": 99.0,
+    "probabilities": {
+      "Calm": 0.01,
+      "Stressed": 0.989,
+      "Tired": 0.001
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.58,
+    "stress_index": 53.4,
+    "probabilities": {
+      "Calm": 0.56,
+      "Stressed": 0.38,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2092,
+  "cached": false
+}

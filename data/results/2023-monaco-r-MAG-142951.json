@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-MAG-142951",
+  "driver": "MAG",
+  "session_id": "2023-monaco-r",
+  "lap": 21,
+  "duration_s": 2.08,
+  "audio_url": "/api/clips/2023-monaco-r-MAG-142951",
+  "transcript": {
+    "text": "Just let me know what I need to do.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 80.8,
+      "f0_mean_z": 6.23,
+      "f0_std_z": 0.712,
+      "rms_mean_z": 1.504,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.651,
+      "jitter_z": -0.888
+    },
+    "acoustic": {
+      "score": 36.2,
+      "probabilities": {
+        "hap": 0.6429,
+        "sad": 0.1858,
+        "neu": 0.0912,
+        "ang": 0.0801
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.7,
+      "probabilities": {
+        "neutral": 0.9339,
+        "anger": 0.0176,
+        "sadness": 0.0142,
+        "disgust": 0.0135,
+        "fear": 0.0107,
+        "surprise": 0.0059,
+        "joy": 0.0042
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.999,
+    "stress_index": 99.9,
+    "probabilities": {
+      "Calm": 0.001,
+      "Stressed": 0.999,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.643,
+    "stress_index": 36.2,
+    "probabilities": {
+      "Calm": 0.865,
+      "Stressed": 0.075,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2695,
+  "cached": false
+}

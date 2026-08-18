@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-BOT-165208",
+  "driver": "BOT",
+  "session_id": "2023-bahrain-r",
+  "lap": 57,
+  "duration_s": 16.61,
+  "audio_url": "/api/clips/2023-bahrain-r-BOT-165208",
+  "transcript": {
+    "text": "Okay, Valtry, good job, good job, that's it. Check a flag. That is P8 for us. Great job. Well, then I told you we're going to get the points, so it's the beginning. Thank you, thanks for the first one. Lots to work here, and let's go from here, get some more.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 39.2,
+      "f0_mean_z": 2.838,
+      "f0_std_z": 0.933,
+      "rms_mean_z": -0.939,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.196,
+      "jitter_z": 2.613
+    },
+    "acoustic": {
+      "score": 35.0,
+      "probabilities": {
+        "hap": 0.7334,
+        "sad": 0.2262,
+        "ang": 0.0315,
+        "neu": 0.009
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 13.2,
+      "probabilities": {
+        "joy": 0.7401,
+        "neutral": 0.224,
+        "surprise": 0.0116,
+        "anger": 0.0101,
+        "disgust": 0.008,
+        "sadness": 0.0046,
+        "fear": 0.0014
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.886,
+    "stress_index": 91.7,
+    "probabilities": {
+      "Calm": 0.08,
+      "Stressed": 0.886,
+      "Tired": 0.034
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.733,
+    "stress_index": 35.0,
+    "probabilities": {
+      "Calm": 0.91,
+      "Stressed": 0.03,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 4387,
+  "cached": false
+}

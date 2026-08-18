@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-SAI-161631",
+  "driver": "SAI",
+  "session_id": "2023-bahrain-r",
+  "lap": 44,
+  "duration_s": 5.89,
+  "audio_url": "/api/clips/2023-bahrain-r-SAI-161631",
+  "transcript": {
+    "text": "Try to protect position once a second. If I push to defend, I might not make it too yet. What about it?",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 74.1,
+      "f0_mean_z": 2.942,
+      "f0_std_z": 5.854,
+      "rms_mean_z": 0.048,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.415,
+      "jitter_z": 2.433
+    },
+    "acoustic": {
+      "score": 31.3,
+      "probabilities": {
+        "hap": 0.7691,
+        "sad": 0.1058,
+        "neu": 0.0766,
+        "ang": 0.0485
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 49.9,
+      "probabilities": {
+        "neutral": 0.4858,
+        "anger": 0.2291,
+        "fear": 0.1879,
+        "disgust": 0.0466,
+        "sadness": 0.032,
+        "surprise": 0.0154,
+        "joy": 0.0032
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.991,
+    "stress_index": 99.1,
+    "probabilities": {
+      "Calm": 0.009,
+      "Stressed": 0.991,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.769,
+    "stress_index": 31.3,
+    "probabilities": {
+      "Calm": 0.894,
+      "Stressed": 0.046,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2757,
+  "cached": false
+}

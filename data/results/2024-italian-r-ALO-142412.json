@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-ALO-142412",
+  "driver": "ALO",
+  "session_id": "2024-italian-r",
+  "lap": null,
+  "duration_s": 8.29,
+  "audio_url": "/api/clips/2024-italian-r-ALO-142412",
+  "transcript": {
+    "text": "A bit of a thin consistent engine between 6 and 7 or it was my impression. We will check between 6 and 7, okay.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 33.7,
+      "f0_mean_z": 0.935,
+      "f0_std_z": 1.1,
+      "rms_mean_z": -1.657,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.517,
+      "jitter_z": 1.316
+    },
+    "acoustic": {
+      "score": 25.8,
+      "probabilities": {
+        "hap": 0.7189,
+        "neu": 0.2022,
+        "sad": 0.0785,
+        "ang": 0.0004
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.6,
+      "probabilities": {
+        "neutral": 0.9477,
+        "disgust": 0.0161,
+        "surprise": 0.0142,
+        "fear": 0.007,
+        "sadness": 0.0065,
+        "anger": 0.0059,
+        "joy": 0.0027
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.648,
+    "stress_index": 33.9,
+    "probabilities": {
+      "Calm": 0.648,
+      "Stressed": 0.223,
+      "Tired": 0.129
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.719,
+    "stress_index": 25.8,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2338,
+  "cached": false
+}

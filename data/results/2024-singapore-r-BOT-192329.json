@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-BOT-192329",
+  "driver": "BOT",
+  "session_id": "2024-singapore-r",
+  "lap": null,
+  "duration_s": 2.88,
+  "audio_url": "/api/clips/2024-singapore-r-BOT-192329",
+  "transcript": {
+    "text": "And you were minus one on the last clutch drop.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 51.3,
+      "f0_mean_z": -2.493,
+      "f0_std_z": -2.231,
+      "rms_mean_z": 0.404,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.279,
+      "jitter_z": -3.12
+    },
+    "acoustic": {
+      "score": 26.2,
+      "probabilities": {
+        "hap": 0.5444,
+        "neu": 0.3783,
+        "ang": 0.0658,
+        "sad": 0.0115
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 35.0,
+      "probabilities": {
+        "neutral": 0.4643,
+        "surprise": 0.376,
+        "sadness": 0.0704,
+        "disgust": 0.0488,
+        "anger": 0.0306,
+        "joy": 0.0056,
+        "fear": 0.0042
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.514,
+    "stress_index": 46.5,
+    "probabilities": {
+      "Calm": 0.484,
+      "Stressed": 0.002,
+      "Tired": 0.514
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.544,
+    "stress_index": 26.2,
+    "probabilities": {
+      "Calm": 0.878,
+      "Stressed": 0.062,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1839,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-ALB-152947",
+  "driver": "ALB",
+  "session_id": "2023-bahrain-r",
+  "lap": 16,
+  "duration_s": 2.82,
+  "audio_url": "/api/clips/2023-bahrain-r-ALB-152947",
+  "transcript": {
+    "text": "An earlier lift.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 59.2,
+      "f0_mean_z": 2.092,
+      "f0_std_z": 2.924,
+      "rms_mean_z": -0.856,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.527,
+      "jitter_z": 1.016
+    },
+    "acoustic": {
+      "score": 24.7,
+      "probabilities": {
+        "hap": 0.8748,
+        "neu": 0.1128,
+        "ang": 0.0122,
+        "sad": 0.0002
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 47.6,
+      "probabilities": {
+        "surprise": 0.4036,
+        "neutral": 0.2436,
+        "fear": 0.1258,
+        "sadness": 0.121,
+        "disgust": 0.0541,
+        "anger": 0.0369,
+        "joy": 0.0151
+      },
+      "top_label": "surprise",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.842,
+    "stress_index": 84.6,
+    "probabilities": {
+      "Calm": 0.153,
+      "Stressed": 0.842,
+      "Tired": 0.005
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.875,
+    "stress_index": 24.7,
+    "probabilities": {
+      "Calm": 0.929,
+      "Stressed": 0.011,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2319,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-singapore-r-LEC-133119",
+  "driver": "LEC",
+  "session_id": "2023-singapore-r",
+  "lap": 17,
+  "duration_s": 7.84,
+  "audio_url": "/api/clips/2023-singapore-r-LEC-133119",
+  "transcript": {
+    "text": "So gap to science in front, 2.3 and we need 5 seconds in 5 laps.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 17.3,
+      "f0_mean_z": 0.362,
+      "f0_std_z": 0.359,
+      "rms_mean_z": -0.984,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.453,
+      "jitter_z": 1.867
+    },
+    "acoustic": {
+      "score": 38.2,
+      "probabilities": {
+        "hap": 0.5582,
+        "neu": 0.2196,
+        "ang": 0.2184,
+        "sad": 0.0038
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 19.6,
+      "probabilities": {
+        "neutral": 0.8753,
+        "surprise": 0.0869,
+        "sadness": 0.0107,
+        "anger": 0.0099,
+        "disgust": 0.0068,
+        "joy": 0.0058,
+        "fear": 0.0046
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.459,
+    "stress_index": 50.0,
+    "probabilities": {
+      "Calm": 0.459,
+      "Stressed": 0.135,
+      "Tired": 0.406
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.558,
+    "stress_index": 38.2,
+    "probabilities": {
+      "Calm": 0.735,
+      "Stressed": 0.205,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3127,
+  "cached": false
+}

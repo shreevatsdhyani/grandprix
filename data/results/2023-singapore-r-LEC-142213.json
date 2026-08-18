@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-singapore-r-LEC-142213",
+  "driver": "LEC",
+  "session_id": "2023-singapore-r",
+  "lap": 46,
+  "duration_s": 11.1,
+  "audio_url": "/api/clips/2023-singapore-r-LEC-142213",
+  "transcript": {
+    "text": "But mercy disputed, new medium. I think it is the right choice. Consider, even an up later. We'll come back to you. So we are staying out.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 11.6,
+      "f0_mean_z": -0.151,
+      "f0_std_z": -0.886,
+      "rms_mean_z": -0.106,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.305,
+      "jitter_z": -0.041
+    },
+    "acoustic": {
+      "score": 26.3,
+      "probabilities": {
+        "hap": 0.8448,
+        "neu": 0.1145,
+        "ang": 0.0303,
+        "sad": 0.0105
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 20.4,
+      "probabilities": {
+        "neutral": 0.8991,
+        "disgust": 0.0372,
+        "anger": 0.0249,
+        "sadness": 0.0195,
+        "joy": 0.009,
+        "fear": 0.0063,
+        "surprise": 0.004
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.599,
+    "stress_index": 36.3,
+    "probabilities": {
+      "Calm": 0.599,
+      "Stressed": 0.016,
+      "Tired": 0.385
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.845,
+    "stress_index": 26.3,
+    "probabilities": {
+      "Calm": 0.912,
+      "Stressed": 0.028,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3175,
+  "cached": false
+}

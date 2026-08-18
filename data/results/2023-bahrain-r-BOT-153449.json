@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-BOT-153449",
+  "driver": "BOT",
+  "session_id": "2023-bahrain-r",
+  "lap": 19,
+  "duration_s": 4.61,
+  "audio_url": "/api/clips/2023-bahrain-r-BOT-153449",
+  "transcript": {
+    "text": "They are too fast on the streets, I really can't give up. Copy, copy, don't worry.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 32.4,
+      "f0_mean_z": 2.527,
+      "f0_std_z": -0.749,
+      "rms_mean_z": 0.351,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.421,
+      "jitter_z": -0.093
+    },
+    "acoustic": {
+      "score": 54.9,
+      "probabilities": {
+        "hap": 0.4083,
+        "ang": 0.3513,
+        "sad": 0.1717,
+        "neu": 0.0687
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 58.2,
+      "probabilities": {
+        "fear": 0.4109,
+        "neutral": 0.3324,
+        "anger": 0.128,
+        "surprise": 0.0646,
+        "sadness": 0.0318,
+        "disgust": 0.025,
+        "joy": 0.0074
+      },
+      "top_label": "fear",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.523,
+    "stress_index": 94.1,
+    "probabilities": {
+      "Calm": 0.007,
+      "Stressed": 0.47,
+      "Tired": 0.523
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.408,
+    "stress_index": 54.9,
+    "probabilities": {
+      "Calm": 0.61,
+      "Stressed": 0.33,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2533,
+  "cached": false
+}

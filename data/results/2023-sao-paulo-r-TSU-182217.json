@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-TSU-182217",
+  "driver": "TSU",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 41,
+  "duration_s": 3.01,
+  "audio_url": "/api/clips/2023-sao-paulo-r-TSU-182217",
+  "transcript": {
+    "text": "I have too much on this time, I've got a slow speed.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 83.0,
+      "f0_mean_z": 8.614,
+      "f0_std_z": -0.648,
+      "rms_mean_z": -0.232,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.879,
+      "jitter_z": 2.634
+    },
+    "acoustic": {
+      "score": 27.4,
+      "probabilities": {
+        "hap": 0.9569,
+        "ang": 0.0304,
+        "sad": 0.008,
+        "neu": 0.0047
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 30.5,
+      "probabilities": {
+        "neutral": 0.6682,
+        "sadness": 0.1531,
+        "surprise": 0.0928,
+        "disgust": 0.0444,
+        "fear": 0.0214,
+        "anger": 0.0155,
+        "joy": 0.0046
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.994,
+    "stress_index": 99.8,
+    "probabilities": {
+      "Calm": 0.001,
+      "Stressed": 0.994,
+      "Tired": 0.005
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.957,
+    "stress_index": 27.4,
+    "probabilities": {
+      "Calm": 0.911,
+      "Stressed": 0.029,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1734,
+  "cached": false
+}

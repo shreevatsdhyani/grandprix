@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-VER-153657",
+  "driver": "VER",
+  "session_id": "2024-italian-r",
+  "lap": 24,
+  "duration_s": 4.54,
+  "audio_url": "/api/clips/2024-italian-r-VER-153657",
+  "transcript": {
+    "text": "Sorry do we do this instead that we just get home with the Namas?",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 86.1,
+      "f0_mean_z": 1.441,
+      "f0_std_z": 2.462,
+      "rms_mean_z": 4.669,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 2.187,
+      "jitter_z": -0.366
+    },
+    "acoustic": {
+      "score": 25.0,
+      "probabilities": {
+        "hap": 0.9947,
+        "neu": 0.0042,
+        "ang": 0.0006,
+        "sad": 0.0005
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 56.5,
+      "probabilities": {
+        "sadness": 0.734,
+        "neutral": 0.1452,
+        "surprise": 0.07,
+        "disgust": 0.0284,
+        "anger": 0.0099,
+        "fear": 0.0065,
+        "joy": 0.0059
+      },
+      "top_label": "sadness",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.674,
+    "stress_index": 69.7,
+    "probabilities": {
+      "Calm": 0.301,
+      "Stressed": 0.674,
+      "Tired": 0.025
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.995,
+    "stress_index": 25.0,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1767,
+  "cached": false
+}

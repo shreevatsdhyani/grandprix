@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-BOT-133545",
+  "driver": "BOT",
+  "session_id": "2023-dutch-r",
+  "lap": null,
+  "duration_s": 11.2,
+  "audio_url": "/api/clips/2023-dutch-r-BOT-133545",
+  "transcript": {
+    "text": "25 minutes to go 25. There is a shower west to the circuit which is closing in and should pass the circuit but we might feel some drops.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 39.4,
+      "f0_mean_z": 1.788,
+      "f0_std_z": 0.061,
+      "rms_mean_z": -1.749,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.332,
+      "jitter_z": 1.905
+    },
+    "acoustic": {
+      "score": 46.1,
+      "probabilities": {
+        "sad": 0.5944,
+        "hap": 0.3578,
+        "neu": 0.0385,
+        "ang": 0.0094
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 45.4,
+      "probabilities": {
+        "neutral": 0.6099,
+        "sadness": 0.2339,
+        "surprise": 0.0792,
+        "fear": 0.0273,
+        "disgust": 0.0268,
+        "anger": 0.0133,
+        "joy": 0.0096
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.64,
+    "stress_index": 87.5,
+    "probabilities": {
+      "Calm": 0.061,
+      "Stressed": 0.299,
+      "Tired": 0.64
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.594,
+    "stress_index": 46.1,
+    "probabilities": {
+      "Calm": 0.931,
+      "Stressed": 0.009,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2640,
+  "cached": false
+}

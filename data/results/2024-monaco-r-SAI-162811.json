@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-SAI-162811",
+  "driver": "SAI",
+  "session_id": "2024-monaco-r",
+  "lap": 34,
+  "duration_s": 16.61,
+  "audio_url": "/api/clips/2024-monaco-r-SAI-162811",
+  "transcript": {
+    "text": "There is a risk that if we open 20 seconds, land goes for a soft, maybe. Yeah, we are on this. I think a land on soft could be dangerous. At the end of the race, tires are starting to grain for everyone.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 8.2,
+      "f0_mean_z": -0.511,
+      "f0_std_z": -0.268,
+      "rms_mean_z": -0.196,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.054,
+      "jitter_z": -0.056
+    },
+    "acoustic": {
+      "score": 31.5,
+      "probabilities": {
+        "hap": 0.8037,
+        "sad": 0.1866,
+        "neu": 0.0094,
+        "ang": 0.0003
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 74.0,
+      "probabilities": {
+        "fear": 0.5393,
+        "neutral": 0.2976,
+        "disgust": 0.0628,
+        "anger": 0.0542,
+        "sadness": 0.0238,
+        "surprise": 0.0181,
+        "joy": 0.0042
+      },
+      "top_label": "fear",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.984,
+    "stress_index": 88.8,
+    "probabilities": {
+      "Calm": 0.015,
+      "Stressed": 0.002,
+      "Tired": 0.984
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.804,
+    "stress_index": 31.5,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3955,
+  "cached": false
+}

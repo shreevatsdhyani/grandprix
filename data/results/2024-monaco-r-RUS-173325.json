@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-RUS-173325",
+  "driver": "RUS",
+  "session_id": "2024-monaco-r",
+  "lap": 78,
+  "duration_s": 24.45,
+  "audio_url": "/api/clips/2024-monaco-r-RUS-173325",
+  "transcript": {
+    "text": "Good job there mate, or up P5. Yeah, thanks guys. Chairman, we'll have another star. I think we had a real chance today on the opposite strategy, but good point. It's hard feeling great and thanks for the hard work bringing these upgrades. George, you will be surprised to hear very, very good, well-driven. No surprise, I guess. The surprise is the compliment from you. We're complimented youth.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 16.3,
+      "f0_mean_z": 0.729,
+      "f0_std_z": 0.797,
+      "rms_mean_z": 0.202,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.304,
+      "jitter_z": 0.235
+    },
+    "acoustic": {
+      "score": 50.3,
+      "probabilities": {
+        "sad": 0.6591,
+        "hap": 0.2885,
+        "ang": 0.0348,
+        "neu": 0.0176
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 42.7,
+      "probabilities": {
+        "surprise": 0.909,
+        "joy": 0.0478,
+        "neutral": 0.0316,
+        "sadness": 0.0047,
+        "anger": 0.0044,
+        "disgust": 0.0015,
+        "fear": 0.0009
+      },
+      "top_label": "surprise",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.636,
+    "stress_index": 77.9,
+    "probabilities": {
+      "Calm": 0.205,
+      "Stressed": 0.636,
+      "Tired": 0.159
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.659,
+    "stress_index": 50.3,
+    "probabilities": {
+      "Calm": 0.907,
+      "Stressed": 0.033,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3550,
+  "cached": false
+}

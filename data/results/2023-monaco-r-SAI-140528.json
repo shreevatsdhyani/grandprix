@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-SAI-140528",
+  "driver": "SAI",
+  "session_id": "2023-monaco-r",
+  "lap": 3,
+  "duration_s": 5.5,
+  "audio_url": "/api/clips/2023-monaco-r-SAI-140528",
+  "transcript": {
+    "text": "Ferris and Ullkenberg just already pitted for Hard to go it to the end. Also, Jew, all clear.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 9.9,
+      "f0_mean_z": -0.324,
+      "f0_std_z": -0.041,
+      "rms_mean_z": 0.08,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.794,
+      "jitter_z": 1.61
+    },
+    "acoustic": {
+      "score": 18.5,
+      "probabilities": {
+        "neu": 0.6656,
+        "hap": 0.3308,
+        "sad": 0.0034,
+        "ang": 0.0002
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.4,
+      "probabilities": {
+        "neutral": 0.9524,
+        "anger": 0.0133,
+        "surprise": 0.01,
+        "disgust": 0.0098,
+        "sadness": 0.0067,
+        "joy": 0.0044,
+        "fear": 0.0035
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.707,
+    "stress_index": 26.5,
+    "probabilities": {
+      "Calm": 0.707,
+      "Stressed": 0.011,
+      "Tired": 0.282
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.666,
+    "stress_index": 18.5,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2744,
+  "cached": false
+}

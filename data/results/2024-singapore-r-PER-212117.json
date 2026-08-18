@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-PER-212117",
+  "driver": "PER",
+  "session_id": "2024-singapore-r",
+  "lap": 47,
+  "duration_s": 6.18,
+  "audio_url": "/api/clips/2024-singapore-r-PER-212117",
+  "transcript": {
+    "text": "You are the first scratching place. Are you type-ancing like a cock rule? Copy that. Keep your head down. Do what you can.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 27.4,
+      "f0_mean_z": 2.197,
+      "f0_std_z": -0.223,
+      "rms_mean_z": -0.238,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.77,
+      "jitter_z": 2.794
+    },
+    "acoustic": {
+      "score": 34.5,
+      "probabilities": {
+        "hap": 0.549,
+        "neu": 0.2725,
+        "ang": 0.1705,
+        "sad": 0.008
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 69.2,
+      "probabilities": {
+        "anger": 0.5978,
+        "neutral": 0.2335,
+        "disgust": 0.1234,
+        "fear": 0.026,
+        "sadness": 0.0114,
+        "surprise": 0.0062,
+        "joy": 0.0017
+      },
+      "top_label": "anger",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.934,
+    "stress_index": 89.5,
+    "probabilities": {
+      "Calm": 0.011,
+      "Stressed": 0.054,
+      "Tired": 0.934
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.549,
+    "stress_index": 34.5,
+    "probabilities": {
+      "Calm": 0.78,
+      "Stressed": 0.16,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2158,
+  "cached": false
+}

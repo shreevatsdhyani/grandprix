@@ -77,9 +77,17 @@ SESSION_KEYS = {
     "2024-british-r": (9558, "2024-07-07"),
     "2024-italian-r": (9590, "2024-09-01"),
     "2024-singapore-r": (9606, "2024-09-22"),
+    "2024-monaco-r": (9523, "2024-05-26"),
     "2023-dutch-r": (9149, "2023-08-27"),
     "2023-sao-paulo-r": (9205, "2023-11-05"),
+    "2023-bahrain-r": (7953, "2023-03-05"),
+    "2023-monaco-r": (9094, "2023-05-28"),
+    "2023-singapore-r": (9165, "2023-09-17"),
 }
+# Must stay in step with `fastf1_client.AVAILABLE`. A session listed there but
+# missing here cannot be resolved, and the mismatch is easy to miss when someone
+# adds a race — so it is checked at startup rather than discovered as an empty
+# context file three steps later.
 
 
 def _radio_cache_path(session_id: str) -> Path:
@@ -275,6 +283,15 @@ def backfill_laps(recovered: dict[str, int]) -> None:
     tmp.replace(index)
 
 
+def check_session_coverage() -> list[str]:
+    """Sessions the app serves but we have no OpenF1 key for."""
+    return [
+        fastf1_client.make_session_id(y, e, k)
+        for y, e, k in fastf1_client.AVAILABLE
+        if fastf1_client.make_session_id(y, e, k) not in SESSION_KEYS
+    ]
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("session_id", nargs="?", help="build just this session")
@@ -290,6 +307,13 @@ def main() -> int:
         for p in built:
             print(f"  {p.name}  {p.stat().st_size / 1e6:.2f} MB")
         return 0
+
+    missing = check_session_coverage()
+    if missing:
+        print(
+            "WARNING: these sessions are in fastf1_client.AVAILABLE but have no "
+            f"OpenF1 session key pinned, so their clips cannot be resolved: {', '.join(missing)}\n"
+        )
 
     targets = [args.session_id] if args.session_id else list(SESSION_KEYS)
     print(f"Building context for {len(targets)} session(s).\n")

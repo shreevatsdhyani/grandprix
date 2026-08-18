@@ -18,12 +18,19 @@ import numpy as np  # noqa: E402
 
 fastf1.Cache.enable_cache(str(ROOT / "data" / "cache"))
 
+# Must stay in step with `app/data/fastf1_client.AVAILABLE`. A session missing here
+# has no outline, so the frontend circuit map and the "where it happened" trace both
+# fall back to nothing for it.
 SESSIONS = [
     ("2024-british-r", 2024, "British Grand Prix", "R"),
     ("2024-italian-r", 2024, "Italian Grand Prix", "R"),
     ("2024-singapore-r", 2024, "Singapore Grand Prix", "R"),
+    ("2024-monaco-r", 2024, "Monaco Grand Prix", "R"),
     ("2023-dutch-r", 2023, "Dutch Grand Prix", "R"),
     ("2023-sao-paulo-r", 2023, "São Paulo Grand Prix", "R"),
+    ("2023-bahrain-r", 2023, "Bahrain Grand Prix", "R"),
+    ("2023-monaco-r", 2023, "Monaco Grand Prix", "R"),
+    ("2023-singapore-r", 2023, "Singapore Grand Prix", "R"),
 ]
 
 

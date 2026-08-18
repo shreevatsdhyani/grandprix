@@ -16,6 +16,40 @@ import type { Mood, Timeline, TimelinePoint } from '../types'
 import { MOOD_COLOR } from '../types'
 
 /**
+ * Pirelli's own compound colours. Borrowed deliberately: every F1 viewer already
+ * reads red-yellow-white as soft-medium-hard, so inventing a palette here would
+ * be strictly worse than using the one the audience knows. Never the only signal
+ * — the compound name is always printed alongside.
+ */
+const COMPOUND_COLOR: Record<string, string> = {
+  SOFT: '#FF3333',
+  MEDIUM: '#FFD12E',
+  HARD: '#EDEDED',
+  INTERMEDIATE: '#43B02A',
+  WET: '#0067AD',
+  UNKNOWN: '#7A7A7A',
+}
+
+const compoundColor = (c: string | null | undefined) =>
+  COMPOUND_COLOR[(c ?? 'UNKNOWN').toUpperCase()] ?? COMPOUND_COLOR.UNKNOWN
+
+/** Contiguous runs of one value along the lap axis, for drawing bands. */
+function runs<T>(
+  points: TimelinePoint[],
+  value: (p: TimelinePoint) => T | null | undefined,
+): { from: number; to: number; value: T }[] {
+  const out: { from: number; to: number; value: T }[] = []
+  for (const p of points) {
+    const v = value(p)
+    if (v == null) continue
+    const last = out.at(-1)
+    if (last && last.value === v && last.to === p.lap - 1) last.to = p.lap
+    else out.push({ from: p.lap, to: p.lap, value: v })
+  }
+  return out
+}
+
+/**
  * The evidence for the verdict above.
  *
  * Deliberately NOT a dual-axis chart. Pace delta (seconds) and stress index
@@ -164,6 +198,13 @@ export function RaceTimeline({ timeline, selectedClipId, onSelectClip, verdict }
     data.map((p) => p.delta_s).filter((v): v is number => v != null),
   )
 
+  // Tyre and weather bands. Both come from the per-lap context, which is
+  // populated for every lap once scripts/build_context.py has run — so these are
+  // continuous. A session with no context built produces empty arrays and the
+  // chart renders exactly as it did before.
+  const compoundRuns = runs(data, (p) => p.tyre?.compound)
+  const wetRuns = runs(data, (p) => (p.track?.rainfall === true ? 'wet' : null))
+
   const peakLap = verdict?.peakStress?.lap ?? null
   const lossLap = verdict?.paceLossLap ?? null
   const bandLaps = verdict?.leadLaps ?? null
@@ -176,6 +217,19 @@ export function RaceTimeline({ timeline, selectedClipId, onSelectClip, verdict }
   /** Shared furniture, so both panels annotate the same laps identically. */
   const annotations = (showLabel: boolean) => (
     <>
+      {/* Rain first, so it sits behind the warning band and the crosshair. A wet
+          track changes what every other number on the chart means, so it belongs
+          on both panels rather than in a legend. */}
+      {wetRuns.map((r) => (
+        <ReferenceArea
+          key={`wet-${r.from}`}
+          x1={r.from}
+          x2={r.to}
+          fill={COMPOUND_COLOR.WET}
+          fillOpacity={0.1}
+          stroke="none"
+        />
+      ))}
       {showBand && (
         <ReferenceArea
           x1={peakLap!}
@@ -203,6 +257,83 @@ export function RaceTimeline({ timeline, selectedClipId, onSelectClip, verdict }
         <ReferenceLine x={selected.lap} stroke="var(--accent-cyan)" strokeOpacity={0.45} strokeWidth={1} />
       )}
     </>
+  )
+
+  const firstLap = data[0]?.lap ?? 1
+  const lastLap = data.at(-1)?.lap ?? 1
+  const lapSpan = Math.max(1, lastLap - firstLap + 1)
+  const pct = (lap: number) => ((lap - firstLap) / lapSpan) * 100
+
+  /**
+   * Tyre strip.
+   *
+   * Positioned by percentage of the lap range rather than drawn inside a Recharts
+   * axis, because it has to line up with TWO charts that each own their own plot
+   * area. The charts share `syncId` and identical margins, so a strip inset by the
+   * same margins tracks both.
+   */
+  const tyreStrip = compoundRuns.length > 0 && (
+    <div className="px-4 pb-3 sm:px-5">
+      <div className="flex items-baseline justify-between gap-3 pb-1">
+        <span className="mono text-[9px] uppercase tracking-wide text-ink-muted">tyre</span>
+        <span className="mono text-[9px] text-ink-muted">
+          compound from timing data · degradation modelled
+        </span>
+      </div>
+      {/* Left/right insets match the charts' margins so laps align. */}
+      <div className="relative ml-[4px] mr-[12px] h-[18px] overflow-hidden rounded">
+        {compoundRuns.map((r) => {
+          const width = pct(r.to + 1) - pct(r.from)
+          const color = compoundColor(r.value)
+          return (
+            <div
+              key={`compound-${r.from}`}
+              className="absolute inset-y-0 flex items-center justify-center overflow-hidden"
+              style={{ left: `${pct(r.from)}%`, width: `${width}%`, background: color, opacity: 0.85 }}
+              title={`${r.value}: laps ${r.from}-${r.to}`}
+            >
+              {/* The name is printed whenever the band is wide enough, so colour
+                  is never the only encoding. HARD and MEDIUM are light, so the
+                  label flips to dark ink on those. */}
+              {width > 9 && (
+                <span
+                  className="mono truncate px-1 text-[9px] font-semibold uppercase"
+                  style={{
+                    color: ['HARD', 'MEDIUM'].includes(r.value.toUpperCase())
+                      ? 'var(--plane)'
+                      : '#fff',
+                  }}
+                >
+                  {r.value}
+                </span>
+              )}
+            </div>
+          )
+        })}
+      </div>
+      <div className="mt-1 flex flex-wrap gap-x-3 gap-y-1">
+        {compoundRuns.map((r) => (
+          <span key={`legend-${r.from}`} className="mono text-[9px] text-ink-muted">
+            <span
+              className="mr-1 inline-block h-2 w-2 rounded-sm align-middle"
+              style={{ background: compoundColor(r.value) }}
+              aria-hidden
+            />
+            {r.value} L{r.from}-{r.to}
+          </span>
+        ))}
+        {wetRuns.length > 0 && (
+          <span className="mono text-[9px] text-ink-muted">
+            <span
+              className="mr-1 inline-block h-2 w-2 rounded-sm align-middle"
+              style={{ background: COMPOUND_COLOR.WET, opacity: 0.35 }}
+              aria-hidden
+            />
+            shaded = track wet
+          </span>
+        )}
+      </div>
+    </div>
   )
 
   return (
@@ -374,6 +505,8 @@ export function RaceTimeline({ timeline, selectedClipId, onSelectClip, verdict }
           </AreaChart>
         </ResponsiveContainer>
       </div>
+
+      {tyreStrip}
 
       <footer className="mt-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-hairline px-4 py-3 text-[11px] text-ink-muted sm:px-5">
         <span className="flex flex-wrap items-center gap-3">

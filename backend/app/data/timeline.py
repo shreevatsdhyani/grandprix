@@ -12,14 +12,16 @@ from __future__ import annotations
 
 import logging
 
-from app.context import provider as context_provider
+from app.context import provider as context_provider, situation as situation_mod
 from app.data import fastf1_client, store
 from app.data.laps import lap_series
 from app.pipeline import baseline as baseline_mod, leadlag, strategy
+from app import config
 from app.schemas import (
     ClipAnalysis,
     ClipContext,
     DriverBaseline,
+    RaceSituation,
     ScoringMode,
     Timeline,
     TimelinePoint,
@@ -56,6 +58,19 @@ def build(session_id: str, driver: str, mode: ScoringMode) -> Timeline:
         if c.lap is not None and c.lap not in ctx_by_lap:
             ctx_by_lap[c.lap] = c
 
+    # Race situation for EVERY lap, not just the handful with a radio call.
+    #
+    # Track and tyre are per-lap because they come from the lap frame and the
+    # session weather curve. Situation used to come only from clip contexts, which
+    # left position, gaps and flags populated on two to eleven laps out of seventy
+    # — an inconsistency that made the findings prompt's flags column look empty
+    # and stopped the chart from ever showing race context.
+    #
+    # Gaps need only lap start times and durations, and flags need only the
+    # race-control feed. Both are in the light session load already cached for the
+    # pace deltas, so this costs no extra I/O and no telemetry parse.
+    situation_by_lap = _situation_by_lap(session_id, driver)
+
     # Analysed clips only. An indexed clip with no cached analysis is skipped
     # rather than shown as a blank marker — the pipeline populates the cache.
     analyses: list[ClipAnalysis] = []
@@ -88,7 +103,10 @@ def build(session_id: str, driver: str, mode: ScoringMode) -> Timeline:
                 clip_id=clip_by_lap.get(l.lap),
                 track=_track_for_lap(session_context, l.lap, ctx),
                 tyre=_tyre_for_lap(session_context, driver, l, ctx),
-                situation=ctx.situation if ctx else None,
+                # The clip context is richer where it exists — it carries the
+                # race-control messages around the exact instant — so prefer it and
+                # fall back to the per-lap computation everywhere else.
+                situation=(ctx.situation if ctx and ctx.situation else situation_by_lap.get(l.lap)),
             )
         )
 
@@ -109,6 +127,49 @@ def build(session_id: str, driver: str, mode: ScoringMode) -> Timeline:
         clip_contexts=clip_contexts,
         biometrics=biometrics,
     )
+
+
+def _situation_by_lap(session_id: str, driver: str) -> dict[int, RaceSituation]:
+    """Position, gaps and flags per lap for one driver.
+
+    Reads the light session (no telemetry) that `lap_series` has already loaded and
+    lru-cached, so this is pure computation. Returns an empty mapping on any
+    failure: race context is an enhancement, and losing it must never take the
+    timeline down.
+    """
+    try:
+        session = fastf1_client.load_session(session_id)
+    except Exception as exc:
+        log.warning("no session for per-lap situation on %s: %s", session_id, exc)
+        return {}
+
+    try:
+        gaps = situation_mod.gaps_all_laps(session.laps)
+        flags = situation_mod.flags_by_lap(getattr(session, "race_control_messages", None))
+    except Exception as exc:
+        log.warning("per-lap situation failed for %s/%s: %s", session_id, driver, exc)
+        return {}
+
+    out: dict[int, RaceSituation] = {}
+    for lap, per_driver in gaps.items():
+        mine = per_driver.get(driver.upper())
+        lap_flags = flags.get(lap, [])
+        if mine is None and not lap_flags:
+            continue
+        gap_ahead = (mine or {}).get("gap_ahead_s")
+        in_traffic = None
+        if gap_ahead is not None:
+            in_traffic = bool(gap_ahead <= config.IN_TRAFFIC_GAP_S)
+        if "BLUE" in lap_flags:
+            in_traffic = True
+        out[lap] = RaceSituation(
+            position=(mine or {}).get("position"),
+            gap_ahead_s=gap_ahead,
+            gap_to_leader_s=(mine or {}).get("gap_to_leader_s"),
+            active_flags=lap_flags,
+            in_traffic=in_traffic,
+        )
+    return out
 
 
 def _tyre_for_lap(session_context, driver: str, lap_obj, clip_ctx):

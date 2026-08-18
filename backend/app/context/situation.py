@@ -59,6 +59,81 @@ def gaps_at_lap(all_laps: pd.DataFrame, lap_number: int) -> dict[str, dict[str, 
     return out
 
 
+def gaps_all_laps(all_laps: pd.DataFrame) -> dict[int, dict[str, dict[str, float | int]]]:
+    """Position and gaps for every driver on every lap, in one pass.
+
+    `gaps_at_lap` filters and sorts per lap, which is fine for a single lookup and
+    wasteful for a whole session — the timeline needs all 78 laps of Monaco on every
+    request. This does the elapsed-time computation once and groups afterwards.
+
+    Returns `{lap: {driver: {position, gap_to_leader_s, gap_ahead_s}}}`.
+    """
+    if all_laps is None or all_laps.empty:
+        return {}
+    need = {"LapNumber", "Driver", "LapStartTime", "LapTime"}
+    if not need.issubset(all_laps.columns):
+        return {}
+
+    df = all_laps[list(need)].copy()
+    # Coerce both columns rather than trusting their dtype. A frame whose LapTime is
+    # entirely unset — every driver retired, or a session that never ran green —
+    # comes back as object dtype, and `.dt` on that raises AttributeError instead of
+    # yielding NaT. Coercing first turns a crash into an empty result.
+    # `to_timedelta` still raises on an all-NaT object column, so the conversion is
+    # wrapped rather than merely coerced. Any frame we cannot read as timings yields
+    # no gaps, which is the honest answer and never an exception on a request path.
+    try:
+        start = pd.to_timedelta(df["LapStartTime"], errors="coerce")
+        duration = pd.to_timedelta(df["LapTime"], errors="coerce")
+        df["elapsed"] = (start + duration).dt.total_seconds()
+    except (TypeError, ValueError) as exc:
+        log.warning("lap timings unreadable, no gaps computed: %s", exc)
+        return {}
+    df = df[df["elapsed"].notna() & df["LapNumber"].notna()]
+    if df.empty:
+        return {}
+
+    out: dict[int, dict[str, dict[str, float | int]]] = {}
+    for lap, g in df.sort_values("elapsed").groupby("LapNumber"):
+        lap_no = int(lap)
+        leader = float(g["elapsed"].iloc[0])
+        per_driver: dict[str, dict[str, float | int]] = {}
+        prev: float | None = None
+        for i, row in enumerate(g.itertuples(index=False), start=1):
+            elapsed = float(row.elapsed)
+            per_driver[str(row.Driver)] = {
+                "position": i,
+                "gap_to_leader_s": round(elapsed - leader, 3),
+                "gap_ahead_s": None if prev is None else round(elapsed - prev, 3),
+            }
+            prev = elapsed
+        out[lap_no] = per_driver
+    return out
+
+
+def flags_by_lap(race_control: pd.DataFrame) -> dict[int, list[str]]:
+    """Distinct flags mentioned per lap, from the race-control feed.
+
+    Lap-scoped rather than time-scoped, because the per-lap view has no instant to
+    anchor a window to. Race control's own `Lap` column is used as given.
+    """
+    if race_control is None or race_control.empty or "Lap" not in race_control:
+        return {}
+    out: dict[int, list[str]] = {}
+    for row in race_control.itertuples(index=False):
+        lap = getattr(row, "Lap", None)
+        flag = getattr(row, "Flag", None)
+        if lap is None or pd.isna(lap) or flag is None or pd.isna(flag):
+            continue
+        flag = str(flag)
+        if flag.upper() == "NONE":
+            continue
+        bucket = out.setdefault(int(lap), [])
+        if flag not in bucket:
+            bucket.append(flag)
+    return out
+
+
 def nearby_messages(
     race_control: pd.DataFrame, when_utc: pd.Timestamp, window_s: int | None = None
 ) -> list[RaceControlEvent]:

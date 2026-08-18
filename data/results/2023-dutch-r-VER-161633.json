@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-VER-161633",
+  "driver": "VER",
+  "session_id": "2023-dutch-r",
+  "lap": 66,
+  "duration_s": 7.68,
+  "audio_url": "/api/clips/2023-dutch-r-VER-161633",
+  "transcript": {
+    "text": "In terms of weather update, maybe some light rain expected in six, seven minutes, Max. It is only light.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 19.8,
+      "f0_mean_z": -0.774,
+      "f0_std_z": -0.571,
+      "rms_mean_z": -0.284,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.847,
+      "jitter_z": 0.202
+    },
+    "acoustic": {
+      "score": 25.0,
+      "probabilities": {
+        "hap": 0.9975,
+        "neu": 0.0017,
+        "sad": 0.0007,
+        "ang": 0.0
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.1,
+      "probabilities": {
+        "neutral": 0.9472,
+        "surprise": 0.0253,
+        "sadness": 0.0109,
+        "disgust": 0.0065,
+        "joy": 0.0038,
+        "anger": 0.0036,
+        "fear": 0.0028
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.66,
+    "stress_index": 30.7,
+    "probabilities": {
+      "Calm": 0.66,
+      "Stressed": 0.018,
+      "Tired": 0.321
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.998,
+    "stress_index": 25.0,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2205,
+  "cached": false
+}

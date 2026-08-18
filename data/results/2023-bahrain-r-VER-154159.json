@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-VER-154159",
+  "driver": "VER",
+  "session_id": "2023-bahrain-r",
+  "lap": 24,
+  "duration_s": 3.87,
+  "audio_url": "/api/clips/2023-bahrain-r-VER-154159",
+  "transcript": {
+    "text": "How's it from when you're just about Max? Yeah, that's good. Copy.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 53.3,
+      "f0_mean_z": 3.631,
+      "f0_std_z": -0.701,
+      "rms_mean_z": 0.462,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.866,
+      "jitter_z": -0.313
+    },
+    "acoustic": {
+      "score": 24.1,
+      "probabilities": {
+        "hap": 0.8859,
+        "neu": 0.1099,
+        "ang": 0.0024,
+        "sad": 0.0018
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.3,
+      "probabilities": {
+        "neutral": 0.8242,
+        "joy": 0.105,
+        "disgust": 0.0341,
+        "surprise": 0.0163,
+        "anger": 0.0151,
+        "sadness": 0.0038,
+        "fear": 0.0015
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.808,
+    "stress_index": 86.8,
+    "probabilities": {
+      "Calm": 0.125,
+      "Stressed": 0.808,
+      "Tired": 0.067
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.886,
+    "stress_index": 24.1,
+    "probabilities": {
+      "Calm": 0.938,
+      "Stressed": 0.002,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 6642,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-VER-161140",
+  "driver": "VER",
+  "session_id": "2024-italian-r",
+  "lap": 49,
+  "duration_s": 8.99,
+  "audio_url": "/api/clips/2024-italian-r-VER-161140",
+  "transcript": {
+    "text": "Can we burn the background? Please be awake. I know this is a position, but it's important. Yes, copy that, Max.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 86.8,
+      "f0_mean_z": 4.02,
+      "f0_std_z": 2.55,
+      "rms_mean_z": 3.126,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.151,
+      "jitter_z": 0.587
+    },
+    "acoustic": {
+      "score": 45.2,
+      "probabilities": {
+        "sad": 0.5774,
+        "hap": 0.4012,
+        "neu": 0.0192,
+        "ang": 0.0022
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 37.0,
+      "probabilities": {
+        "neutral": 0.6279,
+        "fear": 0.1031,
+        "sadness": 0.0898,
+        "disgust": 0.0885,
+        "anger": 0.0617,
+        "surprise": 0.0255,
+        "joy": 0.0036
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.991,
+    "stress_index": 99.2,
+    "probabilities": {
+      "Calm": 0.008,
+      "Stressed": 0.991,
+      "Tired": 0.001
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.577,
+    "stress_index": 45.2,
+    "probabilities": {
+      "Calm": 0.938,
+      "Stressed": 0.002,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2285,
+  "cached": false
+}

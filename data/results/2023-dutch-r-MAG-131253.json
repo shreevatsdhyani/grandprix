@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-MAG-131253",
+  "driver": "MAG",
+  "session_id": "2023-dutch-r",
+  "lap": null,
+  "duration_s": 9.86,
+  "audio_url": "/api/clips/2023-dutch-r-MAG-131253",
+  "transcript": {
+    "text": "Okay Kevin, boxing this lap. Do you want a front wing adjustment? No front wing adjust. No front wing adjust. Copy that, so driving through the pit lane to do another lap.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 36.4,
+      "f0_mean_z": 0.513,
+      "f0_std_z": 2.408,
+      "rms_mean_z": -1.285,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.344,
+      "jitter_z": 2.654
+    },
+    "acoustic": {
+      "score": 35.1,
+      "probabilities": {
+        "neu": 0.3834,
+        "hap": 0.3244,
+        "sad": 0.1866,
+        "ang": 0.1056
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 21.6,
+      "probabilities": {
+        "neutral": 0.8888,
+        "anger": 0.0489,
+        "disgust": 0.0231,
+        "surprise": 0.0178,
+        "fear": 0.0097,
+        "sadness": 0.0086,
+        "joy": 0.0032
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.495,
+    "stress_index": 49.6,
+    "probabilities": {
+      "Calm": 0.495,
+      "Stressed": 0.419,
+      "Tired": 0.086
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.383,
+    "stress_index": 35.1,
+    "probabilities": {
+      "Calm": 0.841,
+      "Stressed": 0.099,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2673,
+  "cached": false
+}

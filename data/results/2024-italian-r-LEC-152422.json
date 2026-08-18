@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-LEC-152422",
+  "driver": "LEC",
+  "session_id": "2024-italian-r",
+  "lap": 15,
+  "duration_s": 4.06,
+  "audio_url": "/api/clips/2024-italian-r-LEC-152422",
+  "transcript": {
+    "text": "So Norris is in, he should pit in traffic. Let's do some good laps.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 17.9,
+      "f0_mean_z": 0.887,
+      "f0_std_z": -0.402,
+      "rms_mean_z": -0.395,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.551,
+      "jitter_z": 0.596
+    },
+    "acoustic": {
+      "score": 30.7,
+      "probabilities": {
+        "hap": 0.6873,
+        "neu": 0.2019,
+        "ang": 0.1098,
+        "sad": 0.001
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 20.6,
+      "probabilities": {
+        "neutral": 0.8939,
+        "sadness": 0.0352,
+        "disgust": 0.0224,
+        "anger": 0.0175,
+        "fear": 0.0168,
+        "joy": 0.0103,
+        "surprise": 0.004
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.495,
+    "stress_index": 47.0,
+    "probabilities": {
+      "Calm": 0.495,
+      "Stressed": 0.158,
+      "Tired": 0.347
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.687,
+    "stress_index": 30.7,
+    "probabilities": {
+      "Calm": 0.837,
+      "Stressed": 0.103,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1672,
+  "cached": false
+}

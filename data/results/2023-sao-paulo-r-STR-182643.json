@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-STR-182643",
+  "driver": "STR",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 45,
+  "duration_s": 4.46,
+  "audio_url": "/api/clips/2023-sao-paulo-r-STR-182643",
+  "transcript": {
+    "text": "Copy that Lance. Start to struggle with tires. Copy that Lance.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 23.6,
+      "f0_mean_z": 0.956,
+      "f0_std_z": 1.152,
+      "rms_mean_z": 0.574,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.267,
+      "jitter_z": 0.379
+    },
+    "acoustic": {
+      "score": 26.4,
+      "probabilities": {
+        "hap": 0.8798,
+        "neu": 0.0865,
+        "ang": 0.0317,
+        "sad": 0.0019
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 65.2,
+      "probabilities": {
+        "fear": 0.6045,
+        "neutral": 0.2671,
+        "anger": 0.0675,
+        "sadness": 0.0347,
+        "disgust": 0.0175,
+        "surprise": 0.0053,
+        "joy": 0.0035
+      },
+      "top_label": "fear",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.543,
+    "stress_index": 70.7,
+    "probabilities": {
+      "Calm": 0.24,
+      "Stressed": 0.218,
+      "Tired": 0.543
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.88,
+    "stress_index": 26.4,
+    "probabilities": {
+      "Calm": 0.91,
+      "Stressed": 0.03,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1912,
+  "cached": false
+}

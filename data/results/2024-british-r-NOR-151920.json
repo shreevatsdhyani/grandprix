@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-british-r-NOR-151920",
+  "driver": "NOR",
+  "session_id": "2024-british-r",
+  "lap": 11,
+  "duration_s": 5.76,
+  "audio_url": "/api/clips/2024-british-r-NOR-151920",
+  "transcript": {
+    "text": "and I know when the rain comes it's going to be a racing decision of when is the right conditions to take it so we'll keep it simple.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 17.1,
+      "f0_mean_z": -0.121,
+      "f0_std_z": -0.822,
+      "rms_mean_z": 0.192,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.998,
+      "jitter_z": 1.193
+    },
+    "acoustic": {
+      "score": 24.0,
+      "probabilities": {
+        "hap": 0.866,
+        "neu": 0.1261,
+        "sad": 0.0078,
+        "ang": 0.0001
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.4,
+      "probabilities": {
+        "neutral": 0.9669,
+        "sadness": 0.008,
+        "anger": 0.0069,
+        "joy": 0.0068,
+        "surprise": 0.0051,
+        "fear": 0.0038,
+        "disgust": 0.0024
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.508,
+    "stress_index": 44.5,
+    "probabilities": {
+      "Calm": 0.508,
+      "Stressed": 0.031,
+      "Tired": 0.46
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.866,
+    "stress_index": 24.0,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1807,
+  "cached": false
+}

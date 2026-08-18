@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-PER-213745",
+  "driver": "PER",
+  "session_id": "2024-singapore-r",
+  "lap": 57,
+  "duration_s": 5.54,
+  "audio_url": "/api/clips/2024-singapore-r-PER-213745",
+  "transcript": {
+    "text": "Yeah we do have Norse behind, we're going to flash and blues at present. Let's be sensible, we're going to let through, go on, keep pushing.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 37.9,
+      "f0_mean_z": -0.445,
+      "f0_std_z": -1.049,
+      "rms_mean_z": -1.921,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.322,
+      "jitter_z": 1.061
+    },
+    "acoustic": {
+      "score": 32.6,
+      "probabilities": {
+        "hap": 0.8667,
+        "ang": 0.102,
+        "sad": 0.0179,
+        "neu": 0.0134
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.8,
+      "probabilities": {
+        "neutral": 0.9289,
+        "anger": 0.02,
+        "disgust": 0.0188,
+        "sadness": 0.0156,
+        "joy": 0.0074,
+        "fear": 0.0058,
+        "surprise": 0.0035
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.685,
+    "stress_index": 63.7,
+    "probabilities": {
+      "Calm": 0.295,
+      "Stressed": 0.02,
+      "Tired": 0.685
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.867,
+    "stress_index": 32.6,
+    "probabilities": {
+      "Calm": 0.844,
+      "Stressed": 0.096,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2232,
+  "cached": false
+}

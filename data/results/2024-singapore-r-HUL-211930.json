@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-HUL-211930",
+  "driver": "HUL",
+  "session_id": "2024-singapore-r",
+  "lap": 46,
+  "duration_s": 2.78,
+  "audio_url": "/api/clips/2024-singapore-r-HUL-211930",
+  "transcript": {
+    "text": "The tires are looking very good, Nico, very good.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 24.3,
+      "f0_mean_z": -0.173,
+      "f0_std_z": -0.504,
+      "rms_mean_z": 1.272,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.093,
+      "jitter_z": -0.342
+    },
+    "acoustic": {
+      "score": 25.3,
+      "probabilities": {
+        "hap": 0.9886,
+        "neu": 0.0058,
+        "ang": 0.0053,
+        "sad": 0.0002
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 14.8,
+      "probabilities": {
+        "joy": 0.5247,
+        "neutral": 0.4186,
+        "surprise": 0.03,
+        "sadness": 0.0135,
+        "disgust": 0.0076,
+        "anger": 0.0041,
+        "fear": 0.0014
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.802,
+    "stress_index": 18.4,
+    "probabilities": {
+      "Calm": 0.802,
+      "Stressed": 0.057,
+      "Tired": 0.141
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.989,
+    "stress_index": 25.3,
+    "probabilities": {
+      "Calm": 0.935,
+      "Stressed": 0.005,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1760,
+  "cached": false
+}

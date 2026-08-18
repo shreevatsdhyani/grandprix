@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-BOT-141958",
+  "driver": "BOT",
+  "session_id": "2023-dutch-r",
+  "lap": 11,
+  "duration_s": 2.75,
+  "audio_url": "/api/clips/2023-dutch-r-BOT-141958",
+  "transcript": {
+    "text": "If I could, there could be a few drops of rain, but nothing major.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 31.7,
+      "f0_mean_z": 0.744,
+      "f0_std_z": -1.81,
+      "rms_mean_z": -0.317,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.095,
+      "jitter_z": -0.354
+    },
+    "acoustic": {
+      "score": 19.6,
+      "probabilities": {
+        "neu": 0.6108,
+        "hap": 0.3748,
+        "sad": 0.0093,
+        "ang": 0.0052
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.4,
+      "probabilities": {
+        "neutral": 0.9151,
+        "sadness": 0.0402,
+        "joy": 0.0179,
+        "disgust": 0.0078,
+        "surprise": 0.0074,
+        "anger": 0.0062,
+        "fear": 0.0053
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.514,
+    "stress_index": 49.4,
+    "probabilities": {
+      "Calm": 0.454,
+      "Stressed": 0.031,
+      "Tired": 0.514
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.611,
+    "stress_index": 19.6,
+    "probabilities": {
+      "Calm": 0.935,
+      "Stressed": 0.005,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1542,
+  "cached": false
+}

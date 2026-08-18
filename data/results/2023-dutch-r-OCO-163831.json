@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-OCO-163831",
+  "driver": "OCO",
+  "session_id": "2023-dutch-r",
+  "lap": 72,
+  "duration_s": 16.22,
+  "audio_url": "/api/clips/2023-dutch-r-OCO-163831",
+  "transcript": {
+    "text": "Okay and that is the checker plug. As he finished, P10 at the front, Perry has got a penalty for speeding in the pit lane before everything restarted again. So that puts PF third so he got a podium, which is good for the team.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 90.4,
+      "f0_mean_z": -2.066,
+      "f0_std_z": -1.871,
+      "rms_mean_z": -1.48,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -5.88,
+      "jitter_z": -0.758
+    },
+    "acoustic": {
+      "score": 34.2,
+      "probabilities": {
+        "sad": 0.357,
+        "neu": 0.3289,
+        "hap": 0.3141,
+        "ang": 0.0001
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.8,
+      "probabilities": {
+        "neutral": 0.932,
+        "anger": 0.0179,
+        "joy": 0.0168,
+        "disgust": 0.0126,
+        "surprise": 0.0103,
+        "sadness": 0.0088,
+        "fear": 0.0016
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.546,
+    "stress_index": 49.7,
+    "probabilities": {
+      "Calm": 0.448,
+      "Stressed": 0.006,
+      "Tired": 0.546
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.357,
+    "stress_index": 34.2,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3234,
+  "cached": false
+}

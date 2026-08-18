@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-british-r-VER-163554",
+  "driver": "VER",
+  "session_id": "2024-british-r",
+  "lap": 52,
+  "duration_s": 20.99,
+  "audio_url": "/api/clips/2024-british-r-VER-163554",
+  "transcript": {
+    "text": "Ah, I'd like Max. Not a bad chase then. Well done. Well, I mean, we're not the quickest, but we did everything right today with the strategy time also. We can be very pleased with that. Yeah, well done, Max. Great, great last in there. You aren't doing him down, so, and big points, well done.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 28.8,
+      "f0_mean_z": 0.973,
+      "f0_std_z": 0.501,
+      "rms_mean_z": -1.211,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.916,
+      "jitter_z": -0.465
+    },
+    "acoustic": {
+      "score": 29.0,
+      "probabilities": {
+        "hap": 0.7588,
+        "sad": 0.1403,
+        "neu": 0.0991,
+        "ang": 0.0018
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 12.2,
+      "probabilities": {
+        "joy": 0.8605,
+        "neutral": 0.1098,
+        "surprise": 0.0088,
+        "sadness": 0.0081,
+        "disgust": 0.0076,
+        "anger": 0.0047,
+        "fear": 0.0006
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.734,
+    "stress_index": 25.9,
+    "probabilities": {
+      "Calm": 0.734,
+      "Stressed": 0.201,
+      "Tired": 0.065
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.759,
+    "stress_index": 29.0,
+    "probabilities": {
+      "Calm": 0.938,
+      "Stressed": 0.002,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3363,
+  "cached": false
+}

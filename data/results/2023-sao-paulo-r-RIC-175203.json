@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-RIC-175203",
+  "driver": "RIC",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 17,
+  "duration_s": 6.94,
+  "audio_url": "/api/clips/2023-sao-paulo-r-RIC-175203",
+  "transcript": {
+    "text": "Since Yuki have a problem, well we made a mistake. Made a mistake, made a mistake. Let's try to clear Sargent and then we help UK.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 38.0,
+      "f0_mean_z": 2.072,
+      "f0_std_z": 2.075,
+      "rms_mean_z": -0.248,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.357,
+      "jitter_z": 5.457
+    },
+    "acoustic": {
+      "score": 39.9,
+      "probabilities": {
+        "hap": 0.5539,
+        "sad": 0.3782,
+        "neu": 0.0384,
+        "ang": 0.0295
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 36.2,
+      "probabilities": {
+        "neutral": 0.6252,
+        "sadness": 0.1957,
+        "anger": 0.069,
+        "disgust": 0.0598,
+        "fear": 0.0404,
+        "joy": 0.0064,
+        "surprise": 0.0036
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.662,
+    "stress_index": 90.4,
+    "probabilities": {
+      "Calm": 0.069,
+      "Stressed": 0.662,
+      "Tired": 0.269
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.554,
+    "stress_index": 39.9,
+    "probabilities": {
+      "Calm": 0.912,
+      "Stressed": 0.028,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2023,
+  "cached": false
+}

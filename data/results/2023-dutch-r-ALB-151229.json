@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-ALB-151229",
+  "driver": "ALB",
+  "session_id": "2023-dutch-r",
+  "lap": 50,
+  "duration_s": 23.97,
+  "audio_url": "/api/clips/2023-dutch-r-ALB-151229",
+  "transcript": {
+    "text": "Alex, so now P8, Hamilton and Priestri, pitted behind us, car ahead is Russell, four seconds on a really used hard. So, we're talking for P6, so P6 is on. Keep me updated at all pace. Copy. If you can keep doing 15-0s, that's perfect. Let's take a quick cross. Okay, copy, we'll discuss it.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 20.1,
+      "f0_mean_z": -0.016,
+      "f0_std_z": 0.883,
+      "rms_mean_z": 0.503,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.111,
+      "jitter_z": 1.418
+    },
+    "acoustic": {
+      "score": 39.2,
+      "probabilities": {
+        "hap": 0.7777,
+        "ang": 0.2031,
+        "neu": 0.0156,
+        "sad": 0.0036
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.0,
+      "probabilities": {
+        "neutral": 0.9593,
+        "anger": 0.0136,
+        "surprise": 0.0108,
+        "disgust": 0.0073,
+        "joy": 0.0038,
+        "sadness": 0.0027,
+        "fear": 0.0026
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.626,
+    "stress_index": 35.8,
+    "probabilities": {
+      "Calm": 0.626,
+      "Stressed": 0.216,
+      "Tired": 0.158
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.778,
+    "stress_index": 39.2,
+    "probabilities": {
+      "Calm": 0.749,
+      "Stressed": 0.191,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3600,
+  "cached": false
+}

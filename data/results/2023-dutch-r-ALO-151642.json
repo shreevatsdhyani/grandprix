@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-ALO-151642",
+  "driver": "ALO",
+  "session_id": "2023-dutch-r",
+  "lap": 53,
+  "duration_s": 10.18,
+  "audio_url": "/api/clips/2023-dutch-r-ALO-151642",
+  "transcript": {
+    "text": "So there is a small chance of rain at about 10 laps. I'll keep you updated. Good job, good job. Good job. Good job, guys. Got a swan.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 41.3,
+      "f0_mean_z": -0.829,
+      "f0_std_z": 1.048,
+      "rms_mean_z": 0.862,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 2.418,
+      "jitter_z": -0.514
+    },
+    "acoustic": {
+      "score": 94.6,
+      "probabilities": {
+        "ang": 0.9936,
+        "neu": 0.0042,
+        "sad": 0.0015,
+        "hap": 0.0007
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 15.9,
+      "probabilities": {
+        "neutral": 0.8613,
+        "joy": 0.1083,
+        "surprise": 0.0115,
+        "sadness": 0.0096,
+        "anger": 0.0043,
+        "disgust": 0.0028,
+        "fear": 0.0022
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.876,
+    "stress_index": 89.5,
+    "probabilities": {
+      "Calm": 0.104,
+      "Stressed": 0.876,
+      "Tired": 0.021
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.994,
+    "stress_index": 94.6,
+    "probabilities": {
+      "Calm": 0.006,
+      "Stressed": 0.934,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2616,
+  "cached": false
+}

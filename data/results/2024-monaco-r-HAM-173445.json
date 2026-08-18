@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-HAM-173445",
+  "driver": "HAM",
+  "session_id": "2024-monaco-r",
+  "lap": 78,
+  "duration_s": 17.02,
+  "audio_url": "/api/clips/2024-monaco-r-HAM-173445",
+  "transcript": {
+    "text": "I got this mate so yeah, P7. Yeah but well done to that, that's, so we didn't get more points today but pretty great effort. I took one back at home for bringing the upgrades for these past few weeks. I really appreciate the hard work. I'm proud of you guys.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 23.1,
+      "f0_mean_z": -0.44,
+      "f0_std_z": -0.826,
+      "rms_mean_z": 1.201,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.421,
+      "jitter_z": -0.239
+    },
+    "acoustic": {
+      "score": 28.2,
+      "probabilities": {
+        "hap": 0.8934,
+        "sad": 0.0662,
+        "neu": 0.0241,
+        "ang": 0.0162
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 12.3,
+      "probabilities": {
+        "joy": 0.8825,
+        "neutral": 0.0751,
+        "surprise": 0.026,
+        "sadness": 0.0082,
+        "anger": 0.0042,
+        "disgust": 0.0035,
+        "fear": 0.0005
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.84,
+    "stress_index": 14.6,
+    "probabilities": {
+      "Calm": 0.84,
+      "Stressed": 0.015,
+      "Tired": 0.145
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.893,
+    "stress_index": 28.2,
+    "probabilities": {
+      "Calm": 0.925,
+      "Stressed": 0.015,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2732,
+  "cached": false
+}

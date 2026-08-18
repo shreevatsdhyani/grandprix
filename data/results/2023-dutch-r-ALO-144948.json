@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-ALO-144948",
+  "driver": "ALO",
+  "session_id": "2023-dutch-r",
+  "lap": 32,
+  "duration_s": 9.95,
+  "audio_url": "/api/clips/2023-dutch-r-ALO-144948",
+  "transcript": {
+    "text": "Okay, so you're doing similar lap times to gasoline. Perisipaula way a little bit. That rain we talked about earlier is about 15 minutes away, but it's very light, so we don't think it'll affect.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 22.3,
+      "f0_mean_z": -0.273,
+      "f0_std_z": -0.597,
+      "rms_mean_z": 0.652,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.263,
+      "jitter_z": -0.788
+    },
+    "acoustic": {
+      "score": 20.6,
+      "probabilities": {
+        "neu": 0.5194,
+        "hap": 0.4671,
+        "ang": 0.0097,
+        "sad": 0.0038
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.4,
+      "probabilities": {
+        "neutral": 0.942,
+        "surprise": 0.0274,
+        "disgust": 0.0123,
+        "anger": 0.0068,
+        "sadness": 0.0042,
+        "joy": 0.004,
+        "fear": 0.0032
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.82,
+    "stress_index": 16.5,
+    "probabilities": {
+      "Calm": 0.82,
+      "Stressed": 0.034,
+      "Tired": 0.146
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.519,
+    "stress_index": 20.6,
+    "probabilities": {
+      "Calm": 0.931,
+      "Stressed": 0.009,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2271,
+  "cached": false
+}

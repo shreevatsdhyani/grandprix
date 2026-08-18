@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-RUS-155929",
+  "driver": "RUS",
+  "session_id": "2024-monaco-r",
+  "lap": 12,
+  "duration_s": 10.94,
+  "audio_url": "/api/clips/2024-monaco-r-RUS-155929",
+  "transcript": {
+    "text": "I recommend about three seconds in the pocket here. Just two to learn a route currently. So George at this stage we gain nothing from driving faster. Hey Pam.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 12.7,
+      "f0_mean_z": 0.741,
+      "f0_std_z": 0.746,
+      "rms_mean_z": 0.0,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.1,
+      "jitter_z": -0.04
+    },
+    "acoustic": {
+      "score": 49.5,
+      "probabilities": {
+        "sad": 0.6246,
+        "hap": 0.324,
+        "ang": 0.04,
+        "neu": 0.0114
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.4,
+      "probabilities": {
+        "neutral": 0.9422,
+        "joy": 0.0266,
+        "surprise": 0.013,
+        "anger": 0.0064,
+        "disgust": 0.0053,
+        "sadness": 0.0051,
+        "fear": 0.0014
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.565,
+    "stress_index": 58.1,
+    "probabilities": {
+      "Calm": 0.417,
+      "Stressed": 0.565,
+      "Tired": 0.018
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.625,
+    "stress_index": 49.5,
+    "probabilities": {
+      "Calm": 0.902,
+      "Stressed": 0.038,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3394,
+  "cached": false
+}

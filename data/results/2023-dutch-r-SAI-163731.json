@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-SAI-163731",
+  "driver": "SAI",
+  "session_id": "2023-dutch-r",
+  "lap": 64,
+  "duration_s": 10.66,
+  "audio_url": "/api/clips/2023-dutch-r-SAI-163731",
+  "transcript": {
+    "text": "and the heaviest part of the rain has passed and it will be clear for 10-20 minutes and then some more will come later",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 13.4,
+      "f0_mean_z": -0.643,
+      "f0_std_z": -0.754,
+      "rms_mean_z": 0.168,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.106,
+      "jitter_z": -0.884
+    },
+    "acoustic": {
+      "score": 23.9,
+      "probabilities": {
+        "hap": 0.8311,
+        "neu": 0.1554,
+        "sad": 0.0136,
+        "ang": 0.0
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 32.2,
+      "probabilities": {
+        "neutral": 0.4882,
+        "sadness": 0.2004,
+        "surprise": 0.1791,
+        "joy": 0.1009,
+        "anger": 0.0247,
+        "fear": 0.0052,
+        "disgust": 0.0015
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.557,
+    "stress_index": 40.1,
+    "probabilities": {
+      "Calm": 0.557,
+      "Stressed": 0.02,
+      "Tired": 0.423
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.831,
+    "stress_index": 23.9,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2481,
+  "cached": false
+}

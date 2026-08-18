@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-RUS-150702",
+  "driver": "RUS",
+  "session_id": "2023-dutch-r",
+  "lap": 45,
+  "duration_s": 3.1,
+  "audio_url": "/api/clips/2023-dutch-r-RUS-150702",
+  "transcript": {
+    "text": "Laps! But 27 to go end of this lap.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 44.5,
+      "f0_mean_z": -1.851,
+      "f0_std_z": -1.476,
+      "rms_mean_z": -1.895,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.342,
+      "jitter_z": 1.462
+    },
+    "acoustic": {
+      "score": 21.0,
+      "probabilities": {
+        "neu": 0.7008,
+        "hap": 0.2556,
+        "ang": 0.0434,
+        "sad": 0.0001
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 43.2,
+      "probabilities": {
+        "surprise": 0.5247,
+        "neutral": 0.2206,
+        "sadness": 0.1646,
+        "anger": 0.0322,
+        "joy": 0.025,
+        "disgust": 0.0212,
+        "fear": 0.0116
+      },
+      "top_label": "surprise",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.961,
+    "stress_index": 86.5,
+    "probabilities": {
+      "Calm": 0.039,
+      "Stressed": 0.0,
+      "Tired": 0.961
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.701,
+    "stress_index": 21.0,
+    "probabilities": {
+      "Calm": 0.899,
+      "Stressed": 0.041,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1829,
+  "cached": false
+}

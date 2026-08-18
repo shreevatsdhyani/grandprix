@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-RIC-145543",
+  "driver": "RIC",
+  "session_id": "2024-italian-r",
+  "lap": null,
+  "duration_s": 7.81,
+  "audio_url": "/api/clips/2024-italian-r-RIC-145543",
+  "transcript": {
+    "text": "In terms of wind, looks like the cast have slightly picked up in the last couple of minutes. So a bit more gusty.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 15.1,
+      "f0_mean_z": -0.942,
+      "f0_std_z": -0.518,
+      "rms_mean_z": 0.145,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.282,
+      "jitter_z": -1.418
+    },
+    "acoustic": {
+      "score": 34.4,
+      "probabilities": {
+        "hap": 0.8458,
+        "ang": 0.1142,
+        "sad": 0.0393,
+        "neu": 0.0007
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 27.9,
+      "probabilities": {
+        "neutral": 0.7419,
+        "surprise": 0.0882,
+        "anger": 0.0552,
+        "disgust": 0.045,
+        "sadness": 0.0331,
+        "fear": 0.0288,
+        "joy": 0.0078
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.69,
+    "stress_index": 28.3,
+    "probabilities": {
+      "Calm": 0.69,
+      "Stressed": 0.039,
+      "Tired": 0.271
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.846,
+    "stress_index": 34.4,
+    "probabilities": {
+      "Calm": 0.833,
+      "Stressed": 0.107,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2300,
+  "cached": false
+}

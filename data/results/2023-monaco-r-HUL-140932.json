@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-HUL-140932",
+  "driver": "HUL",
+  "session_id": "2023-monaco-r",
+  "lap": 5,
+  "duration_s": 4.06,
+  "audio_url": "/api/clips/2023-monaco-r-HUL-140932",
+  "transcript": {
+    "text": "Okay, Nico will check. Data is okay. We'll check the video too.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 22.9,
+      "f0_mean_z": 1.763,
+      "f0_std_z": -0.235,
+      "rms_mean_z": -0.42,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.446,
+      "jitter_z": -0.632
+    },
+    "acoustic": {
+      "score": 26.0,
+      "probabilities": {
+        "hap": 0.9599,
+        "neu": 0.022,
+        "ang": 0.0153,
+        "sad": 0.0029
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.8,
+      "probabilities": {
+        "neutral": 0.9322,
+        "anger": 0.0207,
+        "disgust": 0.0164,
+        "sadness": 0.0118,
+        "fear": 0.0099,
+        "joy": 0.0054,
+        "surprise": 0.0034
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.61,
+    "stress_index": 38.4,
+    "probabilities": {
+      "Calm": 0.61,
+      "Stressed": 0.328,
+      "Tired": 0.062
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.96,
+    "stress_index": 26.0,
+    "probabilities": {
+      "Calm": 0.926,
+      "Stressed": 0.014,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2592,
+  "cached": false
+}

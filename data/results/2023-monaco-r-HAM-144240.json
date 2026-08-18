@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-HAM-144240",
+  "driver": "HAM",
+  "session_id": "2023-monaco-r",
+  "lap": 31,
+  "duration_s": 5.25,
+  "audio_url": "/api/clips/2023-monaco-r-HAM-144240",
+  "transcript": {
+    "text": "Really? And we both are going, but particularly real.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 65.3,
+      "f0_mean_z": 2.602,
+      "f0_std_z": 2.625,
+      "rms_mean_z": 1.188,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.744,
+      "jitter_z": 1.17
+    },
+    "acoustic": {
+      "score": 81.8,
+      "probabilities": {
+        "ang": 0.8037,
+        "hap": 0.182,
+        "sad": 0.0142,
+        "neu": 0.0001
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 44.9,
+      "probabilities": {
+        "surprise": 0.9555,
+        "neutral": 0.0216,
+        "anger": 0.0097,
+        "disgust": 0.0056,
+        "joy": 0.0039,
+        "fear": 0.002,
+        "sadness": 0.0017
+      },
+      "top_label": "surprise",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.999,
+    "stress_index": 99.9,
+    "probabilities": {
+      "Calm": 0.0,
+      "Stressed": 0.999,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.804,
+    "stress_index": 81.8,
+    "probabilities": {
+      "Calm": 0.185,
+      "Stressed": 0.755,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2533,
+  "cached": false
+}

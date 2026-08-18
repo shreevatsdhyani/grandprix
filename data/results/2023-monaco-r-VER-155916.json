@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-VER-155916",
+  "driver": "VER",
+  "session_id": "2023-monaco-r",
+  "lap": 78,
+  "duration_s": 4.96,
+  "audio_url": "/api/clips/2023-monaco-r-VER-155916",
+  "transcript": {
+    "text": "We are catching also the guys in front, so it's okay. Okay, two laps remaining.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 26.5,
+      "f0_mean_z": 2.814,
+      "f0_std_z": -0.23,
+      "rms_mean_z": -0.047,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.227,
+      "jitter_z": 0.9
+    },
+    "acoustic": {
+      "score": 29.8,
+      "probabilities": {
+        "hap": 0.8461,
+        "sad": 0.0529,
+        "neu": 0.052,
+        "ang": 0.0489
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 19.5,
+      "probabilities": {
+        "neutral": 0.9039,
+        "disgust": 0.0274,
+        "anger": 0.0243,
+        "joy": 0.0219,
+        "fear": 0.0106,
+        "sadness": 0.0089,
+        "surprise": 0.0029
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.726,
+    "stress_index": 83.4,
+    "probabilities": {
+      "Calm": 0.153,
+      "Stressed": 0.726,
+      "Tired": 0.12
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.846,
+    "stress_index": 29.8,
+    "probabilities": {
+      "Calm": 0.894,
+      "Stressed": 0.046,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1794,
+  "cached": false
+}

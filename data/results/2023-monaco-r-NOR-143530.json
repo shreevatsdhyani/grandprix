@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-NOR-143530",
+  "driver": "NOR",
+  "session_id": "2023-monaco-r",
+  "lap": 25,
+  "duration_s": 5.98,
+  "audio_url": "/api/clips/2023-monaco-r-NOR-143530",
+  "transcript": {
+    "text": "Tanoda struggling with front left, Lando, possible rain, class one on lap 35.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 28.8,
+      "f0_mean_z": 0.55,
+      "f0_std_z": 0.029,
+      "rms_mean_z": -2.002,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.014,
+      "jitter_z": 1.314
+    },
+    "acoustic": {
+      "score": 34.6,
+      "probabilities": {
+        "hap": 0.6151,
+        "neu": 0.1926,
+        "ang": 0.1358,
+        "sad": 0.0564
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 79.2,
+      "probabilities": {
+        "sadness": 0.5448,
+        "fear": 0.3316,
+        "neutral": 0.0861,
+        "disgust": 0.0191,
+        "surprise": 0.0088,
+        "anger": 0.006,
+        "joy": 0.0035
+      },
+      "top_label": "sadness",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.996,
+    "stress_index": 89.8,
+    "probabilities": {
+      "Calm": 0.002,
+      "Stressed": 0.002,
+      "Tired": 0.996
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.615,
+    "stress_index": 34.6,
+    "probabilities": {
+      "Calm": 0.812,
+      "Stressed": 0.128,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2779,
+  "cached": false
+}

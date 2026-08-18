@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-OCO-142947",
+  "driver": "OCO",
+  "session_id": "2023-monaco-r",
+  "lap": 21,
+  "duration_s": 2.37,
+  "audio_url": "/api/clips/2023-monaco-r-OCO-142947",
+  "transcript": {
+    "text": "Science has a piece of wing hanging, no?",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 100.0,
+      "f0_mean_z": 5.908,
+      "f0_std_z": -2.05,
+      "rms_mean_z": 2.953,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.973,
+      "jitter_z": 0.552
+    },
+    "acoustic": {
+      "score": 56.3,
+      "probabilities": {
+        "ang": 0.4498,
+        "hap": 0.4476,
+        "neu": 0.0837,
+        "sad": 0.0189
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 42.1,
+      "probabilities": {
+        "surprise": 0.3741,
+        "neutral": 0.3546,
+        "disgust": 0.1946,
+        "anger": 0.0607,
+        "sadness": 0.0065,
+        "fear": 0.0049,
+        "joy": 0.0046
+      },
+      "top_label": "surprise",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.964,
+    "stress_index": 99.6,
+    "probabilities": {
+      "Calm": 0.0,
+      "Stressed": 0.964,
+      "Tired": 0.036
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.45,
+    "stress_index": 56.3,
+    "probabilities": {
+      "Calm": 0.517,
+      "Stressed": 0.423,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2510,
+  "cached": false
+}

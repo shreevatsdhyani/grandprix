@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-ALO-150013",
+  "driver": "ALO",
+  "session_id": "2023-monaco-r",
+  "lap": 45,
+  "duration_s": 3.42,
+  "audio_url": "/api/clips/2023-monaco-r-ALO-150013",
+  "transcript": {
+    "text": "So in about five laps we'll start nibbling at the back of those guys.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 20.1,
+      "f0_mean_z": -0.048,
+      "f0_std_z": -0.624,
+      "rms_mean_z": -0.546,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.289,
+      "jitter_z": 0.81
+    },
+    "acoustic": {
+      "score": 30.2,
+      "probabilities": {
+        "hap": 0.5933,
+        "neu": 0.2909,
+        "ang": 0.1153,
+        "sad": 0.0005
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 20.2,
+      "probabilities": {
+        "neutral": 0.9111,
+        "disgust": 0.0344,
+        "anger": 0.0231,
+        "fear": 0.0171,
+        "surprise": 0.0061,
+        "sadness": 0.0049,
+        "joy": 0.0032
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.495,
+    "stress_index": 45.7,
+    "probabilities": {
+      "Calm": 0.495,
+      "Stressed": 0.028,
+      "Tired": 0.477
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.593,
+    "stress_index": 30.2,
+    "probabilities": {
+      "Calm": 0.832,
+      "Stressed": 0.108,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2540,
+  "cached": false
+}

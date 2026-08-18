@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-MAG-145357",
+  "driver": "MAG",
+  "session_id": "2023-dutch-r",
+  "lap": 35,
+  "duration_s": 6.18,
+  "audio_url": "/api/clips/2023-dutch-r-MAG-145357",
+  "transcript": {
+    "text": "Need to get into Joe's DRS if possible, Kev. He has DRS from Piaestria, unfortunately.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 17.5,
+      "f0_mean_z": -0.684,
+      "f0_std_z": -1.26,
+      "rms_mean_z": -0.213,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.028,
+      "jitter_z": 0.008
+    },
+    "acoustic": {
+      "score": 17.6,
+      "probabilities": {
+        "neu": 0.881,
+        "hap": 0.0937,
+        "ang": 0.0164,
+        "sad": 0.0089
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 56.9,
+      "probabilities": {
+        "sadness": 0.7743,
+        "neutral": 0.1419,
+        "surprise": 0.0592,
+        "fear": 0.0126,
+        "disgust": 0.0066,
+        "joy": 0.0035,
+        "anger": 0.0018
+      },
+      "top_label": "sadness",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.928,
+    "stress_index": 83.7,
+    "probabilities": {
+      "Calm": 0.07,
+      "Stressed": 0.002,
+      "Tired": 0.928
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.881,
+    "stress_index": 17.6,
+    "probabilities": {
+      "Calm": 0.925,
+      "Stressed": 0.015,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1977,
+  "cached": false
+}

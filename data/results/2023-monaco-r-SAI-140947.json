@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-SAI-140947",
+  "driver": "SAI",
+  "session_id": "2023-monaco-r",
+  "lap": 6,
+  "duration_s": 6.69,
+  "audio_url": "/api/clips/2023-monaco-r-SAI-140947",
+  "transcript": {
+    "text": "And Cheko at the back just pitted for Arb 16 5 his lap time for info and all the field is packed.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 14.6,
+      "f0_mean_z": -0.001,
+      "f0_std_z": 0.207,
+      "rms_mean_z": -0.828,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.794,
+      "jitter_z": 0.975
+    },
+    "acoustic": {
+      "score": 21.4,
+      "probabilities": {
+        "neu": 0.6921,
+        "hap": 0.2122,
+        "sad": 0.0953,
+        "ang": 0.0004
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 32.7,
+      "probabilities": {
+        "surprise": 0.4638,
+        "neutral": 0.461,
+        "sadness": 0.0295,
+        "anger": 0.0222,
+        "joy": 0.0111,
+        "disgust": 0.0079,
+        "fear": 0.0045
+      },
+      "top_label": "surprise",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.518,
+    "stress_index": 43.6,
+    "probabilities": {
+      "Calm": 0.518,
+      "Stressed": 0.023,
+      "Tired": 0.459
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.692,
+    "stress_index": 21.4,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2925,
+  "cached": false
+}

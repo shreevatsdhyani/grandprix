@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-VER-153958",
+  "driver": "VER",
+  "session_id": "2023-monaco-r",
+  "lap": 70,
+  "duration_s": 6.34,
+  "audio_url": "/api/clips/2023-monaco-r-VER-153958",
+  "transcript": {
+    "text": "Do you see anything other than an enter in these next nine laps? No, no. Anderson, thank you.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 19.9,
+      "f0_mean_z": -0.551,
+      "f0_std_z": 0.737,
+      "rms_mean_z": -0.607,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.592,
+      "jitter_z": 1.391
+    },
+    "acoustic": {
+      "score": 26.0,
+      "probabilities": {
+        "hap": 0.9518,
+        "sad": 0.0249,
+        "neu": 0.0187,
+        "ang": 0.0047
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 20.3,
+      "probabilities": {
+        "neutral": 0.8654,
+        "surprise": 0.0676,
+        "disgust": 0.0247,
+        "anger": 0.0189,
+        "joy": 0.0143,
+        "fear": 0.0052,
+        "sadness": 0.004
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.805,
+    "stress_index": 17.7,
+    "probabilities": {
+      "Calm": 0.805,
+      "Stressed": 0.018,
+      "Tired": 0.177
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.952,
+    "stress_index": 26.0,
+    "probabilities": {
+      "Calm": 0.936,
+      "Stressed": 0.004,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1811,
+  "cached": false
+}

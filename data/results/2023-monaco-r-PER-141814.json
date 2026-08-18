@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-PER-141814",
+  "driver": "PER",
+  "session_id": "2023-monaco-r",
+  "lap": 12,
+  "duration_s": 2.85,
+  "audio_url": "/api/clips/2023-monaco-r-PER-141814",
+  "transcript": {
+    "text": "as a yellow ahead, yellow on the entry to turn two, some debris.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 47.8,
+      "f0_mean_z": -1.664,
+      "f0_std_z": -1.349,
+      "rms_mean_z": -1.537,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.421,
+      "jitter_z": -1.536
+    },
+    "acoustic": {
+      "score": 16.5,
+      "probabilities": {
+        "neu": 0.8714,
+        "hap": 0.125,
+        "sad": 0.0025,
+        "ang": 0.0011
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 41.6,
+      "probabilities": {
+        "neutral": 0.4536,
+        "surprise": 0.196,
+        "sadness": 0.1448,
+        "anger": 0.0851,
+        "disgust": 0.0623,
+        "fear": 0.0531,
+        "joy": 0.005
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.658,
+    "stress_index": 59.2,
+    "probabilities": {
+      "Calm": 0.342,
+      "Stressed": 0.0,
+      "Tired": 0.658
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.871,
+    "stress_index": 16.5,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2634,
+  "cached": false
+}

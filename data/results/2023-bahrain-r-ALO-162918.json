@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-ALO-162918",
+  "driver": "ALO",
+  "session_id": "2023-bahrain-r",
+  "lap": 52,
+  "duration_s": 1.7,
+  "audio_url": "/api/clips/2023-bahrain-r-ALO-162918",
+  "transcript": {
+    "text": "This is a lovely country, right?",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 24.1,
+      "f0_mean_z": -0.214,
+      "f0_std_z": 1.45,
+      "rms_mean_z": 1.003,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.341,
+      "jitter_z": 0.753
+    },
+    "acoustic": {
+      "score": 18.7,
+      "probabilities": {
+        "neu": 0.6342,
+        "hap": 0.365,
+        "ang": 0.0006,
+        "sad": 0.0002
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 11.3,
+      "probabilities": {
+        "joy": 0.9085,
+        "neutral": 0.0728,
+        "surprise": 0.0081,
+        "disgust": 0.0048,
+        "sadness": 0.003,
+        "anger": 0.0021,
+        "fear": 0.0007
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.972,
+    "stress_index": 2.7,
+    "probabilities": {
+      "Calm": 0.972,
+      "Stressed": 0.023,
+      "Tired": 0.004
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.634,
+    "stress_index": 18.7,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2214,
+  "cached": false
+}

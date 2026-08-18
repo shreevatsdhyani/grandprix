@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-VER-205420",
+  "driver": "VER",
+  "session_id": "2024-singapore-r",
+  "lap": 31,
+  "duration_s": 6.21,
+  "audio_url": "/api/clips/2024-singapore-r-VER-205420",
+  "transcript": {
+    "text": "I just don't get it why we let him undercut it by so far. It's just so stupid.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 70.0,
+      "f0_mean_z": 4.568,
+      "f0_std_z": 1.881,
+      "rms_mean_z": -1.135,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.17,
+      "jitter_z": 2.952
+    },
+    "acoustic": {
+      "score": 35.9,
+      "probabilities": {
+        "hap": 0.6902,
+        "sad": 0.3077,
+        "ang": 0.0015,
+        "neu": 0.0005
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 75.7,
+      "probabilities": {
+        "disgust": 0.6025,
+        "anger": 0.3472,
+        "neutral": 0.0159,
+        "sadness": 0.0138,
+        "surprise": 0.0123,
+        "fear": 0.0072,
+        "joy": 0.0011
+      },
+      "top_label": "disgust",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.89,
+    "stress_index": 98.4,
+    "probabilities": {
+      "Calm": 0.006,
+      "Stressed": 0.89,
+      "Tired": 0.104
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.69,
+    "stress_index": 35.9,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1932,
+  "cached": false
+}

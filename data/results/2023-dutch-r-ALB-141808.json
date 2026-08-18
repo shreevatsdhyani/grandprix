@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-ALB-141808",
+  "driver": "ALB",
+  "session_id": "2023-dutch-r",
+  "lap": null,
+  "duration_s": 2.56,
+  "audio_url": "/api/clips/2023-dutch-r-ALB-141808",
+  "transcript": {
+    "text": "Alex, we have a slow left-front pulture.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 32.0,
+      "f0_mean_z": 0.655,
+      "f0_std_z": -0.685,
+      "rms_mean_z": -1.2,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.457,
+      "jitter_z": 0.676
+    },
+    "acoustic": {
+      "score": 35.0,
+      "probabilities": {
+        "hap": 0.4008,
+        "neu": 0.3976,
+        "ang": 0.1985,
+        "sad": 0.003
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 19.5,
+      "probabilities": {
+        "neutral": 0.903,
+        "disgust": 0.0339,
+        "surprise": 0.0289,
+        "sadness": 0.0236,
+        "anger": 0.0051,
+        "fear": 0.0033,
+        "joy": 0.0022
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.466,
+    "stress_index": 54.6,
+    "probabilities": {
+      "Calm": 0.407,
+      "Stressed": 0.127,
+      "Tired": 0.466
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.401,
+    "stress_index": 35.0,
+    "probabilities": {
+      "Calm": 0.753,
+      "Stressed": 0.187,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1868,
+  "cached": false
+}

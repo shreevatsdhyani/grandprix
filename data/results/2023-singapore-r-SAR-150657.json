@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-singapore-r-SAR-150657",
+  "driver": "SAR",
+  "session_id": "2023-singapore-r",
+  "lap": 62,
+  "duration_s": 18.78,
+  "audio_url": "/api/clips/2023-singapore-r-SAR-150657",
+  "transcript": {
+    "text": "I gave you everything from lap one, I never gave up. I'm sorry for the front wing. I need to clean that up. Lot of learning mate, all weekend. Good approach, good way of looking forward. It was a good race, Logan. Good learning for you there and pace at the end of the straw.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 57.4,
+      "f0_mean_z": -0.733,
+      "f0_std_z": 1.081,
+      "rms_mean_z": 1.853,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 3.512,
+      "jitter_z": -0.148
+    },
+    "acoustic": {
+      "score": 24.8,
+      "probabilities": {
+        "hap": 0.8683,
+        "neu": 0.1077,
+        "sad": 0.0236,
+        "ang": 0.0004
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 51.2,
+      "probabilities": {
+        "sadness": 0.6802,
+        "neutral": 0.2453,
+        "surprise": 0.0297,
+        "joy": 0.0225,
+        "disgust": 0.0098,
+        "fear": 0.0093,
+        "anger": 0.0032
+      },
+      "top_label": "sadness",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.624,
+    "stress_index": 34.1,
+    "probabilities": {
+      "Calm": 0.624,
+      "Stressed": 0.02,
+      "Tired": 0.357
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.868,
+    "stress_index": 24.8,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2635,
+  "cached": false
+}

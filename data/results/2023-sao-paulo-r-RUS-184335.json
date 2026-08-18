@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-RUS-184335",
+  "driver": "RUS",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 57,
+  "duration_s": 1.82,
+  "audio_url": "/api/clips/2023-sao-paulo-r-RUS-184335",
+  "transcript": {
+    "text": "So okay, we need to retire the car.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 45.5,
+      "f0_mean_z": -1.105,
+      "f0_std_z": -0.957,
+      "rms_mean_z": 0.194,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -3.433,
+      "jitter_z": 0.968
+    },
+    "acoustic": {
+      "score": 24.0,
+      "probabilities": {
+        "hap": 0.6913,
+        "neu": 0.2641,
+        "sad": 0.0422,
+        "ang": 0.0024
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 55.6,
+      "probabilities": {
+        "neutral": 0.2897,
+        "disgust": 0.2619,
+        "sadness": 0.2475,
+        "anger": 0.1569,
+        "fear": 0.0284,
+        "joy": 0.013,
+        "surprise": 0.0027
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.93,
+    "stress_index": 84.0,
+    "probabilities": {
+      "Calm": 0.067,
+      "Stressed": 0.003,
+      "Tired": 0.93
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.691,
+    "stress_index": 24.0,
+    "probabilities": {
+      "Calm": 0.938,
+      "Stressed": 0.002,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1719,
+  "cached": false
+}

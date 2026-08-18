@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-NOR-173036",
+  "driver": "NOR",
+  "session_id": "2024-monaco-r",
+  "lap": 78,
+  "duration_s": 16.35,
+  "audio_url": "/api/clips/2024-monaco-r-NOR-173036",
+  "transcript": {
+    "text": "Man, that was, that was so fun. Wow, beautiful. Congrats, Oscar, on the podium. Well on team. Second and fourth, it's not bad at all, so congrats. We did what we could.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 36.2,
+      "f0_mean_z": -0.422,
+      "f0_std_z": -0.801,
+      "rms_mean_z": 1.601,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.697,
+      "jitter_z": -0.704
+    },
+    "acoustic": {
+      "score": 48.6,
+      "probabilities": {
+        "sad": 0.6579,
+        "hap": 0.3337,
+        "ang": 0.0082,
+        "neu": 0.0002
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 13.3,
+      "probabilities": {
+        "joy": 0.8981,
+        "surprise": 0.0768,
+        "neutral": 0.0164,
+        "sadness": 0.0031,
+        "disgust": 0.0029,
+        "anger": 0.0017,
+        "fear": 0.001
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.733,
+    "stress_index": 24.9,
+    "probabilities": {
+      "Calm": 0.733,
+      "Stressed": 0.082,
+      "Tired": 0.185
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.658,
+    "stress_index": 48.6,
+    "probabilities": {
+      "Calm": 0.932,
+      "Stressed": 0.008,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2605,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-SAI-160606",
+  "driver": "SAI",
+  "session_id": "2024-italian-r",
+  "lap": 45,
+  "duration_s": 5.66,
+  "audio_url": "/api/clips/2024-italian-r-SAI-160606",
+  "transcript": {
+    "text": "Yeah, my turn it feels... and we got what I guess we tried, yeah. Copy, that's good.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 100.0,
+      "f0_mean_z": 14.098,
+      "f0_std_z": 1.753,
+      "rms_mean_z": 0.359,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.826,
+      "jitter_z": 6.368
+    },
+    "acoustic": {
+      "score": 28.2,
+      "probabilities": {
+        "hap": 0.8032,
+        "sad": 0.1099,
+        "neu": 0.0841,
+        "ang": 0.0029
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.2,
+      "probabilities": {
+        "neutral": 0.8177,
+        "joy": 0.1274,
+        "surprise": 0.0172,
+        "disgust": 0.015,
+        "anger": 0.0129,
+        "sadness": 0.0084,
+        "fear": 0.0014
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 1.0,
+    "stress_index": 100.0,
+    "probabilities": {
+      "Calm": 0.0,
+      "Stressed": 1.0,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.803,
+    "stress_index": 28.2,
+    "probabilities": {
+      "Calm": 0.937,
+      "Stressed": 0.003,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2015,
+  "cached": false
+}

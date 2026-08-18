@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-VER-214702",
+  "driver": "VER",
+  "session_id": "2024-singapore-r",
+  "lap": 62,
+  "duration_s": 16.83,
+  "audio_url": "/api/clips/2024-singapore-r-VER-214702",
+  "transcript": {
+    "text": "Yeah, well Max, you got every ounce of performance out of that today. So, yeah, eight points down at Lando. So, you've done a very strong weekend. And your old pal Daniel picked up a faster slap at the end as well. Thank you, Daniel.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 20.9,
+      "f0_mean_z": -0.311,
+      "f0_std_z": 1.01,
+      "rms_mean_z": -0.852,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.438,
+      "jitter_z": -0.379
+    },
+    "acoustic": {
+      "score": 22.5,
+      "probabilities": {
+        "hap": 0.6841,
+        "neu": 0.3022,
+        "sad": 0.013,
+        "ang": 0.0006
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.8,
+      "probabilities": {
+        "joy": 0.5039,
+        "neutral": 0.3748,
+        "surprise": 0.0482,
+        "anger": 0.0432,
+        "disgust": 0.0149,
+        "sadness": 0.0134,
+        "fear": 0.0015
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.882,
+    "stress_index": 11.2,
+    "probabilities": {
+      "Calm": 0.882,
+      "Stressed": 0.06,
+      "Tired": 0.058
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.684,
+    "stress_index": 22.5,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3156,
+  "cached": false
+}

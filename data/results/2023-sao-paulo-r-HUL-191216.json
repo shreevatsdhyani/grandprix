@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-HUL-191216",
+  "driver": "HUL",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 70,
+  "duration_s": 9.44,
+  "audio_url": "/api/clips/2023-sao-paulo-r-HUL-191216",
+  "transcript": {
+    "text": "Really good drive, Nico, pace and management, excellent. But you did a perfect job on the tires for our car. Yep, thank you.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 52.1,
+      "f0_mean_z": -1.701,
+      "f0_std_z": 0.025,
+      "rms_mean_z": 2.419,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 2.363,
+      "jitter_z": 0.106
+    },
+    "acoustic": {
+      "score": 25.0,
+      "probabilities": {
+        "hap": 0.9652,
+        "neu": 0.029,
+        "sad": 0.0038,
+        "ang": 0.0019
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.6,
+      "probabilities": {
+        "neutral": 0.6653,
+        "joy": 0.2623,
+        "surprise": 0.0473,
+        "anger": 0.009,
+        "sadness": 0.0077,
+        "disgust": 0.0067,
+        "fear": 0.0016
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.86,
+    "stress_index": 12.7,
+    "probabilities": {
+      "Calm": 0.86,
+      "Stressed": 0.012,
+      "Tired": 0.128
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.965,
+    "stress_index": 25.0,
+    "probabilities": {
+      "Calm": 0.938,
+      "Stressed": 0.002,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2309,
+  "cached": false
+}

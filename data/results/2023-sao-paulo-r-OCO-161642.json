@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-OCO-161642",
+  "driver": "OCO",
+  "session_id": "2023-sao-paulo-r",
+  "lap": null,
+  "duration_s": 6.78,
+  "audio_url": "/api/clips/2023-sao-paulo-r-OCO-161642",
+  "transcript": {
+    "text": "This is new material so I wouldn't be surprised if it just takes a lap or two to bed in. I wouldn't be too alarmed at the moment. We'll keep looking.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 97.1,
+      "f0_mean_z": -1.915,
+      "f0_std_z": -2.278,
+      "rms_mean_z": -0.141,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -7.804,
+      "jitter_z": -1.315
+    },
+    "acoustic": {
+      "score": 24.5,
+      "probabilities": {
+        "hap": 0.6055,
+        "neu": 0.3456,
+        "ang": 0.0369,
+        "sad": 0.0119
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 52.8,
+      "probabilities": {
+        "surprise": 0.7079,
+        "fear": 0.2195,
+        "neutral": 0.0506,
+        "anger": 0.0113,
+        "disgust": 0.0049,
+        "joy": 0.003,
+        "sadness": 0.0028
+      },
+      "top_label": "surprise",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.902,
+    "stress_index": 81.4,
+    "probabilities": {
+      "Calm": 0.096,
+      "Stressed": 0.002,
+      "Tired": 0.902
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.606,
+    "stress_index": 24.5,
+    "probabilities": {
+      "Calm": 0.905,
+      "Stressed": 0.035,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2369,
+  "cached": false
+}

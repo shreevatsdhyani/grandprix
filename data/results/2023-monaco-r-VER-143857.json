@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-VER-143857",
+  "driver": "VER",
+  "session_id": "2023-monaco-r",
+  "lap": 29,
+  "duration_s": 2.94,
+  "audio_url": "/api/clips/2023-monaco-r-VER-143857",
+  "transcript": {
+    "text": "No, frontline really isn't really...",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 35.4,
+      "f0_mean_z": 2.918,
+      "f0_std_z": -0.805,
+      "rms_mean_z": 0.388,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.308,
+      "jitter_z": -0.453
+    },
+    "acoustic": {
+      "score": 28.3,
+      "probabilities": {
+        "hap": 0.6712,
+        "neu": 0.1879,
+        "sad": 0.1354,
+        "ang": 0.0056
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 28.3,
+      "probabilities": {
+        "neutral": 0.6639,
+        "surprise": 0.215,
+        "disgust": 0.0572,
+        "sadness": 0.0251,
+        "anger": 0.0224,
+        "fear": 0.0116,
+        "joy": 0.0047
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.683,
+    "stress_index": 83.3,
+    "probabilities": {
+      "Calm": 0.15,
+      "Stressed": 0.683,
+      "Tired": 0.167
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.671,
+    "stress_index": 28.3,
+    "probabilities": {
+      "Calm": 0.935,
+      "Stressed": 0.005,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2316,
+  "cached": false
+}

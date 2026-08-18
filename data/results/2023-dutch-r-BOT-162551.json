@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-BOT-162551",
+  "driver": "BOT",
+  "session_id": "2023-dutch-r",
+  "lap": 71,
+  "duration_s": 2.5,
+  "audio_url": "/api/clips/2023-dutch-r-BOT-162551",
+  "transcript": {
+    "text": "Okay, that's I saw. Well, and I'll study the work.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 24.6,
+      "f0_mean_z": 1.01,
+      "f0_std_z": -1.098,
+      "rms_mean_z": 0.609,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.361,
+      "jitter_z": 1.815
+    },
+    "acoustic": {
+      "score": 22.5,
+      "probabilities": {
+        "hap": 0.6774,
+        "neu": 0.3113,
+        "sad": 0.0061,
+        "ang": 0.0052
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 21.9,
+      "probabilities": {
+        "neutral": 0.8543,
+        "disgust": 0.0535,
+        "anger": 0.0409,
+        "joy": 0.0302,
+        "sadness": 0.0121,
+        "surprise": 0.0046,
+        "fear": 0.0043
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.677,
+    "stress_index": 65.9,
+    "probabilities": {
+      "Calm": 0.273,
+      "Stressed": 0.05,
+      "Tired": 0.677
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.677,
+    "stress_index": 22.5,
+    "probabilities": {
+      "Calm": 0.935,
+      "Stressed": 0.005,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1737,
+  "cached": false
+}

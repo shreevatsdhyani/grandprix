@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-NOR-151548",
+  "driver": "NOR",
+  "session_id": "2023-bahrain-r",
+  "lap": 8,
+  "duration_s": 2.91,
+  "audio_url": "/api/clips/2023-bahrain-r-NOR-151548",
+  "transcript": {
+    "text": "Yeah, this reminds me. I don't need to remind you of your love.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 25.4,
+      "f0_mean_z": 1.227,
+      "f0_std_z": 1.194,
+      "rms_mean_z": 0.418,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.337,
+      "jitter_z": 0.073
+    },
+    "acoustic": {
+      "score": 28.7,
+      "probabilities": {
+        "hap": 0.6564,
+        "neu": 0.2492,
+        "ang": 0.0829,
+        "sad": 0.0116
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 29.2,
+      "probabilities": {
+        "neutral": 0.6882,
+        "disgust": 0.1269,
+        "sadness": 0.0968,
+        "joy": 0.0414,
+        "anger": 0.0214,
+        "surprise": 0.0191,
+        "fear": 0.0062
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.583,
+    "stress_index": 41.5,
+    "probabilities": {
+      "Calm": 0.583,
+      "Stressed": 0.39,
+      "Tired": 0.028
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.656,
+    "stress_index": 28.7,
+    "probabilities": {
+      "Calm": 0.862,
+      "Stressed": 0.078,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2387,
+  "cached": false
+}

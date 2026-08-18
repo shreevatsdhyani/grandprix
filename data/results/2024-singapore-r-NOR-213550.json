@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-NOR-213550",
+  "driver": "NOR",
+  "session_id": "2024-singapore-r",
+  "lap": 57,
+  "duration_s": 6.02,
+  "audio_url": "/api/clips/2024-singapore-r-NOR-213550",
+  "transcript": {
+    "text": "Just a reminder how tricky the following effect is. Oscar Strapped struggled going through three cars. Be careful.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 18.3,
+      "f0_mean_z": -0.674,
+      "f0_std_z": -0.793,
+      "rms_mean_z": -0.125,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.698,
+      "jitter_z": 0.62
+    },
+    "acoustic": {
+      "score": 27.3,
+      "probabilities": {
+        "hap": 0.4865,
+        "neu": 0.4134,
+        "ang": 0.0845,
+        "sad": 0.0156
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 21.7,
+      "probabilities": {
+        "neutral": 0.8813,
+        "fear": 0.0563,
+        "sadness": 0.0201,
+        "surprise": 0.0196,
+        "disgust": 0.012,
+        "anger": 0.0074,
+        "joy": 0.0033
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.502,
+    "stress_index": 47.3,
+    "probabilities": {
+      "Calm": 0.477,
+      "Stressed": 0.021,
+      "Tired": 0.502
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.486,
+    "stress_index": 27.3,
+    "probabilities": {
+      "Calm": 0.861,
+      "Stressed": 0.079,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2282,
+  "cached": false
+}

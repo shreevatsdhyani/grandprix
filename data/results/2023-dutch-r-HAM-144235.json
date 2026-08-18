@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-HAM-144235",
+  "driver": "HAM",
+  "session_id": "2023-dutch-r",
+  "lap": 26,
+  "duration_s": 2.59,
+  "audio_url": "/api/clips/2023-dutch-r-HAM-144235",
+  "transcript": {
+    "text": "Nice with Loose, next car, Norris, a one second ahead.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 28.1,
+      "f0_mean_z": -0.756,
+      "f0_std_z": -0.214,
+      "rms_mean_z": -0.888,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.658,
+      "jitter_z": 1.857
+    },
+    "acoustic": {
+      "score": 23.9,
+      "probabilities": {
+        "hap": 0.6818,
+        "neu": 0.2922,
+        "ang": 0.0259,
+        "sad": 0.0001
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 22.6,
+      "probabilities": {
+        "neutral": 0.7217,
+        "surprise": 0.1695,
+        "joy": 0.0632,
+        "sadness": 0.0123,
+        "disgust": 0.0121,
+        "anger": 0.0112,
+        "fear": 0.01
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.563,
+    "stress_index": 52.5,
+    "probabilities": {
+      "Calm": 0.419,
+      "Stressed": 0.018,
+      "Tired": 0.563
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.682,
+    "stress_index": 23.9,
+    "probabilities": {
+      "Calm": 0.916,
+      "Stressed": 0.024,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1604,
+  "cached": false
+}

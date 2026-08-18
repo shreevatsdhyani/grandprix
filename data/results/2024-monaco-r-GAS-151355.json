@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-GAS-151355",
+  "driver": "GAS",
+  "session_id": "2024-monaco-r",
+  "lap": 1,
+  "duration_s": 9.95,
+  "audio_url": "/api/clips/2024-monaco-r-GAS-151355",
+  "transcript": {
+    "text": "What did you do? What did you do? What did you try to attack me? Red fight. The old car is damaged now!",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 100.0,
+      "f0_mean_z": 15.866,
+      "f0_std_z": 6.883,
+      "rms_mean_z": 0.735,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.203,
+      "jitter_z": 4.401
+    },
+    "acoustic": {
+      "score": 76.8,
+      "probabilities": {
+        "ang": 0.6757,
+        "hap": 0.1913,
+        "sad": 0.13,
+        "neu": 0.003
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 86.5,
+      "probabilities": {
+        "anger": 0.5928,
+        "surprise": 0.252,
+        "disgust": 0.053,
+        "fear": 0.0477,
+        "sadness": 0.0259,
+        "neutral": 0.0234,
+        "joy": 0.0052
+      },
+      "top_label": "anger",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 1.0,
+    "stress_index": 100.0,
+    "probabilities": {
+      "Calm": 0.0,
+      "Stressed": 1.0,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.676,
+    "stress_index": 76.8,
+    "probabilities": {
+      "Calm": 0.305,
+      "Stressed": 0.635,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2742,
+  "cached": false
+}

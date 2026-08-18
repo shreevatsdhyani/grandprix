@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-HAM-192614",
+  "driver": "HAM",
+  "session_id": "2024-singapore-r",
+  "lap": null,
+  "duration_s": 7.55,
+  "audio_url": "/api/clips/2024-singapore-r-HAM-192614",
+  "transcript": {
+    "text": "So a lot of people down here, are you in a clear time, I'm sorry? Yeah, copy. We've got four minutes remaining, so yeah, should be okay.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 12.1,
+      "f0_mean_z": -0.902,
+      "f0_std_z": -0.171,
+      "rms_mean_z": -0.294,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.15,
+      "jitter_z": -0.556
+    },
+    "acoustic": {
+      "score": 25.0,
+      "probabilities": {
+        "hap": 0.9814,
+        "neu": 0.0149,
+        "ang": 0.0019,
+        "sad": 0.0017
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 27.4,
+      "probabilities": {
+        "neutral": 0.7192,
+        "surprise": 0.0712,
+        "disgust": 0.0664,
+        "sadness": 0.054,
+        "joy": 0.0335,
+        "fear": 0.0291,
+        "anger": 0.0266
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.701,
+    "stress_index": 27.1,
+    "probabilities": {
+      "Calm": 0.701,
+      "Stressed": 0.023,
+      "Tired": 0.276
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.981,
+    "stress_index": 25.0,
+    "probabilities": {
+      "Calm": 0.938,
+      "Stressed": 0.002,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2348,
+  "cached": false
+}

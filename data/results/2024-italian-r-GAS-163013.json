@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-GAS-163013",
+  "driver": "GAS",
+  "session_id": "2024-italian-r",
+  "lap": 52,
+  "duration_s": 30.0,
+  "audio_url": "/api/clips/2024-italian-r-GAS-163013",
+  "transcript": {
+    "text": "I've felt as bad as today so a lot of things to a lot of things to review because cars bouncing everywhere and no brakes are certainly no air grip all the way through. Yes. We'll talk after the race but yeah. Definitely not good. A lot of work.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 26.1,
+      "f0_mean_z": 0.381,
+      "f0_std_z": 0.116,
+      "rms_mean_z": -1.387,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.384,
+      "jitter_z": -0.825
+    },
+    "acoustic": {
+      "score": 58.5,
+      "probabilities": {
+        "sad": 0.9561,
+        "hap": 0.0438,
+        "ang": 0.0,
+        "neu": 0.0
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 65.1,
+      "probabilities": {
+        "sadness": 0.6041,
+        "disgust": 0.315,
+        "neutral": 0.0398,
+        "fear": 0.0228,
+        "anger": 0.011,
+        "surprise": 0.0045,
+        "joy": 0.0029
+      },
+      "top_label": "sadness",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.741,
+    "stress_index": 85.6,
+    "probabilities": {
+      "Calm": 0.07,
+      "Stressed": 0.189,
+      "Tired": 0.741
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.956,
+    "stress_index": 58.5,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3632,
+  "cached": false
+}

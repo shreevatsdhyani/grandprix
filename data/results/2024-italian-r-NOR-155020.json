@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-NOR-155020",
+  "driver": "NOR",
+  "session_id": "2024-italian-r",
+  "lap": 33,
+  "duration_s": 2.27,
+  "audio_url": "/api/clips/2024-italian-r-NOR-155020",
+  "transcript": {
+    "text": "I don't know why I'm to leave my shut left so much.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 24.0,
+      "f0_mean_z": 0.942,
+      "f0_std_z": -0.963,
+      "rms_mean_z": 0.213,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.884,
+      "jitter_z": -1.079
+    },
+    "acoustic": {
+      "score": 27.1,
+      "probabilities": {
+        "hap": 0.8054,
+        "neu": 0.1149,
+        "sad": 0.0656,
+        "ang": 0.0142
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 45.7,
+      "probabilities": {
+        "surprise": 0.8631,
+        "neutral": 0.0562,
+        "sadness": 0.0234,
+        "anger": 0.0182,
+        "fear": 0.0182,
+        "disgust": 0.0179,
+        "joy": 0.0029
+      },
+      "top_label": "surprise",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.628,
+    "stress_index": 65.4,
+    "probabilities": {
+      "Calm": 0.283,
+      "Stressed": 0.089,
+      "Tired": 0.628
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.805,
+    "stress_index": 27.1,
+    "probabilities": {
+      "Calm": 0.927,
+      "Stressed": 0.013,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2361,
+  "cached": false
+}

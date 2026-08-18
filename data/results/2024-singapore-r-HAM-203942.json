@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-HAM-203942",
+  "driver": "HAM",
+  "session_id": "2024-singapore-r",
+  "lap": 22,
+  "duration_s": 11.42,
+  "audio_url": "/api/clips/2024-singapore-r-HAM-203942",
+  "transcript": {
+    "text": "We are one of the earliest stoppers, but not the earliest. Yeah, so we'll have... way too short.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 29.0,
+      "f0_mean_z": -1.145,
+      "f0_std_z": -0.479,
+      "rms_mean_z": 1.351,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.651,
+      "jitter_z": -0.847
+    },
+    "acoustic": {
+      "score": 29.4,
+      "probabilities": {
+        "hap": 0.7481,
+        "sad": 0.1454,
+        "neu": 0.1015,
+        "ang": 0.0051
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 21.7,
+      "probabilities": {
+        "neutral": 0.8305,
+        "surprise": 0.0931,
+        "sadness": 0.03,
+        "disgust": 0.0293,
+        "fear": 0.0063,
+        "anger": 0.0056,
+        "joy": 0.005
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.781,
+    "stress_index": 20.0,
+    "probabilities": {
+      "Calm": 0.781,
+      "Stressed": 0.025,
+      "Tired": 0.194
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.748,
+    "stress_index": 29.4,
+    "probabilities": {
+      "Calm": 0.935,
+      "Stressed": 0.005,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2068,
+  "cached": false
+}

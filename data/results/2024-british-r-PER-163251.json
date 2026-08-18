@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-british-r-PER-163251",
+  "driver": "PER",
+  "session_id": "2024-british-r",
+  "lap": 50,
+  "duration_s": 11.2,
+  "audio_url": "/api/clips/2024-british-r-PER-163251",
+  "transcript": {
+    "text": "It was worth taking the shot on that first hit to hit the cross over. Just tried up enough after that. Ah, didn't work, the gamble.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 26.1,
+      "f0_mean_z": -0.103,
+      "f0_std_z": -0.917,
+      "rms_mean_z": 1.193,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.044,
+      "jitter_z": -0.183
+    },
+    "acoustic": {
+      "score": 60.6,
+      "probabilities": {
+        "ang": 0.4516,
+        "hap": 0.4136,
+        "sad": 0.1178,
+        "neu": 0.0169
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 54.6,
+      "probabilities": {
+        "sadness": 0.3617,
+        "disgust": 0.1868,
+        "neutral": 0.183,
+        "surprise": 0.1767,
+        "anger": 0.0584,
+        "fear": 0.0233,
+        "joy": 0.01
+      },
+      "top_label": "sadness",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.848,
+    "stress_index": 85.6,
+    "probabilities": {
+      "Calm": 0.059,
+      "Stressed": 0.093,
+      "Tired": 0.848
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.452,
+    "stress_index": 60.6,
+    "probabilities": {
+      "Calm": 0.515,
+      "Stressed": 0.425,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2351,
+  "cached": false
+}

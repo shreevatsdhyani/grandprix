@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-HAM-155940",
+  "driver": "HAM",
+  "session_id": "2023-monaco-r",
+  "lap": 78,
+  "duration_s": 28.16,
+  "audio_url": "/api/clips/2023-monaco-r-HAM-155940",
+  "transcript": {
+    "text": "Let's go! Great job guys! How's a tough race? Super grateful for all the hard work. Everyone's putting it in to bring this upgrade. Let's keep pushing. We need more. And I know you know that, but let's keep pushing, I believe in you guys. Thank you mate. Yeah, we believe in you too. Yeah, Lewis finally went down. And as you say, team has done a brilliant job. The mechanics and strategy team today, the right cause at the right time. So, good teamwork. Yes sir.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 8.2,
+      "f0_mean_z": -0.248,
+      "f0_std_z": 0.199,
+      "rms_mean_z": -0.417,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.167,
+      "jitter_z": -0.015
+    },
+    "acoustic": {
+      "score": 33.3,
+      "probabilities": {
+        "hap": 0.7961,
+        "sad": 0.1454,
+        "ang": 0.0479,
+        "neu": 0.0106
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 14.8,
+      "probabilities": {
+        "joy": 0.7275,
+        "neutral": 0.2022,
+        "surprise": 0.0335,
+        "anger": 0.0209,
+        "sadness": 0.0111,
+        "disgust": 0.0033,
+        "fear": 0.0015
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.891,
+    "stress_index": 10.2,
+    "probabilities": {
+      "Calm": 0.891,
+      "Stressed": 0.043,
+      "Tired": 0.066
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.796,
+    "stress_index": 33.3,
+    "probabilities": {
+      "Calm": 0.895,
+      "Stressed": 0.045,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3885,
+  "cached": false
+}

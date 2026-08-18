@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-HUL-152648",
+  "driver": "HUL",
+  "session_id": "2023-dutch-r",
+  "lap": 61,
+  "duration_s": 2.11,
+  "audio_url": "/api/clips/2023-dutch-r-HUL-152648",
+  "transcript": {
+    "text": "Box now, Nico Box now.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 38.9,
+      "f0_mean_z": 1.504,
+      "f0_std_z": -1.039,
+      "rms_mean_z": -1.412,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.909,
+      "jitter_z": -1.177
+    },
+    "acoustic": {
+      "score": 24.2,
+      "probabilities": {
+        "neu": 0.5243,
+        "hap": 0.4122,
+        "ang": 0.0633,
+        "sad": 0.0002
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 19.2,
+      "probabilities": {
+        "neutral": 0.8659,
+        "surprise": 0.09,
+        "joy": 0.0175,
+        "sadness": 0.014,
+        "anger": 0.0073,
+        "fear": 0.0029,
+        "disgust": 0.0026
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.602,
+    "stress_index": 37.3,
+    "probabilities": {
+      "Calm": 0.602,
+      "Stressed": 0.145,
+      "Tired": 0.253
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.524,
+    "stress_index": 24.2,
+    "probabilities": {
+      "Calm": 0.88,
+      "Stressed": 0.06,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1734,
+  "cached": false
+}

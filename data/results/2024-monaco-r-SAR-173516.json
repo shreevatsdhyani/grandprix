@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-SAR-173516",
+  "driver": "SAR",
+  "session_id": "2024-monaco-r",
+  "lap": 76,
+  "duration_s": 16.22,
+  "audio_url": "/api/clips/2024-monaco-r-SAR-173516",
+  "transcript": {
+    "text": "Yeah, I just, I know what we're trying to do, but yeah. A bit of a disaster, to be honest. Logan, it was a good move on Joe. Sorry, we didn't work out today and what we're doing strategically, but lots to learn from and move on from here.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 30.6,
+      "f0_mean_z": -1.845,
+      "f0_std_z": -0.152,
+      "rms_mean_z": -1.392,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.441,
+      "jitter_z": -1.083
+    },
+    "acoustic": {
+      "score": 47.1,
+      "probabilities": {
+        "sad": 0.6319,
+        "hap": 0.3664,
+        "neu": 0.0012,
+        "ang": 0.0004
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 31.8,
+      "probabilities": {
+        "neutral": 0.3694,
+        "joy": 0.2785,
+        "sadness": 0.2638,
+        "disgust": 0.0567,
+        "fear": 0.0134,
+        "surprise": 0.0093,
+        "anger": 0.009
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.668,
+    "stress_index": 30.0,
+    "probabilities": {
+      "Calm": 0.668,
+      "Stressed": 0.01,
+      "Tired": 0.322
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.632,
+    "stress_index": 47.1,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2701,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-ALB-140907",
+  "driver": "ALB",
+  "session_id": "2023-dutch-r",
+  "lap": 4,
+  "duration_s": 5.7,
+  "audio_url": "/api/clips/2023-dutch-r-ALB-140907",
+  "transcript": {
+    "text": "and then Magnus and behind on inter. So Alex, this is really good. These guys are going to have to pit again soon for dry.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 35.2,
+      "f0_mean_z": -0.802,
+      "f0_std_z": -1.006,
+      "rms_mean_z": 1.871,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.723,
+      "jitter_z": 1.825
+    },
+    "acoustic": {
+      "score": 69.7,
+      "probabilities": {
+        "ang": 0.6424,
+        "hap": 0.3296,
+        "neu": 0.0269,
+        "sad": 0.0012
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.0,
+      "probabilities": {
+        "joy": 0.4522,
+        "neutral": 0.3938,
+        "surprise": 0.1294,
+        "sadness": 0.0141,
+        "disgust": 0.0044,
+        "anger": 0.0043,
+        "fear": 0.0017
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.677,
+    "stress_index": 76.9,
+    "probabilities": {
+      "Calm": 0.162,
+      "Stressed": 0.16,
+      "Tired": 0.677
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.642,
+    "stress_index": 69.7,
+    "probabilities": {
+      "Calm": 0.336,
+      "Stressed": 0.604,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1689,
+  "cached": false
+}

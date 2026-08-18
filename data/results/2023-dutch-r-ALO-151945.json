@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-ALO-151945",
+  "driver": "ALO",
+  "session_id": "2023-dutch-r",
+  "lap": 56,
+  "duration_s": 4.16,
+  "audio_url": "/api/clips/2023-dutch-r-ALO-151945",
+  "transcript": {
+    "text": "Yeah, levels here is good for none. I'm sure that will be rain.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 12.4,
+      "f0_mean_z": -0.264,
+      "f0_std_z": -0.617,
+      "rms_mean_z": -0.452,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.216,
+      "jitter_z": -0.877
+    },
+    "acoustic": {
+      "score": 25.0,
+      "probabilities": {
+        "hap": 0.9161,
+        "neu": 0.0725,
+        "ang": 0.0091,
+        "sad": 0.0023
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.8,
+      "probabilities": {
+        "neutral": 0.9151,
+        "sadness": 0.0244,
+        "joy": 0.0234,
+        "surprise": 0.0202,
+        "disgust": 0.0101,
+        "anger": 0.0048,
+        "fear": 0.0021
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.765,
+    "stress_index": 21.5,
+    "probabilities": {
+      "Calm": 0.765,
+      "Stressed": 0.036,
+      "Tired": 0.199
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.916,
+    "stress_index": 25.0,
+    "probabilities": {
+      "Calm": 0.931,
+      "Stressed": 0.009,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2436,
+  "cached": false
+}

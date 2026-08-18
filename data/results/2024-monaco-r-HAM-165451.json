@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-HAM-165451",
+  "driver": "HAM",
+  "session_id": "2024-monaco-r",
+  "lap": 54,
+  "duration_s": 1.92,
+  "audio_url": "/api/clips/2024-monaco-r-HAM-165451",
+  "transcript": {
+    "text": "Why didn't you tell me that that was critical?",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 26.5,
+      "f0_mean_z": 0.92,
+      "f0_std_z": -1.048,
+      "rms_mean_z": 1.239,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.104,
+      "jitter_z": 0.009
+    },
+    "acoustic": {
+      "score": 73.7,
+      "probabilities": {
+        "ang": 0.7055,
+        "hap": 0.2049,
+        "neu": 0.0839,
+        "sad": 0.0057
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 62.2,
+      "probabilities": {
+        "anger": 0.4093,
+        "surprise": 0.3468,
+        "neutral": 0.1364,
+        "disgust": 0.0687,
+        "fear": 0.025,
+        "sadness": 0.0119,
+        "joy": 0.0019
+      },
+      "top_label": "anger",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.849,
+    "stress_index": 91.1,
+    "probabilities": {
+      "Calm": 0.004,
+      "Stressed": 0.147,
+      "Tired": 0.849
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.706,
+    "stress_index": 73.7,
+    "probabilities": {
+      "Calm": 0.277,
+      "Stressed": 0.663,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2171,
+  "cached": false
+}

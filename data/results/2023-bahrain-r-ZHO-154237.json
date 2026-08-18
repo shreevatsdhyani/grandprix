@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-ZHO-154237",
+  "driver": "ZHO",
+  "session_id": "2023-bahrain-r",
+  "lap": 24,
+  "duration_s": 12.1,
+  "audio_url": "/api/clips/2023-bahrain-r-ZHO-154237",
+  "transcript": {
+    "text": "Could we job? I'm still not close enough. Could we job?",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 100.0,
+      "f0_mean_z": 9.26,
+      "f0_std_z": 5.142,
+      "rms_mean_z": 8.416,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 7.401,
+      "jitter_z": 1.242
+    },
+    "acoustic": {
+      "score": 68.0,
+      "probabilities": {
+        "ang": 0.6536,
+        "neu": 0.2788,
+        "hap": 0.0676,
+        "sad": 0.0
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 49.4,
+      "probabilities": {
+        "neutral": 0.2997,
+        "sadness": 0.2543,
+        "surprise": 0.228,
+        "fear": 0.1874,
+        "anger": 0.0133,
+        "disgust": 0.0133,
+        "joy": 0.004
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 1.0,
+    "stress_index": 100.0,
+    "probabilities": {
+      "Calm": 0.0,
+      "Stressed": 1.0,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.654,
+    "stress_index": 68.0,
+    "probabilities": {
+      "Calm": 0.326,
+      "Stressed": 0.614,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 7618,
+  "cached": false
+}

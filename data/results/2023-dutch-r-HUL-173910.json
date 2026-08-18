@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-HUL-173910",
+  "driver": "HUL",
+  "session_id": "2023-dutch-r",
+  "lap": 72,
+  "duration_s": 16.45,
+  "audio_url": "/api/clips/2023-dutch-r-HUL-173910",
+  "transcript": {
+    "text": "It's not much possible there. I mean, we could go to speed of these guys, but not overtake you. Yeah, copy that man. It's a good job today by you. It's really good overtakes in the dry too, and then, yeah, you did what we could, so, P12.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 19.3,
+      "f0_mean_z": -0.669,
+      "f0_std_z": -0.563,
+      "rms_mean_z": -0.571,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.604,
+      "jitter_z": 0.527
+    },
+    "acoustic": {
+      "score": 54.3,
+      "probabilities": {
+        "sad": 0.8359,
+        "hap": 0.1636,
+        "neu": 0.0003,
+        "ang": 0.0002
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.9,
+      "probabilities": {
+        "neutral": 0.9219,
+        "joy": 0.0394,
+        "disgust": 0.0129,
+        "surprise": 0.0103,
+        "anger": 0.0082,
+        "sadness": 0.0046,
+        "fear": 0.0027
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.477,
+    "stress_index": 54.7,
+    "probabilities": {
+      "Calm": 0.405,
+      "Stressed": 0.118,
+      "Tired": 0.477
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.836,
+    "stress_index": 54.3,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3204,
+  "cached": false
+}

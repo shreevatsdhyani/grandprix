@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-MAG-142506",
+  "driver": "MAG",
+  "session_id": "2023-dutch-r",
+  "lap": 16,
+  "duration_s": 5.7,
+  "audio_url": "/api/clips/2023-dutch-r-MAG-142506",
+  "transcript": {
+    "text": "For reference, give. Niko is carrying more speed through 7, 8 and 13 just for reference.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 10.9,
+      "f0_mean_z": -0.424,
+      "f0_std_z": -0.319,
+      "rms_mean_z": 0.454,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.17,
+      "jitter_z": 2.711
+    },
+    "acoustic": {
+      "score": 40.5,
+      "probabilities": {
+        "neu": 0.4686,
+        "sad": 0.1937,
+        "ang": 0.1909,
+        "hap": 0.1469
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.2,
+      "probabilities": {
+        "neutral": 0.9446,
+        "surprise": 0.0323,
+        "disgust": 0.0073,
+        "sadness": 0.006,
+        "anger": 0.0053,
+        "joy": 0.0024,
+        "fear": 0.0021
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.645,
+    "stress_index": 63.8,
+    "probabilities": {
+      "Calm": 0.298,
+      "Stressed": 0.057,
+      "Tired": 0.645
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.469,
+    "stress_index": 40.5,
+    "probabilities": {
+      "Calm": 0.761,
+      "Stressed": 0.179,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1916,
+  "cached": false
+}

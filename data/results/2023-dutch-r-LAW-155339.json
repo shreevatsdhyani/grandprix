@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-LAW-155339",
+  "driver": "LAW",
+  "session_id": "2023-dutch-r",
+  "lap": 64,
+  "duration_s": 30.0,
+  "audio_url": "/api/clips/2023-dutch-r-LAW-155339",
+  "transcript": {
+    "text": "Out of curiosity, what was the penalty for in the pit stop? So it was because of the... The reason for the penalty was because we impeded us for their pit stop because of doing the double stock. So nothing you could have done. It's because of the car pollution in the pit end on the... Yeah, what happened there? Bad timings. Copy. Copy.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 33.7,
+      "f0_mean_z": 1.777,
+      "f0_std_z": 1.212,
+      "rms_mean_z": 0.33,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.896,
+      "jitter_z": 1.288
+    },
+    "acoustic": {
+      "score": 25.2,
+      "probabilities": {
+        "hap": 0.9255,
+        "neu": 0.0568,
+        "sad": 0.0141,
+        "ang": 0.0036
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 41.3,
+      "probabilities": {
+        "neutral": 0.5521,
+        "disgust": 0.191,
+        "anger": 0.1498,
+        "surprise": 0.0565,
+        "sadness": 0.0264,
+        "fear": 0.0222,
+        "joy": 0.0021
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.436,
+    "stress_index": 64.4,
+    "probabilities": {
+      "Calm": 0.332,
+      "Stressed": 0.436,
+      "Tired": 0.231
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.925,
+    "stress_index": 25.2,
+    "probabilities": {
+      "Calm": 0.937,
+      "Stressed": 0.003,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 4110,
+  "cached": false
+}

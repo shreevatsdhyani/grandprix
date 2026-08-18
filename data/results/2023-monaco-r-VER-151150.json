@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-VER-151150",
+  "driver": "VER",
+  "session_id": "2023-monaco-r",
+  "lap": 54,
+  "duration_s": 8.77,
+  "audio_url": "/api/clips/2023-monaco-r-VER-151150",
+  "transcript": {
+    "text": "I have to drive to sit the slum because my tires are f-f-f-f-f-f-kend. Under-stem, Max. It might just be survival in that section of Trapp Max if the rest of the track is dry.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 64.5,
+      "f0_mean_z": 2.37,
+      "f0_std_z": 2.955,
+      "rms_mean_z": -2.42,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.321,
+      "jitter_z": 1.288
+    },
+    "acoustic": {
+      "score": 25.2,
+      "probabilities": {
+        "hap": 0.9415,
+        "neu": 0.0482,
+        "ang": 0.0096,
+        "sad": 0.0007
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 46.4,
+      "probabilities": {
+        "neutral": 0.4734,
+        "anger": 0.2019,
+        "sadness": 0.1394,
+        "disgust": 0.0759,
+        "surprise": 0.0515,
+        "fear": 0.0509,
+        "joy": 0.007
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.846,
+    "stress_index": 85.8,
+    "probabilities": {
+      "Calm": 0.141,
+      "Stressed": 0.846,
+      "Tired": 0.013
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.942,
+    "stress_index": 25.2,
+    "probabilities": {
+      "Calm": 0.931,
+      "Stressed": 0.009,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3283,
+  "cached": false
+}

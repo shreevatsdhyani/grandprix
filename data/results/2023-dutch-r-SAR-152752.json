@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-SAR-152752",
+  "driver": "SAR",
+  "session_id": "2023-dutch-r",
+  "lap": 14,
+  "duration_s": 9.57,
+  "audio_url": "/api/clips/2023-dutch-r-SAR-152752",
+  "transcript": {
+    "text": "You okay? You okay? No I crash. I don't know what happened man. Something failed on the front right when I hit the curb.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 21.4,
+      "f0_mean_z": 0.074,
+      "f0_std_z": 0.538,
+      "rms_mean_z": 0.704,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.359,
+      "jitter_z": 0.222
+    },
+    "acoustic": {
+      "score": 31.2,
+      "probabilities": {
+        "hap": 0.7979,
+        "sad": 0.1803,
+        "neu": 0.0207,
+        "ang": 0.0011
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 73.2,
+      "probabilities": {
+        "fear": 0.4937,
+        "anger": 0.1583,
+        "sadness": 0.1156,
+        "surprise": 0.0882,
+        "neutral": 0.0719,
+        "disgust": 0.0625,
+        "joy": 0.0097
+      },
+      "top_label": "fear",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.855,
+    "stress_index": 81.3,
+    "probabilities": {
+      "Calm": 0.101,
+      "Stressed": 0.044,
+      "Tired": 0.855
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.798,
+    "stress_index": 31.2,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1956,
+  "cached": false
+}

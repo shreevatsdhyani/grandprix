@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-singapore-r-VER-132539",
+  "driver": "VER",
+  "session_id": "2023-singapore-r",
+  "lap": 14,
+  "duration_s": 15.46,
+  "audio_url": "/api/clips/2023-singapore-r-VER-132539",
+  "transcript": {
+    "text": "Max, I will say it again, there is no merit at this stage in being within one second of Ocon. Scientists still doing 40.3s. We've been here before, we've been hurt before, you might not think you are pushing Max, but the effective V-racial as we've seen before is very low.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 33.9,
+      "f0_mean_z": -0.704,
+      "f0_std_z": -0.778,
+      "rms_mean_z": -1.713,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.047,
+      "jitter_z": -0.182
+    },
+    "acoustic": {
+      "score": 33.0,
+      "probabilities": {
+        "hap": 0.7531,
+        "sad": 0.2287,
+        "neu": 0.016,
+        "ang": 0.0022
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 22.6,
+      "probabilities": {
+        "neutral": 0.8164,
+        "surprise": 0.1079,
+        "disgust": 0.035,
+        "sadness": 0.0182,
+        "anger": 0.0163,
+        "fear": 0.0047,
+        "joy": 0.0015
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.538,
+    "stress_index": 41.8,
+    "probabilities": {
+      "Calm": 0.538,
+      "Stressed": 0.011,
+      "Tired": 0.452
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.753,
+    "stress_index": 33.0,
+    "probabilities": {
+      "Calm": 0.938,
+      "Stressed": 0.002,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 4052,
+  "cached": false
+}

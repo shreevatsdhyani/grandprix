@@ -229,3 +229,88 @@ def test_gaps_order_the_field_and_difference_correctly():
     assert gaps["NOR"]["gap_to_leader_s"] == pytest.approx(2.338)
     assert gaps["VER"]["gap_to_leader_s"] == pytest.approx(5.636)
     assert gaps["VER"]["gap_ahead_s"] == pytest.approx(3.298)
+
+
+# --- per-lap race situation ----------------------------------------------
+
+
+def test_gaps_all_laps_matches_the_per_lap_helper():
+    """The bulk path and the single-lap path must not drift.
+
+    `gaps_all_laps` exists only as an optimisation — the timeline needs all 78 laps
+    of Monaco on every request, and calling `gaps_at_lap` per lap re-filters and
+    re-sorts each time. Two implementations of the same maths is exactly the sort of
+    thing that quietly diverges, so it is pinned.
+    """
+    df = pd.DataFrame(
+        {
+            "Driver": ["NOR", "HAM", "VER", "NOR", "HAM", "VER"],
+            "LapNumber": [1, 1, 1, 2, 2, 2],
+            "LapStartTime": pd.to_timedelta([0, 0, 0, 100, 100, 100], unit="s"),
+            "LapTime": pd.to_timedelta([92.3, 90.0, 95.6, 91.0, 90.5, 93.2], unit="s"),
+        }
+    )
+    bulk = situation_mod.gaps_all_laps(df)
+
+    for lap in (1, 2):
+        assert bulk[lap] == situation_mod.gaps_at_lap(df, lap)
+
+
+def test_gaps_all_laps_handles_a_frame_with_no_timed_laps():
+    df = pd.DataFrame(
+        {
+            "Driver": ["HAM"],
+            "LapNumber": [1],
+            "LapStartTime": pd.to_timedelta([0], unit="s"),
+            "LapTime": [pd.NaT],
+        }
+    )
+    assert situation_mod.gaps_all_laps(df) == {}
+
+
+def test_flags_by_lap_collects_distinct_flags():
+    rc = pd.DataFrame(
+        {
+            "Lap": [3, 3, 3, 5, 7, None],
+            "Flag": ["YELLOW", "YELLOW", "BLUE", "GREEN", None, "RED"],
+        }
+    )
+    flags = situation_mod.flags_by_lap(rc)
+
+    assert flags[3] == ["YELLOW", "BLUE"]  # deduped, order preserved
+    assert flags[5] == ["GREEN"]
+    assert 7 not in flags  # no flag on that row
+    assert None not in flags  # a message with no lap is not a lap
+
+
+def test_flags_by_lap_ignores_the_literal_string_none():
+    """Race control emits "None" as a flag value on DRS and info messages."""
+    rc = pd.DataFrame({"Lap": [1, 1], "Flag": ["None", "YELLOW"]})
+    assert situation_mod.flags_by_lap(rc) == {1: ["YELLOW"]}
+
+
+def test_timeline_populates_situation_on_laps_without_radio():
+    """The gap this fix closed.
+
+    Situation used to come only from resolved radio calls, so position and gaps
+    existed on a handful of laps out of seventy and the chart could never show race
+    context. It must now be present on essentially every lap.
+    """
+    pytest.importorskip("app.data.timeline")
+    from app.data import timeline as timeline_mod
+    from app.schemas import ScoringMode
+
+    try:
+        tl = timeline_mod.build(SESSION, "HAM", ScoringMode.FUSION)
+    except Exception as exc:  # pragma: no cover - environment, not logic
+        pytest.skip(f"session cache unavailable: {exc}")
+
+    with_position = [p for p in tl.points if p.situation and p.situation.position]
+    # Allow a small shortfall: the final lap of a driver's race can lack a timed
+    # lap, and a retirement truncates the series.
+    assert len(with_position) >= len(tl.points) - 2
+
+    # And it must exceed the number of laps that have a radio call, which is the
+    # whole point — otherwise we are back to clip-derived situation only.
+    radio_laps = sum(1 for p in tl.points if p.clip_id)
+    assert len(with_position) > radio_laps

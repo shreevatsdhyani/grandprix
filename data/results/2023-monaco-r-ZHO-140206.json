@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-ZHO-140206",
+  "driver": "ZHO",
+  "session_id": "2023-monaco-r",
+  "lap": null,
+  "duration_s": 4.13,
+  "audio_url": "/api/clips/2023-monaco-r-ZHO-140206",
+  "transcript": {
+    "text": "Try to push turn 12. Minus 3 on target.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 100.0,
+      "f0_mean_z": 8.453,
+      "f0_std_z": 3.205,
+      "rms_mean_z": -0.49,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.811,
+      "jitter_z": 0.639
+    },
+    "acoustic": {
+      "score": 71.5,
+      "probabilities": {
+        "ang": 0.6297,
+        "hap": 0.2994,
+        "sad": 0.0691,
+        "neu": 0.0018
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 19.4,
+      "probabilities": {
+        "neutral": 0.9227,
+        "sadness": 0.0272,
+        "anger": 0.0196,
+        "fear": 0.0135,
+        "surprise": 0.0081,
+        "disgust": 0.0067,
+        "joy": 0.0022
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 1.0,
+    "stress_index": 100.0,
+    "probabilities": {
+      "Calm": 0.0,
+      "Stressed": 1.0,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.63,
+    "stress_index": 71.5,
+    "probabilities": {
+      "Calm": 0.348,
+      "Stressed": 0.592,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1723,
+  "cached": false
+}

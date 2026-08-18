@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-HUL-152438",
+  "driver": "HUL",
+  "session_id": "2023-dutch-r",
+  "lap": 59,
+  "duration_s": 5.6,
+  "audio_url": "/api/clips/2023-dutch-r-HUL-152438",
+  "transcript": {
+    "text": "Great job, Nico. Just tell us everything you can about the conditions. We want to get on the right tire at the right time.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 21.0,
+      "f0_mean_z": 1.375,
+      "f0_std_z": -0.133,
+      "rms_mean_z": -0.098,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.019,
+      "jitter_z": 0.385
+    },
+    "acoustic": {
+      "score": 33.4,
+      "probabilities": {
+        "hap": 0.6893,
+        "neu": 0.1613,
+        "ang": 0.1366,
+        "sad": 0.0127
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.5,
+      "probabilities": {
+        "neutral": 0.9477,
+        "joy": 0.0198,
+        "surprise": 0.0129,
+        "anger": 0.0078,
+        "sadness": 0.0054,
+        "disgust": 0.0039,
+        "fear": 0.0025
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.489,
+    "stress_index": 49.4,
+    "probabilities": {
+      "Calm": 0.489,
+      "Stressed": 0.35,
+      "Tired": 0.16
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.689,
+    "stress_index": 33.4,
+    "probabilities": {
+      "Calm": 0.812,
+      "Stressed": 0.128,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2135,
+  "cached": false
+}

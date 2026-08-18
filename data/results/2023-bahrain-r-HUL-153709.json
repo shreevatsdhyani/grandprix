@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-HUL-153709",
+  "driver": "HUL",
+  "session_id": "2023-bahrain-r",
+  "lap": 20,
+  "duration_s": 9.98,
+  "audio_url": "/api/clips/2023-bahrain-r-HUL-153709",
+  "transcript": {
+    "text": "Okay, Nico, so we are missing some performance from the lap one, so it is making it very difficult for you, but just do the best you can, and we'll try and keep this tire alive and then see what comes in the race.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 20.7,
+      "f0_mean_z": -0.787,
+      "f0_std_z": -0.317,
+      "rms_mean_z": 0.902,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.579,
+      "jitter_z": -0.209
+    },
+    "acoustic": {
+      "score": 31.5,
+      "probabilities": {
+        "hap": 0.7612,
+        "neu": 0.0947,
+        "sad": 0.0744,
+        "ang": 0.0697
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 19.5,
+      "probabilities": {
+        "neutral": 0.9157,
+        "sadness": 0.0209,
+        "anger": 0.0182,
+        "fear": 0.0167,
+        "disgust": 0.0163,
+        "joy": 0.0089,
+        "surprise": 0.0033
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.869,
+    "stress_index": 12.0,
+    "probabilities": {
+      "Calm": 0.869,
+      "Stressed": 0.019,
+      "Tired": 0.112
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.761,
+    "stress_index": 31.5,
+    "probabilities": {
+      "Calm": 0.874,
+      "Stressed": 0.066,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3459,
+  "cached": false
+}

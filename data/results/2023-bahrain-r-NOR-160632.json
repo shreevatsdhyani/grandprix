@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-NOR-160632",
+  "driver": "NOR",
+  "session_id": "2023-bahrain-r",
+  "lap": 38,
+  "duration_s": 5.76,
+  "audio_url": "/api/clips/2023-bahrain-r-NOR-160632",
+  "transcript": {
+    "text": "Just a reminder, we've had two strikes, we must not get a penalty of this event. I'll explain later.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 23.3,
+      "f0_mean_z": 0.324,
+      "f0_std_z": -0.297,
+      "rms_mean_z": -1.276,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.014,
+      "jitter_z": 0.491
+    },
+    "acoustic": {
+      "score": 25.0,
+      "probabilities": {
+        "neu": 0.6813,
+        "hap": 0.213,
+        "ang": 0.0885,
+        "sad": 0.0172
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 22.9,
+      "probabilities": {
+        "neutral": 0.8656,
+        "sadness": 0.0457,
+        "anger": 0.0432,
+        "disgust": 0.0287,
+        "fear": 0.0087,
+        "surprise": 0.0059,
+        "joy": 0.0022
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.611,
+    "stress_index": 35.4,
+    "probabilities": {
+      "Calm": 0.611,
+      "Stressed": 0.038,
+      "Tired": 0.351
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.681,
+    "stress_index": 25.0,
+    "probabilities": {
+      "Calm": 0.857,
+      "Stressed": 0.083,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2909,
+  "cached": false
+}

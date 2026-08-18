@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-ZHO-150517",
+  "driver": "ZHO",
+  "session_id": "2023-monaco-r",
+  "lap": 47,
+  "duration_s": 5.98,
+  "audio_url": "/api/clips/2023-monaco-r-ZHO-150517",
+  "transcript": {
+    "text": "To a house, carbox, question. It will play a bit of an understatement to say mid-con and exit sliding.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 100.0,
+      "f0_mean_z": 12.841,
+      "f0_std_z": 3.884,
+      "rms_mean_z": -0.269,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.031,
+      "jitter_z": -0.448
+    },
+    "acoustic": {
+      "score": 32.1,
+      "probabilities": {
+        "hap": 0.7669,
+        "sad": 0.1889,
+        "neu": 0.0327,
+        "ang": 0.0115
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 19.0,
+      "probabilities": {
+        "neutral": 0.8949,
+        "surprise": 0.0768,
+        "disgust": 0.0116,
+        "anger": 0.0083,
+        "fear": 0.0034,
+        "sadness": 0.0032,
+        "joy": 0.0016
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 1.0,
+    "stress_index": 100.0,
+    "probabilities": {
+      "Calm": 0.0,
+      "Stressed": 1.0,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.767,
+    "stress_index": 32.1,
+    "probabilities": {
+      "Calm": 0.929,
+      "Stressed": 0.011,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2823,
+  "cached": false
+}

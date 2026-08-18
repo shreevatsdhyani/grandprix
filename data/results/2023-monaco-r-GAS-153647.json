@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-GAS-153647",
+  "driver": "GAS",
+  "session_id": "2023-monaco-r",
+  "lap": 68,
+  "duration_s": 7.3,
+  "audio_url": "/api/clips/2023-monaco-r-GAS-153647",
+  "transcript": {
+    "text": "Gonnaise we've got three warnings now for turn 10 and 11 so we'll be very careful there please.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 12.6,
+      "f0_mean_z": -0.332,
+      "f0_std_z": -0.309,
+      "rms_mean_z": -0.368,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.571,
+      "jitter_z": 0.617
+    },
+    "acoustic": {
+      "score": 17.4,
+      "probabilities": {
+        "neu": 0.8021,
+        "hap": 0.1876,
+        "sad": 0.0099,
+        "ang": 0.0004
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 27.7,
+      "probabilities": {
+        "neutral": 0.7929,
+        "fear": 0.13,
+        "sadness": 0.0352,
+        "surprise": 0.0167,
+        "anger": 0.011,
+        "disgust": 0.009,
+        "joy": 0.0051
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.568,
+    "stress_index": 39.0,
+    "probabilities": {
+      "Calm": 0.568,
+      "Stressed": 0.008,
+      "Tired": 0.424
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.802,
+    "stress_index": 17.4,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1921,
+  "cached": false
+}

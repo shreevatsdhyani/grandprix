@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-PIA-210421",
+  "driver": "PIA",
+  "session_id": "2024-singapore-r",
+  "lap": 38,
+  "duration_s": 1.66,
+  "audio_url": "/api/clips/2024-singapore-r-PIA-210421",
+  "transcript": {
+    "text": "Getting very cheap, you know.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 70.0,
+      "f0_mean_z": -3.807,
+      "f0_std_z": -2.533,
+      "rms_mean_z": 1.302,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.111,
+      "jitter_z": -6.815
+    },
+    "acoustic": {
+      "score": 30.6,
+      "probabilities": {
+        "hap": 0.8541,
+        "ang": 0.0585,
+        "sad": 0.0535,
+        "neu": 0.0339
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 22.4,
+      "probabilities": {
+        "neutral": 0.7569,
+        "joy": 0.1037,
+        "disgust": 0.0897,
+        "anger": 0.0271,
+        "surprise": 0.0116,
+        "sadness": 0.0071,
+        "fear": 0.0039
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.943,
+    "stress_index": 5.2,
+    "probabilities": {
+      "Calm": 0.943,
+      "Stressed": 0.001,
+      "Tired": 0.057
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.854,
+    "stress_index": 30.6,
+    "probabilities": {
+      "Calm": 0.885,
+      "Stressed": 0.055,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1578,
+  "cached": false
+}

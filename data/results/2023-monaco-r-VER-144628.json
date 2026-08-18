@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-VER-144628",
+  "driver": "VER",
+  "session_id": "2023-monaco-r",
+  "lap": 34,
+  "duration_s": 7.81,
+  "audio_url": "/api/clips/2023-monaco-r-VER-144628",
+  "transcript": {
+    "text": "I mean it's almost unrivaled by now and it's kids. Under Sir Max, if we pit now we fall behind Fernando, I'm sure you understand the situation.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 31.3,
+      "f0_mean_z": 1.878,
+      "f0_std_z": 1.039,
+      "rms_mean_z": -0.171,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.83,
+      "jitter_z": -0.119
+    },
+    "acoustic": {
+      "score": 25.0,
+      "probabilities": {
+        "hap": 0.8079,
+        "neu": 0.1639,
+        "ang": 0.0174,
+        "sad": 0.0107
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 29.9,
+      "probabilities": {
+        "neutral": 0.6115,
+        "surprise": 0.2716,
+        "disgust": 0.0799,
+        "anger": 0.0217,
+        "sadness": 0.0078,
+        "fear": 0.0048,
+        "joy": 0.0026
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.554,
+    "stress_index": 57.1,
+    "probabilities": {
+      "Calm": 0.427,
+      "Stressed": 0.554,
+      "Tired": 0.019
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.808,
+    "stress_index": 25.0,
+    "probabilities": {
+      "Calm": 0.924,
+      "Stressed": 0.016,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3043,
+  "cached": false
+}

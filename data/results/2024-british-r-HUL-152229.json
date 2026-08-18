@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-british-r-HUL-152229",
+  "driver": "HUL",
+  "session_id": "2024-british-r",
+  "lap": 13,
+  "duration_s": 7.33,
+  "audio_url": "/api/clips/2024-british-r-HUL-152229",
+  "transcript": {
+    "text": "Just spitting or you expect to have to go in just... Spitting initially but we think it could become real a leper too in...",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 41.7,
+      "f0_mean_z": 2.827,
+      "f0_std_z": 1.601,
+      "rms_mean_z": 0.393,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.392,
+      "jitter_z": 0.603
+    },
+    "acoustic": {
+      "score": 27.0,
+      "probabilities": {
+        "hap": 0.8798,
+        "neu": 0.0577,
+        "sad": 0.0515,
+        "ang": 0.0111
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 60.4,
+      "probabilities": {
+        "disgust": 0.7396,
+        "neutral": 0.1828,
+        "anger": 0.0396,
+        "fear": 0.0126,
+        "sadness": 0.0115,
+        "surprise": 0.0113,
+        "joy": 0.0026
+      },
+      "top_label": "disgust",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.788,
+    "stress_index": 88.8,
+    "probabilities": {
+      "Calm": 0.101,
+      "Stressed": 0.788,
+      "Tired": 0.111
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.88,
+    "stress_index": 27.0,
+    "probabilities": {
+      "Calm": 0.93,
+      "Stressed": 0.01,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1936,
+  "cached": false
+}

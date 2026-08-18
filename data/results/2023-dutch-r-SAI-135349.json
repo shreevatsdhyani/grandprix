@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-SAI-135349",
+  "driver": "SAI",
+  "session_id": "2023-dutch-r",
+  "lap": null,
+  "duration_s": 8.19,
+  "audio_url": "/api/clips/2023-dutch-r-SAI-135349",
+  "transcript": {
+    "text": "Now is born with phase 7, from with phase 5. What is it? We'll take it a bit.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 29.5,
+      "f0_mean_z": 0.031,
+      "f0_std_z": -1.256,
+      "rms_mean_z": 0.81,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.588,
+      "jitter_z": -2.052
+    },
+    "acoustic": {
+      "score": 24.7,
+      "probabilities": {
+        "hap": 0.9472,
+        "neu": 0.0484,
+        "sad": 0.0044,
+        "ang": 0.0
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.4,
+      "probabilities": {
+        "neutral": 0.9202,
+        "surprise": 0.0459,
+        "joy": 0.017,
+        "anger": 0.0068,
+        "sadness": 0.0045,
+        "disgust": 0.003,
+        "fear": 0.0028
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.8,
+    "stress_index": 18.4,
+    "probabilities": {
+      "Calm": 0.8,
+      "Stressed": 0.036,
+      "Tired": 0.164
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.947,
+    "stress_index": 24.7,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2314,
+  "cached": false
+}

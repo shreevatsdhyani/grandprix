@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-STR-152608",
+  "driver": "STR",
+  "session_id": "2023-dutch-r",
+  "lap": 60,
+  "duration_s": 10.3,
+  "audio_url": "/api/clips/2023-dutch-r-STR-152608",
+  "transcript": {
+    "text": "Okay Lance, 13 to go, 13 to go, other teams thinking extreme wet, it could be extreme wet, we're considering it. We'll start it terrain.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 17.8,
+      "f0_mean_z": 0.921,
+      "f0_std_z": 0.368,
+      "rms_mean_z": 0.717,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.214,
+      "jitter_z": 0.489
+    },
+    "acoustic": {
+      "score": 27.4,
+      "probabilities": {
+        "hap": 0.7448,
+        "neu": 0.1863,
+        "ang": 0.0515,
+        "sad": 0.0174
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 22.2,
+      "probabilities": {
+        "neutral": 0.8806,
+        "fear": 0.0488,
+        "anger": 0.0252,
+        "disgust": 0.0237,
+        "surprise": 0.0088,
+        "sadness": 0.0075,
+        "joy": 0.0054
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.623,
+    "stress_index": 36.1,
+    "probabilities": {
+      "Calm": 0.623,
+      "Stressed": 0.223,
+      "Tired": 0.153
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.745,
+    "stress_index": 27.4,
+    "probabilities": {
+      "Calm": 0.892,
+      "Stressed": 0.048,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2440,
+  "cached": false
+}

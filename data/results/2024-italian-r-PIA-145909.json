@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-PIA-145909",
+  "driver": "PIA",
+  "session_id": "2024-italian-r",
+  "lap": null,
+  "duration_s": 16.03,
+  "audio_url": "/api/clips/2024-italian-r-PIA-145909",
+  "transcript": {
+    "text": "Oscar Taran Fau to the top six cars are a new medium, both Red Bulls, new hearts, and then towards the back of the grid, hot starters are Ocon, to know that, stroll and bot us. Have a good race. Thank you.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 24.9,
+      "f0_mean_z": -1.165,
+      "f0_std_z": -0.785,
+      "rms_mean_z": -1.011,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.155,
+      "jitter_z": -0.507
+    },
+    "acoustic": {
+      "score": 76.5,
+      "probabilities": {
+        "ang": 0.5316,
+        "sad": 0.4079,
+        "hap": 0.057,
+        "neu": 0.0035
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.6,
+      "probabilities": {
+        "neutral": 0.7523,
+        "joy": 0.1837,
+        "surprise": 0.0449,
+        "sadness": 0.0061,
+        "anger": 0.0061,
+        "fear": 0.0037,
+        "disgust": 0.0031
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.425,
+    "stress_index": 63.9,
+    "probabilities": {
+      "Calm": 0.318,
+      "Stressed": 0.257,
+      "Tired": 0.425
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.532,
+    "stress_index": 76.5,
+    "probabilities": {
+      "Calm": 0.44,
+      "Stressed": 0.5,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3043,
+  "cached": false
+}

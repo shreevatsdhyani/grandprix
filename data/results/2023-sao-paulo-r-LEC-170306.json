@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-LEC-170306",
+  "driver": "LEC",
+  "session_id": "2023-sao-paulo-r",
+  "lap": null,
+  "duration_s": 7.68,
+  "audio_url": "/api/clips/2023-sao-paulo-r-LEC-170306",
+  "transcript": {
+    "text": "The Angelics came back, and Jean-Switched off. Why are they so unlucky?",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 56.6,
+      "f0_mean_z": -1.472,
+      "f0_std_z": 1.021,
+      "rms_mean_z": 2.228,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 2.348,
+      "jitter_z": -0.831
+    },
+    "acoustic": {
+      "score": 25.7,
+      "probabilities": {
+        "hap": 0.8332,
+        "neu": 0.1374,
+        "ang": 0.0291,
+        "sad": 0.0002
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 33.7,
+      "probabilities": {
+        "neutral": 0.4587,
+        "surprise": 0.425,
+        "sadness": 0.09,
+        "anger": 0.0089,
+        "disgust": 0.0072,
+        "fear": 0.0054,
+        "joy": 0.0048
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.882,
+    "stress_index": 10.9,
+    "probabilities": {
+      "Calm": 0.882,
+      "Stressed": 0.03,
+      "Tired": 0.088
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.833,
+    "stress_index": 25.7,
+    "probabilities": {
+      "Calm": 0.913,
+      "Stressed": 0.027,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2218,
+  "cached": false
+}

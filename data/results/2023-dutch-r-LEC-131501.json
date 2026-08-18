@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-LEC-131501",
+  "driver": "LEC",
+  "session_id": "2023-dutch-r",
+  "lap": null,
+  "duration_s": 17.86,
+  "audio_url": "/api/clips/2023-dutch-r-LEC-131501",
+  "transcript": {
+    "text": "So slightly better than previous lap, slower everywhere, just 10, you have faster than him. But we are talking small, something small. And we have wind phase 728, similar to FP2.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 18.2,
+      "f0_mean_z": -0.634,
+      "f0_std_z": -0.115,
+      "rms_mean_z": 0.961,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.57,
+      "jitter_z": -0.848
+    },
+    "acoustic": {
+      "score": 24.1,
+      "probabilities": {
+        "hap": 0.8937,
+        "neu": 0.1032,
+        "sad": 0.0027,
+        "ang": 0.0003
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 22.4,
+      "probabilities": {
+        "neutral": 0.782,
+        "surprise": 0.1734,
+        "disgust": 0.0148,
+        "sadness": 0.0137,
+        "anger": 0.007,
+        "joy": 0.0065,
+        "fear": 0.0027
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.828,
+    "stress_index": 15.8,
+    "probabilities": {
+      "Calm": 0.828,
+      "Stressed": 0.034,
+      "Tired": 0.138
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.894,
+    "stress_index": 24.1,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3212,
+  "cached": false
+}

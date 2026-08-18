@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-PER-161725",
+  "driver": "PER",
+  "session_id": "2023-bahrain-r",
+  "lap": 45,
+  "duration_s": 3.07,
+  "audio_url": "/api/clips/2023-bahrain-r-PER-161725",
+  "transcript": {
+    "text": "There's no pressure from behind. Just taking it home.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 30.6,
+      "f0_mean_z": -1.697,
+      "f0_std_z": -1.826,
+      "rms_mean_z": -0.3,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.002,
+      "jitter_z": -2.303
+    },
+    "acoustic": {
+      "score": 29.7,
+      "probabilities": {
+        "hap": 0.9199,
+        "ang": 0.0684,
+        "neu": 0.0117,
+        "sad": 0.0
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 19.0,
+      "probabilities": {
+        "neutral": 0.9351,
+        "anger": 0.038,
+        "disgust": 0.0092,
+        "surprise": 0.0059,
+        "fear": 0.0045,
+        "joy": 0.0042,
+        "sadness": 0.0031
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.775,
+    "stress_index": 20.2,
+    "probabilities": {
+      "Calm": 0.775,
+      "Stressed": 0.001,
+      "Tired": 0.223
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.92,
+    "stress_index": 29.7,
+    "probabilities": {
+      "Calm": 0.876,
+      "Stressed": 0.064,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2273,
+  "cached": false
+}

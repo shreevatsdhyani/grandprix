@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-VER-151001",
+  "driver": "VER",
+  "session_id": "2023-monaco-r",
+  "lap": 53,
+  "duration_s": 5.18,
+  "audio_url": "/api/clips/2023-monaco-r-VER-151001",
+  "transcript": {
+    "text": "Reading! Okay you let me know if you need a box to stay on the track Max. It's as simple as that.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 31.0,
+      "f0_mean_z": 0.658,
+      "f0_std_z": 1.44,
+      "rms_mean_z": -0.939,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.844,
+      "jitter_z": -0.081
+    },
+    "acoustic": {
+      "score": 32.0,
+      "probabilities": {
+        "hap": 0.7844,
+        "ang": 0.1064,
+        "neu": 0.0953,
+        "sad": 0.014
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 50.2,
+      "probabilities": {
+        "anger": 0.3958,
+        "neutral": 0.3482,
+        "joy": 0.1237,
+        "disgust": 0.0575,
+        "surprise": 0.0501,
+        "sadness": 0.0149,
+        "fear": 0.0098
+      },
+      "top_label": "anger",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.527,
+    "stress_index": 46.0,
+    "probabilities": {
+      "Calm": 0.527,
+      "Stressed": 0.341,
+      "Tired": 0.132
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.784,
+    "stress_index": 32.0,
+    "probabilities": {
+      "Calm": 0.84,
+      "Stressed": 0.1,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3049,
+  "cached": false
+}

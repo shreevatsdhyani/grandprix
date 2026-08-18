@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-SAI-160008",
+  "driver": "SAI",
+  "session_id": "2023-dutch-r",
+  "lap": 40,
+  "duration_s": 9.34,
+  "audio_url": "/api/clips/2023-dutch-r-SAI-160008",
+  "transcript": {
+    "text": "My entire life for the soft is plus 10, plus 10. You don't think we can take it to the end? At the moment we don't think, but we are monitoring.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 27.4,
+      "f0_mean_z": -0.068,
+      "f0_std_z": 0.845,
+      "rms_mean_z": 1.617,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.9,
+      "jitter_z": 0.973
+    },
+    "acoustic": {
+      "score": 24.1,
+      "probabilities": {
+        "hap": 0.7818,
+        "neu": 0.1973,
+        "sad": 0.0109,
+        "ang": 0.0099
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 30.7,
+      "probabilities": {
+        "neutral": 0.5633,
+        "surprise": 0.3469,
+        "disgust": 0.0343,
+        "anger": 0.0319,
+        "fear": 0.009,
+        "sadness": 0.008,
+        "joy": 0.0065
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.692,
+    "stress_index": 28.7,
+    "probabilities": {
+      "Calm": 0.692,
+      "Stressed": 0.098,
+      "Tired": 0.21
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.782,
+    "stress_index": 24.1,
+    "probabilities": {
+      "Calm": 0.931,
+      "Stressed": 0.009,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2271,
+  "cached": false
+}

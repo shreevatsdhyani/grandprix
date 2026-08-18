@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-NOR-214610",
+  "driver": "NOR",
+  "session_id": "2024-singapore-r",
+  "lap": 62,
+  "duration_s": 11.42,
+  "audio_url": "/api/clips/2024-singapore-r-NOR-214610",
+  "transcript": {
+    "text": "One of my, it's all. Yeah, I'll leave it, lovely. Amazing car all weekend. Thank you very much, everyone. One of many more, let's keep pushing.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 49.3,
+      "f0_mean_z": -0.143,
+      "f0_std_z": 1.123,
+      "rms_mean_z": 2.467,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 2.432,
+      "jitter_z": -0.157
+    },
+    "acoustic": {
+      "score": 25.3,
+      "probabilities": {
+        "hap": 0.9626,
+        "neu": 0.0233,
+        "sad": 0.0131,
+        "ang": 0.001
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 12.4,
+      "probabilities": {
+        "joy": 0.8997,
+        "neutral": 0.047,
+        "surprise": 0.0426,
+        "sadness": 0.0057,
+        "anger": 0.0026,
+        "disgust": 0.0017,
+        "fear": 0.0007
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.886,
+    "stress_index": 11.2,
+    "probabilities": {
+      "Calm": 0.886,
+      "Stressed": 0.09,
+      "Tired": 0.024
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.963,
+    "stress_index": 25.3,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2466,
+  "cached": false
+}

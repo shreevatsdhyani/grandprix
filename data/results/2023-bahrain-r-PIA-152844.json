@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-PIA-152844",
+  "driver": "PIA",
+  "session_id": "2023-bahrain-r",
+  "lap": 13,
+  "duration_s": 12.93,
+  "audio_url": "/api/clips/2023-bahrain-r-PIA-152844",
+  "transcript": {
+    "text": "And it's died. It should be okay. Once we've done the pit stop, you'll be able to fire up with the new wheel. Once we've done the stop, you should be able to fire up with the new wheel. I don't have anything on the deaf. No, I've still got nothing.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 15.0,
+      "f0_mean_z": 0.69,
+      "f0_std_z": 0.742,
+      "rms_mean_z": 0.093,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.345,
+      "jitter_z": 0.076
+    },
+    "acoustic": {
+      "score": 31.7,
+      "probabilities": {
+        "hap": 0.7042,
+        "sad": 0.1616,
+        "neu": 0.1047,
+        "ang": 0.0296
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 23.6,
+      "probabilities": {
+        "neutral": 0.8342,
+        "sadness": 0.0651,
+        "disgust": 0.0318,
+        "surprise": 0.0269,
+        "anger": 0.0255,
+        "fear": 0.0124,
+        "joy": 0.0041
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.736,
+    "stress_index": 26.0,
+    "probabilities": {
+      "Calm": 0.736,
+      "Stressed": 0.221,
+      "Tired": 0.043
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.704,
+    "stress_index": 31.7,
+    "probabilities": {
+      "Calm": 0.912,
+      "Stressed": 0.028,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3682,
+  "cached": false
+}

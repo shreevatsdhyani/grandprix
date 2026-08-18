@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-RUS-152340",
+  "driver": "RUS",
+  "session_id": "2023-monaco-r",
+  "lap": 60,
+  "duration_s": 8.83,
+  "audio_url": "/api/clips/2023-monaco-r-RUS-152340",
+  "transcript": {
+    "text": "So we have a five second time penalty for the rejoin.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 26.7,
+      "f0_mean_z": -0.197,
+      "f0_std_z": 0.123,
+      "rms_mean_z": 1.374,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.639,
+      "jitter_z": 1.255
+    },
+    "acoustic": {
+      "score": 34.0,
+      "probabilities": {
+        "hap": 0.7201,
+        "sad": 0.2596,
+        "neu": 0.0187,
+        "ang": 0.0016
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 39.6,
+      "probabilities": {
+        "neutral": 0.6066,
+        "anger": 0.1751,
+        "disgust": 0.1019,
+        "sadness": 0.0868,
+        "fear": 0.019,
+        "surprise": 0.0074,
+        "joy": 0.0032
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.796,
+    "stress_index": 74.0,
+    "probabilities": {
+      "Calm": 0.18,
+      "Stressed": 0.024,
+      "Tired": 0.796
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.72,
+    "stress_index": 34.0,
+    "probabilities": {
+      "Calm": 0.938,
+      "Stressed": 0.002,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3207,
+  "cached": false
+}

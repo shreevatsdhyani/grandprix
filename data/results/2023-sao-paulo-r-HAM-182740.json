@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-HAM-182740",
+  "driver": "HAM",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 46,
+  "duration_s": 2.62,
+  "audio_url": "/api/clips/2023-sao-paulo-r-HAM-182740",
+  "transcript": {
+    "text": "But it's just custody, but the cost is so bad in the air.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 16.2,
+      "f0_mean_z": 0.0,
+      "f0_std_z": 0.0,
+      "rms_mean_z": 0.48,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.547,
+      "jitter_z": 0.0
+    },
+    "acoustic": {
+      "score": 63.0,
+      "probabilities": {
+        "ang": 0.4774,
+        "hap": 0.2428,
+        "sad": 0.1644,
+        "neu": 0.1155
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 67.3,
+      "probabilities": {
+        "disgust": 0.8362,
+        "neutral": 0.0613,
+        "anger": 0.0375,
+        "sadness": 0.0371,
+        "fear": 0.0207,
+        "surprise": 0.006,
+        "joy": 0.0013
+      },
+      "top_label": "disgust",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.744,
+    "stress_index": 87.7,
+    "probabilities": {
+      "Calm": 0.048,
+      "Stressed": 0.207,
+      "Tired": 0.744
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.477,
+    "stress_index": 63.0,
+    "probabilities": {
+      "Calm": 0.491,
+      "Stressed": 0.449,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1842,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-HUL-142600",
+  "driver": "HUL",
+  "session_id": "2023-monaco-r",
+  "lap": 18,
+  "duration_s": 2.02,
+  "audio_url": "/api/clips/2023-monaco-r-HUL-142600",
+  "transcript": {
+    "text": "Sarthes blocking her album.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 10.6,
+      "f0_mean_z": 0.0,
+      "f0_std_z": 0.0,
+      "rms_mean_z": -1.001,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.323,
+      "jitter_z": 0.0
+    },
+    "acoustic": {
+      "score": 48.4,
+      "probabilities": {
+        "neu": 0.4673,
+        "ang": 0.3964,
+        "hap": 0.1277,
+        "sad": 0.0086
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 68.8,
+      "probabilities": {
+        "disgust": 0.6738,
+        "sadness": 0.1457,
+        "anger": 0.1142,
+        "neutral": 0.0495,
+        "fear": 0.011,
+        "surprise": 0.0051,
+        "joy": 0.0008
+      },
+      "top_label": "disgust",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.96,
+    "stress_index": 88.5,
+    "probabilities": {
+      "Calm": 0.019,
+      "Stressed": 0.021,
+      "Tired": 0.96
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.467,
+    "stress_index": 48.4,
+    "probabilities": {
+      "Calm": 0.567,
+      "Stressed": 0.373,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2493,
+  "cached": false
+}

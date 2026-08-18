@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-RUS-205633",
+  "driver": "RUS",
+  "session_id": "2024-singapore-r",
+  "lap": 33,
+  "duration_s": 5.98,
+  "audio_url": "/api/clips/2024-singapore-r-RUS-205633",
+  "transcript": {
+    "text": "Hey, a bit of a bit more important, mate. Yeah, hey, Tom, so traction metrics, everything's looking really good at the moment.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 31.4,
+      "f0_mean_z": 0.8,
+      "f0_std_z": 1.236,
+      "rms_mean_z": 0.324,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.56,
+      "jitter_z": 1.047
+    },
+    "acoustic": {
+      "score": 25.2,
+      "probabilities": {
+        "hap": 0.9681,
+        "neu": 0.0238,
+        "sad": 0.0043,
+        "ang": 0.0038
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 15.6,
+      "probabilities": {
+        "joy": 0.6368,
+        "neutral": 0.2949,
+        "disgust": 0.023,
+        "anger": 0.0189,
+        "surprise": 0.0135,
+        "sadness": 0.0107,
+        "fear": 0.0022
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.685,
+    "stress_index": 31.0,
+    "probabilities": {
+      "Calm": 0.685,
+      "Stressed": 0.262,
+      "Tired": 0.053
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.968,
+    "stress_index": 25.2,
+    "probabilities": {
+      "Calm": 0.936,
+      "Stressed": 0.004,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2126,
+  "cached": false
+}

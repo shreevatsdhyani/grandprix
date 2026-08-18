@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-ALO-142019",
+  "driver": "ALO",
+  "session_id": "2023-monaco-r",
+  "lap": 14,
+  "duration_s": 6.69,
+  "audio_url": "/api/clips/2023-monaco-r-ALO-142019",
+  "transcript": {
+    "text": "Did you have some contact, Pernana? Negative. Yep. Everything's looking okay here, Pernana. Everything's looking okay.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 17.7,
+      "f0_mean_z": 0.066,
+      "f0_std_z": -0.432,
+      "rms_mean_z": 0.239,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.47,
+      "jitter_z": 0.224
+    },
+    "acoustic": {
+      "score": 24.9,
+      "probabilities": {
+        "hap": 0.822,
+        "neu": 0.156,
+        "ang": 0.0206,
+        "sad": 0.0014
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.8,
+      "probabilities": {
+        "neutral": 0.9176,
+        "sadness": 0.0268,
+        "disgust": 0.0196,
+        "joy": 0.0128,
+        "anger": 0.0099,
+        "fear": 0.0081,
+        "surprise": 0.0053
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.67,
+    "stress_index": 29.9,
+    "probabilities": {
+      "Calm": 0.67,
+      "Stressed": 0.022,
+      "Tired": 0.308
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.822,
+    "stress_index": 24.9,
+    "probabilities": {
+      "Calm": 0.921,
+      "Stressed": 0.019,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2801,
+  "cached": false
+}

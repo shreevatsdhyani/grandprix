@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-RUS-181113",
+  "driver": "RUS",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 33,
+  "duration_s": 5.54,
+  "audio_url": "/api/clips/2023-sao-paulo-r-RUS-181113",
+  "transcript": {
+    "text": "I haven't been on the radio because I thought it was quite obvious, who had a pace that sat here, trying to protest.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 33.3,
+      "f0_mean_z": 0.72,
+      "f0_std_z": 0.787,
+      "rms_mean_z": -0.491,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -2.16,
+      "jitter_z": 1.533
+    },
+    "acoustic": {
+      "score": 50.0,
+      "probabilities": {
+        "sad": 0.62,
+        "hap": 0.3312,
+        "ang": 0.047,
+        "neu": 0.0018
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 47.7,
+      "probabilities": {
+        "neutral": 0.3919,
+        "anger": 0.227,
+        "surprise": 0.2088,
+        "disgust": 0.1403,
+        "fear": 0.0167,
+        "sadness": 0.0105,
+        "joy": 0.0049
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.448,
+    "stress_index": 83.1,
+    "probabilities": {
+      "Calm": 0.125,
+      "Stressed": 0.428,
+      "Tired": 0.448
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.62,
+    "stress_index": 50.0,
+    "probabilities": {
+      "Calm": 0.896,
+      "Stressed": 0.044,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2479,
+  "cached": false
+}

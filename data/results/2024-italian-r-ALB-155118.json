@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-ALB-155118",
+  "driver": "ALB",
+  "session_id": "2024-italian-r",
+  "lap": 34,
+  "duration_s": 21.34,
+  "audio_url": "/api/clips/2024-italian-r-ALB-155118",
+  "transcript": {
+    "text": "So Magnuson still has that 10 second time penalty to serve whether he fits on our... I would really waste, why would he waste his time? I tell me what he does, because so we decided it all the time. So I gave me those spaces, I already drove me out, so what's he going to do? Okay, well whether he fits or doesn't pit, he has a 10 second time penalty, and there's 20 laps to go.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 39.5,
+      "f0_mean_z": 1.329,
+      "f0_std_z": 3.089,
+      "rms_mean_z": 0.498,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.021,
+      "jitter_z": 1.234
+    },
+    "acoustic": {
+      "score": 28.2,
+      "probabilities": {
+        "hap": 0.8072,
+        "neu": 0.1082,
+        "sad": 0.0475,
+        "ang": 0.0371
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 58.1,
+      "probabilities": {
+        "anger": 0.3153,
+        "neutral": 0.2893,
+        "disgust": 0.2864,
+        "surprise": 0.0851,
+        "sadness": 0.0157,
+        "fear": 0.0056,
+        "joy": 0.0026
+      },
+      "top_label": "anger",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.693,
+    "stress_index": 75.5,
+    "probabilities": {
+      "Calm": 0.238,
+      "Stressed": 0.693,
+      "Tired": 0.069
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.807,
+    "stress_index": 28.2,
+    "probabilities": {
+      "Calm": 0.905,
+      "Stressed": 0.035,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3592,
+  "cached": false
+}

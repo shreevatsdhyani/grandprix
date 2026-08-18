@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-RIC-161621",
+  "driver": "RIC",
+  "session_id": "2023-sao-paulo-r",
+  "lap": null,
+  "duration_s": 8.8,
+  "audio_url": "/api/clips/2023-sao-paulo-r-RIC-161621",
+  "transcript": {
+    "text": "10 with the telewins, we'll have to look after it. Yeah, no, ours. I was, yeah, exploring a bit as well.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 66.7,
+      "f0_mean_z": 1.89,
+      "f0_std_z": 5.135,
+      "rms_mean_z": -0.86,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.458,
+      "jitter_z": 1.861
+    },
+    "acoustic": {
+      "score": 41.4,
+      "probabilities": {
+        "hap": 0.559,
+        "sad": 0.4075,
+        "ang": 0.0305,
+        "neu": 0.0029
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.6,
+      "probabilities": {
+        "neutral": 0.9438,
+        "sadness": 0.0166,
+        "disgust": 0.0129,
+        "joy": 0.0082,
+        "surprise": 0.0066,
+        "anger": 0.0061,
+        "fear": 0.0058
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.929,
+    "stress_index": 92.9,
+    "probabilities": {
+      "Calm": 0.071,
+      "Stressed": 0.929,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.559,
+    "stress_index": 41.4,
+    "probabilities": {
+      "Calm": 0.911,
+      "Stressed": 0.029,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2441,
+  "cached": false
+}

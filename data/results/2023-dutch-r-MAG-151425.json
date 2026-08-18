@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-MAG-151425",
+  "driver": "MAG",
+  "session_id": "2023-dutch-r",
+  "lap": 51,
+  "duration_s": 3.68,
+  "audio_url": "/api/clips/2023-dutch-r-MAG-151425",
+  "transcript": {
+    "text": "Possible rain in 15 minutes. Possible rain in 15 minutes.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 20.7,
+      "f0_mean_z": 1.248,
+      "f0_std_z": 0.236,
+      "rms_mean_z": -0.228,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.88,
+      "jitter_z": -1.334
+    },
+    "acoustic": {
+      "score": 19.8,
+      "probabilities": {
+        "neu": 0.7747,
+        "hap": 0.1838,
+        "ang": 0.0311,
+        "sad": 0.0105
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 19.8,
+      "probabilities": {
+        "neutral": 0.898,
+        "sadness": 0.035,
+        "surprise": 0.0249,
+        "fear": 0.0193,
+        "joy": 0.0076,
+        "disgust": 0.0076,
+        "anger": 0.0076
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.768,
+    "stress_index": 22.7,
+    "probabilities": {
+      "Calm": 0.768,
+      "Stressed": 0.178,
+      "Tired": 0.054
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.775,
+    "stress_index": 19.8,
+    "probabilities": {
+      "Calm": 0.911,
+      "Stressed": 0.029,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1815,
+  "cached": false
+}

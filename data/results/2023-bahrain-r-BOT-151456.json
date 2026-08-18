@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-BOT-151456",
+  "driver": "BOT",
+  "session_id": "2023-bahrain-r",
+  "lap": 7,
+  "duration_s": 2.66,
+  "audio_url": "/api/clips/2023-bahrain-r-BOT-151456",
+  "transcript": {
+    "text": "Okay, Valtry, don't worry about the Austens. We need to do our race.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 26.7,
+      "f0_mean_z": -0.276,
+      "f0_std_z": -1.109,
+      "rms_mean_z": -0.905,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.051,
+      "jitter_z": 0.223
+    },
+    "acoustic": {
+      "score": 17.9,
+      "probabilities": {
+        "neu": 0.8537,
+        "hap": 0.126,
+        "ang": 0.0194,
+        "sad": 0.0009
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 69.2,
+      "probabilities": {
+        "fear": 0.7084,
+        "neutral": 0.2032,
+        "anger": 0.0345,
+        "sadness": 0.0203,
+        "disgust": 0.0137,
+        "joy": 0.0108,
+        "surprise": 0.0091
+      },
+      "top_label": "fear",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.994,
+    "stress_index": 89.5,
+    "probabilities": {
+      "Calm": 0.006,
+      "Stressed": 0.0,
+      "Tired": 0.994
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.854,
+    "stress_index": 17.9,
+    "probabilities": {
+      "Calm": 0.922,
+      "Stressed": 0.018,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2374,
+  "cached": false
+}

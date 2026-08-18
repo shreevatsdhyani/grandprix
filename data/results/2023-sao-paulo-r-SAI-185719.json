@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-SAI-185719",
+  "driver": "SAI",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 69,
+  "duration_s": 8.29,
+  "audio_url": "/api/clips/2023-sao-paulo-r-SAI-185719",
+  "transcript": {
+    "text": "I have a slow target like the left father is responding.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 21.8,
+      "f0_mean_z": 0.702,
+      "f0_std_z": -0.064,
+      "rms_mean_z": 0.271,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.683,
+      "jitter_z": 1.277
+    },
+    "acoustic": {
+      "score": 34.4,
+      "probabilities": {
+        "hap": 0.684,
+        "sad": 0.2784,
+        "neu": 0.0369,
+        "ang": 0.0008
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 21.3,
+      "probabilities": {
+        "neutral": 0.8702,
+        "surprise": 0.0426,
+        "disgust": 0.0358,
+        "sadness": 0.0241,
+        "anger": 0.0186,
+        "fear": 0.0065,
+        "joy": 0.0022
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.45,
+    "stress_index": 51.1,
+    "probabilities": {
+      "Calm": 0.45,
+      "Stressed": 0.162,
+      "Tired": 0.388
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.684,
+    "stress_index": 34.4,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2004,
+  "cached": false
+}

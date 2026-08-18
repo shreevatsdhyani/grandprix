@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-PIA-155413",
+  "driver": "PIA",
+  "session_id": "2024-italian-r",
+  "lap": 37,
+  "duration_s": 9.7,
+  "audio_url": "/api/clips/2024-italian-r-PIA-155413",
+  "transcript": {
+    "text": "Oscar, how's the tie? How long have we got? Yeah, I know. It's not getting stuff much worse, but I can't get it pastel.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 39.3,
+      "f0_mean_z": 0.653,
+      "f0_std_z": 0.842,
+      "rms_mean_z": 1.986,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.43,
+      "jitter_z": 0.339
+    },
+    "acoustic": {
+      "score": 52.0,
+      "probabilities": {
+        "sad": 0.7268,
+        "hap": 0.1503,
+        "neu": 0.0874,
+        "ang": 0.0354
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 69.8,
+      "probabilities": {
+        "disgust": 0.8594,
+        "anger": 0.0805,
+        "neutral": 0.0303,
+        "fear": 0.0119,
+        "sadness": 0.0095,
+        "surprise": 0.0077,
+        "joy": 0.0007
+      },
+      "top_label": "disgust",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.526,
+    "stress_index": 86.3,
+    "probabilities": {
+      "Calm": 0.084,
+      "Stressed": 0.39,
+      "Tired": 0.526
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.727,
+    "stress_index": 52.0,
+    "probabilities": {
+      "Calm": 0.907,
+      "Stressed": 0.033,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2248,
+  "cached": false
+}

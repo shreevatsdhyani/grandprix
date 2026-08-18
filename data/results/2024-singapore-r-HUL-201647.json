@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-HUL-201647",
+  "driver": "HUL",
+  "session_id": "2024-singapore-r",
+  "lap": 8,
+  "duration_s": 7.33,
+  "audio_url": "/api/clips/2024-singapore-r-HUL-201647",
+  "transcript": {
+    "text": "Nikko, Kolapento is in 9, Sonota 11, so they have a gap to us, so we'll try and extend a bit, extend.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 32.2,
+      "f0_mean_z": 2.031,
+      "f0_std_z": 0.386,
+      "rms_mean_z": 0.895,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.712,
+      "jitter_z": 0.463
+    },
+    "acoustic": {
+      "score": 58.9,
+      "probabilities": {
+        "sad": 0.4381,
+        "ang": 0.2705,
+        "hap": 0.2505,
+        "neu": 0.0409
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.8,
+      "probabilities": {
+        "neutral": 0.9605,
+        "surprise": 0.0117,
+        "sadness": 0.0093,
+        "disgust": 0.0062,
+        "anger": 0.006,
+        "joy": 0.0036,
+        "fear": 0.0027
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.91,
+    "stress_index": 92.8,
+    "probabilities": {
+      "Calm": 0.07,
+      "Stressed": 0.91,
+      "Tired": 0.02
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.438,
+    "stress_index": 58.9,
+    "probabilities": {
+      "Calm": 0.686,
+      "Stressed": 0.254,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1932,
+  "cached": false
+}

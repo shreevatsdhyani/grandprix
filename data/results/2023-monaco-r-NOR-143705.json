@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-NOR-143705",
+  "driver": "NOR",
+  "session_id": "2023-monaco-r",
+  "lap": 26,
+  "duration_s": 4.06,
+  "audio_url": "/api/clips/2023-monaco-r-NOR-143705",
+  "transcript": {
+    "text": "Lando, possible rain, class one on lap 35.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 32.1,
+      "f0_mean_z": 0.699,
+      "f0_std_z": 0.214,
+      "rms_mean_z": -2.09,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.014,
+      "jitter_z": 1.539
+    },
+    "acoustic": {
+      "score": 42.9,
+      "probabilities": {
+        "neu": 0.3498,
+        "hap": 0.3302,
+        "ang": 0.2906,
+        "sad": 0.0294
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 26.0,
+      "probabilities": {
+        "neutral": 0.7934,
+        "fear": 0.0825,
+        "sadness": 0.0531,
+        "surprise": 0.0435,
+        "disgust": 0.012,
+        "anger": 0.0084,
+        "joy": 0.0072
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.55,
+    "stress_index": 69.1,
+    "probabilities": {
+      "Calm": 0.255,
+      "Stressed": 0.196,
+      "Tired": 0.55
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.35,
+    "stress_index": 42.9,
+    "probabilities": {
+      "Calm": 0.667,
+      "Stressed": 0.273,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2518,
+  "cached": false
+}

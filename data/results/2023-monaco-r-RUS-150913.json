@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-RUS-150913",
+  "driver": "RUS",
+  "session_id": "2023-monaco-r",
+  "lap": 51,
+  "duration_s": 3.1,
+  "audio_url": "/api/clips/2023-monaco-r-RUS-150913",
+  "transcript": {
+    "text": "Yeah, it's raining more and more.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 53.5,
+      "f0_mean_z": 1.971,
+      "f0_std_z": -0.715,
+      "rms_mean_z": 1.947,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 2.055,
+      "jitter_z": -0.722
+    },
+    "acoustic": {
+      "score": 25.8,
+      "probabilities": {
+        "hap": 0.9688,
+        "sad": 0.0242,
+        "neu": 0.0065,
+        "ang": 0.0005
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 53.2,
+      "probabilities": {
+        "sadness": 0.4991,
+        "neutral": 0.2503,
+        "disgust": 0.1681,
+        "anger": 0.0323,
+        "surprise": 0.0261,
+        "fear": 0.0125,
+        "joy": 0.0116
+      },
+      "top_label": "sadness",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.769,
+    "stress_index": 83.4,
+    "probabilities": {
+      "Calm": 0.09,
+      "Stressed": 0.142,
+      "Tired": 0.769
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.969,
+    "stress_index": 25.8,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2360,
+  "cached": false
+}

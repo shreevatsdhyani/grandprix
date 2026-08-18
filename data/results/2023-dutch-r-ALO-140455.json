@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-ALO-140455",
+  "driver": "ALO",
+  "session_id": "2023-dutch-r",
+  "lap": 2,
+  "duration_s": 10.72,
+  "audio_url": "/api/clips/2023-dutch-r-ALO-140455",
+  "transcript": {
+    "text": "Very good here. Yeah, it's raining a bit harder now in the pit lane. We are ready.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 43.3,
+      "f0_mean_z": 1.034,
+      "f0_std_z": 1.864,
+      "rms_mean_z": 0.122,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 2.387,
+      "jitter_z": -0.196
+    },
+    "acoustic": {
+      "score": 82.4,
+      "probabilities": {
+        "ang": 0.7045,
+        "sad": 0.2408,
+        "neu": 0.0358,
+        "hap": 0.0188
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.7,
+      "probabilities": {
+        "neutral": 0.8908,
+        "joy": 0.0511,
+        "sadness": 0.0203,
+        "disgust": 0.0153,
+        "surprise": 0.0134,
+        "anger": 0.0054,
+        "fear": 0.0036
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.966,
+    "stress_index": 96.9,
+    "probabilities": {
+      "Calm": 0.031,
+      "Stressed": 0.966,
+      "Tired": 0.003
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.705,
+    "stress_index": 82.4,
+    "probabilities": {
+      "Calm": 0.278,
+      "Stressed": 0.662,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1791,
+  "cached": false
+}

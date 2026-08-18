@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-SAI-141745",
+  "driver": "SAI",
+  "session_id": "2023-monaco-r",
+  "lap": 12,
+  "duration_s": 7.2,
+  "audio_url": "/api/clips/2023-monaco-r-SAI-141745",
+  "transcript": {
+    "text": "If I really early checked out on the week. Broken from week. Stay out, stay out for a moment. No damage. See me.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 13.7,
+      "f0_mean_z": 1.413,
+      "f0_std_z": 0.028,
+      "rms_mean_z": 0.136,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.138,
+      "jitter_z": 0.515
+    },
+    "acoustic": {
+      "score": 24.2,
+      "probabilities": {
+        "hap": 0.6181,
+        "neu": 0.3277,
+        "sad": 0.0362,
+        "ang": 0.018
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 49.9,
+      "probabilities": {
+        "neutral": 0.5652,
+        "sadness": 0.2689,
+        "fear": 0.047,
+        "anger": 0.0394,
+        "disgust": 0.0382,
+        "surprise": 0.0368,
+        "joy": 0.0044
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.755,
+    "stress_index": 78.3,
+    "probabilities": {
+      "Calm": 0.141,
+      "Stressed": 0.104,
+      "Tired": 0.755
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.618,
+    "stress_index": 24.2,
+    "probabilities": {
+      "Calm": 0.923,
+      "Stressed": 0.017,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3145,
+  "cached": false
+}

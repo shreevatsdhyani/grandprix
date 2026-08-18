@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-BOT-150252",
+  "driver": "BOT",
+  "session_id": "2024-italian-r",
+  "lap": null,
+  "duration_s": 15.62,
+  "audio_url": "/api/clips/2024-italian-r-BOT-150252",
+  "transcript": {
+    "text": "Just rebutting the gap the car I had left for the car I had of him was way too big according to the wrecks. Okay, so you think Colino went a bit too slow there? Yeah, way too slow. Understood.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 29.4,
+      "f0_mean_z": -0.673,
+      "f0_std_z": 0.677,
+      "rms_mean_z": 0.837,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.489,
+      "jitter_z": 0.488
+    },
+    "acoustic": {
+      "score": 28.0,
+      "probabilities": {
+        "hap": 0.9233,
+        "sad": 0.0614,
+        "ang": 0.0121,
+        "neu": 0.0032
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 53.3,
+      "probabilities": {
+        "disgust": 0.4018,
+        "neutral": 0.31,
+        "anger": 0.1099,
+        "surprise": 0.0932,
+        "fear": 0.0525,
+        "sadness": 0.0301,
+        "joy": 0.0026
+      },
+      "top_label": "disgust",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.624,
+    "stress_index": 60.2,
+    "probabilities": {
+      "Calm": 0.337,
+      "Stressed": 0.04,
+      "Tired": 0.624
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.923,
+    "stress_index": 28.0,
+    "probabilities": {
+      "Calm": 0.929,
+      "Stressed": 0.011,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2910,
+  "cached": false
+}

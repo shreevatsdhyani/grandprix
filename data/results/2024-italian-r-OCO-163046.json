@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-OCO-163046",
+  "driver": "OCO",
+  "session_id": "2024-italian-r",
+  "lap": 52,
+  "duration_s": 4.32,
+  "audio_url": "/api/clips/2024-italian-r-OCO-163046",
+  "transcript": {
+    "text": "Yeah, we're done. We try, we try, we try, we get everything, so. Until the next one.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 41.4,
+      "f0_mean_z": 1.609,
+      "f0_std_z": -1.39,
+      "rms_mean_z": 1.645,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.535,
+      "jitter_z": -1.465
+    },
+    "acoustic": {
+      "score": 46.5,
+      "probabilities": {
+        "sad": 0.5632,
+        "hap": 0.3427,
+        "neu": 0.0594,
+        "ang": 0.0347
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 22.9,
+      "probabilities": {
+        "neutral": 0.8628,
+        "disgust": 0.0549,
+        "anger": 0.046,
+        "sadness": 0.0137,
+        "joy": 0.0098,
+        "fear": 0.0092,
+        "surprise": 0.0037
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.495,
+    "stress_index": 67.5,
+    "probabilities": {
+      "Calm": 0.305,
+      "Stressed": 0.495,
+      "Tired": 0.2
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.563,
+    "stress_index": 46.5,
+    "probabilities": {
+      "Calm": 0.907,
+      "Stressed": 0.033,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2019,
+  "cached": false
+}

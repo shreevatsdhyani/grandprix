@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-RUS-160817",
+  "driver": "RUS",
+  "session_id": "2023-dutch-r",
+  "lap": 64,
+  "duration_s": 10.05,
+  "audio_url": "/api/clips/2023-dutch-r-RUS-160817",
+  "transcript": {
+    "text": "Currently expecting two laps behind the safety car and we have the inter-tire fitted. That was mandatory from the FAA.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 50.4,
+      "f0_mean_z": -2.466,
+      "f0_std_z": -1.596,
+      "rms_mean_z": 0.664,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.575,
+      "jitter_z": -1.134
+    },
+    "acoustic": {
+      "score": 26.3,
+      "probabilities": {
+        "hap": 0.5592,
+        "neu": 0.3148,
+        "sad": 0.1239,
+        "ang": 0.0021
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 23.3,
+      "probabilities": {
+        "neutral": 0.7751,
+        "surprise": 0.1518,
+        "fear": 0.0218,
+        "sadness": 0.0178,
+        "anger": 0.0163,
+        "joy": 0.0138,
+        "disgust": 0.0033
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.569,
+    "stress_index": 38.8,
+    "probabilities": {
+      "Calm": 0.569,
+      "Stressed": 0.003,
+      "Tired": 0.428
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.559,
+    "stress_index": 26.3,
+    "probabilities": {
+      "Calm": 0.938,
+      "Stressed": 0.002,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2411,
+  "cached": false
+}

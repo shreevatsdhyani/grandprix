@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-RUS-152241",
+  "driver": "RUS",
+  "session_id": "2023-monaco-r",
+  "lap": 60,
+  "duration_s": 12.19,
+  "audio_url": "/api/clips/2023-monaco-r-RUS-152241",
+  "transcript": {
+    "text": "And George, all cool, we're all cool, you're in a good position and we're looking at the heavy wets, we're monitoring and keep talking cars, all cool. Just six to one, extraordinarily wet, three to six.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 45.1,
+      "f0_mean_z": 1.025,
+      "f0_std_z": -0.557,
+      "rms_mean_z": -0.494,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 3.567,
+      "jitter_z": 1.06
+    },
+    "acoustic": {
+      "score": 59.5,
+      "probabilities": {
+        "sad": 0.9383,
+        "hap": 0.0374,
+        "ang": 0.0242,
+        "neu": 0.0001
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 19.4,
+      "probabilities": {
+        "neutral": 0.9065,
+        "disgust": 0.03,
+        "anger": 0.0229,
+        "joy": 0.017,
+        "sadness": 0.0114,
+        "surprise": 0.0084,
+        "fear": 0.0039
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.727,
+    "stress_index": 85.7,
+    "probabilities": {
+      "Calm": 0.071,
+      "Stressed": 0.203,
+      "Tired": 0.727
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.938,
+    "stress_index": 59.5,
+    "probabilities": {
+      "Calm": 0.917,
+      "Stressed": 0.023,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3507,
+  "cached": false
+}

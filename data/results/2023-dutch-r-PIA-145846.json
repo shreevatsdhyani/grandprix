@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-PIA-145846",
+  "driver": "PIA",
+  "session_id": "2023-dutch-r",
+  "lap": 39,
+  "duration_s": 5.12,
+  "audio_url": "/api/clips/2023-dutch-r-PIA-145846",
+  "transcript": {
+    "text": "How's the time? Still okay, but now, no change.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 45.9,
+      "f0_mean_z": 1.168,
+      "f0_std_z": 0.335,
+      "rms_mean_z": 1.647,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 2.586,
+      "jitter_z": -0.205
+    },
+    "acoustic": {
+      "score": 22.1,
+      "probabilities": {
+        "hap": 0.644,
+        "neu": 0.3416,
+        "sad": 0.013,
+        "ang": 0.0015
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 46.9,
+      "probabilities": {
+        "neutral": 0.3547,
+        "sadness": 0.3104,
+        "surprise": 0.1284,
+        "disgust": 0.0889,
+        "anger": 0.0767,
+        "fear": 0.0275,
+        "joy": 0.0133
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.449,
+    "stress_index": 51.4,
+    "probabilities": {
+      "Calm": 0.449,
+      "Stressed": 0.174,
+      "Tired": 0.378
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.644,
+    "stress_index": 22.1,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1841,
+  "cached": false
+}

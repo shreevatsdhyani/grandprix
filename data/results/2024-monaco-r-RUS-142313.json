@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-RUS-142313",
+  "driver": "RUS",
+  "session_id": "2024-monaco-r",
+  "lap": null,
+  "duration_s": 1.89,
+  "audio_url": "/api/clips/2024-monaco-r-RUS-142313",
+  "transcript": {
+    "text": "Right, feels a little bit worse today.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 30.9,
+      "f0_mean_z": 0.863,
+      "f0_std_z": -0.984,
+      "rms_mean_z": -0.725,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.294,
+      "jitter_z": -0.736
+    },
+    "acoustic": {
+      "score": 22.2,
+      "probabilities": {
+        "hap": 0.4906,
+        "neu": 0.4596,
+        "sad": 0.0495,
+        "ang": 0.0004
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 68.4,
+      "probabilities": {
+        "disgust": 0.7901,
+        "sadness": 0.1384,
+        "fear": 0.0285,
+        "neutral": 0.026,
+        "anger": 0.0135,
+        "surprise": 0.0024,
+        "joy": 0.001
+      },
+      "top_label": "disgust",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.973,
+    "stress_index": 88.2,
+    "probabilities": {
+      "Calm": 0.021,
+      "Stressed": 0.006,
+      "Tired": 0.973
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.491,
+    "stress_index": 22.2,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1582,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-NOR-142035",
+  "driver": "NOR",
+  "session_id": "2023-dutch-r",
+  "lap": 12,
+  "duration_s": 9.76,
+  "audio_url": "/api/clips/2023-dutch-r-NOR-142035",
+  "transcript": {
+    "text": "Suggestion, Green F3, Green F3. We think Frank will come in the next one to last. He will hit town one fast. He will be light. Yeah, it's already into the one.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 17.2,
+      "f0_mean_z": -0.689,
+      "f0_std_z": -0.711,
+      "rms_mean_z": -0.63,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.121,
+      "jitter_z": -0.456
+    },
+    "acoustic": {
+      "score": 29.4,
+      "probabilities": {
+        "hap": 0.7118,
+        "neu": 0.1902,
+        "ang": 0.0826,
+        "sad": 0.0154
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.0,
+      "probabilities": {
+        "neutral": 0.9491,
+        "surprise": 0.0253,
+        "anger": 0.0074,
+        "sadness": 0.0056,
+        "disgust": 0.0056,
+        "joy": 0.005,
+        "fear": 0.002
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.686,
+    "stress_index": 28.5,
+    "probabilities": {
+      "Calm": 0.686,
+      "Stressed": 0.027,
+      "Tired": 0.287
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.712,
+    "stress_index": 29.4,
+    "probabilities": {
+      "Calm": 0.862,
+      "Stressed": 0.078,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2212,
+  "cached": false
+}

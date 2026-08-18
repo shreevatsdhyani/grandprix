@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-NOR-154034",
+  "driver": "NOR",
+  "session_id": "2023-dutch-r",
+  "lap": 64,
+  "duration_s": 24.22,
+  "audio_url": "/api/clips/2023-dutch-r-NOR-154034",
+  "transcript": {
+    "text": "Um, I'm gonna need to change my helmet and everything anyway, so it's fine to get out. So it's not gonna restart anytime soon. Were you talking? Like I didn't hear anything. Can you hear me? Yeah, no, okay. Okay, sorry, we are losing the connection of my well back. You can jump out if you... Yeah, okay.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 28.3,
+      "f0_mean_z": -0.791,
+      "f0_std_z": 0.533,
+      "rms_mean_z": -0.662,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.548,
+      "jitter_z": 0.416
+    },
+    "acoustic": {
+      "score": 25.1,
+      "probabilities": {
+        "hap": 0.996,
+        "sad": 0.0027,
+        "neu": 0.0011,
+        "ang": 0.0001
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 65.9,
+      "probabilities": {
+        "neutral": 0.3431,
+        "disgust": 0.259,
+        "fear": 0.1462,
+        "anger": 0.1118,
+        "sadness": 0.107,
+        "surprise": 0.0232,
+        "joy": 0.0098
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.859,
+    "stress_index": 78.4,
+    "probabilities": {
+      "Calm": 0.13,
+      "Stressed": 0.011,
+      "Tired": 0.859
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.996,
+    "stress_index": 25.1,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3612,
+  "cached": false
+}

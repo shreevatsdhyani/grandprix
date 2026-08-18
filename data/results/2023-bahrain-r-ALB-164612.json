@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-ALB-164612",
+  "driver": "ALB",
+  "session_id": "2023-bahrain-r",
+  "lap": 57,
+  "duration_s": 28.77,
+  "audio_url": "/api/clips/2023-bahrain-r-ALB-164612",
+  "transcript": {
+    "text": "Yes! Really, really impressive drive, you had that on control. Anyway, well done. We deserve it. Oh! Oh! Oh! Oh! Oh! Oh! Oh! Oh! Oh! Oh! I don't think it was that good for this win. It was so tricky. Anyway, well done, everyone. We deserve that. Alex, well done. I was for yesterday. Thank you. Thanks, yes. Really, really impressive drive. You had that on control. Good to work. Let's, uh, pick up from here and do more.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 25.4,
+      "f0_mean_z": -0.014,
+      "f0_std_z": 1.137,
+      "rms_mean_z": -1.547,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.481,
+      "jitter_z": -0.621
+    },
+    "acoustic": {
+      "score": 30.5,
+      "probabilities": {
+        "hap": 0.8359,
+        "sad": 0.1575,
+        "neu": 0.0061,
+        "ang": 0.0006
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 32.0,
+      "probabilities": {
+        "joy": 0.4815,
+        "surprise": 0.3176,
+        "anger": 0.0918,
+        "neutral": 0.054,
+        "disgust": 0.0315,
+        "sadness": 0.0197,
+        "fear": 0.0039
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.879,
+    "stress_index": 11.7,
+    "probabilities": {
+      "Calm": 0.879,
+      "Stressed": 0.083,
+      "Tired": 0.038
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.836,
+    "stress_index": 30.5,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 5879,
+  "cached": false
+}

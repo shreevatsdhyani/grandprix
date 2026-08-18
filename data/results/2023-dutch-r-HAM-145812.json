@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-HAM-145812",
+  "driver": "HAM",
+  "session_id": "2023-dutch-r",
+  "lap": 38,
+  "duration_s": 6.05,
+  "audio_url": "/api/clips/2023-dutch-r-HAM-145812",
+  "transcript": {
+    "text": "and Lucy he gives a balance check. Balance check. That's pretty good. A little bit about this in. Could be.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 14.5,
+      "f0_mean_z": 0.0,
+      "f0_std_z": 0.0,
+      "rms_mean_z": -0.666,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.142,
+      "jitter_z": 0.0
+    },
+    "acoustic": {
+      "score": 23.6,
+      "probabilities": {
+        "hap": 0.8577,
+        "neu": 0.1418,
+        "sad": 0.0003,
+        "ang": 0.0002
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.6,
+      "probabilities": {
+        "neutral": 0.8655,
+        "surprise": 0.0935,
+        "joy": 0.0254,
+        "sadness": 0.0065,
+        "anger": 0.0041,
+        "disgust": 0.0033,
+        "fear": 0.0016
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.75,
+    "stress_index": 23.1,
+    "probabilities": {
+      "Calm": 0.75,
+      "Stressed": 0.049,
+      "Tired": 0.202
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.858,
+    "stress_index": 23.6,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2247,
+  "cached": false
+}

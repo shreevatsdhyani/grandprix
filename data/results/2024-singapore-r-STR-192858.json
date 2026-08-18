@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-STR-192858",
+  "driver": "STR",
+  "session_id": "2024-singapore-r",
+  "lap": null,
+  "duration_s": 5.82,
+  "audio_url": "/api/clips/2024-singapore-r-STR-192858",
+  "transcript": {
+    "text": "Lunch, so the brakes any better or still the same? No, still the same. Copy, okay, we are looking at it.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 25.4,
+      "f0_mean_z": -1.473,
+      "f0_std_z": -0.487,
+      "rms_mean_z": 0.678,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.532,
+      "jitter_z": 0.339
+    },
+    "acoustic": {
+      "score": 24.4,
+      "probabilities": {
+        "hap": 0.8262,
+        "neu": 0.1593,
+        "ang": 0.0139,
+        "sad": 0.0005
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 38.7,
+      "probabilities": {
+        "neutral": 0.6089,
+        "disgust": 0.2034,
+        "anger": 0.1299,
+        "fear": 0.0231,
+        "sadness": 0.0173,
+        "surprise": 0.0111,
+        "joy": 0.0064
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.649,
+    "stress_index": 59.1,
+    "probabilities": {
+      "Calm": 0.344,
+      "Stressed": 0.007,
+      "Tired": 0.649
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.826,
+    "stress_index": 24.4,
+    "probabilities": {
+      "Calm": 0.927,
+      "Stressed": 0.013,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2099,
+  "cached": false
+}

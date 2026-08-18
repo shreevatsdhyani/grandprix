@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-ALB-132029",
+  "driver": "ALB",
+  "session_id": "2023-monaco-r",
+  "lap": null,
+  "duration_s": 27.2,
+  "audio_url": "/api/clips/2023-monaco-r-ALB-132029",
+  "transcript": {
+    "text": "Car feels pretty good. It feels like exactly as we were left off yesterday, the same balance. It's a bit neutral in three and four but then I think that's good for the lowest speed stuff. I feel quite good on the brakes so I think we just need to keep it like this.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 56.9,
+      "f0_mean_z": -1.438,
+      "f0_std_z": -1.269,
+      "rms_mean_z": 2.387,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 2.019,
+      "jitter_z": -0.648
+    },
+    "acoustic": {
+      "score": 24.4,
+      "probabilities": {
+        "hap": 0.936,
+        "neu": 0.0636,
+        "ang": 0.0004,
+        "sad": 0.0
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 14.5,
+      "probabilities": {
+        "joy": 0.5698,
+        "neutral": 0.3838,
+        "sadness": 0.0188,
+        "disgust": 0.0111,
+        "surprise": 0.0095,
+        "anger": 0.0043,
+        "fear": 0.0027
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.772,
+    "stress_index": 20.5,
+    "probabilities": {
+      "Calm": 0.772,
+      "Stressed": 0.002,
+      "Tired": 0.226
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.936,
+    "stress_index": 24.4,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3117,
+  "cached": false
+}

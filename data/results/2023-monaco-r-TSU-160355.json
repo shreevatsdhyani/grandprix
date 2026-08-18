@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-TSU-160355",
+  "driver": "TSU",
+  "session_id": "2023-monaco-r",
+  "lap": 76,
+  "duration_s": 7.1,
+  "audio_url": "/api/clips/2023-monaco-r-TSU-160355",
+  "transcript": {
+    "text": "Czech reflect. Yeah, what we done in the dry condition was everything gone. Yeah, that was so...",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 92.7,
+      "f0_mean_z": 2.689,
+      "f0_std_z": 6.8,
+      "rms_mean_z": -1.258,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.841,
+      "jitter_z": 4.72
+    },
+    "acoustic": {
+      "score": 29.9,
+      "probabilities": {
+        "hap": 0.8629,
+        "sad": 0.1126,
+        "ang": 0.0145,
+        "neu": 0.0101
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 27.5,
+      "probabilities": {
+        "neutral": 0.7509,
+        "disgust": 0.1039,
+        "surprise": 0.063,
+        "anger": 0.0353,
+        "sadness": 0.0288,
+        "fear": 0.0119,
+        "joy": 0.006
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.98,
+    "stress_index": 98.0,
+    "probabilities": {
+      "Calm": 0.02,
+      "Stressed": 0.98,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.863,
+    "stress_index": 29.9,
+    "probabilities": {
+      "Calm": 0.926,
+      "Stressed": 0.014,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1782,
+  "cached": false
+}

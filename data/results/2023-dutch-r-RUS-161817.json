@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-RUS-161817",
+  "driver": "RUS",
+  "session_id": "2023-dutch-r",
+  "lap": 66,
+  "duration_s": 27.52,
+  "audio_url": "/api/clips/2023-dutch-r-RUS-161817",
+  "transcript": {
+    "text": "For info there is more light brain on the radar, five minutes out. So it will be a rolling start procedure and the safety car will end to the hit lane, end of this land. Can you put the Norris on board on your screen? Just let me know if he's inside of the road. Down the South Straight. I think it's going to be too delayed to be of any use to you. I'll try and keep an arm GPS and let you know.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 30.6,
+      "f0_mean_z": -0.289,
+      "f0_std_z": 0.801,
+      "rms_mean_z": -2.267,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.474,
+      "jitter_z": 0.448
+    },
+    "acoustic": {
+      "score": 44.9,
+      "probabilities": {
+        "sad": 0.5426,
+        "hap": 0.4381,
+        "ang": 0.0132,
+        "neu": 0.0061
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 30.2,
+      "probabilities": {
+        "neutral": 0.9335,
+        "surprise": 0.0249,
+        "sadness": 0.0125,
+        "fear": 0.0096,
+        "anger": 0.009,
+        "disgust": 0.0081,
+        "joy": 0.0024
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.474,
+    "stress_index": 49.1,
+    "probabilities": {
+      "Calm": 0.474,
+      "Stressed": 0.173,
+      "Tired": 0.353
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.543,
+    "stress_index": 44.9,
+    "probabilities": {
+      "Calm": 0.928,
+      "Stressed": 0.012,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 4015,
+  "cached": false
+}

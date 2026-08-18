@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-HAM-152525",
+  "driver": "HAM",
+  "session_id": "2023-monaco-r",
+  "lap": 61,
+  "duration_s": 7.78,
+  "audio_url": "/api/clips/2023-monaco-r-HAM-152525",
+  "transcript": {
+    "text": "Just getting to a point, it's pretty dangerous out here. By a separate... Okay, copy. A range should start to reduce turns 3 to 9.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 30.9,
+      "f0_mean_z": -0.951,
+      "f0_std_z": -0.51,
+      "rms_mean_z": -1.339,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.059,
+      "jitter_z": -0.696
+    },
+    "acoustic": {
+      "score": 37.8,
+      "probabilities": {
+        "hap": 0.7126,
+        "ang": 0.1627,
+        "neu": 0.0664,
+        "sad": 0.0583
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 92.3,
+      "probabilities": {
+        "fear": 0.6624,
+        "disgust": 0.155,
+        "anger": 0.125,
+        "neutral": 0.0332,
+        "sadness": 0.0173,
+        "surprise": 0.0046,
+        "joy": 0.0025
+      },
+      "top_label": "fear",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.997,
+    "stress_index": 89.7,
+    "probabilities": {
+      "Calm": 0.002,
+      "Stressed": 0.0,
+      "Tired": 0.997
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.713,
+    "stress_index": 37.8,
+    "probabilities": {
+      "Calm": 0.787,
+      "Stressed": 0.153,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2931,
+  "cached": false
+}

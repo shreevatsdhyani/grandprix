@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-PIA-144110",
+  "driver": "PIA",
+  "session_id": "2023-dutch-r",
+  "lap": 25,
+  "duration_s": 1.47,
+  "audio_url": "/api/clips/2023-dutch-r-PIA-144110",
+  "transcript": {
+    "text": "Well done, I'll go really good.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 42.8,
+      "f0_mean_z": -2.513,
+      "f0_std_z": -1.805,
+      "rms_mean_z": 0.985,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.046,
+      "jitter_z": -0.37
+    },
+    "acoustic": {
+      "score": 17.2,
+      "probabilities": {
+        "neu": 0.7999,
+        "hap": 0.1955,
+        "sad": 0.0042,
+        "ang": 0.0004
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 21.0,
+      "probabilities": {
+        "neutral": 0.4678,
+        "joy": 0.3832,
+        "sadness": 0.0862,
+        "disgust": 0.0256,
+        "anger": 0.0182,
+        "surprise": 0.0132,
+        "fear": 0.0058
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.524,
+    "stress_index": 47.3,
+    "probabilities": {
+      "Calm": 0.475,
+      "Stressed": 0.001,
+      "Tired": 0.524
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.8,
+    "stress_index": 17.2,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1413,
+  "cached": false
+}

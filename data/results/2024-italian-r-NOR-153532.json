@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-NOR-153532",
+  "driver": "NOR",
+  "session_id": "2024-italian-r",
+  "lap": 23,
+  "duration_s": 2.78,
+  "audio_url": "/api/clips/2024-italian-r-NOR-153532",
+  "transcript": {
+    "text": "You are allowed to race Oscar for Pyros.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 75.8,
+      "f0_mean_z": 2.135,
+      "f0_std_z": 6.409,
+      "rms_mean_z": -0.02,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.909,
+      "jitter_z": 0.783
+    },
+    "acoustic": {
+      "score": 55.9,
+      "probabilities": {
+        "ang": 0.5085,
+        "neu": 0.4675,
+        "hap": 0.0237,
+        "sad": 0.0003
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.4,
+      "probabilities": {
+        "neutral": 0.9305,
+        "joy": 0.0275,
+        "anger": 0.0212,
+        "surprise": 0.0085,
+        "disgust": 0.0065,
+        "sadness": 0.0037,
+        "fear": 0.0022
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.989,
+    "stress_index": 98.9,
+    "probabilities": {
+      "Calm": 0.011,
+      "Stressed": 0.989,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.508,
+    "stress_index": 55.9,
+    "probabilities": {
+      "Calm": 0.462,
+      "Stressed": 0.478,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1543,
+  "cached": false
+}

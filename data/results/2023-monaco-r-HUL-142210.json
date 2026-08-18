@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-HUL-142210",
+  "driver": "HUL",
+  "session_id": "2023-monaco-r",
+  "lap": 15,
+  "duration_s": 7.9,
+  "audio_url": "/api/clips/2023-monaco-r-HUL-142210",
+  "transcript": {
+    "text": "I'm trying to save tires much as possible now, but let me know when I need to push it. I'm in front again, if someone hits.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 16.2,
+      "f0_mean_z": 0.728,
+      "f0_std_z": 0.795,
+      "rms_mean_z": 0.353,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.149,
+      "jitter_z": 3.5
+    },
+    "acoustic": {
+      "score": 53.9,
+      "probabilities": {
+        "sad": 0.8204,
+        "hap": 0.0923,
+        "neu": 0.0739,
+        "ang": 0.0134
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 20.2,
+      "probabilities": {
+        "neutral": 0.9094,
+        "fear": 0.024,
+        "anger": 0.0221,
+        "sadness": 0.0219,
+        "surprise": 0.0093,
+        "disgust": 0.009,
+        "joy": 0.0042
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.471,
+    "stress_index": 83.2,
+    "probabilities": {
+      "Calm": 0.128,
+      "Stressed": 0.471,
+      "Tired": 0.401
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.82,
+    "stress_index": 53.9,
+    "probabilities": {
+      "Calm": 0.927,
+      "Stressed": 0.013,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2879,
+  "cached": false
+}

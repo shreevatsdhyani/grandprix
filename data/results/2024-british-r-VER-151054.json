@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-british-r-VER-151054",
+  "driver": "VER",
+  "session_id": "2024-british-r",
+  "lap": 6,
+  "duration_s": 3.78,
+  "audio_url": "/api/clips/2024-british-r-VER-151054",
+  "transcript": {
+    "text": "expected the increased rain around lap 16.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 50.2,
+      "f0_mean_z": -1.224,
+      "f0_std_z": -1.402,
+      "rms_mean_z": -2.079,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.571,
+      "jitter_z": -1.719
+    },
+    "acoustic": {
+      "score": 16.8,
+      "probabilities": {
+        "neu": 0.841,
+        "hap": 0.1549,
+        "sad": 0.0034,
+        "ang": 0.0007
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 43.7,
+      "probabilities": {
+        "surprise": 0.8571,
+        "neutral": 0.0835,
+        "sadness": 0.0283,
+        "anger": 0.0134,
+        "joy": 0.0088,
+        "fear": 0.0057,
+        "disgust": 0.0032
+      },
+      "top_label": "surprise",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.716,
+    "stress_index": 64.7,
+    "probabilities": {
+      "Calm": 0.281,
+      "Stressed": 0.003,
+      "Tired": 0.716
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.841,
+    "stress_index": 16.8,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1466,
+  "cached": false
+}

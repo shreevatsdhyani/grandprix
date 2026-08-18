@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-PIA-140141",
+  "driver": "PIA",
+  "session_id": "2023-dutch-r",
+  "lap": null,
+  "duration_s": 6.3,
+  "audio_url": "/api/clips/2023-dutch-r-PIA-140141",
+  "transcript": {
+    "text": "Class half rain in the pit lane. Yep, some load drops as well on the visor.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 18.8,
+      "f0_mean_z": -0.52,
+      "f0_std_z": 0.224,
+      "rms_mean_z": -1.004,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.601,
+      "jitter_z": -0.156
+    },
+    "acoustic": {
+      "score": 29.5,
+      "probabilities": {
+        "hap": 0.3996,
+        "neu": 0.3673,
+        "sad": 0.2324,
+        "ang": 0.0007
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 43.3,
+      "probabilities": {
+        "neutral": 0.4463,
+        "sadness": 0.4121,
+        "disgust": 0.07,
+        "anger": 0.0284,
+        "surprise": 0.0192,
+        "fear": 0.0173,
+        "joy": 0.0068
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.556,
+    "stress_index": 53.9,
+    "probabilities": {
+      "Calm": 0.405,
+      "Stressed": 0.039,
+      "Tired": 0.556
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.4,
+    "stress_index": 29.5,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2233,
+  "cached": false
+}

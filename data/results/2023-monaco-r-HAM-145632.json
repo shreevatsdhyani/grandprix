@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-HAM-145632",
+  "driver": "HAM",
+  "session_id": "2023-monaco-r",
+  "lap": 42,
+  "duration_s": 2.46,
+  "audio_url": "/api/clips/2023-monaco-r-HAM-145632",
+  "transcript": {
+    "text": "Copy those who started on it, so I'll still out.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 30.2,
+      "f0_mean_z": -0.247,
+      "f0_std_z": -0.459,
+      "rms_mean_z": -1.502,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.567,
+      "jitter_z": 0.193
+    },
+    "acoustic": {
+      "score": 19.8,
+      "probabilities": {
+        "neu": 0.7512,
+        "hap": 0.2157,
+        "ang": 0.0324,
+        "sad": 0.0008
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.0,
+      "probabilities": {
+        "neutral": 0.962,
+        "disgust": 0.0108,
+        "anger": 0.0108,
+        "sadness": 0.0069,
+        "surprise": 0.005,
+        "fear": 0.0023,
+        "joy": 0.0022
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.808,
+    "stress_index": 17.4,
+    "probabilities": {
+      "Calm": 0.808,
+      "Stressed": 0.01,
+      "Tired": 0.182
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.751,
+    "stress_index": 19.8,
+    "probabilities": {
+      "Calm": 0.91,
+      "Stressed": 0.03,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2528,
+  "cached": false
+}

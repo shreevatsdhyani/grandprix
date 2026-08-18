@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-TSU-152308",
+  "driver": "TSU",
+  "session_id": "2023-dutch-r",
+  "lap": 58,
+  "duration_s": 6.18,
+  "audio_url": "/api/clips/2023-dutch-r-TSU-152308",
+  "transcript": {
+    "text": "Aoki rain is coming last corner. If it's every rain we are happy you to call the box.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 23.1,
+      "f0_mean_z": -0.514,
+      "f0_std_z": -1.113,
+      "rms_mean_z": 0.35,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.907,
+      "jitter_z": -1.394
+    },
+    "acoustic": {
+      "score": 25.6,
+      "probabilities": {
+        "hap": 0.9823,
+        "sad": 0.0067,
+        "ang": 0.0058,
+        "neu": 0.0053
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 12.7,
+      "probabilities": {
+        "joy": 0.8915,
+        "neutral": 0.0492,
+        "surprise": 0.0455,
+        "sadness": 0.0082,
+        "anger": 0.0033,
+        "disgust": 0.0015,
+        "fear": 0.0008
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.822,
+    "stress_index": 16.3,
+    "probabilities": {
+      "Calm": 0.822,
+      "Stressed": 0.027,
+      "Tired": 0.151
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.982,
+    "stress_index": 25.6,
+    "probabilities": {
+      "Calm": 0.935,
+      "Stressed": 0.005,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2118,
+  "cached": false
+}

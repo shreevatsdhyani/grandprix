@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-HUL-143128",
+  "driver": "HUL",
+  "session_id": "2023-dutch-r",
+  "lap": 19,
+  "duration_s": 30.0,
+  "audio_url": "/api/clips/2023-dutch-r-HUL-143128",
+  "transcript": {
+    "text": "Okay that's two times past safety car line one so you can catch the pack. The main pack is going into seven. Okay Nikos good job on brakes. You're with the pack now. So the people who have stopped is Botas onto medium, you and Lawson onto medium and Russell's gone into hard. Other people have not stopped yet. They're all still on soft. The next rain if it comes, if it comes.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 9.8,
+      "f0_mean_z": -0.232,
+      "f0_std_z": 0.104,
+      "rms_mean_z": 0.365,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.53,
+      "jitter_z": 1.146
+    },
+    "acoustic": {
+      "score": 38.8,
+      "probabilities": {
+        "hap": 0.5179,
+        "sad": 0.3496,
+        "neu": 0.0962,
+        "ang": 0.0363
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.7,
+      "probabilities": {
+        "neutral": 0.9469,
+        "surprise": 0.015,
+        "anger": 0.0139,
+        "fear": 0.0071,
+        "disgust": 0.007,
+        "sadness": 0.0067,
+        "joy": 0.0034
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.579,
+    "stress_index": 39.1,
+    "probabilities": {
+      "Calm": 0.579,
+      "Stressed": 0.121,
+      "Tired": 0.3
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.518,
+    "stress_index": 38.8,
+    "probabilities": {
+      "Calm": 0.906,
+      "Stressed": 0.034,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3884,
+  "cached": false
+}

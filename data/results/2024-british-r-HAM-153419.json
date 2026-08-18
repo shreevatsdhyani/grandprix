@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-british-r-HAM-153419",
+  "driver": "HAM",
+  "session_id": "2024-british-r",
+  "lap": 21,
+  "duration_s": 7.65,
+  "audio_url": "/api/clips/2024-british-r-HAM-153419",
+  "transcript": {
+    "text": "And Luce, we think it's time to jump to Intus, let us know what you think. Nope. Okay, I think it's trying a lot of places. Okay.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 24.5,
+      "f0_mean_z": 0.916,
+      "f0_std_z": 1.043,
+      "rms_mean_z": -0.458,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.647,
+      "jitter_z": 0.327
+    },
+    "acoustic": {
+      "score": 28.2,
+      "probabilities": {
+        "hap": 0.8865,
+        "neu": 0.0486,
+        "ang": 0.0399,
+        "sad": 0.025
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.2,
+      "probabilities": {
+        "neutral": 0.9271,
+        "surprise": 0.017,
+        "disgust": 0.0162,
+        "anger": 0.0136,
+        "joy": 0.0122,
+        "sadness": 0.0088,
+        "fear": 0.0051
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.656,
+    "stress_index": 33.8,
+    "probabilities": {
+      "Calm": 0.656,
+      "Stressed": 0.281,
+      "Tired": 0.063
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.886,
+    "stress_index": 28.2,
+    "probabilities": {
+      "Calm": 0.902,
+      "Stressed": 0.038,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2035,
+  "cached": false
+}

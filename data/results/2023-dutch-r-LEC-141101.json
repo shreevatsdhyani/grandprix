@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-LEC-141101",
+  "driver": "LEC",
+  "session_id": "2023-dutch-r",
+  "lap": 6,
+  "duration_s": 6.37,
+  "audio_url": "/api/clips/2023-dutch-r-LEC-141101",
+  "transcript": {
+    "text": "and more raining in expected in six laps light intensity",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 38.5,
+      "f0_mean_z": 1.775,
+      "f0_std_z": -2.409,
+      "rms_mean_z": 0.103,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.521,
+      "jitter_z": -2.51
+    },
+    "acoustic": {
+      "score": 24.2,
+      "probabilities": {
+        "hap": 0.7872,
+        "neu": 0.1901,
+        "sad": 0.0141,
+        "ang": 0.0086
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 47.0,
+      "probabilities": {
+        "sadness": 0.4966,
+        "neutral": 0.3148,
+        "surprise": 0.0948,
+        "anger": 0.0534,
+        "joy": 0.0322,
+        "fear": 0.0043,
+        "disgust": 0.0038
+      },
+      "top_label": "sadness",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.791,
+    "stress_index": 75.9,
+    "probabilities": {
+      "Calm": 0.161,
+      "Stressed": 0.047,
+      "Tired": 0.791
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.787,
+    "stress_index": 24.2,
+    "probabilities": {
+      "Calm": 0.932,
+      "Stressed": 0.008,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1613,
+  "cached": false
+}

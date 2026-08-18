@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-RUS-212900",
+  "driver": "RUS",
+  "session_id": "2024-singapore-r",
+  "lap": 52,
+  "duration_s": 7.49,
+  "audio_url": "/api/clips/2024-singapore-r-RUS-212900",
+  "transcript": {
+    "text": "Just kiss the war at Niedova. We're right. Hey Phil, pressure is looking good at the moment.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 18.1,
+      "f0_mean_z": 0.763,
+      "f0_std_z": 1.088,
+      "rms_mean_z": 0.107,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.302,
+      "jitter_z": 1.302
+    },
+    "acoustic": {
+      "score": 29.3,
+      "probabilities": {
+        "hap": 0.8753,
+        "sad": 0.0718,
+        "ang": 0.0287,
+        "neu": 0.0243
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 25.9,
+      "probabilities": {
+        "neutral": 0.7784,
+        "disgust": 0.0726,
+        "anger": 0.0724,
+        "joy": 0.0454,
+        "sadness": 0.0184,
+        "fear": 0.0096,
+        "surprise": 0.0032
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.561,
+    "stress_index": 42.3,
+    "probabilities": {
+      "Calm": 0.561,
+      "Stressed": 0.281,
+      "Tired": 0.158
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.875,
+    "stress_index": 29.3,
+    "probabilities": {
+      "Calm": 0.913,
+      "Stressed": 0.027,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2540,
+  "cached": false
+}

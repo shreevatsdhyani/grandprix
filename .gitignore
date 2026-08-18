@@ -61,9 +61,20 @@ data/clips/*
 !data/clips/index.csv
 
 # --------------------------------------------------------------------------
-# Analysis cache            regenerate: re-analyse the clip in the UI
+# Analysis cache            regenerate: python scripts/batch_analyse.py
+#
+# Now committed, reversing the earlier decision to ignore it. 853 files, 3.3 MB.
+#
+# The reason is the same one cache_sessions.py opens with: the demo must not
+# depend on anything being reachable or on a long build step. Regenerating this
+# takes ~20 minutes of local inference over 855 clips and needs every mp3 on
+# disk, so a fresh clone without it shows an empty dashboard. At 3.3 MB that is
+# a bad trade.
+#
+# data/clips/*.mp3 stays ignored — 170 MB of audio is a different question, and
+# scripts/fetch_radio.py pulls it in a couple of minutes.
 # --------------------------------------------------------------------------
-data/results/
+# data/results/
 
 # --------------------------------------------------------------------------
 # Fusion training artifacts  regenerate: python scripts/fit_fusion.py

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-british-r-PIA-163525",
+  "driver": "PIA",
+  "session_id": "2024-british-r",
+  "lap": 52,
+  "duration_s": 16.61,
+  "audio_url": "/api/clips/2024-british-r-PIA-163525",
+  "transcript": {
+    "text": "Yeah, good points. So many what ifs from this weekend. Yeah. Car was quick. Thank you everyone. Thanks for the effort. Still a lot of points. So a good weekend. But we can make them better. So let's get pushing.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 32.5,
+      "f0_mean_z": -0.2,
+      "f0_std_z": -1.116,
+      "rms_mean_z": 0.966,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.785,
+      "jitter_z": -2.818
+    },
+    "acoustic": {
+      "score": 43.4,
+      "probabilities": {
+        "sad": 0.523,
+        "hap": 0.4758,
+        "ang": 0.0011,
+        "neu": 0.0002
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 14.5,
+      "probabilities": {
+        "joy": 0.7335,
+        "neutral": 0.1906,
+        "surprise": 0.045,
+        "sadness": 0.0163,
+        "anger": 0.0081,
+        "disgust": 0.0044,
+        "fear": 0.0019
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.788,
+    "stress_index": 20.2,
+    "probabilities": {
+      "Calm": 0.788,
+      "Stressed": 0.109,
+      "Tired": 0.103
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.523,
+    "stress_index": 43.4,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2880,
+  "cached": false
+}

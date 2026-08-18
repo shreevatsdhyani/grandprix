@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-PER-140844",
+  "driver": "PER",
+  "session_id": "2023-dutch-r",
+  "lap": 4,
+  "duration_s": 6.62,
+  "audio_url": "/api/clips/2023-dutch-r-PER-140844",
+  "transcript": {
+    "text": "Okay, gap to bustle 14 seconds. Bustle the first car on the slick tire.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 17.7,
+      "f0_mean_z": -0.488,
+      "f0_std_z": -0.654,
+      "rms_mean_z": -0.42,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.648,
+      "jitter_z": 0.265
+    },
+    "acoustic": {
+      "score": 26.2,
+      "probabilities": {
+        "hap": 0.9723,
+        "ang": 0.0181,
+        "neu": 0.0093,
+        "sad": 0.0003
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 27.3,
+      "probabilities": {
+        "neutral": 0.7961,
+        "disgust": 0.0663,
+        "anger": 0.0631,
+        "fear": 0.0492,
+        "joy": 0.0124,
+        "sadness": 0.0066,
+        "surprise": 0.0062
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.537,
+    "stress_index": 50.4,
+    "probabilities": {
+      "Calm": 0.442,
+      "Stressed": 0.021,
+      "Tired": 0.537
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.972,
+    "stress_index": 26.2,
+    "probabilities": {
+      "Calm": 0.923,
+      "Stressed": 0.017,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1612,
+  "cached": false
+}

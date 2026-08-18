@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-OCO-160937",
+  "driver": "OCO",
+  "session_id": "2023-monaco-r",
+  "lap": 78,
+  "duration_s": 23.87,
+  "audio_url": "/api/clips/2023-monaco-r-OCO-160937",
+  "transcript": {
+    "text": "And that's the check of the plan. Yes, guys. Yes! And expert, well done. Yes, well done, well done. Oh my God! H-huh! Unbelievable. Fantastic, well done. Thank you so much. Thank you so much, guys. What a weekend, what a weekend. Finally, what we deserve. Yes! An expert this way, well done.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 100.0,
+      "f0_mean_z": 3.326,
+      "f0_std_z": 3.899,
+      "rms_mean_z": -4.777,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 3.79,
+      "jitter_z": -1.058
+    },
+    "acoustic": {
+      "score": 25.1,
+      "probabilities": {
+        "hap": 0.9964,
+        "sad": 0.0019,
+        "ang": 0.001,
+        "neu": 0.0007
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 43.7,
+      "probabilities": {
+        "surprise": 0.4465,
+        "joy": 0.4201,
+        "neutral": 0.0546,
+        "anger": 0.0537,
+        "disgust": 0.0138,
+        "sadness": 0.0078,
+        "fear": 0.0035
+      },
+      "top_label": "surprise",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.924,
+    "stress_index": 92.4,
+    "probabilities": {
+      "Calm": 0.075,
+      "Stressed": 0.924,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.996,
+    "stress_index": 25.1,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3190,
+  "cached": false
+}

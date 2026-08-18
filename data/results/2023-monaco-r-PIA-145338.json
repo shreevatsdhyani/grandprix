@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-PIA-145338",
+  "driver": "PIA",
+  "session_id": "2023-monaco-r",
+  "lap": 39,
+  "duration_s": 4.74,
+  "audio_url": "/api/clips/2023-monaco-r-PIA-145338",
+  "transcript": {
+    "text": "Yeah, there is rain in the north, we think it's still several minutes away, I think that's it.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 31.2,
+      "f0_mean_z": -0.957,
+      "f0_std_z": -1.068,
+      "rms_mean_z": -1.187,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.684,
+      "jitter_z": -1.385
+    },
+    "acoustic": {
+      "score": 29.2,
+      "probabilities": {
+        "neu": 0.4786,
+        "hap": 0.3262,
+        "sad": 0.1324,
+        "ang": 0.0628
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.7,
+      "probabilities": {
+        "neutral": 0.9326,
+        "surprise": 0.0359,
+        "sadness": 0.0093,
+        "disgust": 0.0091,
+        "anger": 0.0062,
+        "joy": 0.0036,
+        "fear": 0.0034
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.836,
+    "stress_index": 14.8,
+    "probabilities": {
+      "Calm": 0.836,
+      "Stressed": 0.006,
+      "Tired": 0.158
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.479,
+    "stress_index": 29.2,
+    "probabilities": {
+      "Calm": 0.881,
+      "Stressed": 0.059,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2769,
+  "cached": false
+}

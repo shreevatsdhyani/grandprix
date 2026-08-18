@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-LEC-160325",
+  "driver": "LEC",
+  "session_id": "2023-dutch-r",
+  "lap": 41,
+  "duration_s": 6.11,
+  "audio_url": "/api/clips/2023-dutch-r-LEC-160325",
+  "transcript": {
+    "text": "So the situation is getting worse so we retiree-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e-e",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 15.1,
+      "f0_mean_z": -0.847,
+      "f0_std_z": -0.465,
+      "rms_mean_z": 0.002,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.578,
+      "jitter_z": -0.015
+    },
+    "acoustic": {
+      "score": 23.3,
+      "probabilities": {
+        "hap": 0.8178,
+        "neu": 0.1806,
+        "ang": 0.0015,
+        "sad": 0.0001
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 77.5,
+      "probabilities": {
+        "anger": 0.4673,
+        "disgust": 0.3241,
+        "sadness": 0.0937,
+        "fear": 0.0692,
+        "neutral": 0.027,
+        "joy": 0.0132,
+        "surprise": 0.0055
+      },
+      "top_label": "anger",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.963,
+    "stress_index": 86.9,
+    "probabilities": {
+      "Calm": 0.035,
+      "Stressed": 0.002,
+      "Tired": 0.963
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.818,
+    "stress_index": 23.3,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 5017,
+  "cached": false
+}

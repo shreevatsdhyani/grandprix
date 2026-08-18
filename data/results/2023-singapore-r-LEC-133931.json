@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-singapore-r-LEC-133931",
+  "driver": "LEC",
+  "session_id": "2023-singapore-r",
+  "lap": 21,
+  "duration_s": 4.64,
+  "audio_url": "/api/clips/2023-singapore-r-LEC-133931",
+  "transcript": {
+    "text": "What happened there? We had to hold you for traffic.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 37.5,
+      "f0_mean_z": -1.29,
+      "f0_std_z": -2.512,
+      "rms_mean_z": 0.857,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.026,
+      "jitter_z": 0.759
+    },
+    "acoustic": {
+      "score": 56.7,
+      "probabilities": {
+        "ang": 0.4732,
+        "neu": 0.2537,
+        "hap": 0.2415,
+        "sad": 0.0315
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 48.0,
+      "probabilities": {
+        "surprise": 0.7901,
+        "anger": 0.0694,
+        "neutral": 0.0634,
+        "disgust": 0.0391,
+        "sadness": 0.0219,
+        "fear": 0.0129,
+        "joy": 0.0032
+      },
+      "top_label": "surprise",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.999,
+    "stress_index": 89.9,
+    "probabilities": {
+      "Calm": 0.001,
+      "Stressed": 0.0,
+      "Tired": 0.999
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.473,
+    "stress_index": 56.7,
+    "probabilities": {
+      "Calm": 0.495,
+      "Stressed": 0.445,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2719,
+  "cached": false
+}

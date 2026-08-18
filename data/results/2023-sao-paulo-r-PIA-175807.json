@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-PIA-175807",
+  "driver": "PIA",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 21,
+  "duration_s": 3.2,
+  "audio_url": "/api/clips/2023-sao-paulo-r-PIA-175807",
+  "transcript": {
+    "text": "Opportunity Oscar, lean on the front left more, turn six seven.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 32.6,
+      "f0_mean_z": 1.468,
+      "f0_std_z": 1.196,
+      "rms_mean_z": 0.072,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.337,
+      "jitter_z": 1.079
+    },
+    "acoustic": {
+      "score": 18.8,
+      "probabilities": {
+        "neu": 0.9419,
+        "ang": 0.0454,
+        "hap": 0.0126,
+        "sad": 0.0
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.6,
+      "probabilities": {
+        "neutral": 0.9638,
+        "surprise": 0.008,
+        "fear": 0.0061,
+        "sadness": 0.0059,
+        "joy": 0.0058,
+        "disgust": 0.0058,
+        "anger": 0.0046
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.651,
+    "stress_index": 34.4,
+    "probabilities": {
+      "Calm": 0.651,
+      "Stressed": 0.296,
+      "Tired": 0.053
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.942,
+    "stress_index": 18.8,
+    "probabilities": {
+      "Calm": 0.897,
+      "Stressed": 0.043,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1574,
+  "cached": false
+}

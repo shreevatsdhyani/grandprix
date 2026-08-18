@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-GAS-182708",
+  "driver": "GAS",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 45,
+  "duration_s": 4.22,
+  "audio_url": "/api/clips/2023-sao-paulo-r-GAS-182708",
+  "transcript": {
+    "text": "Take the break problem with the breaks. Copy we're looking.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 59.4,
+      "f0_mean_z": 2.034,
+      "f0_std_z": 1.875,
+      "rms_mean_z": 1.958,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.552,
+      "jitter_z": 1.691
+    },
+    "acoustic": {
+      "score": 41.3,
+      "probabilities": {
+        "hap": 0.6029,
+        "ang": 0.1869,
+        "sad": 0.1192,
+        "neu": 0.091
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 23.9,
+      "probabilities": {
+        "neutral": 0.8405,
+        "sadness": 0.0584,
+        "anger": 0.0477,
+        "disgust": 0.0231,
+        "surprise": 0.0151,
+        "fear": 0.0101,
+        "joy": 0.0052
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.848,
+    "stress_index": 86.4,
+    "probabilities": {
+      "Calm": 0.134,
+      "Stressed": 0.848,
+      "Tired": 0.018
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.603,
+    "stress_index": 41.3,
+    "probabilities": {
+      "Calm": 0.764,
+      "Stressed": 0.176,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1760,
+  "cached": false
+}

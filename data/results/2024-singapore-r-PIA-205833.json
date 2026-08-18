@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-PIA-205833",
+  "driver": "PIA",
+  "session_id": "2024-singapore-r",
+  "lap": 34,
+  "duration_s": 8.06,
+  "audio_url": "/api/clips/2024-singapore-r-PIA-205833",
+  "transcript": {
+    "text": "The target lap will be the plan C target lap. It will be the lap for plan C. Copy, front ride, so I don't struggle with it.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 15.6,
+      "f0_mean_z": 0.108,
+      "f0_std_z": -0.454,
+      "rms_mean_z": -1.164,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.218,
+      "jitter_z": -0.073
+    },
+    "acoustic": {
+      "score": 18.1,
+      "probabilities": {
+        "neu": 0.9219,
+        "hap": 0.0337,
+        "sad": 0.0235,
+        "ang": 0.0209
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.7,
+      "probabilities": {
+        "neutral": 0.9594,
+        "sadness": 0.0113,
+        "joy": 0.008,
+        "surprise": 0.0078,
+        "fear": 0.006,
+        "anger": 0.005,
+        "disgust": 0.0025
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.729,
+    "stress_index": 24.7,
+    "probabilities": {
+      "Calm": 0.729,
+      "Stressed": 0.031,
+      "Tired": 0.24
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.922,
+    "stress_index": 18.1,
+    "probabilities": {
+      "Calm": 0.92,
+      "Stressed": 0.02,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2142,
+  "cached": false
+}

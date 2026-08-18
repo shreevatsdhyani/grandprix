@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-PER-152548",
+  "driver": "PER",
+  "session_id": "2024-italian-r",
+  "lap": 16,
+  "duration_s": 3.78,
+  "audio_url": "/api/clips/2024-italian-r-PER-152548",
+  "transcript": {
+    "text": "So the cars ahead are starting to struggle. This is where we make our race.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 44.2,
+      "f0_mean_z": -0.929,
+      "f0_std_z": -1.543,
+      "rms_mean_z": -1.402,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.648,
+      "jitter_z": -1.278
+    },
+    "acoustic": {
+      "score": 45.6,
+      "probabilities": {
+        "hap": 0.5782,
+        "ang": 0.3021,
+        "neu": 0.1058,
+        "sad": 0.0139
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 43.7,
+      "probabilities": {
+        "neutral": 0.4928,
+        "sadness": 0.2725,
+        "fear": 0.1333,
+        "disgust": 0.0588,
+        "anger": 0.0287,
+        "surprise": 0.0113,
+        "joy": 0.0026
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.853,
+    "stress_index": 78.5,
+    "probabilities": {
+      "Calm": 0.13,
+      "Stressed": 0.017,
+      "Tired": 0.853
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.578,
+    "stress_index": 45.6,
+    "probabilities": {
+      "Calm": 0.656,
+      "Stressed": 0.284,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1626,
+  "cached": false
+}

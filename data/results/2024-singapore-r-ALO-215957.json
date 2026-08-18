@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-ALO-215957",
+  "driver": "ALO",
+  "session_id": "2024-singapore-r",
+  "lap": 61,
+  "duration_s": 1.98,
+  "audio_url": "/api/clips/2024-singapore-r-ALO-215957",
+  "transcript": {
+    "text": "Great Drive, PX.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 82.0,
+      "f0_mean_z": -1.206,
+      "f0_std_z": -1.634,
+      "rms_mean_z": 2.691,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 4.719,
+      "jitter_z": -2.234
+    },
+    "acoustic": {
+      "score": 25.7,
+      "probabilities": {
+        "hap": 0.8176,
+        "neu": 0.1485,
+        "ang": 0.0292,
+        "sad": 0.0047
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 22.5,
+      "probabilities": {
+        "neutral": 0.6224,
+        "surprise": 0.2083,
+        "joy": 0.1346,
+        "sadness": 0.0252,
+        "anger": 0.0057,
+        "disgust": 0.0025,
+        "fear": 0.0013
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.737,
+    "stress_index": 23.8,
+    "probabilities": {
+      "Calm": 0.737,
+      "Stressed": 0.008,
+      "Tired": 0.255
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.818,
+    "stress_index": 25.7,
+    "probabilities": {
+      "Calm": 0.913,
+      "Stressed": 0.027,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1613,
+  "cached": false
+}

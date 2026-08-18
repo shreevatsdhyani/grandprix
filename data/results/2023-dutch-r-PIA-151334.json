@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-PIA-151334",
+  "driver": "PIA",
+  "session_id": "2023-dutch-r",
+  "lap": 51,
+  "duration_s": 8.26,
+  "audio_url": "/api/clips/2023-dutch-r-PIA-151334",
+  "transcript": {
+    "text": "Troska there's another shower approaching expected around lapse 60 possibly later it has grown in intensity would last the remainder of the race.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 31.8,
+      "f0_mean_z": -1.083,
+      "f0_std_z": -0.463,
+      "rms_mean_z": -1.197,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.228,
+      "jitter_z": 0.381
+    },
+    "acoustic": {
+      "score": 26.8,
+      "probabilities": {
+        "neu": 0.6149,
+        "hap": 0.2,
+        "sad": 0.1444,
+        "ang": 0.0407
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 19.6,
+      "probabilities": {
+        "neutral": 0.8953,
+        "surprise": 0.05,
+        "sadness": 0.0148,
+        "anger": 0.0147,
+        "fear": 0.0147,
+        "disgust": 0.0055,
+        "joy": 0.0049
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.598,
+    "stress_index": 36.4,
+    "probabilities": {
+      "Calm": 0.598,
+      "Stressed": 0.017,
+      "Tired": 0.385
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.615,
+    "stress_index": 26.8,
+    "probabilities": {
+      "Calm": 0.902,
+      "Stressed": 0.038,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2238,
+  "cached": false
+}

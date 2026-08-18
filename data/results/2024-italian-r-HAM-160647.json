@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-HAM-160647",
+  "driver": "HAM",
+  "session_id": "2024-italian-r",
+  "lap": 45,
+  "duration_s": 4.67,
+  "audio_url": "/api/clips/2024-italian-r-HAM-160647",
+  "transcript": {
+    "text": "site saying his front left has gone, but he's going to hang it out. Let's see what time he sticks in.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 19.4,
+      "f0_mean_z": 0.0,
+      "f0_std_z": 0.0,
+      "rms_mean_z": -0.898,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.528,
+      "jitter_z": 0.0
+    },
+    "acoustic": {
+      "score": 24.5,
+      "probabilities": {
+        "hap": 0.5991,
+        "neu": 0.3566,
+        "ang": 0.0424,
+        "sad": 0.0019
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 19.8,
+      "probabilities": {
+        "neutral": 0.886,
+        "sadness": 0.0426,
+        "surprise": 0.0391,
+        "disgust": 0.0118,
+        "anger": 0.0098,
+        "joy": 0.0079,
+        "fear": 0.0028
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.738,
+    "stress_index": 24.3,
+    "probabilities": {
+      "Calm": 0.738,
+      "Stressed": 0.066,
+      "Tired": 0.197
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.599,
+    "stress_index": 24.5,
+    "probabilities": {
+      "Calm": 0.9,
+      "Stressed": 0.04,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1995,
+  "cached": false
+}

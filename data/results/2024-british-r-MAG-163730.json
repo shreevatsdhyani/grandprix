@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-british-r-MAG-163730",
+  "driver": "MAG",
+  "session_id": "2024-british-r",
+  "lap": 52,
+  "duration_s": 19.14,
+  "audio_url": "/api/clips/2024-british-r-MAG-163730",
+  "transcript": {
+    "text": "Okay, good job keeping it on the island, through the wet stuff. Pretty tricky. Good step from P17 to P12. Just a shame we didn't quite have the pace to get that last point, but good job. Yeah, very well done, guys. Red car, really good job.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 33.3,
+      "f0_mean_z": -1.479,
+      "f0_std_z": 0.672,
+      "rms_mean_z": -0.764,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.242,
+      "jitter_z": -0.192
+    },
+    "acoustic": {
+      "score": 48.9,
+      "probabilities": {
+        "sad": 0.6825,
+        "hap": 0.3106,
+        "neu": 0.0056,
+        "ang": 0.0012
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 15.8,
+      "probabilities": {
+        "neutral": 0.6786,
+        "joy": 0.2779,
+        "surprise": 0.0121,
+        "sadness": 0.0112,
+        "disgust": 0.0092,
+        "anger": 0.0075,
+        "fear": 0.0035
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.78,
+    "stress_index": 20.7,
+    "probabilities": {
+      "Calm": 0.78,
+      "Stressed": 0.086,
+      "Tired": 0.134
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.682,
+    "stress_index": 48.9,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3140,
+  "cached": false
+}

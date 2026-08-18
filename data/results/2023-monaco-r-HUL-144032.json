@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-HUL-144032",
+  "driver": "HUL",
+  "session_id": "2023-monaco-r",
+  "lap": 29,
+  "duration_s": 4.54,
+  "audio_url": "/api/clips/2023-monaco-r-HUL-144032",
+  "transcript": {
+    "text": "I struggle to think we get to the end with this. So, uh...",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 63.3,
+      "f0_mean_z": 2.036,
+      "f0_std_z": -0.63,
+      "rms_mean_z": 4.121,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.121,
+      "jitter_z": -0.151
+    },
+    "acoustic": {
+      "score": 71.1,
+      "probabilities": {
+        "sad": 0.4537,
+        "ang": 0.4346,
+        "hap": 0.0946,
+        "neu": 0.0171
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 32.0,
+      "probabilities": {
+        "neutral": 0.6961,
+        "fear": 0.097,
+        "disgust": 0.0795,
+        "sadness": 0.0556,
+        "surprise": 0.0327,
+        "anger": 0.0286,
+        "joy": 0.0104
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.971,
+    "stress_index": 98.9,
+    "probabilities": {
+      "Calm": 0.009,
+      "Stressed": 0.971,
+      "Tired": 0.02
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.454,
+    "stress_index": 71.1,
+    "probabilities": {
+      "Calm": 0.531,
+      "Stressed": 0.409,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2712,
+  "cached": false
+}

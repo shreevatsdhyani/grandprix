@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-RUS-161450",
+  "driver": "RUS",
+  "session_id": "2023-sao-paulo-r",
+  "lap": null,
+  "duration_s": 10.24,
+  "audio_url": "/api/clips/2023-sao-paulo-r-RUS-161450",
+  "transcript": {
+    "text": "We've got a load of dust coming out of the front. What's the front breakdown? Breakdough. Smoke. Okay.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 60.8,
+      "f0_mean_z": 1.133,
+      "f0_std_z": -1.107,
+      "rms_mean_z": 2.853,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 2.508,
+      "jitter_z": -0.63
+    },
+    "acoustic": {
+      "score": 58.2,
+      "probabilities": {
+        "sad": 0.9314,
+        "hap": 0.0593,
+        "ang": 0.009,
+        "neu": 0.0003
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 58.4,
+      "probabilities": {
+        "disgust": 0.5101,
+        "neutral": 0.2572,
+        "anger": 0.1437,
+        "fear": 0.0402,
+        "surprise": 0.0274,
+        "sadness": 0.0191,
+        "joy": 0.0023
+      },
+      "top_label": "disgust",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.689,
+    "stress_index": 87.7,
+    "probabilities": {
+      "Calm": 0.054,
+      "Stressed": 0.257,
+      "Tired": 0.689
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.931,
+    "stress_index": 58.2,
+    "probabilities": {
+      "Calm": 0.932,
+      "Stressed": 0.008,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2419,
+  "cached": false
+}

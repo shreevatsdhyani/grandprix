@@ -1,0 +1,4854 @@
+{
+ "session_id": "2024-italian-r",
+ "built_at": "2026-08-18T13:10:54.720559+00:00",
+ "source": "fastf1-cache+openf1-team-radio",
+ "lap_count": 53,
+ "circuit_corners": 11,
+ "lap_length_m": null,
+ "track_evolution": [
+  {
+   "lap": 1,
+   "grip_proxy_s": null,
+   "track_temp_c": 51.7,
+   "air_temp_c": 33.8,
+   "rainfall": false
+  },
+  {
+   "lap": 2,
+   "grip_proxy_s": 86.924,
+   "track_temp_c": 50.5,
+   "air_temp_c": 33.9,
+   "rainfall": false
+  },
+  {
+   "lap": 3,
+   "grip_proxy_s": 86.422,
+   "track_temp_c": 50.4,
+   "air_temp_c": 33.8,
+   "rainfall": false
+  },
+  {
+   "lap": 4,
+   "grip_proxy_s": 86.238,
+   "track_temp_c": 50.6,
+   "air_temp_c": 33.7,
+   "rainfall": false
+  },
+  {
+   "lap": 5,
+   "grip_proxy_s": 86.18,
+   "track_temp_c": 50.7,
+   "air_temp_c": 33.7,
+   "rainfall": false
+  },
+  {
+   "lap": 6,
+   "grip_proxy_s": 85.791,
+   "track_temp_c": 50.2,
+   "air_temp_c": 33.5,
+   "rainfall": false
+  },
+  {
+   "lap": 7,
+   "grip_proxy_s": 85.822,
+   "track_temp_c": 49.6,
+   "air_temp_c": 33.5,
+   "rainfall": false
+  },
+  {
+   "lap": 8,
+   "grip_proxy_s": 85.693,
+   "track_temp_c": 49.5,
+   "air_temp_c": 33.4,
+   "rainfall": false
+  },
+  {
+   "lap": 9,
+   "grip_proxy_s": 85.369,
+   "track_temp_c": 49.0,
+   "air_temp_c": 33.3,
+   "rainfall": false
+  },
+  {
+   "lap": 10,
+   "grip_proxy_s": 85.711,
+   "track_temp_c": 48.7,
+   "air_temp_c": 33.3,
+   "rainfall": false
+  },
+  {
+   "lap": 11,
+   "grip_proxy_s": 85.734,
+   "track_temp_c": 48.4,
+   "air_temp_c": 33.2,
+   "rainfall": false
+  },
+  {
+   "lap": 12,
+   "grip_proxy_s": 85.468,
+   "track_temp_c": 47.7,
+   "air_temp_c": 33.2,
+   "rainfall": false
+  },
+  {
+   "lap": 13,
+   "grip_proxy_s": 85.529,
+   "track_temp_c": 47.6,
+   "air_temp_c": 33.1,
+   "rainfall": false
+  },
+  {
+   "lap": 14,
+   "grip_proxy_s": 85.827,
+   "track_temp_c": 47.5,
+   "air_temp_c": 33.0,
+   "rainfall": false
+  },
+  {
+   "lap": 15,
+   "grip_proxy_s": 86.463,
+   "track_temp_c": 48.0,
+   "air_temp_c": 32.9,
+   "rainfall": false
+  },
+  {
+   "lap": 16,
+   "grip_proxy_s": 85.644,
+   "track_temp_c": 47.9,
+   "air_temp_c": 32.8,
+   "rainfall": false
+  },
+  {
+   "lap": 17,
+   "grip_proxy_s": 85.407,
+   "track_temp_c": 47.8,
+   "air_temp_c": 32.8,
+   "rainfall": false
+  },
+  {
+   "lap": 18,
+   "grip_proxy_s": 85.448,
+   "track_temp_c": 47.2,
+   "air_temp_c": 32.9,
+   "rainfall": false
+  },
+  {
+   "lap": 19,
+   "grip_proxy_s": 85.314,
+   "track_temp_c": 47.0,
+   "air_temp_c": 32.8,
+   "rainfall": false
+  },
+  {
+   "lap": 20,
+   "grip_proxy_s": 85.504,
+   "track_temp_c": 46.6,
+   "air_temp_c": 32.8,
+   "rainfall": false
+  },
+  {
+   "lap": 21,
+   "grip_proxy_s": 84.878,
+   "track_temp_c": 46.5,
+   "air_temp_c": 32.8,
+   "rainfall": false
+  },
+  {
+   "lap": 22,
+   "grip_proxy_s": 85.071,
+   "track_temp_c": 46.3,
+   "air_temp_c": 32.8,
+   "rainfall": false
+  },
+  {
+   "lap": 23,
+   "grip_proxy_s": 85.017,
+   "track_temp_c": 46.1,
+   "air_temp_c": 32.7,
+   "rainfall": false
+  },
+  {
+   "lap": 24,
+   "grip_proxy_s": 84.768,
+   "track_temp_c": 45.9,
+   "air_temp_c": 32.6,
+   "rainfall": false
+  },
+  {
+   "lap": 25,
+   "grip_proxy_s": 84.743,
+   "track_temp_c": 45.8,
+   "air_temp_c": 32.6,
+   "rainfall": false
+  },
+  {
+   "lap": 26,
+   "grip_proxy_s": 84.639,
+   "track_temp_c": 45.8,
+   "air_temp_c": 32.6,
+   "rainfall": false
+  },
+  {
+   "lap": 27,
+   "grip_proxy_s": 84.497,
+   "track_temp_c": 45.5,
+   "air_temp_c": 32.7,
+   "rainfall": false
+  },
+  {
+   "lap": 28,
+   "grip_proxy_s": 84.618,
+   "track_temp_c": 45.3,
+   "air_temp_c": 32.5,
+   "rainfall": false
+  },
+  {
+   "lap": 29,
+   "grip_proxy_s": 84.835,
+   "track_temp_c": 45.3,
+   "air_temp_c": 32.5,
+   "rainfall": false
+  },
+  {
+   "lap": 30,
+   "grip_proxy_s": 84.754,
+   "track_temp_c": 46.1,
+   "air_temp_c": 32.5,
+   "rainfall": false
+  },
+  {
+   "lap": 31,
+   "grip_proxy_s": 85.086,
+   "track_temp_c": 46.1,
+   "air_temp_c": 32.5,
+   "rainfall": false
+  },
+  {
+   "lap": 32,
+   "grip_proxy_s": 84.423,
+   "track_temp_c": 45.9,
+   "air_temp_c": 32.4,
+   "rainfall": false
+  },
+  {
+   "lap": 33,
+   "grip_proxy_s": 84.853,
+   "track_temp_c": 45.7,
+   "air_temp_c": 32.5,
+   "rainfall": false
+  },
+  {
+   "lap": 34,
+   "grip_proxy_s": 84.702,
+   "track_temp_c": 45.7,
+   "air_temp_c": 32.7,
+   "rainfall": false
+  },
+  {
+   "lap": 35,
+   "grip_proxy_s": 84.798,
+   "track_temp_c": 45.5,
+   "air_temp_c": 32.7,
+   "rainfall": false
+  },
+  {
+   "lap": 36,
+   "grip_proxy_s": 84.748,
+   "track_temp_c": 45.4,
+   "air_temp_c": 32.6,
+   "rainfall": false
+  },
+  {
+   "lap": 37,
+   "grip_proxy_s": 84.386,
+   "track_temp_c": 45.4,
+   "air_temp_c": 32.5,
+   "rainfall": false
+  },
+  {
+   "lap": 38,
+   "grip_proxy_s": 85.166,
+   "track_temp_c": 45.2,
+   "air_temp_c": 32.5,
+   "rainfall": false
+  },
+  {
+   "lap": 39,
+   "grip_proxy_s": 84.43,
+   "track_temp_c": 45.0,
+   "air_temp_c": 32.5,
+   "rainfall": false
+  },
+  {
+   "lap": 40,
+   "grip_proxy_s": 84.282,
+   "track_temp_c": 44.9,
+   "air_temp_c": 32.5,
+   "rainfall": false
+  },
+  {
+   "lap": 41,
+   "grip_proxy_s": 84.039,
+   "track_temp_c": 44.7,
+   "air_temp_c": 32.5,
+   "rainfall": false
+  },
+  {
+   "lap": 42,
+   "grip_proxy_s": 83.908,
+   "track_temp_c": 44.7,
+   "air_temp_c": 32.5,
+   "rainfall": false
+  },
+  {
+   "lap": 43,
+   "grip_proxy_s": 83.867,
+   "track_temp_c": 45.0,
+   "air_temp_c": 32.5,
+   "rainfall": false
+  },
+  {
+   "lap": 44,
+   "grip_proxy_s": 83.654,
+   "track_temp_c": 44.9,
+   "air_temp_c": 32.5,
+   "rainfall": false
+  },
+  {
+   "lap": 45,
+   "grip_proxy_s": 83.807,
+   "track_temp_c": 44.6,
+   "air_temp_c": 32.4,
+   "rainfall": false
+  },
+  {
+   "lap": 46,
+   "grip_proxy_s": 84.001,
+   "track_temp_c": 44.6,
+   "air_temp_c": 32.3,
+   "rainfall": false
+  },
+  {
+   "lap": 47,
+   "grip_proxy_s": 83.971,
+   "track_temp_c": 44.6,
+   "air_temp_c": 32.3,
+   "rainfall": false
+  },
+  {
+   "lap": 48,
+   "grip_proxy_s": 84.036,
+   "track_temp_c": 44.2,
+   "air_temp_c": 32.4,
+   "rainfall": false
+  },
+  {
+   "lap": 49,
+   "grip_proxy_s": 83.708,
+   "track_temp_c": 44.2,
+   "air_temp_c": 32.3,
+   "rainfall": false
+  },
+  {
+   "lap": 50,
+   "grip_proxy_s": 83.769,
+   "track_temp_c": 44.1,
+   "air_temp_c": 32.3,
+   "rainfall": false
+  },
+  {
+   "lap": 51,
+   "grip_proxy_s": 83.754,
+   "track_temp_c": 44.1,
+   "air_temp_c": 32.3,
+   "rainfall": false
+  },
+  {
+   "lap": 52,
+   "grip_proxy_s": 83.761,
+   "track_temp_c": 44.1,
+   "air_temp_c": 32.3,
+   "rainfall": false
+  },
+  {
+   "lap": 53,
+   "grip_proxy_s": 83.686,
+   "track_temp_c": 43.8,
+   "air_temp_c": 32.2,
+   "rainfall": false
+  }
+ ],
+ "wet_dry_crossovers": [],
+ "stints_by_driver": {
+  "ALB": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 17,
+    "n_laps": 17,
+    "best_lap_s": 85.468,
+    "deg_slope_s_per_lap": -0.031,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 18,
+    "lap_end": 53,
+    "n_laps": 36,
+    "best_lap_s": 83.918,
+    "deg_slope_s_per_lap": -0.031,
+    "basis": "modelled"
+   }
+  ],
+  "ALO": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 12,
+    "n_laps": 12,
+    "best_lap_s": 85.693,
+    "deg_slope_s_per_lap": -0.128,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 13,
+    "lap_end": 35,
+    "n_laps": 23,
+    "best_lap_s": 84.504,
+    "deg_slope_s_per_lap": -0.003,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "HARD",
+    "lap_start": 36,
+    "lap_end": 53,
+    "n_laps": 18,
+    "best_lap_s": 82.944,
+    "deg_slope_s_per_lap": -0.018,
+    "basis": "modelled"
+   }
+  ],
+  "BOT": [
+   {
+    "stint_number": 1,
+    "compound": "HARD",
+    "lap_start": 1,
+    "lap_end": 33,
+    "n_laps": 33,
+    "best_lap_s": 85.804,
+    "deg_slope_s_per_lap": -0.009,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "MEDIUM",
+    "lap_start": 34,
+    "lap_end": 52,
+    "n_laps": 19,
+    "best_lap_s": 83.609,
+    "deg_slope_s_per_lap": -0.113,
+    "basis": "modelled"
+   }
+  ],
+  "COL": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 16,
+    "n_laps": 16,
+    "best_lap_s": 86.057,
+    "deg_slope_s_per_lap": -0.032,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 17,
+    "lap_end": 53,
+    "n_laps": 37,
+    "best_lap_s": 83.728,
+    "deg_slope_s_per_lap": -0.012,
+    "basis": "modelled"
+   }
+  ],
+  "GAS": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 10,
+    "n_laps": 10,
+    "best_lap_s": 85.82,
+    "deg_slope_s_per_lap": 0.01,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 11,
+    "lap_end": 30,
+    "n_laps": 20,
+    "best_lap_s": 84.816,
+    "deg_slope_s_per_lap": 0.057,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "HARD",
+    "lap_start": 31,
+    "lap_end": 52,
+    "n_laps": 22,
+    "best_lap_s": 83.755,
+    "deg_slope_s_per_lap": -0.038,
+    "basis": "modelled"
+   }
+  ],
+  "HAM": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 15,
+    "n_laps": 15,
+    "best_lap_s": 84.771,
+    "deg_slope_s_per_lap": -0.031,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 16,
+    "lap_end": 37,
+    "n_laps": 22,
+    "best_lap_s": 83.328,
+    "deg_slope_s_per_lap": -0.088,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "HARD",
+    "lap_start": 38,
+    "lap_end": 53,
+    "n_laps": 16,
+    "best_lap_s": 81.512,
+    "deg_slope_s_per_lap": 0.02,
+    "basis": "modelled"
+   }
+  ],
+  "HUL": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 5,
+    "n_laps": 5,
+    "best_lap_s": 86.434,
+    "deg_slope_s_per_lap": null,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 6,
+    "lap_end": 32,
+    "n_laps": 27,
+    "best_lap_s": 84.983,
+    "deg_slope_s_per_lap": 0.01,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "HARD",
+    "lap_start": 33,
+    "lap_end": 52,
+    "n_laps": 20,
+    "best_lap_s": 83.275,
+    "deg_slope_s_per_lap": 0.004,
+    "basis": "modelled"
+   }
+  ],
+  "LEC": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 15,
+    "n_laps": 15,
+    "best_lap_s": 84.362,
+    "deg_slope_s_per_lap": 0.02,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 16,
+    "lap_end": 53,
+    "n_laps": 38,
+    "best_lap_s": 83.226,
+    "deg_slope_s_per_lap": -0.008,
+    "basis": "modelled"
+   }
+  ],
+  "MAG": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 14,
+    "n_laps": 14,
+    "best_lap_s": 85.785,
+    "deg_slope_s_per_lap": -0.064,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 15,
+    "lap_end": 53,
+    "n_laps": 39,
+    "best_lap_s": 83.437,
+    "deg_slope_s_per_lap": -0.041,
+    "basis": "modelled"
+   }
+  ],
+  "NOR": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 14,
+    "n_laps": 14,
+    "best_lap_s": 84.391,
+    "deg_slope_s_per_lap": -0.041,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 15,
+    "lap_end": 32,
+    "n_laps": 18,
+    "best_lap_s": 83.067,
+    "deg_slope_s_per_lap": -0.098,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "HARD",
+    "lap_start": 33,
+    "lap_end": 53,
+    "n_laps": 21,
+    "best_lap_s": 81.432,
+    "deg_slope_s_per_lap": -0.056,
+    "basis": "modelled"
+   }
+  ],
+  "OCO": [
+   {
+    "stint_number": 1,
+    "compound": "HARD",
+    "lap_start": 1,
+    "lap_end": 31,
+    "n_laps": 31,
+    "best_lap_s": 85.369,
+    "deg_slope_s_per_lap": 0.011,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "MEDIUM",
+    "lap_start": 32,
+    "lap_end": 52,
+    "n_laps": 21,
+    "best_lap_s": 84.343,
+    "deg_slope_s_per_lap": -0.004,
+    "basis": "modelled"
+   }
+  ],
+  "PER": [
+   {
+    "stint_number": 1,
+    "compound": "HARD",
+    "lap_start": 1,
+    "lap_end": 23,
+    "n_laps": 23,
+    "best_lap_s": 84.654,
+    "deg_slope_s_per_lap": 0.005,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 24,
+    "lap_end": 35,
+    "n_laps": 12,
+    "best_lap_s": 83.473,
+    "deg_slope_s_per_lap": -0.022,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "MEDIUM",
+    "lap_start": 36,
+    "lap_end": 53,
+    "n_laps": 18,
+    "best_lap_s": 82.971,
+    "deg_slope_s_per_lap": -0.028,
+    "basis": "modelled"
+   }
+  ],
+  "PIA": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 16,
+    "n_laps": 16,
+    "best_lap_s": 84.077,
+    "deg_slope_s_per_lap": -0.009,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 17,
+    "lap_end": 38,
+    "n_laps": 22,
+    "best_lap_s": 82.968,
+    "deg_slope_s_per_lap": -0.034,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "HARD",
+    "lap_start": 39,
+    "lap_end": 53,
+    "n_laps": 15,
+    "best_lap_s": 81.943,
+    "deg_slope_s_per_lap": -0.006,
+    "basis": "modelled"
+   }
+  ],
+  "RIC": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 11,
+    "n_laps": 11,
+    "best_lap_s": 85.713,
+    "deg_slope_s_per_lap": -0.181,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 12,
+    "lap_end": 53,
+    "n_laps": 42,
+    "best_lap_s": 84.219,
+    "deg_slope_s_per_lap": -0.017,
+    "basis": "modelled"
+   }
+  ],
+  "RUS": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 11,
+    "n_laps": 11,
+    "best_lap_s": 85.046,
+    "deg_slope_s_per_lap": -0.096,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 12,
+    "lap_end": 33,
+    "n_laps": 22,
+    "best_lap_s": 83.177,
+    "deg_slope_s_per_lap": -0.075,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "HARD",
+    "lap_start": 34,
+    "lap_end": 53,
+    "n_laps": 20,
+    "best_lap_s": 82.036,
+    "deg_slope_s_per_lap": -0.084,
+    "basis": "modelled"
+   }
+  ],
+  "SAI": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 19,
+    "n_laps": 19,
+    "best_lap_s": 84.642,
+    "deg_slope_s_per_lap": 0.018,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 20,
+    "lap_end": 53,
+    "n_laps": 34,
+    "best_lap_s": 83.219,
+    "deg_slope_s_per_lap": 0.004,
+    "basis": "modelled"
+   }
+  ],
+  "STR": [
+   {
+    "stint_number": 1,
+    "compound": "HARD",
+    "lap_start": 1,
+    "lap_end": 19,
+    "n_laps": 19,
+    "best_lap_s": 85.558,
+    "deg_slope_s_per_lap": -0.014,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 20,
+    "lap_end": 36,
+    "n_laps": 17,
+    "best_lap_s": 84.437,
+    "deg_slope_s_per_lap": 0.04,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "MEDIUM",
+    "lap_start": 37,
+    "lap_end": 50,
+    "n_laps": 14,
+    "best_lap_s": 83.427,
+    "deg_slope_s_per_lap": 0.115,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 4,
+    "compound": "SOFT",
+    "lap_start": 51,
+    "lap_end": 52,
+    "n_laps": 2,
+    "best_lap_s": 82.232,
+    "deg_slope_s_per_lap": null,
+    "basis": "modelled"
+   }
+  ],
+  "TSU": [
+   {
+    "stint_number": 1,
+    "compound": "HARD",
+    "lap_start": 1,
+    "lap_end": 7,
+    "n_laps": 7,
+    "best_lap_s": 86.198,
+    "deg_slope_s_per_lap": 0.277,
+    "basis": "modelled"
+   }
+  ],
+  "VER": [
+   {
+    "stint_number": 1,
+    "compound": "HARD",
+    "lap_start": 1,
+    "lap_end": 22,
+    "n_laps": 22,
+    "best_lap_s": 84.918,
+    "deg_slope_s_per_lap": -0.005,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 23,
+    "lap_end": 41,
+    "n_laps": 19,
+    "best_lap_s": 83.424,
+    "deg_slope_s_per_lap": 0.009,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "MEDIUM",
+    "lap_start": 42,
+    "lap_end": 53,
+    "n_laps": 12,
+    "best_lap_s": 81.745,
+    "deg_slope_s_per_lap": 0.057,
+    "basis": "modelled"
+   }
+  ],
+  "ZHO": [
+   {
+    "stint_number": 1,
+    "compound": "MEDIUM",
+    "lap_start": 1,
+    "lap_end": 15,
+    "n_laps": 15,
+    "best_lap_s": 85.942,
+    "deg_slope_s_per_lap": -0.1,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 16,
+    "lap_end": 52,
+    "n_laps": 37,
+    "best_lap_s": 85.092,
+    "deg_slope_s_per_lap": 0.032,
+    "basis": "modelled"
+   }
+  ]
+ },
+ "clip_contexts": {
+  "2024-italian-r-ALO-142412": {
+   "clip_id": "2024-italian-r-ALO-142412",
+   "utc": "2024-09-01T12:24:46.541000",
+   "lap": null,
+   "phase": "pre_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 33.2,
+    "track_temp_c": 53.4,
+    "rainfall": false,
+    "humidity_pct": 35.0,
+    "pressure_hpa": 993.8,
+    "wind_speed_ms": 1.5,
+    "wind_direction_deg": 214,
+    "track_temp_delta_from_start_c": 1.3,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-NOR-142542": {
+   "clip_id": "2024-italian-r-NOR-142542",
+   "utc": "2024-09-01T12:25:54.057000",
+   "lap": null,
+   "phase": "pre_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 33.1,
+    "track_temp_c": 54.2,
+    "rainfall": false,
+    "humidity_pct": 34.0,
+    "pressure_hpa": 993.8,
+    "wind_speed_ms": 2.7,
+    "wind_direction_deg": 195,
+    "track_temp_delta_from_start_c": 2.1,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-GAS-142858": {
+   "clip_id": "2024-italian-r-GAS-142858",
+   "utc": "2024-09-01T12:29:44.701000",
+   "lap": null,
+   "phase": "pre_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 33.5,
+    "track_temp_c": 53.0,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 993.7,
+    "wind_speed_ms": 1.6,
+    "wind_direction_deg": 200,
+    "track_temp_delta_from_start_c": 0.9,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T12:30:01",
+      "lap": 1,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "PIT EXIT CLOSED",
+      "offset_s": 16.3
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-RIC-145543": {
+   "clip_id": "2024-italian-r-RIC-145543",
+   "utc": "2024-09-01T12:56:07.020000",
+   "lap": null,
+   "phase": "pre_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 33.7,
+    "track_temp_c": 53.7,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 993.3,
+    "wind_speed_ms": 0.8,
+    "wind_direction_deg": 270,
+    "track_temp_delta_from_start_c": 1.6,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T12:57:04",
+      "lap": 1,
+      "category": "Drs",
+      "flag": null,
+      "scope": null,
+      "message": "DRS DISABLED",
+      "offset_s": 57.0
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-LEC-145557": {
+   "clip_id": "2024-italian-r-LEC-145557",
+   "utc": "2024-09-01T12:56:09.109000",
+   "lap": null,
+   "phase": "pre_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 33.7,
+    "track_temp_c": 53.7,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 993.3,
+    "wind_speed_ms": 0.8,
+    "wind_direction_deg": 270,
+    "track_temp_delta_from_start_c": 1.6,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T12:57:04",
+      "lap": 1,
+      "category": "Drs",
+      "flag": null,
+      "scope": null,
+      "message": "DRS DISABLED",
+      "offset_s": 54.9
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-PIA-145909": {
+   "clip_id": "2024-italian-r-PIA-145909",
+   "utc": "2024-09-01T12:59:26.012000",
+   "lap": null,
+   "phase": "pre_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 33.7,
+    "track_temp_c": 54.4,
+    "rainfall": false,
+    "humidity_pct": 33.0,
+    "pressure_hpa": 993.2,
+    "wind_speed_ms": 2.4,
+    "wind_direction_deg": 201,
+    "track_temp_delta_from_start_c": 2.3,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-BOT-150252": {
+   "clip_id": "2024-italian-r-BOT-150252",
+   "utc": "2024-09-01T13:03:17.821000",
+   "lap": null,
+   "phase": "pre_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 33.8,
+    "track_temp_c": 51.7,
+    "rainfall": false,
+    "humidity_pct": 33.0,
+    "pressure_hpa": 993.3,
+    "wind_speed_ms": 2.2,
+    "wind_direction_deg": 194,
+    "track_temp_delta_from_start_c": -0.4,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "GREEN"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:03:34",
+      "lap": 1,
+      "category": "Flag",
+      "flag": "GREEN",
+      "scope": "Track",
+      "message": "GREEN LIGHT - PIT EXIT OPEN",
+      "offset_s": 16.2
+     },
+     {
+      "utc": "2024-09-01T13:05:13",
+      "lap": 2,
+      "category": "Drs",
+      "flag": null,
+      "scope": null,
+      "message": "DRS ENABLED",
+      "offset_s": 115.2
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-VER-150504": {
+   "clip_id": "2024-italian-r-VER-150504",
+   "utc": "2024-09-01T13:05:30.784000",
+   "lap": 2,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 33.9,
+    "track_temp_c": 50.5,
+    "rainfall": false,
+    "humidity_pct": 31.0,
+    "pressure_hpa": 993.2,
+    "wind_speed_ms": 1.4,
+    "wind_direction_deg": 218,
+    "track_temp_delta_from_start_c": -1.6,
+    "grip_proxy_s": 86.924,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 2,
+    "stint_number": 1,
+    "laps_into_stint": 2,
+    "deg_slope_s_per_lap": -0.005,
+    "stint_vs_driver_median_laps": 3,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 1677.2,
+    "lap_length_m": 5745.0,
+    "pct_of_lap": 29.2,
+    "nearest_corner": 3,
+    "distance_to_corner_m": -220.5,
+    "sector": 1,
+    "speed_kph": 316.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 8,
+    "rpm": 11186,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 6,
+    "gap_ahead_s": 0.807,
+    "gap_to_leader_s": 3.785,
+    "track_status": "1",
+    "active_flags": [
+     "GREEN"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:03:34",
+      "lap": 1,
+      "category": "Flag",
+      "flag": "GREEN",
+      "scope": "Track",
+      "message": "GREEN LIGHT - PIT EXIT OPEN",
+      "offset_s": -116.8
+     },
+     {
+      "utc": "2024-09-01T13:05:13",
+      "lap": 2,
+      "category": "Drs",
+      "flag": null,
+      "scope": null,
+      "message": "DRS ENABLED",
+      "offset_s": -17.8
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-PER-150642": {
+   "clip_id": "2024-italian-r-PER-150642",
+   "utc": "2024-09-01T13:07:11.109000",
+   "lap": 3,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 33.7,
+    "track_temp_c": 50.6,
+    "rainfall": false,
+    "humidity_pct": 30.0,
+    "pressure_hpa": 993.3,
+    "wind_speed_ms": 2.3,
+    "wind_direction_deg": 185,
+    "track_temp_delta_from_start_c": -1.5,
+    "grip_proxy_s": 86.422,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 3,
+    "stint_number": 1,
+    "laps_into_stint": 3,
+    "deg_slope_s_per_lap": 0.005,
+    "stint_vs_driver_median_laps": 5,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2416.8,
+    "lap_length_m": 5746.2,
+    "pct_of_lap": 42.1,
+    "nearest_corner": 6,
+    "distance_to_corner_m": 80.1,
+    "sector": 2,
+    "speed_kph": 222.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 6,
+    "rpm": 9386,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 8,
+    "gap_ahead_s": 0.566,
+    "gap_to_leader_s": 5.866,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:05:13",
+      "lap": 2,
+      "category": "Drs",
+      "flag": null,
+      "scope": null,
+      "message": "DRS ENABLED",
+      "offset_s": -118.1
+     },
+     {
+      "utc": "2024-09-01T13:07:52",
+      "lap": 3,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "TURN 8 INCIDENT INVOLVING CARS 3 (RIC) AND 27 (HUL) NOTED - CAUSING A COLLISION",
+      "offset_s": 40.9
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-RUS-150705": {
+   "clip_id": "2024-italian-r-RUS-150705",
+   "utc": "2024-09-01T13:07:42.379000",
+   "lap": 3,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 33.7,
+    "track_temp_c": 50.6,
+    "rainfall": false,
+    "humidity_pct": 31.0,
+    "pressure_hpa": 993.2,
+    "wind_speed_ms": 1.9,
+    "wind_direction_deg": 201,
+    "track_temp_delta_from_start_c": -1.5,
+    "grip_proxy_s": 86.422,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "MEDIUM",
+    "tyre_age_laps": 3,
+    "stint_number": 1,
+    "laps_into_stint": 3,
+    "deg_slope_s_per_lap": -0.096,
+    "stint_vs_driver_median_laps": -9,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 4571.0,
+    "lap_length_m": 5738.1,
+    "pct_of_lap": 79.7,
+    "nearest_corner": 10,
+    "distance_to_corner_m": -496.1,
+    "sector": 3,
+    "speed_kph": 317.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 8,
+    "rpm": 11303,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 7,
+    "gap_ahead_s": 0.921,
+    "gap_to_leader_s": 5.3,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:07:52",
+      "lap": 3,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "TURN 8 INCIDENT INVOLVING CARS 3 (RIC) AND 27 (HUL) NOTED - CAUSING A COLLISION",
+      "offset_s": 9.6
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-HUL-150829": {
+   "clip_id": "2024-italian-r-HUL-150829",
+   "utc": "2024-09-01T13:08:48.909000",
+   "lap": 4,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 33.7,
+    "track_temp_c": 50.7,
+    "rainfall": false,
+    "humidity_pct": 30.0,
+    "pressure_hpa": 993.2,
+    "wind_speed_ms": 2.3,
+    "wind_direction_deg": 192,
+    "track_temp_delta_from_start_c": -1.4,
+    "grip_proxy_s": 86.238,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "MEDIUM",
+    "tyre_age_laps": 4,
+    "stint_number": 1,
+    "laps_into_stint": 4,
+    "deg_slope_s_per_lap": null,
+    "stint_vs_driver_median_laps": -15,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2752.5,
+    "lap_length_m": 5756.6,
+    "pct_of_lap": 47.8,
+    "nearest_corner": 7,
+    "distance_to_corner_m": 57.8,
+    "sector": 2,
+    "speed_kph": 241.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 6,
+    "rpm": 10537,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 16,
+    "gap_ahead_s": 0.37,
+    "gap_to_leader_s": 13.311,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:07:52",
+      "lap": 3,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "TURN 8 INCIDENT INVOLVING CARS 3 (RIC) AND 27 (HUL) NOTED - CAUSING A COLLISION",
+      "offset_s": -56.9
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-PIA-151235": {
+   "clip_id": "2024-italian-r-PIA-151235",
+   "utc": "2024-09-01T13:13:13.005000",
+   "lap": 7,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 33.4,
+    "track_temp_c": 49.5,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 993.1,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 0,
+    "track_temp_delta_from_start_c": -2.6,
+    "grip_proxy_s": 85.822,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "MEDIUM",
+    "tyre_age_laps": 7,
+    "stint_number": 1,
+    "laps_into_stint": 7,
+    "deg_slope_s_per_lap": -0.009,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 4392.3,
+    "lap_length_m": 5748.5,
+    "pct_of_lap": 76.4,
+    "nearest_corner": 10,
+    "distance_to_corner_m": -317.4,
+    "sector": 3,
+    "speed_kph": 297.0,
+    "throttle_pct": 99.0,
+    "brake": false,
+    "gear": 8,
+    "rpm": 10512,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 1,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": 0.0,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:11:21",
+      "lap": 6,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "TURN 1 INCIDENT INVOLVING CARS 27 (HUL) AND 22 (TSU) NOTED - CAUSING A COLLISION",
+      "offset_s": -112.0
+     },
+     {
+      "utc": "2024-09-01T13:12:02",
+      "lap": 6,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 22 (TSU) TIME 1:32.241 DELETED - TRACK LIMITS AT TURN 2 LAP 5 15:09:44",
+      "offset_s": -71.0
+     },
+     {
+      "utc": "2024-09-01T13:13:02",
+      "lap": 7,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 8 INCIDENT INVOLVING CARS 3 (RIC) AND 27 (HUL) UNDER INVESTIGATION - CAUSING A COLLISION",
+      "offset_s": -11.0
+     },
+     {
+      "utc": "2024-09-01T13:14:30",
+      "lap": 8,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 1 INCIDENT INVOLVING CARS 27 (HUL) AND 22 (TSU) UNDER INVESTIGATION - CAUSING A COLLISION",
+      "offset_s": 77.0
+     },
+     {
+      "utc": "2024-09-01T13:15:00",
+      "lap": 9,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 5 SECOND TIME PENALTY FOR CAR 3 (RIC) - FORCING ANOTHER CAR OFF THE TRACK",
+      "offset_s": 107.0
+     },
+     {
+      "utc": "2024-09-01T13:15:12",
+      "lap": 9,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 22 (TSU) LAP DELETED - TRACK LIMITS AT TURN 2 LAP 7 15:12:44 (PIT)",
+      "offset_s": 119.0
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-VER-151337": {
+   "clip_id": "2024-italian-r-VER-151337",
+   "utc": "2024-09-01T13:13:47.132000",
+   "lap": 8,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 33.3,
+    "track_temp_c": 49.5,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 993.1,
+    "wind_speed_ms": 1.0,
+    "wind_direction_deg": 200,
+    "track_temp_delta_from_start_c": -2.6,
+    "grip_proxy_s": 85.693,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 8,
+    "stint_number": 1,
+    "laps_into_stint": 8,
+    "deg_slope_s_per_lap": -0.005,
+    "stint_vs_driver_median_laps": 3,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 806.7,
+    "lap_length_m": 5739.7,
+    "pct_of_lap": 14.1,
+    "nearest_corner": 1,
+    "distance_to_corner_m": 67.1,
+    "sector": 1,
+    "speed_kph": 229.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 8,
+    "rpm": 8967,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 6,
+    "gap_ahead_s": 1.451,
+    "gap_to_leader_s": 7.34,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:12:02",
+      "lap": 6,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 22 (TSU) TIME 1:32.241 DELETED - TRACK LIMITS AT TURN 2 LAP 5 15:09:44",
+      "offset_s": -105.1
+     },
+     {
+      "utc": "2024-09-01T13:13:02",
+      "lap": 7,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 8 INCIDENT INVOLVING CARS 3 (RIC) AND 27 (HUL) UNDER INVESTIGATION - CAUSING A COLLISION",
+      "offset_s": -45.1
+     },
+     {
+      "utc": "2024-09-01T13:14:30",
+      "lap": 8,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 1 INCIDENT INVOLVING CARS 27 (HUL) AND 22 (TSU) UNDER INVESTIGATION - CAUSING A COLLISION",
+      "offset_s": 42.9
+     },
+     {
+      "utc": "2024-09-01T13:15:00",
+      "lap": 9,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 5 SECOND TIME PENALTY FOR CAR 3 (RIC) - FORCING ANOTHER CAR OFF THE TRACK",
+      "offset_s": 72.9
+     },
+     {
+      "utc": "2024-09-01T13:15:12",
+      "lap": 9,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 22 (TSU) LAP DELETED - TRACK LIMITS AT TURN 2 LAP 7 15:12:44 (PIT)",
+      "offset_s": 84.9
+     },
+     {
+      "utc": "2024-09-01T13:15:36",
+      "lap": 9,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 27 (HUL) - CAUSING A COLLISION",
+      "offset_s": 108.9
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-PIA-151853": {
+   "clip_id": "2024-italian-r-PIA-151853",
+   "utc": "2024-09-01T13:19:17.951000",
+   "lap": 12,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 33.2,
+    "track_temp_c": 47.7,
+    "rainfall": false,
+    "humidity_pct": 31.0,
+    "pressure_hpa": 993.2,
+    "wind_speed_ms": 1.6,
+    "wind_direction_deg": 232,
+    "track_temp_delta_from_start_c": -4.4,
+    "grip_proxy_s": 85.468,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "MEDIUM",
+    "tyre_age_laps": 12,
+    "stint_number": 1,
+    "laps_into_stint": 12,
+    "deg_slope_s_per_lap": -0.009,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 835.7,
+    "lap_length_m": 5726.1,
+    "pct_of_lap": 14.6,
+    "nearest_corner": 1,
+    "distance_to_corner_m": 38.1,
+    "sector": 1,
+    "speed_kph": 180.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 6,
+    "rpm": 8977,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 1,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": 0.0,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:18:09",
+      "lap": 11,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 3 (RIC) TIME 1:26.111 DELETED - TRACK LIMITS AT TURN 2 LAP 10 15:16:50",
+      "offset_s": -69.0
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-OCO-151859": {
+   "clip_id": "2024-italian-r-OCO-151859",
+   "utc": "2024-09-01T13:19:17.951000",
+   "lap": 11,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 33.2,
+    "track_temp_c": 47.7,
+    "rainfall": false,
+    "humidity_pct": 31.0,
+    "pressure_hpa": 993.2,
+    "wind_speed_ms": 1.6,
+    "wind_direction_deg": 232,
+    "track_temp_delta_from_start_c": -4.4,
+    "grip_proxy_s": 85.734,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 11,
+    "stint_number": 1,
+    "laps_into_stint": 11,
+    "deg_slope_s_per_lap": 0.011,
+    "stint_vs_driver_median_laps": 5,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 4774.2,
+    "lap_length_m": 5738.3,
+    "pct_of_lap": 83.2,
+    "nearest_corner": 11,
+    "distance_to_corner_m": 380.5,
+    "sector": 3,
+    "speed_kph": 321.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 8,
+    "rpm": 11484,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 12,
+    "gap_ahead_s": 1.545,
+    "gap_to_leader_s": 23.451,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:18:09",
+      "lap": 11,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 3 (RIC) TIME 1:26.111 DELETED - TRACK LIMITS AT TURN 2 LAP 10 15:16:50",
+      "offset_s": -69.0
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-NOR-152319": {
+   "clip_id": "2024-italian-r-NOR-152319",
+   "utc": "2024-09-01T13:23:39.818000",
+   "lap": 15,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.9,
+    "track_temp_c": 48.0,
+    "rainfall": false,
+    "humidity_pct": 31.0,
+    "pressure_hpa": 993.0,
+    "wind_speed_ms": 2.3,
+    "wind_direction_deg": 197,
+    "track_temp_delta_from_start_c": -4.1,
+    "grip_proxy_s": 86.463,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 1,
+    "stint_number": 2,
+    "laps_into_stint": 1,
+    "deg_slope_s_per_lap": -0.098,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 97.9,
+    "lap_length_m": 5786.7,
+    "pct_of_lap": 1.7,
+    "nearest_corner": 1,
+    "distance_to_corner_m": 775.9,
+    "sector": 1,
+    "speed_kph": 16.0,
+    "throttle_pct": 19.0,
+    "brake": false,
+    "gear": 1,
+    "rpm": 4880,
+    "drs_active": false,
+    "zone": "pit_lane"
+   },
+   "situation": {
+    "position": 8,
+    "gap_ahead_s": 3.69,
+    "gap_to_leader_s": 26.851,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:22:08",
+      "lap": 14,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 55 (SAI) TIME 1:25.423 DELETED - TRACK LIMITS AT TURN 2 LAP 13 15:20:51",
+      "offset_s": -91.8
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-LEC-152422": {
+   "clip_id": "2024-italian-r-LEC-152422",
+   "utc": "2024-09-01T13:24:45.547000",
+   "lap": 15,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.8,
+    "track_temp_c": 47.9,
+    "rainfall": false,
+    "humidity_pct": 31.0,
+    "pressure_hpa": 993.0,
+    "wind_speed_ms": 2.0,
+    "wind_direction_deg": 197,
+    "track_temp_delta_from_start_c": -4.2,
+    "grip_proxy_s": 86.463,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "MEDIUM",
+    "tyre_age_laps": 15,
+    "stint_number": 1,
+    "laps_into_stint": 15,
+    "deg_slope_s_per_lap": 0.02,
+    "stint_vs_driver_median_laps": -12,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 5231.5,
+    "lap_length_m": 5716.1,
+    "pct_of_lap": 91.5,
+    "nearest_corner": 11,
+    "distance_to_corner_m": -76.8,
+    "sector": 3,
+    "speed_kph": 208.0,
+    "throttle_pct": 91.0,
+    "brake": false,
+    "gear": 5,
+    "rpm": 11669,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 3,
+    "gap_ahead_s": 1.323,
+    "gap_to_leader_s": 8.439,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:26:21",
+      "lap": 17,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "PIT LANE INCIDENT INVOLVING CAR 3 (RIC) NOTED - FAILING TO SERVE TIME PENALTY CORRECTLY",
+      "offset_s": 95.5
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-PER-152548": {
+   "clip_id": "2024-italian-r-PER-152548",
+   "utc": "2024-09-01T13:26:24.627000",
+   "lap": 16,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.8,
+    "track_temp_c": 47.8,
+    "rainfall": false,
+    "humidity_pct": 30.0,
+    "pressure_hpa": 993.1,
+    "wind_speed_ms": 1.9,
+    "wind_direction_deg": 195,
+    "track_temp_delta_from_start_c": -4.3,
+    "grip_proxy_s": 85.644,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 16,
+    "stint_number": 1,
+    "laps_into_stint": 16,
+    "deg_slope_s_per_lap": 0.005,
+    "stint_vs_driver_median_laps": 5,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 5626.2,
+    "lap_length_m": 5740.4,
+    "pct_of_lap": 98.0,
+    "nearest_corner": 11,
+    "distance_to_corner_m": -471.5,
+    "sector": 3,
+    "speed_kph": 301.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 8,
+    "rpm": 10740,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 4,
+    "gap_ahead_s": 1.855,
+    "gap_to_leader_s": 8.119,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:26:21",
+      "lap": 17,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "PIT LANE INCIDENT INVOLVING CAR 3 (RIC) NOTED - FAILING TO SERVE TIME PENALTY CORRECTLY",
+      "offset_s": -3.6
+     },
+     {
+      "utc": "2024-09-01T13:27:21",
+      "lap": 17,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: PIT LANE INCIDENT INVOLVING CAR 3 (RIC) UNDER INVESTIGATION - FAILING TO SERVE TIME PENALTY CORRECTLY",
+      "offset_s": 56.4
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-SAI-152606": {
+   "clip_id": "2024-italian-r-SAI-152606",
+   "utc": "2024-09-01T13:26:24.735000",
+   "lap": 17,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.8,
+    "track_temp_c": 47.8,
+    "rainfall": false,
+    "humidity_pct": 30.0,
+    "pressure_hpa": 993.1,
+    "wind_speed_ms": 1.9,
+    "wind_direction_deg": 195,
+    "track_temp_delta_from_start_c": -4.3,
+    "grip_proxy_s": 85.407,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "MEDIUM",
+    "tyre_age_laps": 17,
+    "stint_number": 1,
+    "laps_into_stint": 17,
+    "deg_slope_s_per_lap": 0.018,
+    "stint_vs_driver_median_laps": -8,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 383.8,
+    "lap_length_m": 5747.7,
+    "pct_of_lap": 6.7,
+    "nearest_corner": 1,
+    "distance_to_corner_m": 490.0,
+    "sector": 1,
+    "speed_kph": 330.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 8,
+    "rpm": 11706,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 1,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": 0.0,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:26:21",
+      "lap": 17,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "PIT LANE INCIDENT INVOLVING CAR 3 (RIC) NOTED - FAILING TO SERVE TIME PENALTY CORRECTLY",
+      "offset_s": -3.7
+     },
+     {
+      "utc": "2024-09-01T13:27:21",
+      "lap": 17,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: PIT LANE INCIDENT INVOLVING CAR 3 (RIC) UNDER INVESTIGATION - FAILING TO SERVE TIME PENALTY CORRECTLY",
+      "offset_s": 56.3
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-LEC-152652": {
+   "clip_id": "2024-italian-r-LEC-152652",
+   "utc": "2024-09-01T13:27:30.986000",
+   "lap": 17,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.9,
+    "track_temp_c": 47.5,
+    "rainfall": false,
+    "humidity_pct": 31.0,
+    "pressure_hpa": 993.0,
+    "wind_speed_ms": 1.4,
+    "wind_direction_deg": 178,
+    "track_temp_delta_from_start_c": -4.6,
+    "grip_proxy_s": 85.407,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 2,
+    "stint_number": 2,
+    "laps_into_stint": 2,
+    "deg_slope_s_per_lap": -0.008,
+    "stint_vs_driver_median_laps": 12,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3154.5,
+    "lap_length_m": 5764.5,
+    "pct_of_lap": 54.7,
+    "nearest_corner": 7,
+    "distance_to_corner_m": -344.2,
+    "sector": 2,
+    "speed_kph": 281.0,
+    "throttle_pct": 99.0,
+    "brake": false,
+    "gear": 7,
+    "rpm": 11263,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 6,
+    "gap_ahead_s": 1.007,
+    "gap_to_leader_s": 19.733,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:26:21",
+      "lap": 17,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "PIT LANE INCIDENT INVOLVING CAR 3 (RIC) NOTED - FAILING TO SERVE TIME PENALTY CORRECTLY",
+      "offset_s": -70.0
+     },
+     {
+      "utc": "2024-09-01T13:27:21",
+      "lap": 17,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: PIT LANE INCIDENT INVOLVING CAR 3 (RIC) UNDER INVESTIGATION - FAILING TO SERVE TIME PENALTY CORRECTLY",
+      "offset_s": -10.0
+     },
+     {
+      "utc": "2024-09-01T13:28:31",
+      "lap": 18,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 3 (RIC) - FAILING TO SERVE TIME PENALTY CORRECTLY",
+      "offset_s": 60.0
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-NOR-152758": {
+   "clip_id": "2024-italian-r-NOR-152758",
+   "utc": "2024-09-01T13:28:37.294000",
+   "lap": 18,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.9,
+    "track_temp_c": 47.2,
+    "rainfall": false,
+    "humidity_pct": 31.0,
+    "pressure_hpa": 993.0,
+    "wind_speed_ms": 1.7,
+    "wind_direction_deg": 195,
+    "track_temp_delta_from_start_c": -4.9,
+    "grip_proxy_s": 85.448,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 4,
+    "stint_number": 2,
+    "laps_into_stint": 4,
+    "deg_slope_s_per_lap": -0.098,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2153.9,
+    "lap_length_m": 5745.9,
+    "pct_of_lap": 37.5,
+    "nearest_corner": 5,
+    "distance_to_corner_m": -12.7,
+    "sector": 2,
+    "speed_kph": 112.0,
+    "throttle_pct": 46.0,
+    "brake": false,
+    "gear": 3,
+    "rpm": 8431,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 5,
+    "gap_ahead_s": 2.293,
+    "gap_to_leader_s": 16.968,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:27:21",
+      "lap": 17,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: PIT LANE INCIDENT INVOLVING CAR 3 (RIC) UNDER INVESTIGATION - FAILING TO SERVE TIME PENALTY CORRECTLY",
+      "offset_s": -76.3
+     },
+     {
+      "utc": "2024-09-01T13:28:31",
+      "lap": 18,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 3 (RIC) - FAILING TO SERVE TIME PENALTY CORRECTLY",
+      "offset_s": -6.3
+     },
+     {
+      "utc": "2024-09-01T13:30:30",
+      "lap": 19,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "TURN 4 INCIDENT INVOLVING CARS 20 (MAG) AND 10 (GAS) NOTED - CAUSING A COLLISION",
+      "offset_s": 112.7
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-NOR-153532": {
+   "clip_id": "2024-italian-r-NOR-153532",
+   "utc": "2024-09-01T13:35:46.422000",
+   "lap": 23,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.6,
+    "track_temp_c": 45.9,
+    "rainfall": false,
+    "humidity_pct": 31.0,
+    "pressure_hpa": 993.0,
+    "wind_speed_ms": 1.2,
+    "wind_direction_deg": 190,
+    "track_temp_delta_from_start_c": -6.2,
+    "grip_proxy_s": 85.017,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 9,
+    "stint_number": 2,
+    "laps_into_stint": 9,
+    "deg_slope_s_per_lap": -0.098,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2711.6,
+    "lap_length_m": 5741.1,
+    "pct_of_lap": 47.2,
+    "nearest_corner": 7,
+    "distance_to_corner_m": 98.7,
+    "sector": 2,
+    "speed_kph": 243.0,
+    "throttle_pct": 99.0,
+    "brake": false,
+    "gear": 6,
+    "rpm": 11088,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 2,
+    "gap_ahead_s": 1.515,
+    "gap_to_leader_s": 1.515,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:35:41",
+      "lap": 23,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 4 INCIDENT INVOLVING CARS 20 (MAG) AND 10 (GAS) UNDER INVESTIGATION - CAUSING A COLLISION",
+      "offset_s": -5.4
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-VER-153657": {
+   "clip_id": "2024-italian-r-VER-153657",
+   "utc": "2024-09-01T13:37:25.925000",
+   "lap": 24,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.6,
+    "track_temp_c": 45.7,
+    "rainfall": false,
+    "humidity_pct": 31.0,
+    "pressure_hpa": 993.0,
+    "wind_speed_ms": 1.6,
+    "wind_direction_deg": 198,
+    "track_temp_delta_from_start_c": -6.4,
+    "grip_proxy_s": 84.768,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 2,
+    "stint_number": 2,
+    "laps_into_stint": 2,
+    "deg_slope_s_per_lap": 0.009,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2392.5,
+    "lap_length_m": 5753.0,
+    "pct_of_lap": 41.6,
+    "nearest_corner": 6,
+    "distance_to_corner_m": 104.4,
+    "sector": 2,
+    "speed_kph": 244.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 6,
+    "rpm": 10957,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 6,
+    "gap_ahead_s": 7.553,
+    "gap_to_leader_s": 23.211,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:35:41",
+      "lap": 23,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 4 INCIDENT INVOLVING CARS 20 (MAG) AND 10 (GAS) UNDER INVESTIGATION - CAUSING A COLLISION",
+      "offset_s": -104.9
+     },
+     {
+      "utc": "2024-09-01T13:38:15",
+      "lap": 25,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 20 (MAG) - CAUSING A COLLISION",
+      "offset_s": 49.1
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-HAM-154050": {
+   "clip_id": "2024-italian-r-HAM-154050",
+   "utc": "2024-09-01T13:41:16.505000",
+   "lap": 27,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.6,
+    "track_temp_c": 45.5,
+    "rainfall": false,
+    "humidity_pct": 31.0,
+    "pressure_hpa": 992.9,
+    "wind_speed_ms": 2.2,
+    "wind_direction_deg": 212,
+    "track_temp_delta_from_start_c": -6.6,
+    "grip_proxy_s": 84.497,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 12,
+    "stint_number": 2,
+    "laps_into_stint": 12,
+    "deg_slope_s_per_lap": -0.088,
+    "stint_vs_driver_median_laps": 6,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 1594.1,
+    "lap_length_m": 5749.6,
+    "pct_of_lap": 27.7,
+    "nearest_corner": 3,
+    "distance_to_corner_m": -137.4,
+    "sector": 1,
+    "speed_kph": 311.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 8,
+    "rpm": 11131,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 5,
+    "gap_ahead_s": 1.562,
+    "gap_to_leader_s": 17.179,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:42:50",
+      "lap": 28,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 10 (GAS) TIME 1:27.191 DELETED - TRACK LIMITS AT TURN 4 LAP 27 15:41:52",
+      "offset_s": 93.5
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-MAG-154256": {
+   "clip_id": "2024-italian-r-MAG-154256",
+   "utc": "2024-09-01T13:43:28.708000",
+   "lap": 28,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.5,
+    "track_temp_c": 45.3,
+    "rainfall": false,
+    "humidity_pct": 31.0,
+    "pressure_hpa": 992.9,
+    "wind_speed_ms": 1.5,
+    "wind_direction_deg": 180,
+    "track_temp_delta_from_start_c": -6.8,
+    "grip_proxy_s": 84.618,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 14,
+    "stint_number": 2,
+    "laps_into_stint": 14,
+    "deg_slope_s_per_lap": -0.041,
+    "stint_vs_driver_median_laps": 12,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2908.4,
+    "lap_length_m": 5760.6,
+    "pct_of_lap": 50.5,
+    "nearest_corner": 7,
+    "distance_to_corner_m": -98.1,
+    "sector": 2,
+    "speed_kph": 198.0,
+    "throttle_pct": 99.0,
+    "brake": false,
+    "gear": 5,
+    "rpm": 10878,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 12,
+    "gap_ahead_s": 1.523,
+    "gap_to_leader_s": 44.741,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:42:50",
+      "lap": 28,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 10 (GAS) TIME 1:27.191 DELETED - TRACK LIMITS AT TURN 4 LAP 27 15:41:52",
+      "offset_s": -38.7
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-LEC-154627": {
+   "clip_id": "2024-italian-r-LEC-154627",
+   "utc": "2024-09-01T13:46:48.562000",
+   "lap": 31,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.4,
+    "track_temp_c": 45.9,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.9,
+    "wind_speed_ms": 1.3,
+    "wind_direction_deg": 196,
+    "track_temp_delta_from_start_c": -6.2,
+    "grip_proxy_s": 85.086,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 16,
+    "stint_number": 2,
+    "laps_into_stint": 16,
+    "deg_slope_s_per_lap": -0.008,
+    "stint_vs_driver_median_laps": 12,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2320.8,
+    "lap_length_m": 5740.9,
+    "pct_of_lap": 40.4,
+    "nearest_corner": 6,
+    "distance_to_corner_m": 176.1,
+    "sector": 2,
+    "speed_kph": 232.0,
+    "throttle_pct": 99.0,
+    "brake": false,
+    "gear": 6,
+    "rpm": 10877,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 3,
+    "gap_ahead_s": 0.833,
+    "gap_to_leader_s": 5.738,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:47:42",
+      "lap": 32,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 10 (GAS) TIMED AT 15:47:42",
+      "offset_s": 53.4
+     },
+     {
+      "utc": "2024-09-01T13:47:56",
+      "lap": 32,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 4 (NOR) TIME 1:24.940 DELETED - TRACK LIMITS AT TURN 4 LAP 31 15:46:43",
+      "offset_s": 67.4
+     },
+     {
+      "utc": "2024-09-01T13:48:10",
+      "lap": 32,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 63 (RUS) TIME 1:25.331 DELETED - TRACK LIMITS AT TURN 2 LAP 31 15:46:51",
+      "offset_s": 81.4
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-MAG-154635": {
+   "clip_id": "2024-italian-r-MAG-154635",
+   "utc": "2024-09-01T13:46:48.768000",
+   "lap": 30,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.4,
+    "track_temp_c": 45.9,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.9,
+    "wind_speed_ms": 1.3,
+    "wind_direction_deg": 196,
+    "track_temp_delta_from_start_c": -6.2,
+    "grip_proxy_s": 84.754,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 16,
+    "stint_number": 2,
+    "laps_into_stint": 16,
+    "deg_slope_s_per_lap": -0.041,
+    "stint_vs_driver_median_laps": 12,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 5204.1,
+    "lap_length_m": 5756.0,
+    "pct_of_lap": 90.4,
+    "nearest_corner": 11,
+    "distance_to_corner_m": -49.4,
+    "sector": 3,
+    "speed_kph": 196.0,
+    "throttle_pct": 84.0,
+    "brake": false,
+    "gear": 5,
+    "rpm": 10814,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 12,
+    "gap_ahead_s": 1.27,
+    "gap_to_leader_s": 48.079,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:47:42",
+      "lap": 32,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 10 (GAS) TIMED AT 15:47:42",
+      "offset_s": 53.2
+     },
+     {
+      "utc": "2024-09-01T13:47:56",
+      "lap": 32,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 4 (NOR) TIME 1:24.940 DELETED - TRACK LIMITS AT TURN 4 LAP 31 15:46:43",
+      "offset_s": 67.2
+     },
+     {
+      "utc": "2024-09-01T13:48:10",
+      "lap": 32,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 63 (RUS) TIME 1:25.331 DELETED - TRACK LIMITS AT TURN 2 LAP 31 15:46:51",
+      "offset_s": 81.2
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-PER-154840": {
+   "clip_id": "2024-italian-r-PER-154840",
+   "utc": "2024-09-01T13:49:02.812000",
+   "lap": 32,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.5,
+    "track_temp_c": 45.7,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 993.0,
+    "wind_speed_ms": 1.4,
+    "wind_direction_deg": 198,
+    "track_temp_delta_from_start_c": -6.4,
+    "grip_proxy_s": 84.423,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 9,
+    "stint_number": 2,
+    "laps_into_stint": 9,
+    "deg_slope_s_per_lap": -0.022,
+    "stint_vs_driver_median_laps": -6,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3914.2,
+    "lap_length_m": 5735.8,
+    "pct_of_lap": 68.2,
+    "nearest_corner": 8,
+    "distance_to_corner_m": -43.8,
+    "sector": 3,
+    "speed_kph": 180.0,
+    "throttle_pct": 61.0,
+    "brake": false,
+    "gear": 5,
+    "rpm": 9569,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 7,
+    "gap_ahead_s": 6.007,
+    "gap_to_leader_s": 32.224,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:47:42",
+      "lap": 32,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 10 (GAS) TIMED AT 15:47:42",
+      "offset_s": -80.8
+     },
+     {
+      "utc": "2024-09-01T13:47:56",
+      "lap": 32,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 4 (NOR) TIME 1:24.940 DELETED - TRACK LIMITS AT TURN 4 LAP 31 15:46:43",
+      "offset_s": -66.8
+     },
+     {
+      "utc": "2024-09-01T13:48:10",
+      "lap": 32,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 63 (RUS) TIME 1:25.331 DELETED - TRACK LIMITS AT TURN 2 LAP 31 15:46:51",
+      "offset_s": -52.8
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-VER-154937": {
+   "clip_id": "2024-italian-r-VER-154937",
+   "utc": "2024-09-01T13:50:07.970000",
+   "lap": 33,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.7,
+    "track_temp_c": 45.7,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 993.0,
+    "wind_speed_ms": 1.3,
+    "wind_direction_deg": 192,
+    "track_temp_delta_from_start_c": -6.4,
+    "grip_proxy_s": 84.853,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 11,
+    "stint_number": 2,
+    "laps_into_stint": 11,
+    "deg_slope_s_per_lap": 0.009,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2954.9,
+    "lap_length_m": 5736.2,
+    "pct_of_lap": 51.5,
+    "nearest_corner": 7,
+    "distance_to_corner_m": -144.6,
+    "sector": 2,
+    "speed_kph": 216.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 5,
+    "rpm": 11476,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 5,
+    "gap_ahead_s": 7.885,
+    "gap_to_leader_s": 26.69,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:48:10",
+      "lap": 32,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 63 (RUS) TIME 1:25.331 DELETED - TRACK LIMITS AT TURN 2 LAP 31 15:46:51",
+      "offset_s": -118.0
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-NOR-155020": {
+   "clip_id": "2024-italian-r-NOR-155020",
+   "utc": "2024-09-01T13:50:40.544000",
+   "lap": 33,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.7,
+    "track_temp_c": 45.5,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.9,
+    "wind_speed_ms": 1.7,
+    "wind_direction_deg": 202,
+    "track_temp_delta_from_start_c": -6.6,
+    "grip_proxy_s": 84.853,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 1,
+    "stint_number": 3,
+    "laps_into_stint": 1,
+    "deg_slope_s_per_lap": -0.056,
+    "stint_vs_driver_median_laps": 3,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 5243.0,
+    "lap_length_m": 5775.0,
+    "pct_of_lap": 90.8,
+    "nearest_corner": 11,
+    "distance_to_corner_m": -88.3,
+    "sector": 3,
+    "speed_kph": 215.0,
+    "throttle_pct": 99.0,
+    "brake": false,
+    "gear": 5,
+    "rpm": 11318,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 6,
+    "gap_ahead_s": 3.074,
+    "gap_to_leader_s": 29.764,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-ALB-155118": {
+   "clip_id": "2024-italian-r-ALB-155118",
+   "utc": "2024-09-01T13:51:48.288000",
+   "lap": 34,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.7,
+    "track_temp_c": 45.5,
+    "rainfall": false,
+    "humidity_pct": 31.0,
+    "pressure_hpa": 993.0,
+    "wind_speed_ms": 1.5,
+    "wind_direction_deg": 186,
+    "track_temp_delta_from_start_c": -6.6,
+    "grip_proxy_s": 84.702,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 17,
+    "stint_number": 2,
+    "laps_into_stint": 17,
+    "deg_slope_s_per_lap": -0.031,
+    "stint_vs_driver_median_laps": 10,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2391.6,
+    "lap_length_m": 5737.8,
+    "pct_of_lap": 41.7,
+    "nearest_corner": 6,
+    "distance_to_corner_m": 105.4,
+    "sector": 2,
+    "speed_kph": 235.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 6,
+    "rpm": 11118,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 10,
+    "gap_ahead_s": 1.802,
+    "gap_to_leader_s": 54.997,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:53:21",
+      "lap": 36,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 23 (ALB) TIME 1:26.282 DELETED - TRACK LIMITS AT TURN 2 LAP 33 15:49:58",
+      "offset_s": 92.7
+     },
+     {
+      "utc": "2024-09-01T13:53:48",
+      "lap": 36,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 10 (GAS) TIMED AT 15:53:48",
+      "offset_s": 119.7
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-PIA-155413": {
+   "clip_id": "2024-italian-r-PIA-155413",
+   "utc": "2024-09-01T13:54:33.848000",
+   "lap": 37,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.5,
+    "track_temp_c": 45.4,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.9,
+    "wind_speed_ms": 1.2,
+    "wind_direction_deg": 200,
+    "track_temp_delta_from_start_c": -6.7,
+    "grip_proxy_s": 84.386,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 21,
+    "stint_number": 2,
+    "laps_into_stint": 21,
+    "deg_slope_s_per_lap": -0.034,
+    "stint_vs_driver_median_laps": 6,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 514.4,
+    "lap_length_m": 5741.5,
+    "pct_of_lap": 9.0,
+    "nearest_corner": 1,
+    "distance_to_corner_m": 359.4,
+    "sector": 1,
+    "speed_kph": 348.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 8,
+    "rpm": 12200,
+    "drs_active": true,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 1,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": 0.0,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:53:21",
+      "lap": 36,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 23 (ALB) TIME 1:26.282 DELETED - TRACK LIMITS AT TURN 2 LAP 33 15:49:58",
+      "offset_s": -72.8
+     },
+     {
+      "utc": "2024-09-01T13:53:48",
+      "lap": 36,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 10 (GAS) TIMED AT 15:53:48",
+      "offset_s": -45.8
+     },
+     {
+      "utc": "2024-09-01T13:54:03",
+      "lap": 36,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 15:54:03",
+      "offset_s": -30.8
+     },
+     {
+      "utc": "2024-09-01T13:56:30",
+      "lap": 38,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 27 (HUL) TIMED AT 15:56:29",
+      "offset_s": 116.2
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-VER-155456": {
+   "clip_id": "2024-italian-r-VER-155456",
+   "utc": "2024-09-01T13:55:05.845000",
+   "lap": 37,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.5,
+    "track_temp_c": 45.2,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.9,
+    "wind_speed_ms": 1.1,
+    "wind_direction_deg": 202,
+    "track_temp_delta_from_start_c": -6.9,
+    "grip_proxy_s": 84.386,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 15,
+    "stint_number": 2,
+    "laps_into_stint": 15,
+    "deg_slope_s_per_lap": 0.009,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 874.0,
+    "lap_length_m": 5730.2,
+    "pct_of_lap": 15.3,
+    "nearest_corner": 1,
+    "distance_to_corner_m": -0.2,
+    "sector": 1,
+    "speed_kph": 104.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 2,
+    "rpm": 8703,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 5,
+    "gap_ahead_s": 3.235,
+    "gap_to_leader_s": 26.597,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:53:21",
+      "lap": 36,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 23 (ALB) TIME 1:26.282 DELETED - TRACK LIMITS AT TURN 2 LAP 33 15:49:58",
+      "offset_s": -104.8
+     },
+     {
+      "utc": "2024-09-01T13:53:48",
+      "lap": 36,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 10 (GAS) TIMED AT 15:53:48",
+      "offset_s": -77.8
+     },
+     {
+      "utc": "2024-09-01T13:54:03",
+      "lap": 36,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 15:54:03",
+      "offset_s": -62.8
+     },
+     {
+      "utc": "2024-09-01T13:56:30",
+      "lap": 38,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 27 (HUL) TIMED AT 15:56:29",
+      "offset_s": 84.2
+     },
+     {
+      "utc": "2024-09-01T13:56:58",
+      "lap": 38,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 23 (ALB) TIME 1:25.882 DELETED - TRACK LIMITS AT TURN 2 LAP 37 15:55:40",
+      "offset_s": 112.2
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-PIA-155610": {
+   "clip_id": "2024-italian-r-PIA-155610",
+   "utc": "2024-09-01T13:56:45.334000",
+   "lap": 38,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.5,
+    "track_temp_c": 45.0,
+    "rainfall": false,
+    "humidity_pct": 31.0,
+    "pressure_hpa": 992.9,
+    "wind_speed_ms": 1.4,
+    "wind_direction_deg": 196,
+    "track_temp_delta_from_start_c": -7.1,
+    "grip_proxy_s": 85.166,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 22,
+    "stint_number": 2,
+    "laps_into_stint": 22,
+    "deg_slope_s_per_lap": -0.034,
+    "stint_vs_driver_median_laps": 6,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3441.5,
+    "lap_length_m": 5721.4,
+    "pct_of_lap": 60.2,
+    "nearest_corner": 8,
+    "distance_to_corner_m": 428.9,
+    "sector": 2,
+    "speed_kph": 317.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 8,
+    "rpm": 11250,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 1,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": 0.0,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T13:56:30",
+      "lap": 38,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 27 (HUL) TIMED AT 15:56:29",
+      "offset_s": -15.3
+     },
+     {
+      "utc": "2024-09-01T13:56:58",
+      "lap": 38,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 23 (ALB) TIME 1:25.882 DELETED - TRACK LIMITS AT TURN 2 LAP 37 15:55:40",
+      "offset_s": 12.7
+     },
+     {
+      "utc": "2024-09-01T13:57:56",
+      "lap": 39,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 15:57:56",
+      "offset_s": 70.7
+     },
+     {
+      "utc": "2024-09-01T13:58:23",
+      "lap": 39,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 77 (BOT) TIMED AT 15:58:23",
+      "offset_s": 97.7
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-HAM-160143": {
+   "clip_id": "2024-italian-r-HAM-160143",
+   "utc": "2024-09-01T14:02:15.576000",
+   "lap": 42,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.4,
+    "track_temp_c": 44.5,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 993.0,
+    "wind_speed_ms": 1.3,
+    "wind_direction_deg": 180,
+    "track_temp_delta_from_start_c": -7.6,
+    "grip_proxy_s": 83.908,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 5,
+    "stint_number": 3,
+    "laps_into_stint": 5,
+    "deg_slope_s_per_lap": 0.02,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 802.6,
+    "lap_length_m": 5742.3,
+    "pct_of_lap": 14.0,
+    "nearest_corner": 1,
+    "distance_to_corner_m": 71.2,
+    "sector": 1,
+    "speed_kph": 273.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 8,
+    "rpm": 9428,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 5,
+    "gap_ahead_s": 14.219,
+    "gap_to_leader_s": 33.219,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:01:42",
+      "lap": 42,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 18 (STR) TIME 1:25.777 DELETED - TRACK LIMITS AT TURN 2 LAP 40 16:00:24",
+      "offset_s": -33.6
+     },
+     {
+      "utc": "2024-09-01T14:01:44",
+      "lap": 42,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 77 (BOT) TIMED AT 16:01:44",
+      "offset_s": -31.6
+     },
+     {
+      "utc": "2024-09-01T14:03:50",
+      "lap": 43,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:03:49",
+      "offset_s": 94.4
+     },
+     {
+      "utc": "2024-09-01T14:03:50",
+      "lap": 43,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 77 (BOT) TIMED AT 16:03:49",
+      "offset_s": 94.4
+     },
+     {
+      "utc": "2024-09-01T14:04:05",
+      "lap": 43,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 31 (OCO) TIMED AT 16:04:05",
+      "offset_s": 109.4
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-HUL-160232": {
+   "clip_id": "2024-italian-r-HUL-160232",
+   "utc": "2024-09-01T14:02:50.226000",
+   "lap": 41,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.5,
+    "track_temp_c": 45.0,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.9,
+    "wind_speed_ms": 1.6,
+    "wind_direction_deg": 167,
+    "track_temp_delta_from_start_c": -7.1,
+    "grip_proxy_s": 84.039,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 9,
+    "stint_number": 3,
+    "laps_into_stint": 9,
+    "deg_slope_s_per_lap": 0.004,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3502.4,
+    "lap_length_m": 5752.5,
+    "pct_of_lap": 60.9,
+    "nearest_corner": 8,
+    "distance_to_corner_m": 368.0,
+    "sector": 2,
+    "speed_kph": 319.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 7,
+    "rpm": 11358,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 19,
+    "gap_ahead_s": 6.997,
+    "gap_to_leader_s": 107.742,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:01:42",
+      "lap": 42,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 18 (STR) TIME 1:25.777 DELETED - TRACK LIMITS AT TURN 2 LAP 40 16:00:24",
+      "offset_s": -68.2
+     },
+     {
+      "utc": "2024-09-01T14:01:44",
+      "lap": 42,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 77 (BOT) TIMED AT 16:01:44",
+      "offset_s": -66.2
+     },
+     {
+      "utc": "2024-09-01T14:03:50",
+      "lap": 43,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:03:49",
+      "offset_s": 59.8
+     },
+     {
+      "utc": "2024-09-01T14:03:50",
+      "lap": 43,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 77 (BOT) TIMED AT 16:03:49",
+      "offset_s": 59.8
+     },
+     {
+      "utc": "2024-09-01T14:04:05",
+      "lap": 43,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 31 (OCO) TIMED AT 16:04:05",
+      "offset_s": 74.8
+     },
+     {
+      "utc": "2024-09-01T14:04:26",
+      "lap": 44,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:04:25",
+      "offset_s": 95.8
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-NOR-160239": {
+   "clip_id": "2024-italian-r-NOR-160239",
+   "utc": "2024-09-01T14:02:50.226000",
+   "lap": 42,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.5,
+    "track_temp_c": 45.0,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.9,
+    "wind_speed_ms": 1.6,
+    "wind_direction_deg": 167,
+    "track_temp_delta_from_start_c": -7.1,
+    "grip_proxy_s": 83.908,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 10,
+    "stint_number": 3,
+    "laps_into_stint": 10,
+    "deg_slope_s_per_lap": -0.056,
+    "stint_vs_driver_median_laps": 3,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3865.9,
+    "lap_length_m": 5734.2,
+    "pct_of_lap": 67.4,
+    "nearest_corner": 8,
+    "distance_to_corner_m": 4.5,
+    "sector": 3,
+    "speed_kph": 196.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 5,
+    "rpm": 11847,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 4,
+    "gap_ahead_s": 4.772,
+    "gap_to_leader_s": 19.0,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:01:42",
+      "lap": 42,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 18 (STR) TIME 1:25.777 DELETED - TRACK LIMITS AT TURN 2 LAP 40 16:00:24",
+      "offset_s": -68.2
+     },
+     {
+      "utc": "2024-09-01T14:01:44",
+      "lap": 42,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 77 (BOT) TIMED AT 16:01:44",
+      "offset_s": -66.2
+     },
+     {
+      "utc": "2024-09-01T14:03:50",
+      "lap": 43,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:03:49",
+      "offset_s": 59.8
+     },
+     {
+      "utc": "2024-09-01T14:03:50",
+      "lap": 43,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 77 (BOT) TIMED AT 16:03:49",
+      "offset_s": 59.8
+     },
+     {
+      "utc": "2024-09-01T14:04:05",
+      "lap": 43,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 31 (OCO) TIMED AT 16:04:05",
+      "offset_s": 74.8
+     },
+     {
+      "utc": "2024-09-01T14:04:26",
+      "lap": 44,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:04:25",
+      "offset_s": 95.8
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-HUL-160441": {
+   "clip_id": "2024-italian-r-HUL-160441",
+   "utc": "2024-09-01T14:05:00.859000",
+   "lap": 43,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.4,
+    "track_temp_c": 44.9,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.9,
+    "wind_speed_ms": 1.5,
+    "wind_direction_deg": 168,
+    "track_temp_delta_from_start_c": -7.2,
+    "grip_proxy_s": 83.867,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 11,
+    "stint_number": 3,
+    "laps_into_stint": 11,
+    "deg_slope_s_per_lap": 0.004,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 1074.8,
+    "lap_length_m": 5764.1,
+    "pct_of_lap": 18.6,
+    "nearest_corner": 2,
+    "distance_to_corner_m": -141.6,
+    "sector": 1,
+    "speed_kph": 203.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 5,
+    "rpm": 10997,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 19,
+    "gap_ahead_s": 3.539,
+    "gap_to_leader_s": 107.42,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:03:50",
+      "lap": 43,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:03:49",
+      "offset_s": -70.9
+     },
+     {
+      "utc": "2024-09-01T14:03:50",
+      "lap": 43,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 77 (BOT) TIMED AT 16:03:49",
+      "offset_s": -70.9
+     },
+     {
+      "utc": "2024-09-01T14:04:05",
+      "lap": 43,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 31 (OCO) TIMED AT 16:04:05",
+      "offset_s": -55.9
+     },
+     {
+      "utc": "2024-09-01T14:04:26",
+      "lap": 44,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:04:25",
+      "offset_s": -34.9
+     },
+     {
+      "utc": "2024-09-01T14:04:58",
+      "lap": 44,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 10 (GAS) TIMED AT 16:04:57",
+      "offset_s": -2.9
+     },
+     {
+      "utc": "2024-09-01T14:05:56",
+      "lap": 45,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:05:56",
+      "offset_s": 55.1
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-SAI-160606": {
+   "clip_id": "2024-italian-r-SAI-160606",
+   "utc": "2024-09-01T14:06:40.856000",
+   "lap": 45,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.3,
+    "track_temp_c": 44.6,
+    "rainfall": false,
+    "humidity_pct": 33.0,
+    "pressure_hpa": 992.9,
+    "wind_speed_ms": 1.6,
+    "wind_direction_deg": 199,
+    "track_temp_delta_from_start_c": -7.5,
+    "grip_proxy_s": 83.807,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 26,
+    "stint_number": 2,
+    "laps_into_stint": 26,
+    "deg_slope_s_per_lap": 0.004,
+    "stint_vs_driver_median_laps": 8,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2897.1,
+    "lap_length_m": 5739.2,
+    "pct_of_lap": 50.5,
+    "nearest_corner": 7,
+    "distance_to_corner_m": -86.8,
+    "sector": 2,
+    "speed_kph": 192.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 5,
+    "rpm": 10758,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 3,
+    "gap_ahead_s": 0.903,
+    "gap_to_leader_s": 12.498,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:04:58",
+      "lap": 44,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 10 (GAS) TIMED AT 16:04:57",
+      "offset_s": -102.9
+     },
+     {
+      "utc": "2024-09-01T14:05:56",
+      "lap": 45,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:05:56",
+      "offset_s": -44.9
+     },
+     {
+      "utc": "2024-09-01T14:07:56",
+      "lap": 46,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 10 (GAS) TIMED AT 16:07:56",
+      "offset_s": 75.1
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-HAM-160647": {
+   "clip_id": "2024-italian-r-HAM-160647",
+   "utc": "2024-09-01T14:07:13.723000",
+   "lap": 45,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.3,
+    "track_temp_c": 44.6,
+    "rainfall": false,
+    "humidity_pct": 33.0,
+    "pressure_hpa": 992.9,
+    "wind_speed_ms": 1.6,
+    "wind_direction_deg": 199,
+    "track_temp_delta_from_start_c": -7.5,
+    "grip_proxy_s": 83.807,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 8,
+    "stint_number": 3,
+    "laps_into_stint": 8,
+    "deg_slope_s_per_lap": 0.02,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 4012.3,
+    "lap_length_m": 5745.0,
+    "pct_of_lap": 69.8,
+    "nearest_corner": 9,
+    "distance_to_corner_m": -39.7,
+    "sector": 3,
+    "speed_kph": 221.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 5,
+    "rpm": 10985,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 5,
+    "gap_ahead_s": 13.876,
+    "gap_to_leader_s": 28.899,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:05:56",
+      "lap": 45,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:05:56",
+      "offset_s": -77.7
+     },
+     {
+      "utc": "2024-09-01T14:07:56",
+      "lap": 46,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 10 (GAS) TIMED AT 16:07:56",
+      "offset_s": 42.3
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-LEC-160915": {
+   "clip_id": "2024-italian-r-LEC-160915",
+   "utc": "2024-09-01T14:09:26.375000",
+   "lap": 47,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.4,
+    "track_temp_c": 44.4,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.9,
+    "wind_speed_ms": 1.3,
+    "wind_direction_deg": 192,
+    "track_temp_delta_from_start_c": -7.7,
+    "grip_proxy_s": 83.971,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 32,
+    "stint_number": 2,
+    "laps_into_stint": 32,
+    "deg_slope_s_per_lap": -0.008,
+    "stint_vs_driver_median_laps": 12,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3687.1,
+    "lap_length_m": 5758.9,
+    "pct_of_lap": 64.0,
+    "nearest_corner": 8,
+    "distance_to_corner_m": 183.3,
+    "sector": 2,
+    "speed_kph": 315.0,
+    "throttle_pct": 99.0,
+    "brake": false,
+    "gear": 8,
+    "rpm": 11195,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 1,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": 0.0,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:07:56",
+      "lap": 46,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 10 (GAS) TIMED AT 16:07:56",
+      "offset_s": -90.4
+     },
+     {
+      "utc": "2024-09-01T14:11:08",
+      "lap": 48,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 27 (HUL) TIMED AT 16:11:08",
+      "offset_s": 101.6
+     },
+     {
+      "utc": "2024-09-01T14:11:19",
+      "lap": 49,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:11:18",
+      "offset_s": 112.6
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-RUS-160942": {
+   "clip_id": "2024-italian-r-RUS-160942",
+   "utc": "2024-09-01T14:10:01.380000",
+   "lap": 47,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.4,
+    "track_temp_c": 44.2,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.9,
+    "wind_speed_ms": 1.6,
+    "wind_direction_deg": 185,
+    "track_temp_delta_from_start_c": -7.9,
+    "grip_proxy_s": 83.971,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 14,
+    "stint_number": 3,
+    "laps_into_stint": 14,
+    "deg_slope_s_per_lap": -0.084,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2732.9,
+    "lap_length_m": 5754.8,
+    "pct_of_lap": 47.5,
+    "nearest_corner": 7,
+    "distance_to_corner_m": 77.4,
+    "sector": 2,
+    "speed_kph": 253.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 6,
+    "rpm": 11916,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 7,
+    "gap_ahead_s": 4.912,
+    "gap_to_leader_s": 46.919,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:11:08",
+      "lap": 48,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 27 (HUL) TIMED AT 16:11:08",
+      "offset_s": 66.6
+     },
+     {
+      "utc": "2024-09-01T14:11:19",
+      "lap": 49,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:11:18",
+      "offset_s": 77.6
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-VER-161140": {
+   "clip_id": "2024-italian-r-VER-161140",
+   "utc": "2024-09-01T14:12:11.742000",
+   "lap": 49,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.3,
+    "track_temp_c": 44.2,
+    "rainfall": false,
+    "humidity_pct": 33.0,
+    "pressure_hpa": 992.9,
+    "wind_speed_ms": 1.1,
+    "wind_direction_deg": 190,
+    "track_temp_delta_from_start_c": -7.9,
+    "grip_proxy_s": 83.708,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "MEDIUM",
+    "tyre_age_laps": 8,
+    "stint_number": 3,
+    "laps_into_stint": 8,
+    "deg_slope_s_per_lap": 0.057,
+    "stint_vs_driver_median_laps": -7,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 922.5,
+    "lap_length_m": 5738.6,
+    "pct_of_lap": 16.1,
+    "nearest_corner": 2,
+    "distance_to_corner_m": 10.7,
+    "sector": 1,
+    "speed_kph": 82.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 2,
+    "rpm": 7113,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 6,
+    "gap_ahead_s": 15.517,
+    "gap_to_leader_s": 40.176,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:11:08",
+      "lap": 48,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 27 (HUL) TIMED AT 16:11:08",
+      "offset_s": -63.7
+     },
+     {
+      "utc": "2024-09-01T14:11:19",
+      "lap": 49,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:11:18",
+      "offset_s": -52.7
+     },
+     {
+      "utc": "2024-09-01T14:12:04",
+      "lap": 49,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 18 (STR) TIMED AT 16:12:03",
+      "offset_s": -7.7
+     },
+     {
+      "utc": "2024-09-01T14:12:21",
+      "lap": 49,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 77 (BOT) TIMED AT 16:12:21",
+      "offset_s": 9.3
+     },
+     {
+      "utc": "2024-09-01T14:13:07",
+      "lap": 50,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 31 (OCO) TIMED AT 16:13:07",
+      "offset_s": 55.3
+     },
+     {
+      "utc": "2024-09-01T14:13:35",
+      "lap": 50,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 18 (STR) TIMED AT 16:13:34",
+      "offset_s": 83.3
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-LEC-161929": {
+   "clip_id": "2024-italian-r-LEC-161929",
+   "utc": "2024-09-01T14:20:29.053000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.2,
+    "track_temp_c": 43.5,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.8,
+    "wind_speed_ms": 1.9,
+    "wind_direction_deg": 229,
+    "track_temp_delta_from_start_c": -8.6,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:18:36",
+      "lap": 53,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:18:35",
+      "offset_s": -113.1
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-LEC-162131": {
+   "clip_id": "2024-italian-r-LEC-162131",
+   "utc": "2024-09-01T14:20:34.649000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.2,
+    "track_temp_c": 43.5,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.8,
+    "wind_speed_ms": 1.9,
+    "wind_direction_deg": 229,
+    "track_temp_delta_from_start_c": -8.6,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:18:36",
+      "lap": 53,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:18:35",
+      "offset_s": -118.6
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-PIA-162231": {
+   "clip_id": "2024-italian-r-PIA-162231",
+   "utc": "2024-09-01T14:20:34.649000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.2,
+    "track_temp_c": 43.5,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.8,
+    "wind_speed_ms": 1.9,
+    "wind_direction_deg": 229,
+    "track_temp_delta_from_start_c": -8.6,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:18:36",
+      "lap": 53,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:18:35",
+      "offset_s": -118.6
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-MAG-162400": {
+   "clip_id": "2024-italian-r-MAG-162400",
+   "utc": "2024-09-01T14:20:34.649000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.2,
+    "track_temp_c": 43.5,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.8,
+    "wind_speed_ms": 1.9,
+    "wind_direction_deg": 229,
+    "track_temp_delta_from_start_c": -8.6,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:18:36",
+      "lap": 53,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:18:35",
+      "offset_s": -118.6
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-COL-162433": {
+   "clip_id": "2024-italian-r-COL-162433",
+   "utc": "2024-09-01T14:20:34.649000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.2,
+    "track_temp_c": 43.5,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.8,
+    "wind_speed_ms": 1.9,
+    "wind_direction_deg": 229,
+    "track_temp_delta_from_start_c": -8.6,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:18:36",
+      "lap": 53,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:18:35",
+      "offset_s": -118.6
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-HUL-162613": {
+   "clip_id": "2024-italian-r-HUL-162613",
+   "utc": "2024-09-01T14:20:34.649000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.2,
+    "track_temp_c": 43.5,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.8,
+    "wind_speed_ms": 1.9,
+    "wind_direction_deg": 229,
+    "track_temp_delta_from_start_c": -8.6,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:18:36",
+      "lap": 53,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:18:35",
+      "offset_s": -118.6
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-ALB-162622": {
+   "clip_id": "2024-italian-r-ALB-162622",
+   "utc": "2024-09-01T14:20:34.649000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.2,
+    "track_temp_c": 43.5,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.8,
+    "wind_speed_ms": 1.9,
+    "wind_direction_deg": 229,
+    "track_temp_delta_from_start_c": -8.6,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:18:36",
+      "lap": 53,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:18:35",
+      "offset_s": -118.6
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-ZHO-162736": {
+   "clip_id": "2024-italian-r-ZHO-162736",
+   "utc": "2024-09-01T14:20:34.649000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.2,
+    "track_temp_c": 43.5,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.8,
+    "wind_speed_ms": 1.9,
+    "wind_direction_deg": 229,
+    "track_temp_delta_from_start_c": -8.6,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:18:36",
+      "lap": 53,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:18:35",
+      "offset_s": -118.6
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-BOT-162901": {
+   "clip_id": "2024-italian-r-BOT-162901",
+   "utc": "2024-09-01T14:20:34.649000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.2,
+    "track_temp_c": 43.5,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.8,
+    "wind_speed_ms": 1.9,
+    "wind_direction_deg": 229,
+    "track_temp_delta_from_start_c": -8.6,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:18:36",
+      "lap": 53,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:18:35",
+      "offset_s": -118.6
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-VER-162918": {
+   "clip_id": "2024-italian-r-VER-162918",
+   "utc": "2024-09-01T14:20:34.649000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.2,
+    "track_temp_c": 43.5,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.8,
+    "wind_speed_ms": 1.9,
+    "wind_direction_deg": 229,
+    "track_temp_delta_from_start_c": -8.6,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:18:36",
+      "lap": 53,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:18:35",
+      "offset_s": -118.6
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-PER-162931": {
+   "clip_id": "2024-italian-r-PER-162931",
+   "utc": "2024-09-01T14:20:34.649000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.2,
+    "track_temp_c": 43.5,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.8,
+    "wind_speed_ms": 1.9,
+    "wind_direction_deg": 229,
+    "track_temp_delta_from_start_c": -8.6,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:18:36",
+      "lap": 53,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:18:35",
+      "offset_s": -118.6
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-HAM-162933": {
+   "clip_id": "2024-italian-r-HAM-162933",
+   "utc": "2024-09-01T14:20:34.649000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.2,
+    "track_temp_c": 43.5,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.8,
+    "wind_speed_ms": 1.9,
+    "wind_direction_deg": 229,
+    "track_temp_delta_from_start_c": -8.6,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:18:36",
+      "lap": 53,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:18:35",
+      "offset_s": -118.6
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-RUS-163000": {
+   "clip_id": "2024-italian-r-RUS-163000",
+   "utc": "2024-09-01T14:20:34.649000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.2,
+    "track_temp_c": 43.5,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.8,
+    "wind_speed_ms": 1.9,
+    "wind_direction_deg": 229,
+    "track_temp_delta_from_start_c": -8.6,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:18:36",
+      "lap": 53,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:18:35",
+      "offset_s": -118.6
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-SAI-163012": {
+   "clip_id": "2024-italian-r-SAI-163012",
+   "utc": "2024-09-01T14:20:34.649000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.2,
+    "track_temp_c": 43.5,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.8,
+    "wind_speed_ms": 1.9,
+    "wind_direction_deg": 229,
+    "track_temp_delta_from_start_c": -8.6,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:18:36",
+      "lap": 53,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:18:35",
+      "offset_s": -118.6
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-GAS-163045": {
+   "clip_id": "2024-italian-r-GAS-163045",
+   "utc": "2024-09-01T14:20:34.649000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.2,
+    "track_temp_c": 43.5,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.8,
+    "wind_speed_ms": 1.9,
+    "wind_direction_deg": 229,
+    "track_temp_delta_from_start_c": -8.6,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:18:36",
+      "lap": 53,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:18:35",
+      "offset_s": -118.6
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-OCO-163046": {
+   "clip_id": "2024-italian-r-OCO-163046",
+   "utc": "2024-09-01T14:20:34.649000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.2,
+    "track_temp_c": 43.5,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.8,
+    "wind_speed_ms": 1.9,
+    "wind_direction_deg": 229,
+    "track_temp_delta_from_start_c": -8.6,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:18:36",
+      "lap": 53,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:18:35",
+      "offset_s": -118.6
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2024-italian-r-RIC-163049": {
+   "clip_id": "2024-italian-r-RIC-163049",
+   "utc": "2024-09-01T14:20:34.649000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 32.2,
+    "track_temp_c": 43.5,
+    "rainfall": false,
+    "humidity_pct": 32.0,
+    "pressure_hpa": 992.8,
+    "wind_speed_ms": 1.9,
+    "wind_direction_deg": 229,
+    "track_temp_delta_from_start_c": -8.6,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2024-09-01T14:18:36",
+      "lap": 53,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 16:18:35",
+      "offset_s": -118.6
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  }
+ },
+ "unmatched_clips": [
+  "2024-italian-r-GAS-163013",
+  "2024-italian-r-PER-162920",
+  "2024-italian-r-RIC-163021",
+  "2024-italian-r-SAI-163006",
+  "2024-italian-r-VER-162843"
+ ]
+}

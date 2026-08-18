@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-PER-153032",
+  "driver": "PER",
+  "session_id": "2023-monaco-r",
+  "lap": 63,
+  "duration_s": 3.77,
+  "audio_url": "/api/clips/2023-monaco-r-PER-153032",
+  "transcript": {
+    "text": "When you can, engine 13, position 4, plus 1.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 37.3,
+      "f0_mean_z": -0.781,
+      "f0_std_z": 0.096,
+      "rms_mean_z": -2.551,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.232,
+      "jitter_z": 1.199
+    },
+    "acoustic": {
+      "score": 18.4,
+      "probabilities": {
+        "neu": 0.7224,
+        "hap": 0.2684,
+        "ang": 0.0081,
+        "sad": 0.0011
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.2,
+      "probabilities": {
+        "neutral": 0.9338,
+        "joy": 0.0378,
+        "surprise": 0.0115,
+        "anger": 0.0059,
+        "disgust": 0.0051,
+        "sadness": 0.0047,
+        "fear": 0.0012
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.76,
+    "stress_index": 21.6,
+    "probabilities": {
+      "Calm": 0.76,
+      "Stressed": 0.004,
+      "Tired": 0.236
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.722,
+    "stress_index": 18.4,
+    "probabilities": {
+      "Calm": 0.932,
+      "Stressed": 0.008,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1513,
+  "cached": false
+}

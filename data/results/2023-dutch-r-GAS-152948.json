@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-GAS-152948",
+  "driver": "GAS",
+  "session_id": "2023-dutch-r",
+  "lap": 63,
+  "duration_s": 6.37,
+  "audio_url": "/api/clips/2023-dutch-r-GAS-152948",
+  "transcript": {
+    "text": "Can't really see a thing in the street. Okay, we go, yellow, turn one, yellow, turn one. Press off.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 62.9,
+      "f0_mean_z": 3.335,
+      "f0_std_z": 3.781,
+      "rms_mean_z": 0.358,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.384,
+      "jitter_z": -2.13
+    },
+    "acoustic": {
+      "score": 25.8,
+      "probabilities": {
+        "hap": 0.7616,
+        "neu": 0.1925,
+        "ang": 0.0316,
+        "sad": 0.0143
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 69.3,
+      "probabilities": {
+        "disgust": 0.3657,
+        "anger": 0.3166,
+        "neutral": 0.1166,
+        "fear": 0.1038,
+        "surprise": 0.0712,
+        "sadness": 0.0219,
+        "joy": 0.0042
+      },
+      "top_label": "disgust",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.958,
+    "stress_index": 95.9,
+    "probabilities": {
+      "Calm": 0.041,
+      "Stressed": 0.958,
+      "Tired": 0.001
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.762,
+    "stress_index": 25.8,
+    "probabilities": {
+      "Calm": 0.91,
+      "Stressed": 0.03,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2115,
+  "cached": false
+}

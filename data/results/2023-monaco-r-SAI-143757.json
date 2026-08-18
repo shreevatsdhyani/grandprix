@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-SAI-143757",
+  "driver": "SAI",
+  "session_id": "2023-monaco-r",
+  "lap": 28,
+  "duration_s": 3.68,
+  "audio_url": "/api/clips/2023-monaco-r-SAI-143757",
+  "transcript": {
+    "text": "and box to overtake Ocon. Carlos box to overtake Ocon.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 9.9,
+      "f0_mean_z": 0.196,
+      "f0_std_z": 0.274,
+      "rms_mean_z": -0.381,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.386,
+      "jitter_z": 0.637
+    },
+    "acoustic": {
+      "score": 17.4,
+      "probabilities": {
+        "neu": 0.7583,
+        "hap": 0.2413,
+        "sad": 0.0002,
+        "ang": 0.0002
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 40.4,
+      "probabilities": {
+        "neutral": 0.4122,
+        "surprise": 0.3353,
+        "fear": 0.1052,
+        "anger": 0.077,
+        "sadness": 0.04,
+        "joy": 0.0243,
+        "disgust": 0.006
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.506,
+    "stress_index": 47.8,
+    "probabilities": {
+      "Calm": 0.471,
+      "Stressed": 0.023,
+      "Tired": 0.506
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.758,
+    "stress_index": 17.4,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2330,
+  "cached": false
+}

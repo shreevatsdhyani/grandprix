@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-OCO-160907",
+  "driver": "OCO",
+  "session_id": "2023-bahrain-r",
+  "lap": 39,
+  "duration_s": 9.18,
+  "audio_url": "/api/clips/2023-bahrain-r-OCO-160907",
+  "transcript": {
+    "text": "In testing, in practice, since I don't probably want to be doing these things. Why open up you now? Yep, it's very frustrating. Let's stay with it, come on.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 100.0,
+      "f0_mean_z": 6.397,
+      "f0_std_z": 3.713,
+      "rms_mean_z": 2.085,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.101,
+      "jitter_z": -0.027
+    },
+    "acoustic": {
+      "score": 53.1,
+      "probabilities": {
+        "sad": 0.7699,
+        "hap": 0.1172,
+        "neu": 0.0844,
+        "ang": 0.0286
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 71.5,
+      "probabilities": {
+        "disgust": 0.2908,
+        "sadness": 0.2838,
+        "neutral": 0.2073,
+        "anger": 0.1671,
+        "surprise": 0.0356,
+        "fear": 0.0106,
+        "joy": 0.005
+      },
+      "top_label": "disgust",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 1.0,
+    "stress_index": 100.0,
+    "probabilities": {
+      "Calm": 0.0,
+      "Stressed": 1.0,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.77,
+    "stress_index": 53.1,
+    "probabilities": {
+      "Calm": 0.913,
+      "Stressed": 0.027,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3162,
+  "cached": false
+}

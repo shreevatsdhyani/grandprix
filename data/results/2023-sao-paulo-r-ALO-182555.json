@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-ALO-182555",
+  "driver": "ALO",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 44,
+  "duration_s": 3.94,
+  "audio_url": "/api/clips/2023-sao-paulo-r-ALO-182555",
+  "transcript": {
+    "text": "Yeah, so we can extend a little bit, but yeah, use the pace you've got now, it's good.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 19.4,
+      "f0_mean_z": -0.007,
+      "f0_std_z": 0.375,
+      "rms_mean_z": -0.765,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.279,
+      "jitter_z": 1.798
+    },
+    "acoustic": {
+      "score": 54.2,
+      "probabilities": {
+        "ang": 0.4397,
+        "hap": 0.3831,
+        "neu": 0.1735,
+        "sad": 0.0037
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.6,
+      "probabilities": {
+        "neutral": 0.8517,
+        "joy": 0.0949,
+        "disgust": 0.0259,
+        "anger": 0.0107,
+        "sadness": 0.0095,
+        "surprise": 0.0044,
+        "fear": 0.0029
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.353,
+    "stress_index": 63.2,
+    "probabilities": {
+      "Calm": 0.337,
+      "Stressed": 0.353,
+      "Tired": 0.31
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.44,
+    "stress_index": 54.2,
+    "probabilities": {
+      "Calm": 0.527,
+      "Stressed": 0.413,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1959,
+  "cached": false
+}

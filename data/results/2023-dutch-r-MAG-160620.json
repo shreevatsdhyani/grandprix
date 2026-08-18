@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-MAG-160620",
+  "driver": "MAG",
+  "session_id": "2023-dutch-r",
+  "lap": 64,
+  "duration_s": 3.52,
+  "audio_url": "/api/clips/2023-dutch-r-MAG-160620",
+  "transcript": {
+    "text": "Yeah, I guess you put two laps behind the safety car and then a rolling start.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 33.9,
+      "f0_mean_z": -1.873,
+      "f0_std_z": -0.973,
+      "rms_mean_z": 0.507,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.88,
+      "jitter_z": -0.418
+    },
+    "acoustic": {
+      "score": 16.6,
+      "probabilities": {
+        "neu": 0.9097,
+        "hap": 0.0788,
+        "ang": 0.0078,
+        "sad": 0.0038
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 22.0,
+      "probabilities": {
+        "neutral": 0.8595,
+        "surprise": 0.0495,
+        "disgust": 0.0382,
+        "anger": 0.0297,
+        "fear": 0.0105,
+        "sadness": 0.009,
+        "joy": 0.0037
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.678,
+    "stress_index": 29.0,
+    "probabilities": {
+      "Calm": 0.678,
+      "Stressed": 0.004,
+      "Tired": 0.318
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.91,
+    "stress_index": 16.6,
+    "probabilities": {
+      "Calm": 0.933,
+      "Stressed": 0.007,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2038,
+  "cached": false
+}

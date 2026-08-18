@@ -1,0 +1,10 @@
+# Development and test dependencies.
+#
+# Kept separate from requirements.txt because that file is what Dockerfile installs
+# into the deployed image, and test tooling has no business there.
+#
+# pytest was previously missing from both files, so the 71 tests the README
+# advertises could not actually be run in a fresh venv.
+-r requirements.txt
+
+pytest==9.1.1

@@ -3,6 +3,7 @@ import type { ClipAnalysis, ProgressEvent, ScoringMode, Timeline } from '../type
 import { MOOD_COLOR } from '../types'
 import { PipelineProgress } from './PipelineProgress'
 import { CustomAudioPlayer } from './CustomAudioPlayer'
+import { ClipContextCard } from './ClipContextCard'
 
 /**
  * Three of the brief's five named deliverables live in this panel: the
@@ -223,6 +224,11 @@ export function RadioInspector({
           >
             “{clip.transcript.text}”
           </blockquote>
+
+          {/* What the driver was reacting to. Sits directly under the quote
+              because the two are read together — the transcript is the symptom
+              and this is the situation. */}
+          <ClipContextCard context={timeline?.clip_contexts[clip.clip_id] ?? null} />
 
           <p className="mono mt-3 border-t border-hairline pt-2.5 text-[10px] text-ink-muted">
             {clip.transcript.stt_model}

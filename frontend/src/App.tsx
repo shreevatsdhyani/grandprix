@@ -1,5 +1,13 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { analyseClip, analyseViaWebSocket, getHealth, getSessions, getTimeline } from './api'
+import {
+  ApiError,
+  analyseClip,
+  analyseViaWebSocket,
+  getFindings,
+  getHealth,
+  getSessions,
+  getTimeline,
+} from './api'
 import { ClipBrowser } from './components/ClipBrowser'
 import { ComponentErrorBoundary, ErrorBoundary } from './components/ErrorBoundary'
 import { Header } from './components/Header'
@@ -9,13 +17,20 @@ import { RaceTimeline } from './components/RaceTimeline'
 import { RadioInspector } from './components/RadioInspector'
 import { SignalBars } from './components/SignalBars'
 import { StartLights } from './components/StartLights'
+import { BiometricsPanel } from './components/BiometricsPanel'
 import { StrategyCalls } from './components/StrategyCalls'
+import { TopFindings } from './components/TopFindings'
+import { TrackConditions } from './components/TrackConditions'
+import { TrackTrace } from './components/TrackTrace'
+import { TyreStints } from './components/TyreStints'
 import { VerdictHero } from './components/VerdictHero'
 import { getCircuit } from './lib/circuits'
 import { getDriver } from './lib/drivers'
 import { readVerdict } from './lib/verdict'
 import type {
+  BiometricSeries,
   ClipAnalysis,
+  FindingsResponse,
   HealthResponse,
   ProgressEvent,
   ScoringMode,
@@ -54,6 +69,16 @@ function AppContent() {
   const [driver, setDriver] = useState('HAM')
   const [timeline, setTimeline] = useState<Timeline | null>(null)
   const [timelineLoaded, setTimelineLoaded] = useState(false)
+  const [findings, setFindings] = useState<FindingsResponse | null>(null)
+  const [findingsLoading, setFindingsLoading] = useState(false)
+  const [findingsError, setFindingsError] = useState<string | null>(null)
+  // Set false on a 404, i.e. GP_AGENT is off, and never re-armed for the session.
+  const [findingsAvailable, setFindingsAvailable] = useState(true)
+  // Bumped by the panel's "regenerate" control to re-run the effect.
+  const [findingsNonce, setFindingsNonce] = useState(0)
+  // Set by a biometrics upload so the panel updates without a timeline refetch.
+  // Cleared whenever the session or driver changes, since it belongs to one pair.
+  const [biometrics, setBiometrics] = useState<BiometricSeries | null>(null)
   const [health, setHealth] = useState<HealthResponse | null>(null)
   const [selectedClipId, setSelectedClipId] = useState<string | null>(null)
   const [uploaded, setUploaded] = useState<ClipAnalysis | null>(null)
@@ -92,6 +117,43 @@ function AppContent() {
       setDriver(session.drivers.includes('HAM') ? 'HAM' : session.drivers[0])
     }
   }, [session, driver])
+
+  // Findings are fetched separately from the timeline rather than embedded in it.
+  // They take seconds (an LLM call) against the timeline's tens of milliseconds,
+  // so blocking the chart on them would make every driver switch feel broken.
+  useEffect(() => {
+    if (!sessionId) return
+    let live = true
+    setFindings(null)
+    setFindingsError(null)
+    setFindingsLoading(true)
+    // A nonce above zero means the user pressed "regenerate", so bypass the
+    // server-side cache — otherwise the button would re-read the same answer.
+    getFindings(sessionId, driver, mode, { refresh: findingsNonce > 0 })
+      .then((f) => {
+        if (live) setFindings(f)
+      })
+      .catch((e: unknown) => {
+        if (!live) return
+        // 404 = the agent layer is off entirely (GP_AGENT != 1). Hide the panel
+        // rather than showing an error, matching how PitWallChat retires itself.
+        if (e instanceof ApiError && e.status === 404) {
+          setFindingsAvailable(false)
+          return
+        }
+        setFindingsError(e instanceof Error ? e.message : String(e))
+      })
+      .finally(() => {
+        if (live) setFindingsLoading(false)
+      })
+    return () => {
+      live = false
+    }
+  }, [sessionId, driver, mode, findingsNonce])
+
+  useEffect(() => {
+    setBiometrics(null)
+  }, [sessionId, driver])
 
   useEffect(() => {
     if (!sessionId) return
@@ -336,6 +398,56 @@ function AppContent() {
                   />
                 </ComponentErrorBoundary>
 
+                {/* Where it happened, then what the track was doing — the two
+                    readings that give the chart above its meaning. The trace is
+                    wide because its whole value is spatial; conditions is narrow
+                    because it is three numbers and a line. */}
+                <div className="grid gap-4 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:gap-5">
+                  {circuit && (
+                  <ComponentErrorBoundary>
+                    <TrackTrace
+                      circuit={circuit}
+                      clips={timeline.clips}
+                      contexts={timeline.clip_contexts}
+                      mode={mode}
+                      selectedClipId={selectedClipId}
+                      onSelectClip={setSelectedClipId}
+                    />
+                  </ComponentErrorBoundary>
+                  )}
+                  {/* Conditions and tyres stack in the narrow column: the trace
+                      is tall, and these two are what explain it — the track the
+                      driver was on and the rubber they were on it with. */}
+                  <div className="space-y-4 lg:space-y-5">
+                    <ComponentErrorBoundary>
+                      <TrackConditions
+                        context={timeline.session_context}
+                        selectedLap={selectedClip?.lap ?? null}
+                        onSelectLap={selectLap}
+                      />
+                    </ComponentErrorBoundary>
+                    <ComponentErrorBoundary>
+                      <TyreStints
+                        context={timeline.session_context}
+                        driver={driver}
+                        onSelectLap={selectLap}
+                      />
+                    </ComponentErrorBoundary>
+                  </div>
+                </div>
+
+                {findingsAvailable && (
+                  <ComponentErrorBoundary>
+                    <TopFindings
+                      findings={findings}
+                      loading={findingsLoading}
+                      error={findingsError}
+                      onSelectLap={selectLap}
+                      onRefresh={() => setFindingsNonce((n) => n + 1)}
+                    />
+                  </ComponentErrorBoundary>
+                )}
+
                 <div className="grid gap-4 md:grid-cols-2 lg:gap-5">
                   <ComponentErrorBoundary>
                     <StrategyCalls calls={timeline.strategy_calls} onSelectLap={selectLap} />
@@ -347,11 +459,23 @@ function AppContent() {
 
                 <Baseline timeline={timeline} />
 
-                {selectedClip && (
+                <div className="grid gap-4 md:grid-cols-2 lg:gap-5">
+                  {selectedClip ? (
+                    <ComponentErrorBoundary>
+                      <SignalBars clip={selectedClip} mode={mode} />
+                    </ComponentErrorBoundary>
+                  ) : (
+                    <div />
+                  )}
                   <ComponentErrorBoundary>
-                    <SignalBars clip={selectedClip} mode={mode} />
+                    <BiometricsPanel
+                      sessionId={sessionId ?? ''}
+                      driver={driver}
+                      series={biometrics ?? timeline.biometrics}
+                      onUploaded={setBiometrics}
+                    />
                   </ComponentErrorBoundary>
-                )}
+                </div>
               </div>
 
               {/* RIGHT PANEL: Sticky sidebar with Radio Inspector and Library */}

@@ -98,6 +98,26 @@ def list_sessions() -> list[SessionMeta]:
     return out
 
 
+@functools.lru_cache(maxsize=2)
+def load_session_full(session_id: str) -> fastf1.core.Session:
+    """Load one cached session *with* telemetry and weather.
+
+    Deliberately separate from `load_session`. Telemetry costs ~19s to parse and
+    ~80MB resident per session, which is fine for a one-off offline build and
+    ruinous for the timeline endpoint that the UI hits on every driver switch.
+    Only `scripts/build_context.py` should call this.
+
+    `maxsize=2` rather than 8: two of these in memory is already 160MB, and the
+    builder walks sessions one at a time.
+    """
+    for year, event, kind in AVAILABLE:
+        if make_session_id(year, event, kind) == session_id:
+            session = fastf1.get_session(year, event, kind)
+            session.load(laps=True, telemetry=True, weather=True, messages=True)
+            return session
+    raise KeyError(f"Unknown session {session_id!r}")
+
+
 def driver_laps(session_id: str, driver: str) -> pd.DataFrame:
     """Raw lap frame for one driver, as FastF1 returns it."""
     session = load_session(session_id)

@@ -19,7 +19,7 @@ from fastapi.middleware.cors import CORSMiddleware
 load_dotenv()
 
 from app import config
-from app.routers import analyse, clips, health, session
+from app.routers import analyse, biometrics, clips, health, session
 
 log = logging.getLogger(__name__)
 
@@ -76,11 +76,18 @@ app.include_router(session.router)
 app.include_router(analyse.router)
 app.include_router(clips.router)
 
+# Biometrics ingestion. Deliberately not behind GP_AGENT: it is a data path, not
+# an LLM feature, and must work in an offline deployment with no Groq key.
+app.include_router(biometrics.router)
+
 # Agent layer (feature-flagged)
 if os.getenv("GP_AGENT", "0") == "1":
-    from app.routers import agent
+    from app.routers import agent, findings
     app.include_router(agent.router)
-    log.info("Agent layer enabled (GP_AGENT=1)")
+    # Findings share the flag: both need a Groq key, so both should be absent
+    # together rather than one 404ing and the other 500ing.
+    app.include_router(findings.router)
+    log.info("Agent layer enabled (GP_AGENT=1) — chat + findings")
 
 
 @app.get("/", include_in_schema=False)

@@ -1,166 +1,136 @@
 import { useEffect, useState } from 'react'
-import type { JSX } from 'react'
-import { clamp } from '../lib/format'
 
 /**
- * The start gantry, as the acknowledgement that a re-analysis is running.
+ * The loading state, as the start gantry.
  *
- * The sequence is deliberately shorter than the work: five lights and a ramp
- * finish in ~2.2s, the real socket takes ~13s. The lights answer "did my click
- * land", which has to be instant; the stage list beside them reports actual
- * progress, which cannot be faked into 2.2s. So the bar holding at LIGHTS OUT
- * while stages keep arriving is the intended reading, not a stall — which is
- * why the caption switches to a completed state rather than freezing at 99%.
+ * Every wait in this app is the same wait — a race session being pulled and
+ * scored — so it gets one recognisable signal rather than a different spinner
+ * per panel. Five lamps illuminate left to right, then go out together, which
+ * is the one loading animation an F1 audience already knows how to read.
  *
- * Split into a dumb view plus a driver hook because the panel that hosts it
- * also hosts the live stage list, and mixing five timers into that component
- * made every render of the transcript re-enter the animation logic.
+ * Driven from state rather than staggered CSS delays: the lamps must all
+ * extinguish on the same frame, and percentage keyframes with per-lamp delays
+ * cannot express that.
  */
 
-const LIGHT_COUNT = 5
-
-/** Design timings. The first light is late enough to read as a response to the
- *  click rather than as part of the same frame. */
-const FIRST_LIGHT_MS = 140
-const LIGHT_STEP_MS = 150
-const RAMP_DELAY_MS = 280
-const RAMP_MS = 1200
-
-/** How long a finished sequence stays on screen. Without it the block vanishes
- *  on the same frame the socket closes and the reader never sees it complete. */
-const HOLD_MS = 420
-
 interface Props {
-  /** How many of the five lights are on, 0–5. */
-  lit: number
-  /** 0–100. */
-  progress: number
+  /** What is being fetched, in the interface's voice. */
   label: string
+  detail?: string
+  /** `inline` drops the gantry into a panel; `page` centres it in the viewport. */
+  variant?: 'page' | 'inline'
 }
 
-export function StartLights({ lit, progress, label }: Props): JSX.Element {
-  const pct = clamp(progress, 0, 100)
+const LAMPS = [0, 1, 2, 3, 4]
+const STEP_MS = 380
+
+export function StartLights({ label, detail, variant = 'page' }: Props) {
+  // 0–5 lights the lamps in sequence; 6 is the dark beat before it repeats.
+  const [step, setStep] = useState(0)
+
+  useEffect(() => {
+    const id = setInterval(() => setStep((s) => (s + 1) % 7), STEP_MS)
+    return () => clearInterval(id)
+  }, [])
+
+  const scale = variant === 'page' ? 1 : 0.62
 
   return (
-    <div className="rounded-[6px] border border-line bg-s2 p-3">
-      {/* Five coloured divs say nothing to a screen reader, so they are hidden
-          and the bar below carries the whole state. */}
-      <div className="flex justify-center gap-1.5" aria-hidden>
-        {Array.from({ length: LIGHT_COUNT }, (_, i) => (
-          <span
+    <div
+      className={
+        variant === 'page'
+          ? 'flex flex-col items-center justify-center gap-6 py-20 sm:py-28'
+          : 'flex flex-col items-center justify-center gap-3 py-8'
+      }
+      role="status"
+      aria-live="polite"
+    >
+      <Gantry step={step} scale={scale} />
+
+      <div className="text-center">
+        <p
+          className="tower text-ink-primary"
+          style={{ fontSize: variant === 'page' ? 22 : 15, letterSpacing: '0.06em' }}
+        >
+          {label}
+        </p>
+        {detail && (
+          <p className="mt-1.5 text-xs text-ink-muted sm:text-[13px]">{detail}</p>
+        )}
+      </div>
+    </div>
+  )
+}
+
+function Gantry({ step, scale }: { step: number; scale: number }) {
+  const w = 78 * scale
+  const gap = 10 * scale
+  const r = 24 * scale
+
+  return (
+    <div
+      className="flex items-end"
+      style={{ gap }}
+      aria-hidden
+    >
+      {LAMPS.map((i) => {
+        const lit = step > i && step <= LAMPS.length
+        return (
+          <div
             key={i}
-            className="h-[9px] w-full rounded-[2px]"
+            className="flex flex-col items-center rounded-xl border"
             style={{
-              background: i < lit ? 'var(--mag)' : 'var(--s3)',
-              transition: 'background .12s linear',
+              width: w,
+              padding: 8 * scale,
+              gap: 7 * scale,
+              borderColor: 'var(--edge)',
+              background: 'linear-gradient(180deg, #1b1f27 0%, #0b0d12 100%)',
+              boxShadow: lit
+                ? '0 0 34px -6px rgba(255,32,60,0.65), 0 1px 0 rgba(255,255,255,0.06) inset'
+                : '0 1px 0 rgba(255,255,255,0.04) inset',
+              transition: 'box-shadow 180ms ease',
             }}
-          />
-        ))}
-      </div>
-
-      <div
-        className="mt-2.5 h-[5px] overflow-hidden rounded-[3px] bg-s3"
-        role="progressbar"
-        aria-label="Scoring progress"
-        aria-valuenow={Math.round(pct)}
-        aria-valuemin={0}
-        aria-valuemax={100}
-        aria-valuetext={label}
-      >
-        <div className="stripe h-full" style={{ width: `${pct}%`, transition: 'width .1s linear' }} />
-      </div>
-
-      <p className="mono mt-2 text-center text-[10px] font-normal leading-none text-t3">{label}</p>
+          >
+            {[0, 1].map((row) => (
+              <span
+                key={row}
+                style={{
+                  width: r,
+                  height: r,
+                  borderRadius: '50%',
+                  transition: 'background 140ms ease, box-shadow 140ms ease',
+                  background: lit
+                    ? 'radial-gradient(circle at 34% 30%, #ff8b9f 0%, #ff1633 42%, #a2001a 100%)'
+                    : 'radial-gradient(circle at 34% 30%, #23262e 0%, #14161b 60%, #0a0b0e 100%)',
+                  boxShadow: lit
+                    ? '0 0 16px rgba(255,26,58,0.9), 0 0 3px rgba(255,255,255,0.55) inset'
+                    : '0 1px 2px rgba(0,0,0,0.8) inset',
+                }}
+              />
+            ))}
+          </div>
+        )
+      })}
     </div>
   )
 }
 
 /**
- * True when the reader has asked the OS to stop animations.
+ * Placeholder rows for lists that are refetching.
  *
- * Guarded for a missing `window` even though this app never renders on a
- * server: the same guard is what keeps it safe under a test runner with a
- * partial DOM, which is where this would otherwise throw.
+ * A list that empties while it reloads reads as "there is nothing here"; these
+ * hold the shape so it reads as "this is coming back".
  */
-function prefersReducedMotion(): boolean {
-  if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') return false
-  return window.matchMedia('(prefers-reduced-motion: reduce)').matches
-}
-
-interface LightState {
-  lit: number
-  progress: number
-  label: string
-  visible: boolean
-}
-
-export function useStartLights(running: boolean): LightState {
-  const [lit, setLit] = useState(0)
-  const [progress, setProgress] = useState(0)
-  const [visible, setVisible] = useState(false)
-
-  useEffect(() => {
-    if (!running) {
-      const hide = window.setTimeout(() => {
-        setVisible(false)
-        setLit(0)
-        setProgress(0)
-      }, HOLD_MS)
-      return () => window.clearTimeout(hide)
-    }
-
-    setVisible(true)
-
-    if (prefersReducedMotion()) {
-      setLit(LIGHT_COUNT)
-      setProgress(100)
-      return
-    }
-
-    setLit(0)
-    setProgress(0)
-
-    const timers: number[] = []
-    let frame = 0
-
-    for (let i = 1; i <= LIGHT_COUNT; i++) {
-      timers.push(
-        window.setTimeout(() => setLit(i), FIRST_LIGHT_MS + (i - 1) * LIGHT_STEP_MS),
-      )
-    }
-
-    // rAF rather than a short interval: the ramp is a 1.2s width animation, and
-    // a 10ms timer both drifts and keeps firing when the tab is backgrounded.
-    const rampAt = FIRST_LIGHT_MS + (LIGHT_COUNT - 1) * LIGHT_STEP_MS + RAMP_DELAY_MS
-    timers.push(
-      window.setTimeout(() => {
-        const started = performance.now()
-        const step = (now: number) => {
-          const next = clamp(((now - started) / RAMP_MS) * 100, 0, 100)
-          setProgress(next)
-          if (next < 100) frame = requestAnimationFrame(step)
-        }
-        frame = requestAnimationFrame(step)
-      }, rampAt),
-    )
-
-    // The user switches clip constantly, so this effect is torn down mid-ramp
-    // far more often than it runs to completion. A surviving rAF loop would go
-    // on calling setState on an unmounted panel.
-    return () => {
-      for (const id of timers) window.clearTimeout(id)
-      if (frame) cancelAnimationFrame(frame)
-    }
-  }, [running])
-
-  // Rounded before the comparison, so the caption can never read "SCORING ·
-  // 100%" on the last frame before it flips.
-  const shown = Math.round(progress)
-
-  return {
-    lit,
-    progress,
-    visible,
-    label: shown < 100 ? `SCORING · ${shown}%` : 'LIGHTS OUT · COMPLETE',
-  }
+export function SkeletonRows({ rows = 6 }: { rows?: number }) {
+  return (
+    <div className="space-y-1.5" aria-hidden>
+      {Array.from({ length: rows }, (_, i) => (
+        <div
+          key={i}
+          className="h-7 rounded-md bg-raised anim-pulse"
+          style={{ animationDelay: `${i * 90}ms`, opacity: 1 - i * 0.09 }}
+        />
+      ))}
+    </div>
+  )
 }

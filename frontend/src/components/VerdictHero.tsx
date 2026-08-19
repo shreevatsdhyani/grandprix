@@ -1,146 +1,241 @@
-import type { ReactNode } from 'react'
-import { CircuitMap } from './CircuitMap'
-import { DriverPlate } from './DriverPlate'
-import { KpiStrip } from './KpiStrip'
-import { tint } from '../lib/mood'
 import type { Circuit } from '../lib/circuits'
 import type { Driver } from '../lib/drivers'
 import type { Verdict } from '../lib/verdict'
+import type { ScoringMode } from '../types'
+import { CircuitMap } from './CircuitMap'
+import { DriverPlate } from './DriverPlate'
 
 /**
  * The answer, before the evidence.
  *
- * Every version of this dashboard before it opened with two charts and left the
- * reader to work out what they meant. The charts were the same charts; what was
- * missing was a sentence. So the finding goes first, at display size, with the
- * number that carries it pulled out in papaya — and everything below this card
- * becomes evidence for a claim the reader has already read rather than a puzzle.
- *
- * Nothing here is invented. The headline, the support line and the hedge all
- * come from `readVerdict`, which derives them from the backend's own lead-lag
- * peak and carries `is_significant` through untouched.
+ * Everything below this band is a chart that can support or undermine one
+ * claim, and the claim used to be reachable only by reading all of them. Here
+ * it is stated outright at signage size, with the four numbers behind it and
+ * the caveat attached, so someone who reads nothing else still leaves knowing
+ * what the project found.
  */
 
 interface Props {
   verdict: Verdict
   driver: Driver
   circuit: Circuit | null
-  /** Changing this replays the KPI count-up — pass session + driver + mode. */
-  resetKey: string
+  eventName: string
+  year: number
+  mode: ScoringMode
+  /** Jump the rest of the page to the lap the verdict is about. */
+  onSelectClip?: (clipId: string) => void
 }
 
-export function VerdictHero({ verdict, driver, circuit, resetKey }: Props) {
+export function VerdictHero({
+  verdict,
+  driver,
+  circuit,
+  eventName,
+  year,
+  mode,
+  onSelectClip,
+}: Props) {
+  const lead = verdict.state === 'lead'
+
   return (
-    <section className="panel mt-4 overflow-hidden" aria-label="The finding">
-      <div className="relative grid grid-cols-1 gap-8 p-6 md:grid-cols-[336px_1fr]">
-        {circuit && <CircuitMap circuit={circuit} />}
-
-        <div className="relative z-[1] min-w-0">
-          <DriverPlate driver={driver} />
+    <section
+      className="panel relative overflow-hidden"
+      aria-label="Session verdict"
+      style={{
+        background:
+          'radial-gradient(120% 140% at 88% 8%, color-mix(in srgb, var(--team) 13%, transparent) 0%, transparent 58%), linear-gradient(180deg, #10131a 0%, #0b0d12 100%)',
+      }}
+    >
+      {/* The venue, running the lap. Sits behind the copy and is deliberately
+          low-contrast: it is orientation, not information. */}
+      {circuit && (
+        <div
+          className="pointer-events-none absolute bottom-[86px] right-0 top-9 hidden w-[38%] max-w-[460px] items-center justify-end pr-2 opacity-90 md:flex"
+          aria-hidden
+        >
+          <CircuitMap
+            circuit={circuit}
+            color={driver.team.color}
+            variant="hero"
+            className="h-full w-full"
+          />
         </div>
+      )}
 
-        <div className="relative z-[1] flex min-w-0 flex-col gap-3.5 pt-0.5">
-          <p className="flex items-center gap-2.5">
-            <span className="h-[2px] w-[18px] flex-none bg-pap" aria-hidden />
-            <span className="font-cond text-[9.5px] font-semibold uppercase leading-none tracking-[0.22em] text-t3">
-              The finding
-            </span>
+      {/* ── Venue strip ─────────────────────────────────────────────────── */}
+      <div
+        className="relative flex flex-wrap items-center gap-x-3 gap-y-1.5 border-b px-4 py-2.5 sm:px-5"
+        style={{
+          borderColor: 'var(--hairline)',
+          borderTopWidth: '2px',
+          borderTopColor: 'color-mix(in srgb, var(--team) 60%, transparent)',
+        }}
+      >
+        <span className="text-base leading-none" aria-hidden>
+          {circuit?.flag ?? '🏁'}
+        </span>
+        <span className="mono text-ink-primary" style={{ fontSize: 15, letterSpacing: '0.08em', fontWeight: 700 }}>
+          {eventName.toUpperCase()} {year}
+        </span>
+        {circuit && (
+          <span className="mono hidden text-[10.5px] text-ink-muted sm:inline">
+            {circuit.short} · {circuit.laps} LAPS · {circuit.km.toFixed(3)} KM ·{' '}
+            {circuit.turns} TURNS
+          </span>
+        )}
+        <span className="ml-auto flex items-center gap-2">
+          <span
+            className="chip font-racing text-[10px] font-bold"
+            style={{
+              color: mode === 'fusion' ? 'var(--series-1)' : 'var(--status-warning)',
+              background: mode === 'fusion' ? 'color-mix(in srgb, var(--series-1) 12%, transparent)' : 'color-mix(in srgb, var(--status-warning) 12%, transparent)',
+            }}
+          >
+            {mode === 'fusion' ? 'FUSION MODEL' : 'SINGLE MODEL'}
+          </span>
+        </span>
+      </div>
+
+      {/* ── Claim ───────────────────────────────────────────────────────── */}
+      <div className="relative grid gap-5 p-4 sm:p-5 lg:grid-cols-[minmax(0,380px)_minmax(0,1fr)] lg:gap-7">
+        <DriverPlate driver={driver} />
+
+        <div className="relative min-w-0 self-center">
+          <p className="eyebrow font-racing font-bold tracking-[0.12em]" style={{ fontSize: '11px' }}>
+            THE FINDING
           </p>
 
-          <h1 className="display max-w-[760px] text-pretty text-[32px] leading-[1.04] sm:text-[40px] xl:text-[46px]">
-            {headline(verdict)}
+          <h1
+            className="font-racing mt-3 text-balance font-bold text-ink-primary"
+            style={{ fontSize: 'clamp(28px, 3.4vw, 44px)', lineHeight: 1.15 }}
+          >
+            {lead ? (
+              <>
+                The voice cracked{' '}
+                <span
+                  className="mono font-black"
+                  style={{
+                    color: 'var(--status-critical)',
+                    textShadow: '0 0 34px rgba(255,0,80,0.45)',
+                  }}
+                >
+                  {verdict.leadLaps} {verdict.leadLaps === 1 ? 'lap' : 'laps'}
+                </span>{' '}
+                before the stopwatch
+              </>
+            ) : (
+              verdict.headline
+            )}
           </h1>
 
-          <p className="max-w-[620px] text-pretty text-[15px] leading-[1.55] text-t2">
+          <p className="mt-4 max-w-[62ch] text-[13.5px] leading-[1.65] text-ink-secondary sm:text-[14px]">
             {verdict.support}
           </p>
 
-          {hedge(verdict) && (
-            /* The same yellow recipe appears on the lead-lag panel. Two places is
-               deliberate: a reader who only takes the headline still gets the
-               qualifier, and one who only reads the chart gets it there. */
-            <div
-              className="flex max-w-[660px] items-start gap-[9px] rounded-r-[5px] border-l-2 px-3 py-2.5"
-              style={{
-                background: tint('var(--yel)', 7),
-                borderLeftColor: 'var(--yel)',
-              }}
-            >
-              <span className="text-[11px] leading-[1.4] text-yel" aria-hidden>
-                ▲
+          {lead && !verdict.significant && (
+            <p className="mt-2 flex items-start gap-1.5 text-[11px] leading-snug text-status-warning">
+              <span aria-hidden>▲</span>
+              <span>
+                Indicative only — {verdict.nSamples} scored calls is below our significance
+                threshold. Read it as a direction of travel, not a proven effect.
               </span>
-              <p className="text-[12px] leading-[1.45] text-yel">{hedge(verdict)}</p>
-            </div>
+            </p>
           )}
         </div>
       </div>
 
-      <KpiStrip verdict={verdict} resetKey={resetKey} />
+      {/* ── The four numbers ────────────────────────────────────────────── */}
+      <div className="relative grid grid-cols-2 gap-px border-t border-hairline bg-hairline lg:grid-cols-4">
+        <Stat
+          label="Warning time"
+          value={verdict.leadLaps != null ? String(verdict.leadLaps) : '—'}
+          unit={verdict.leadLaps != null ? (verdict.leadLaps === 1 ? 'lap' : 'laps') : undefined}
+          note={verdict.leadLaps != null ? 'stress peak ahead of pace loss' : 'no lead detected'}
+          tone={verdict.leadLaps != null ? 'var(--status-critical)' : 'var(--slate)'}
+        />
+        <Stat
+          label="Peak stress"
+          value={verdict.peakStress ? String(Math.round(verdict.peakStress.value)) : '—'}
+          unit={verdict.peakStress ? '/100' : undefined}
+          note={
+            verdict.peakStress
+              ? `${verdict.peakStress.mood.toLowerCase()} · lap ${verdict.peakStress.lap}`
+              : 'nothing scored yet'
+          }
+          tone="var(--status-warning)"
+          onClick={
+            verdict.peakStress?.clipId && onSelectClip
+              ? () => onSelectClip(verdict.peakStress!.clipId!)
+              : undefined
+          }
+        />
+        <Stat
+          label="Strategy calls"
+          value={String(verdict.callCount)}
+          note={verdict.criticalCall ?? 'nothing triggered'}
+          tone={verdict.callCount > 0 ? 'var(--series-1)' : 'var(--slate)'}
+        />
+        <Stat
+          label="Correlation"
+          value={verdict.correlation != null ? verdict.correlation.toFixed(2) : '—'}
+          unit={verdict.correlation != null ? 'r' : undefined}
+          note={`${verdict.nSamples} scored call${verdict.nSamples === 1 ? '' : 's'}${
+            verdict.significant ? '' : ' · indicative'
+          }`}
+          tone="var(--series-3)"
+        />
+      </div>
     </section>
   )
 }
 
-/**
- * The headline with its lead figure pulled out.
- *
- * `verdict.headline` is the same sentence as plain text, and it stays the
- * canonical version — this only decides which token in it is the number. Parsing
- * the digits back out of that string would break the first time the copy
- * changed, so the shapes are composed per state instead.
- */
-function headline(v: Verdict): ReactNode {
-  if (v.state === 'lead' && v.leadLaps != null) {
-    return (
-      <>
-        The voice cracked <Figure>{v.leadLaps}</Figure> {v.leadLaps === 1 ? 'lap' : 'laps'} before
-        the stopwatch
-      </>
-    )
-  }
-
-  if (v.state === 'no-lead' && v.peakStress) {
-    return (
-      <>
-        Peak stress <Figure>{Math.round(v.peakStress.value)}</Figure> on lap {v.peakStress.lap}
-      </>
-    )
-  }
-
-  return v.headline
-}
-
-function Figure({ children }: { children: ReactNode }) {
-  return (
-    <span
-      className="mono text-[30px] font-bold leading-none text-pap sm:text-[38px] xl:text-[44px]"
-      style={{ textShadow: `0 0 24px ${tint('var(--pap)', 45)}` }}
-    >
-      {children}
-    </span>
+function Stat({
+  label,
+  value,
+  unit,
+  note,
+  tone,
+  onClick,
+}: {
+  label: string
+  value: string
+  unit?: string
+  note: string
+  tone: string
+  onClick?: () => void
+}) {
+  const body = (
+    <>
+      <p className="eyebrow font-racing text-[10px] font-semibold tracking-[0.14em] opacity-60">
+        {label.toUpperCase()}
+      </p>
+      <p className="mt-2 flex items-baseline gap-2">
+        <span
+          className="mono font-black tabular-nums"
+          style={{
+            fontSize: 'clamp(32px, 4.2vw, 44px)',
+            color: tone,
+            textShadow: `0 0 20px ${tone}40`,
+            fontVariantNumeric: 'tabular-nums',
+          }}
+        >
+          {value}
+        </span>
+        {unit && <span className="mono text-xs font-semibold text-ink-muted">{unit}</span>}
+      </p>
+      <p className="mt-1.5 truncate text-[11px] leading-snug text-ink-muted" title={note}>
+        {note}
+      </p>
+    </>
   )
-}
 
-/**
- * What the claim above cannot support, in the reader's terms.
- *
- * `is_significant` is false for nearly every driver in this dataset, because the
- * backend counts distinct laps carrying a stress score against a floor of 25 and
- * several calls on one lap collapse to one sample. So this hedge is the normal
- * state, not an exception — which is why it is styled as a designed qualifier
- * rather than as a warning that something went wrong.
- *
- * Returns null when there is nothing measured to qualify: the support line
- * already says so, and stacking a caveat on top of "no radio scored yet" reads
- * as two different problems.
- */
-function hedge(v: Verdict): string | null {
-  if (v.significant || v.nSamples === 0) return null
+  const className = 'bg-surface px-4 py-3.5 text-left sm:px-5'
 
-  const laps = `${v.nSamples} scored ${v.nSamples === 1 ? 'lap' : 'laps'}`
-
-  if (v.state === 'lead') {
-    return `Measured across ${laps}, below the 25 this test needs to call it significant. Read the gap as directional — the shape is there, the sample is not yet.`
-  }
-
-  return `Measured across ${laps}. Below the 25-lap floor the correlation is indicative only, so absence of a lead here is not evidence against one.`
+  return onClick ? (
+    <button onClick={onClick} className={`${className} transition hover:bg-raised`}>
+      {body}
+    </button>
+  ) : (
+    <div className={className}>{body}</div>
+  )
 }

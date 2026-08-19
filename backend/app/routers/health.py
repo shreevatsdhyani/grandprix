@@ -1,21 +1,16 @@
-"""Health, readiness and model provenance.
+"""Health and readiness.
 
 `offline_ready` is the field that matters. The GrandPrix round is offline and we
 assume venue wifi fails, so demo morning starts by hitting this endpoint and
 confirming it is True.
-
-`/api/model-card` sits here for the same reason: both endpoints answer "what is
-this install actually running", off local disk, without loading a model.
 """
 
 from __future__ import annotations
 
-import json
-
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter
 
 from app import config
-from app.schemas import HealthResponse, ModelCard
+from app.schemas import HealthResponse
 
 router = APIRouter(prefix="/api", tags=["health"])
 
@@ -52,37 +47,3 @@ def health() -> HealthResponse:
         models_loaded=models,
         offline_ready=all(models.values()) and sessions_cached,
     )
-
-
-@router.get("/model-card", response_model=ModelCard)
-def model_card() -> ModelCard:
-    """The fusion head's own numbers, read off the weights the runtime scores with.
-
-    Committed to the repo and a few KB, so this answers with no network and no
-    model load — same offline assumption as everything else here.
-
-    503 when the head is absent or predates these fields, matching how the rest
-    of the app treats an unfitted head: `MoodResult.fitted` goes False and the UI
-    admits it. The one thing this must never do is serve a number it cannot
-    source, so a bad file is an error rather than a default.
-    """
-    # Same file, same constant the scorer uses — the headline and the model
-    # cannot drift apart.
-    from app.pipeline.fusion import MODEL_PATH
-
-    if not MODEL_PATH.is_file():
-        raise HTTPException(
-            503, "No fitted fusion head. Run: python scripts/fit_fusion.py"
-        )
-    try:
-        head = json.loads(MODEL_PATH.read_text(encoding="utf-8"))
-        return ModelCard(
-            n_train=head["n_train"],
-            cv_accuracy=head["cv_accuracy"],
-            naive_accuracy=head["naive_accuracy"],
-            features=head["features"],
-        )
-    except (KeyError, ValueError) as exc:
-        raise HTTPException(
-            503, f"Fusion head on disk carries no usable metrics: {exc}"
-        ) from exc

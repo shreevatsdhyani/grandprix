@@ -1,9 +1,8 @@
-import { useEffect, useRef, useState } from 'react'
-import type { ReactNode, RefObject } from 'react'
+import { useEffect, useState } from 'react'
 import { getLibrary } from '../api'
-import { lapLabel, clamp } from '../lib/format'
-import { MOOD_COLOR } from '../lib/mood'
 import type { ClipSummary } from '../types'
+import { MOOD_COLOR } from '../types'
+import { SkeletonRows } from './StartLights'
 
 /**
  * The brief's first deliverable: "play *or* upload a radio clip."
@@ -14,10 +13,10 @@ import type { ClipSummary } from '../types'
  * and no way to play anything. This lists clips by lap regardless of whether
  * they have been scored yet.
  *
- * Selecting an unscored clip runs the pipeline live, which takes around thirteen
- * seconds, so the footnote says so before it is clicked and the row shows a
- * pulse while it runs. A row that silently goes quiet for that long reads as a
- * broken click.
+ * Selecting an unscored clip runs the pipeline live, which takes around
+ * thirteen seconds, so the row says so before it is clicked and shows its own
+ * progress while it runs. A row that silently goes quiet for that long reads as
+ * a broken click.
  */
 
 interface Props {
@@ -26,38 +25,23 @@ interface Props {
   selectedClipId: string | null
   onSelect: (clipId: string) => void
   /** Bump to refetch — the mood badges and the scored counter go stale the
-   *  moment a clip finishes, and a list still saying "unscored" next to a
+   *  moment a clip finishes, and a list still saying "not scored" next to a
    *  result on screen reads as a bug. */
-  refreshKey: number
+  refreshKey?: number
   /** Clip currently being scored over the WebSocket, if any. */
-  streamingClipId: string | null
+  streamingClipId?: string | null
 }
-
-/* One row is 9px + 9px padding over an 11.5px line, and the gap is 3px. The
-   skeleton, the error and the empty state are all sized off this so the card
-   keeps its height in every state instead of collapsing beside a full sibling. */
-const ROW_H = 30
-const SKELETON_ROWS = 7
-const LIST_MIN = ROW_H * SKELETON_ROWS + 3 * (SKELETON_ROWS - 1)
-
-const GRID = '38px 76px 1fr 34px'
 
 export function ClipBrowser({
   sessionId,
   driver,
   selectedClipId,
   onSelect,
-  refreshKey,
-  streamingClipId,
+  refreshKey = 0,
+  streamingClipId = null,
 }: Props) {
   const [clips, setClips] = useState<ClipSummary[]>([])
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-  /* Bumping this re-runs the fetch below. Without it a single failed request —
-     which is all it takes, since `get()` has no retry — leaves this card dead
-     for the rest of the session, because nothing else re-runs the effect until
-     the driver changes. */
-  const [attempt, setAttempt] = useState(0)
 
   useEffect(() => {
     if (!sessionId) return
@@ -66,20 +50,15 @@ export function ClipBrowser({
     // finished analysis must not throw the reader back to a skeleton and lose
     // their scroll position.
     setLoading(true)
-    setError(null)
     getLibrary(sessionId, driver)
       .then((list) => live && setClips(list))
-      .catch((err: unknown) => {
-        if (!live) return
-        setClips([])
-        setError(err instanceof Error ? err.message : String(err))
-      })
+      .catch(() => live && setClips([]))
       .finally(() => live && setLoading(false))
     return () => {
       live = false
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sessionId, driver, attempt])
+  }, [sessionId, driver])
 
   useEffect(() => {
     if (!refreshKey || !sessionId) return
@@ -93,215 +72,118 @@ export function ClipBrowser({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [refreshKey])
 
-  // Selection also arrives from outside — clicking a marker on the timeline. If
-  // the list doesn't follow, the selected row is offscreen and the click reads
-  // as having done nothing.
-  const selectedRow = useRef<HTMLButtonElement | null>(null)
-  const scrolledTo = useRef<string | null>(null)
-  useEffect(() => {
-    if (!selectedClipId || scrolledTo.current === selectedClipId) return
-    const el = selectedRow.current
-    // Not rendered yet (selection landed before the fetch did) — leaving
-    // `scrolledTo` unset means the next clips change retries.
-    if (!el) return
-    scrolledTo.current = selectedClipId
-    el.scrollIntoView({ block: 'nearest' })
-  }, [selectedClipId, clips])
-
   const scored = clips.filter((c) => c.analysed).length
-  const counter = loading || error ? '—/— scored' : `${scored}/${clips.length} scored`
 
   return (
-    /* The sidebar's shock absorber.
-
-       How tall this column comes out depends entirely on how much radio the
-       driver has, and the main grid stretches the shorter column to the taller —
-       so somewhere in here has to spend the difference, which ran up to 266px of
-       bare page. `flex-1` puts it in this card, the one whose content is
-       naturally elastic: a list of rows reads the same at any height, which is
-       not true of the inspector above it. */
-    <section
-      className="panel flex flex-1 flex-col"
-      style={{ padding: 18 }}
-      aria-label="Radio library"
-    >
-      <div className="flex items-center justify-between gap-3">
-        <h2 className="eyebrow-lg">RADIO LIBRARY</h2>
-        <span className="mono text-[10.5px] font-medium leading-none text-t2">{counter}</span>
-      </div>
-
-      {/* The rows live in their own positioned box, and everything in it is
-          absolute, so its content contributes nothing to the card's natural
-          height — only `minHeight` does.
-
-          That distinction is the whole trick. `flex-1` alone let a 28-clip list
-          expand the card to 1028px, which made the sidebar the taller column and
-          moved the 500px of dead space into the evidence column instead of
-          removing it; a `max-height` would have bounded that but would equally
-          have bounded the growth, which is the thing worth keeping. Absolute
-          children give both: the card asks for seven rows' worth, grows to fill
-          whatever the grid hands it, and the list scrolls inside the result. */}
-      <div className="relative mt-3 flex-1" style={{ minHeight: LIST_MIN }}>
-        {loading ? (
-          <Skeleton />
-        ) : error ? (
-          <Filler>
-            <p className="text-[12.5px] font-normal leading-[1.5] text-t2">
-              Could not load {driver}’s clip library. The request to{' '}
-              <span className="mono text-t1">/api/clips/library</span> failed:
-            </p>
-            <p className="mono mt-2 text-[11px] leading-[1.5] text-t3">{error}</p>
-            <button
-              type="button"
-              onClick={() => setAttempt((n) => n + 1)}
-              className="mt-3 h-[32px] self-start rounded-[5px] border border-line2 bg-s2 px-3.5 font-cond text-[11px] font-semibold uppercase tracking-[0.2em] text-t1 transition-[border-color,color] duration-[160ms] hover:border-pap hover:text-pap"
-            >
-              Try again
-            </button>
-          </Filler>
-        ) : !clips.length ? (
-          <Filler>
-            <p className="text-[12.5px] font-normal leading-[1.5] text-t2">
-              No radio was indexed for {driver} at this race. Pick another driver, or upload a clip
-              of your own — an upload runs the same pipeline and lands in the same timeline.
-            </p>
-          </Filler>
-        ) : (
-          <div className="absolute inset-0 flex flex-col gap-[3px] overflow-y-auto pr-1">
-            {clips.map((c) => {
-              const selected = c.clip_id === selectedClipId
-              return (
-                <Row
-                  key={c.clip_id}
-                  clip={c}
-                  selected={selected}
-                  streaming={c.clip_id === streamingClipId}
-                  onSelect={onSelect}
-                  rowRef={selected ? selectedRow : null}
-                />
-              )
-            })}
-          </div>
+    <section className="panel flex flex-col p-4 sm:p-5" aria-label="Radio library">
+      <div className="flex items-baseline justify-between gap-3">
+        <h2 className="card-title">Radio library</h2>
+        {!loading && clips.length > 0 && (
+          <span className="mono text-[11px] text-ink-muted">
+            {scored}/{clips.length} scored
+          </span>
         )}
       </div>
 
-      <p
-        className="text-[11px] font-normal leading-[1.5] text-t3"
-        style={{ marginTop: 14, paddingTop: 12, borderTop: '1px solid var(--line)' }}
-      >
-        Scored clips open instantly. An unscored one runs the full pipeline live — about 13
-        seconds, every stage shown as it happens.
-      </p>
+      {loading ? (
+        <div className="mt-3">
+          <SkeletonRows rows={7} />
+          <p className="mt-2.5 text-[11px] text-ink-muted">Loading {driver}’s radio…</p>
+        </div>
+      ) : !clips.length ? (
+        <p className="mt-2 text-sm text-ink-muted">
+          No clips indexed for {driver} at this race.
+        </p>
+      ) : (
+        <>
+          <ul className="mt-2.5 max-h-[300px] space-y-1 overflow-y-auto pr-1 sm:max-h-[340px]">
+            {clips.map((c) => (
+              <Row
+                key={c.clip_id}
+                clip={c}
+                active={c.clip_id === selectedClipId}
+                streaming={c.clip_id === streamingClipId}
+                onSelect={onSelect}
+              />
+            ))}
+          </ul>
+          <p className="mt-2.5 border-t border-hairline pt-2.5 text-[10px] leading-relaxed text-ink-muted">
+            Scored clips open instantly. Picking an unscored one runs the full pipeline live —
+            about 13 seconds, with every stage shown as it happens.
+          </p>
+        </>
+      )}
     </section>
-  )
-}
-
-/* Both of these fill the positioned box above rather than sizing it — same
-   reason as the list: whatever is on screen here must not be what decides how
-   tall the card is, or the card decides how tall the whole page is. */
-
-/** Says why there are no rows, vertically centred in the space they'd have had. */
-function Filler({ children }: { children: ReactNode }) {
-  return <div className="absolute inset-0 flex flex-col justify-center">{children}</div>
-}
-
-function Skeleton() {
-  return (
-    <div className="absolute inset-0 flex flex-col gap-[3px] overflow-hidden" aria-hidden>
-      {Array.from({ length: SKELETON_ROWS }, (_, i) => (
-        <div
-          key={i}
-          className="anim-pulse shrink-0 rounded-[5px] bg-s2"
-          style={{ height: ROW_H, animationDelay: `${i * 0.09}s` }}
-        />
-      ))}
-    </div>
   )
 }
 
 function Row({
   clip,
-  selected,
+  active,
   streaming,
   onSelect,
-  rowRef,
 }: {
   clip: ClipSummary
-  selected: boolean
+  active: boolean
   streaming: boolean
   onSelect: (id: string) => void
-  rowRef: RefObject<HTMLButtonElement | null> | null
 }) {
-  const colour = clip.mood ? MOOD_COLOR[clip.mood] : 'var(--t3)'
-
   return (
-    <button
-      ref={rowRef}
-      type="button"
-      onClick={() => onSelect(clip.clip_id)}
-      aria-current={selected || undefined}
-      aria-busy={streaming || undefined}
-      className={`shrink-0 hover:bg-s3 ${selected ? 'bg-s2' : 'bg-transparent'}`}
-      style={{
-        display: 'grid',
-        gridTemplateColumns: GRID,
-        alignItems: 'center',
-        gap: 10,
-        padding: '9px 10px',
-        borderRadius: 5,
-        textAlign: 'left',
-        transition: 'background .16s',
-        borderLeft: `2px solid ${selected ? 'var(--pap)' : 'transparent'}`,
-      }}
-    >
-      <span className="mono text-[11.5px] font-medium leading-none text-t2">
-        {lapLabel(clip.lap)}
-      </span>
-
-      <span
-        className="truncate font-cond text-[10.5px] font-semibold uppercase leading-none tracking-[0.16em]"
-        style={{ color: colour }}
+    <li>
+      <button
+        onClick={() => onSelect(clip.clip_id)}
+        aria-current={active}
+        className="flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 text-left transition"
+        style={
+          active
+            ? {
+                background: 'color-mix(in srgb, var(--team) 18%, transparent)',
+                boxShadow: 'inset 0 0 0 1px color-mix(in srgb, var(--team) 45%, transparent)',
+              }
+            : undefined
+        }
       >
-        {clip.mood ?? 'Unscored'}
-      </span>
+        <span className="tower w-8 shrink-0 text-ink-secondary" style={{ fontSize: 13 }}>
+          {clip.lap != null ? `L${clip.lap}` : '—'}
+        </span>
 
-      {/* Both spans are display:block on purpose — an inline span in a grid cell
-          collapses to zero height and the track disappears. */}
-      <span
-        style={{
-          display: 'block',
-          height: 3,
-          background: 'var(--s3)',
-          borderRadius: 2,
-          overflow: 'hidden',
-        }}
-      >
-        {clip.stress_index != null && (
-          <span
-            style={{
-              display: 'block',
-              height: '100%',
-              background: colour,
-              width: `${clamp(clip.stress_index, 0, 100)}%`,
-            }}
-          />
+        {streaming ? (
+          <span className="flex flex-1 items-center gap-2 text-[11px] text-accent-cyan">
+            <span
+              className="inline-block h-3 w-3 shrink-0 animate-spin rounded-full border-[1.5px] border-current border-t-transparent"
+              aria-hidden
+            />
+            Scoring…
+          </span>
+        ) : clip.analysed && clip.mood ? (
+          <>
+            <span
+              className="flex-1 text-[11px] font-semibold uppercase tracking-wide"
+              style={{ color: MOOD_COLOR[clip.mood] }}
+            >
+              {clip.mood}
+            </span>
+            {clip.stress_index != null && (
+              <>
+                <span className="hidden h-1 w-12 shrink-0 overflow-hidden rounded-full bg-raised sm:block">
+                  <span
+                    className="block h-full rounded-full"
+                    style={{
+                      width: `${Math.min(100, clip.stress_index)}%`,
+                      background: MOOD_COLOR[clip.mood],
+                    }}
+                  />
+                </span>
+                <span className="mono w-6 shrink-0 text-right text-[11px] text-ink-secondary">
+                  {Math.round(clip.stress_index)}
+                </span>
+              </>
+            )}
+          </>
+        ) : (
+          <span className="flex-1 text-[11px] text-ink-muted">Not scored — click to run</span>
         )}
-      </span>
-
-      {streaming ? (
-        <span className="flex items-center justify-end">
-          <span
-            className="anim-pulse block rounded-full"
-            style={{ width: 6, height: 6, background: 'var(--mag)' }}
-            aria-hidden
-          />
-          <span className="sr-only">Scoring now</span>
-        </span>
-      ) : (
-        <span className="mono text-right text-[11.5px] font-medium leading-none text-t1">
-          {clip.stress_index != null ? Math.round(clip.stress_index) : '—'}
-        </span>
-      )}
-    </button>
+      </button>
+    </li>
   )
 }

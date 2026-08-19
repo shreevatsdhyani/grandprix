@@ -1,195 +1,170 @@
 import { useEffect, useRef, useState } from 'react'
-import type { JSX, KeyboardEvent, MouseEvent } from 'react'
-import { clamp, clock } from '../lib/format'
 
 /**
- * The inline player row.
- *
- * Native `<audio>` controls are drawn by the platform and cannot be themed, and
- * on a 400px sidebar Chrome's bar alone is taller than this whole row. So the
- * element stays for the decoding and the seeking, and only its chrome is
- * replaced.
- *
- * There is no volume control on purpose: the OS and the browser tab both have
- * one already, and the popover that used to live here spent its whole life
- * rendering transparent against a colour token that no longer existed.
+ * Custom-styled audio player matching the dark theme.
+ * Replaces native browser controls with cyan accents and dark styling.
  */
-
-/** Button (34px) plus the row's 11px padding and 1px border on each side. The
- *  error state has to hold this exact height or the card jumps under the mouse
- *  when a clip's audio is missing. */
-const ROW_H = 58
 
 interface Props {
   src: string
-  /** `duration_s` from the API. The element reports nothing until metadata
-   *  arrives, so without this the total reads 0:00 for the first few hundred
-   *  milliseconds of every clip. */
-  durationHint?: number
+  onError?: () => void
+  className?: string
 }
 
-export function CustomAudioPlayer({ src, durationHint }: Props): JSX.Element {
+export function CustomAudioPlayer({ src, onError, className = '' }: Props) {
   const audioRef = useRef<HTMLAudioElement>(null)
   const [playing, setPlaying] = useState(false)
-  const [position, setPosition] = useState(0)
+  const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
-  const [failed, setFailed] = useState(false)
+  const [volume, setVolume] = useState(1)
+  const [showVolume, setShowVolume] = useState(false)
 
   useEffect(() => {
     const audio = audioRef.current
     if (!audio) return
 
-    const onTimeUpdate = () => setPosition(audio.currentTime)
-    // `duration` is NaN before metadata and Infinity on a stream; either one
-    // would poison every percentage downstream of it.
-    const onDurationChange = () =>
-      setDuration(Number.isFinite(audio.duration) ? audio.duration : 0)
-    const onEnded = () => {
-      setPlaying(false)
-      setPosition(0)
-    }
-    const onError = () => {
-      setFailed(true)
-      setPlaying(false)
-    }
-    // Taken from the element rather than toggled optimistically on click: a
-    // rejected play() left the old player showing a pause glyph over silence.
-    const onPlay = () => setPlaying(true)
-    const onPause = () => setPlaying(false)
+    const handleTimeUpdate = () => setCurrentTime(audio.currentTime)
+    const handleDurationChange = () => setDuration(audio.duration)
+    const handleEnded = () => setPlaying(false)
+    const handleError = () => onError?.()
 
-    audio.addEventListener('timeupdate', onTimeUpdate)
-    audio.addEventListener('durationchange', onDurationChange)
-    audio.addEventListener('ended', onEnded)
-    audio.addEventListener('error', onError)
-    audio.addEventListener('play', onPlay)
-    audio.addEventListener('pause', onPause)
+    audio.addEventListener('timeupdate', handleTimeUpdate)
+    audio.addEventListener('durationchange', handleDurationChange)
+    audio.addEventListener('ended', handleEnded)
+    audio.addEventListener('error', handleError)
 
     return () => {
-      audio.removeEventListener('timeupdate', onTimeUpdate)
-      audio.removeEventListener('durationchange', onDurationChange)
-      audio.removeEventListener('ended', onEnded)
-      audio.removeEventListener('error', onError)
-      audio.removeEventListener('play', onPlay)
-      audio.removeEventListener('pause', onPause)
+      audio.removeEventListener('timeupdate', handleTimeUpdate)
+      audio.removeEventListener('durationchange', handleDurationChange)
+      audio.removeEventListener('ended', handleEnded)
+      audio.removeEventListener('error', handleError)
     }
-  }, [])
+  }, [onError])
 
-  // Selecting another clip swaps `src` on the same element, which keeps the old
-  // position and the old failure on screen until the new file loads.
-  useEffect(() => {
-    setPosition(0)
-    setDuration(0)
-    setFailed(false)
-  }, [src])
-
-  // The element's own duration wins once it has one — the API's `duration_s` is
-  // rounded and can disagree with the decoded file by a few tenths.
-  const total = duration > 0 ? duration : (durationHint ?? 0)
-  const pct = total > 0 ? clamp((position / total) * 100, 0, 100) : 0
-
-  function toggle() {
+  const togglePlay = () => {
     const audio = audioRef.current
     if (!audio) return
-    if (audio.paused) void audio.play().catch(() => setFailed(true))
-    else audio.pause()
-  }
 
-  function seekTo(seconds: number) {
-    const audio = audioRef.current
-    if (!audio || total <= 0) return
-    const next = clamp(seconds, 0, total)
-    audio.currentTime = next
-    setPosition(next)
-  }
-
-  function handleTrackClick(e: MouseEvent<HTMLButtonElement>) {
-    // A keyboard activation arrives as a click with detail 0 and clientX 0,
-    // which would read as a seek to the very start.
-    if (e.detail === 0) return
-    const rect = e.currentTarget.getBoundingClientRect()
-    seekTo(((e.clientX - rect.left) / rect.width) * total)
-  }
-
-  function handleTrackKey(e: KeyboardEvent<HTMLButtonElement>) {
-    // 2s steps, not the usual 5s: these clips run 4–20 seconds, so a 5s arrow
-    // press would cross most of one.
-    const step = 2
-    switch (e.key) {
-      case 'ArrowLeft':
-      case 'ArrowDown':
-        seekTo(position - step)
-        break
-      case 'ArrowRight':
-      case 'ArrowUp':
-        seekTo(position + step)
-        break
-      case 'Home':
-        seekTo(0)
-        break
-      case 'End':
-        seekTo(total)
-        break
-      default:
-        return
+    if (playing) {
+      audio.pause()
+    } else {
+      audio.play()
     }
-    e.preventDefault()
+    setPlaying(!playing)
   }
+
+  const handleSeek = (e: React.MouseEvent<HTMLDivElement>) => {
+    const audio = audioRef.current
+    if (!audio || !duration) return
+
+    const rect = e.currentTarget.getBoundingClientRect()
+    const percent = (e.clientX - rect.left) / rect.width
+    audio.currentTime = percent * duration
+  }
+
+  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const audio = audioRef.current
+    const newVolume = parseFloat(e.target.value)
+    if (audio) {
+      audio.volume = newVolume
+      setVolume(newVolume)
+    }
+  }
+
+  const formatTime = (seconds: number) => {
+    if (!isFinite(seconds)) return '0:00'
+    const mins = Math.floor(seconds / 60)
+    const secs = Math.floor(seconds % 60)
+    return `${mins}:${secs.toString().padStart(2, '0')}`
+  }
+
+  const progress = duration > 0 ? (currentTime / duration) * 100 : 0
 
   return (
-    <div
-      className="flex items-center gap-3 rounded-[7px] border border-line bg-s2 px-[13px] py-[11px]"
-      style={{ minHeight: ROW_H }}
-    >
+    <div className={`rounded-xl border border-hairline bg-raised/80 p-3 ${className}`}>
       <audio ref={audioRef} src={src} preload="metadata" />
 
-      {failed ? (
-        <p className="text-[11px] font-normal leading-[1.4] text-t3">
-          This clip’s audio could not be loaded. The analysis below still stands — only the
-          recording is missing from disk.
-        </p>
-      ) : (
-        <>
-          <button
-            type="button"
-            onClick={toggle}
-            aria-label={playing ? 'Pause clip' : 'Play clip'}
-            className="grid h-[34px] w-[34px] flex-none place-items-center rounded-full border border-line2 text-[11px] text-t1 transition-[border-color,color] duration-[160ms] hover:border-pap hover:text-pap"
+      <div className="flex items-center gap-3">
+        {/* Play/Pause Button */}
+        <button
+          onClick={togglePlay}
+          className="grid h-10 w-10 shrink-0 place-items-center rounded-full border-[2.5px] border-white bg-accent-cyan/10 text-white transition hover:bg-accent-cyan/25"
+          aria-label={playing ? 'Pause' : 'Play'}
+        >
+          {playing ? (
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <rect x="6" y="4" width="4" height="16" rx="1" />
+              <rect x="14" y="4" width="4" height="16" rx="1" />
+            </svg>
+          ) : (
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          )}
+        </button>
+
+        {/* Progress Bar */}
+        <div className="flex flex-1 flex-col gap-1.5">
+          {/* Cyan elapsed bar on a light track — the track carries the
+              visibility so the empty remainder is readable without taking the
+              bar itself off the cyan accent. */}
+          <div
+            className="h-1.5 cursor-pointer overflow-hidden rounded-full"
+            style={{ background: 'rgba(255, 255, 255, 0.14)' }}
+            onClick={handleSeek}
+            role="slider"
+            aria-valuenow={currentTime}
+            aria-valuemin={0}
+            aria-valuemax={duration}
+            aria-label="Seek"
           >
-            {/* U+FE0E asks for the text glyph: bare U+25B6 is drawn by the
-                emoji font on Windows, which lands a blue triangle in a papaya
-                UI. */}
-            <span aria-hidden>{playing ? '❚❚' : '▶︎'}</span>
+            <div
+              className="h-full rounded-full bg-accent-cyan transition-[width] duration-100"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+
+          {/* Time Display — elapsed reads brighter than the total, so the live
+              number is the one the eye lands on. */}
+          <div className="mono flex justify-between text-[10px]">
+            <span style={{ color: '#C5CCD6' }}>{formatTime(currentTime)}</span>
+            <span style={{ color: '#98A2B3' }}>{formatTime(duration)}</span>
+          </div>
+        </div>
+
+        {/* Volume Control */}
+        <div
+          className="relative"
+          onMouseEnter={() => setShowVolume(true)}
+          onMouseLeave={() => setShowVolume(false)}
+        >
+          <button
+            className="grid h-8 w-8 place-items-center rounded-lg text-ink-secondary transition hover:bg-white/5 hover:text-ink-primary"
+            aria-label="Volume"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+              {volume > 0.5 && <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />}
+              {volume > 0 && <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />}
+            </svg>
           </button>
 
-          <div className="flex min-w-0 flex-1 flex-col gap-[7px]">
-            <button
-              type="button"
-              onClick={handleTrackClick}
-              onKeyDown={handleTrackKey}
-              // The design's 3px track is a 3px pointer target, so an invisible
-              // ::after pads the hit area out to 19px without redrawing it.
-              className="relative h-[3px] w-full cursor-pointer rounded-[2px] bg-s3 after:absolute after:inset-x-0 after:-inset-y-2 after:content-['']"
-              role="slider"
-              aria-label="Seek within clip"
-              aria-valuemin={0}
-              aria-valuemax={Math.round(total)}
-              aria-valuenow={Math.round(position)}
-              aria-valuetext={`${clock(position)} of ${clock(total)}`}
-            >
-              <span
-                className="block h-full rounded-[2px] bg-pap"
-                style={{ width: `${pct}%` }}
-                aria-hidden
+          {showVolume && (
+            <div className="absolute bottom-full right-0 mb-2 rounded-lg border border-hairline bg-panel p-2">
+              <input
+                type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                value={volume}
+                onChange={handleVolumeChange}
+                className="h-1 w-20 cursor-pointer appearance-none rounded-full bg-surface [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-accent-cyan"
+                aria-label="Volume level"
               />
-            </button>
-
-            <div className="mono flex justify-between text-[10px] font-normal leading-none text-t3">
-              <span>{clock(position)}</span>
-              <span>{clock(total)}</span>
             </div>
-          </div>
-        </>
-      )}
+          )}
+        </div>
+      </div>
     </div>
   )
 }

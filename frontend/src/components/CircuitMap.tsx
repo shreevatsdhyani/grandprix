@@ -1,95 +1,137 @@
-import { useMemo } from 'react'
+import { useId } from 'react'
 import type { Circuit } from '../lib/circuits'
 
 /**
- * The track, drawn faintly behind the hero.
+ * The venue, as the venue actually is.
  *
- * This is the real GPS trace of the fastest race lap, not an illustration — but
- * it is deliberately at 16% opacity and behind the headline, because its job is
- * to tell a reader *where* they are at a glance, not to be read. A stronger
- * version of this competed with the 46px claim sitting on top of it and won,
- * which is the wrong outcome.
+ * The outline is the fastest race lap's GPS trace from the cached FastF1
+ * position data, so changing Grand Prix genuinely redraws Silverstone into
+ * Monza rather than swapping a label. Two cars run the lap as light streaks —
+ * a moving dash along the same path, which is the one thing on this page that
+ * is decoration, and it earns its place by making the venue switch legible from
+ * across a room.
  *
- * `vectorEffect="non-scaling-stroke"` is what keeps the line 2px: the paths are
- * authored in a 1000-unit box and drawn into a 420px one, so a plain
- * `stroke-width` of 2 would render at 0.8px and disappear on a dark ground.
+ * Depth is a stack of offset copies of the path rather than a 3D library: the
+ * shape is a closed loop lying flat, so an extrusion plus a plane tilt is the
+ * whole of the geometry, and it costs nothing to animate.
  */
 
-/** Room for the stroke's round caps, which sit half a width outside the geometry. */
-const PAD = 8
+interface Props {
+  circuit: Circuit
+  /** Livery colour of the driver on screen. */
+  color: string
+  /** `hero` tilts onto a ground plane; `flat` stays face-on for small sizes. */
+  variant?: 'hero' | 'flat'
+  className?: string
+}
 
-export function CircuitMap({ circuit }: { circuit: Circuit }) {
-  const box = useMemo(() => viewBox(circuit.path, circuit.height), [circuit.path, circuit.height])
+const EXTRUSION = [7, 6, 5, 4, 3, 2, 1]
+
+export function CircuitMap({ circuit, color, variant = 'hero', className }: Props) {
+  const uid = useId().replace(/:/g, '')
+  const { path, height } = circuit
 
   return (
-    /* The frame, and the only thing here with a height.
-
-       An <svg> is a replaced element, so `height:auto` resolves off its own
-       intrinsic aspect ratio and not off the box it sits in: giving the svg
-       `inset-y-2` directly set both edges and it ignored them, sizing itself to
-       420 × ratio — 717px tall for Monza, five times the hero, painting the
-       trace straight through the KPI strip below. A plain div does obey top and
-       bottom, so the height lands here and `h-full` on the svg inherits a
-       definite one. */
     <div
-      className="pointer-events-none absolute inset-y-2 right-2 w-[420px] overflow-hidden"
+      className={className}
+      style={
+        variant === 'hero'
+          ? {
+              transform: 'perspective(1100px) rotateX(52deg) rotateZ(-14deg)',
+              transformStyle: 'preserve-3d',
+            }
+          : undefined
+      }
       aria-hidden
     >
       <svg
-        viewBox={box}
-        /* Pinned right, not centred. `extract_circuits.py` normalises every trace
-           into a 1000-wide box but preserves the aspect ratio, so a tall circuit
-           only fills part of that width — Monaco is 780 of 1000, Monza 580.
-           Centring the letterboxed result walked the trace left until it crossed
-           under the 46px headline as a stray scribble. Anchoring it to the right
-           edge keeps the empty side of the box on the side where the text is. */
-        preserveAspectRatio="xMaxYMid meet"
-        className="anim-fin h-full w-full opacity-[0.16]"
+        viewBox={`-30 -30 1060 ${height + 60}`}
+        width="100%"
+        height="100%"
+        style={{ overflow: 'visible', display: 'block' }}
       >
+        <defs>
+          <linearGradient id={`${uid}-streak`} x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor={color} stopOpacity="0" />
+            <stop offset="100%" stopColor="#ffffff" stopOpacity="1" />
+          </linearGradient>
+          <filter id={`${uid}-bloom`} x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="9" result="b" />
+            <feMerge>
+              <feMergeNode in="b" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+
+        {/* Kerb slab: successive copies stepped upward read as the thickness of
+            the track surface once the plane is tilted. */}
+        {EXTRUSION.map((dy, i) => (
+          <path
+            key={dy}
+            d={path}
+            transform={`translate(0 ${dy})`}
+            fill="none"
+            stroke="#05070a"
+            strokeWidth={19}
+            strokeLinejoin="round"
+            strokeLinecap="round"
+            opacity={0.4 + i * 0.08}
+          />
+        ))}
+
+        {/* Asphalt, its kerb edge, then the racing line in the driver's livery. */}
         <path
-          d={circuit.path}
+          d={path}
           fill="none"
-          stroke="var(--pap)"
-          strokeWidth={2}
-          strokeLinecap="round"
+          stroke="#2b323d"
+          strokeWidth={19}
           strokeLinejoin="round"
-          vectorEffect="non-scaling-stroke"
+          strokeLinecap="round"
         />
+        <path
+          d={path}
+          fill="none"
+          stroke="#12161d"
+          strokeWidth={13}
+          strokeLinejoin="round"
+          strokeLinecap="round"
+        />
+        <path
+          d={path}
+          fill="none"
+          stroke={color}
+          strokeOpacity={0.55}
+          strokeWidth={4}
+          strokeLinejoin="round"
+          strokeLinecap="round"
+        />
+
+        {/* Two cars on the lap. pathLength normalises the dash maths so every
+            circuit runs at the same visual speed regardless of its real length. */}
+        <g filter={`url(#${uid}-bloom)`}>
+          <path
+            className="gp-car"
+            d={path}
+            pathLength={1000}
+            fill="none"
+            stroke={color}
+            strokeWidth={13}
+            strokeLinecap="round"
+            style={{ ['--gp-lap-delay' as string]: '0s' }}
+          />
+          <path
+            className="gp-car gp-car--chase"
+            d={path}
+            pathLength={1000}
+            fill="none"
+            stroke="#ffffff"
+            strokeWidth={7}
+            strokeLinecap="round"
+            style={{ ['--gp-lap-delay' as string]: '-2.6s' }}
+          />
+        </g>
       </svg>
     </div>
   )
-}
-
-/**
- * The trace's own bounding box, read off the path data.
- *
- * `Circuit` records the normalised height but not the width, and using the full
- * 1000 units leaves up to 22% of the viewBox empty — which is dead space the
- * layout then has to absorb somewhere. The paths are `M`/`L`/`Z` only, so every
- * number in them is one coordinate of an x,y pair and a bounding box is a scan
- * rather than a parse. 460 points, once per circuit.
- */
-function viewBox(d: string, height: number): string {
-  const nums = d.match(/-?\d+(?:\.\d+)?/g)
-  if (!nums || nums.length < 4) return `0 0 1000 ${height}`
-
-  let minX = Infinity
-  let minY = Infinity
-  let maxX = -Infinity
-  let maxY = -Infinity
-
-  for (let i = 0; i + 1 < nums.length; i += 2) {
-    const x = Number(nums[i])
-    const y = Number(nums[i + 1])
-    if (x < minX) minX = x
-    if (x > maxX) maxX = x
-    if (y < minY) minY = y
-    if (y > maxY) maxY = y
-  }
-
-  const w = maxX - minX
-  const h = maxY - minY
-  if (!(w > 0) || !(h > 0)) return `0 0 1000 ${height}`
-
-  return `${minX - PAD} ${minY - PAD} ${w + PAD * 2} ${h + PAD * 2}`
 }

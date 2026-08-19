@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import type { Circuit } from '../lib/circuits'
 import { parsePath, pointAtFraction } from '../lib/trackGeometry'
 import type { ClipAnalysis, ClipContext, Mood, ScoringMode } from '../types'
-import { MOOD_COLOR } from '../lib/mood'
+import { MOOD_COLOR } from '../types'
 
 /**
  * Literal token values rather than `var(--…)`.

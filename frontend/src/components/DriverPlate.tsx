@@ -1,91 +1,142 @@
-import { useState } from 'react'
-import { Helmet } from './Helmet'
-import { portraitUrl } from '../lib/drivers'
+import { useRef, useState } from 'react'
 import type { Driver } from '../lib/drivers'
+import { portraitUrl } from '../lib/drivers'
+import { Helmet } from './Helmet'
 
 /**
- * Who is in the car.
+ * Who is on screen, in one glance.
  *
- * The portrait is a real photograph rather than an avatar because the claim on
- * the right of it is about a person under pressure, and a monogram undercuts
- * that. All 23 images are freely-licensed Wikimedia files served from `public/`
- * — no press imagery, and nothing fetched at runtime.
+ * The rest of the app speaks in three-letter codes, which is correct for a
+ * dense table and useless as an anchor — HAM and HUL are the same screen with
+ * two letters changed. This plate is the one place the driver is a person: the
+ * face, the full name, the car number, the team, and the helmet.
  *
- * When one fails to load the drawn helmet stands in. That path is not
- * theoretical: a code that appears in the race data but has no card still has to
- * render something, and a broken `<img>` icon is the most obviously unfinished
- * thing a screen can show.
+ * The name is set the way a broadcast lower-third sets it — given name small
+ * above, family name at signage size below — because that fits a 330px column
+ * without truncating anybody, including Hülkenberg and Verstappen.
+ *
+ * It re-mounts on every driver change (keyed by code upstream) so the entrance
+ * animation replays. That is the change confirmation: you can tell from across
+ * the room that the page is showing someone else.
  */
 
+const TILT = 5
+
 export function DriverPlate({ driver }: { driver: Driver }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [tilt, setTilt] = useState<{ x: number; y: number } | null>(null)
   const [portraitFailed, setPortraitFailed] = useState(false)
-  const src = portraitUrl(driver.code)
-  const showPortrait = src != null && !portraitFailed
+
+  const portrait = portraitUrl(driver.code)
+  const showPortrait = portrait != null && !portraitFailed
+
+  // Pointer parallax only. Touch gets nothing: there is no hover to recover
+  // from, and a plate stuck at an angle after a tap looks broken.
+  function handleMove(e: React.PointerEvent) {
+    if (e.pointerType !== 'mouse') return
+    const box = ref.current?.getBoundingClientRect()
+    if (!box) return
+    setTilt({
+      x: (0.5 - (e.clientY - box.top) / box.height) * TILT * 2,
+      y: ((e.clientX - box.left) / box.width - 0.5) * TILT * 2,
+    })
+  }
 
   return (
-    <div className="relative overflow-hidden rounded-lg border border-line bg-s2 p-5">
-      {/* Papaya fading out to the right, so the card reads as the start of the
-          row rather than as a box sitting beside one. */}
-      <span
-        className="absolute inset-x-0 top-0 h-[3px]"
-        style={{ background: 'linear-gradient(90deg, var(--pap), transparent)' }}
-        aria-hidden
+    <div
+      ref={ref}
+      onPointerMove={handleMove}
+      onPointerLeave={() => setTilt(null)}
+      className="anim-wipe relative overflow-hidden rounded-xl border border-hairline"
+      style={{
+        background:
+          'linear-gradient(155deg, color-mix(in srgb, var(--team) 17%, #12151b) 0%, #0b0d12 64%)',
+        transform: tilt
+          ? `perspective(900px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`
+          : undefined,
+        transition: 'transform 260ms cubic-bezier(0.22, 1, 0.36, 1)',
+        boxShadow: '0 1px 0 rgba(255,255,255,0.07) inset, 0 26px 50px -30px rgba(0,0,0,1)',
+      }}
+    >
+      {/* Livery edge and the one-shot broadcast flare across it. */}
+      <div className="absolute inset-x-0 top-0 h-1" style={{ background: 'var(--team)' }} />
+      <div
+        className="anim-flare pointer-events-none absolute inset-y-0 left-0 w-full"
+        style={{
+          background:
+            'linear-gradient(90deg, transparent 0%, color-mix(in srgb, var(--team) 42%, transparent) 55%, transparent 100%)',
+        }}
       />
 
-      <div className="flex items-start gap-[18px]">
-        <div className="relative h-[132px] w-[104px] flex-none">
+      <div className="relative flex h-full items-center gap-4 p-4 sm:p-5">
+        <div className="relative shrink-0">
           {showPortrait ? (
             <img
-              src={src}
+              src={portrait}
               alt={`${driver.first} ${driver.last}`}
               width={104}
-              height={132}
-              className="h-full w-full rounded-md object-cover"
+              height={104}
+              loading="eager"
               onError={() => setPortraitFailed(true)}
+              className="h-[92px] w-[92px] rounded-xl object-cover sm:h-[104px] sm:w-[104px]"
+              // Faces sit above centre in these press photos, so the crop is
+              // biased up rather than centred.
+              style={{
+                objectPosition: '50% 16%',
+                boxShadow:
+                  '0 0 0 2px color-mix(in srgb, var(--team) 70%, transparent), 0 14px 28px -14px #000',
+              }}
             />
           ) : (
-            <div className="grid h-full w-full place-items-center rounded-md bg-s3">
-              <Helmet driver={driver} size={104} />
-            </div>
+            <Helmet driver={driver} size={104} />
           )}
 
-          {/* Overlapping the portrait's corner the way a car number overlaps the
-              bodywork. `.cut` is the single-diagonal number-board shape. */}
+          {/* Car number, worn on the corner of the portrait the way it sits on
+              the nose of the car. */}
           {driver.number > 0 && (
             <span
-              className="cut mono absolute -bottom-2.5 -left-2.5 px-2 py-1.5 text-[20px] font-bold leading-none text-ink"
+              className="tower absolute -bottom-2 -left-2 grid h-8 min-w-[34px] place-items-center rounded-md px-1.5"
               style={{
-                background: 'var(--pap)',
-                boxShadow: '0 6px 16px -8px var(--pap)',
+                fontSize: 19,
+                background: 'var(--team)',
+                color: driver.team.ink,
+                boxShadow: '0 0 20px -6px color-mix(in srgb, var(--team) 80%, transparent)',
               }}
             >
               {driver.number}
             </span>
           )}
+
         </div>
 
-        <div className="flex min-w-0 flex-col gap-[3px] pt-1.5">
-          <span className="flex items-center gap-2">
-            {/* The livery swatch carries the team colour; the name stays cyan.
-                --team is a raw livery hex and several of them (Williams' light
-                blue, Mercedes' aqua) fall below reading contrast on the light
-                theme's white card, so colour identifies the team and a
-                theme-aware token carries the text. */}
-            <span
-              className="h-[7px] w-[7px] flex-none rounded-[1px]"
-              style={{ background: 'var(--team)' }}
-              aria-hidden
-            />
-            <span className="truncate font-cond text-[9.5px] font-semibold uppercase leading-none tracking-[0.2em] text-cyan">
-              {driver.team.name}
-            </span>
-          </span>
+        <div className="min-w-0 flex-1">
+          <p
+            className="eyebrow leading-tight"
+            style={{ color: 'var(--team)', letterSpacing: '0.14em' }}
+          >
+            {driver.team.name}
+          </p>
 
           {driver.first && (
-            <span className="mt-1.5 text-[14px] leading-[1.1] text-t2">{driver.first}</span>
+            <p className="mt-1.5 text-[13px] font-medium leading-none text-ink-secondary">
+              {driver.first}
+            </p>
           )}
 
-          <h2 className="font-cond text-[34px] font-bold uppercase leading-none tracking-[0.03em] text-t1">
+          {/* Condensed, and never broken across lines. HÜLKENBERG and
+              VERSTAPPEN are ten characters and have to fit beside a portrait in
+              a 380px column, which the display face at any readable size does
+              not — the timing-tower width does. */}
+          <h2
+            className="tower mt-1.5 uppercase text-ink-primary"
+            style={{
+              fontSize: 'clamp(24px, 2.5vw, 34px)',
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              textOverflow: 'clip',
+            }}
+            title={`${driver.first} ${driver.last}`}
+          >
             {driver.last}
           </h2>
         </div>

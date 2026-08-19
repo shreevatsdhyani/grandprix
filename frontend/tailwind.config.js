@@ -1,68 +1,72 @@
 /** @type {import('tailwindcss').Config} */
-
-// Every colour here resolves to a CSS variable defined in src/index.css, never to
-// a literal. That is what makes the COCKPIT/PIT LANE toggle work: flipping
-// `data-theme` on <html> re-points all of them at once, with no `dark:` variants
-// anywhere in the markup and no second palette to keep in sync.
-//
-// Names match the design tokens deliberately (s1/s2/s3, t1/t2/t3, pap/cyan/mag)
-// so markup reads the same as the spec it was drawn from.
 export default {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
     extend: {
       colors: {
-        bg: 'var(--bg)',
-        s1: 'var(--s1)',
-        s2: 'var(--s2)',
-        s3: 'var(--s3)',
+        // Surfaces. Names are kept from the first build so existing markup keeps
+        // resolving; the values moved to the blue-black carbon in index.css.
+        plane: '#07080b',
+        surface: '#0e1015',
+        raised: '#161a21',
+        hairline: '#232833',
+        'hairline-bright': '#38404f',
 
-        line: 'var(--line)',
-        line2: 'var(--line2)',
+        ink: {
+          primary: '#eef2f8',
+          secondary: '#98a2b3',
+          muted: '#626c7c',
+        },
 
-        t1: 'var(--t1)',
-        t2: 'var(--t2)',
-        t3: 'var(--t3)',
+        // Data series — unchanged hues, they are load-bearing across the charts.
+        series: {
+          1: '#00d9ff', // pace delta
+          2: '#ff0050', // stress index
+          3: '#00ff88', // transcript signal
+        },
 
-        pap: 'var(--pap)',
-        pap2: 'var(--pap2)',
-        yel: 'var(--yel)',
-        cyan: 'var(--cyan)',
-        mag: 'var(--mag)',
-        pur: 'var(--pur)',
-        grn: 'var(--grn)',
+        status: {
+          good: '#00ff88',      // Green = calm/good
+          warning: '#ffaa00',   // Amber/orange = stressed
+          serious: '#ff6b00',   // Orange = serious warning
+          critical: '#ff0050',  // Red = critical ONLY
+        },
 
-        glass: 'var(--glass)',
-        grid: 'var(--grid)',
+        // Brand color changed from red to cyan (red reserved for critical states)
+        brand: '#00d9ff', // Racing cyan (neutral, not alarming)
+        accent: {
+          cyan: '#00E5FF',      // Brighter cyan for pace/neutral data
+          purple: '#b000ff',
+          green: '#00ff88',     // Green for calm/good states
+          amber: '#ffaa00',     // Amber for stressed states
+        },
 
-        // Readable text on top of papaya. Same value in both themes.
-        ink: 'var(--ink)',
-
-        // Livery colour of the driver on screen. Set on the root div in App.tsx.
+        // Livery colour of the driver currently on screen, set from JS.
         team: 'var(--team)',
-        'team-ink': 'var(--team-ink)',
       },
-
-      borderColor: {
-        DEFAULT: 'var(--line)',
-      },
-
       fontFamily: {
-        // Prose only.
-        sans: ['Barlow', 'system-ui', '-apple-system', 'sans-serif'],
-        // Every heading, eyebrow, button and driver surname.
-        cond: ['Barlow Condensed', 'Barlow', 'system-ui', 'sans-serif'],
-        // Every number, lap reference and model id.
-        mono: ['Roboto Mono', 'ui-monospace', 'SF Mono', 'monospace'],
+        sans: ['InterVar', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['Archivo', 'system-ui', 'sans-serif'],
+        // Racing-style condensed fonts for headlines, driver names, section titles
+        racing: ['Titillium Web', 'Barlow Condensed', 'system-ui', 'sans-serif'],
+        condensed: ['Barlow Condensed', 'Titillium Web', 'system-ui', 'sans-serif'],
+        // Tabular monospace for timing-tower style numbers
+        mono: ['JetBrainsMonoVar', 'JetBrains Mono', 'ui-monospace', 'monospace'],
       },
-
       boxShadow: {
-        panel: 'var(--sh)',
+        'glow-red': '0 0 24px rgba(255, 0, 80, 0.35)',
+        'glow-cyan': '0 0 24px rgba(0, 217, 255, 0.35)',
+        'glow-green': '0 0 24px rgba(0, 255, 136, 0.35)',
+        'glow-team': '0 0 26px color-mix(in srgb, var(--team) 45%, transparent)',
+        bevel: '0 1px 0 rgba(255,255,255,0.06) inset, 0 18px 40px -24px rgba(0,0,0,0.9)',
       },
-
-      // The mockup is a fixed 1440px canvas; this is its content width.
-      maxWidth: {
-        canvas: '1440px',
+      backgroundImage: {
+        'racing-gradient': 'linear-gradient(135deg, #e6002b 0%, #00d9ff 100%)',
+        'racing-gradient-vertical': 'linear-gradient(180deg, #e6002b 0%, #00d9ff 100%)',
+      },
+      animation: {
+        'pulse-slow': 'gp-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'spin-slow': 'gp-spin 3s linear infinite',
       },
     },
   },

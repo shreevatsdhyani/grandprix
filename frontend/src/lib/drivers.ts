@@ -38,13 +38,7 @@ const TEAMS = {
   alpine: { name: 'Alpine', color: '#2C8FE0', ink: '#ffffff' },
   williams: { name: 'Williams', color: '#64C4FF', ink: '#00131f' },
   rb: { name: 'RB', color: '#6692FF', ink: '#050b1c' },
-  // The same entry two renames earlier. Kept separate rather than folded into
-  // `rb` because the 2023 sessions are 2023 sessions: a driver who never raced
-  // for RB must not be captioned as though he did.
-  alphatauri: { name: 'AlphaTauri', color: '#2B4562', ink: '#ffffff' },
   sauber: { name: 'Kick Sauber', color: '#52E252', ink: '#041a04' },
-  /** Same entry one rename earlier, for the same reason as `alphatauri`. */
-  alfa: { name: 'Alfa Romeo', color: '#C92D4B', ink: '#ffffff' },
   haas: { name: 'Haas F1 Team', color: '#E6002B', ink: '#ffffff' },
 } satisfies Record<string, Team>
 
@@ -67,7 +61,6 @@ export const DRIVERS: Record<string, Driver> = {
   TSU: { code: 'TSU', first: 'Yuki', last: 'Tsunoda', number: 22, team: TEAMS.rb, helmet: ['#F2F2F2', '#E4002B', '#101010'] },
   RIC: { code: 'RIC', first: 'Daniel', last: 'Ricciardo', number: 3, team: TEAMS.rb, helmet: ['#141414', '#FFC400', '#F2F2F2'] },
   LAW: { code: 'LAW', first: 'Liam', last: 'Lawson', number: 40, team: TEAMS.rb, helmet: ['#101010', '#C8CDD4', '#2F6FEA'] },
-  DEV: { code: 'DEV', first: 'Nyck', last: 'de Vries', number: 21, team: TEAMS.alphatauri, helmet: ['#F2F2F2', '#FF6A00', '#101010'] },
   BOT: { code: 'BOT', first: 'Valtteri', last: 'Bottas', number: 77, team: TEAMS.sauber, helmet: ['#F2F2F2', '#1B75BB', '#101010'] },
   ZHO: { code: 'ZHO', first: 'Guanyu', last: 'Zhou', number: 24, team: TEAMS.sauber, helmet: ['#E4002B', '#FFC400', '#101010'] },
   MAG: { code: 'MAG', first: 'Kevin', last: 'Magnussen', number: 20, team: TEAMS.haas, helmet: ['#E6002B', '#F2F2F2', '#101010'] },
@@ -86,41 +79,10 @@ const UNKNOWN_TEAM: Team = { name: 'Unlisted entry', color: '#8A93A3', ink: '#0b
 export const portraitUrl = (code: string): string | null =>
   DRIVERS[code] ? `/drivers/${code}.jpg` : null
 
-/**
- * Teams as they were named in 2023, for the drivers whose entry above records
- * the 2024 name.
- *
- * `DRIVERS` holds one team per code, which is the current one — and the cached
- * sessions span two seasons across two rebrands, so a 2023 race captioned from
- * that map puts Tsunoda in RB and Bottas in Kick Sauber, neither of which
- * existed yet. The visible tell was Tsunoda and de Vries, actual 2023
- * teammates, rendering on two different teams in the same race: `DEV` only ever
- * raced for AlphaTauri so his entry is already correct, and the drivers who
- * raced through the rename are the ones that need the year.
- *
- * Only the renames are listed. Everything else kept its name across both
- * seasons, and a driver who is absent here is a driver whose entry is already
- * right for every season we cache.
- */
-const TEAM_2023: Record<string, Team> = {
-  TSU: TEAMS.alphatauri,
-  RIC: TEAMS.alphatauri,
-  LAW: TEAMS.alphatauri,
-  BOT: TEAMS.alfa,
-  ZHO: TEAMS.alfa,
-}
-
-/**
- * Never throws: a code we have no card for still gets a usable identity.
- *
- * `year` is optional because the driver picker only needs a name to label an
- * option, and passing a year it does not have would be worse than omitting it.
- * Anything that shows a team — the plate, the livery variables — should pass it.
- */
-export function getDriver(code: string, year?: number): Driver {
-  const card = DRIVERS[code]
-  if (!card) {
-    return {
+/** Never throws: a code we have no card for still gets a usable identity. */
+export function getDriver(code: string): Driver {
+  return (
+    DRIVERS[code] ?? {
       code,
       first: '',
       last: code,
@@ -128,8 +90,5 @@ export function getDriver(code: string, year?: number): Driver {
       team: UNKNOWN_TEAM,
       helmet: ['#2A2F38', '#8A93A3', '#C8CDD4'],
     }
-  }
-
-  const then = year != null && year <= 2023 ? TEAM_2023[code] : undefined
-  return then ? { ...card, team: then } : card
+  )
 }

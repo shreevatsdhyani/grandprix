@@ -410,24 +410,6 @@ class HealthResponse(BaseModel):
     )
 
 
-class ModelCard(BaseModel):
-    n_train: int = Field(description="Labelled clips the head was fitted on")
-    cv_accuracy: float = Field(
-        ge=0, le=1, description="Cross-validated accuracy of the fusion head"
-    )
-    naive_accuracy: float = Field(
-        ge=0,
-        le=1,
-        description=(
-            "Same labels, single acoustic SER model — the baseline fusion is "
-            "measured against."
-        ),
-    )
-    features: list[str] = Field(
-        description="Feature vector, in the positional order coefficients are stored in"
-    )
-
-
 # --------------------------------------------------------------------------
 # Race context — what was true at a given instant
 #

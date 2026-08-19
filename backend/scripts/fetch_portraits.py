@@ -4,28 +4,18 @@
 Build-time only. Writes JPEGs into frontend/public/drivers/ plus a credits file,
 so the running app never touches the network. Any image whose Commons licence is
 not clearly free is skipped rather than shipped.
-
-Usage:
-    python scripts/fetch_portraits.py          # every driver in TITLES
-    python scripts/fetch_portraits.py DEV ...  # only these codes
 """
 from __future__ import annotations
 
 import json
+import subprocess
 import sys
 import urllib.parse
 import urllib.request
 from pathlib import Path
 
-from PIL import Image
-
-ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "frontend" / "public" / "drivers"
+OUT = Path("/Users/akshatsaraswat/Desktop/grandprix/frontend/public/drivers")
 OUT.mkdir(parents=True, exist_ok=True)
-
-# Longest side, matching the portraits already in the repo (520px tall).
-LONG_EDGE = 520
-JPEG_QUALITY = 72
 
 UA = "SilentCoDriver-Hackathon/1.0 (offline demo; contact: akshats@damcogroup.com)"
 
@@ -48,7 +38,6 @@ TITLES = {
     "TSU": "Yuki Tsunoda",
     "RIC": "Daniel Ricciardo",
     "LAW": "Liam Lawson",
-    "DEV": "Nyck de Vries",
     "BOT": "Valtteri Bottas",
     "ZHO": "Zhou Guanyu",
     "MAG": "Kevin Magnussen",
@@ -91,17 +80,8 @@ def licence(filename: str) -> dict:
     }
 
 
-wanted = [c.upper() for c in sys.argv[1:]]
-unknown = [c for c in wanted if c not in TITLES]
-if unknown:
-    sys.exit(
-        f"Unknown driver code(s): {', '.join(unknown)}\n"
-        f"Known: {', '.join(sorted(TITLES))}"
-    )
-targets = {c: TITLES[c] for c in wanted} if wanted else TITLES
-
 credits = {}
-for code, title in targets.items():
+for code, title in TITLES.items():
     try:
         s = summary(title)
         src = (s.get("originalimage") or s.get("thumbnail") or {}).get("source")
@@ -128,15 +108,12 @@ for code, title in targets.items():
         raw = OUT / f"{code}.raw"
         raw.write_bytes(get(scaled))
 
-        # Pillow rather than macOS `sips`, which this used to shell out to and
-        # which does not exist off a Mac. `thumbnail` matches `sips -Z`: fit the
-        # longest side, aspect preserved, never upscale. RGB because a Commons
-        # source may be a palettised or alpha PNG and JPEG takes neither.
         dest = OUT / f"{code}.jpg"
-        with Image.open(raw) as im:
-            im = im.convert("RGB")
-            im.thumbnail((LONG_EDGE, LONG_EDGE), Image.LANCZOS)
-            im.save(dest, "JPEG", quality=JPEG_QUALITY, optimize=True)
+        subprocess.run(
+            ["sips", "-s", "format", "jpeg", "-s", "formatOptions", "72",
+             "-Z", "520", str(raw), "--out", str(dest)],
+            check=True, capture_output=True,
+        )
         raw.unlink()
 
         credits[code] = {

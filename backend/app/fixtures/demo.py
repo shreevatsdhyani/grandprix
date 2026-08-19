@@ -253,7 +253,10 @@ def build_timeline(driver: str = "HAM", mode: ScoringMode = ScoringMode.FUSION) 
         # has almost nothing to fire on. That contrast is the A/B toggle's point.
         strategy_calls=(
             DEMO_STRATEGY
-            if mode is ScoringMode.FUSION
+            # `==` for the same reason as `Analysis.result_for` — identity here
+            # reads a plain "fusion" as naive and silently serves the wrong half
+            # of the A/B toggle.
+            if mode == ScoringMode.FUSION
             else [c for c in DEMO_STRATEGY if c.code == "HOLD"]
         ),
         lead_lag=_lead_lag(),

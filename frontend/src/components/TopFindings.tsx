@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import type { ContextDomain, Finding, FindingsResponse, Urgency } from '../types'
-import { URGENCY_COLOR } from '../types'
+import { URGENCY_COLOR } from '../lib/mood'
 
 /**
  * The LLM's ranked reading of the whole session.

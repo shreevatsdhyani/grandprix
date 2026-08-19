@@ -1,557 +1,626 @@
-import {
-  Area,
-  AreaChart,
-  CartesianGrid,
-  Line,
-  LineChart,
-  ReferenceArea,
-  ReferenceLine,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from 'recharts'
-import type { Verdict } from '../lib/verdict'
+import { useMemo } from 'react'
+import { MOOD_COLOR, moodMarker } from '../lib/mood'
 import type { Mood, Timeline, TimelinePoint } from '../types'
-import { MOOD_COLOR } from '../types'
+import type { Verdict } from '../lib/verdict'
 
 /**
- * Pirelli's own compound colours. Borrowed deliberately: every F1 viewer already
- * reads red-yellow-white as soft-medium-hard, so inventing a palette here would
- * be strictly worse than using the one the audience knows. Never the only signal
- * — the compound name is always printed alongside.
+ * Voice stress and race pace on one lap axis.
+ *
+ * Two charts rather than one with twin y-axes. A dual axis lets a reader draw
+ * whatever conclusion the scaling flatters — and the conclusion here is about
+ * *when* two curves turn, not how their magnitudes compare, so a shared x and
+ * separate y is both more honest and easier to read.
+ *
+ * Hand-built SVG rather than a chart library. The annotation lines, the
+ * mood-shaped markers, the line-draw reveal and the break-on-null pace path all
+ * have to be exact, and expressing them through a library's escape hatches was
+ * longer than the geometry itself.
  */
-const COMPOUND_COLOR: Record<string, string> = {
-  SOFT: '#FF3333',
-  MEDIUM: '#FFD12E',
-  HARD: '#EDEDED',
-  INTERMEDIATE: '#43B02A',
-  WET: '#0067AD',
-  UNKNOWN: '#7A7A7A',
-}
 
-const compoundColor = (c: string | null | undefined) =>
-  COMPOUND_COLOR[(c ?? 'UNKNOWN').toUpperCase()] ?? COMPOUND_COLOR.UNKNOWN
+/* Shared frame. The 912-unit width is the design's; `width:100%` on a viewBox
+   makes it responsive without recomputing anything. */
+const W = 912
+const PAD_L = 44
+const PAD_R = 10
+const SPAN = W - PAD_L - PAD_R
 
-/** Contiguous runs of one value along the lap axis, for drawing bands. */
-function runs<T>(
-  points: TimelinePoint[],
-  value: (p: TimelinePoint) => T | null | undefined,
-): { from: number; to: number; value: T }[] {
-  const out: { from: number; to: number; value: T }[] = []
-  for (const p of points) {
-    const v = value(p)
-    if (v == null) continue
-    const last = out.at(-1)
-    if (last && last.value === v && last.to === p.lap - 1) last.to = p.lap
-    else out.push({ from: p.lap, to: p.lap, value: v })
-  }
-  return out
-}
+/* Pace panel: 0 at y=61, one second of delta spanning 51 units either way. */
+const PACE_H = 150
+const PACE_TOP = 10
+const PACE_BOTTOM = 126
 
-/**
- * The evidence for the verdict above.
- *
- * Deliberately NOT a dual-axis chart. Pace delta (seconds) and stress index
- * (0–100) have unrelated scales, and overlaying them on two y-axes lets the
- * arbitrary scale alignment invent a correlation that isn't in the data.
- *
- * Instead: two panels stacked on the same lap scale with a synchronised
- * crosshair. That is also strictly better for the headline claim — vertically
- * aligned on one x-scale, the reader can *see* the stress peak sitting left of
- * the pace collapse. A dual axis would have let us fake that offset, which is
- * exactly why it isn't trustworthy.
- *
- * The warning band is the one piece of chart furniture that is an argument
- * rather than a reading: a shaded span running through both panels, from the
- * lap the voice peaked to the lap the pace went. It is drawn from the backend's
- * lead-lag peak, never from eyeballing the curves.
- */
+/* Stress panel: 0–100 maps 176 → 18. */
+const STRESS_TOP = 18
+const STRESS_BOTTOM = 176
 
 interface Props {
   timeline: Timeline
+  verdict: Verdict
+  /**
+   * The scheduled race distance, for comparison only — the axis is always this
+   * driver's own laps. A retirement makes the two differ a lot (Tsunoda ran 7 of
+   * Monza's 53) and an axis that stops at 7 next to a banner reading 53 LAPS
+   * reads as a broken chart unless the caption says whose laps these are.
+   */
+  raceLaps: number | null
   selectedClipId: string | null
   onSelectClip: (clipId: string) => void
-  verdict: Verdict | null
 }
 
-const AXIS = 'var(--axis)'
-const GRID = 'var(--gridline)'
-const MUTED = '#7A8290' // Slightly brighter than text-muted for better tick label visibility
+type Scored = TimelinePoint & { stress_index: number; mood: Mood }
 
-/** Mood markers are shape-coded as well as colour-coded: the status red/green
- *  pair fails CVD separation, so colour may never be the only channel. */
-function MoodDot(props: {
-  cx?: number
-  cy?: number
-  payload?: TimelinePoint
-  selectedClipId: string | null
-  onSelectClip: (id: string) => void
-}) {
-  const { cx, cy, payload, selectedClipId, onSelectClip } = props
-  if (cx == null || cy == null || !payload?.mood || !payload.clip_id) return null
+export function RaceTimeline({
+  timeline,
+  verdict,
+  raceLaps,
+  selectedClipId,
+  onSelectClip,
+}: Props) {
+  const geo = useMemo(() => layout(timeline.points), [timeline.points])
+  const { totalLaps, x, paceY, domain, clipped, paceSegments, scored, ticks } = geo
 
-  const mood = payload.mood as Mood
-  const fill = MOOD_COLOR[mood]
-  const selected = payload.clip_id === selectedClipId
-  const r = selected ? 7.5 : 6
-
-  const shape =
-    mood === 'Calm' ? (
-      <circle cx={cx} cy={cy} r={r} fill={fill} stroke="var(--surface-1)" strokeWidth={2} />
-    ) : mood === 'Stressed' ? (
-      <polygon
-        points={`${cx},${cy - r - 1} ${cx + r + 1},${cy + r} ${cx - r - 1},${cy + r}`}
-        fill={fill}
-        stroke="var(--surface-1)"
-        strokeWidth={2}
-      />
-    ) : (
-      <rect
-        x={cx - r}
-        y={cy - r}
-        width={r * 2}
-        height={r * 2}
-        fill={fill}
-        stroke="var(--surface-1)"
-        strokeWidth={2}
-      />
-    )
+  const peakLap = verdict.peakStress?.lap ?? null
+  const lossLap =
+    verdict.paceLossLap != null ? Math.min(verdict.paceLossLap, totalLaps) : null
+  const showWindow = peakLap != null && lossLap != null && lossLap > peakLap
 
   return (
-    <g
-      onClick={() => onSelectClip(payload.clip_id!)}
-      style={{ cursor: 'pointer' }}
-      role="button"
-      aria-label={`Lap ${payload.lap}, ${mood}. Open this radio call.`}
-    >
-      {/* Invisible 24px hit target — the visible mark is far too small to be a
-          reliable click target, especially on a projector at 3m. */}
-      <circle cx={cx} cy={cy} r={12} fill="transparent" />
-      {selected && (
-        <circle cx={cx} cy={cy} r={r + 5} fill="none" stroke={fill} strokeWidth={1.5} opacity={0.6} />
-      )}
-      {shape}
-    </g>
-  )
-}
-
-function ChartTooltip({ active, payload }: any) {
-  if (!active || !payload?.length) return null
-  const p: TimelinePoint = payload[0].payload
-  return (
-    <div className="panel px-3 py-2 text-xs shadow-xl">
-      <div className="tower text-ink-primary" style={{ fontSize: 14 }}>
-        LAP {p.lap}
-      </div>
-      {p.delta_s != null && (
-        <div className="tabular mt-1 text-ink-secondary">
-          Pace {p.delta_s > 0 ? '+' : ''}
-          {p.delta_s.toFixed(2)}s vs clean-lap median
-        </div>
-      )}
-      {p.stress_index != null && (
-        <div className="tabular text-ink-secondary">Stress {Math.round(p.stress_index)}/100</div>
-      )}
-      {p.mood && (
-        <div className="mt-1 font-semibold" style={{ color: MOOD_COLOR[p.mood] }}>
-          {p.mood}
-          <span className="ml-1 font-normal text-ink-muted">— click to open</span>
-        </div>
-      )}
-    </div>
-  )
-}
-
-/**
- * Robust y-domain for the pace panel.
- *
- * A single wet or damaged lap can be +6s while the racing variation that
- * matters lives inside ±1s. Fitting the axis to the extreme flattens the whole
- * series into a straight line and hides the signal the panel exists to show.
- *
- * So the axis is fitted to the 2nd–95th percentile and outliers are allowed to
- * overflow — but the count is reported under the chart, because silently
- * cropping data points would be worse than an unreadable axis.
- */
-function robustDomain(values: number[]): { domain: [number, number]; clipped: number } {
-  if (values.length < 4) return { domain: [-1, 1], clipped: 0 }
-  const sorted = [...values].sort((a, b) => a - b)
-  const at = (q: number) => sorted[Math.min(sorted.length - 1, Math.floor(q * sorted.length))]
-  const lo = at(0.02)
-  const hi = at(0.95)
-  const pad = Math.max(0.15, (hi - lo) * 0.15)
-  const domain: [number, number] = [
-    Math.min(-0.25, Math.floor((lo - pad) * 4) / 4),
-    Math.max(0.5, Math.ceil((hi + pad) * 4) / 4),
-  ]
-  const clipped = values.filter((v) => v < domain[0] || v > domain[1]).length
-  return { domain, clipped }
-}
-
-export function RaceTimeline({ timeline, selectedClipId, onSelectClip, verdict }: Props) {
-  const data = timeline.points
-  const selected = timeline.clips.find((c) => c.clip_id === selectedClipId)
-  const hasStress = data.some((p) => p.stress_index != null)
-
-  const { domain: paceDomain, clipped } = robustDomain(
-    data.map((p) => p.delta_s).filter((v): v is number => v != null),
-  )
-
-  // Tyre and weather bands. Both come from the per-lap context, which is
-  // populated for every lap once scripts/build_context.py has run — so these are
-  // continuous. A session with no context built produces empty arrays and the
-  // chart renders exactly as it did before.
-  const compoundRuns = runs(data, (p) => p.tyre?.compound)
-  const wetRuns = runs(data, (p) => (p.track?.rainfall === true ? 'wet' : null))
-
-  const peakLap = verdict?.peakStress?.lap ?? null
-  const lossLap = verdict?.paceLossLap ?? null
-  const bandLaps = verdict?.leadLaps ?? null
-  // Only draw the band when both ends exist in the plotted range; a reference
-  // area anchored to a lap the axis doesn't contain renders in the wrong place.
-  const laps = new Set(data.map((p) => p.lap))
-  const showBand =
-    peakLap != null && lossLap != null && laps.has(peakLap) && laps.has(lossLap)
-
-  /** Shared furniture, so both panels annotate the same laps identically. */
-  const annotations = (showLabel: boolean) => (
-    <>
-      {/* Rain first, so it sits behind the warning band and the crosshair. A wet
-          track changes what every other number on the chart means, so it belongs
-          on both panels rather than in a legend. */}
-      {wetRuns.map((r) => (
-        <ReferenceArea
-          key={`wet-${r.from}`}
-          x1={r.from}
-          x2={r.to}
-          fill={COMPOUND_COLOR.WET}
-          fillOpacity={0.1}
-          stroke="none"
-        />
-      ))}
-      {showBand && (
-        <ReferenceArea
-          x1={peakLap!}
-          x2={lossLap!}
-          fill="var(--status-critical)"
-          fillOpacity={0.13}
-          stroke="var(--status-critical)"
-          strokeOpacity={0.35}
-          strokeDasharray="3 3"
-          label={
-            showLabel
-              ? {
-                  value: `${bandLaps} ${bandLaps === 1 ? 'LAP' : 'LAPS'} OF WARNING`,
-                  position: 'insideTop',
-                  fill: 'var(--status-critical)',
-                  fontSize: 10,
-                  fontWeight: 700,
-                  offset: 8,
-                }
-              : undefined
-          }
-        />
-      )}
-      {selected?.lap != null && (
-        <ReferenceLine x={selected.lap} stroke="var(--accent-cyan)" strokeOpacity={0.45} strokeWidth={1} />
-      )}
-    </>
-  )
-
-  const firstLap = data[0]?.lap ?? 1
-  const lastLap = data.at(-1)?.lap ?? 1
-  const lapSpan = Math.max(1, lastLap - firstLap + 1)
-  const pct = (lap: number) => ((lap - firstLap) / lapSpan) * 100
-
-  /**
-   * Tyre strip.
-   *
-   * Positioned by percentage of the lap range rather than drawn inside a Recharts
-   * axis, because it has to line up with TWO charts that each own their own plot
-   * area. The charts share `syncId` and identical margins, so a strip inset by the
-   * same margins tracks both.
-   */
-  const tyreStrip = compoundRuns.length > 0 && (
-    <div className="px-4 pb-3 sm:px-5">
-      <div className="flex items-baseline justify-between gap-3 pb-1">
-        <span className="mono text-[9px] uppercase tracking-wide text-ink-muted">tyre</span>
-        <span className="mono text-[9px] text-ink-muted">
-          compound from timing data · degradation modelled
-        </span>
-      </div>
-      {/* Left/right insets match the charts' margins so laps align. */}
-      <div className="relative ml-[4px] mr-[12px] h-[18px] overflow-hidden rounded">
-        {compoundRuns.map((r) => {
-          const width = pct(r.to + 1) - pct(r.from)
-          const color = compoundColor(r.value)
-          return (
-            <div
-              key={`compound-${r.from}`}
-              className="absolute inset-y-0 flex items-center justify-center overflow-hidden"
-              style={{ left: `${pct(r.from)}%`, width: `${width}%`, background: color, opacity: 0.85 }}
-              title={`${r.value}: laps ${r.from}-${r.to}`}
-            >
-              {/* The name is printed whenever the band is wide enough, so colour
-                  is never the only encoding. HARD and MEDIUM are light, so the
-                  label flips to dark ink on those. */}
-              {width > 9 && (
-                <span
-                  className="mono truncate px-1 text-[9px] font-semibold uppercase"
-                  style={{
-                    color: ['HARD', 'MEDIUM'].includes(r.value.toUpperCase())
-                      ? 'var(--plane)'
-                      : '#fff',
-                  }}
-                >
-                  {r.value}
-                </span>
-              )}
-            </div>
-          )
-        })}
-      </div>
-      <div className="mt-1 flex flex-wrap gap-x-3 gap-y-1">
-        {compoundRuns.map((r) => (
-          <span key={`legend-${r.from}`} className="mono text-[9px] text-ink-muted">
-            <span
-              className="mr-1 inline-block h-2 w-2 rounded-sm align-middle"
-              style={{ background: compoundColor(r.value) }}
-              aria-hidden
-            />
-            {r.value} L{r.from}-{r.to}
-          </span>
-        ))}
-        {wetRuns.length > 0 && (
-          <span className="mono text-[9px] text-ink-muted">
-            <span
-              className="mr-1 inline-block h-2 w-2 rounded-sm align-middle"
-              style={{ background: COMPOUND_COLOR.WET, opacity: 0.35 }}
-              aria-hidden
-            />
-            shaded = track wet
-          </span>
-        )}
-      </div>
-    </div>
-  )
-
-  return (
-    <section className="panel overflow-hidden" aria-label="Race timeline">
-      <header className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 px-4 pb-3 pt-4 sm:px-5">
-        <div>
-          <h2 className="display text-[17px] uppercase text-ink-primary">The evidence</h2>
-          <p className="mt-1 text-xs text-ink-secondary">
+    <section className="panel px-5 pb-4 pt-5" aria-label="The evidence">
+      <div className="flex flex-wrap items-start justify-between gap-x-5 gap-y-3">
+        <div className="min-w-0">
+          <h2 className="font-cond text-[17px] font-bold uppercase leading-none tracking-[0.14em] text-t1">
+            The Evidence
+          </h2>
+          <p className="mt-1.5 text-[12.5px] leading-[1.4] text-t3">
             Voice stress and race pace on one lap axis. Click any marker to hear the call.
           </p>
         </div>
-        <div className="flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-ink-secondary">
-          <span className="flex items-center gap-1.5">
-            <span className="inline-block h-0.5 w-4 rounded" style={{ background: 'var(--series-1)' }} />
-            Pace delta
-          </span>
-          <span className="flex items-center gap-1.5">
-            <span
-              className="inline-block h-2 w-4 rounded-sm"
-              style={{ background: 'var(--series-2)', opacity: 0.55 }}
-            />
-            Stress index
-          </span>
+
+        <div className="flex gap-4 pt-0.5">
+          <LegendItem label="Pace delta">
+            <span className="h-[2px] w-4 flex-none bg-cyan" />
+          </LegendItem>
+          <LegendItem label="Stress index">
+            <span className="h-[11px] w-[11px] flex-none rounded-[1px] bg-mag" />
+          </LegendItem>
         </div>
-      </header>
+      </div>
 
-      {/* ── PANEL 1 — race pace ─────────────────────────────────────────── */}
-      <div className="px-4 sm:px-5">
-        <PanelLabel
-          index={1}
-          title="Race pace"
-          hint="seconds vs this driver's clean-lap median · higher is slower"
+      {/* ── 1 · Race pace ─────────────────────────────────────────────────── */}
+      <ChartCaption
+        index="1"
+        name="Race pace"
+        /* The short-race clause only appears when it is doing work. Two laps of
+           slack is a formation lap or a timing gap on the last tour, not a story;
+           more than that is a retirement, and then the axis needs accounting for. */
+        note={`seconds vs this driver's clean-lap median · higher is slower · the line breaks on laps with no clean time${
+          raceLaps != null && raceLaps - totalLaps > 2
+            ? ` · laps 1–${totalLaps} of ${raceLaps} — this driver's race ended early`
+            : ''
+        }`}
+      />
+
+      <svg
+        viewBox={`0 0 ${W} ${PACE_H}`}
+        className="mt-2 block h-auto w-full overflow-visible"
+        role="img"
+        aria-label={`Race pace by lap for ${timeline.driver}`}
+      >
+        {domain.lines.map((v) => (
+          <line
+            key={v}
+            x1={PAD_L}
+            x2={W - PAD_R}
+            y1={paceY(v)}
+            y2={paceY(v)}
+            stroke="var(--grid)"
+            strokeWidth={1}
+            strokeDasharray="3 5"
+          />
+        ))}
+
+        {/* Zero is the driver's own median, so it gets a solid rule — every
+            reading on this panel is relative to it. */}
+        <line
+          x1={PAD_L}
+          x2={W - PAD_R}
+          y1={paceY(0)}
+          y2={paceY(0)}
+          stroke="var(--line2)"
+          strokeWidth={1}
         />
-      </div>
-      <div className="h-[168px] pr-2 sm:h-[210px]">
-        <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={data} syncId="race" margin={{ top: 14, right: 12, bottom: 4, left: 4 }}>
-            <CartesianGrid stroke={GRID} strokeWidth={1} vertical={false} />
-            <XAxis
-              dataKey="lap"
-              tick={{ fill: MUTED, fontSize: 11 }}
-              axisLine={{ stroke: AXIS }}
-              tickLine={false}
-              interval="preserveStartEnd"
-              minTickGap={26}
-              height={30}
-            />
-            <YAxis
-              width={58}
-              domain={paceDomain}
-              allowDataOverflow
-              tick={{ fill: MUTED, fontSize: 11 }}
-              axisLine={{ stroke: AXIS }}
-              tickLine={false}
-              tickFormatter={(v: number) => `${v > 0 ? '+' : ''}${v.toFixed(1)}s`}
-            />
-            <Tooltip content={<ChartTooltip />} cursor={{ stroke: AXIS, strokeWidth: 1 }} />
-            {annotations(true)}
-            {showBand && (
-              <ReferenceLine
-                x={lossLap!}
-                stroke="var(--series-1)"
-                strokeWidth={1.5}
-                strokeDasharray="4 3"
-                label={{
-                  value: `PACE GONE · L${lossLap}`,
-                  position: 'insideBottomRight',
-                  fill: 'var(--series-1)',
-                  fontSize: 10,
-                  fontWeight: 700,
-                }}
-              />
-            )}
-            <Line
-              type="monotone"
-              dataKey="delta_s"
-              stroke="var(--series-1)"
-              strokeWidth={2}
-              dot={false}
-              activeDot={{ r: 4, strokeWidth: 2, stroke: 'var(--surface-1)' }}
-              connectNulls={false}
-              isAnimationActive={false}
-              name="Pace delta"
-            />
-          </LineChart>
-        </ResponsiveContainer>
-      </div>
 
-      {/* ── PANEL 2 — voice stress ──────────────────────────────────────── */}
-      <div className="px-4 pt-3 sm:px-5">
-        <PanelLabel
-          index={2}
-          title="Voice stress"
-          hint="0–100 from the scoring head · marker shape is the mood"
-        />
-      </div>
-      <div className="relative h-[186px] pr-2 sm:h-[224px]">
-        {!hasStress && (
-          <div className="absolute inset-0 z-10 flex items-center justify-center px-6 text-center">
-            <p className="max-w-sm text-xs leading-snug text-ink-muted">
-              No radio scored for this driver yet. Pick a clip from the library and the stress
-              track fills in.
-            </p>
-          </div>
+        {domain.lines.map((v) => (
+          <text
+            key={v}
+            x={PAD_L - 6}
+            y={paceY(v) + 3}
+            textAnchor="end"
+            fill="var(--t3)"
+            fontFamily="Roboto Mono, monospace"
+            fontSize={9.5}
+          >
+            {formatDelta(v, domain.dp)}
+          </text>
+        ))}
+
+        {showWindow && (
+          <>
+            {/* The window between the voice peak and the pace drop — the finding,
+                drawn rather than described. */}
+            <rect
+              x={x(peakLap)}
+              y={PACE_TOP - 6}
+              width={Math.max(2, x(lossLap) - x(peakLap))}
+              height={PACE_BOTTOM - PACE_TOP + 6}
+              fill="var(--mag)"
+              opacity={0.16}
+            />
+            <line
+              x1={x(lossLap)}
+              x2={x(lossLap)}
+              y1={PACE_TOP - 6}
+              y2={PACE_BOTTOM}
+              stroke="var(--cyan)"
+              strokeWidth={1}
+              strokeDasharray="4 3"
+            />
+            <text
+              x={(x(peakLap) + x(lossLap)) / 2}
+              y={PACE_TOP - 12}
+              textAnchor="middle"
+              fill="var(--mag)"
+              fontFamily="Barlow Condensed, sans-serif"
+              fontSize={10.5}
+              fontWeight={700}
+              letterSpacing={1.4}
+            >
+              {verdict.leadLaps} {verdict.leadLaps === 1 ? 'LAP' : 'LAPS'} OF WARNING
+            </text>
+            <text
+              x={x(lossLap) - 4}
+              y={PACE_BOTTOM + 13}
+              textAnchor="end"
+              fill="var(--cyan)"
+              fontFamily="Barlow Condensed, sans-serif"
+              fontSize={10}
+              fontWeight={700}
+              letterSpacing={1.2}
+            >
+              PACE GONE · L{lossLap}
+            </text>
+          </>
         )}
-        <ResponsiveContainer width="100%" height="100%">
-          <AreaChart data={data} syncId="race" margin={{ top: 14, right: 12, bottom: 4, left: 4 }}>
-            <defs>
-              <linearGradient id="stressFill" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="var(--series-2)" stopOpacity={0.5} />
-                <stop offset="100%" stopColor="var(--series-2)" stopOpacity={0.04} />
-              </linearGradient>
-            </defs>
-            <CartesianGrid stroke={GRID} strokeWidth={1} vertical={false} />
-            <XAxis
-              dataKey="lap"
-              tick={{ fill: MUTED, fontSize: 11 }}
-              axisLine={{ stroke: AXIS }}
-              tickLine={false}
-              interval="preserveStartEnd"
-              minTickGap={26}
-              height={30}
-              label={{ value: 'Lap', position: 'insideBottom', offset: -1, fill: MUTED, fontSize: 10 }}
-            />
-            <YAxis
-              width={58}
-              domain={[0, 100]}
-              ticks={[0, 25, 50, 75, 100]}
-              tick={{ fill: MUTED, fontSize: 11 }}
-              axisLine={{ stroke: AXIS }}
-              tickLine={false}
-            />
-            <Tooltip content={<ChartTooltip />} cursor={{ stroke: AXIS, strokeWidth: 1 }} />
-            {annotations(false)}
-            {showBand && (
-              <ReferenceLine
-                x={peakLap!}
-                stroke="var(--status-critical)"
-                strokeWidth={1.5}
-                strokeDasharray="4 3"
-                label={{
-                  value: `VOICE PEAK · L${peakLap}`,
-                  position: 'insideTopLeft',
-                  fill: 'var(--status-critical)',
-                  fontSize: 10,
-                  fontWeight: 700,
-                }}
-              />
-            )}
-            <Area
-              type="monotone"
-              dataKey="stress_index"
-              stroke="var(--series-2)"
-              strokeWidth={2}
-              fill="url(#stressFill)"
-              connectNulls
-              isAnimationActive={false}
-              dot={(props: any) => (
-                <MoodDot
-                  key={props.payload?.lap}
-                  {...props}
-                  selectedClipId={selectedClipId}
-                  onSelectClip={onSelectClip}
-                />
-              )}
-              activeDot={false}
-              name="Stress index"
-            />
-          </AreaChart>
-        </ResponsiveContainer>
-      </div>
 
-      {tyreStrip}
-
-      <footer className="mt-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-hairline px-4 py-3 text-[11px] text-ink-muted sm:px-5">
-        <span className="flex flex-wrap items-center gap-3">
-          <span className="eyebrow">Radio calls</span>
-          <MoodKey mood="Calm" />
-          <MoodKey mood="Stressed" />
-          <MoodKey mood="Tired" />
-        </span>
-        {clipped > 0 && (
-          <span>
-            Axis fitted to the racing range; {clipped} lap{clipped === 1 ? '' : 's'} beyond it (pit
-            stop or incident) extend past the top.
-          </span>
+        {paceSegments.map((seg, i) =>
+          seg.length === 1 ? (
+            /* A clean lap with clean laps either side of it is a real reading
+               and has to be visible; a one-point path draws nothing. */
+            <circle
+              key={i}
+              cx={x(seg[0].lap)}
+              cy={paceY(seg[0].delta)}
+              r={2}
+              fill="var(--cyan)"
+              className="anim-fin"
+            />
+          ) : (
+            <path
+              key={i}
+              d={`M${seg.map((p) => `${x(p.lap)} ${paceY(p.delta)}`).join(' L')}`}
+              fill="none"
+              stroke="var(--cyan)"
+              strokeWidth={1.9}
+              strokeLinejoin="round"
+              strokeLinecap="round"
+              /* pathLength normalises the geometry to 1 unit, so one dasharray
+                 value reveals every segment regardless of its real length —
+                 otherwise each path needs its own measured length from the DOM. */
+              pathLength={1}
+              style={{
+                ['--gp-len' as string]: 1,
+                strokeDasharray: 1,
+                strokeDashoffset: 1,
+                animation: 'gp-draw 1.5s cubic-bezier(.25,.8,.25,1) .15s forwards',
+                filter: 'drop-shadow(0 0 6px color-mix(in srgb, var(--cyan) 35%, transparent))',
+              }}
+            />
+          ),
         )}
-      </footer>
+
+        {ticks.map((l) => (
+          <text
+            key={l}
+            x={x(l)}
+            y={PACE_H - 3}
+            textAnchor="middle"
+            fill="var(--t3)"
+            fontFamily="Roboto Mono, monospace"
+            fontSize={9}
+          >
+            {l}
+          </text>
+        ))}
+      </svg>
+
+      {/* ── 2 · Voice stress ──────────────────────────────────────────────── */}
+      <ChartCaption
+        index="2"
+        name="Voice stress"
+        note="0–100 from the scoring head · the line joins scored calls · marker shape is the mood"
+      />
+
+      <svg
+        viewBox={`0 0 ${W} 200`}
+        className="mt-2 block h-auto w-full overflow-visible"
+        role="img"
+        aria-label={`Voice stress index by lap for ${timeline.driver}`}
+      >
+        <defs>
+          <linearGradient id="gp-stress-fill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="var(--mag)" stopOpacity={0.45} />
+            <stop offset="100%" stopColor="var(--mag)" stopOpacity={0} />
+          </linearGradient>
+        </defs>
+
+        {[100, 75, 50, 25, 0].map((v) => (
+          <g key={v}>
+            <line
+              x1={PAD_L}
+              x2={W - PAD_R}
+              y1={stressY(v)}
+              y2={stressY(v)}
+              stroke="var(--grid)"
+              strokeWidth={1}
+              strokeDasharray="3 5"
+            />
+            <text
+              x={PAD_L - 6}
+              y={stressY(v) + 3}
+              textAnchor="end"
+              fill="var(--t3)"
+              fontFamily="Roboto Mono, monospace"
+              fontSize={9.5}
+            >
+              {v}
+            </text>
+          </g>
+        ))}
+
+        {peakLap != null && (
+          <>
+            <line
+              x1={x(peakLap)}
+              x2={x(peakLap)}
+              y1={STRESS_TOP - 8}
+              y2={STRESS_BOTTOM}
+              stroke="var(--mag)"
+              strokeWidth={1}
+              strokeDasharray="4 3"
+            />
+            {/* Flipped to the left of its rule once the peak is late in the race.
+                These SVGs are `overflow-visible` so the annotations can sit above
+                the plot, which also means a label anchored right of lap 70 paints
+                past the card and drags a horizontal scrollbar onto the page. */}
+            <text
+              x={x(peakLap) + (x(peakLap) > PAD_L + SPAN * 0.75 ? -8 : 8)}
+              y={STRESS_TOP - 2}
+              textAnchor={x(peakLap) > PAD_L + SPAN * 0.75 ? 'end' : 'start'}
+              fill="var(--yel)"
+              fontFamily="Barlow Condensed, sans-serif"
+              fontSize={10}
+              fontWeight={700}
+              letterSpacing={1.2}
+            >
+              VOICE PEAK · L{peakLap}
+            </text>
+          </>
+        )}
+
+        {/* Nothing scored. The gridlines and the 0–100 axis are still the right
+            furniture to show — they say what will be plotted — but on their own
+            they are 160px of ruled emptiness, which is the one thing a reader
+            cannot tell apart from a chart that failed to draw. So the plot area
+            says it, inside the frame, where the missing line would have been. */}
+        {scored.length === 0 && (
+          <text
+            x={PAD_L + (W - PAD_L - PAD_R) / 2}
+            y={(STRESS_TOP + STRESS_BOTTOM) / 2 + 4}
+            textAnchor="middle"
+            fill="var(--t3)"
+            fontSize="12"
+            style={{ animation: 'gp-fin .5s .2s both' }}
+          >
+            No radio scored on these laps — select a call from the library to plot one
+          </text>
+        )}
+
+        {scored.length > 1 && (
+          <>
+            <path
+              d={`M${scored.map((p) => `${x(p.lap)} ${stressY(p.stress_index)}`).join(' L')} L${x(
+                scored[scored.length - 1].lap,
+              )} ${STRESS_BOTTOM} L${x(scored[0].lap)} ${STRESS_BOTTOM} Z`}
+              fill="url(#gp-stress-fill)"
+              style={{ animation: 'gp-fin .9s .55s both' }}
+            />
+            <path
+              d={`M${scored.map((p) => `${x(p.lap)} ${stressY(p.stress_index)}`).join(' L')}`}
+              fill="none"
+              stroke="var(--mag)"
+              strokeWidth={2.1}
+              strokeLinejoin="round"
+              strokeLinecap="round"
+              pathLength={1}
+              style={{
+                ['--gp-len' as string]: 1,
+                strokeDasharray: 1,
+                strokeDashoffset: 1,
+                animation: 'gp-draw 1.3s cubic-bezier(.25,.8,.25,1) .35s forwards',
+                filter: 'drop-shadow(0 0 7px color-mix(in srgb, var(--mag) 40%, transparent))',
+              }}
+            />
+          </>
+        )}
+
+        <g style={{ animation: 'gp-fin .3s 1.1s both' }}>
+          {scored.map((p) => {
+            const cx = x(p.lap)
+            const cy = stressY(p.stress_index)
+            const marker = moodMarker(p.mood, cx, cy)
+            const colour = MOOD_COLOR[p.mood]
+            const selected = p.clip_id != null && p.clip_id === selectedClipId
+
+            return (
+              <g
+                key={`${p.lap}-${p.clip_id ?? 'x'}`}
+                role={p.clip_id ? 'button' : undefined}
+                tabIndex={p.clip_id ? 0 : undefined}
+                className={p.clip_id ? 'cursor-pointer' : undefined}
+                onClick={p.clip_id ? () => onSelectClip(p.clip_id as string) : undefined}
+                onKeyDown={
+                  p.clip_id
+                    ? (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault()
+                          onSelectClip(p.clip_id as string)
+                        }
+                      }
+                    : undefined
+                }
+              >
+                <title>{`Lap ${p.lap} · ${p.mood} · ${Math.round(p.stress_index)}/100`}</title>
+
+                {selected && (
+                  <circle cx={cx} cy={cy} r={10} fill="none" stroke={colour} strokeWidth={1.5} opacity={0.55} />
+                )}
+
+                {/* Colour alone does not carry mood — red and green separate by
+                    ΔE 4.1 for a deuteranope — so the shape says it too. */}
+                {marker.shape === 'circle' ? (
+                  <circle cx={cx} cy={cy} r={marker.r} fill={colour} stroke="var(--s1)" strokeWidth={1.5} />
+                ) : (
+                  <polygon points={marker.points} fill={colour} stroke="var(--s1)" strokeWidth={1.5} />
+                )}
+              </g>
+            )
+          })}
+        </g>
+
+        {ticks.map((l) => (
+          <text
+            key={l}
+            x={x(l)}
+            y={194}
+            textAnchor="middle"
+            fill="var(--t3)"
+            fontFamily="Roboto Mono, monospace"
+            fontSize={9}
+          >
+            {l}
+          </text>
+        ))}
+
+        <text
+          x={PAD_L + SPAN / 2}
+          y={212}
+          textAnchor="middle"
+          fill="var(--t3)"
+          fontFamily="Barlow, sans-serif"
+          fontSize={10.5}
+        >
+          Lap
+        </text>
+      </svg>
+
+      {/* ── Footer ────────────────────────────────────────────────────────── */}
+      <div className="mt-[22px] flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-line pt-3.5">
+        <span className="eyebrow">Radio calls</span>
+
+        <MoodKey mood="Calm">
+          <span className="h-[9px] w-[9px] flex-none rounded-full" style={{ background: MOOD_COLOR.Calm }} />
+        </MoodKey>
+        <MoodKey mood="Stressed">
+          <span
+            className="flex-none"
+            style={{
+              width: 0,
+              height: 0,
+              borderLeft: '5px solid transparent',
+              borderRight: '5px solid transparent',
+              borderBottom: `9px solid ${MOOD_COLOR.Stressed}`,
+            }}
+          />
+        </MoodKey>
+        <MoodKey mood="Tired">
+          <span className="h-[9px] w-[9px] flex-none" style={{ background: MOOD_COLOR.Tired }} />
+        </MoodKey>
+
+        <p className="ml-auto max-w-[42ch] text-[11px] leading-[1.3] text-t3">
+          {scored.length === 0
+            ? 'No radio scored on this driver yet — the pace panel above is real FastF1 timing regardless.'
+            : clipped > 0
+              ? `Axis fitted to the racing range; ${clipped} ${
+                  clipped === 1 ? 'lap sits' : 'laps sit'
+                } outside it and are drawn at the edge.`
+              : `${scored.length} scored ${scored.length === 1 ? 'call' : 'calls'} across ${totalLaps} laps.`}
+        </p>
+      </div>
     </section>
   )
 }
 
-function PanelLabel({ index, title, hint }: { index: number; title: string; hint: string }) {
+/* ── Layout ────────────────────────────────────────────────────────────────── */
+
+const stressY = (v: number): number =>
+  STRESS_BOTTOM - (Math.min(100, Math.max(0, v)) / 100) * (STRESS_BOTTOM - STRESS_TOP)
+
+/**
+ * Everything the two charts need from the point list, computed once.
+ *
+ * The pace domain is fitted rather than fixed at ±0.8s. One in-lap or a safety
+ * car adds a delta of several seconds, and on a fixed axis that single lap
+ * flattens the rest of the race into a straight line — the exact reading the
+ * panel exists to show. Anything the fit does leave outside the axis is drawn at
+ * the edge and counted in the footnote, which is the honest version of clipping.
+ * See `paceDomain` for why the fit is deliberately barely a fit.
+ */
+function layout(points: TimelinePoint[]) {
+  const totalLaps = Math.max(2, ...points.map((p) => p.lap))
+  const x = (lap: number): number =>
+    PAD_L + ((Math.min(Math.max(lap, 1), totalLaps) - 1) / (totalLaps - 1)) * SPAN
+
+  const deltas = points
+    .filter((p): p is TimelinePoint & { delta_s: number } => p.delta_s != null)
+    .map((p) => p.delta_s)
+
+  const domain = paceDomain(deltas)
+  const paceY = (v: number): number => {
+    const t = (Math.min(domain.hi, Math.max(domain.lo, v)) - domain.lo) / (domain.hi - domain.lo)
+    return PACE_BOTTOM - t * (PACE_BOTTOM - PACE_TOP)
+  }
+  const clipped = deltas.filter((v) => v < domain.lo || v > domain.hi).length
+
+  // The pace line breaks wherever there is no clean lap time. Bridging the gap
+  // would draw a straight line through laps the driver did not actually set.
+  const paceSegments: { lap: number; delta: number }[][] = []
+  let run: { lap: number; delta: number }[] = []
+  for (const p of [...points].sort((a, b) => a.lap - b.lap)) {
+    if (p.delta_s == null) {
+      if (run.length) paceSegments.push(run)
+      run = []
+    } else {
+      run.push({ lap: p.lap, delta: p.delta_s })
+    }
+  }
+  if (run.length) paceSegments.push(run)
+
+  const scored = points
+    .filter((p): p is Scored => p.stress_index != null && p.mood != null)
+    .sort((a, b) => a.lap - b.lap)
+
+  // Roughly 20 ticks whatever the race length — every third lap over 78 laps at
+  // Monaco puts the labels 33px apart and they start to collide.
+  const step = Math.max(3, Math.ceil(totalLaps / 20))
+  const ticks: number[] = []
+  for (let l = 1; l <= totalLaps; l += step) ticks.push(l)
+
+  // The last lap always gets a tick, but it replaces the previous one rather than
+  // crowding it: 78 laps steps to 77, and "77" and "78" a pixel apart render as
+  // a single unreadable "7778".
+  if (ticks[ticks.length - 1] !== totalLaps) {
+    if (ticks.length > 1 && totalLaps - ticks[ticks.length - 1] < step * 0.6) ticks.pop()
+    ticks.push(totalLaps)
+  }
+
+  return { totalLaps, x, paceY, domain, clipped, paceSegments, scored, ticks }
+}
+
+/**
+ * The pace y-range.
+ *
+ * Fitted, but only barely: the axis shows the real minimum and maximum and clips
+ * nothing unless a lap is an order of magnitude out. An interquartile fence was
+ * the obvious rule and is wrong on this data — a driver who holds position for
+ * most of a race sits exactly on their own median, so the quartiles collapse
+ * (Monaco/SAI: q1 = median = 0.000, IQR = 0.041) and a 1.5×IQR fence throws away
+ * 41% of the laps as outliers, pinning a perfectly displayable ±1s race to both
+ * rails as a sawtooth. So the rule is the other way round: keep everything, and
+ * pull a rail in only when the extreme is more than 3× the 98th percentile —
+ * which is an in-lap or a safety car, not a slow lap.
+ */
+function paceDomain(deltas: number[]): { lo: number; hi: number; lines: number[]; dp: number } {
+  let lo = -0.8
+  let hi = 0.8
+
+  if (deltas.length > 0) {
+    const s = [...deltas].sort((a, b) => a - b)
+    lo = s[0]
+    hi = s[s.length - 1]
+
+    // Percentiles need a few laps behind them before they can call anything an
+    // outlier; under eight, the extremes are the only reading there is.
+    if (s.length >= 8) {
+      const at = (f: number) => s[Math.min(s.length - 1, Math.max(0, Math.round(f * (s.length - 1))))]
+      // The 0.5s floor stops a tight, low-magnitude stint from having its own
+      // widest lap read as an outlier.
+      const outHi = Math.max(at(0.98), 0.5) * 3
+      const outLo = Math.min(at(0.02), -0.5) * 3
+      if (hi > outHi) hi = at(0.98)
+      if (lo < outLo) lo = at(0.02)
+    }
+  }
+
+  // Zero is the reference line and must be on the chart even in a race where
+  // every lap was slower than the median.
+  lo = Math.min(lo, 0)
+  hi = Math.max(hi, 0)
+
+  // A dead-even stint would otherwise get an axis magnified to milliseconds,
+  // where sensor noise looks like a collapse.
+  const span = hi - lo
+  if (span < 0.4) {
+    const mid = (hi + lo) / 2
+    lo = mid - 0.2
+    hi = mid + 0.2
+  } else {
+    lo -= span * 0.08
+    hi += span * 0.08
+  }
+
+  const lines = [0, 1, 2, 3, 4].map((i) => lo + ((hi - lo) * i) / 4)
+  return { lo, hi, lines, dp: hi - lo < 1.2 ? 2 : 1 }
+}
+
+const formatDelta = (v: number, dp: number): string =>
+  `${v > 0.0005 ? '+' : v < -0.0005 ? '−' : ''}${Math.abs(v).toFixed(dp)}s`
+
+/* ── Small pieces ──────────────────────────────────────────────────────────── */
+
+function LegendItem({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <p className="flex flex-wrap items-baseline gap-x-2 text-xs">
-      <span className="tower text-ink-muted" style={{ fontSize: 13 }}>
-        {index}
-      </span>
-      <span className="font-semibold text-ink-primary">{title}</span>
-      <span className="text-ink-muted">{hint}</span>
-    </p>
+    <span className="flex items-center gap-2">
+      {children}
+      <span className="text-[11px] leading-none text-t2">{label}</span>
+    </span>
   )
 }
 
-function MoodKey({ mood }: { mood: Mood }) {
-  const fill = MOOD_COLOR[mood]
+function ChartCaption({ index, name, note }: { index: string; name: string; note: string }) {
   return (
-    <span className="flex items-center gap-1.5 text-ink-secondary">
-      <svg width="11" height="11" aria-hidden>
-        {mood === 'Calm' ? (
-          <circle cx="5.5" cy="5.5" r="4.5" fill={fill} />
-        ) : mood === 'Stressed' ? (
-          <polygon points="5.5,0.5 11,10.5 0,10.5" fill={fill} />
-        ) : (
-          <rect x="0.5" y="0.5" width="10" height="10" fill={fill} />
-        )}
-      </svg>
-      {mood}
+    <div className="mt-[18px] flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
+      <span className="mono text-[11px] font-bold leading-none text-pap">{index}</span>
+      <span className="text-[13px] font-semibold leading-none text-t1">{name}</span>
+      <span className="text-[11.5px] leading-none text-t3">{note}</span>
+    </div>
+  )
+}
+
+function MoodKey({ mood, children }: { mood: Mood; children: React.ReactNode }) {
+  return (
+    <span className="flex items-center gap-2">
+      {children}
+      <span className="text-[11.5px] leading-none text-t2">{mood}</span>
     </span>
   )
 }

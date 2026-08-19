@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
+import type { ReactNode } from 'react'
+import { tint } from '../lib/mood'
 
 /**
  * Ask the pit wall.
@@ -9,6 +11,9 @@ import { useEffect, useRef, useState } from 'react'
  *
  * Feature-flagged on the backend (GP_AGENT=1); a 404 retires the launcher
  * rather than leaving a button that always fails.
+ *
+ * Deliberately not a modal: no overlay, no focus trap, `Escape` closes. A reader
+ * mid-question should still be able to look at the chart the question is about.
  */
 
 interface Props {
@@ -29,6 +34,34 @@ const SUGGESTIONS = [
   'How does this driver compare to their own baseline?',
 ]
 
+/**
+ * Renders the `**lap 54**` the model reaches for as emphasis, not asterisks.
+ *
+ * Every model on the endpoint bolds the figure it is asked for — it is how they
+ * write — and a plain-text bubble printed the marks, which reads as the answer
+ * having come back malformed. This is deliberately only bold: the answers are
+ * two or three sentences, so a markdown dependency would be a lot of bytes to
+ * render a single construct. Anything else the model emits passes through
+ * unchanged, which is why the split keeps its delimiters in the odd positions
+ * rather than trying to parse.
+ */
+function emphasise(text: string): ReactNode[] {
+  return text.split(/\*\*(.+?)\*\*/g).map((part, i) =>
+    i % 2 === 1 ? (
+      <strong key={i} className="font-semibold text-t1">
+        {part}
+      </strong>
+    ) : (
+      part
+    ),
+  )
+}
+
+/** The assistant bubble's shape — shared by an answer and by the waiting dots,
+ *  so the wait reads as coming from the same speaker. */
+const ASSISTANT_BUBBLE = 'max-w-[92%] self-start border-l-2 border-team bg-s2 px-3 py-[10px]'
+const ASSISTANT_RADIUS = { borderRadius: '8px 8px 8px 2px' }
+
 export function PitWallChat({ sessionId, driver }: Props) {
   const [open, setOpen] = useState(false)
   const [messages, setMessages] = useState<Message[]>([])
@@ -36,11 +69,17 @@ export function PitWallChat({ sessionId, driver }: Props) {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [available, setAvailable] = useState(true)
-  const endRef = useRef<HTMLDivElement>(null)
+  const launcherRef = useRef<HTMLButtonElement>(null)
+  const listRef = useRef<HTMLDivElement>(null)
+  const fieldRef = useRef<HTMLTextAreaElement>(null)
+  const wasOpen = useRef(false)
 
   useEffect(() => {
-    if (open) endRef.current?.scrollIntoView({ behavior: 'smooth' })
-  }, [messages, loading, open])
+    // scrollIntoView would also move the document behind a fixed panel; driving
+    // the list's own scrollTop leaves the page where the reader left it.
+    const el = listRef.current
+    if (el) el.scrollTop = el.scrollHeight
+  }, [messages, loading, error, open])
 
   // The agent answers about one driver in one race; carrying replies across a
   // switch would attach the previous session's numbers to the new heading.
@@ -48,6 +87,31 @@ export function PitWallChat({ sessionId, driver }: Props) {
     setMessages([])
     setError(null)
   }, [sessionId, driver])
+
+  useEffect(() => {
+    if (!open) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [open])
+
+  useEffect(() => {
+    // Closing must not drop focus to the top of the document — a keyboard reader
+    // lands back on the control they opened.
+    if (wasOpen.current && !open) launcherRef.current?.focus()
+    wasOpen.current = open
+  }, [open])
+
+  useEffect(() => {
+    // A question is often two lines long and never twenty; the field grows to fit
+    // and then scrolls, so the composer can't swallow the conversation.
+    const el = fieldRef.current
+    if (!el) return
+    el.style.height = 'auto'
+    el.style.height = `${Math.min(el.scrollHeight, 110)}px`
+  }, [input, open])
 
   async function send(question: string) {
     const q = question.trim()
@@ -88,103 +152,119 @@ export function PitWallChat({ sessionId, driver }: Props) {
 
   if (!available || !sessionId) return null
 
-  // Floating button when closed
   if (!open) {
     return (
-      <button
-        onClick={() => setOpen(true)}
-        className="group fixed bottom-5 right-5 z-50 flex h-14 items-center gap-2.5 rounded-full border border-hairline pl-4 pr-5 shadow-lg backdrop-blur-xl transition hover:border-hairline-bright sm:bottom-7 sm:right-7"
-        style={{ background: "linear-gradient(150deg, #171b22 0%, #0b0d12 100%)" }}
-      >
-        <span
-          className="grid h-8 w-8 place-items-center rounded-full"
-          style={{ background: "var(--team)", color: "var(--team-ink)" }}
+      // The glow lives on the wrapper because `.notch-lg` is a clip-path, and a
+      // clip-path cuts away the element's own box-shadow along with its corners.
+      <div className="fixed bottom-[26px] right-[26px] z-40 shadow-[0_14px_34px_-14px_rgba(255,122,0,0.8)] transition-shadow duration-[160ms] hover:shadow-[0_16px_44px_-12px_var(--pap)]">
+        <button
+          ref={launcherRef}
+          type="button"
+          onClick={() => setOpen(true)}
+          aria-expanded={open}
+          aria-label="Ask the pit wall about this session"
+          className="notch-lg flex cursor-pointer items-center gap-[10px] py-3 pl-[14px] pr-[18px] text-ink transition-[filter] duration-[160ms] hover:brightness-[1.08]"
+          style={{ background: 'linear-gradient(120deg, var(--pap), #DD6200)' }}
         >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
-            <path
+          <span
+            className="grid h-[26px] w-[26px] place-items-center rounded-full text-[12px]"
+            style={{ background: tint('var(--ink)', 16) }}
+          >
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
               strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
-            />
-          </svg>
-        </span>
-        <span className="font-racing text-[12px] font-bold uppercase text-ink-primary">Ask the pit wall</span>
-      </button>
+              aria-hidden="true"
+            >
+              <path d="M5 14.5v-2.5a7 7 0 0 1 14 0v2.5" />
+              <path d="M19 19.5v0a2.5 2.5 0 0 1-2.5 2.5H13" />
+              <rect x="2.5" y="13.5" width="4.2" height="6.5" rx="1.5" fill="currentColor" stroke="none" />
+              <rect x="17.3" y="13.5" width="4.2" height="6.5" rx="1.5" fill="currentColor" stroke="none" />
+            </svg>
+          </span>
+          <span className="font-cond text-[12px] font-bold uppercase leading-none tracking-[0.2em]">
+            Ask the pit wall
+          </span>
+        </button>
+      </div>
     )
   }
 
-  // Floating dialog when open
   return (
     <div
-      className="fixed inset-x-3 bottom-3 top-20 z-50 flex flex-col overflow-hidden rounded-2xl border border-hairline shadow-2xl backdrop-blur-xl sm:inset-auto sm:bottom-7 sm:right-7 sm:top-auto sm:h-[620px] sm:w-[400px]"
-      style={{ background: "linear-gradient(160deg, rgba(20,24,31,0.97) 0%, rgba(9,11,15,0.98) 100%)" }}
+      className="panel anim-rise z-40 flex flex-col overflow-hidden"
+      style={{
+        /* `position` is set here rather than with Tailwind's `fixed`, because
+           `.panel` is declared after `@tailwind utilities` and sets
+           `position: relative` at the same specificity — so the utility lost,
+           and with it `bottom`/`right` had nothing to resolve against. The
+           panel opened 1739px down a 2033px page: from anywhere but the very
+           bottom of the scroll, clicking the launcher looked like it did
+           nothing at all. */
+        position: 'fixed',
+        bottom: 26,
+        right: 26,
+        width: 'min(420px, calc(100vw - 52px))',
+        maxHeight: 'min(620px, calc(100vh - 80px))',
+      }}
       role="dialog"
-      aria-label="Pit wall assistant"
+      aria-label="Ask the pit wall"
     >
-      <header className="flex items-start justify-between gap-3 border-b border-hairline px-4 py-3.5">
+      <div className="flex items-center justify-between gap-3 border-b border-line px-4 py-[14px]">
         <div className="min-w-0">
-          <p className="font-racing text-[14px] font-bold uppercase text-ink-primary">Ask the pit wall</p>
-          <p className="mt-1 truncate text-[11px] text-ink-muted">
-            Answers grounded in this session’s own data · {driver}
+          <p className="eyebrow-lg">Ask the pit wall</p>
+          {/* Naming the grounding is the whole promise: this answers about one
+              driver in one session, and nothing outside it. */}
+          <p
+            className="mt-[5px] truncate font-sans text-[11px] font-normal leading-[1.3] text-t3"
+            title={`${driver} — session ${sessionId}`}
+          >
+            Grounded in {driver}, session {sessionId}
           </p>
         </div>
         <button
+          type="button"
           onClick={() => setOpen(false)}
-          className="-mr-1 rounded-lg p-1.5 text-ink-muted transition hover:bg-white/5 hover:text-ink-primary"
-          aria-label="Close the assistant"
+          aria-label="Close"
+          className="grid h-6 w-6 flex-none place-items-center rounded-[4px] text-t2 transition-colors hover:bg-s3 hover:text-t1"
         >
-          <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
+          <span aria-hidden="true" className="text-[12px] leading-none">
+            ✕
+          </span>
         </button>
-      </header>
+      </div>
 
-      <div className="flex-1 space-y-3 overflow-y-auto px-4 py-4">
-        {messages.length === 0 && !loading && (
-          <>
-            <p className="card-title">Try one of these</p>
-            {SUGGESTIONS.map((q) => (
-              <button
-                key={q}
-                onClick={() => send(q)}
-                className="flex w-full items-center gap-2.5 rounded-lg border border-hairline bg-raised/60 px-3 py-2.5 text-left text-xs leading-snug text-ink-secondary transition hover:border-hairline-bright hover:text-ink-primary"
-              >
-                <span className="flex-1">{q}</span>
-                <svg className="h-3.5 w-3.5 shrink-0 text-ink-muted" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            ))}
-          </>
-        )}
-
-        {messages.map((msg, i) => (
-          <div key={i} className={msg.role === 'user' ? 'flex justify-end' : 'flex justify-start'}>
-            <div
-              className="max-w-[88%] rounded-xl border px-3.5 py-2.5"
-              style={
-                msg.role === 'user'
-                  ? {
-                      borderColor: 'color-mix(in srgb, var(--team) 45%, transparent)',
-                      background: 'color-mix(in srgb, var(--team) 14%, transparent)',
-                    }
-                  : { borderColor: 'var(--edge)', background: 'var(--panel-2)' }
-              }
+      <div
+        ref={listRef}
+        className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto px-4 py-[14px]"
+      >
+        {messages.map((msg, i) =>
+          msg.role === 'user' ? (
+            <p
+              key={i}
+              className="max-w-[88%] self-end whitespace-pre-wrap bg-s3 px-3 py-[9px] font-sans text-[13px] font-normal leading-[1.5] text-t1"
+              style={{ borderRadius: '8px 8px 2px 8px' }}
             >
-              <p className="eyebrow" style={msg.role === 'user' ? { color: 'var(--team)' } : undefined}>
-                {msg.role === 'user' ? 'You' : 'Pit wall'}
-              </p>
-              <p className="mt-1.5 whitespace-pre-wrap text-[13px] leading-relaxed text-ink-primary">
-                {msg.content}
+              {msg.content}
+            </p>
+          ) : (
+            <div key={i} className={ASSISTANT_BUBBLE} style={ASSISTANT_RADIUS}>
+              <p className="whitespace-pre-wrap font-sans text-[13px] font-normal leading-[1.5] text-t1">
+                {emphasise(msg.content)}
               </p>
 
-              {/* Which data the answer came from, so it can be checked. */}
+              {/* Which data the answer came from. This is the difference between a
+                  grounded answer and a plausible one, so it is never collapsed. */}
               {msg.tools_used && msg.tools_used.length > 0 && (
-                <div className="mt-2.5 flex flex-wrap gap-1.5">
+                <div className="mt-2 flex flex-wrap gap-[5px]">
                   {msg.tools_used.map((tool, j) => (
                     <span
-                      key={j}
-                      className="mono rounded-full bg-surface px-2 py-0.5 text-[9px] text-ink-muted"
+                      key={`${i}-${j}`}
+                      className="mono rounded-[3px] border border-line bg-glass px-[7px] py-[3px] text-[9.5px] font-medium leading-none text-t3"
                     >
                       {tool.replace(/^get_/, '').replace(/_/g, ' ')}
                     </span>
@@ -192,64 +272,90 @@ export function PitWallChat({ sessionId, driver }: Props) {
                 </div>
               )}
             </div>
-          </div>
-        ))}
+          ),
+        )}
 
         {loading && (
-          <div className="flex items-center gap-2.5 rounded-xl border border-hairline bg-raised px-3.5 py-2.5">
-            <span className="flex gap-1">
-              {[0, 150, 300].map((d) => (
-                <span
-                  key={d}
-                  className="h-1.5 w-1.5 animate-bounce rounded-full bg-accent-cyan"
-                  style={{ animationDelay: `${d}ms` }}
-                />
-              ))}
-            </span>
-            <span className="text-xs text-ink-muted">Reading the session…</span>
+          <div
+            className={`flex items-center gap-[5px] ${ASSISTANT_BUBBLE}`}
+            style={ASSISTANT_RADIUS}
+            role="status"
+            aria-label="Reading the session"
+          >
+            {[0, 180, 360].map((d) => (
+              <span
+                key={d}
+                className="anim-pulse block h-1 w-1 bg-pap"
+                style={{ animationDelay: `${d}ms` }}
+              />
+            ))}
           </div>
         )}
 
+        {/* An error stays in the transcript rather than closing the panel: the
+            question is still on screen, so it can be asked again. */}
         {error && (
-          <p
-            className="rounded-xl border px-3.5 py-2.5 text-xs leading-relaxed"
-            style={{
-              borderColor: 'color-mix(in srgb, var(--status-critical) 40%, transparent)',
-              background: 'color-mix(in srgb, var(--status-critical) 9%, transparent)',
-              color: 'var(--status-critical)',
-            }}
-          >
-            {error}
+          <p role="alert" className="font-sans text-[12px] font-normal leading-[1.45] text-mag">
+            The pit wall did not answer. {error}
           </p>
         )}
-
-        <div ref={endRef} />
       </div>
+
+      {messages.length === 0 && (
+        <div className="flex flex-col gap-[6px] px-4 pb-3">
+          {SUGGESTIONS.map((q) => (
+            <button
+              key={q}
+              type="button"
+              onClick={() => send(q)}
+              className="w-full rounded-[5px] border border-line bg-s2 px-[11px] py-2 text-left font-sans text-[12px] font-normal leading-[1.35] text-t2 transition-colors hover:border-pap hover:text-t1"
+            >
+              {q}
+            </button>
+          ))}
+        </div>
+      )}
 
       <form
         onSubmit={(e) => {
           e.preventDefault()
           send(input)
         }}
-        className="flex gap-2 border-t border-hairline p-3"
+        className="flex items-end gap-2 border-t border-line px-4 pb-[14px] pt-3"
       >
-        <input
-          type="text"
+        <textarea
+          ref={fieldRef}
+          rows={1}
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          onKeyDown={(e) => {
+            // Enter sends, because every message here is a question. Shift+Enter
+            // is the escape hatch for the reader who wants to paste two of them.
+            if (e.key === 'Enter' && !e.shiftKey) {
+              e.preventDefault()
+              send(input)
+            }
+          }}
           placeholder="Ask about stress, pace or radio…"
-          disabled={loading}
+          aria-label="Your question"
           className="control min-w-0 flex-1"
+          style={{
+            minHeight: 36,
+            maxHeight: 110,
+            padding: '9px 11px',
+            resize: 'none',
+            lineHeight: 1.4,
+          }}
         />
         <button
           type="submit"
           disabled={loading || !input.trim()}
-          className="grid h-10 w-10 place-items-center rounded-lg border border-hairline bg-accent-cyan/10 text-accent-cyan transition hover:bg-accent-cyan/20 disabled:opacity-40"
-          aria-label="Send"
+          aria-label="Send question"
+          className="notch-sm grid h-9 w-9 flex-none place-items-center bg-pap text-ink disabled:opacity-40"
         >
-          <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-          </svg>
+          <span aria-hidden="true" className="text-[13px] leading-none">
+            ➤
+          </span>
         </button>
       </form>
     </div>

@@ -4,6 +4,7 @@ import type {
   ClipSummary,
   FindingsResponse,
   HealthResponse,
+  ModelCard,
   ProgressEvent,
   ScoringMode,
   SessionMeta,
@@ -49,6 +50,16 @@ async function getWithDetail<T>(path: string): Promise<T> {
 }
 
 export const getHealth = () => get<HealthResponse>('/health')
+
+/**
+ * The fusion head's fitted accuracy, for the header pill.
+ *
+ * Resolves to null rather than throwing when the head has never been fitted —
+ * the pill falls back to naming the model instead of quoting a number, and one
+ * missing artifact must not take the header down with it.
+ */
+export const getModelCard = () =>
+  get<ModelCard>('/model-card').catch(() => null)
 
 export const getLibrary = (sessionId: string, driver: string) =>
   get<ClipSummary[]>(`/clips/library?session_id=${sessionId}&driver=${driver}`)

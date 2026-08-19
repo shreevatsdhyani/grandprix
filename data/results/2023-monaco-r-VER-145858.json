@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-VER-145858",
+  "driver": "VER",
+  "session_id": "2023-monaco-r",
+  "lap": 44,
+  "duration_s": 5.18,
+  "audio_url": "/api/clips/2023-monaco-r-VER-145858",
+  "transcript": {
+    "text": "Under Sir Max, just keep us informed.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 54.4,
+      "f0_mean_z": 3.107,
+      "f0_std_z": 0.91,
+      "rms_mean_z": 1.617,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.161,
+      "jitter_z": 0.751
+    },
+    "acoustic": {
+      "score": 28.2,
+      "probabilities": {
+        "hap": 0.8771,
+        "sad": 0.0539,
+        "neu": 0.0444,
+        "ang": 0.0246
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.6,
+      "probabilities": {
+        "neutral": 0.9553,
+        "anger": 0.0173,
+        "disgust": 0.0103,
+        "sadness": 0.0058,
+        "fear": 0.0051,
+        "surprise": 0.0039,
+        "joy": 0.0022
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.9,
+    "stress_index": 90.5,
+    "probabilities": {
+      "Calm": 0.095,
+      "Stressed": 0.9,
+      "Tired": 0.005
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.877,
+    "stress_index": 28.2,
+    "probabilities": {
+      "Calm": 0.917,
+      "Stressed": 0.023,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2802,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-RUS-143825",
+  "driver": "RUS",
+  "session_id": "2023-dutch-r",
+  "lap": 23,
+  "duration_s": 8.19,
+  "audio_url": "/api/clips/2023-dutch-r-RUS-143825",
+  "transcript": {
+    "text": "Not a lot of vibration this night. Up and up. Gap we had 0.7 to Hulk, 0.8 behind to Lawson.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 51.6,
+      "f0_mean_z": -0.909,
+      "f0_std_z": -1.367,
+      "rms_mean_z": -1.723,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 2.449,
+      "jitter_z": -0.415
+    },
+    "acoustic": {
+      "score": 25.4,
+      "probabilities": {
+        "hap": 0.9837,
+        "sad": 0.0068,
+        "neu": 0.006,
+        "ang": 0.0035
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 20.5,
+      "probabilities": {
+        "neutral": 0.8573,
+        "surprise": 0.0907,
+        "disgust": 0.022,
+        "sadness": 0.0144,
+        "anger": 0.0077,
+        "fear": 0.0048,
+        "joy": 0.0031
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.596,
+    "stress_index": 54.2,
+    "probabilities": {
+      "Calm": 0.399,
+      "Stressed": 0.006,
+      "Tired": 0.596
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.984,
+    "stress_index": 25.4,
+    "probabilities": {
+      "Calm": 0.937,
+      "Stressed": 0.003,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1904,
+  "cached": false
+}

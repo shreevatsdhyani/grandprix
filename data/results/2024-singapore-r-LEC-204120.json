@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-LEC-204120",
+  "driver": "LEC",
+  "session_id": "2024-singapore-r",
+  "lap": 23,
+  "duration_s": 5.31,
+  "audio_url": "/api/clips/2024-singapore-r-LEC-204120",
+  "transcript": {
+    "text": "Oh, this is so frustrating. Keep calm. Keep calm.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 17.6,
+      "f0_mean_z": 1.241,
+      "f0_std_z": -0.062,
+      "rms_mean_z": -0.339,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.554,
+      "jitter_z": 2.812
+    },
+    "acoustic": {
+      "score": 42.5,
+      "probabilities": {
+        "sad": 0.5334,
+        "hap": 0.3359,
+        "neu": 0.129,
+        "ang": 0.0017
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 68.9,
+      "probabilities": {
+        "anger": 0.3843,
+        "sadness": 0.3576,
+        "neutral": 0.1229,
+        "disgust": 0.0879,
+        "fear": 0.0281,
+        "surprise": 0.0145,
+        "joy": 0.0048
+      },
+      "top_label": "anger",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.959,
+    "stress_index": 89.4,
+    "probabilities": {
+      "Calm": 0.01,
+      "Stressed": 0.031,
+      "Tired": 0.959
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.533,
+    "stress_index": 42.5,
+    "probabilities": {
+      "Calm": 0.938,
+      "Stressed": 0.002,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1894,
+  "cached": false
+}

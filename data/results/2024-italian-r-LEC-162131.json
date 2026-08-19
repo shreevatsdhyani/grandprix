@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-LEC-162131",
+  "driver": "LEC",
+  "session_id": "2024-italian-r",
+  "lap": 53,
+  "duration_s": 8.29,
+  "audio_url": "/api/clips/2024-italian-r-LEC-162131",
+  "transcript": {
+    "text": "Graz dismal strategy, huh? Graz-grantutto. I'm gonna make an order. Graz, gras, gras, gras, gras.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 24.4,
+      "f0_mean_z": -0.976,
+      "f0_std_z": -1.229,
+      "rms_mean_z": 0.181,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.667,
+      "jitter_z": 0.98
+    },
+    "acoustic": {
+      "score": 25.2,
+      "probabilities": {
+        "hap": 0.9853,
+        "neu": 0.0087,
+        "sad": 0.0044,
+        "ang": 0.0016
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 64.8,
+      "probabilities": {
+        "disgust": 0.4045,
+        "sadness": 0.2082,
+        "anger": 0.1808,
+        "neutral": 0.1444,
+        "fear": 0.047,
+        "surprise": 0.0117,
+        "joy": 0.0035
+      },
+      "top_label": "disgust",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.979,
+    "stress_index": 88.2,
+    "probabilities": {
+      "Calm": 0.02,
+      "Stressed": 0.001,
+      "Tired": 0.979
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.985,
+    "stress_index": 25.2,
+    "probabilities": {
+      "Calm": 0.938,
+      "Stressed": 0.002,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2472,
+  "cached": false
+}

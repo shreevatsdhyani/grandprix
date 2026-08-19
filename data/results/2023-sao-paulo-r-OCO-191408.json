@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-OCO-191408",
+  "driver": "OCO",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 70,
+  "duration_s": 26.75,
+  "audio_url": "/api/clips/2023-sao-paulo-r-OCO-191408",
+  "transcript": {
+    "text": "Okay and that is P10. So in the end we were the only car that finished that did a three-stop. Everyone else did too. Yeah, there was no army trying because the deck was super high so... Yeah, absolutely right, it was worth a go. A bit of luck slightly differently and it could have been a very different story. So well done for sticking with it. Still, from P14, I'll take a point.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 23.7,
+      "f0_mean_z": -0.582,
+      "f0_std_z": -0.404,
+      "rms_mean_z": -0.37,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.604,
+      "jitter_z": 0.223
+    },
+    "acoustic": {
+      "score": 28.5,
+      "probabilities": {
+        "hap": 0.8515,
+        "sad": 0.1075,
+        "neu": 0.0386,
+        "ang": 0.0023
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.6,
+      "probabilities": {
+        "neutral": 0.9431,
+        "joy": 0.0242,
+        "disgust": 0.0108,
+        "surprise": 0.0088,
+        "anger": 0.0078,
+        "sadness": 0.0042,
+        "fear": 0.001
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.698,
+    "stress_index": 27.7,
+    "probabilities": {
+      "Calm": 0.698,
+      "Stressed": 0.041,
+      "Tired": 0.262
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.852,
+    "stress_index": 28.5,
+    "probabilities": {
+      "Calm": 0.938,
+      "Stressed": 0.002,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3950,
+  "cached": false
+}

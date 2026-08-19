@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-RUS-174933",
+  "driver": "RUS",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 16,
+  "duration_s": 13.86,
+  "audio_url": "/api/clips/2023-sao-paulo-r-RUS-174933",
+  "transcript": {
+    "text": "So George we need more management, turn 11 on throttle. You want me to race or concie positions? You want more management? Oh, we'll go backwards. We do need to make sure these tires make it through the stem. We do want to race, but we want to make it through the stem.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 37.6,
+      "f0_mean_z": 0.194,
+      "f0_std_z": 1.565,
+      "rms_mean_z": -1.334,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.604,
+      "jitter_z": 2.132
+    },
+    "acoustic": {
+      "score": 49.8,
+      "probabilities": {
+        "sad": 0.5861,
+        "hap": 0.3197,
+        "ang": 0.0649,
+        "neu": 0.0292
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 23.2,
+      "probabilities": {
+        "neutral": 0.832,
+        "surprise": 0.0623,
+        "disgust": 0.0435,
+        "anger": 0.032,
+        "sadness": 0.0141,
+        "fear": 0.0125,
+        "joy": 0.0036
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.512,
+    "stress_index": 65.1,
+    "probabilities": {
+      "Calm": 0.334,
+      "Stressed": 0.512,
+      "Tired": 0.154
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.586,
+    "stress_index": 49.8,
+    "probabilities": {
+      "Calm": 0.879,
+      "Stressed": 0.061,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2730,
+  "cached": false
+}

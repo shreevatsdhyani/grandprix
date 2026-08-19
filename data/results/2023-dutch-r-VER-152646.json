@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-VER-152646",
+  "driver": "VER",
+  "session_id": "2023-dutch-r",
+  "lap": 62,
+  "duration_s": 3.55,
+  "audio_url": "/api/clips/2023-dutch-r-VER-152646",
+  "transcript": {
+    "text": "I think this would be a very good time to pit. Okay.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 29.2,
+      "f0_mean_z": 1.672,
+      "f0_std_z": 1.519,
+      "rms_mean_z": -0.27,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.189,
+      "jitter_z": 3.163
+    },
+    "acoustic": {
+      "score": 23.7,
+      "probabilities": {
+        "hap": 0.8666,
+        "neu": 0.1329,
+        "ang": 0.0004,
+        "sad": 0.0001
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 14.8,
+      "probabilities": {
+        "joy": 0.651,
+        "neutral": 0.292,
+        "surprise": 0.0157,
+        "fear": 0.0136,
+        "sadness": 0.0109,
+        "disgust": 0.0101,
+        "anger": 0.0067
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.47,
+    "stress_index": 51.9,
+    "probabilities": {
+      "Calm": 0.47,
+      "Stressed": 0.416,
+      "Tired": 0.115
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.867,
+    "stress_index": 23.7,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1908,
+  "cached": false
+}

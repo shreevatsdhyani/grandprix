@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-VER-154111",
+  "driver": "VER",
+  "session_id": "2023-monaco-r",
+  "lap": 71,
+  "duration_s": 5.09,
+  "audio_url": "/api/clips/2023-monaco-r-VER-154111",
+  "transcript": {
+    "text": "I clip them all a little bit with the right rear, it's so precious. Okay, we'll have a look.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 43.7,
+      "f0_mean_z": 4.167,
+      "f0_std_z": -0.668,
+      "rms_mean_z": 0.614,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.01,
+      "jitter_z": -0.783
+    },
+    "acoustic": {
+      "score": 27.4,
+      "probabilities": {
+        "hap": 0.8233,
+        "neu": 0.088,
+        "sad": 0.0826,
+        "ang": 0.0061
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.0,
+      "probabilities": {
+        "neutral": 0.9441,
+        "surprise": 0.0155,
+        "disgust": 0.014,
+        "joy": 0.013,
+        "anger": 0.0071,
+        "sadness": 0.0047,
+        "fear": 0.0016
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.952,
+    "stress_index": 95.8,
+    "probabilities": {
+      "Calm": 0.041,
+      "Stressed": 0.952,
+      "Tired": 0.007
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.823,
+    "stress_index": 27.4,
+    "probabilities": {
+      "Calm": 0.934,
+      "Stressed": 0.006,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1832,
+  "cached": false
+}

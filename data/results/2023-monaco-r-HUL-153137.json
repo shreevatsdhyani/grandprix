@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-HUL-153137",
+  "driver": "HUL",
+  "session_id": "2023-monaco-r",
+  "lap": 63,
+  "duration_s": 7.07,
+  "audio_url": "/api/clips/2023-monaco-r-HUL-153137",
+  "transcript": {
+    "text": "You can use right toggle turn 1 to stabilize. We're currently P17 so we still need some miracles but this pace is excellent.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 24.5,
+      "f0_mean_z": -1.062,
+      "f0_std_z": -0.988,
+      "rms_mean_z": 0.645,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.369,
+      "jitter_z": 0.034
+    },
+    "acoustic": {
+      "score": 25.6,
+      "probabilities": {
+        "hap": 0.8799,
+        "neu": 0.0928,
+        "ang": 0.015,
+        "sad": 0.0124
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.0,
+      "probabilities": {
+        "neutral": 0.9738,
+        "surprise": 0.009,
+        "joy": 0.0058,
+        "anger": 0.0037,
+        "fear": 0.0033,
+        "sadness": 0.0024,
+        "disgust": 0.0021
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.719,
+    "stress_index": 25.3,
+    "probabilities": {
+      "Calm": 0.719,
+      "Stressed": 0.004,
+      "Tired": 0.277
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.88,
+    "stress_index": 25.6,
+    "probabilities": {
+      "Calm": 0.926,
+      "Stressed": 0.014,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1765,
+  "cached": false
+}

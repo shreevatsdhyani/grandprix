@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-HAM-184736",
+  "driver": "HAM",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 61,
+  "duration_s": 6.66,
+  "audio_url": "/api/clips/2023-sao-paulo-r-HAM-184736",
+  "transcript": {
+    "text": "It's the same lap time as Gazzy, car ahead three-th's doing it. Yeah, I can't catch you. Save it, time.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 25.7,
+      "f0_mean_z": -0.59,
+      "f0_std_z": -0.818,
+      "rms_mean_z": -1.309,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.499,
+      "jitter_z": 1.133
+    },
+    "acoustic": {
+      "score": 31.0,
+      "probabilities": {
+        "hap": 0.6164,
+        "neu": 0.2214,
+        "sad": 0.0893,
+        "ang": 0.073
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 26.7,
+      "probabilities": {
+        "neutral": 0.7586,
+        "surprise": 0.103,
+        "anger": 0.0537,
+        "sadness": 0.0341,
+        "fear": 0.025,
+        "disgust": 0.0209,
+        "joy": 0.0047
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.74,
+    "stress_index": 68.1,
+    "probabilities": {
+      "Calm": 0.245,
+      "Stressed": 0.015,
+      "Tired": 0.74
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.616,
+    "stress_index": 31.0,
+    "probabilities": {
+      "Calm": 0.871,
+      "Stressed": 0.069,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2232,
+  "cached": false
+}

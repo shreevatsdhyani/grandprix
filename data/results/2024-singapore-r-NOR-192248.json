@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-NOR-192248",
+  "driver": "NOR",
+  "session_id": "2024-singapore-r",
+  "lap": null,
+  "duration_s": 4.51,
+  "audio_url": "/api/clips/2024-singapore-r-NOR-192248",
+  "transcript": {
+    "text": "How's the balance?",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 41.5,
+      "f0_mean_z": -1.598,
+      "f0_std_z": -0.933,
+      "rms_mean_z": 1.127,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.532,
+      "jitter_z": -0.135
+    },
+    "acoustic": {
+      "score": 54.8,
+      "probabilities": {
+        "ang": 0.4419,
+        "hap": 0.4319,
+        "neu": 0.124,
+        "sad": 0.0022
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 23.3,
+      "probabilities": {
+        "neutral": 0.7928,
+        "surprise": 0.1392,
+        "anger": 0.0219,
+        "sadness": 0.0193,
+        "disgust": 0.0137,
+        "fear": 0.0113,
+        "joy": 0.0018
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.561,
+    "stress_index": 55.1,
+    "probabilities": {
+      "Calm": 0.394,
+      "Stressed": 0.046,
+      "Tired": 0.561
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.442,
+    "stress_index": 54.8,
+    "probabilities": {
+      "Calm": 0.525,
+      "Stressed": 0.415,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1890,
+  "cached": false
+}

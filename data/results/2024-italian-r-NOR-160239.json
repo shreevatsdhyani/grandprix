@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-NOR-160239",
+  "driver": "NOR",
+  "session_id": "2024-italian-r",
+  "lap": 42,
+  "duration_s": 8.29,
+  "audio_url": "/api/clips/2024-italian-r-NOR-160239",
+  "transcript": {
+    "text": "The Ferrari is going to try one. They think it's difficult, but they might as well try. So this is qualifying now. In the words of Stu, just... I fast.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 71.4,
+      "f0_mean_z": 2.024,
+      "f0_std_z": 5.818,
+      "rms_mean_z": -0.3,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.779,
+      "jitter_z": 0.606
+    },
+    "acoustic": {
+      "score": 31.9,
+      "probabilities": {
+        "hap": 0.4705,
+        "neu": 0.3671,
+        "ang": 0.1401,
+        "sad": 0.0223
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 20.0,
+      "probabilities": {
+        "neutral": 0.8968,
+        "fear": 0.0238,
+        "surprise": 0.0175,
+        "disgust": 0.0165,
+        "sadness": 0.0163,
+        "anger": 0.0158,
+        "joy": 0.0133
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.914,
+    "stress_index": 91.4,
+    "probabilities": {
+      "Calm": 0.086,
+      "Stressed": 0.914,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.47,
+    "stress_index": 31.9,
+    "probabilities": {
+      "Calm": 0.808,
+      "Stressed": 0.132,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2292,
+  "cached": false
+}

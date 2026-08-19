@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-PER-175742",
+  "driver": "PER",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 22,
+  "duration_s": 5.38,
+  "audio_url": "/api/clips/2023-sao-paulo-r-PER-175742",
+  "transcript": {
+    "text": "But I've been with a friend of them. We're supposed to be on race. But where do I want them? You've got the pace.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 51.8,
+      "f0_mean_z": 4.21,
+      "f0_std_z": 0.484,
+      "rms_mean_z": 1.098,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.677,
+      "jitter_z": 1.591
+    },
+    "acoustic": {
+      "score": 31.2,
+      "probabilities": {
+        "hap": 0.5854,
+        "neu": 0.2432,
+        "sad": 0.0953,
+        "ang": 0.0761
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 21.0,
+      "probabilities": {
+        "neutral": 0.8684,
+        "surprise": 0.0554,
+        "anger": 0.0292,
+        "disgust": 0.0207,
+        "sadness": 0.0137,
+        "joy": 0.0072,
+        "fear": 0.0054
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.933,
+    "stress_index": 94.9,
+    "probabilities": {
+      "Calm": 0.049,
+      "Stressed": 0.933,
+      "Tired": 0.018
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.585,
+    "stress_index": 31.2,
+    "probabilities": {
+      "Calm": 0.868,
+      "Stressed": 0.072,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1797,
+  "cached": false
+}

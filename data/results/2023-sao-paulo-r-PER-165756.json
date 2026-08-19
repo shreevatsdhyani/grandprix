@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-PER-165756",
+  "driver": "PER",
+  "session_id": "2023-sao-paulo-r",
+  "lap": null,
+  "duration_s": 8.35,
+  "audio_url": "/api/clips/2023-sao-paulo-r-PER-165756",
+  "transcript": {
+    "text": "71 laps today, but the faster car the noted problem. They've been in the old school race. Under control.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 91.6,
+      "f0_mean_z": -3.307,
+      "f0_std_z": -2.32,
+      "rms_mean_z": 4.505,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.314,
+      "jitter_z": -2.752
+    },
+    "acoustic": {
+      "score": 25.1,
+      "probabilities": {
+        "hap": 0.9953,
+        "neu": 0.0028,
+        "ang": 0.0018,
+        "sad": 0.0001
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 30.0,
+      "probabilities": {
+        "neutral": 0.6338,
+        "surprise": 0.1683,
+        "sadness": 0.1588,
+        "disgust": 0.0187,
+        "anger": 0.0084,
+        "joy": 0.0069,
+        "fear": 0.005
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.656,
+    "stress_index": 31.0,
+    "probabilities": {
+      "Calm": 0.656,
+      "Stressed": 0.001,
+      "Tired": 0.343
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.995,
+    "stress_index": 25.1,
+    "probabilities": {
+      "Calm": 0.938,
+      "Stressed": 0.002,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2302,
+  "cached": false
+}

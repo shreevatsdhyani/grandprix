@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-MAG-160952",
+  "driver": "MAG",
+  "session_id": "2023-sao-paulo-r",
+  "lap": null,
+  "duration_s": 4.77,
+  "audio_url": "/api/clips/2023-sao-paulo-r-MAG-160952",
+  "transcript": {
+    "text": "Again, the tires came out of the blankets cold. Copy that, yes.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 73.6,
+      "f0_mean_z": -2.683,
+      "f0_std_z": -1.727,
+      "rms_mean_z": 2.664,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 2.129,
+      "jitter_z": -1.714
+    },
+    "acoustic": {
+      "score": 21.8,
+      "probabilities": {
+        "hap": 0.5906,
+        "neu": 0.3948,
+        "sad": 0.0085,
+        "ang": 0.006
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 33.1,
+      "probabilities": {
+        "neutral": 0.6972,
+        "anger": 0.1024,
+        "disgust": 0.0949,
+        "sadness": 0.0756,
+        "fear": 0.0147,
+        "surprise": 0.0129,
+        "joy": 0.0023
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.517,
+    "stress_index": 43.4,
+    "probabilities": {
+      "Calm": 0.517,
+      "Stressed": 0.001,
+      "Tired": 0.481
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.591,
+    "stress_index": 21.8,
+    "probabilities": {
+      "Calm": 0.934,
+      "Stressed": 0.006,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2032,
+  "cached": false
+}

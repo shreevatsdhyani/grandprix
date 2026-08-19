@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-HUL-144112",
+  "driver": "HUL",
+  "session_id": "2023-monaco-r",
+  "lap": 30,
+  "duration_s": 8.06,
+  "audio_url": "/api/clips/2023-monaco-r-HUL-144112",
+  "transcript": {
+    "text": "A lot of undersea are creeping in. All speeds, but also attraction. Getting very poor.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 100.0,
+      "f0_mean_z": 2.805,
+      "f0_std_z": 6.681,
+      "rms_mean_z": 2.979,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.121,
+      "jitter_z": 3.638
+    },
+    "acoustic": {
+      "score": 58.1,
+      "probabilities": {
+        "sad": 0.947,
+        "hap": 0.0516,
+        "neu": 0.0011,
+        "ang": 0.0002
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 39.3,
+      "probabilities": {
+        "neutral": 0.5511,
+        "disgust": 0.3127,
+        "sadness": 0.0756,
+        "anger": 0.0228,
+        "surprise": 0.021,
+        "fear": 0.0148,
+        "joy": 0.002
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.999,
+    "stress_index": 99.9,
+    "probabilities": {
+      "Calm": 0.001,
+      "Stressed": 0.999,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.947,
+    "stress_index": 58.1,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2906,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-VER-131032",
+  "driver": "VER",
+  "session_id": "2023-dutch-r",
+  "lap": null,
+  "duration_s": 6.14,
+  "audio_url": "/api/clips/2023-dutch-r-VER-131032",
+  "transcript": {
+    "text": "Radio check. Yeah, Radio check. Okay, Radio good. Focus on balance.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 72.0,
+      "f0_mean_z": 1.89,
+      "f0_std_z": 0.891,
+      "rms_mean_z": 2.704,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 3.513,
+      "jitter_z": 2.407
+    },
+    "acoustic": {
+      "score": 25.1,
+      "probabilities": {
+        "hap": 0.9936,
+        "neu": 0.0038,
+        "ang": 0.0024,
+        "sad": 0.0001
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 19.0,
+      "probabilities": {
+        "neutral": 0.918,
+        "disgust": 0.025,
+        "sadness": 0.0214,
+        "anger": 0.0133,
+        "joy": 0.0107,
+        "fear": 0.0073,
+        "surprise": 0.0042
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.444,
+    "stress_index": 54.3,
+    "probabilities": {
+      "Calm": 0.444,
+      "Stressed": 0.428,
+      "Tired": 0.128
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.994,
+    "stress_index": 25.1,
+    "probabilities": {
+      "Calm": 0.938,
+      "Stressed": 0.002,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2124,
+  "cached": false
+}

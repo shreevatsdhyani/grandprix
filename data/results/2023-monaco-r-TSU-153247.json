@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-TSU-153247",
+  "driver": "TSU",
+  "session_id": "2023-monaco-r",
+  "lap": 65,
+  "duration_s": 13.18,
+  "audio_url": "/api/clips/2023-monaco-r-TSU-153247",
+  "transcript": {
+    "text": "Yoki, we need to find some pace, is mainly underbreaking. Let's do your best, I know it's difficult. I know, but this break sucks! Offset 5, build it up, underbreaking. You can do it. Are you trying to crush me a lot?",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 100.0,
+      "f0_mean_z": 6.665,
+      "f0_std_z": 9.634,
+      "rms_mean_z": 0.049,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.356,
+      "jitter_z": 3.407
+    },
+    "acoustic": {
+      "score": 45.3,
+      "probabilities": {
+        "hap": 0.6691,
+        "ang": 0.2879,
+        "neu": 0.0304,
+        "sad": 0.0126
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 74.6,
+      "probabilities": {
+        "disgust": 0.541,
+        "anger": 0.3565,
+        "neutral": 0.037,
+        "sadness": 0.0348,
+        "fear": 0.0145,
+        "surprise": 0.0135,
+        "joy": 0.0026
+      },
+      "top_label": "disgust",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 1.0,
+    "stress_index": 100.0,
+    "probabilities": {
+      "Calm": 0.0,
+      "Stressed": 1.0,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.669,
+    "stress_index": 45.3,
+    "probabilities": {
+      "Calm": 0.669,
+      "Stressed": 0.271,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2409,
+  "cached": false
+}

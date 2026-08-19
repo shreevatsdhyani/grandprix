@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-PER-164706",
+  "driver": "PER",
+  "session_id": "2023-bahrain-r",
+  "lap": 57,
+  "duration_s": 23.58,
+  "audio_url": "/api/clips/2023-bahrain-r-PER-164706",
+  "transcript": {
+    "text": "Okay, check a flag. Tiny drive. P2. Yeah, good guys. Neither is not the season. Very well done. Well on Checo. That's a very strong team start the season and good move on Charles. Maximum points for team. Well done mate. Really good. Yeah, great effort guys. Very, very nice. Let's keep it up. It's a long season ahead.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 18.2,
+      "f0_mean_z": 0.95,
+      "f0_std_z": 0.165,
+      "rms_mean_z": -1.133,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.025,
+      "jitter_z": 0.931
+    },
+    "acoustic": {
+      "score": 32.7,
+      "probabilities": {
+        "hap": 0.768,
+        "ang": 0.0849,
+        "neu": 0.0753,
+        "sad": 0.0718
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 13.7,
+      "probabilities": {
+        "joy": 0.661,
+        "neutral": 0.3012,
+        "disgust": 0.0128,
+        "anger": 0.008,
+        "sadness": 0.0078,
+        "surprise": 0.0078,
+        "fear": 0.0015
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.644,
+    "stress_index": 33.9,
+    "probabilities": {
+      "Calm": 0.644,
+      "Stressed": 0.19,
+      "Tired": 0.166
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.768,
+    "stress_index": 32.7,
+    "probabilities": {
+      "Calm": 0.86,
+      "Stressed": 0.08,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 4974,
+  "cached": false
+}

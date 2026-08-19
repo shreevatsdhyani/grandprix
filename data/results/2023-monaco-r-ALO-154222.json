@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-ALO-154222",
+  "driver": "ALO",
+  "session_id": "2023-monaco-r",
+  "lap": 72,
+  "duration_s": 6.14,
+  "audio_url": "/api/clips/2023-monaco-r-ALO-154222",
+  "transcript": {
+    "text": "So we really think the best place to save some tire temp is 1314 and exit of the last corner traction.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 32.2,
+      "f0_mean_z": -0.999,
+      "f0_std_z": -0.887,
+      "rms_mean_z": -0.712,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.427,
+      "jitter_z": 0.491
+    },
+    "acoustic": {
+      "score": 27.7,
+      "probabilities": {
+        "hap": 0.73,
+        "neu": 0.2006,
+        "ang": 0.0656,
+        "sad": 0.0038
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.9,
+      "probabilities": {
+        "neutral": 0.9473,
+        "surprise": 0.028,
+        "joy": 0.0069,
+        "anger": 0.0057,
+        "sadness": 0.0052,
+        "fear": 0.0038,
+        "disgust": 0.0031
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.593,
+    "stress_index": 36.8,
+    "probabilities": {
+      "Calm": 0.593,
+      "Stressed": 0.005,
+      "Tired": 0.403
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.73,
+    "stress_index": 27.7,
+    "probabilities": {
+      "Calm": 0.878,
+      "Stressed": 0.062,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1816,
+  "cached": false
+}

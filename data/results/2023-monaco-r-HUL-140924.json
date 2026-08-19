@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-HUL-140924",
+  "driver": "HUL",
+  "session_id": "2023-monaco-r",
+  "lap": 5,
+  "duration_s": 5.98,
+  "audio_url": "/api/clips/2023-monaco-r-HUL-140924",
+  "transcript": {
+    "text": "I think I hit or picked up some debris there out of the tunnel. Fell on the front wing.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 82.6,
+      "f0_mean_z": 4.597,
+      "f0_std_z": 1.759,
+      "rms_mean_z": 3.141,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.834,
+      "jitter_z": 2.891
+    },
+    "acoustic": {
+      "score": 59.7,
+      "probabilities": {
+        "sad": 0.9794,
+        "hap": 0.01,
+        "ang": 0.0061,
+        "neu": 0.0045
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 52.8,
+      "probabilities": {
+        "neutral": 0.3432,
+        "fear": 0.2498,
+        "disgust": 0.1353,
+        "sadness": 0.1061,
+        "surprise": 0.1023,
+        "anger": 0.0598,
+        "joy": 0.0034
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.999,
+    "stress_index": 100.0,
+    "probabilities": {
+      "Calm": 0.0,
+      "Stressed": 0.999,
+      "Tired": 0.001
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.979,
+    "stress_index": 59.7,
+    "probabilities": {
+      "Calm": 0.934,
+      "Stressed": 0.006,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2594,
+  "cached": false
+}

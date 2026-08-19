@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-NOR-153524",
+  "driver": "NOR",
+  "session_id": "2023-bahrain-r",
+  "lap": 19,
+  "duration_s": 8.64,
+  "audio_url": "/api/clips/2023-bahrain-r-NOR-153524",
+  "transcript": {
+    "text": "So we have an issue, we're going to have to stop again next time around. When do we have to stop? Next like slap? Oh man. You may as well put me on the shelf.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 21.6,
+      "f0_mean_z": 0.345,
+      "f0_std_z": -0.839,
+      "rms_mean_z": -1.021,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.498,
+      "jitter_z": -0.3
+    },
+    "acoustic": {
+      "score": 27.2,
+      "probabilities": {
+        "hap": 0.679,
+        "neu": 0.2196,
+        "sad": 0.0759,
+        "ang": 0.0254
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 76.4,
+      "probabilities": {
+        "anger": 0.5964,
+        "disgust": 0.195,
+        "neutral": 0.085,
+        "fear": 0.044,
+        "sadness": 0.0382,
+        "surprise": 0.0335,
+        "joy": 0.008
+      },
+      "top_label": "anger",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.994,
+    "stress_index": 89.6,
+    "probabilities": {
+      "Calm": 0.005,
+      "Stressed": 0.001,
+      "Tired": 0.994
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.679,
+    "stress_index": 27.2,
+    "probabilities": {
+      "Calm": 0.916,
+      "Stressed": 0.024,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3096,
+  "cached": false
+}

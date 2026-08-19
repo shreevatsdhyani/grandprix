@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-ZHO-191345",
+  "driver": "ZHO",
+  "session_id": "2023-sao-paulo-r",
+  "lap": null,
+  "duration_s": 22.34,
+  "audio_url": "/api/clips/2023-sao-paulo-r-ZHO-191345",
+  "transcript": {
+    "text": "We finished P17? Yeah, I think we can fight if we'll get some good air. The start was good, but then I got called out by 5.3 to 10 to so I lost the position. Cabi, Cabi. Can keep good things for tomorrow. Yeah, Cabi. The pace, I think, will better than the guys around. We just get held up so much with the heart strain.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 100.0,
+      "f0_mean_z": 7.435,
+      "f0_std_z": 3.292,
+      "rms_mean_z": -2.438,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.468,
+      "jitter_z": 0.744
+    },
+    "acoustic": {
+      "score": 52.9,
+      "probabilities": {
+        "sad": 0.7851,
+        "hap": 0.2045,
+        "ang": 0.0065,
+        "neu": 0.004
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 22.8,
+      "probabilities": {
+        "neutral": 0.8333,
+        "sadness": 0.0643,
+        "disgust": 0.0354,
+        "surprise": 0.028,
+        "anger": 0.014,
+        "joy": 0.0128,
+        "fear": 0.0121
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 1.0,
+    "stress_index": 100.0,
+    "probabilities": {
+      "Calm": 0.0,
+      "Stressed": 1.0,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.785,
+    "stress_index": 52.9,
+    "probabilities": {
+      "Calm": 0.934,
+      "Stressed": 0.006,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3919,
+  "cached": false
+}

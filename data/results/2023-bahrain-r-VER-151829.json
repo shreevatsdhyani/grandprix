@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-VER-151829",
+  "driver": "VER",
+  "session_id": "2023-bahrain-r",
+  "lap": 10,
+  "duration_s": 4.29,
+  "audio_url": "/api/clips/2023-bahrain-r-VER-151829",
+  "transcript": {
+    "text": "Don't tell you, I can give you a bit of a bit of luck in.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 43.0,
+      "f0_mean_z": 4.058,
+      "f0_std_z": -0.705,
+      "rms_mean_z": 0.405,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.213,
+      "jitter_z": 0.147
+    },
+    "acoustic": {
+      "score": 23.9,
+      "probabilities": {
+        "hap": 0.8647,
+        "neu": 0.13,
+        "sad": 0.0049,
+        "ang": 0.0005
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.6,
+      "probabilities": {
+        "neutral": 0.8903,
+        "joy": 0.0572,
+        "sadness": 0.0199,
+        "fear": 0.0097,
+        "disgust": 0.0095,
+        "surprise": 0.008,
+        "anger": 0.0054
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.907,
+    "stress_index": 93.7,
+    "probabilities": {
+      "Calm": 0.06,
+      "Stressed": 0.907,
+      "Tired": 0.033
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.865,
+    "stress_index": 23.9,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2802,
+  "cached": false
+}

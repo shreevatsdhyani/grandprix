@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-STR-192827",
+  "driver": "STR",
+  "session_id": "2024-singapore-r",
+  "lap": null,
+  "duration_s": 8.16,
+  "audio_url": "/api/clips/2024-singapore-r-STR-192827",
+  "transcript": {
+    "text": "Got a vibration when I break. Copy, okay, we see all the tents. I'll let you know. If you improve if the tents come up.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 19.4,
+      "f0_mean_z": -0.593,
+      "f0_std_z": -0.281,
+      "rms_mean_z": -0.345,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.207,
+      "jitter_z": -0.323
+    },
+    "acoustic": {
+      "score": 38.4,
+      "probabilities": {
+        "hap": 0.5001,
+        "neu": 0.199,
+        "sad": 0.1614,
+        "ang": 0.1395
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 27.6,
+      "probabilities": {
+        "neutral": 0.7973,
+        "anger": 0.0894,
+        "disgust": 0.0481,
+        "fear": 0.0251,
+        "sadness": 0.0231,
+        "surprise": 0.0122,
+        "joy": 0.0048
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.534,
+    "stress_index": 42.6,
+    "probabilities": {
+      "Calm": 0.534,
+      "Stressed": 0.061,
+      "Tired": 0.406
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.5,
+    "stress_index": 38.4,
+    "probabilities": {
+      "Calm": 0.809,
+      "Stressed": 0.131,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2251,
+  "cached": false
+}

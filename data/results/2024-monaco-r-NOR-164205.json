@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-NOR-164205",
+  "driver": "NOR",
+  "session_id": "2024-monaco-r",
+  "lap": 44,
+  "duration_s": 6.24,
+  "audio_url": "/api/clips/2024-monaco-r-NOR-164205",
+  "transcript": {
+    "text": "How's my friend left looking back to that? Okay I know of the four of you you are the best.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 9.7,
+      "f0_mean_z": 0.392,
+      "f0_std_z": -0.458,
+      "rms_mean_z": -0.356,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.007,
+      "jitter_z": -0.542
+    },
+    "acoustic": {
+      "score": 30.7,
+      "probabilities": {
+        "hap": 0.6432,
+        "neu": 0.2059,
+        "sad": 0.0802,
+        "ang": 0.0707
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 22.6,
+      "probabilities": {
+        "neutral": 0.8081,
+        "surprise": 0.0952,
+        "anger": 0.0385,
+        "disgust": 0.0279,
+        "joy": 0.0229,
+        "sadness": 0.0048,
+        "fear": 0.0026
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.72,
+    "stress_index": 25.9,
+    "probabilities": {
+      "Calm": 0.72,
+      "Stressed": 0.072,
+      "Tired": 0.208
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.643,
+    "stress_index": 30.7,
+    "probabilities": {
+      "Calm": 0.874,
+      "Stressed": 0.066,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2843,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-GAS-163113",
+  "driver": "GAS",
+  "session_id": "2023-dutch-r",
+  "lap": 72,
+  "duration_s": 26.11,
+  "audio_url": "/api/clips/2023-dutch-r-GAS-163113",
+  "transcript": {
+    "text": "Yeah, that's what I like baby. That's what I like. Really good race. Really nice. You guys can be proud. Very well executed. Nice for the issues. Oh, nice job. Very nice job.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 100.0,
+      "f0_mean_z": 5.651,
+      "f0_std_z": 4.349,
+      "rms_mean_z": 1.188,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.835,
+      "jitter_z": 1.387
+    },
+    "acoustic": {
+      "score": 29.4,
+      "probabilities": {
+        "hap": 0.8962,
+        "sad": 0.0715,
+        "ang": 0.0282,
+        "neu": 0.0041
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 12.9,
+      "probabilities": {
+        "joy": 0.8338,
+        "neutral": 0.1274,
+        "disgust": 0.0201,
+        "surprise": 0.0072,
+        "anger": 0.0056,
+        "sadness": 0.005,
+        "fear": 0.001
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.995,
+    "stress_index": 99.5,
+    "probabilities": {
+      "Calm": 0.005,
+      "Stressed": 0.995,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.896,
+    "stress_index": 29.4,
+    "probabilities": {
+      "Calm": 0.913,
+      "Stressed": 0.027,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3431,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-VER-170259",
+  "driver": "VER",
+  "session_id": "2024-monaco-r",
+  "lap": 60,
+  "duration_s": 2.91,
+  "audio_url": "/api/clips/2024-monaco-r-VER-170259",
+  "transcript": {
+    "text": "I mean but three no one is losing it again",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 38.0,
+      "f0_mean_z": 2.595,
+      "f0_std_z": 0.236,
+      "rms_mean_z": 1.727,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.186,
+      "jitter_z": 0.502
+    },
+    "acoustic": {
+      "score": 27.4,
+      "probabilities": {
+        "hap": 0.8924,
+        "sad": 0.0679,
+        "neu": 0.0347,
+        "ang": 0.005
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 35.4,
+      "probabilities": {
+        "neutral": 0.8227,
+        "disgust": 0.0418,
+        "sadness": 0.0395,
+        "anger": 0.0382,
+        "surprise": 0.0352,
+        "joy": 0.0186,
+        "fear": 0.0041
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.776,
+    "stress_index": 85.2,
+    "probabilities": {
+      "Calm": 0.139,
+      "Stressed": 0.776,
+      "Tired": 0.085
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.892,
+    "stress_index": 27.4,
+    "probabilities": {
+      "Calm": 0.935,
+      "Stressed": 0.005,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2624,
+  "cached": false
+}

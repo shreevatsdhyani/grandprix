@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-british-r-LEC-142152",
+  "driver": "LEC",
+  "session_id": "2024-british-r",
+  "lap": null,
+  "duration_s": 2.91,
+  "audio_url": "/api/clips/2024-british-r-LEC-142152",
+  "transcript": {
+    "text": "The track to the east side of what I felt.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 44.7,
+      "f0_mean_z": -1.222,
+      "f0_std_z": -1.981,
+      "rms_mean_z": -1.518,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.867,
+      "jitter_z": -0.009
+    },
+    "acoustic": {
+      "score": 17.6,
+      "probabilities": {
+        "neu": 0.936,
+        "sad": 0.0558,
+        "hap": 0.0081,
+        "ang": 0.0
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 77.5,
+      "probabilities": {
+        "fear": 0.7503,
+        "disgust": 0.1447,
+        "neutral": 0.0545,
+        "surprise": 0.0218,
+        "anger": 0.0116,
+        "sadness": 0.0113,
+        "joy": 0.0058
+      },
+      "top_label": "fear",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.994,
+    "stress_index": 89.5,
+    "probabilities": {
+      "Calm": 0.006,
+      "Stressed": 0.0,
+      "Tired": 0.994
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.936,
+    "stress_index": 17.6,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1922,
+  "cached": false
+}

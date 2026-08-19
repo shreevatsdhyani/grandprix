@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-SAI-143443",
+  "driver": "SAI",
+  "session_id": "2023-monaco-r",
+  "lap": 25,
+  "duration_s": 8.51,
+  "audio_url": "/api/clips/2023-monaco-r-SAI-143443",
+  "transcript": {
+    "text": "For influence reporting, are you left graining on the heart? Yes, I'm here. Okay. I think that is higher than expected.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 4.8,
+      "f0_mean_z": -0.461,
+      "f0_std_z": 0.065,
+      "rms_mean_z": -0.0,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.071,
+      "jitter_z": 0.272
+    },
+    "acoustic": {
+      "score": 24.1,
+      "probabilities": {
+        "hap": 0.8326,
+        "neu": 0.1525,
+        "sad": 0.0121,
+        "ang": 0.0029
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 26.4,
+      "probabilities": {
+        "neutral": 0.7593,
+        "surprise": 0.1021,
+        "disgust": 0.0777,
+        "anger": 0.0435,
+        "sadness": 0.0096,
+        "fear": 0.0047,
+        "joy": 0.003
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.771,
+    "stress_index": 20.8,
+    "probabilities": {
+      "Calm": 0.771,
+      "Stressed": 0.016,
+      "Tired": 0.213
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.833,
+    "stress_index": 24.1,
+    "probabilities": {
+      "Calm": 0.937,
+      "Stressed": 0.003,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2988,
+  "cached": false
+}

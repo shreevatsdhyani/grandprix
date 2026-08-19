@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-GAS-165833",
+  "driver": "GAS",
+  "session_id": "2023-sao-paulo-r",
+  "lap": null,
+  "duration_s": 9.86,
+  "audio_url": "/api/clips/2023-sao-paulo-r-GAS-165833",
+  "transcript": {
+    "text": "So it's going to be busy race today mate. So we'll just stay focused and we'll take all the opportunities we can get. Good luck. Thanks, those good boys. Long, great.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 4.8,
+      "f0_mean_z": 0.033,
+      "f0_std_z": -0.023,
+      "rms_mean_z": -0.483,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.058,
+      "jitter_z": -0.205
+    },
+    "acoustic": {
+      "score": 25.4,
+      "probabilities": {
+        "hap": 0.9511,
+        "neu": 0.0307,
+        "sad": 0.0158,
+        "ang": 0.0024
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.6,
+      "probabilities": {
+        "neutral": 0.735,
+        "joy": 0.2134,
+        "sadness": 0.0299,
+        "anger": 0.0073,
+        "surprise": 0.007,
+        "disgust": 0.0056,
+        "fear": 0.0018
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.782,
+    "stress_index": 20.2,
+    "probabilities": {
+      "Calm": 0.782,
+      "Stressed": 0.065,
+      "Tired": 0.152
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.951,
+    "stress_index": 25.4,
+    "probabilities": {
+      "Calm": 0.938,
+      "Stressed": 0.002,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2653,
+  "cached": false
+}

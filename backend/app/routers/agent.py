@@ -5,8 +5,9 @@ answer natural-language questions about driver stress, lap performance, and
 radio transcripts.
 
 The agent has NO access to filesystem, database, or external APIs. It can ONLY
-call the 5 tools defined here, which wrap our existing data layer — so every
-number it cites comes from data/results/, the same source the UI reads.
+call the tools defined here, which wrap our existing data layer — so every
+number it cites comes from data/results/ and data/context/, the same sources the
+UI reads.
 
 Zero hallucination risk: if the agent doesn't have a tool for something, it
 says "I don't have access to that data" rather than making up an answer.
@@ -22,10 +23,30 @@ from typing import Any
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
-from app import agent_config, config
+import functools
+
+from app import agent_config, config, groq_client
 from app.data import store, timeline as timeline_module
-from app.schemas import ScoringMode
 from app.routers.agent_cache import get_cache
+from app.schemas import ScoringMode
+
+
+# Every tool below needs a timeline, and a single question routinely triggers
+# three or four tool calls. Each `timeline_module.build()` re-reads the FastF1 lap
+# cache, re-parses every clip result and re-runs the lead-lag correlation, so an
+# unmemoised turn did that work four times over — and now also re-reads the
+# context file each time. Memoised per process, which is safe because the inputs
+# are files written offline by build scripts, not live state.
+#
+# `maxsize` covers a demo's worth of session/driver/mode combinations. Cleared by
+# `_invalidate_timelines()` if a rebuild happens while the server is up.
+@functools.lru_cache(maxsize=64)
+def _timeline(session_id: str, driver: str, mode: str):
+    return timeline_module.build(session_id, driver.upper(), ScoringMode(mode))
+
+
+def _invalidate_timelines() -> None:
+    _timeline.cache_clear()
 
 log = logging.getLogger(__name__)
 router = APIRouter(prefix="/api/agent", tags=["agent"])
@@ -47,20 +68,6 @@ class AgentResponse(BaseModel):
 # ═══════════════════════════════════════════════════════════════════════════
 
 
-def _mode(name: str) -> ScoringMode:
-    """The model picked this string, so it may be anything.
-
-    An unrecognised mode falls back to fusion rather than raising: the question
-    was about stress, not about scoring paths, and answering it from the
-    dashboard's own mode beats a tool error the agent has to apologise for.
-    """
-    try:
-        return ScoringMode(name)
-    except ValueError:
-        log.warning(f"Agent asked for unknown scoring mode {name!r} — using fusion")
-        return ScoringMode.FUSION
-
-
 def get_stress_series(driver: str, session_id: str, mode: str = "fusion") -> dict[int, float]:
     """Get stress index (0-100) per lap for a driver in a session.
 
@@ -68,7 +75,7 @@ def get_stress_series(driver: str, session_id: str, mode: str = "fusion") -> dic
     {35: 78.2, 36: 82.1, 37: 75.3}
     """
     try:
-        timeline = timeline_module.build(session_id, driver, _mode(mode))
+        timeline = _timeline(session_id, driver, mode)
         return {
             p.lap: round(p.stress_index, 1)
             for p in timeline.points
@@ -86,7 +93,7 @@ def get_lap_deltas(driver: str, session_id: str) -> dict[int, float]:
     Returns: {lap: delta_s, ...}
     """
     try:
-        timeline = timeline_module.build(session_id, driver, ScoringMode.FUSION)
+        timeline = _timeline(session_id, driver, "fusion")
         return {
             p.lap: round(p.delta_s, 3)
             for p in timeline.points
@@ -118,7 +125,7 @@ def find_stressed_moments(driver: str, session_id: str, min_stress: float = 70.0
     Returns list of {lap, stress, clip_id, mood} for moments above min_stress.
     """
     try:
-        timeline = timeline_module.build(session_id, driver, ScoringMode.FUSION)
+        timeline = _timeline(session_id, driver, "fusion")
         moments = []
         for p in timeline.points:
             if p.stress_index and p.stress_index >= min_stress and p.clip_id:
@@ -140,7 +147,7 @@ def get_lead_lag_info(driver: str, session_id: str) -> dict[str, Any]:
     Returns peak correlation lag, correlation coefficient, and sample size.
     """
     try:
-        timeline = timeline_module.build(session_id, driver, ScoringMode.FUSION)
+        timeline = _timeline(session_id, driver, "fusion")
         if not timeline.lead_lag:
             return {"error": "Not enough data for lead-lag analysis"}
 
@@ -153,6 +160,146 @@ def get_lead_lag_info(driver: str, session_id: str) -> dict[str, Any]:
         }
     except Exception as e:
         log.error(f"get_lead_lag_info failed: {e}")
+        return {"error": str(e)}
+
+
+
+
+def get_track_conditions(driver: str, session_id: str, lap: int | None = None) -> dict[str, Any]:
+    """Weather and grip: at one lap, or a session summary if no lap is given."""
+    try:
+        timeline = _timeline(session_id, driver, "fusion")
+        if lap is not None:
+            point = next((p for p in timeline.points if p.lap == lap), None)
+            if point is None or point.track is None:
+                return {"error": f"No track data for lap {lap}"}
+            return {"lap": lap, **point.track.model_dump(exclude_none=True)}
+
+        ctx = timeline.session_context
+        if ctx is None:
+            return {"error": "No race context built for this session"}
+        temps = [(e.lap, e.track_temp_c) for e in ctx.track_evolution if e.track_temp_c is not None]
+        wet = [e.lap for e in ctx.track_evolution if e.rainfall]
+        summary: dict[str, Any] = {
+            "wet_dry_crossover_laps": ctx.wet_dry_crossovers,
+            "wet_laps": [wet[0], wet[-1]] if wet else [],
+            "n_wet_laps": len(wet),
+        }
+        if temps:
+            summary["track_temp_c"] = {
+                "at_lap_1": temps[0][1],
+                "min": min(t[1] for t in temps),
+                "min_at_lap": min(temps, key=lambda t: t[1])[0],
+                "max": max(t[1] for t in temps),
+                "max_at_lap": max(temps, key=lambda t: t[1])[0],
+                "final": temps[-1][1],
+            }
+        return summary
+    except Exception as e:
+        log.error(f"get_track_conditions failed: {e}")
+        return {"error": str(e)}
+
+
+def get_tyre_state(driver: str, session_id: str, lap: int | None = None) -> dict[str, Any]:
+    """Modelled tyre condition. All degradation figures are inferred, not measured."""
+    try:
+        timeline = _timeline(session_id, driver, "fusion")
+        note = (
+            "Degradation is MODELLED from compound, tyre age and lap-time trend. "
+            "No public source has real F1 tyre temperature, pressure or wear."
+        )
+        if lap is not None:
+            point = next((p for p in timeline.points if p.lap == lap), None)
+            if point is None or point.tyre is None:
+                return {"error": f"No tyre data for lap {lap}"}
+            return {"lap": lap, "note": note, **point.tyre.model_dump(exclude_none=True)}
+
+        ctx = timeline.session_context
+        if ctx is None:
+            return {"error": "No race context built for this session"}
+        stints = ctx.stints_by_driver.get(driver.upper(), [])
+        return {"note": note, "stints": [st.model_dump(exclude_none=True) for st in stints]}
+    except Exception as e:
+        log.error(f"get_tyre_state failed: {e}")
+        return {"error": str(e)}
+
+
+def get_clip_context(clip_id: str, session_id: str, driver: str) -> dict[str, Any]:
+    """Everything that was true when one radio call was transmitted.
+
+    This is the tool for "where on the lap was the driver" and "what was happening
+    around them" — corner, speed, tyre age, track temperature, flags, gaps.
+    """
+    try:
+        timeline = _timeline(session_id, driver, "fusion")
+        ctx = timeline.clip_contexts.get(clip_id)
+        if ctx is None:
+            return {"error": f"No resolved context for clip {clip_id}"}
+        out = ctx.model_dump(exclude_none=True)
+        # The full race-control window is mostly blue flags for other cars and
+        # would swamp the model's context for no benefit.
+        sit = out.get("situation") or {}
+        msgs = sit.get("nearby_messages") or []
+        sit["nearby_messages"] = sorted(msgs, key=lambda m: abs(m.get("offset_s", 0)))[:4]
+        return out
+    except Exception as e:
+        log.error(f"get_clip_context failed: {e}")
+        return {"error": str(e)}
+
+
+def get_race_situation(driver: str, session_id: str, lap: int) -> dict[str, Any]:
+    """Track position, gaps and flags on one lap."""
+    try:
+        timeline = _timeline(session_id, driver, "fusion")
+        point = next((p for p in timeline.points if p.lap == lap), None)
+        if point is None or point.situation is None:
+            return {"error": f"No situation data for lap {lap}"}
+        out = point.situation.model_dump(exclude_none=True)
+        msgs = out.get("nearby_messages") or []
+        out["nearby_messages"] = sorted(msgs, key=lambda m: abs(m.get("offset_s", 0)))[:4]
+        return {"lap": lap, **out}
+    except Exception as e:
+        log.error(f"get_race_situation failed: {e}")
+        return {"error": str(e)}
+
+
+def get_session_summary(driver: str, session_id: str) -> dict[str, Any]:
+    """Orientation: race length, stints, weather shape, and what data exists.
+
+    Worth calling first on an open-ended question — it says which domains are
+    populated, so the agent can avoid promising an answer it has no data for.
+    """
+    try:
+        timeline = _timeline(session_id, driver, "fusion")
+        ctx = timeline.session_context
+        clips = timeline.clips
+        phases: dict[str, int] = {}
+        for c in timeline.clip_contexts.values():
+            phases[c.phase or "unknown"] = phases.get(c.phase or "unknown", 0) + 1
+        out: dict[str, Any] = {
+            "session": timeline.session.event_name,
+            "year": timeline.session.year,
+            "driver": timeline.driver,
+            "n_laps": len(timeline.points),
+            "n_radio_clips": len(clips),
+            "radio_by_phase": phases,
+            "has_race_context": ctx is not None,
+            "has_biometrics": timeline.biometrics is not None,
+            "stress_calibration": timeline.baseline.source if timeline.baseline else None,
+        }
+        if ctx is not None:
+            out["circuit_corners"] = ctx.circuit_corners
+            out["wet_dry_crossover_laps"] = ctx.wet_dry_crossovers
+            out["n_stints"] = len(ctx.stints_by_driver.get(driver.upper(), []))
+        if timeline.lead_lag:
+            out["lead_lag"] = {
+                "peak_lag_laps": timeline.lead_lag.peak_lag_laps,
+                "n_samples": timeline.lead_lag.n_samples,
+                "is_significant": timeline.lead_lag.is_significant,
+            }
+        return out
+    except Exception as e:
+        log.error(f"get_session_summary failed: {e}")
         return {"error": str(e)}
 
 
@@ -254,16 +401,102 @@ TOOLS = [
             },
         },
     },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_session_summary",
+            "description": "Orientation for a session: race length, number of radio calls and how they split between grid/racing/post-flag, which context domains have data, stint count, weather shape. Call this first for open-ended questions so you know what data exists before promising an answer.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "driver": {"type": "string", "description": "3-letter driver code"},
+                    "session_id": {"type": "string", "description": "Session identifier"},
+                },
+                "required": ["driver", "session_id"],
+            },
+        },
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_track_conditions",
+            "description": "Track and air temperature, rainfall, humidity, wind, and a field-median-lap-time grip proxy. Pass a lap for that lap's conditions, or omit it for a session summary including the wet/dry crossover laps. Use for any question about weather, temperature, rain, or grip.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "driver": {"type": "string", "description": "3-letter driver code"},
+                    "session_id": {"type": "string", "description": "Session identifier"},
+                    "lap": {"type": "integer", "description": "Lap number; omit for a session summary"},
+                },
+                "required": ["driver", "session_id"],
+            },
+        },
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_tyre_state",
+            "description": "Tyre compound, age, stint number and MODELLED degradation in seconds per lap. Pass a lap for that lap, or omit for every stint. IMPORTANT: degradation is inferred from lap-time trend — there is no public source of real F1 tyre temperature, pressure or wear, so never describe these as measurements.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "driver": {"type": "string", "description": "3-letter driver code"},
+                    "session_id": {"type": "string", "description": "Session identifier"},
+                    "lap": {"type": "integer", "description": "Lap number; omit for all stints"},
+                },
+                "required": ["driver", "session_id"],
+            },
+        },
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_clip_context",
+            "description": "Everything that was true when one radio call was transmitted: which lap, how far into the lap in metres, the nearest numbered corner, sector, speed/throttle/brake/gear/DRS, tyre compound and age, track temperature, race position, gap to the car ahead, and nearby race-control messages. This is the tool for 'where on the lap was the driver when they said that'.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "clip_id": {"type": "string", "description": "Clip identifier, e.g. '2024-british-r-HAM-160752'"},
+                    "session_id": {"type": "string", "description": "Session identifier"},
+                    "driver": {"type": "string", "description": "3-letter driver code"},
+                },
+                "required": ["clip_id", "session_id", "driver"],
+            },
+        },
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_race_situation",
+            "description": "Race position, gap to the car ahead, gap to the leader, whether the driver was in traffic, track status and race-control flags on a given lap. Use for questions about overtaking, defending, traffic, safety cars, flags or penalties.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "driver": {"type": "string", "description": "3-letter driver code"},
+                    "session_id": {"type": "string", "description": "Session identifier"},
+                    "lap": {"type": "integer", "description": "Lap number"},
+                },
+                "required": ["driver", "session_id", "lap"],
+            },
+        },
+    },
 ]
 
 
 # Map tool names to actual Python functions
 TOOL_MAP = {
+    # Voice / pace — the original five
     "get_stress_series": get_stress_series,
     "get_lap_deltas": get_lap_deltas,
     "get_transcript": get_transcript,
     "find_stressed_moments": find_stressed_moments,
     "get_lead_lag_info": get_lead_lag_info,
+    # Race context
+    "get_session_summary": get_session_summary,
+    "get_track_conditions": get_track_conditions,
+    "get_tyre_state": get_tyre_state,
+    "get_clip_context": get_clip_context,
+    "get_race_situation": get_race_situation,
 }
 
 
@@ -293,16 +526,12 @@ async def ask_agent(req: AgentRequest) -> AgentResponse:
         log.info(f"Returning cached response for: {req.question[:50]}...")
         return AgentResponse(**cached)
 
-    api_key = os.getenv("GROQ_API_KEY")
-    if not api_key:
-        raise HTTPException(500, "GROQ_API_KEY not set")
-
     try:
-        from groq import Groq
-    except ImportError:
-        raise HTTPException(500, "Groq SDK not installed - run: pip install groq")
-
-    client = Groq(api_key=api_key)
+        client = groq_client.client()
+        model = groq_client.resolve_model()
+    except groq_client.GroqUnavailable as exc:
+        # 503, not 500: the service is fine, the LLM behind it is not configured.
+        raise HTTPException(503, str(exc)) from exc
 
     # System prompt that prevents hallucination
     system_prompt = agent_config.SYSTEM_PROMPT_TEMPLATE.format(
@@ -317,13 +546,6 @@ async def ask_agent(req: AgentRequest) -> AgentResponse:
 
     tools_used = []
 
-    # Try the primary model, then the fallback. Groq retires hosted models on
-    # notice and a retired name comes back as a 404, so a single hardcoded model
-    # is a scheduled outage: this endpoint was already dead that way. Sticky per
-    # request rather than per call — switching models mid-conversation would hand
-    # a second model someone else's half-finished tool loop.
-    model = agent_config.GROQ_MODEL
-
     for iteration in range(agent_config.AGENT_MAX_ITERATIONS):
         try:
             response = client.chat.completions.create(
@@ -335,49 +557,14 @@ async def ask_agent(req: AgentRequest) -> AgentResponse:
                 temperature=agent_config.AGENT_TEMPERATURE,
             )
         except Exception as e:
-            fallback = agent_config.GROQ_FALLBACK_MODEL
-            if model == fallback:
-                log.error(f"Groq API call failed on {model}: {e}")
-                raise HTTPException(500, f"Agent failed: {str(e)}")
-            log.warning(f"Groq model {model} failed ({e}) — retrying on {fallback}")
-            model = fallback
-            try:
-                response = client.chat.completions.create(
-                    model=model,
-                    messages=messages,
-                    tools=TOOLS,
-                    tool_choice="auto",
-                    max_tokens=agent_config.AGENT_MAX_TOKENS,
-                    temperature=agent_config.AGENT_TEMPERATURE,
-                )
-            except Exception as e2:
-                log.error(f"Groq API call failed on fallback {model}: {e2}")
-                raise HTTPException(500, f"Agent failed: {str(e2)}")
+            log.error(f"Groq API call failed: {e}")
+            raise HTTPException(500, f"Agent failed: {str(e)}")
 
         assistant_message = response.choices[0].message
 
         # If no tool calls, we have the final answer
         if not assistant_message.tool_calls:
-            final_answer = (assistant_message.content or "").strip()
-            # A turn that is all reasoning and no prose is not an answer. These
-            # models put their working in a separate `reasoning` field and
-            # occasionally stop there, and the old code shipped the placeholder
-            # to the user *and cached it for an hour* — so one empty turn made
-            # that question permanently unanswerable. Ask again instead; the
-            # tool results are still in `messages`, so it costs one round trip
-            # and the loop's own iteration cap bounds it.
-            if not final_answer:
-                log.warning(f"{model} returned no prose on iteration {iteration} — re-prompting")
-                messages.append(
-                    {
-                        "role": "user",
-                        "content": (
-                            "Answer now, in prose, using only the tool results above."
-                        ),
-                    }
-                )
-                continue
-
+            final_answer = assistant_message.content or "I couldn't generate an answer."
             response = AgentResponse(answer=final_answer, tools_used=tools_used)
 
             # Cache the response
@@ -427,10 +614,13 @@ async def ask_agent(req: AgentRequest) -> AgentResponse:
                     "content": json.dumps({"error": str(e)}),
                 })
 
-    # Max iterations reached. Deliberately not cached: this is a failure of the
-    # loop, not a property of the question, and an hour of serving it instantly
-    # would make a transient stall look like a permanent refusal.
-    return AgentResponse(
+    # Max iterations reached
+    response = AgentResponse(
         answer="I couldn't complete the analysis - too many steps required.",
         tools_used=tools_used,
     )
+
+    # Cache even failed responses to avoid retrying
+    cache.set(req.question, req.session_id, req.driver, response.model_dump())
+
+    return response

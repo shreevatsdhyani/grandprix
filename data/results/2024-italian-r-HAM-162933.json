@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-HAM-162933",
+  "driver": "HAM",
+  "session_id": "2024-italian-r",
+  "lap": 53,
+  "duration_s": 24.0,
+  "audio_url": "/api/clips/2024-italian-r-HAM-162933",
+  "transcript": {
+    "text": "Yeah, tough end to, not a good weekend, right? But, uh, we got to see another day, let's keep pushing. Didn't have the pace today, but... Thanks to all the hard work. Great stops, guys. Yeah, thanks, Lois. Yeah, this is one to pick up and, uh, analyse, but yeah, well on you. Yeah, good drive.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 24.8,
+      "f0_mean_z": 0.005,
+      "f0_std_z": -0.759,
+      "rms_mean_z": 1.001,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.337,
+      "jitter_z": -0.653
+    },
+    "acoustic": {
+      "score": 28.1,
+      "probabilities": {
+        "hap": 0.9108,
+        "sad": 0.059,
+        "ang": 0.017,
+        "neu": 0.0132
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 29.9,
+      "probabilities": {
+        "neutral": 0.4237,
+        "joy": 0.2644,
+        "sadness": 0.2278,
+        "disgust": 0.0447,
+        "anger": 0.0213,
+        "surprise": 0.0132,
+        "fear": 0.005
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.544,
+    "stress_index": 41.6,
+    "probabilities": {
+      "Calm": 0.544,
+      "Stressed": 0.051,
+      "Tired": 0.405
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.911,
+    "stress_index": 28.1,
+    "probabilities": {
+      "Calm": 0.924,
+      "Stressed": 0.016,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3717,
+  "cached": false
+}

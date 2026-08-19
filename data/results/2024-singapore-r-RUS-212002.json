@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-RUS-212002",
+  "driver": "RUS",
+  "session_id": "2024-singapore-r",
+  "lap": 47,
+  "duration_s": 1.98,
+  "audio_url": "/api/clips/2024-singapore-r-RUS-212002",
+  "transcript": {
+    "text": "Staking is all around here, mate.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 42.4,
+      "f0_mean_z": 2.302,
+      "f0_std_z": -0.814,
+      "rms_mean_z": 1.836,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.342,
+      "jitter_z": -0.781
+    },
+    "acoustic": {
+      "score": 41.6,
+      "probabilities": {
+        "hap": 0.6099,
+        "ang": 0.1719,
+        "sad": 0.1496,
+        "neu": 0.0686
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 37.3,
+      "probabilities": {
+        "neutral": 0.6376,
+        "disgust": 0.1425,
+        "anger": 0.1003,
+        "fear": 0.0736,
+        "sadness": 0.0296,
+        "surprise": 0.0107,
+        "joy": 0.0057
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.63,
+    "stress_index": 81.9,
+    "probabilities": {
+      "Calm": 0.161,
+      "Stressed": 0.63,
+      "Tired": 0.21
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.61,
+    "stress_index": 41.6,
+    "probabilities": {
+      "Calm": 0.778,
+      "Stressed": 0.162,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1674,
+  "cached": false
+}

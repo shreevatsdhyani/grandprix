@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-singapore-r-NOR-145200",
+  "driver": "NOR",
+  "session_id": "2023-singapore-r",
+  "lap": 62,
+  "duration_s": 13.98,
+  "audio_url": "/api/clips/2023-singapore-r-NOR-145200",
+  "transcript": {
+    "text": "Let's go! Oh! I hit the wall! Okay, just bring it back carefully. Bring it back carefully. Bring it back down, don't know. I don't know, but me too, what?",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 100.0,
+      "f0_mean_z": 4.658,
+      "f0_std_z": 7.752,
+      "rms_mean_z": -2.897,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 3.351,
+      "jitter_z": 4.025
+    },
+    "acoustic": {
+      "score": 25.4,
+      "probabilities": {
+        "hap": 0.9828,
+        "sad": 0.0129,
+        "neu": 0.0042,
+        "ang": 0.0001
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 78.2,
+      "probabilities": {
+        "anger": 0.5744,
+        "fear": 0.1347,
+        "disgust": 0.1134,
+        "surprise": 0.0713,
+        "sadness": 0.049,
+        "neutral": 0.0302,
+        "joy": 0.027
+      },
+      "top_label": "anger",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.999,
+    "stress_index": 99.9,
+    "probabilities": {
+      "Calm": 0.001,
+      "Stressed": 0.999,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.983,
+    "stress_index": 25.4,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3865,
+  "cached": false
+}

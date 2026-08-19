@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-OCO-155746",
+  "driver": "OCO",
+  "session_id": "2023-bahrain-r",
+  "lap": 33,
+  "duration_s": 6.18,
+  "audio_url": "/api/clips/2023-bahrain-r-OCO-155746",
+  "transcript": {
+    "text": "Esteban, we're going to box this lap please. We have another time penalty to serve. It's 15 seconds.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 30.4,
+      "f0_mean_z": -0.574,
+      "f0_std_z": -2.334,
+      "rms_mean_z": 0.073,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.823,
+      "jitter_z": 0.351
+    },
+    "acoustic": {
+      "score": 55.1,
+      "probabilities": {
+        "ang": 0.4714,
+        "neu": 0.3346,
+        "hap": 0.1799,
+        "sad": 0.0141
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 28.3,
+      "probabilities": {
+        "neutral": 0.7685,
+        "sadness": 0.0919,
+        "anger": 0.0596,
+        "disgust": 0.0464,
+        "fear": 0.0203,
+        "surprise": 0.0105,
+        "joy": 0.003
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.981,
+    "stress_index": 88.6,
+    "probabilities": {
+      "Calm": 0.016,
+      "Stressed": 0.003,
+      "Tired": 0.981
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.471,
+    "stress_index": 55.1,
+    "probabilities": {
+      "Calm": 0.497,
+      "Stressed": 0.443,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3057,
+  "cached": false
+}

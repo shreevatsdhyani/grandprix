@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-RUS-141303",
+  "driver": "RUS",
+  "session_id": "2023-monaco-r",
+  "lap": 8,
+  "duration_s": 3.62,
+  "audio_url": "/api/clips/2023-monaco-r-RUS-141303",
+  "transcript": {
+    "text": "Let me know when you're ready for me to hit the break of it hard up.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 6.3,
+      "f0_mean_z": 0.0,
+      "f0_std_z": 0.0,
+      "rms_mean_z": 0.759,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.024,
+      "jitter_z": 0.0
+    },
+    "acoustic": {
+      "score": 56.7,
+      "probabilities": {
+        "sad": 0.7614,
+        "hap": 0.1634,
+        "ang": 0.0727,
+        "neu": 0.0025
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.2,
+      "probabilities": {
+        "neutral": 0.9451,
+        "joy": 0.0129,
+        "surprise": 0.0117,
+        "sadness": 0.0094,
+        "anger": 0.0089,
+        "fear": 0.0087,
+        "disgust": 0.0033
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.514,
+    "stress_index": 47.6,
+    "probabilities": {
+      "Calm": 0.514,
+      "Stressed": 0.388,
+      "Tired": 0.098
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.761,
+    "stress_index": 56.7,
+    "probabilities": {
+      "Calm": 0.872,
+      "Stressed": 0.068,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2417,
+  "cached": false
+}

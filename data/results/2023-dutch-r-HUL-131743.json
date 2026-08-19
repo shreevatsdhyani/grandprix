@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-HUL-131743",
+  "driver": "HUL",
+  "session_id": "2023-dutch-r",
+  "lap": null,
+  "duration_s": 30.0,
+  "audio_url": "/api/clips/2023-dutch-r-HUL-131743",
+  "transcript": {
+    "text": "Do you want to flap it just Nico? Not really, but it's new sticky tires. Let's maybe try, which way would you go? I would take off, yeah. I would try less I guess and see what it feels like. Okay, copy. Take like half percent down. Turn 10 feels pretty low.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 47.5,
+      "f0_mean_z": -0.484,
+      "f0_std_z": 0.61,
+      "rms_mean_z": -1.443,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 3.396,
+      "jitter_z": 0.732
+    },
+    "acoustic": {
+      "score": 35.6,
+      "probabilities": {
+        "hap": 0.7093,
+        "sad": 0.222,
+        "ang": 0.044,
+        "neu": 0.0247
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 25.5,
+      "probabilities": {
+        "neutral": 0.804,
+        "disgust": 0.1145,
+        "anger": 0.0272,
+        "surprise": 0.0261,
+        "sadness": 0.0138,
+        "fear": 0.0101,
+        "joy": 0.0043
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.572,
+    "stress_index": 39.1,
+    "probabilities": {
+      "Calm": 0.572,
+      "Stressed": 0.06,
+      "Tired": 0.368
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.709,
+    "stress_index": 35.6,
+    "probabilities": {
+      "Calm": 0.899,
+      "Stressed": 0.041,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 4007,
+  "cached": false
+}

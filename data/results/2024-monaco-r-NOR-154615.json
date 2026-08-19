@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-NOR-154615",
+  "driver": "NOR",
+  "session_id": "2024-monaco-r",
+  "lap": 2,
+  "duration_s": 5.86,
+  "audio_url": "/api/clips/2024-monaco-r-NOR-154615",
+  "transcript": {
+    "text": "Time information, Lando. The Ferraris on the hard. We think the Mercedes-Bastapet are on the medium.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 30.8,
+      "f0_mean_z": -2.41,
+      "f0_std_z": -0.436,
+      "rms_mean_z": -0.754,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.252,
+      "jitter_z": -0.188
+    },
+    "acoustic": {
+      "score": 42.6,
+      "probabilities": {
+        "hap": 0.6756,
+        "ang": 0.1944,
+        "sad": 0.1184,
+        "neu": 0.0116
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.5,
+      "probabilities": {
+        "neutral": 0.9041,
+        "surprise": 0.0641,
+        "sadness": 0.0137,
+        "disgust": 0.0066,
+        "anger": 0.005,
+        "joy": 0.0038,
+        "fear": 0.0026
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.757,
+    "stress_index": 21.9,
+    "probabilities": {
+      "Calm": 0.757,
+      "Stressed": 0.003,
+      "Tired": 0.24
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.676,
+    "stress_index": 42.6,
+    "probabilities": {
+      "Calm": 0.757,
+      "Stressed": 0.183,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2869,
+  "cached": false
+}

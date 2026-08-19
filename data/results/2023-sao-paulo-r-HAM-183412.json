@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-HAM-183412",
+  "driver": "HAM",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 50,
+  "duration_s": 4.83,
+  "audio_url": "/api/clips/2023-sao-paulo-r-HAM-183412",
+  "transcript": {
+    "text": "I mean his DRS, still not catching him. Yep, understood Lewis.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 22.9,
+      "f0_mean_z": 0.75,
+      "f0_std_z": 1.552,
+      "rms_mean_z": 0.503,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.057,
+      "jitter_z": 2.115
+    },
+    "acoustic": {
+      "score": 73.7,
+      "probabilities": {
+        "ang": 0.6799,
+        "hap": 0.2732,
+        "sad": 0.0358,
+        "neu": 0.0112
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 23.7,
+      "probabilities": {
+        "neutral": 0.8308,
+        "disgust": 0.0613,
+        "surprise": 0.0391,
+        "anger": 0.0295,
+        "sadness": 0.0292,
+        "fear": 0.0069,
+        "joy": 0.0032
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.916,
+    "stress_index": 94.5,
+    "probabilities": {
+      "Calm": 0.052,
+      "Stressed": 0.916,
+      "Tired": 0.032
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.68,
+    "stress_index": 73.7,
+    "probabilities": {
+      "Calm": 0.301,
+      "Stressed": 0.639,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1905,
+  "cached": false
+}

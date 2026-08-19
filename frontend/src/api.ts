@@ -1,6 +1,8 @@
 import type {
+  BiometricSeries,
   ClipAnalysis,
   ClipSummary,
+  FindingsResponse,
   HealthResponse,
   ModelCard,
   ProgressEvent,
@@ -12,9 +14,38 @@ import type {
 /** Relative base: Vite proxies /api in dev, same-origin in the Space build. */
 const BASE = '/api'
 
+/** Thrown with the status attached so callers can treat 404/503 as "feature off". */
+export class ApiError extends Error {
+  // Declared and assigned explicitly rather than as a constructor parameter
+  // property: tsconfig sets `erasableSyntaxOnly`, which forbids that shorthand.
+  readonly status: number
+
+  constructor(message: string, status: number) {
+    super(message)
+    this.name = 'ApiError'
+    this.status = status
+  }
+}
+
 async function get<T>(path: string): Promise<T> {
   const res = await fetch(`${BASE}${path}`)
-  if (!res.ok) throw new Error(`${res.status} ${res.statusText} — ${path}`)
+  if (!res.ok) throw new ApiError(`${res.status} ${res.statusText} — ${path}`, res.status)
+  return res.json() as Promise<T>
+}
+
+/** Like `get`, but surfaces the backend's `{detail}` message when there is one. */
+async function getWithDetail<T>(path: string): Promise<T> {
+  const res = await fetch(`${BASE}${path}`)
+  if (!res.ok) {
+    let detail = `${res.status} ${res.statusText}`
+    try {
+      const body = await res.json()
+      if (body?.detail) detail = String(body.detail)
+    } catch {
+      /* non-JSON error body */
+    }
+    throw new ApiError(detail, res.status)
+  }
   return res.json() as Promise<T>
 }
 
@@ -37,6 +68,55 @@ export const getSessions = () => get<SessionMeta[]>('/sessions')
 
 export const getTimeline = (sessionId: string, driver: string, mode: ScoringMode) =>
   get<Timeline>(`/timeline/${sessionId}?driver=${driver}&mode=${mode}`)
+
+/**
+ * LLM-authored top findings.
+ *
+ * 404 means the agent layer is off (GP_AGENT != 1) and the panel should hide
+ * itself, the same convention PitWallChat already uses. 503 means the layer is on
+ * but generation is unavailable — a missing key, a retired model, a rate limit —
+ * and that distinction is worth showing the user rather than flattening to
+ * "something went wrong".
+ */
+export const getFindings = (
+  sessionId: string,
+  driver: string,
+  mode: ScoringMode,
+  opts?: { refresh?: boolean },
+) =>
+  getWithDetail<FindingsResponse>(
+    `/findings/${sessionId}?driver=${driver}&mode=${mode}${opts?.refresh ? '&refresh=true' : ''}`,
+  )
+
+/** 404 here means no biometrics uploaded, which is the normal case. */
+export const getBiometrics = (sessionId: string, driver: string) =>
+  getWithDetail<BiometricSeries>(`/biometrics/${sessionId}?driver=${driver}`)
+
+export async function uploadBiometrics(
+  file: File,
+  sessionId: string,
+  driver: string,
+): Promise<BiometricSeries> {
+  const form = new FormData()
+  form.append('file', file)
+  form.append('session_id', sessionId)
+  form.append('driver', driver)
+
+  const res = await fetch(`${BASE}/biometrics`, { method: 'POST', body: form })
+  if (!res.ok) {
+    // The parser's messages name the exact problem with the file, so they are
+    // worth showing verbatim.
+    let detail = `${res.status} ${res.statusText}`
+    try {
+      const body = await res.json()
+      if (body?.detail) detail = String(body.detail)
+    } catch {
+      /* non-JSON error body */
+    }
+    throw new ApiError(detail, res.status)
+  }
+  return res.json() as Promise<BiometricSeries>
+}
 
 export async function analyseClip(
   file: File,

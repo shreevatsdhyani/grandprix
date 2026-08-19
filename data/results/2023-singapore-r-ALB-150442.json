@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-singapore-r-ALB-150442",
+  "driver": "ALB",
+  "session_id": "2023-singapore-r",
+  "lap": 62,
+  "duration_s": 30.0,
+  "audio_url": "/api/clips/2023-singapore-r-ALB-150442",
+  "transcript": {
+    "text": "Okay check a flag, check a flag, P11, P11. It's just ff-fuh-furti. Oh, did he get anything for it? He's under investigation for causing a collision with himself and then Lawson as well. Desperate, completely desperate. Well than everyone I think. Strategy was amazing. We always fought off, and amazing ways, so I think we did. Just, yeah, this is our... Maybe our week is track.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 22.0,
+      "f0_mean_z": 0.221,
+      "f0_std_z": 1.772,
+      "rms_mean_z": 0.347,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.404,
+      "jitter_z": 1.214
+    },
+    "acoustic": {
+      "score": 25.9,
+      "probabilities": {
+        "hap": 0.9672,
+        "sad": 0.0234,
+        "neu": 0.0078,
+        "ang": 0.0017
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 49.0,
+      "probabilities": {
+        "neutral": 0.4111,
+        "anger": 0.2449,
+        "surprise": 0.1543,
+        "fear": 0.0841,
+        "sadness": 0.056,
+        "disgust": 0.0431,
+        "joy": 0.0063
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.608,
+    "stress_index": 36.7,
+    "probabilities": {
+      "Calm": 0.608,
+      "Stressed": 0.146,
+      "Tired": 0.246
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.967,
+    "stress_index": 25.9,
+    "probabilities": {
+      "Calm": 0.938,
+      "Stressed": 0.002,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 5153,
+  "cached": false
+}

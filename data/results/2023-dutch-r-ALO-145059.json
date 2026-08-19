@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-ALO-145059",
+  "driver": "ALO",
+  "session_id": "2023-dutch-r",
+  "lap": 33,
+  "duration_s": 12.1,
+  "audio_url": "/api/clips/2023-dutch-r-ALO-145059",
+  "transcript": {
+    "text": "So Russell's the only car on hard ties, he's getting, he's dropping back his P17 and not making his way through cars. Gave me, give me an update from the weather, I'm the darkest office.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 21.0,
+      "f0_mean_z": -0.411,
+      "f0_std_z": 1.449,
+      "rms_mean_z": -0.143,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.625,
+      "jitter_z": 0.797
+    },
+    "acoustic": {
+      "score": 55.1,
+      "probabilities": {
+        "ang": 0.4734,
+        "neu": 0.3569,
+        "hap": 0.1553,
+        "sad": 0.0143
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 55.3,
+      "probabilities": {
+        "sadness": 0.4028,
+        "disgust": 0.3115,
+        "neutral": 0.2228,
+        "surprise": 0.0287,
+        "fear": 0.0223,
+        "anger": 0.0089,
+        "joy": 0.0031
+      },
+      "top_label": "sadness",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.471,
+    "stress_index": 75.5,
+    "probabilities": {
+      "Calm": 0.198,
+      "Stressed": 0.331,
+      "Tired": 0.471
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.473,
+    "stress_index": 55.1,
+    "probabilities": {
+      "Calm": 0.495,
+      "Stressed": 0.445,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2442,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-STR-142956",
+  "driver": "STR",
+  "session_id": "2023-dutch-r",
+  "lap": 18,
+  "duration_s": 18.91,
+  "audio_url": "/api/clips/2023-dutch-r-STR-142956",
+  "transcript": {
+    "text": "Don't switch cool lance, not so it's cool, keep you delta positive. We've done the safety car phase now, we should have been a lot harder. We've done 18 laps, Lance, a long way to go, there's more rain coming. June feels this is the best tire for the conditions and the context of the race. So make sure he breaks are working well.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 30.2,
+      "f0_mean_z": 1.898,
+      "f0_std_z": 1.838,
+      "rms_mean_z": -0.006,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.028,
+      "jitter_z": 1.054
+    },
+    "acoustic": {
+      "score": 29.1,
+      "probabilities": {
+        "hap": 0.8886,
+        "ang": 0.0451,
+        "sad": 0.0366,
+        "neu": 0.0296
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.8,
+      "probabilities": {
+        "neutral": 0.9608,
+        "sadness": 0.0105,
+        "surprise": 0.0077,
+        "anger": 0.007,
+        "joy": 0.0057,
+        "disgust": 0.0054,
+        "fear": 0.0029
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.62,
+    "stress_index": 63.8,
+    "probabilities": {
+      "Calm": 0.36,
+      "Stressed": 0.62,
+      "Tired": 0.02
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.889,
+    "stress_index": 29.1,
+    "probabilities": {
+      "Calm": 0.898,
+      "Stressed": 0.042,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3050,
+  "cached": false
+}

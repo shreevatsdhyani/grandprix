@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-HAM-191140",
+  "driver": "HAM",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 71,
+  "duration_s": 30.0,
+  "audio_url": "/api/clips/2023-sao-paulo-r-HAM-191140",
+  "transcript": {
+    "text": "Well on oohose mate, that's P8. Yeah, it's hard at work, P8, but yeah, well done mate. Yeah, it's one of... that was a long, slow and tough after it. Yeah, copy, same here mate. But yeah, got lost to look at, and yeah, get it saw with it for the next two. Lois, horrible for all of us. I can't go back like this for Monry Studio, I don't we need to find out what went wrong. But, yeah, yeah, I think, I think, I think, I think, I think, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it, it,",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 24.3,
+      "f0_mean_z": -0.848,
+      "f0_std_z": 0.74,
+      "rms_mean_z": -0.998,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.456,
+      "jitter_z": 0.074
+    },
+    "acoustic": {
+      "score": 32.5,
+      "probabilities": {
+        "hap": 0.768,
+        "sad": 0.2045,
+        "neu": 0.0203,
+        "ang": 0.0072
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 69.3,
+      "probabilities": {
+        "disgust": 0.7272,
+        "fear": 0.1257,
+        "neutral": 0.0617,
+        "anger": 0.0581,
+        "sadness": 0.0183,
+        "surprise": 0.0069,
+        "joy": 0.0021
+      },
+      "top_label": "disgust",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.847,
+    "stress_index": 78.4,
+    "probabilities": {
+      "Calm": 0.132,
+      "Stressed": 0.022,
+      "Tired": 0.847
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.768,
+    "stress_index": 32.5,
+    "probabilities": {
+      "Calm": 0.933,
+      "Stressed": 0.007,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 6768,
+  "cached": false
+}

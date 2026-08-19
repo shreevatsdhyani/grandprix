@@ -265,8 +265,12 @@ class TestLevel4Extreme:
             "driver": TEST_DRIVER,
         })
 
-        # Should handle gracefully, not crash
-        assert response.status_code in [200, 400, 500]
+        # Should handle gracefully, not crash. 503 is included because the agent now
+        # reports a missing or unusable Groq configuration as "service unavailable"
+        # rather than "internal error" — the dependency is absent, the server is
+        # fine. This test is about hostile input neither crashing nor leaking, and a
+        # clean 503 satisfies that as well as a 200 does.
+        assert response.status_code in [200, 400, 500, 503]
         # Should not execute any SQL (we don't use SQL anyway)
 
     def test_security_command_injection_attempt(self):
@@ -277,8 +281,12 @@ class TestLevel4Extreme:
             "driver": TEST_DRIVER,
         })
 
-        # Should handle gracefully
-        assert response.status_code in [200, 400, 500]
+        # Should handle gracefully. 503 is included because the agent now reports a
+        # missing or unusable Groq configuration as "service unavailable" rather
+        # than "internal error" — the dependency is absent, the server is fine. The
+        # point of this test is that hostile input neither crashes nor leaks, and a
+        # clean 503 satisfies that as well as a 200 does.
+        assert response.status_code in [200, 400, 500, 503]
 
     def test_security_path_traversal_attempt(self):
         """Test: Attempt path traversal."""
@@ -288,8 +296,12 @@ class TestLevel4Extreme:
             "driver": TEST_DRIVER,
         })
 
-        # Should handle gracefully
-        assert response.status_code in [200, 400, 500]
+        # Should handle gracefully. 503 is included because the agent now reports a
+        # missing or unusable Groq configuration as "service unavailable" rather
+        # than "internal error" — the dependency is absent, the server is fine. The
+        # point of this test is that hostile input neither crashes nor leaks, and a
+        # clean 503 satisfies that as well as a 200 does.
+        assert response.status_code in [200, 400, 500, 503]
 
     @pytest.mark.skipif(not os.getenv("GROQ_API_KEY"), reason="No Groq API key")
     def test_hallucination_resistance_impossible_data(self):

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-RUS-143109",
+  "driver": "RUS",
+  "session_id": "2023-monaco-r",
+  "lap": 22,
+  "duration_s": 14.46,
+  "audio_url": "/api/clips/2023-monaco-r-RUS-143109",
+  "transcript": {
+    "text": "I mean I get in these break wallings every lap at the moment. I'm afraid we're just bobbling along at the top of the limits on the front left caliper.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 44.2,
+      "f0_mean_z": -0.785,
+      "f0_std_z": -0.359,
+      "rms_mean_z": -2.151,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 2.236,
+      "jitter_z": -0.768
+    },
+    "acoustic": {
+      "score": 30.1,
+      "probabilities": {
+        "hap": 0.8406,
+        "sad": 0.144,
+        "neu": 0.0126,
+        "ang": 0.0028
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 79.6,
+      "probabilities": {
+        "fear": 0.8994,
+        "neutral": 0.0628,
+        "surprise": 0.0148,
+        "anger": 0.0075,
+        "sadness": 0.0064,
+        "disgust": 0.0061,
+        "joy": 0.003
+      },
+      "top_label": "fear",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.995,
+    "stress_index": 89.5,
+    "probabilities": {
+      "Calm": 0.005,
+      "Stressed": 0.0,
+      "Tired": 0.995
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.841,
+    "stress_index": 30.1,
+    "probabilities": {
+      "Calm": 0.937,
+      "Stressed": 0.003,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3386,
+  "cached": false
+}

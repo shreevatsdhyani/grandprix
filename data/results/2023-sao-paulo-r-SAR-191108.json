@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-SAR-191108",
+  "driver": "SAR",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 70,
+  "duration_s": 10.46,
+  "audio_url": "/api/clips/2023-sao-paulo-r-SAR-191108",
+  "transcript": {
+    "text": "Yeah, sorry man. Obviously we didn't have the pace today. I gave you everything I had, just not easy. Sorry about not being able to fight snow to order.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 23.1,
+      "f0_mean_z": 0.723,
+      "f0_std_z": -0.774,
+      "rms_mean_z": 0.959,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.433,
+      "jitter_z": -0.182
+    },
+    "acoustic": {
+      "score": 43.0,
+      "probabilities": {
+        "sad": 0.5154,
+        "hap": 0.4818,
+        "neu": 0.0028,
+        "ang": 0.0001
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 62.4,
+      "probabilities": {
+        "sadness": 0.9137,
+        "neutral": 0.0464,
+        "surprise": 0.014,
+        "disgust": 0.0126,
+        "fear": 0.006,
+        "joy": 0.0043,
+        "anger": 0.003
+      },
+      "top_label": "sadness",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.868,
+    "stress_index": 85.3,
+    "probabilities": {
+      "Calm": 0.06,
+      "Stressed": 0.072,
+      "Tired": 0.868
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.515,
+    "stress_index": 43.0,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2437,
+  "cached": false
+}

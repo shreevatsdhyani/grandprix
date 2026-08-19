@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-ALO-160629",
+  "driver": "ALO",
+  "session_id": "2023-bahrain-r",
+  "lap": 39,
+  "duration_s": 1.47,
+  "audio_url": "/api/clips/2023-bahrain-r-ALO-160629",
+  "transcript": {
+    "text": "Yes! Let's go!",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 11.5,
+      "f0_mean_z": 0.0,
+      "f0_std_z": 0.0,
+      "rms_mean_z": -0.208,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.232,
+      "jitter_z": 0.0
+    },
+    "acoustic": {
+      "score": 72.6,
+      "probabilities": {
+        "sad": 0.467,
+        "ang": 0.4556,
+        "neu": 0.0674,
+        "hap": 0.01
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 63.5,
+      "probabilities": {
+        "anger": 0.5209,
+        "joy": 0.2231,
+        "fear": 0.094,
+        "neutral": 0.0709,
+        "sadness": 0.0365,
+        "surprise": 0.036,
+        "disgust": 0.0186
+      },
+      "top_label": "anger",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.884,
+    "stress_index": 90.0,
+    "probabilities": {
+      "Calm": 0.012,
+      "Stressed": 0.104,
+      "Tired": 0.884
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.467,
+    "stress_index": 72.6,
+    "probabilities": {
+      "Calm": 0.512,
+      "Stressed": 0.428,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2308,
+  "cached": false
+}

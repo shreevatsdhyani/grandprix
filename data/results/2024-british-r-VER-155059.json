@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-british-r-VER-155059",
+  "driver": "VER",
+  "session_id": "2024-british-r",
+  "lap": 31,
+  "duration_s": 3.1,
+  "audio_url": "/api/clips/2024-british-r-VER-155059",
+  "transcript": {
+    "text": "A tie is taking a lot. Copy that Max.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 33.5,
+      "f0_mean_z": 2.522,
+      "f0_std_z": -0.734,
+      "rms_mean_z": 0.836,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.093,
+      "jitter_z": -0.31
+    },
+    "acoustic": {
+      "score": 18.2,
+      "probabilities": {
+        "neu": 0.6853,
+        "hap": 0.3134,
+        "ang": 0.0009,
+        "sad": 0.0004
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.5,
+      "probabilities": {
+        "neutral": 0.9388,
+        "surprise": 0.0292,
+        "disgust": 0.0103,
+        "sadness": 0.0078,
+        "anger": 0.0071,
+        "joy": 0.0043,
+        "fear": 0.0024
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.537,
+    "stress_index": 44.9,
+    "probabilities": {
+      "Calm": 0.537,
+      "Stressed": 0.319,
+      "Tired": 0.144
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.685,
+    "stress_index": 18.2,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1663,
+  "cached": false
+}

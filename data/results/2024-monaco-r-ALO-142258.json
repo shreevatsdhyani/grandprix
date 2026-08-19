@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-ALO-142258",
+  "driver": "ALO",
+  "session_id": "2024-monaco-r",
+  "lap": null,
+  "duration_s": 7.78,
+  "audio_url": "/api/clips/2024-monaco-r-ALO-142258",
+  "transcript": {
+    "text": "The steering is heavier than yesterday, a lot heavier. Just check, but it's all good for you.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 48.4,
+      "f0_mean_z": 3.457,
+      "f0_std_z": 0.673,
+      "rms_mean_z": -0.805,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.12,
+      "jitter_z": 1.253
+    },
+    "acoustic": {
+      "score": 58.9,
+      "probabilities": {
+        "sad": 0.969,
+        "neu": 0.0146,
+        "hap": 0.014,
+        "ang": 0.0024
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 19.4,
+      "probabilities": {
+        "neutral": 0.9017,
+        "surprise": 0.0299,
+        "sadness": 0.0276,
+        "disgust": 0.0222,
+        "anger": 0.0076,
+        "joy": 0.0059,
+        "fear": 0.0052
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.992,
+    "stress_index": 99.6,
+    "probabilities": {
+      "Calm": 0.005,
+      "Stressed": 0.992,
+      "Tired": 0.004
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.969,
+    "stress_index": 58.9,
+    "probabilities": {
+      "Calm": 0.938,
+      "Stressed": 0.002,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2356,
+  "cached": false
+}

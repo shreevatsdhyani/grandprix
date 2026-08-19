@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-LAW-160409",
+  "driver": "LAW",
+  "session_id": "2023-dutch-r",
+  "lap": 64,
+  "duration_s": 7.23,
+  "audio_url": "/api/clips/2023-dutch-r-LAW-160409",
+  "transcript": {
+    "text": "Okay, that's eight minutes warning for you Liam, eight minutes warning. Restart in 10 minutes and we will exit the petition in eight.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 48.3,
+      "f0_mean_z": 3.868,
+      "f0_std_z": 1.525,
+      "rms_mean_z": -0.035,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.606,
+      "jitter_z": 1.183
+    },
+    "acoustic": {
+      "score": 32.2,
+      "probabilities": {
+        "hap": 0.8597,
+        "ang": 0.1022,
+        "neu": 0.0283,
+        "sad": 0.0097
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 45.1,
+      "probabilities": {
+        "neutral": 0.54,
+        "fear": 0.3071,
+        "anger": 0.0583,
+        "sadness": 0.0539,
+        "disgust": 0.0186,
+        "surprise": 0.0183,
+        "joy": 0.0038
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.941,
+    "stress_index": 96.3,
+    "probabilities": {
+      "Calm": 0.035,
+      "Stressed": 0.941,
+      "Tired": 0.024
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.86,
+    "stress_index": 32.2,
+    "probabilities": {
+      "Calm": 0.844,
+      "Stressed": 0.096,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2236,
+  "cached": false
+}

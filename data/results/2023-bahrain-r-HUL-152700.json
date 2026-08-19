@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-HUL-152700",
+  "driver": "HUL",
+  "session_id": "2023-bahrain-r",
+  "lap": 14,
+  "duration_s": 4.46,
+  "audio_url": "/api/clips/2023-bahrain-r-HUL-152700",
+  "transcript": {
+    "text": "When I get very close in breaking, the front just is like it has uplift.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 27.6,
+      "f0_mean_z": 1.932,
+      "f0_std_z": 0.102,
+      "rms_mean_z": 1.405,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.006,
+      "jitter_z": 1.843
+    },
+    "acoustic": {
+      "score": 29.6,
+      "probabilities": {
+        "hap": 0.8734,
+        "sad": 0.1158,
+        "ang": 0.0085,
+        "neu": 0.0022
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 20.9,
+      "probabilities": {
+        "neutral": 0.8484,
+        "surprise": 0.1017,
+        "anger": 0.0135,
+        "fear": 0.0127,
+        "sadness": 0.0097,
+        "disgust": 0.009,
+        "joy": 0.0049
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.51,
+    "stress_index": 70.7,
+    "probabilities": {
+      "Calm": 0.271,
+      "Stressed": 0.51,
+      "Tired": 0.219
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.873,
+    "stress_index": 29.6,
+    "probabilities": {
+      "Calm": 0.932,
+      "Stressed": 0.008,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2489,
+  "cached": false
+}

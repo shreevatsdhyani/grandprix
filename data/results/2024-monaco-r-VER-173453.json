@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-VER-173453",
+  "driver": "VER",
+  "session_id": "2024-monaco-r",
+  "lap": 78,
+  "duration_s": 12.45,
+  "audio_url": "/api/clips/2024-monaco-r-VER-173453",
+  "transcript": {
+    "text": "Okay, that's that. Well done mate. Oh, I thought the ride was bad yesterday, but this was another level. Body is completely broken. Yeah, tough way you get, Maxx, but he needs to take out of it.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 26.6,
+      "f0_mean_z": 1.204,
+      "f0_std_z": 0.573,
+      "rms_mean_z": 0.909,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.633,
+      "jitter_z": 1.024
+    },
+    "acoustic": {
+      "score": 31.8,
+      "probabilities": {
+        "hap": 0.7824,
+        "sad": 0.1941,
+        "neu": 0.0205,
+        "ang": 0.003
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 49.8,
+      "probabilities": {
+        "neutral": 0.3892,
+        "disgust": 0.3851,
+        "anger": 0.1174,
+        "sadness": 0.0566,
+        "surprise": 0.0288,
+        "fear": 0.0161,
+        "joy": 0.0068
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.614,
+    "stress_index": 77.9,
+    "probabilities": {
+      "Calm": 0.159,
+      "Stressed": 0.226,
+      "Tired": 0.614
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.782,
+    "stress_index": 31.8,
+    "probabilities": {
+      "Calm": 0.937,
+      "Stressed": 0.003,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2412,
+  "cached": false
+}

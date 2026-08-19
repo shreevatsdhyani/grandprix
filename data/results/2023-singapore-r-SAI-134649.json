@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-singapore-r-SAI-134649",
+  "driver": "SAI",
+  "session_id": "2023-singapore-r",
+  "lap": 25,
+  "duration_s": 6.14,
+  "audio_url": "/api/clips/2023-singapore-r-SAI-134649",
+  "transcript": {
+    "text": "Russell one second behind if you keep the pack bounced up. He cannot do two stops. Russell cannot do two stops",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 25.5,
+      "f0_mean_z": -1.186,
+      "f0_std_z": -0.655,
+      "rms_mean_z": -0.558,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.794,
+      "jitter_z": -0.803
+    },
+    "acoustic": {
+      "score": 19.7,
+      "probabilities": {
+        "neu": 0.7445,
+        "hap": 0.2079,
+        "sad": 0.0331,
+        "ang": 0.0145
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 20.7,
+      "probabilities": {
+        "neutral": 0.8921,
+        "anger": 0.0272,
+        "sadness": 0.0264,
+        "surprise": 0.025,
+        "disgust": 0.0174,
+        "fear": 0.0095,
+        "joy": 0.0024
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.876,
+    "stress_index": 11.2,
+    "probabilities": {
+      "Calm": 0.876,
+      "Stressed": 0.002,
+      "Tired": 0.122
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.745,
+    "stress_index": 19.7,
+    "probabilities": {
+      "Calm": 0.926,
+      "Stressed": 0.014,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3050,
+  "cached": false
+}

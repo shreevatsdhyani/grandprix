@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-VER-190158",
+  "driver": "VER",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 71,
+  "duration_s": 19.33,
+  "audio_url": "/api/clips/2023-sao-paulo-r-VER-190158",
+  "transcript": {
+    "text": "What are Max? That's a fantastic job, yes again ma'am. Well done. Well done. Thanks guys. That was a very good, well done. Another Brazilian victory. Yeah, thanks guys. That was, I think, a very good performance. Very nice. Good race. Well executed. Good pit stops.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 27.0,
+      "f0_mean_z": 1.257,
+      "f0_std_z": 0.634,
+      "rms_mean_z": -0.882,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.598,
+      "jitter_z": 0.587
+    },
+    "acoustic": {
+      "score": 25.5,
+      "probabilities": {
+        "hap": 0.9469,
+        "neu": 0.0314,
+        "sad": 0.0215,
+        "ang": 0.0003
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 12.5,
+      "probabilities": {
+        "joy": 0.8593,
+        "neutral": 0.0933,
+        "surprise": 0.0358,
+        "anger": 0.0051,
+        "disgust": 0.0029,
+        "sadness": 0.0028,
+        "fear": 0.0008
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.68,
+    "stress_index": 31.0,
+    "probabilities": {
+      "Calm": 0.68,
+      "Stressed": 0.231,
+      "Tired": 0.088
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.947,
+    "stress_index": 25.5,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3267,
+  "cached": false
+}

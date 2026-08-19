@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-HUL-142604",
+  "driver": "HUL",
+  "session_id": "2023-monaco-r",
+  "lap": 18,
+  "duration_s": 7.3,
+  "audio_url": "/api/clips/2023-monaco-r-HUL-142604",
+  "transcript": {
+    "text": "Sergeant is holding everyone up. Kevin just got around Sergeant. So now it's Sergeant Strol Perez Joe Yu.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 13.9,
+      "f0_mean_z": -0.207,
+      "f0_std_z": 0.062,
+      "rms_mean_z": -0.849,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.625,
+      "jitter_z": -0.018
+    },
+    "acoustic": {
+      "score": 38.7,
+      "probabilities": {
+        "neu": 0.5424,
+        "ang": 0.2394,
+        "hap": 0.1498,
+        "sad": 0.0683
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.0,
+      "probabilities": {
+        "neutral": 0.9389,
+        "disgust": 0.018,
+        "surprise": 0.0163,
+        "anger": 0.0145,
+        "sadness": 0.0049,
+        "joy": 0.004,
+        "fear": 0.0033
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.811,
+    "stress_index": 17.8,
+    "probabilities": {
+      "Calm": 0.811,
+      "Stressed": 0.074,
+      "Tired": 0.115
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.542,
+    "stress_index": 38.7,
+    "probabilities": {
+      "Calm": 0.715,
+      "Stressed": 0.225,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3260,
+  "cached": false
+}

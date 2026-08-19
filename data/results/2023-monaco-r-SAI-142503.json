@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-SAI-142503",
+  "driver": "SAI",
+  "session_id": "2023-monaco-r",
+  "lap": 18,
+  "duration_s": 5.38,
+  "audio_url": "/api/clips/2023-monaco-r-SAI-142503",
+  "transcript": {
+    "text": "Okay, see a bit of front left and a bit of here left waiting on the wall. Just waiting for...",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 20.0,
+      "f0_mean_z": 1.371,
+      "f0_std_z": -0.567,
+      "rms_mean_z": 0.182,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.38,
+      "jitter_z": 0.483
+    },
+    "acoustic": {
+      "score": 57.7,
+      "probabilities": {
+        "sad": 0.7913,
+        "hap": 0.0865,
+        "ang": 0.0779,
+        "neu": 0.0443
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.0,
+      "probabilities": {
+        "neutral": 0.9484,
+        "surprise": 0.021,
+        "disgust": 0.0103,
+        "anger": 0.0076,
+        "joy": 0.0072,
+        "sadness": 0.004,
+        "fear": 0.0016
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.74,
+    "stress_index": 86.4,
+    "probabilities": {
+      "Calm": 0.123,
+      "Stressed": 0.74,
+      "Tired": 0.138
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.791,
+    "stress_index": 57.7,
+    "probabilities": {
+      "Calm": 0.867,
+      "Stressed": 0.073,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2829,
+  "cached": false
+}

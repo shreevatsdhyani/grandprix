@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-OCO-150342",
+  "driver": "OCO",
+  "session_id": "2023-dutch-r",
+  "lap": 43,
+  "duration_s": 3.3,
+  "audio_url": "/api/clips/2023-dutch-r-OCO-150342",
+  "transcript": {
+    "text": "A science and frame is pitted but puts his piece six at the moment.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 70.7,
+      "f0_mean_z": 0.765,
+      "f0_std_z": -1.174,
+      "rms_mean_z": 0.106,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -6.789,
+      "jitter_z": 1.112
+    },
+    "acoustic": {
+      "score": 17.7,
+      "probabilities": {
+        "neu": 0.9258,
+        "hap": 0.0447,
+        "ang": 0.0256,
+        "sad": 0.0039
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 53.7,
+      "probabilities": {
+        "neutral": 0.3803,
+        "disgust": 0.282,
+        "anger": 0.2689,
+        "sadness": 0.0454,
+        "surprise": 0.0161,
+        "fear": 0.004,
+        "joy": 0.0033
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.903,
+    "stress_index": 83.4,
+    "probabilities": {
+      "Calm": 0.076,
+      "Stressed": 0.021,
+      "Tired": 0.903
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.926,
+    "stress_index": 17.7,
+    "probabilities": {
+      "Calm": 0.916,
+      "Stressed": 0.024,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1799,
+  "cached": false
+}

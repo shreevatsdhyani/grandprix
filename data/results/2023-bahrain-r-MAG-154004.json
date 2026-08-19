@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-MAG-154004",
+  "driver": "MAG",
+  "session_id": "2023-bahrain-r",
+  "lap": 22,
+  "duration_s": 3.58,
+  "audio_url": "/api/clips/2023-bahrain-r-MAG-154004",
+  "transcript": {
+    "text": "Eco has significant car damage, that's why he's in so much trouble.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 21.6,
+      "f0_mean_z": -1.245,
+      "f0_std_z": -0.523,
+      "rms_mean_z": 0.344,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.594,
+      "jitter_z": -1.176
+    },
+    "acoustic": {
+      "score": 17.8,
+      "probabilities": {
+        "neu": 0.9389,
+        "ang": 0.0305,
+        "hap": 0.0286,
+        "sad": 0.002
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 72.3,
+      "probabilities": {
+        "sadness": 0.7924,
+        "neutral": 0.112,
+        "fear": 0.0427,
+        "disgust": 0.0244,
+        "anger": 0.0138,
+        "surprise": 0.0122,
+        "joy": 0.0025
+      },
+      "top_label": "sadness",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.924,
+    "stress_index": 83.3,
+    "probabilities": {
+      "Calm": 0.076,
+      "Stressed": 0.001,
+      "Tired": 0.924
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.939,
+    "stress_index": 17.8,
+    "probabilities": {
+      "Calm": 0.911,
+      "Stressed": 0.029,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2844,
+  "cached": false
+}

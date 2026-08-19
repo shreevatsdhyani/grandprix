@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-GAS-162005",
+  "driver": "GAS",
+  "session_id": "2023-dutch-r",
+  "lap": 68,
+  "duration_s": 7.17,
+  "audio_url": "/api/clips/2023-dutch-r-GAS-162005",
+  "transcript": {
+    "text": "So mid three is available, mid three is available, press on the investigation for speeding in the pit lane. So we want to stay within five seconds if you can.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 30.7,
+      "f0_mean_z": 0.708,
+      "f0_std_z": -0.954,
+      "rms_mean_z": -0.648,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.526,
+      "jitter_z": 0.345
+    },
+    "acoustic": {
+      "score": 21.9,
+      "probabilities": {
+        "neu": 0.4989,
+        "hap": 0.4691,
+        "ang": 0.0223,
+        "sad": 0.0097
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.1,
+      "probabilities": {
+        "neutral": 0.944,
+        "fear": 0.0163,
+        "anger": 0.0127,
+        "surprise": 0.0105,
+        "sadness": 0.0104,
+        "joy": 0.0033,
+        "disgust": 0.0028
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.539,
+    "stress_index": 42.1,
+    "probabilities": {
+      "Calm": 0.539,
+      "Stressed": 0.06,
+      "Tired": 0.401
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.499,
+    "stress_index": 21.9,
+    "probabilities": {
+      "Calm": 0.919,
+      "Stressed": 0.021,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2331,
+  "cached": false
+}

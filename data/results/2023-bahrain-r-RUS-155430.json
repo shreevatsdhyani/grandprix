@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-RUS-155430",
+  "driver": "RUS",
+  "session_id": "2023-bahrain-r",
+  "lap": 31,
+  "duration_s": 1.89,
+  "audio_url": "/api/clips/2023-bahrain-r-RUS-155430",
+  "transcript": {
+    "text": "I'll have to take it. Just give it everything we go.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 21.8,
+      "f0_mean_z": 0.387,
+      "f0_std_z": -0.108,
+      "rms_mean_z": -1.062,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.166,
+      "jitter_z": 0.608
+    },
+    "acoustic": {
+      "score": 24.0,
+      "probabilities": {
+        "hap": 0.7271,
+        "neu": 0.2497,
+        "ang": 0.0209,
+        "sad": 0.0022
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.8,
+      "probabilities": {
+        "neutral": 0.9363,
+        "anger": 0.0288,
+        "disgust": 0.0169,
+        "sadness": 0.0067,
+        "joy": 0.0044,
+        "surprise": 0.0036,
+        "fear": 0.0034
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.753,
+    "stress_index": 22.7,
+    "probabilities": {
+      "Calm": 0.753,
+      "Stressed": 0.048,
+      "Tired": 0.199
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.727,
+    "stress_index": 24.0,
+    "probabilities": {
+      "Calm": 0.92,
+      "Stressed": 0.02,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2554,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-SAR-150237",
+  "driver": "SAR",
+  "session_id": "2023-bahrain-r",
+  "lap": null,
+  "duration_s": 8.42,
+  "audio_url": "/api/clips/2023-bahrain-r-SAR-150237",
+  "transcript": {
+    "text": "So it's your first race start, have a good one, I'm sure it's gonna be first race of many, and we'll do the best, okay? We'll be there for you. Thank you, ma'am.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 13.3,
+      "f0_mean_z": 0.715,
+      "f0_std_z": -0.295,
+      "rms_mean_z": 0.274,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.381,
+      "jitter_z": 0.669
+    },
+    "acoustic": {
+      "score": 28.7,
+      "probabilities": {
+        "hap": 0.8896,
+        "sad": 0.0555,
+        "ang": 0.0286,
+        "neu": 0.0263
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 14.7,
+      "probabilities": {
+        "joy": 0.5639,
+        "neutral": 0.3892,
+        "surprise": 0.0163,
+        "anger": 0.0126,
+        "disgust": 0.0074,
+        "sadness": 0.006,
+        "fear": 0.0047
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.682,
+    "stress_index": 29.6,
+    "probabilities": {
+      "Calm": 0.682,
+      "Stressed": 0.096,
+      "Tired": 0.222
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.89,
+    "stress_index": 28.7,
+    "probabilities": {
+      "Calm": 0.913,
+      "Stressed": 0.027,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2219,
+  "cached": false
+}

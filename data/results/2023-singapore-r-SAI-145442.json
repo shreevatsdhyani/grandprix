@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-singapore-r-SAI-145442",
+  "driver": "SAI",
+  "session_id": "2023-singapore-r",
+  "lap": 62,
+  "duration_s": 10.3,
+  "audio_url": "/api/clips/2023-singapore-r-SAI-145442",
+  "transcript": {
+    "text": "Ricky! We won't Singapore my friend! Why? Great! Don't we cry? What a ledge!",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 100.0,
+      "f0_mean_z": 10.936,
+      "f0_std_z": 4.547,
+      "rms_mean_z": 2.184,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.018,
+      "jitter_z": 0.938
+    },
+    "acoustic": {
+      "score": 25.0,
+      "probabilities": {
+        "hap": 0.9533,
+        "neu": 0.0391,
+        "ang": 0.0046,
+        "sad": 0.0029
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 60.8,
+      "probabilities": {
+        "sadness": 0.738,
+        "surprise": 0.1735,
+        "anger": 0.0323,
+        "neutral": 0.0217,
+        "joy": 0.0126,
+        "fear": 0.0117,
+        "disgust": 0.0101
+      },
+      "top_label": "sadness",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 1.0,
+    "stress_index": 100.0,
+    "probabilities": {
+      "Calm": 0.0,
+      "Stressed": 1.0,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.953,
+    "stress_index": 25.0,
+    "probabilities": {
+      "Calm": 0.936,
+      "Stressed": 0.004,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1797,
+  "cached": false
+}

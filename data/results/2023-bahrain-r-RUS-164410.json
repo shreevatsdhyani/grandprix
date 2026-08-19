@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-RUS-164410",
+  "driver": "RUS",
+  "session_id": "2023-bahrain-r",
+  "lap": 57,
+  "duration_s": 10.05,
+  "audio_url": "/api/clips/2023-bahrain-r-RUS-164410",
+  "transcript": {
+    "text": "Okay, that's P7. Tough day in the office. Yeah, tough weekend everybody. Let's recruit and keep on push it. Send your race on.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 13.8,
+      "f0_mean_z": 0.897,
+      "f0_std_z": -0.094,
+      "rms_mean_z": 0.103,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.633,
+      "jitter_z": -0.482
+    },
+    "acoustic": {
+      "score": 66.3,
+      "probabilities": {
+        "ang": 0.5173,
+        "hap": 0.2616,
+        "sad": 0.162,
+        "neu": 0.0592
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 41.1,
+      "probabilities": {
+        "neutral": 0.5566,
+        "fear": 0.1679,
+        "sadness": 0.1263,
+        "disgust": 0.077,
+        "anger": 0.0488,
+        "joy": 0.0169,
+        "surprise": 0.0065
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.714,
+    "stress_index": 91.2,
+    "probabilities": {
+      "Calm": 0.066,
+      "Stressed": 0.714,
+      "Tired": 0.22
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.517,
+    "stress_index": 66.3,
+    "probabilities": {
+      "Calm": 0.454,
+      "Stressed": 0.486,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3297,
+  "cached": false
+}

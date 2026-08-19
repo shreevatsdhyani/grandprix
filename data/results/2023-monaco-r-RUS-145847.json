@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-RUS-145847",
+  "driver": "RUS",
+  "session_id": "2023-monaco-r",
+  "lap": 44,
+  "duration_s": 3.66,
+  "audio_url": "/api/clips/2023-monaco-r-RUS-145847",
+  "transcript": {
+    "text": "So I was going to get a little bit of a grain of...",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 60.5,
+      "f0_mean_z": 0.314,
+      "f0_std_z": 1.461,
+      "rms_mean_z": 2.759,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 3.03,
+      "jitter_z": 0.219
+    },
+    "acoustic": {
+      "score": 28.9,
+      "probabilities": {
+        "hap": 0.9249,
+        "ang": 0.0505,
+        "sad": 0.0126,
+        "neu": 0.012
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 24.4,
+      "probabilities": {
+        "neutral": 0.8217,
+        "disgust": 0.1036,
+        "sadness": 0.0214,
+        "anger": 0.021,
+        "fear": 0.0109,
+        "surprise": 0.0109,
+        "joy": 0.0105
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.844,
+    "stress_index": 15.4,
+    "probabilities": {
+      "Calm": 0.844,
+      "Stressed": 0.138,
+      "Tired": 0.018
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.925,
+    "stress_index": 28.9,
+    "probabilities": {
+      "Calm": 0.893,
+      "Stressed": 0.047,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2322,
+  "cached": false
+}

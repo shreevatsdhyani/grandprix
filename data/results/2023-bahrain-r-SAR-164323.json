@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-SAR-164323",
+  "driver": "SAR",
+  "session_id": "2023-bahrain-r",
+  "lap": 56,
+  "duration_s": 20.26,
+  "audio_url": "/api/clips/2023-bahrain-r-SAR-164323",
+  "transcript": {
+    "text": "I see another first race, that's P12. Was a very good effort, a good race mate. Biggie's top, a lot of repression thing. I think you did great. Well on Logan, good, first race, well managed. Thank you. I really appreciate this weekend guys, all the hard work paying off. Thank you guys. Awesome job.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 26.8,
+      "f0_mean_z": -0.378,
+      "f0_std_z": 1.382,
+      "rms_mean_z": -1.194,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.401,
+      "jitter_z": 1.833
+    },
+    "acoustic": {
+      "score": 35.9,
+      "probabilities": {
+        "hap": 0.4102,
+        "sad": 0.3643,
+        "neu": 0.2207,
+        "ang": 0.0049
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 13.3,
+      "probabilities": {
+        "joy": 0.8446,
+        "neutral": 0.0799,
+        "surprise": 0.0657,
+        "sadness": 0.0044,
+        "anger": 0.0025,
+        "disgust": 0.002,
+        "fear": 0.0008
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.873,
+    "stress_index": 12.2,
+    "probabilities": {
+      "Calm": 0.873,
+      "Stressed": 0.072,
+      "Tired": 0.055
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.41,
+    "stress_index": 35.9,
+    "probabilities": {
+      "Calm": 0.935,
+      "Stressed": 0.005,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 4497,
+  "cached": false
+}

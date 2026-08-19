@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-NOR-152758",
+  "driver": "NOR",
+  "session_id": "2024-italian-r",
+  "lap": 18,
+  "duration_s": 5.63,
+  "audio_url": "/api/clips/2024-italian-r-NOR-152758",
+  "transcript": {
+    "text": "It's likely we will have to cover for the other car. It'll be pyroles.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 17.0,
+      "f0_mean_z": 0.342,
+      "f0_std_z": -0.592,
+      "rms_mean_z": -0.469,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.722,
+      "jitter_z": 0.466
+    },
+    "acoustic": {
+      "score": 18.1,
+      "probabilities": {
+        "neu": 0.8323,
+        "hap": 0.1338,
+        "sad": 0.0276,
+        "ang": 0.0063
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 20.3,
+      "probabilities": {
+        "neutral": 0.9033,
+        "fear": 0.0248,
+        "disgust": 0.0219,
+        "surprise": 0.0182,
+        "anger": 0.0148,
+        "sadness": 0.0141,
+        "joy": 0.0029
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.604,
+    "stress_index": 36.1,
+    "probabilities": {
+      "Calm": 0.604,
+      "Stressed": 0.039,
+      "Tired": 0.358
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.832,
+    "stress_index": 18.1,
+    "probabilities": {
+      "Calm": 0.934,
+      "Stressed": 0.006,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1750,
+  "cached": false
+}

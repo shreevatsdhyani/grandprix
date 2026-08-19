@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-MAG-153844",
+  "driver": "MAG",
+  "session_id": "2023-dutch-r",
+  "lap": 64,
+  "duration_s": 8.22,
+  "audio_url": "/api/clips/2023-dutch-r-MAG-153844",
+  "transcript": {
+    "text": "So entering the pit lane and stopping in order, there are still eight laps to go at the end of this one.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 17.2,
+      "f0_mean_z": 0.95,
+      "f0_std_z": -0.133,
+      "rms_mean_z": -0.955,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.114,
+      "jitter_z": -0.585
+    },
+    "acoustic": {
+      "score": 21.4,
+      "probabilities": {
+        "neu": 0.5964,
+        "hap": 0.347,
+        "sad": 0.0463,
+        "ang": 0.0102
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.2,
+      "probabilities": {
+        "neutral": 0.9499,
+        "surprise": 0.0217,
+        "sadness": 0.009,
+        "disgust": 0.0062,
+        "anger": 0.0057,
+        "fear": 0.0048,
+        "joy": 0.0027
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.755,
+    "stress_index": 23.1,
+    "probabilities": {
+      "Calm": 0.755,
+      "Stressed": 0.11,
+      "Tired": 0.134
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.596,
+    "stress_index": 21.4,
+    "probabilities": {
+      "Calm": 0.93,
+      "Stressed": 0.01,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2690,
+  "cached": false
+}

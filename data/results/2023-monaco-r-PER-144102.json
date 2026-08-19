@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-PER-144102",
+  "driver": "PER",
+  "session_id": "2023-monaco-r",
+  "lap": 29,
+  "duration_s": 3.9,
+  "audio_url": "/api/clips/2023-monaco-r-PER-144102",
+  "transcript": {
+    "text": "There's a risk of varying towards the end of the race. People might be trying to hang on for that.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 43.4,
+      "f0_mean_z": -2.191,
+      "f0_std_z": -1.886,
+      "rms_mean_z": -0.294,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.05,
+      "jitter_z": -1.957
+    },
+    "acoustic": {
+      "score": 22.8,
+      "probabilities": {
+        "neu": 0.4947,
+        "hap": 0.4606,
+        "ang": 0.0343,
+        "sad": 0.0104
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.2,
+      "probabilities": {
+        "neutral": 0.943,
+        "fear": 0.0216,
+        "disgust": 0.0092,
+        "anger": 0.008,
+        "surprise": 0.0077,
+        "sadness": 0.0073,
+        "joy": 0.0031
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.797,
+    "stress_index": 18.3,
+    "probabilities": {
+      "Calm": 0.797,
+      "Stressed": 0.0,
+      "Tired": 0.203
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.495,
+    "stress_index": 22.8,
+    "probabilities": {
+      "Calm": 0.908,
+      "Stressed": 0.032,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2440,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-MAG-162400",
+  "driver": "MAG",
+  "session_id": "2024-italian-r",
+  "lap": 53,
+  "duration_s": 30.0,
+  "audio_url": "/api/clips/2024-italian-r-MAG-162400",
+  "transcript": {
+    "text": "Okay, I was good. We had good pace here, good deck. You've got a point. Well done. That was unbelievably hard work. So you've got a point, Kevin. Well done. Well done. That was unbelievably hard work. So you lost the place to album, but you stayed ahead of Alonzo. Fantastic job, mate. I'm really sorry how hard that was, but you drove an excellent racer. Yeah, well done, guys. Well done.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 20.4,
+      "f0_mean_z": 0.412,
+      "f0_std_z": -0.685,
+      "rms_mean_z": 0.788,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.662,
+      "jitter_z": 0.476
+    },
+    "acoustic": {
+      "score": 37.5,
+      "probabilities": {
+        "hap": 0.6253,
+        "sad": 0.3584,
+        "neu": 0.0149,
+        "ang": 0.0014
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 25.1,
+      "probabilities": {
+        "neutral": 0.469,
+        "joy": 0.2762,
+        "sadness": 0.1167,
+        "surprise": 0.0913,
+        "disgust": 0.03,
+        "anger": 0.0124,
+        "fear": 0.0044
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.482,
+    "stress_index": 55.8,
+    "probabilities": {
+      "Calm": 0.393,
+      "Stressed": 0.124,
+      "Tired": 0.482
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.625,
+    "stress_index": 37.5,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 4744,
+  "cached": false
+}

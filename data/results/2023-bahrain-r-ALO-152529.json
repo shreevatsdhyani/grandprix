@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-ALO-152529",
+  "driver": "ALO",
+  "session_id": "2023-bahrain-r",
+  "lap": 14,
+  "duration_s": 5.87,
+  "audio_url": "/api/clips/2023-bahrain-r-ALO-152529",
+  "transcript": {
+    "text": "Fernando, how are the ties feeling now? How are the ties? Yeah, they feel okay. I think we should get good.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 13.1,
+      "f0_mean_z": 0.805,
+      "f0_std_z": -0.198,
+      "rms_mean_z": 0.036,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.596,
+      "jitter_z": -0.094
+    },
+    "acoustic": {
+      "score": 52.8,
+      "probabilities": {
+        "sad": 0.4652,
+        "neu": 0.2383,
+        "ang": 0.1984,
+        "hap": 0.0981
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.4,
+      "probabilities": {
+        "neutral": 0.5159,
+        "joy": 0.4217,
+        "disgust": 0.0227,
+        "sadness": 0.0196,
+        "anger": 0.0114,
+        "surprise": 0.0053,
+        "fear": 0.0034
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.52,
+    "stress_index": 62.4,
+    "probabilities": {
+      "Calm": 0.364,
+      "Stressed": 0.52,
+      "Tired": 0.116
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.465,
+    "stress_index": 52.8,
+    "probabilities": {
+      "Calm": 0.754,
+      "Stressed": 0.186,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2775,
+  "cached": false
+}

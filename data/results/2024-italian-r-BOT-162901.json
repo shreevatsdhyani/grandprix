@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-BOT-162901",
+  "driver": "BOT",
+  "session_id": "2024-italian-r",
+  "lap": 52,
+  "duration_s": 12.32,
+  "audio_url": "/api/clips/2024-italian-r-BOT-162901",
+  "transcript": {
+    "text": "Yeah, it feels like no luck with the safety guard today, but I think we tried. Let's keep pushing. Yep, was a well managed race with the tires, just lacking a little bit of pace.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 10.5,
+      "f0_mean_z": -0.752,
+      "f0_std_z": -0.151,
+      "rms_mean_z": -0.178,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.23,
+      "jitter_z": -1.474
+    },
+    "acoustic": {
+      "score": 28.4,
+      "probabilities": {
+        "hap": 0.8958,
+        "sad": 0.0982,
+        "neu": 0.006,
+        "ang": 0.0001
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 38.6,
+      "probabilities": {
+        "neutral": 0.5231,
+        "sadness": 0.3577,
+        "disgust": 0.0605,
+        "surprise": 0.0261,
+        "fear": 0.0125,
+        "anger": 0.0105,
+        "joy": 0.0096
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.637,
+    "stress_index": 33.0,
+    "probabilities": {
+      "Calm": 0.637,
+      "Stressed": 0.037,
+      "Tired": 0.326
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.896,
+    "stress_index": 28.4,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2635,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-SAI-144207",
+  "driver": "SAI",
+  "session_id": "2023-dutch-r",
+  "lap": 26,
+  "duration_s": 4.1,
+  "audio_url": "/api/clips/2023-dutch-r-SAI-144207",
+  "transcript": {
+    "text": "We also believe that the track is picking up after the safety car and the rain.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 14.7,
+      "f0_mean_z": -0.191,
+      "f0_std_z": -0.241,
+      "rms_mean_z": 0.597,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.804,
+      "jitter_z": -0.979
+    },
+    "acoustic": {
+      "score": 20.8,
+      "probabilities": {
+        "hap": 0.5069,
+        "neu": 0.4792,
+        "sad": 0.0115,
+        "ang": 0.0024
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 19.9,
+      "probabilities": {
+        "neutral": 0.86,
+        "surprise": 0.102,
+        "anger": 0.0093,
+        "fear": 0.0085,
+        "joy": 0.0084,
+        "disgust": 0.0069,
+        "sadness": 0.0049
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.844,
+    "stress_index": 14.5,
+    "probabilities": {
+      "Calm": 0.844,
+      "Stressed": 0.043,
+      "Tired": 0.113
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.507,
+    "stress_index": 20.8,
+    "probabilities": {
+      "Calm": 0.938,
+      "Stressed": 0.002,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1686,
+  "cached": false
+}

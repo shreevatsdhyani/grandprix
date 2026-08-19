@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-PIA-162231",
+  "driver": "PIA",
+  "session_id": "2024-italian-r",
+  "lap": 53,
+  "duration_s": 11.9,
+  "audio_url": "/api/clips/2024-italian-r-PIA-162231",
+  "transcript": {
+    "text": "I speak too. Well done Oscar. It was close buddy, really close. Yeah. Thank you. Yeah.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 79.2,
+      "f0_mean_z": -0.213,
+      "f0_std_z": 3.277,
+      "rms_mean_z": -2.318,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 4.097,
+      "jitter_z": -1.176
+    },
+    "acoustic": {
+      "score": 25.1,
+      "probabilities": {
+        "hap": 0.9952,
+        "neu": 0.003,
+        "ang": 0.0015,
+        "sad": 0.0003
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 15.9,
+      "probabilities": {
+        "joy": 0.7293,
+        "neutral": 0.1646,
+        "surprise": 0.0542,
+        "sadness": 0.0312,
+        "disgust": 0.0111,
+        "anger": 0.0075,
+        "fear": 0.002
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.902,
+    "stress_index": 9.8,
+    "probabilities": {
+      "Calm": 0.902,
+      "Stressed": 0.094,
+      "Tired": 0.004
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.995,
+    "stress_index": 25.1,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2809,
+  "cached": false
+}

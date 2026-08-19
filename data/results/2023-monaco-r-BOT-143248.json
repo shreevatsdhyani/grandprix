@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-BOT-143248",
+  "driver": "BOT",
+  "session_id": "2023-monaco-r",
+  "lap": 23,
+  "duration_s": 3.55,
+  "audio_url": "/api/clips/2023-monaco-r-BOT-143248",
+  "transcript": {
+    "text": "How are your ties? Oh good.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 72.4,
+      "f0_mean_z": -1.566,
+      "f0_std_z": -2.007,
+      "rms_mean_z": 2.576,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 2.895,
+      "jitter_z": -1.933
+    },
+    "acoustic": {
+      "score": 21.1,
+      "probabilities": {
+        "neu": 0.9201,
+        "ang": 0.0759,
+        "hap": 0.004,
+        "sad": 0.0
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 27.6,
+      "probabilities": {
+        "neutral": 0.374,
+        "surprise": 0.3481,
+        "joy": 0.2253,
+        "anger": 0.0227,
+        "sadness": 0.0149,
+        "disgust": 0.0131,
+        "fear": 0.0018
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.542,
+    "stress_index": 48.9,
+    "probabilities": {
+      "Calm": 0.457,
+      "Stressed": 0.001,
+      "Tired": 0.542
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.92,
+    "stress_index": 21.1,
+    "probabilities": {
+      "Calm": 0.869,
+      "Stressed": 0.071,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2387,
+  "cached": false
+}

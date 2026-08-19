@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-PER-155619",
+  "driver": "PER",
+  "session_id": "2023-monaco-r",
+  "lap": 76,
+  "duration_s": 6.62,
+  "audio_url": "/api/clips/2023-monaco-r-PER-155619",
+  "transcript": {
+    "text": "What a weekend guys, sorry. It was all my fault.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 40.2,
+      "f0_mean_z": 0.628,
+      "f0_std_z": -0.466,
+      "rms_mean_z": 2.466,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.471,
+      "jitter_z": 0.683
+    },
+    "acoustic": {
+      "score": 49.1,
+      "probabilities": {
+        "sad": 0.6926,
+        "hap": 0.2833,
+        "neu": 0.023,
+        "ang": 0.0011
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 62.7,
+      "probabilities": {
+        "sadness": 0.8527,
+        "surprise": 0.0461,
+        "neutral": 0.0371,
+        "disgust": 0.0312,
+        "anger": 0.017,
+        "fear": 0.0108,
+        "joy": 0.005
+      },
+      "top_label": "sadness",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.955,
+    "stress_index": 89.3,
+    "probabilities": {
+      "Calm": 0.011,
+      "Stressed": 0.034,
+      "Tired": 0.955
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.693,
+    "stress_index": 49.1,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1678,
+  "cached": false
+}

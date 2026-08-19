@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-HUL-150950",
+  "driver": "HUL",
+  "session_id": "2024-monaco-r",
+  "lap": 1,
+  "duration_s": 6.53,
+  "audio_url": "/api/clips/2024-monaco-r-HUL-150950",
+  "transcript": {
+    "text": "Are you okay, Nico? Ah, damn it. That was unnecessary. Yeah.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 16.9,
+      "f0_mean_z": -0.842,
+      "f0_std_z": -0.112,
+      "rms_mean_z": 0.379,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.783,
+      "jitter_z": -2.204
+    },
+    "acoustic": {
+      "score": 45.7,
+      "probabilities": {
+        "hap": 0.6591,
+        "ang": 0.2594,
+        "sad": 0.0735,
+        "neu": 0.008
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 85.9,
+      "probabilities": {
+        "anger": 0.8485,
+        "disgust": 0.1011,
+        "neutral": 0.0167,
+        "fear": 0.0152,
+        "sadness": 0.0093,
+        "surprise": 0.0063,
+        "joy": 0.0029
+      },
+      "top_label": "anger",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.952,
+    "stress_index": 86.7,
+    "probabilities": {
+      "Calm": 0.038,
+      "Stressed": 0.01,
+      "Tired": 0.952
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.659,
+    "stress_index": 45.7,
+    "probabilities": {
+      "Calm": 0.696,
+      "Stressed": 0.244,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2752,
+  "cached": false
+}

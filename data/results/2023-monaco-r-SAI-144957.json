@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-SAI-144957",
+  "driver": "SAI",
+  "session_id": "2023-monaco-r",
+  "lap": 36,
+  "duration_s": 6.94,
+  "audio_url": "/api/clips/2023-monaco-r-SAI-144957",
+  "transcript": {
+    "text": "What is show space? Travel up to 175 in 3A. I was doing 65!",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 21.3,
+      "f0_mean_z": 0.947,
+      "f0_std_z": 1.464,
+      "rms_mean_z": -0.047,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.203,
+      "jitter_z": 1.309
+    },
+    "acoustic": {
+      "score": 26.8,
+      "probabilities": {
+        "hap": 0.8688,
+        "neu": 0.0726,
+        "sad": 0.0441,
+        "ang": 0.0145
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 41.0,
+      "probabilities": {
+        "surprise": 0.7522,
+        "neutral": 0.1877,
+        "anger": 0.0288,
+        "disgust": 0.0103,
+        "sadness": 0.0086,
+        "joy": 0.0079,
+        "fear": 0.0045
+      },
+      "top_label": "surprise",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.503,
+    "stress_index": 47.7,
+    "probabilities": {
+      "Calm": 0.503,
+      "Stressed": 0.298,
+      "Tired": 0.199
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.869,
+    "stress_index": 26.8,
+    "probabilities": {
+      "Calm": 0.926,
+      "Stressed": 0.014,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2875,
+  "cached": false
+}

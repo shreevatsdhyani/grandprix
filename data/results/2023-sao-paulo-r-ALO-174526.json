@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-ALO-174526",
+  "driver": "ALO",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 13,
+  "duration_s": 4.77,
+  "audio_url": "/api/clips/2023-sao-paulo-r-ALO-174526",
+  "transcript": {
+    "text": "Okay, Plano, so we're still on Plan A, Plan A.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 16.1,
+      "f0_mean_z": 0.077,
+      "f0_std_z": -1.027,
+      "rms_mean_z": -0.596,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.308,
+      "jitter_z": -0.706
+    },
+    "acoustic": {
+      "score": 16.0,
+      "probabilities": {
+        "neu": 0.9016,
+        "hap": 0.0976,
+        "ang": 0.0007,
+        "sad": 0.0002
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 21.8,
+      "probabilities": {
+        "neutral": 0.879,
+        "disgust": 0.0533,
+        "anger": 0.0317,
+        "sadness": 0.013,
+        "fear": 0.0119,
+        "joy": 0.0082,
+        "surprise": 0.0029
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.643,
+    "stress_index": 32.3,
+    "probabilities": {
+      "Calm": 0.643,
+      "Stressed": 0.019,
+      "Tired": 0.338
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.902,
+    "stress_index": 16.0,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1629,
+  "cached": false
+}

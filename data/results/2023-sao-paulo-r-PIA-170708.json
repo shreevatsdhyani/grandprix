@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-PIA-170708",
+  "driver": "PIA",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 1,
+  "duration_s": 2.85,
+  "audio_url": "/api/clips/2023-sao-paulo-r-PIA-170708",
+  "transcript": {
+    "text": "Oscar kill the engine, the car is not safe to continue.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 24.1,
+      "f0_mean_z": 1.114,
+      "f0_std_z": 0.378,
+      "rms_mean_z": -0.186,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.337,
+      "jitter_z": -1.925
+    },
+    "acoustic": {
+      "score": 46.0,
+      "probabilities": {
+        "hap": 0.3523,
+        "ang": 0.3431,
+        "neu": 0.304,
+        "sad": 0.0006
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 62.6,
+      "probabilities": {
+        "sadness": 0.7024,
+        "neutral": 0.1009,
+        "fear": 0.0791,
+        "anger": 0.0538,
+        "disgust": 0.0449,
+        "surprise": 0.0166,
+        "joy": 0.0022
+      },
+      "top_label": "sadness",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.551,
+    "stress_index": 80.2,
+    "probabilities": {
+      "Calm": 0.17,
+      "Stressed": 0.551,
+      "Tired": 0.279
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.352,
+    "stress_index": 46.0,
+    "probabilities": {
+      "Calm": 0.617,
+      "Stressed": 0.323,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1485,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-HAM-152209",
+  "driver": "HAM",
+  "session_id": "2023-dutch-r",
+  "lap": 57,
+  "duration_s": 3.68,
+  "audio_url": "/api/clips/2023-dutch-r-HAM-152209",
+  "transcript": {
+    "text": "So this rain is looking imminent and it will be heavy so you can use the tires.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 41.5,
+      "f0_mean_z": -1.193,
+      "f0_std_z": -0.578,
+      "rms_mean_z": -1.912,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.5,
+      "jitter_z": 1.532
+    },
+    "acoustic": {
+      "score": 23.8,
+      "probabilities": {
+        "hap": 0.8091,
+        "neu": 0.1814,
+        "ang": 0.0081,
+        "sad": 0.0014
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 65.4,
+      "probabilities": {
+        "fear": 0.6407,
+        "neutral": 0.2482,
+        "sadness": 0.0416,
+        "anger": 0.0281,
+        "disgust": 0.0191,
+        "surprise": 0.0128,
+        "joy": 0.0096
+      },
+      "top_label": "fear",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.978,
+    "stress_index": 88.1,
+    "probabilities": {
+      "Calm": 0.021,
+      "Stressed": 0.001,
+      "Tired": 0.978
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.809,
+    "stress_index": 23.8,
+    "probabilities": {
+      "Calm": 0.932,
+      "Stressed": 0.008,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1930,
+  "cached": false
+}

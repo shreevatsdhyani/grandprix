@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-HAM-162636",
+  "driver": "HAM",
+  "session_id": "2023-dutch-r",
+  "lap": 61,
+  "duration_s": 3.9,
+  "audio_url": "/api/clips/2023-dutch-r-HAM-162636",
+  "transcript": {
+    "text": "And George that's the last possible, but a much different tie strategy too.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 27.5,
+      "f0_mean_z": 2.162,
+      "f0_std_z": -0.225,
+      "rms_mean_z": 0.456,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.592,
+      "jitter_z": 0.448
+    },
+    "acoustic": {
+      "score": 30.6,
+      "probabilities": {
+        "hap": 0.9006,
+        "ang": 0.0809,
+        "neu": 0.0157,
+        "sad": 0.0027
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 19.8,
+      "probabilities": {
+        "neutral": 0.8585,
+        "surprise": 0.1057,
+        "sadness": 0.0163,
+        "joy": 0.0068,
+        "disgust": 0.006,
+        "anger": 0.0048,
+        "fear": 0.0019
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.495,
+    "stress_index": 62.6,
+    "probabilities": {
+      "Calm": 0.358,
+      "Stressed": 0.495,
+      "Tired": 0.146
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.901,
+    "stress_index": 30.6,
+    "probabilities": {
+      "Calm": 0.864,
+      "Stressed": 0.076,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1961,
+  "cached": false
+}

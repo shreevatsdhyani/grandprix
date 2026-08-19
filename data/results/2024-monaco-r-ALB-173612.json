@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-ALB-173612",
+  "driver": "ALB",
+  "session_id": "2024-monaco-r",
+  "lap": 77,
+  "duration_s": 23.01,
+  "audio_url": "/api/clips/2024-monaco-r-ALB-173612",
+  "transcript": {
+    "text": "Lovely stuff, P9. Yeah, well done. Not sure what race that was, but how about it was done yesterday, well done, well deserved. Yeah, it was too side of face, right? Why, my tie is just put out the window and I could never get them. Never get them back up from a temperature.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 16.8,
+      "f0_mean_z": -0.244,
+      "f0_std_z": 0.323,
+      "rms_mean_z": 0.464,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.068,
+      "jitter_z": -0.073
+    },
+    "acoustic": {
+      "score": 28.8,
+      "probabilities": {
+        "hap": 0.8342,
+        "sad": 0.1012,
+        "neu": 0.0528,
+        "ang": 0.0118
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 23.3,
+      "probabilities": {
+        "joy": 0.4406,
+        "neutral": 0.3579,
+        "surprise": 0.0576,
+        "anger": 0.0522,
+        "disgust": 0.0455,
+        "sadness": 0.0446,
+        "fear": 0.0017
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.862,
+    "stress_index": 12.8,
+    "probabilities": {
+      "Calm": 0.862,
+      "Stressed": 0.036,
+      "Tired": 0.102
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.834,
+    "stress_index": 28.8,
+    "probabilities": {
+      "Calm": 0.929,
+      "Stressed": 0.011,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2983,
+  "cached": false
+}

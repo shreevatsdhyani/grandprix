@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-VER-183640",
+  "driver": "VER",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 53,
+  "duration_s": 7.42,
+  "audio_url": "/api/clips/2023-sao-paulo-r-VER-183640",
+  "transcript": {
+    "text": "Sitting in the dirtier, hurts my life, I've got a bit, just for information. Okay, copy that. Thank you.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 43.5,
+      "f0_mean_z": 3.778,
+      "f0_std_z": -0.341,
+      "rms_mean_z": 0.859,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.46,
+      "jitter_z": -0.082
+    },
+    "acoustic": {
+      "score": 30.6,
+      "probabilities": {
+        "hap": 0.8264,
+        "sad": 0.1607,
+        "neu": 0.011,
+        "ang": 0.0019
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 65.1,
+      "probabilities": {
+        "disgust": 0.6715,
+        "sadness": 0.1193,
+        "neutral": 0.1038,
+        "anger": 0.0812,
+        "fear": 0.0136,
+        "joy": 0.0058,
+        "surprise": 0.0049
+      },
+      "top_label": "disgust",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.594,
+    "stress_index": 92.2,
+    "probabilities": {
+      "Calm": 0.042,
+      "Stressed": 0.594,
+      "Tired": 0.364
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.826,
+    "stress_index": 30.6,
+    "probabilities": {
+      "Calm": 0.938,
+      "Stressed": 0.002,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2344,
+  "cached": false
+}

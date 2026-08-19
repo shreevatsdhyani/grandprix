@@ -1,0 +1,7099 @@
+{
+ "session_id": "2023-bahrain-r",
+ "built_at": "2026-08-18T13:11:18.030906+00:00",
+ "source": "fastf1-cache+openf1-team-radio",
+ "lap_count": 57,
+ "circuit_corners": 15,
+ "lap_length_m": null,
+ "track_evolution": [
+  {
+   "lap": 1,
+   "grip_proxy_s": null,
+   "track_temp_c": 31.2,
+   "air_temp_c": 27.3,
+   "rainfall": false
+  },
+  {
+   "lap": 2,
+   "grip_proxy_s": 100.419,
+   "track_temp_c": 31.1,
+   "air_temp_c": 27.3,
+   "rainfall": false
+  },
+  {
+   "lap": 3,
+   "grip_proxy_s": 99.862,
+   "track_temp_c": 31.1,
+   "air_temp_c": 27.3,
+   "rainfall": false
+  },
+  {
+   "lap": 4,
+   "grip_proxy_s": 99.792,
+   "track_temp_c": 31.2,
+   "air_temp_c": 27.3,
+   "rainfall": false
+  },
+  {
+   "lap": 5,
+   "grip_proxy_s": 100.618,
+   "track_temp_c": 31.1,
+   "air_temp_c": 27.2,
+   "rainfall": false
+  },
+  {
+   "lap": 6,
+   "grip_proxy_s": 100.537,
+   "track_temp_c": 31.0,
+   "air_temp_c": 27.2,
+   "rainfall": false
+  },
+  {
+   "lap": 7,
+   "grip_proxy_s": 100.605,
+   "track_temp_c": 30.9,
+   "air_temp_c": 27.1,
+   "rainfall": false
+  },
+  {
+   "lap": 8,
+   "grip_proxy_s": 100.704,
+   "track_temp_c": 30.9,
+   "air_temp_c": 27.1,
+   "rainfall": false
+  },
+  {
+   "lap": 9,
+   "grip_proxy_s": 100.825,
+   "track_temp_c": 30.9,
+   "air_temp_c": 27.1,
+   "rainfall": false
+  },
+  {
+   "lap": 10,
+   "grip_proxy_s": 100.989,
+   "track_temp_c": 30.8,
+   "air_temp_c": 27.1,
+   "rainfall": false
+  },
+  {
+   "lap": 11,
+   "grip_proxy_s": 101.25,
+   "track_temp_c": 30.8,
+   "air_temp_c": 27.1,
+   "rainfall": false
+  },
+  {
+   "lap": 12,
+   "grip_proxy_s": 101.134,
+   "track_temp_c": 30.6,
+   "air_temp_c": 27.1,
+   "rainfall": false
+  },
+  {
+   "lap": 13,
+   "grip_proxy_s": 100.731,
+   "track_temp_c": 30.5,
+   "air_temp_c": 27.1,
+   "rainfall": false
+  },
+  {
+   "lap": 14,
+   "grip_proxy_s": 98.859,
+   "track_temp_c": 30.5,
+   "air_temp_c": 27.1,
+   "rainfall": false
+  },
+  {
+   "lap": 15,
+   "grip_proxy_s": 98.975,
+   "track_temp_c": 30.5,
+   "air_temp_c": 27.1,
+   "rainfall": false
+  },
+  {
+   "lap": 16,
+   "grip_proxy_s": 98.945,
+   "track_temp_c": 30.5,
+   "air_temp_c": 27.0,
+   "rainfall": false
+  },
+  {
+   "lap": 17,
+   "grip_proxy_s": 98.996,
+   "track_temp_c": 30.4,
+   "air_temp_c": 27.0,
+   "rainfall": false
+  },
+  {
+   "lap": 18,
+   "grip_proxy_s": 98.886,
+   "track_temp_c": 30.3,
+   "air_temp_c": 27.0,
+   "rainfall": false
+  },
+  {
+   "lap": 19,
+   "grip_proxy_s": 98.794,
+   "track_temp_c": 30.3,
+   "air_temp_c": 26.9,
+   "rainfall": false
+  },
+  {
+   "lap": 20,
+   "grip_proxy_s": 98.809,
+   "track_temp_c": 30.3,
+   "air_temp_c": 26.9,
+   "rainfall": false
+  },
+  {
+   "lap": 21,
+   "grip_proxy_s": 98.888,
+   "track_temp_c": 30.2,
+   "air_temp_c": 26.9,
+   "rainfall": false
+  },
+  {
+   "lap": 22,
+   "grip_proxy_s": 98.913,
+   "track_temp_c": 30.1,
+   "air_temp_c": 26.8,
+   "rainfall": false
+  },
+  {
+   "lap": 23,
+   "grip_proxy_s": 99.027,
+   "track_temp_c": 30.0,
+   "air_temp_c": 26.8,
+   "rainfall": false
+  },
+  {
+   "lap": 24,
+   "grip_proxy_s": 98.947,
+   "track_temp_c": 29.9,
+   "air_temp_c": 26.7,
+   "rainfall": false
+  },
+  {
+   "lap": 25,
+   "grip_proxy_s": 99.066,
+   "track_temp_c": 29.9,
+   "air_temp_c": 26.7,
+   "rainfall": false
+  },
+  {
+   "lap": 26,
+   "grip_proxy_s": 99.5,
+   "track_temp_c": 29.9,
+   "air_temp_c": 26.7,
+   "rainfall": false
+  },
+  {
+   "lap": 27,
+   "grip_proxy_s": 99.235,
+   "track_temp_c": 29.9,
+   "air_temp_c": 26.7,
+   "rainfall": false
+  },
+  {
+   "lap": 28,
+   "grip_proxy_s": 98.474,
+   "track_temp_c": 29.9,
+   "air_temp_c": 26.8,
+   "rainfall": false
+  },
+  {
+   "lap": 29,
+   "grip_proxy_s": 98.447,
+   "track_temp_c": 29.9,
+   "air_temp_c": 26.7,
+   "rainfall": false
+  },
+  {
+   "lap": 30,
+   "grip_proxy_s": 98.39,
+   "track_temp_c": 29.7,
+   "air_temp_c": 26.6,
+   "rainfall": false
+  },
+  {
+   "lap": 31,
+   "grip_proxy_s": 98.104,
+   "track_temp_c": 29.8,
+   "air_temp_c": 26.7,
+   "rainfall": false
+  },
+  {
+   "lap": 32,
+   "grip_proxy_s": 97.902,
+   "track_temp_c": 29.6,
+   "air_temp_c": 26.7,
+   "rainfall": false
+  },
+  {
+   "lap": 33,
+   "grip_proxy_s": 97.775,
+   "track_temp_c": 29.6,
+   "air_temp_c": 26.7,
+   "rainfall": false
+  },
+  {
+   "lap": 34,
+   "grip_proxy_s": 97.902,
+   "track_temp_c": 29.6,
+   "air_temp_c": 26.7,
+   "rainfall": false
+  },
+  {
+   "lap": 35,
+   "grip_proxy_s": 97.87,
+   "track_temp_c": 29.6,
+   "air_temp_c": 26.6,
+   "rainfall": false
+  },
+  {
+   "lap": 36,
+   "grip_proxy_s": 97.754,
+   "track_temp_c": 29.6,
+   "air_temp_c": 26.6,
+   "rainfall": false
+  },
+  {
+   "lap": 37,
+   "grip_proxy_s": 97.831,
+   "track_temp_c": 29.6,
+   "air_temp_c": 26.6,
+   "rainfall": false
+  },
+  {
+   "lap": 38,
+   "grip_proxy_s": 98.015,
+   "track_temp_c": 29.5,
+   "air_temp_c": 26.6,
+   "rainfall": false
+  },
+  {
+   "lap": 39,
+   "grip_proxy_s": 97.784,
+   "track_temp_c": 29.5,
+   "air_temp_c": 26.5,
+   "rainfall": false
+  },
+  {
+   "lap": 40,
+   "grip_proxy_s": 110.263,
+   "track_temp_c": 29.5,
+   "air_temp_c": 26.5,
+   "rainfall": false
+  },
+  {
+   "lap": 41,
+   "grip_proxy_s": 125.445,
+   "track_temp_c": 29.5,
+   "air_temp_c": 26.5,
+   "rainfall": false
+  },
+  {
+   "lap": 42,
+   "grip_proxy_s": 97.061,
+   "track_temp_c": 29.3,
+   "air_temp_c": 26.5,
+   "rainfall": false
+  },
+  {
+   "lap": 43,
+   "grip_proxy_s": 97.028,
+   "track_temp_c": 29.3,
+   "air_temp_c": 26.4,
+   "rainfall": false
+  },
+  {
+   "lap": 44,
+   "grip_proxy_s": 97.219,
+   "track_temp_c": 29.3,
+   "air_temp_c": 26.4,
+   "rainfall": false
+  },
+  {
+   "lap": 45,
+   "grip_proxy_s": 97.426,
+   "track_temp_c": 29.2,
+   "air_temp_c": 26.4,
+   "rainfall": false
+  },
+  {
+   "lap": 46,
+   "grip_proxy_s": 97.589,
+   "track_temp_c": 29.1,
+   "air_temp_c": 26.4,
+   "rainfall": false
+  },
+  {
+   "lap": 47,
+   "grip_proxy_s": 97.432,
+   "track_temp_c": 29.1,
+   "air_temp_c": 26.4,
+   "rainfall": false
+  },
+  {
+   "lap": 48,
+   "grip_proxy_s": 97.5,
+   "track_temp_c": 29.0,
+   "air_temp_c": 26.4,
+   "rainfall": false
+  },
+  {
+   "lap": 49,
+   "grip_proxy_s": 97.609,
+   "track_temp_c": 29.0,
+   "air_temp_c": 26.4,
+   "rainfall": false
+  },
+  {
+   "lap": 50,
+   "grip_proxy_s": 97.604,
+   "track_temp_c": 29.0,
+   "air_temp_c": 26.4,
+   "rainfall": false
+  },
+  {
+   "lap": 51,
+   "grip_proxy_s": 97.706,
+   "track_temp_c": 29.0,
+   "air_temp_c": 26.3,
+   "rainfall": false
+  },
+  {
+   "lap": 52,
+   "grip_proxy_s": 97.589,
+   "track_temp_c": 28.9,
+   "air_temp_c": 26.3,
+   "rainfall": false
+  },
+  {
+   "lap": 53,
+   "grip_proxy_s": 97.778,
+   "track_temp_c": 28.9,
+   "air_temp_c": 26.3,
+   "rainfall": false
+  },
+  {
+   "lap": 54,
+   "grip_proxy_s": 97.78,
+   "track_temp_c": 28.8,
+   "air_temp_c": 26.3,
+   "rainfall": false
+  },
+  {
+   "lap": 55,
+   "grip_proxy_s": 97.86,
+   "track_temp_c": 28.8,
+   "air_temp_c": 26.2,
+   "rainfall": false
+  },
+  {
+   "lap": 56,
+   "grip_proxy_s": 98.111,
+   "track_temp_c": 28.8,
+   "air_temp_c": 26.2,
+   "rainfall": false
+  },
+  {
+   "lap": 57,
+   "grip_proxy_s": 98.021,
+   "track_temp_c": 28.7,
+   "air_temp_c": 26.3,
+   "rainfall": false
+  }
+ ],
+ "wet_dry_crossovers": [],
+ "stints_by_driver": {
+  "ALB": [
+   {
+    "stint_number": 1,
+    "compound": "SOFT",
+    "lap_start": 1,
+    "lap_end": 11,
+    "n_laps": 11,
+    "best_lap_s": 99.761,
+    "deg_slope_s_per_lap": 0.163,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "SOFT",
+    "lap_start": 12,
+    "lap_end": 26,
+    "n_laps": 15,
+    "best_lap_s": 98.472,
+    "deg_slope_s_per_lap": 0.104,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "HARD",
+    "lap_start": 27,
+    "lap_end": 40,
+    "n_laps": 14,
+    "best_lap_s": 97.503,
+    "deg_slope_s_per_lap": 0.043,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 4,
+    "compound": "SOFT",
+    "lap_start": 41,
+    "lap_end": 57,
+    "n_laps": 17,
+    "best_lap_s": 97.144,
+    "deg_slope_s_per_lap": 0.056,
+    "basis": "modelled"
+   }
+  ],
+  "ALO": [
+   {
+    "stint_number": 1,
+    "compound": "SOFT",
+    "lap_start": 1,
+    "lap_end": 14,
+    "n_laps": 14,
+    "best_lap_s": 99.1,
+    "deg_slope_s_per_lap": 0.162,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 15,
+    "lap_end": 34,
+    "n_laps": 20,
+    "best_lap_s": 97.542,
+    "deg_slope_s_per_lap": 0.002,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "HARD",
+    "lap_start": 35,
+    "lap_end": 57,
+    "n_laps": 23,
+    "best_lap_s": 96.156,
+    "deg_slope_s_per_lap": 0.024,
+    "basis": "modelled"
+   }
+  ],
+  "BOT": [
+   {
+    "stint_number": 1,
+    "compound": "SOFT",
+    "lap_start": 1,
+    "lap_end": 11,
+    "n_laps": 11,
+    "best_lap_s": 99.397,
+    "deg_slope_s_per_lap": 0.111,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 12,
+    "lap_end": 29,
+    "n_laps": 18,
+    "best_lap_s": 98.03,
+    "deg_slope_s_per_lap": 0.053,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "HARD",
+    "lap_start": 30,
+    "lap_end": 57,
+    "n_laps": 28,
+    "best_lap_s": 97.379,
+    "deg_slope_s_per_lap": 0.013,
+    "basis": "modelled"
+   }
+  ],
+  "DEV": [
+   {
+    "stint_number": 1,
+    "compound": "SOFT",
+    "lap_start": 1,
+    "lap_end": 11,
+    "n_laps": 11,
+    "best_lap_s": 100.373,
+    "deg_slope_s_per_lap": 0.156,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 12,
+    "lap_end": 27,
+    "n_laps": 16,
+    "best_lap_s": 98.829,
+    "deg_slope_s_per_lap": 0.11,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "HARD",
+    "lap_start": 28,
+    "lap_end": 56,
+    "n_laps": 29,
+    "best_lap_s": 97.709,
+    "deg_slope_s_per_lap": 0.071,
+    "basis": "modelled"
+   }
+  ],
+  "GAS": [
+   {
+    "stint_number": 1,
+    "compound": "SOFT",
+    "lap_start": 1,
+    "lap_end": 9,
+    "n_laps": 9,
+    "best_lap_s": 100.438,
+    "deg_slope_s_per_lap": 0.105,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 10,
+    "lap_end": 25,
+    "n_laps": 16,
+    "best_lap_s": 98.762,
+    "deg_slope_s_per_lap": 0.048,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "HARD",
+    "lap_start": 26,
+    "lap_end": 40,
+    "n_laps": 15,
+    "best_lap_s": 97.76,
+    "deg_slope_s_per_lap": 0.014,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 4,
+    "compound": "SOFT",
+    "lap_start": 41,
+    "lap_end": 57,
+    "n_laps": 17,
+    "best_lap_s": 95.068,
+    "deg_slope_s_per_lap": 0.174,
+    "basis": "modelled"
+   }
+  ],
+  "HAM": [
+   {
+    "stint_number": 1,
+    "compound": "SOFT",
+    "lap_start": 1,
+    "lap_end": 12,
+    "n_laps": 12,
+    "best_lap_s": 99.166,
+    "deg_slope_s_per_lap": 0.198,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 13,
+    "lap_end": 30,
+    "n_laps": 18,
+    "best_lap_s": 98.265,
+    "deg_slope_s_per_lap": -0.019,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "HARD",
+    "lap_start": 31,
+    "lap_end": 57,
+    "n_laps": 27,
+    "best_lap_s": 96.546,
+    "deg_slope_s_per_lap": 0.033,
+    "basis": "modelled"
+   }
+  ],
+  "HUL": [
+   {
+    "stint_number": 1,
+    "compound": "SOFT",
+    "lap_start": 1,
+    "lap_end": 11,
+    "n_laps": 11,
+    "best_lap_s": 100.484,
+    "deg_slope_s_per_lap": 0.194,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 12,
+    "lap_end": 26,
+    "n_laps": 15,
+    "best_lap_s": 98.847,
+    "deg_slope_s_per_lap": 0.09,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "HARD",
+    "lap_start": 27,
+    "lap_end": 40,
+    "n_laps": 14,
+    "best_lap_s": 96.981,
+    "deg_slope_s_per_lap": 0.102,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 4,
+    "compound": "SOFT",
+    "lap_start": 41,
+    "lap_end": 56,
+    "n_laps": 16,
+    "best_lap_s": 96.616,
+    "deg_slope_s_per_lap": 0.095,
+    "basis": "modelled"
+   }
+  ],
+  "LEC": [
+   {
+    "stint_number": 1,
+    "compound": "SOFT",
+    "lap_start": 1,
+    "lap_end": 13,
+    "n_laps": 13,
+    "best_lap_s": 98.572,
+    "deg_slope_s_per_lap": 0.08,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 14,
+    "lap_end": 33,
+    "n_laps": 20,
+    "best_lap_s": 97.631,
+    "deg_slope_s_per_lap": 0.059,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "HARD",
+    "lap_start": 34,
+    "lap_end": 40,
+    "n_laps": 7,
+    "best_lap_s": 97.17,
+    "deg_slope_s_per_lap": -0.171,
+    "basis": "modelled"
+   }
+  ],
+  "MAG": [
+   {
+    "stint_number": 1,
+    "compound": "HARD",
+    "lap_start": 1,
+    "lap_end": 15,
+    "n_laps": 15,
+    "best_lap_s": 100.773,
+    "deg_slope_s_per_lap": 0.037,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 16,
+    "lap_end": 29,
+    "n_laps": 14,
+    "best_lap_s": 98.274,
+    "deg_slope_s_per_lap": 0.108,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "SOFT",
+    "lap_start": 30,
+    "lap_end": 40,
+    "n_laps": 11,
+    "best_lap_s": 97.097,
+    "deg_slope_s_per_lap": 0.066,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 4,
+    "compound": "SOFT",
+    "lap_start": 41,
+    "lap_end": 56,
+    "n_laps": 16,
+    "best_lap_s": 96.471,
+    "deg_slope_s_per_lap": 0.167,
+    "basis": "modelled"
+   }
+  ],
+  "NOR": [
+   {
+    "stint_number": 1,
+    "compound": "SOFT",
+    "lap_start": 1,
+    "lap_end": 10,
+    "n_laps": 10,
+    "best_lap_s": 99.777,
+    "deg_slope_s_per_lap": -0.198,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 11,
+    "lap_end": 17,
+    "n_laps": 7,
+    "best_lap_s": 98.86,
+    "deg_slope_s_per_lap": -0.136,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "SOFT",
+    "lap_start": 18,
+    "lap_end": 27,
+    "n_laps": 10,
+    "best_lap_s": 97.966,
+    "deg_slope_s_per_lap": 0.052,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 4,
+    "compound": "MEDIUM",
+    "lap_start": 28,
+    "lap_end": 37,
+    "n_laps": 10,
+    "best_lap_s": 97.26,
+    "deg_slope_s_per_lap": 0.235,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 5,
+    "compound": "HARD",
+    "lap_start": 38,
+    "lap_end": 47,
+    "n_laps": 10,
+    "best_lap_s": 96.668,
+    "deg_slope_s_per_lap": 0.216,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 6,
+    "compound": "SOFT",
+    "lap_start": 48,
+    "lap_end": 54,
+    "n_laps": 7,
+    "best_lap_s": 95.257,
+    "deg_slope_s_per_lap": -0.674,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 7,
+    "compound": "SOFT",
+    "lap_start": 55,
+    "lap_end": 55,
+    "n_laps": 1,
+    "best_lap_s": 124.847,
+    "deg_slope_s_per_lap": null,
+    "basis": "modelled"
+   }
+  ],
+  "OCO": [
+   {
+    "stint_number": 1,
+    "compound": "SOFT",
+    "lap_start": 1,
+    "lap_end": 12,
+    "n_laps": 12,
+    "best_lap_s": 99.543,
+    "deg_slope_s_per_lap": 0.162,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 13,
+    "lap_end": 15,
+    "n_laps": 3,
+    "best_lap_s": 98.649,
+    "deg_slope_s_per_lap": null,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "HARD",
+    "lap_start": 16,
+    "lap_end": 32,
+    "n_laps": 17,
+    "best_lap_s": 98.78,
+    "deg_slope_s_per_lap": 0.11,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 4,
+    "compound": "HARD",
+    "lap_start": 33,
+    "lap_end": 41,
+    "n_laps": 9,
+    "best_lap_s": 96.797,
+    "deg_slope_s_per_lap": 0.121,
+    "basis": "modelled"
+   }
+  ],
+  "PER": [
+   {
+    "stint_number": 1,
+    "compound": "SOFT",
+    "lap_start": 1,
+    "lap_end": 17,
+    "n_laps": 17,
+    "best_lap_s": 98.404,
+    "deg_slope_s_per_lap": 0.016,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "SOFT",
+    "lap_start": 18,
+    "lap_end": 34,
+    "n_laps": 17,
+    "best_lap_s": 97.169,
+    "deg_slope_s_per_lap": 0.026,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "HARD",
+    "lap_start": 35,
+    "lap_end": 57,
+    "n_laps": 23,
+    "best_lap_s": 96.344,
+    "deg_slope_s_per_lap": 0.022,
+    "basis": "modelled"
+   }
+  ],
+  "PIA": [
+   {
+    "stint_number": 1,
+    "compound": "SOFT",
+    "lap_start": 1,
+    "lap_end": 13,
+    "n_laps": 13,
+    "best_lap_s": 100.691,
+    "deg_slope_s_per_lap": 0.083,
+    "basis": "modelled"
+   }
+  ],
+  "RUS": [
+   {
+    "stint_number": 1,
+    "compound": "SOFT",
+    "lap_start": 1,
+    "lap_end": 13,
+    "n_laps": 13,
+    "best_lap_s": 99.093,
+    "deg_slope_s_per_lap": 0.236,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 14,
+    "lap_end": 31,
+    "n_laps": 18,
+    "best_lap_s": 97.46,
+    "deg_slope_s_per_lap": 0.042,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "HARD",
+    "lap_start": 32,
+    "lap_end": 57,
+    "n_laps": 26,
+    "best_lap_s": 97.035,
+    "deg_slope_s_per_lap": 0.013,
+    "basis": "modelled"
+   }
+  ],
+  "SAI": [
+   {
+    "stint_number": 1,
+    "compound": "SOFT",
+    "lap_start": 1,
+    "lap_end": 13,
+    "n_laps": 13,
+    "best_lap_s": 98.933,
+    "deg_slope_s_per_lap": 0.181,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 14,
+    "lap_end": 31,
+    "n_laps": 18,
+    "best_lap_s": 97.985,
+    "deg_slope_s_per_lap": 0.028,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "HARD",
+    "lap_start": 32,
+    "lap_end": 57,
+    "n_laps": 26,
+    "best_lap_s": 97.13,
+    "deg_slope_s_per_lap": 0.021,
+    "basis": "modelled"
+   }
+  ],
+  "SAR": [
+   {
+    "stint_number": 1,
+    "compound": "SOFT",
+    "lap_start": 1,
+    "lap_end": 12,
+    "n_laps": 12,
+    "best_lap_s": 100.349,
+    "deg_slope_s_per_lap": 0.105,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "SOFT",
+    "lap_start": 13,
+    "lap_end": 30,
+    "n_laps": 18,
+    "best_lap_s": 98.413,
+    "deg_slope_s_per_lap": 0.068,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "HARD",
+    "lap_start": 31,
+    "lap_end": 40,
+    "n_laps": 10,
+    "best_lap_s": 97.613,
+    "deg_slope_s_per_lap": 0.033,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 4,
+    "compound": "SOFT",
+    "lap_start": 41,
+    "lap_end": 56,
+    "n_laps": 16,
+    "best_lap_s": 96.037,
+    "deg_slope_s_per_lap": 0.126,
+    "basis": "modelled"
+   }
+  ],
+  "STR": [
+   {
+    "stint_number": 1,
+    "compound": "SOFT",
+    "lap_start": 1,
+    "lap_end": 15,
+    "n_laps": 15,
+    "best_lap_s": 99.144,
+    "deg_slope_s_per_lap": 0.129,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 16,
+    "lap_end": 30,
+    "n_laps": 15,
+    "best_lap_s": 97.507,
+    "deg_slope_s_per_lap": 0.071,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "HARD",
+    "lap_start": 31,
+    "lap_end": 57,
+    "n_laps": 27,
+    "best_lap_s": 96.546,
+    "deg_slope_s_per_lap": 0.03,
+    "basis": "modelled"
+   }
+  ],
+  "TSU": [
+   {
+    "stint_number": 1,
+    "compound": "SOFT",
+    "lap_start": 1,
+    "lap_end": 10,
+    "n_laps": 10,
+    "best_lap_s": 99.95,
+    "deg_slope_s_per_lap": 0.14,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 11,
+    "lap_end": 26,
+    "n_laps": 16,
+    "best_lap_s": 98.742,
+    "deg_slope_s_per_lap": 0.062,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "HARD",
+    "lap_start": 27,
+    "lap_end": 40,
+    "n_laps": 14,
+    "best_lap_s": 97.779,
+    "deg_slope_s_per_lap": 0.037,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 4,
+    "compound": "SOFT",
+    "lap_start": 41,
+    "lap_end": 57,
+    "n_laps": 17,
+    "best_lap_s": 96.637,
+    "deg_slope_s_per_lap": 0.089,
+    "basis": "modelled"
+   }
+  ],
+  "VER": [
+   {
+    "stint_number": 1,
+    "compound": "SOFT",
+    "lap_start": 1,
+    "lap_end": 14,
+    "n_laps": 14,
+    "best_lap_s": 97.974,
+    "deg_slope_s_per_lap": 0.066,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "SOFT",
+    "lap_start": 15,
+    "lap_end": 36,
+    "n_laps": 22,
+    "best_lap_s": 97.372,
+    "deg_slope_s_per_lap": 0.001,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "HARD",
+    "lap_start": 37,
+    "lap_end": 57,
+    "n_laps": 21,
+    "best_lap_s": 96.236,
+    "deg_slope_s_per_lap": 0.013,
+    "basis": "modelled"
+   }
+  ],
+  "ZHO": [
+   {
+    "stint_number": 1,
+    "compound": "SOFT",
+    "lap_start": 1,
+    "lap_end": 12,
+    "n_laps": 12,
+    "best_lap_s": 100.596,
+    "deg_slope_s_per_lap": 0.17,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 2,
+    "compound": "HARD",
+    "lap_start": 13,
+    "lap_end": 32,
+    "n_laps": 20,
+    "best_lap_s": 98.794,
+    "deg_slope_s_per_lap": 0.027,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 3,
+    "compound": "SOFT",
+    "lap_start": 33,
+    "lap_end": 54,
+    "n_laps": 22,
+    "best_lap_s": 97.037,
+    "deg_slope_s_per_lap": 0.071,
+    "basis": "modelled"
+   },
+   {
+    "stint_number": 4,
+    "compound": "SOFT",
+    "lap_start": 55,
+    "lap_end": 56,
+    "n_laps": 2,
+    "best_lap_s": 93.996,
+    "deg_slope_s_per_lap": null,
+    "basis": "modelled"
+   }
+  ]
+ },
+ "clip_contexts": {
+  "2023-bahrain-r-MAG-141949": {
+   "clip_id": "2023-bahrain-r-MAG-141949",
+   "utc": "2023-03-05T14:20:25.563000",
+   "lap": null,
+   "phase": "pre_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 29.1,
+    "track_temp_c": 33.6,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1016.5,
+    "wind_speed_ms": 0.8,
+    "wind_direction_deg": 172,
+    "track_temp_delta_from_start_c": -1.5,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "GREEN"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T14:20:00",
+      "lap": 1,
+      "category": "Flag",
+      "flag": "GREEN",
+      "scope": "Track",
+      "message": "GREEN LIGHT - PIT EXIT OPEN",
+      "offset_s": -25.6
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-PER-142737": {
+   "clip_id": "2023-bahrain-r-PER-142737",
+   "utc": "2023-03-05T14:28:08.211000",
+   "lap": null,
+   "phase": "pre_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 28.8,
+    "track_temp_c": 33.1,
+    "rainfall": false,
+    "humidity_pct": 25.0,
+    "pressure_hpa": 1016.5,
+    "wind_speed_ms": 1.7,
+    "wind_direction_deg": 187,
+    "track_temp_delta_from_start_c": -2.0,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T14:30:00",
+      "lap": 1,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "PIT EXIT CLOSED",
+      "offset_s": 111.8
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-MAG-145820": {
+   "clip_id": "2023-bahrain-r-MAG-145820",
+   "utc": "2023-03-05T14:58:31.769000",
+   "lap": null,
+   "phase": "pre_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 27.5,
+    "track_temp_c": 31.4,
+    "rainfall": false,
+    "humidity_pct": 22.0,
+    "pressure_hpa": 1016.7,
+    "wind_speed_ms": 0.4,
+    "wind_direction_deg": 203,
+    "track_temp_delta_from_start_c": -3.7,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T14:57:09",
+      "lap": 1,
+      "category": "Drs",
+      "flag": null,
+      "scope": null,
+      "message": "DRS DISABLED",
+      "offset_s": -82.8
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-HUL-145953": {
+   "clip_id": "2023-bahrain-r-HUL-145953",
+   "utc": "2023-03-05T15:00:11.957000",
+   "lap": null,
+   "phase": "pre_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 27.4,
+    "track_temp_c": 31.4,
+    "rainfall": false,
+    "humidity_pct": 22.0,
+    "pressure_hpa": 1016.7,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 196,
+    "track_temp_delta_from_start_c": -3.7,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-SAR-150237": {
+   "clip_id": "2023-bahrain-r-SAR-150237",
+   "utc": "2023-03-05T15:02:58.251000",
+   "lap": null,
+   "phase": "pre_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 27.3,
+    "track_temp_c": 31.3,
+    "rainfall": false,
+    "humidity_pct": 22.0,
+    "pressure_hpa": 1016.7,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 0,
+    "track_temp_delta_from_start_c": -3.8,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [
+     "GREEN",
+     "YELLOW",
+     "CLEAR"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:03:38",
+      "lap": 1,
+      "category": "Flag",
+      "flag": "GREEN",
+      "scope": "Track",
+      "message": "GREEN LIGHT - PIT EXIT OPEN",
+      "offset_s": 39.7
+     },
+     {
+      "utc": "2023-03-05T15:04:09",
+      "lap": 1,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 4",
+      "offset_s": 70.7
+     },
+     {
+      "utc": "2023-03-05T15:04:09",
+      "lap": 1,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Sector",
+      "message": "CLEAR IN TRACK SECTOR 4",
+      "offset_s": 70.7
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-HUL-150739": {
+   "clip_id": "2023-bahrain-r-HUL-150739",
+   "utc": "2023-03-05T15:07:58.261000",
+   "lap": 3,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 27.3,
+    "track_temp_c": 31.2,
+    "rainfall": false,
+    "humidity_pct": 22.0,
+    "pressure_hpa": 1016.7,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 170,
+    "track_temp_delta_from_start_c": -3.9,
+    "grip_proxy_s": 99.862,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 6,
+    "stint_number": 1,
+    "laps_into_stint": 3,
+    "deg_slope_s_per_lap": 0.194,
+    "stint_vs_driver_median_laps": -4,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2662.0,
+    "lap_length_m": 5395.9,
+    "pct_of_lap": 49.3,
+    "nearest_corner": 10,
+    "distance_to_corner_m": 29.8,
+    "sector": 2,
+    "speed_kph": 124.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 3,
+    "rpm": 7751,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 14,
+    "gap_ahead_s": 0.872,
+    "gap_to_leader_s": 13.544,
+    "track_status": "1",
+    "active_flags": [
+     "CLEAR"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:05:59",
+      "lap": 2,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "TRACK SURFACE SLIPPERY IN TRACK SECTOR 11",
+      "offset_s": -119.3
+     },
+     {
+      "utc": "2023-03-05T15:06:47",
+      "lap": 2,
+      "category": "Drs",
+      "flag": null,
+      "scope": null,
+      "message": "DRS ENABLED",
+      "offset_s": -71.3
+     },
+     {
+      "utc": "2023-03-05T15:06:52",
+      "lap": 2,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Sector",
+      "message": "CLEAR IN TRACK SECTOR 11",
+      "offset_s": -66.3
+     },
+     {
+      "utc": "2023-03-05T15:07:37",
+      "lap": 3,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "TURN 4 INCIDENT INVOLVING CARS 18 (STR) AND 14 (ALO) NOTED - CAUSING A COLLISION",
+      "offset_s": -21.3
+     },
+     {
+      "utc": "2023-03-05T15:08:47",
+      "lap": 4,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 4 (NOR) TIME 1:39.777 DELETED - TRACK LIMITS AT TURN 4 LAP 3 18:07:34",
+      "offset_s": 48.7
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-PER-150827": {
+   "clip_id": "2023-bahrain-r-PER-150827",
+   "utc": "2023-03-05T15:09:04.885000",
+   "lap": 4,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 27.3,
+    "track_temp_c": 31.2,
+    "rainfall": false,
+    "humidity_pct": 22.0,
+    "pressure_hpa": 1016.7,
+    "wind_speed_ms": 0.4,
+    "wind_direction_deg": 204,
+    "track_temp_delta_from_start_c": -3.9,
+    "grip_proxy_s": 99.792,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 7,
+    "stint_number": 1,
+    "laps_into_stint": 4,
+    "deg_slope_s_per_lap": 0.016,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 1543.2,
+    "lap_length_m": 5362.3,
+    "pct_of_lap": 28.8,
+    "nearest_corner": 4,
+    "distance_to_corner_m": -36.2,
+    "sector": 1,
+    "speed_kph": 123.0,
+    "throttle_pct": 56.0,
+    "brake": false,
+    "gear": 3,
+    "rpm": 9159,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 3,
+    "gap_ahead_s": 1.05,
+    "gap_to_leader_s": 4.538,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:07:37",
+      "lap": 3,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "TURN 4 INCIDENT INVOLVING CARS 18 (STR) AND 14 (ALO) NOTED - CAUSING A COLLISION",
+      "offset_s": -87.9
+     },
+     {
+      "utc": "2023-03-05T15:08:47",
+      "lap": 4,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 4 (NOR) TIME 1:39.777 DELETED - TRACK LIMITS AT TURN 4 LAP 3 18:07:34",
+      "offset_s": -17.9
+     },
+     {
+      "utc": "2023-03-05T15:10:36",
+      "lap": 5,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 4 INCIDENT INVOLVING CARS 18 (STR) AND 14 (ALO) REVIEWED NO FURTHER INVESTIGATION - CAUSING A COLLISION",
+      "offset_s": 91.1
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-HUL-151055": {
+   "clip_id": "2023-bahrain-r-HUL-151055",
+   "utc": "2023-03-05T15:11:18.835000",
+   "lap": 5,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 27.2,
+    "track_temp_c": 31.0,
+    "rainfall": false,
+    "humidity_pct": 22.0,
+    "pressure_hpa": 1016.9,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 225,
+    "track_temp_delta_from_start_c": -4.1,
+    "grip_proxy_s": 100.618,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 8,
+    "stint_number": 1,
+    "laps_into_stint": 5,
+    "deg_slope_s_per_lap": 0.194,
+    "stint_vs_driver_median_laps": -4,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2627.3,
+    "lap_length_m": 5363.1,
+    "pct_of_lap": 49.0,
+    "nearest_corner": 9,
+    "distance_to_corner_m": -28.9,
+    "sector": 2,
+    "speed_kph": 139.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 3,
+    "rpm": 9945,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 15,
+    "gap_ahead_s": 0.597,
+    "gap_to_leader_s": 19.539,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:10:36",
+      "lap": 5,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: TURN 4 INCIDENT INVOLVING CARS 18 (STR) AND 14 (ALO) REVIEWED NO FURTHER INVESTIGATION - CAUSING A COLLISION",
+      "offset_s": -42.8
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-BOT-151456": {
+   "clip_id": "2023-bahrain-r-BOT-151456",
+   "utc": "2023-03-05T15:15:11.487000",
+   "lap": 7,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 27.1,
+    "track_temp_c": 30.9,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1016.9,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 197,
+    "track_temp_delta_from_start_c": -4.2,
+    "grip_proxy_s": 100.605,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 7,
+    "stint_number": 1,
+    "laps_into_stint": 7,
+    "deg_slope_s_per_lap": 0.111,
+    "stint_vs_driver_median_laps": -7,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 4643.3,
+    "lap_length_m": 5339.7,
+    "pct_of_lap": 87.0,
+    "nearest_corner": 14,
+    "distance_to_corner_m": 246.7,
+    "sector": 3,
+    "speed_kph": 282.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 7,
+    "rpm": 11342,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 9,
+    "gap_ahead_s": 2.457,
+    "gap_to_leader_s": 18.175,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-NOR-151548": {
+   "clip_id": "2023-bahrain-r-NOR-151548",
+   "utc": "2023-03-05T15:16:18.377000",
+   "lap": 8,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 27.1,
+    "track_temp_c": 30.9,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1016.9,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 201,
+    "track_temp_delta_from_start_c": -4.2,
+    "grip_proxy_s": 100.704,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 8,
+    "stint_number": 1,
+    "laps_into_stint": 8,
+    "deg_slope_s_per_lap": -0.198,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2569.4,
+    "lap_length_m": 5371.6,
+    "pct_of_lap": 47.8,
+    "nearest_corner": 9,
+    "distance_to_corner_m": 29.0,
+    "sector": 2,
+    "speed_kph": 221.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 5,
+    "rpm": 11050,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 12,
+    "gap_ahead_s": 1.201,
+    "gap_to_leader_s": 25.731,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:17:20",
+      "lap": 9,
+      "category": "CarEvent",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 63 (RUS) OFF TRACK AND CONTINUED AT TURN 10",
+      "offset_s": 61.6
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-ALB-151555": {
+   "clip_id": "2023-bahrain-r-ALB-151555",
+   "utc": "2023-03-05T15:16:20.877000",
+   "lap": 8,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 27.1,
+    "track_temp_c": 30.9,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1016.9,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 201,
+    "track_temp_delta_from_start_c": -4.2,
+    "grip_proxy_s": 100.704,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 8,
+    "stint_number": 1,
+    "laps_into_stint": 8,
+    "deg_slope_s_per_lap": 0.163,
+    "stint_vs_driver_median_laps": -4,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2683.8,
+    "lap_length_m": 5349.1,
+    "pct_of_lap": 50.2,
+    "nearest_corner": 10,
+    "distance_to_corner_m": 7.9,
+    "sector": 2,
+    "speed_kph": 70.0,
+    "throttle_pct": 0.0,
+    "brake": false,
+    "gear": 3,
+    "rpm": 4866,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 11,
+    "gap_ahead_s": 2.173,
+    "gap_to_leader_s": 24.53,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:17:20",
+      "lap": 9,
+      "category": "CarEvent",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 63 (RUS) OFF TRACK AND CONTINUED AT TURN 10",
+      "offset_s": 59.1
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-HUL-151611": {
+   "clip_id": "2023-bahrain-r-HUL-151611",
+   "utc": "2023-03-05T15:16:53.032000",
+   "lap": 8,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 27.1,
+    "track_temp_c": 30.9,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1016.9,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 201,
+    "track_temp_delta_from_start_c": -4.2,
+    "grip_proxy_s": 100.704,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 11,
+    "stint_number": 1,
+    "laps_into_stint": 8,
+    "deg_slope_s_per_lap": 0.194,
+    "stint_vs_driver_median_laps": -4,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 4180.6,
+    "lap_length_m": 5374.8,
+    "pct_of_lap": 77.8,
+    "nearest_corner": 13,
+    "distance_to_corner_m": -95.8,
+    "sector": 3,
+    "speed_kph": 169.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 4,
+    "rpm": 11287,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 15,
+    "gap_ahead_s": 1.312,
+    "gap_to_leader_s": 28.777,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:17:20",
+      "lap": 9,
+      "category": "CarEvent",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 63 (RUS) OFF TRACK AND CONTINUED AT TURN 10",
+      "offset_s": 27.0
+     },
+     {
+      "utc": "2023-03-05T15:18:43",
+      "lap": 10,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 77 (BOT) TIME 1:40.564 DELETED - TRACK LIMITS AT TURN 4 LAP 7 18:14:14",
+      "offset_s": 110.0
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-HAM-151725": {
+   "clip_id": "2023-bahrain-r-HAM-151725",
+   "utc": "2023-03-05T15:18:01.187000",
+   "lap": 9,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 27.2,
+    "track_temp_c": 30.8,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1016.9,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 193,
+    "track_temp_delta_from_start_c": -4.3,
+    "grip_proxy_s": 100.825,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 12,
+    "stint_number": 1,
+    "laps_into_stint": 9,
+    "deg_slope_s_per_lap": 0.198,
+    "stint_vs_driver_median_laps": -6,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3221.7,
+    "lap_length_m": 5338.3,
+    "pct_of_lap": 60.4,
+    "nearest_corner": 11,
+    "distance_to_corner_m": 245.2,
+    "sector": 2,
+    "speed_kph": 283.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 8,
+    "rpm": 10433,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 5,
+    "gap_ahead_s": 3.064,
+    "gap_to_leader_s": 15.861,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:17:20",
+      "lap": 9,
+      "category": "CarEvent",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 63 (RUS) OFF TRACK AND CONTINUED AT TURN 10",
+      "offset_s": -41.2
+     },
+     {
+      "utc": "2023-03-05T15:18:43",
+      "lap": 10,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 77 (BOT) TIME 1:40.564 DELETED - TRACK LIMITS AT TURN 4 LAP 7 18:14:14",
+      "offset_s": 41.8
+     },
+     {
+      "utc": "2023-03-05T15:19:29",
+      "lap": 10,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 16 (LEC) TIME 1:38.614 DELETED - TRACK LIMITS AT TURN 4 LAP 8 18:15:41",
+      "offset_s": 87.8
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-VER-151829": {
+   "clip_id": "2023-bahrain-r-VER-151829",
+   "utc": "2023-03-05T15:19:06.893000",
+   "lap": 10,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 27.1,
+    "track_temp_c": 30.8,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1016.9,
+    "wind_speed_ms": 0.8,
+    "wind_direction_deg": 180,
+    "track_temp_delta_from_start_c": -4.3,
+    "grip_proxy_s": 100.989,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 13,
+    "stint_number": 1,
+    "laps_into_stint": 10,
+    "deg_slope_s_per_lap": 0.066,
+    "stint_vs_driver_median_laps": -7,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2324.7,
+    "lap_length_m": 5360.5,
+    "pct_of_lap": 43.4,
+    "nearest_corner": 8,
+    "distance_to_corner_m": -92.0,
+    "sector": 2,
+    "speed_kph": 169.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 3,
+    "rpm": 10489,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 1,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": 0.0,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:17:20",
+      "lap": 9,
+      "category": "CarEvent",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 63 (RUS) OFF TRACK AND CONTINUED AT TURN 10",
+      "offset_s": -106.9
+     },
+     {
+      "utc": "2023-03-05T15:18:43",
+      "lap": 10,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 77 (BOT) TIME 1:40.564 DELETED - TRACK LIMITS AT TURN 4 LAP 7 18:14:14",
+      "offset_s": -23.9
+     },
+     {
+      "utc": "2023-03-05T15:19:29",
+      "lap": 10,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 16 (LEC) TIME 1:38.614 DELETED - TRACK LIMITS AT TURN 4 LAP 8 18:15:41",
+      "offset_s": 22.1
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-ZHO-151859": {
+   "clip_id": "2023-bahrain-r-ZHO-151859",
+   "utc": "2023-03-05T15:19:07.171000",
+   "lap": 10,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 27.1,
+    "track_temp_c": 30.8,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1016.9,
+    "wind_speed_ms": 0.8,
+    "wind_direction_deg": 180,
+    "track_temp_delta_from_start_c": -4.3,
+    "grip_proxy_s": 100.989,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 10,
+    "stint_number": 1,
+    "laps_into_stint": 10,
+    "deg_slope_s_per_lap": 0.17,
+    "stint_vs_driver_median_laps": -4,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 728.5,
+    "lap_length_m": 5357.9,
+    "pct_of_lap": 13.6,
+    "nearest_corner": 1,
+    "distance_to_corner_m": -16.5,
+    "sector": 1,
+    "speed_kph": 60.0,
+    "throttle_pct": 18.0,
+    "brake": false,
+    "gear": 2,
+    "rpm": 5822,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 17,
+    "gap_ahead_s": 0.621,
+    "gap_to_leader_s": 36.809,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:17:20",
+      "lap": 9,
+      "category": "CarEvent",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 63 (RUS) OFF TRACK AND CONTINUED AT TURN 10",
+      "offset_s": -107.2
+     },
+     {
+      "utc": "2023-03-05T15:18:43",
+      "lap": 10,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 77 (BOT) TIME 1:40.564 DELETED - TRACK LIMITS AT TURN 4 LAP 7 18:14:14",
+      "offset_s": -24.2
+     },
+     {
+      "utc": "2023-03-05T15:19:29",
+      "lap": 10,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 16 (LEC) TIME 1:38.614 DELETED - TRACK LIMITS AT TURN 4 LAP 8 18:15:41",
+      "offset_s": 21.8
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-VER-151925": {
+   "clip_id": "2023-bahrain-r-VER-151925",
+   "utc": "2023-03-05T15:19:41.467000",
+   "lap": 10,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 27.1,
+    "track_temp_c": 30.8,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1016.9,
+    "wind_speed_ms": 0.8,
+    "wind_direction_deg": 195,
+    "track_temp_delta_from_start_c": -4.3,
+    "grip_proxy_s": 100.989,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 13,
+    "stint_number": 1,
+    "laps_into_stint": 10,
+    "deg_slope_s_per_lap": 0.066,
+    "stint_vs_driver_median_laps": -7,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 4161.5,
+    "lap_length_m": 5360.5,
+    "pct_of_lap": 77.6,
+    "nearest_corner": 13,
+    "distance_to_corner_m": -76.7,
+    "sector": 3,
+    "speed_kph": 179.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 4,
+    "rpm": 10928,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 1,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": 0.0,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:18:43",
+      "lap": 10,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 77 (BOT) TIME 1:40.564 DELETED - TRACK LIMITS AT TURN 4 LAP 7 18:14:14",
+      "offset_s": -58.5
+     },
+     {
+      "utc": "2023-03-05T15:19:29",
+      "lap": 10,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 16 (LEC) TIME 1:38.614 DELETED - TRACK LIMITS AT TURN 4 LAP 8 18:15:41",
+      "offset_s": -12.5
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-HUL-152101": {
+   "clip_id": "2023-bahrain-r-HUL-152101",
+   "utc": "2023-03-05T15:21:21.778000",
+   "lap": 11,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 27.1,
+    "track_temp_c": 30.6,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1016.9,
+    "wind_speed_ms": 0.8,
+    "wind_direction_deg": 179,
+    "track_temp_delta_from_start_c": -4.5,
+    "grip_proxy_s": 101.25,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 14,
+    "stint_number": 1,
+    "laps_into_stint": 11,
+    "deg_slope_s_per_lap": 0.194,
+    "stint_vs_driver_median_laps": -4,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2272.1,
+    "lap_length_m": 5363.8,
+    "pct_of_lap": 42.4,
+    "nearest_corner": 8,
+    "distance_to_corner_m": -39.4,
+    "sector": 2,
+    "speed_kph": 93.0,
+    "throttle_pct": 47.0,
+    "brake": false,
+    "gear": 3,
+    "rpm": 7130,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 16,
+    "gap_ahead_s": 0.683,
+    "gap_to_leader_s": 44.304,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:19:29",
+      "lap": 10,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 16 (LEC) TIME 1:38.614 DELETED - TRACK LIMITS AT TURN 4 LAP 8 18:15:41",
+      "offset_s": -112.8
+     },
+     {
+      "utc": "2023-03-05T15:22:32",
+      "lap": 12,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": " INCIDENT INVOLVING CAR 31 (OCO) NOTED - INACCURATE GRID POSITION",
+      "offset_s": 70.2
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-STR-152227": {
+   "clip_id": "2023-bahrain-r-STR-152227",
+   "utc": "2023-03-05T15:23:02.088000",
+   "lap": 12,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 27.1,
+    "track_temp_c": 30.6,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1016.9,
+    "wind_speed_ms": 1.2,
+    "wind_direction_deg": 178,
+    "track_temp_delta_from_start_c": -4.5,
+    "grip_proxy_s": 101.134,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 15,
+    "stint_number": 1,
+    "laps_into_stint": 12,
+    "deg_slope_s_per_lap": 0.129,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2915.4,
+    "lap_length_m": 5347.9,
+    "pct_of_lap": 54.5,
+    "nearest_corner": 10,
+    "distance_to_corner_m": -223.7,
+    "sector": 2,
+    "speed_kph": 233.0,
+    "throttle_pct": 99.0,
+    "brake": false,
+    "gear": 6,
+    "rpm": 10950,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 8,
+    "gap_ahead_s": 1.109,
+    "gap_to_leader_s": 25.904,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:22:32",
+      "lap": 12,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": " INCIDENT INVOLVING CAR 31 (OCO) NOTED - INACCURATE GRID POSITION",
+      "offset_s": -30.1
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-SAI-152246": {
+   "clip_id": "2023-bahrain-r-SAI-152246",
+   "utc": "2023-03-05T15:23:02.088000",
+   "lap": 12,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 27.1,
+    "track_temp_c": 30.6,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1016.9,
+    "wind_speed_ms": 1.2,
+    "wind_direction_deg": 178,
+    "track_temp_delta_from_start_c": -4.5,
+    "grip_proxy_s": 101.134,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 15,
+    "stint_number": 1,
+    "laps_into_stint": 12,
+    "deg_slope_s_per_lap": 0.181,
+    "stint_vs_driver_median_laps": -5,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3405.7,
+    "lap_length_m": 5361.1,
+    "pct_of_lap": 63.5,
+    "nearest_corner": 11,
+    "distance_to_corner_m": 61.2,
+    "sector": 2,
+    "speed_kph": 143.0,
+    "throttle_pct": 29.0,
+    "brake": false,
+    "gear": 4,
+    "rpm": 9209,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 4,
+    "gap_ahead_s": 8.319,
+    "gap_to_leader_s": 18.483,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:22:32",
+      "lap": 12,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": " INCIDENT INVOLVING CAR 31 (OCO) NOTED - INACCURATE GRID POSITION",
+      "offset_s": -30.1
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-ALO-152529": {
+   "clip_id": "2023-bahrain-r-ALO-152529",
+   "utc": "2023-03-05T15:25:47.523000",
+   "lap": 14,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 27.1,
+    "track_temp_c": 30.5,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1016.9,
+    "wind_speed_ms": 0.8,
+    "wind_direction_deg": 171,
+    "track_temp_delta_from_start_c": -4.6,
+    "grip_proxy_s": 98.859,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 17,
+    "stint_number": 1,
+    "laps_into_stint": 14,
+    "deg_slope_s_per_lap": 0.162,
+    "stint_vs_driver_median_laps": -6,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 1446.7,
+    "lap_length_m": 5337.4,
+    "pct_of_lap": 27.1,
+    "nearest_corner": 4,
+    "distance_to_corner_m": 60.3,
+    "sector": 1,
+    "speed_kph": 159.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 4,
+    "rpm": 9514,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 4,
+    "gap_ahead_s": 0.266,
+    "gap_to_leader_s": 27.515,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:26:56",
+      "lap": 15,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 31 (OCO) UNDER INVESTIGATION - INACCURATE GRID POSITION",
+      "offset_s": 68.5
+     },
+     {
+      "utc": "2023-03-05T15:27:19",
+      "lap": 15,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 5 SECOND TIME PENALTY FOR CAR 31 (OCO) - INACCURATE GRID POSITION",
+      "offset_s": 91.5
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-HUL-152700": {
+   "clip_id": "2023-bahrain-r-HUL-152700",
+   "utc": "2023-03-05T15:27:27.865000",
+   "lap": 14,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 27.1,
+    "track_temp_c": 30.5,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1016.9,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 187,
+    "track_temp_delta_from_start_c": -4.6,
+    "grip_proxy_s": 98.859,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 3,
+    "stint_number": 2,
+    "laps_into_stint": 3,
+    "deg_slope_s_per_lap": 0.09,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 4362.8,
+    "lap_length_m": 5387.3,
+    "pct_of_lap": 81.0,
+    "nearest_corner": 13,
+    "distance_to_corner_m": -278.0,
+    "sector": 3,
+    "speed_kph": 253.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 6,
+    "rpm": 11590,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 18,
+    "gap_ahead_s": 1.115,
+    "gap_to_leader_s": 66.768,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:26:56",
+      "lap": 15,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 31 (OCO) UNDER INVESTIGATION - INACCURATE GRID POSITION",
+      "offset_s": -31.9
+     },
+     {
+      "utc": "2023-03-05T15:27:19",
+      "lap": 15,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 5 SECOND TIME PENALTY FOR CAR 31 (OCO) - INACCURATE GRID POSITION",
+      "offset_s": -8.9
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-PIA-152844": {
+   "clip_id": "2023-bahrain-r-PIA-152844",
+   "utc": "2023-03-05T15:29:08.525000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 27.0,
+    "track_temp_c": 30.5,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 179,
+    "track_temp_delta_from_start_c": -4.6,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:27:19",
+      "lap": 15,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 5 SECOND TIME PENALTY FOR CAR 31 (OCO) - INACCURATE GRID POSITION",
+      "offset_s": -109.5
+     },
+     {
+      "utc": "2023-03-05T15:29:33",
+      "lap": 16,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 4 (NOR) TIME 1:38.870 DELETED - TRACK LIMITS AT TURN 4 LAP 15 18:28:10",
+      "offset_s": 24.5
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-ALB-152947": {
+   "clip_id": "2023-bahrain-r-ALB-152947",
+   "utc": "2023-03-05T15:30:15.377000",
+   "lap": 16,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 27.0,
+    "track_temp_c": 30.4,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.8,
+    "wind_direction_deg": 178,
+    "track_temp_delta_from_start_c": -4.7,
+    "grip_proxy_s": 98.945,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 5,
+    "stint_number": 2,
+    "laps_into_stint": 5,
+    "deg_slope_s_per_lap": 0.104,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3384.7,
+    "lap_length_m": 5347.4,
+    "pct_of_lap": 63.3,
+    "nearest_corner": 11,
+    "distance_to_corner_m": 82.2,
+    "sector": 2,
+    "speed_kph": 148.0,
+    "throttle_pct": 0.0,
+    "brake": false,
+    "gear": 4,
+    "rpm": 9397,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 10,
+    "gap_ahead_s": 2.079,
+    "gap_to_leader_s": 46.205,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:29:33",
+      "lap": 16,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 4 (NOR) TIME 1:38.870 DELETED - TRACK LIMITS AT TURN 4 LAP 15 18:28:10",
+      "offset_s": -42.4
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-TSU-153021": {
+   "clip_id": "2023-bahrain-r-TSU-153021",
+   "utc": "2023-03-05T15:30:49.267000",
+   "lap": 16,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 27.0,
+    "track_temp_c": 30.3,
+    "rainfall": false,
+    "humidity_pct": 20.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 214,
+    "track_temp_delta_from_start_c": -4.8,
+    "grip_proxy_s": 98.945,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 6,
+    "stint_number": 2,
+    "laps_into_stint": 6,
+    "deg_slope_s_per_lap": 0.062,
+    "stint_vs_driver_median_laps": 1,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 5218.5,
+    "lap_length_m": 5374.6,
+    "pct_of_lap": 97.1,
+    "nearest_corner": 15,
+    "distance_to_corner_m": -248.4,
+    "sector": 3,
+    "speed_kph": 261.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 6,
+    "rpm": 11678,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 11,
+    "gap_ahead_s": 1.916,
+    "gap_to_leader_s": 48.121,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:29:33",
+      "lap": 16,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 4 (NOR) TIME 1:38.870 DELETED - TRACK LIMITS AT TURN 4 LAP 15 18:28:10",
+      "offset_s": -76.3
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-TSU-153246": {
+   "clip_id": "2023-bahrain-r-TSU-153246",
+   "utc": "2023-03-05T15:33:04.624000",
+   "lap": 18,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 27.0,
+    "track_temp_c": 30.3,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 197,
+    "track_temp_delta_from_start_c": -4.8,
+    "grip_proxy_s": 98.886,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 8,
+    "stint_number": 2,
+    "laps_into_stint": 8,
+    "deg_slope_s_per_lap": 0.062,
+    "stint_vs_driver_median_laps": 1,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 1923.8,
+    "lap_length_m": 5369.7,
+    "pct_of_lap": 35.8,
+    "nearest_corner": 6,
+    "distance_to_corner_m": -43.1,
+    "sector": 2,
+    "speed_kph": 178.0,
+    "throttle_pct": 82.0,
+    "brake": false,
+    "gear": 5,
+    "rpm": 9365,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 11,
+    "gap_ahead_s": 2.096,
+    "gap_to_leader_s": 40.843,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-BOT-153449": {
+   "clip_id": "2023-bahrain-r-BOT-153449",
+   "utc": "2023-03-05T15:35:17.372000",
+   "lap": 19,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.9,
+    "track_temp_c": 30.3,
+    "rainfall": false,
+    "humidity_pct": 20.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 174,
+    "track_temp_delta_from_start_c": -4.8,
+    "grip_proxy_s": 98.794,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 8,
+    "stint_number": 2,
+    "laps_into_stint": 8,
+    "deg_slope_s_per_lap": 0.053,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3991.2,
+    "lap_length_m": 5373.5,
+    "pct_of_lap": 74.3,
+    "nearest_corner": 13,
+    "distance_to_corner_m": 93.5,
+    "sector": 3,
+    "speed_kph": 196.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 6,
+    "rpm": 8825,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 8,
+    "gap_ahead_s": 2.473,
+    "gap_to_leader_s": 34.61,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:35:30",
+      "lap": 20,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "INCIDENT INVOLVING CAR 31 (OCO) NOTED - SERVING TIME PENALTY INCORRECTLY ",
+      "offset_s": 12.6
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-MAG-153511": {
+   "clip_id": "2023-bahrain-r-MAG-153511",
+   "utc": "2023-03-05T15:35:51.215000",
+   "lap": 19,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.9,
+    "track_temp_c": 30.2,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 240,
+    "track_temp_delta_from_start_c": -4.9,
+    "grip_proxy_s": 98.794,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 4,
+    "stint_number": 2,
+    "laps_into_stint": 4,
+    "deg_slope_s_per_lap": 0.108,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 4311.5,
+    "lap_length_m": 5380.7,
+    "pct_of_lap": 80.1,
+    "nearest_corner": 13,
+    "distance_to_corner_m": -226.7,
+    "sector": 3,
+    "speed_kph": 234.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 6,
+    "rpm": 10979,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 17,
+    "gap_ahead_s": 6.645,
+    "gap_to_leader_s": 61.72,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:35:30",
+      "lap": 20,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "INCIDENT INVOLVING CAR 31 (OCO) NOTED - SERVING TIME PENALTY INCORRECTLY ",
+      "offset_s": -21.2
+     },
+     {
+      "utc": "2023-03-05T15:37:23",
+      "lap": 21,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 21 (DEV) TIME 1:39.078 DELETED - TRACK LIMITS AT TURN 13 LAP 19 18:35:40",
+      "offset_s": 91.8
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-VER-153512": {
+   "clip_id": "2023-bahrain-r-VER-153512",
+   "utc": "2023-03-05T15:35:51.622000",
+   "lap": 20,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.9,
+    "track_temp_c": 30.2,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 240,
+    "track_temp_delta_from_start_c": -4.9,
+    "grip_proxy_s": 98.809,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 6,
+    "stint_number": 2,
+    "laps_into_stint": 6,
+    "deg_slope_s_per_lap": 0.001,
+    "stint_vs_driver_median_laps": 1,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2363.4,
+    "lap_length_m": 5363.5,
+    "pct_of_lap": 44.1,
+    "nearest_corner": 8,
+    "distance_to_corner_m": -130.7,
+    "sector": 2,
+    "speed_kph": 189.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 4,
+    "rpm": 11734,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 1,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": 0.0,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:35:30",
+      "lap": 20,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "INCIDENT INVOLVING CAR 31 (OCO) NOTED - SERVING TIME PENALTY INCORRECTLY ",
+      "offset_s": -21.6
+     },
+     {
+      "utc": "2023-03-05T15:37:23",
+      "lap": 21,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 21 (DEV) TIME 1:39.078 DELETED - TRACK LIMITS AT TURN 13 LAP 19 18:35:40",
+      "offset_s": 91.4
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-NOR-153524": {
+   "clip_id": "2023-bahrain-r-NOR-153524",
+   "utc": "2023-03-05T15:35:51.996000",
+   "lap": 19,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.9,
+    "track_temp_c": 30.2,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 240,
+    "track_temp_delta_from_start_c": -4.9,
+    "grip_proxy_s": 98.794,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 5,
+    "stint_number": 3,
+    "laps_into_stint": 2,
+    "deg_slope_s_per_lap": 0.052,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3274.7,
+    "lap_length_m": 5357.0,
+    "pct_of_lap": 61.1,
+    "nearest_corner": 11,
+    "distance_to_corner_m": 192.2,
+    "sector": 2,
+    "speed_kph": 278.0,
+    "throttle_pct": 2.0,
+    "brake": false,
+    "gear": 7,
+    "rpm": 11622,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 19,
+    "gap_ahead_s": 1.805,
+    "gap_to_leader_s": 81.141,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:35:30",
+      "lap": 20,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "INCIDENT INVOLVING CAR 31 (OCO) NOTED - SERVING TIME PENALTY INCORRECTLY ",
+      "offset_s": -22.0
+     },
+     {
+      "utc": "2023-03-05T15:37:23",
+      "lap": 21,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 21 (DEV) TIME 1:39.078 DELETED - TRACK LIMITS AT TURN 13 LAP 19 18:35:40",
+      "offset_s": 91.0
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-HUL-153709": {
+   "clip_id": "2023-bahrain-r-HUL-153709",
+   "utc": "2023-03-05T15:37:32.354000",
+   "lap": 20,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.9,
+    "track_temp_c": 30.1,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 182,
+    "track_temp_delta_from_start_c": -5.0,
+    "grip_proxy_s": 98.809,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 9,
+    "stint_number": 2,
+    "laps_into_stint": 9,
+    "deg_slope_s_per_lap": 0.09,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 4851.6,
+    "lap_length_m": 5356.3,
+    "pct_of_lap": 90.6,
+    "nearest_corner": 14,
+    "distance_to_corner_m": 38.4,
+    "sector": 3,
+    "speed_kph": 118.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 4,
+    "rpm": 7282,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 16,
+    "gap_ahead_s": 2.423,
+    "gap_to_leader_s": 56.782,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:37:23",
+      "lap": 21,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 21 (DEV) TIME 1:39.078 DELETED - TRACK LIMITS AT TURN 13 LAP 19 18:35:40",
+      "offset_s": -9.4
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-TSU-153903": {
+   "clip_id": "2023-bahrain-r-TSU-153903",
+   "utc": "2023-03-05T15:39:11.821000",
+   "lap": 22,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.8,
+    "track_temp_c": 30.1,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.5,
+    "wind_direction_deg": 229,
+    "track_temp_delta_from_start_c": -5.0,
+    "grip_proxy_s": 98.913,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 12,
+    "stint_number": 2,
+    "laps_into_stint": 12,
+    "deg_slope_s_per_lap": 0.062,
+    "stint_vs_driver_median_laps": 1,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 364.5,
+    "lap_length_m": 5377.3,
+    "pct_of_lap": 6.8,
+    "nearest_corner": 1,
+    "distance_to_corner_m": 347.4,
+    "sector": 1,
+    "speed_kph": 305.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 8,
+    "rpm": 10861,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 11,
+    "gap_ahead_s": 1.562,
+    "gap_to_leader_s": 47.326,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:37:23",
+      "lap": 21,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 21 (DEV) TIME 1:39.078 DELETED - TRACK LIMITS AT TURN 13 LAP 19 18:35:40",
+      "offset_s": -108.8
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-MAG-154004": {
+   "clip_id": "2023-bahrain-r-MAG-154004",
+   "utc": "2023-03-05T15:40:20.851000",
+   "lap": 22,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.7,
+    "track_temp_c": 30.0,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.5,
+    "wind_direction_deg": 241,
+    "track_temp_delta_from_start_c": -5.1,
+    "grip_proxy_s": 98.913,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 7,
+    "stint_number": 2,
+    "laps_into_stint": 7,
+    "deg_slope_s_per_lap": 0.108,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2745.6,
+    "lap_length_m": 5379.1,
+    "pct_of_lap": 51.0,
+    "nearest_corner": 10,
+    "distance_to_corner_m": -53.9,
+    "sector": 2,
+    "speed_kph": 106.0,
+    "throttle_pct": 69.0,
+    "brake": false,
+    "gear": 3,
+    "rpm": 8232,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 17,
+    "gap_ahead_s": 4.595,
+    "gap_to_leader_s": 65.781,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-VER-154159": {
+   "clip_id": "2023-bahrain-r-VER-154159",
+   "utc": "2023-03-05T15:42:32.223000",
+   "lap": 24,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.7,
+    "track_temp_c": 29.9,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.8,
+    "wind_direction_deg": 199,
+    "track_temp_delta_from_start_c": -5.2,
+    "grip_proxy_s": 98.947,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 10,
+    "stint_number": 2,
+    "laps_into_stint": 10,
+    "deg_slope_s_per_lap": 0.001,
+    "stint_vs_driver_median_laps": 1,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2803.0,
+    "lap_length_m": 5366.5,
+    "pct_of_lap": 52.2,
+    "nearest_corner": 10,
+    "distance_to_corner_m": -111.3,
+    "sector": 2,
+    "speed_kph": 175.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 4,
+    "rpm": 11166,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 1,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": 0.0,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:42:44",
+      "lap": 24,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 31 (OCO) UNDER INVESTIGATION - SERVING TIME PENALTY INCORRECTLY ",
+      "offset_s": 11.8
+     },
+     {
+      "utc": "2023-03-05T15:43:16",
+      "lap": 25,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 31 (OCO) - SERVING TIME PENALTY INCORRECTLY ",
+      "offset_s": 43.8
+     },
+     {
+      "utc": "2023-03-05T15:43:39",
+      "lap": 25,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:39.703 DELETED - TRACK LIMITS AT TURN 4 LAP 21 18:39:51",
+      "offset_s": 66.8
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-LEC-154208": {
+   "clip_id": "2023-bahrain-r-LEC-154208",
+   "utc": "2023-03-05T15:42:32.645000",
+   "lap": 24,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.7,
+    "track_temp_c": 29.9,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.8,
+    "wind_direction_deg": 199,
+    "track_temp_delta_from_start_c": -5.2,
+    "grip_proxy_s": 98.947,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 11,
+    "stint_number": 2,
+    "laps_into_stint": 11,
+    "deg_slope_s_per_lap": 0.059,
+    "stint_vs_driver_median_laps": 7,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2293.8,
+    "lap_length_m": 5357.5,
+    "pct_of_lap": 42.8,
+    "nearest_corner": 8,
+    "distance_to_corner_m": -61.2,
+    "sector": 2,
+    "speed_kph": 132.0,
+    "throttle_pct": 83.0,
+    "brake": false,
+    "gear": 3,
+    "rpm": 10551,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 2,
+    "gap_ahead_s": 12.351,
+    "gap_to_leader_s": 12.351,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:42:44",
+      "lap": 24,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 31 (OCO) UNDER INVESTIGATION - SERVING TIME PENALTY INCORRECTLY ",
+      "offset_s": 11.4
+     },
+     {
+      "utc": "2023-03-05T15:43:16",
+      "lap": 25,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 31 (OCO) - SERVING TIME PENALTY INCORRECTLY ",
+      "offset_s": 43.4
+     },
+     {
+      "utc": "2023-03-05T15:43:39",
+      "lap": 25,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:39.703 DELETED - TRACK LIMITS AT TURN 4 LAP 21 18:39:51",
+      "offset_s": 66.4
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-OCO-154224": {
+   "clip_id": "2023-bahrain-r-OCO-154224",
+   "utc": "2023-03-05T15:42:32.778000",
+   "lap": 23,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.7,
+    "track_temp_c": 29.9,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.8,
+    "wind_direction_deg": 199,
+    "track_temp_delta_from_start_c": -5.2,
+    "grip_proxy_s": 99.027,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 11,
+    "stint_number": 3,
+    "laps_into_stint": 8,
+    "deg_slope_s_per_lap": 0.11,
+    "stint_vs_driver_median_laps": 6,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3570.5,
+    "lap_length_m": 5359.9,
+    "pct_of_lap": 66.6,
+    "nearest_corner": 11,
+    "distance_to_corner_m": -103.6,
+    "sector": 2,
+    "speed_kph": 211.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 5,
+    "rpm": 10846,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 19,
+    "gap_ahead_s": 1.219,
+    "gap_to_leader_s": 85.628,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:42:44",
+      "lap": 24,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 31 (OCO) UNDER INVESTIGATION - SERVING TIME PENALTY INCORRECTLY ",
+      "offset_s": 11.2
+     },
+     {
+      "utc": "2023-03-05T15:43:16",
+      "lap": 25,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 31 (OCO) - SERVING TIME PENALTY INCORRECTLY ",
+      "offset_s": 43.2
+     },
+     {
+      "utc": "2023-03-05T15:43:39",
+      "lap": 25,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:39.703 DELETED - TRACK LIMITS AT TURN 4 LAP 21 18:39:51",
+      "offset_s": 66.2
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-SAI-154226": {
+   "clip_id": "2023-bahrain-r-SAI-154226",
+   "utc": "2023-03-05T15:42:32.989000",
+   "lap": 24,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.7,
+    "track_temp_c": 29.9,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.8,
+    "wind_direction_deg": 199,
+    "track_temp_delta_from_start_c": -5.2,
+    "grip_proxy_s": 98.947,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 11,
+    "stint_number": 2,
+    "laps_into_stint": 11,
+    "deg_slope_s_per_lap": 0.028,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 1692.8,
+    "lap_length_m": 5367.3,
+    "pct_of_lap": 31.5,
+    "nearest_corner": 5,
+    "distance_to_corner_m": 95.1,
+    "sector": 1,
+    "speed_kph": 218.0,
+    "throttle_pct": 99.0,
+    "brake": false,
+    "gear": 5,
+    "rpm": 11603,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 4,
+    "gap_ahead_s": 13.629,
+    "gap_to_leader_s": 26.685,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:42:44",
+      "lap": 24,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 31 (OCO) UNDER INVESTIGATION - SERVING TIME PENALTY INCORRECTLY ",
+      "offset_s": 11.0
+     },
+     {
+      "utc": "2023-03-05T15:43:16",
+      "lap": 25,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 31 (OCO) - SERVING TIME PENALTY INCORRECTLY ",
+      "offset_s": 43.0
+     },
+     {
+      "utc": "2023-03-05T15:43:39",
+      "lap": 25,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:39.703 DELETED - TRACK LIMITS AT TURN 4 LAP 21 18:39:51",
+      "offset_s": 66.0
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-OCO-154227": {
+   "clip_id": "2023-bahrain-r-OCO-154227",
+   "utc": "2023-03-05T15:42:33.036000",
+   "lap": 23,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.7,
+    "track_temp_c": 29.9,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.8,
+    "wind_direction_deg": 199,
+    "track_temp_delta_from_start_c": -5.2,
+    "grip_proxy_s": 99.027,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 11,
+    "stint_number": 3,
+    "laps_into_stint": 8,
+    "deg_slope_s_per_lap": 0.11,
+    "stint_vs_driver_median_laps": 6,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3594.9,
+    "lap_length_m": 5359.9,
+    "pct_of_lap": 67.1,
+    "nearest_corner": 11,
+    "distance_to_corner_m": -128.1,
+    "sector": 2,
+    "speed_kph": 220.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 5,
+    "rpm": 11315,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 19,
+    "gap_ahead_s": 1.219,
+    "gap_to_leader_s": 85.628,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:42:44",
+      "lap": 24,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 31 (OCO) UNDER INVESTIGATION - SERVING TIME PENALTY INCORRECTLY ",
+      "offset_s": 11.0
+     },
+     {
+      "utc": "2023-03-05T15:43:16",
+      "lap": 25,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 31 (OCO) - SERVING TIME PENALTY INCORRECTLY ",
+      "offset_s": 43.0
+     },
+     {
+      "utc": "2023-03-05T15:43:39",
+      "lap": 25,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:39.703 DELETED - TRACK LIMITS AT TURN 4 LAP 21 18:39:51",
+      "offset_s": 66.0
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-LEC-154229": {
+   "clip_id": "2023-bahrain-r-LEC-154229",
+   "utc": "2023-03-05T15:42:33.178000",
+   "lap": 24,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.7,
+    "track_temp_c": 29.9,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.8,
+    "wind_direction_deg": 199,
+    "track_temp_delta_from_start_c": -5.2,
+    "grip_proxy_s": 98.947,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 11,
+    "stint_number": 2,
+    "laps_into_stint": 11,
+    "deg_slope_s_per_lap": 0.059,
+    "stint_vs_driver_median_laps": 7,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2319.1,
+    "lap_length_m": 5357.5,
+    "pct_of_lap": 43.3,
+    "nearest_corner": 8,
+    "distance_to_corner_m": -86.4,
+    "sector": 2,
+    "speed_kph": 159.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 3,
+    "rpm": 10585,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 2,
+    "gap_ahead_s": 12.351,
+    "gap_to_leader_s": 12.351,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:42:44",
+      "lap": 24,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 31 (OCO) UNDER INVESTIGATION - SERVING TIME PENALTY INCORRECTLY ",
+      "offset_s": 10.8
+     },
+     {
+      "utc": "2023-03-05T15:43:16",
+      "lap": 25,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 31 (OCO) - SERVING TIME PENALTY INCORRECTLY ",
+      "offset_s": 42.8
+     },
+     {
+      "utc": "2023-03-05T15:43:39",
+      "lap": 25,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:39.703 DELETED - TRACK LIMITS AT TURN 4 LAP 21 18:39:51",
+      "offset_s": 65.8
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-GAS-154231": {
+   "clip_id": "2023-bahrain-r-GAS-154231",
+   "utc": "2023-03-05T15:42:33.286000",
+   "lap": 24,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.7,
+    "track_temp_c": 29.9,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.8,
+    "wind_direction_deg": 199,
+    "track_temp_delta_from_start_c": -5.2,
+    "grip_proxy_s": 98.947,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 15,
+    "stint_number": 2,
+    "laps_into_stint": 15,
+    "deg_slope_s_per_lap": 0.048,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 432.1,
+    "lap_length_m": 5365.1,
+    "pct_of_lap": 8.1,
+    "nearest_corner": 1,
+    "distance_to_corner_m": 279.9,
+    "sector": 1,
+    "speed_kph": 307.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 8,
+    "rpm": 10575,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 12,
+    "gap_ahead_s": 1.199,
+    "gap_to_leader_s": 53.327,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:42:44",
+      "lap": 24,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 31 (OCO) UNDER INVESTIGATION - SERVING TIME PENALTY INCORRECTLY ",
+      "offset_s": 10.7
+     },
+     {
+      "utc": "2023-03-05T15:43:16",
+      "lap": 25,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 31 (OCO) - SERVING TIME PENALTY INCORRECTLY ",
+      "offset_s": 42.7
+     },
+     {
+      "utc": "2023-03-05T15:43:39",
+      "lap": 25,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:39.703 DELETED - TRACK LIMITS AT TURN 4 LAP 21 18:39:51",
+      "offset_s": 65.7
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-OCO-154233": {
+   "clip_id": "2023-bahrain-r-OCO-154233",
+   "utc": "2023-03-05T15:43:07.629000",
+   "lap": 24,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.7,
+    "track_temp_c": 29.9,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.8,
+    "wind_direction_deg": 199,
+    "track_temp_delta_from_start_c": -5.2,
+    "grip_proxy_s": 98.947,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 12,
+    "stint_number": 3,
+    "laps_into_stint": 9,
+    "deg_slope_s_per_lap": 0.11,
+    "stint_vs_driver_median_laps": 6,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 390.6,
+    "lap_length_m": 5359.7,
+    "pct_of_lap": 7.3,
+    "nearest_corner": 1,
+    "distance_to_corner_m": 321.3,
+    "sector": 1,
+    "speed_kph": 304.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 8,
+    "rpm": 10537,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 19,
+    "gap_ahead_s": 1.905,
+    "gap_to_leader_s": 87.623,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:42:44",
+      "lap": 24,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 31 (OCO) UNDER INVESTIGATION - SERVING TIME PENALTY INCORRECTLY ",
+      "offset_s": -23.6
+     },
+     {
+      "utc": "2023-03-05T15:43:16",
+      "lap": 25,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 31 (OCO) - SERVING TIME PENALTY INCORRECTLY ",
+      "offset_s": 8.4
+     },
+     {
+      "utc": "2023-03-05T15:43:39",
+      "lap": 25,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:39.703 DELETED - TRACK LIMITS AT TURN 4 LAP 21 18:39:51",
+      "offset_s": 31.4
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-ZHO-154237": {
+   "clip_id": "2023-bahrain-r-ZHO-154237",
+   "utc": "2023-03-05T15:43:08.020000",
+   "lap": 24,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.7,
+    "track_temp_c": 29.9,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.8,
+    "wind_direction_deg": 199,
+    "track_temp_delta_from_start_c": -5.2,
+    "grip_proxy_s": 98.947,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 12,
+    "stint_number": 2,
+    "laps_into_stint": 12,
+    "deg_slope_s_per_lap": 0.027,
+    "stint_vs_driver_median_laps": 4,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 1787.0,
+    "lap_length_m": 5365.3,
+    "pct_of_lap": 33.3,
+    "nearest_corner": 5,
+    "distance_to_corner_m": 0.9,
+    "sector": 2,
+    "speed_kph": 217.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 6,
+    "rpm": 9698,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 15,
+    "gap_ahead_s": 0.483,
+    "gap_to_leader_s": 61.155,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:42:44",
+      "lap": 24,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 31 (OCO) UNDER INVESTIGATION - SERVING TIME PENALTY INCORRECTLY ",
+      "offset_s": -24.0
+     },
+     {
+      "utc": "2023-03-05T15:43:16",
+      "lap": 25,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 31 (OCO) - SERVING TIME PENALTY INCORRECTLY ",
+      "offset_s": 8.0
+     },
+     {
+      "utc": "2023-03-05T15:43:39",
+      "lap": 25,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:39.703 DELETED - TRACK LIMITS AT TURN 4 LAP 21 18:39:51",
+      "offset_s": 31.0
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-ZHO-154252": {
+   "clip_id": "2023-bahrain-r-ZHO-154252",
+   "utc": "2023-03-05T15:43:08.176000",
+   "lap": 24,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.7,
+    "track_temp_c": 29.9,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.8,
+    "wind_direction_deg": 199,
+    "track_temp_delta_from_start_c": -5.2,
+    "grip_proxy_s": 98.947,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 12,
+    "stint_number": 2,
+    "laps_into_stint": 12,
+    "deg_slope_s_per_lap": 0.027,
+    "stint_vs_driver_median_laps": 4,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 1795.9,
+    "lap_length_m": 5365.3,
+    "pct_of_lap": 33.5,
+    "nearest_corner": 5,
+    "distance_to_corner_m": -8.0,
+    "sector": 2,
+    "speed_kph": 201.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 6,
+    "rpm": 8935,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 15,
+    "gap_ahead_s": 0.483,
+    "gap_to_leader_s": 61.155,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:42:44",
+      "lap": 24,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 31 (OCO) UNDER INVESTIGATION - SERVING TIME PENALTY INCORRECTLY ",
+      "offset_s": -24.2
+     },
+     {
+      "utc": "2023-03-05T15:43:16",
+      "lap": 25,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 31 (OCO) - SERVING TIME PENALTY INCORRECTLY ",
+      "offset_s": 7.8
+     },
+     {
+      "utc": "2023-03-05T15:43:39",
+      "lap": 25,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:39.703 DELETED - TRACK LIMITS AT TURN 4 LAP 21 18:39:51",
+      "offset_s": 30.8
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-ALO-154411": {
+   "clip_id": "2023-bahrain-r-ALO-154411",
+   "utc": "2023-03-05T15:44:48.924000",
+   "lap": 25,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.7,
+    "track_temp_c": 29.9,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1016.9,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 180,
+    "track_temp_delta_from_start_c": -5.2,
+    "grip_proxy_s": 99.066,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 11,
+    "stint_number": 2,
+    "laps_into_stint": 11,
+    "deg_slope_s_per_lap": 0.002,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3200.4,
+    "lap_length_m": 5365.0,
+    "pct_of_lap": 59.7,
+    "nearest_corner": 11,
+    "distance_to_corner_m": 266.5,
+    "sector": 2,
+    "speed_kph": 281.0,
+    "throttle_pct": 99.0,
+    "brake": false,
+    "gear": 8,
+    "rpm": 10313,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 6,
+    "gap_ahead_s": 1.881,
+    "gap_to_leader_s": 33.683,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:43:16",
+      "lap": 25,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 31 (OCO) - SERVING TIME PENALTY INCORRECTLY ",
+      "offset_s": -92.9
+     },
+     {
+      "utc": "2023-03-05T15:43:39",
+      "lap": 25,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:39.703 DELETED - TRACK LIMITS AT TURN 4 LAP 21 18:39:51",
+      "offset_s": -69.9
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-LEC-154746": {
+   "clip_id": "2023-bahrain-r-LEC-154746",
+   "utc": "2023-03-05T15:48:09.311000",
+   "lap": 27,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.8,
+    "track_temp_c": 29.9,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 175,
+    "track_temp_delta_from_start_c": -5.2,
+    "grip_proxy_s": 99.235,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 14,
+    "stint_number": 2,
+    "laps_into_stint": 14,
+    "deg_slope_s_per_lap": 0.059,
+    "stint_vs_driver_median_laps": 7,
+    "past_cliff": true,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 4476.0,
+    "lap_length_m": 5376.5,
+    "pct_of_lap": 83.3,
+    "nearest_corner": 13,
+    "distance_to_corner_m": -391.2,
+    "sector": 3,
+    "speed_kph": 275.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 7,
+    "rpm": 11040,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 3,
+    "gap_ahead_s": 3.059,
+    "gap_to_leader_s": 16.941,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:48:12",
+      "lap": 28,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "INCIDENT INVOLVING CAR 31 (OCO) NOTED - SPEEDING IN THE PIT LANE",
+      "offset_s": 2.7
+     },
+     {
+      "utc": "2023-03-05T15:48:50",
+      "lap": 28,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 31 (OCO) UNDER INVESTIGATION - SPEEDING IN THE PIT LANE",
+      "offset_s": 40.7
+     },
+     {
+      "utc": "2023-03-05T15:49:07",
+      "lap": 28,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 5 SECOND TIME PENALTY FOR CAR 31 (OCO) - SPEEDING IN THE PIT LANE",
+      "offset_s": 57.7
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-HUL-154950": {
+   "clip_id": "2023-bahrain-r-HUL-154950",
+   "utc": "2023-03-05T15:50:22.605000",
+   "lap": 28,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.7,
+    "track_temp_c": 29.9,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 194,
+    "track_temp_delta_from_start_c": -5.2,
+    "grip_proxy_s": 98.474,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 2,
+    "stint_number": 3,
+    "laps_into_stint": 2,
+    "deg_slope_s_per_lap": 0.102,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 1560.9,
+    "lap_length_m": 5392.7,
+    "pct_of_lap": 28.9,
+    "nearest_corner": 4,
+    "distance_to_corner_m": -53.9,
+    "sector": 1,
+    "speed_kph": 131.0,
+    "throttle_pct": 54.0,
+    "brake": false,
+    "gear": 4,
+    "rpm": 8450,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 18,
+    "gap_ahead_s": 12.013,
+    "gap_to_leader_s": 108.128,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:48:50",
+      "lap": 28,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 31 (OCO) UNDER INVESTIGATION - SPEEDING IN THE PIT LANE",
+      "offset_s": -92.6
+     },
+     {
+      "utc": "2023-03-05T15:49:07",
+      "lap": 28,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 5 SECOND TIME PENALTY FOR CAR 31 (OCO) - SPEEDING IN THE PIT LANE",
+      "offset_s": -75.6
+     },
+     {
+      "utc": "2023-03-05T15:51:04",
+      "lap": 29,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 20 (MAG) TIME 1:39.316 DELETED - TRACK LIMITS AT TURN 4 LAP 28 18:49:51",
+      "offset_s": 41.4
+     },
+     {
+      "utc": "2023-03-05T15:51:39",
+      "lap": 30,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 31 (OCO) TIMED AT 18:51:39",
+      "offset_s": 76.4
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-VER-155007": {
+   "clip_id": "2023-bahrain-r-VER-155007",
+   "utc": "2023-03-05T15:50:57.699000",
+   "lap": 29,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.7,
+    "track_temp_c": 29.9,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 194,
+    "track_temp_delta_from_start_c": -5.2,
+    "grip_proxy_s": 98.447,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 15,
+    "stint_number": 2,
+    "laps_into_stint": 15,
+    "deg_slope_s_per_lap": 0.001,
+    "stint_vs_driver_median_laps": 1,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3921.7,
+    "lap_length_m": 5367.2,
+    "pct_of_lap": 73.1,
+    "nearest_corner": 12,
+    "distance_to_corner_m": -45.9,
+    "sector": 2,
+    "speed_kph": 246.0,
+    "throttle_pct": 42.0,
+    "brake": false,
+    "gear": 6,
+    "rpm": 10918,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 1,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": 0.0,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:49:07",
+      "lap": 28,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 5 SECOND TIME PENALTY FOR CAR 31 (OCO) - SPEEDING IN THE PIT LANE",
+      "offset_s": -110.7
+     },
+     {
+      "utc": "2023-03-05T15:51:04",
+      "lap": 29,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 20 (MAG) TIME 1:39.316 DELETED - TRACK LIMITS AT TURN 4 LAP 28 18:49:51",
+      "offset_s": 6.3
+     },
+     {
+      "utc": "2023-03-05T15:51:39",
+      "lap": 30,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 31 (OCO) TIMED AT 18:51:39",
+      "offset_s": 41.3
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-PER-155033": {
+   "clip_id": "2023-bahrain-r-PER-155033",
+   "utc": "2023-03-05T15:50:57.699000",
+   "lap": 29,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.7,
+    "track_temp_c": 29.9,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 194,
+    "track_temp_delta_from_start_c": -5.2,
+    "grip_proxy_s": 98.447,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 14,
+    "stint_number": 2,
+    "laps_into_stint": 12,
+    "deg_slope_s_per_lap": 0.026,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3067.9,
+    "lap_length_m": 5368.2,
+    "pct_of_lap": 57.1,
+    "nearest_corner": 10,
+    "distance_to_corner_m": -376.1,
+    "sector": 2,
+    "speed_kph": 267.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 7,
+    "rpm": 10673,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 2,
+    "gap_ahead_s": 13.604,
+    "gap_to_leader_s": 13.604,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:49:07",
+      "lap": 28,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 5 SECOND TIME PENALTY FOR CAR 31 (OCO) - SPEEDING IN THE PIT LANE",
+      "offset_s": -110.7
+     },
+     {
+      "utc": "2023-03-05T15:51:04",
+      "lap": 29,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 20 (MAG) TIME 1:39.316 DELETED - TRACK LIMITS AT TURN 4 LAP 28 18:49:51",
+      "offset_s": 6.3
+     },
+     {
+      "utc": "2023-03-05T15:51:39",
+      "lap": 30,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 31 (OCO) TIMED AT 18:51:39",
+      "offset_s": 41.3
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-LEC-155040": {
+   "clip_id": "2023-bahrain-r-LEC-155040",
+   "utc": "2023-03-05T15:50:57.699000",
+   "lap": 29,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.7,
+    "track_temp_c": 29.9,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 194,
+    "track_temp_delta_from_start_c": -5.2,
+    "grip_proxy_s": 98.447,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 16,
+    "stint_number": 2,
+    "laps_into_stint": 16,
+    "deg_slope_s_per_lap": 0.059,
+    "stint_vs_driver_median_laps": 7,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2754.6,
+    "lap_length_m": 5346.5,
+    "pct_of_lap": 51.5,
+    "nearest_corner": 10,
+    "distance_to_corner_m": -62.9,
+    "sector": 2,
+    "speed_kph": 148.0,
+    "throttle_pct": 88.0,
+    "brake": false,
+    "gear": 3,
+    "rpm": 11162,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 3,
+    "gap_ahead_s": 5.18,
+    "gap_to_leader_s": 18.784,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:49:07",
+      "lap": 28,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 5 SECOND TIME PENALTY FOR CAR 31 (OCO) - SPEEDING IN THE PIT LANE",
+      "offset_s": -110.7
+     },
+     {
+      "utc": "2023-03-05T15:51:04",
+      "lap": 29,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 20 (MAG) TIME 1:39.316 DELETED - TRACK LIMITS AT TURN 4 LAP 28 18:49:51",
+      "offset_s": 6.3
+     },
+     {
+      "utc": "2023-03-05T15:51:39",
+      "lap": 30,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 31 (OCO) TIMED AT 18:51:39",
+      "offset_s": 41.3
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-HAM-155041": {
+   "clip_id": "2023-bahrain-r-HAM-155041",
+   "utc": "2023-03-05T15:50:57.699000",
+   "lap": 29,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.7,
+    "track_temp_c": 29.9,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 194,
+    "track_temp_delta_from_start_c": -5.2,
+    "grip_proxy_s": 98.447,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 17,
+    "stint_number": 2,
+    "laps_into_stint": 17,
+    "deg_slope_s_per_lap": -0.019,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2174.2,
+    "lap_length_m": 5362.8,
+    "pct_of_lap": 40.5,
+    "nearest_corner": 8,
+    "distance_to_corner_m": 58.5,
+    "sector": 2,
+    "speed_kph": 115.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 3,
+    "rpm": 8092,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 5,
+    "gap_ahead_s": 3.493,
+    "gap_to_leader_s": 34.872,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:49:07",
+      "lap": 28,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 5 SECOND TIME PENALTY FOR CAR 31 (OCO) - SPEEDING IN THE PIT LANE",
+      "offset_s": -110.7
+     },
+     {
+      "utc": "2023-03-05T15:51:04",
+      "lap": 29,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 20 (MAG) TIME 1:39.316 DELETED - TRACK LIMITS AT TURN 4 LAP 28 18:49:51",
+      "offset_s": 6.3
+     },
+     {
+      "utc": "2023-03-05T15:51:39",
+      "lap": 30,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 31 (OCO) TIMED AT 18:51:39",
+      "offset_s": 41.3
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-PER-155215": {
+   "clip_id": "2023-bahrain-r-PER-155215",
+   "utc": "2023-03-05T15:52:37.931000",
+   "lap": 30,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.7,
+    "track_temp_c": 29.8,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 171,
+    "track_temp_delta_from_start_c": -5.3,
+    "grip_proxy_s": 98.39,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 15,
+    "stint_number": 2,
+    "laps_into_stint": 13,
+    "deg_slope_s_per_lap": 0.026,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3272.4,
+    "lap_length_m": 5350.0,
+    "pct_of_lap": 61.2,
+    "nearest_corner": 11,
+    "distance_to_corner_m": 194.5,
+    "sector": 2,
+    "speed_kph": 274.0,
+    "throttle_pct": 0.0,
+    "brake": false,
+    "gear": 7,
+    "rpm": 10635,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 2,
+    "gap_ahead_s": 13.455,
+    "gap_to_leader_s": 13.455,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:51:04",
+      "lap": 29,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 20 (MAG) TIME 1:39.316 DELETED - TRACK LIMITS AT TURN 4 LAP 28 18:49:51",
+      "offset_s": -93.9
+     },
+     {
+      "utc": "2023-03-05T15:51:39",
+      "lap": 30,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 31 (OCO) TIMED AT 18:51:39",
+      "offset_s": -58.9
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-ALB-155216": {
+   "clip_id": "2023-bahrain-r-ALB-155216",
+   "utc": "2023-03-05T15:52:37.931000",
+   "lap": 29,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.7,
+    "track_temp_c": 29.8,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 171,
+    "track_temp_delta_from_start_c": -5.3,
+    "grip_proxy_s": 98.447,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 3,
+    "stint_number": 3,
+    "laps_into_stint": 3,
+    "deg_slope_s_per_lap": 0.043,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 5006.9,
+    "lap_length_m": 5367.0,
+    "pct_of_lap": 93.3,
+    "nearest_corner": 15,
+    "distance_to_corner_m": -36.8,
+    "sector": 3,
+    "speed_kph": 198.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 5,
+    "rpm": 10964,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 12,
+    "gap_ahead_s": 10.803,
+    "gap_to_leader_s": 80.804,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T15:51:04",
+      "lap": 29,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 20 (MAG) TIME 1:39.316 DELETED - TRACK LIMITS AT TURN 4 LAP 28 18:49:51",
+      "offset_s": -93.9
+     },
+     {
+      "utc": "2023-03-05T15:51:39",
+      "lap": 30,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 31 (OCO) TIMED AT 18:51:39",
+      "offset_s": -58.9
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-HAM-155328": {
+   "clip_id": "2023-bahrain-r-HAM-155328",
+   "utc": "2023-03-05T15:54:18.257000",
+   "lap": 31,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.7,
+    "track_temp_c": 29.6,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 154,
+    "track_temp_delta_from_start_c": -5.5,
+    "grip_proxy_s": 98.104,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 1,
+    "stint_number": 3,
+    "laps_into_stint": 1,
+    "deg_slope_s_per_lap": 0.033,
+    "stint_vs_driver_median_laps": 9,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 1086.2,
+    "lap_length_m": 5386.5,
+    "pct_of_lap": 20.2,
+    "nearest_corner": 3,
+    "distance_to_corner_m": -149.5,
+    "sector": 1,
+    "speed_kph": 251.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 7,
+    "rpm": 10469,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 7,
+    "gap_ahead_s": 13.651,
+    "gap_to_leader_s": 60.57,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-STR-155420": {
+   "clip_id": "2023-bahrain-r-STR-155420",
+   "utc": "2023-03-05T15:54:53.351000",
+   "lap": 31,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.7,
+    "track_temp_c": 29.6,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 154,
+    "track_temp_delta_from_start_c": -5.5,
+    "grip_proxy_s": 98.104,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 1,
+    "stint_number": 3,
+    "laps_into_stint": 1,
+    "deg_slope_s_per_lap": 0.03,
+    "stint_vs_driver_median_laps": 12,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2381.3,
+    "lap_length_m": 5393.3,
+    "pct_of_lap": 44.2,
+    "nearest_corner": 8,
+    "distance_to_corner_m": -148.6,
+    "sector": 2,
+    "speed_kph": 192.0,
+    "throttle_pct": 99.0,
+    "brake": false,
+    "gear": 4,
+    "rpm": 11311,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 8,
+    "gap_ahead_s": 7.399,
+    "gap_to_leader_s": 67.969,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-RUS-155430": {
+   "clip_id": "2023-bahrain-r-RUS-155430",
+   "utc": "2023-03-05T15:54:53.351000",
+   "lap": 31,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.7,
+    "track_temp_c": 29.6,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 154,
+    "track_temp_delta_from_start_c": -5.5,
+    "grip_proxy_s": 98.104,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 18,
+    "stint_number": 2,
+    "laps_into_stint": 18,
+    "deg_slope_s_per_lap": 0.042,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3658.4,
+    "lap_length_m": 5354.9,
+    "pct_of_lap": 68.3,
+    "nearest_corner": 11,
+    "distance_to_corner_m": -191.6,
+    "sector": 2,
+    "speed_kph": 239.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 6,
+    "rpm": 11210,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 6,
+    "gap_ahead_s": 8.685,
+    "gap_to_leader_s": 46.919,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-ZHO-155524": {
+   "clip_id": "2023-bahrain-r-ZHO-155524",
+   "utc": "2023-03-05T15:55:59.084000",
+   "lap": 32,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.7,
+    "track_temp_c": 29.6,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 204,
+    "track_temp_delta_from_start_c": -5.5,
+    "grip_proxy_s": 97.902,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 20,
+    "stint_number": 2,
+    "laps_into_stint": 20,
+    "deg_slope_s_per_lap": 0.027,
+    "stint_vs_driver_median_laps": 4,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 621.6,
+    "lap_length_m": 5359.3,
+    "pct_of_lap": 11.6,
+    "nearest_corner": 1,
+    "distance_to_corner_m": 90.3,
+    "sector": 1,
+    "speed_kph": 224.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 8,
+    "rpm": 7857,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 10,
+    "gap_ahead_s": 0.81,
+    "gap_to_leader_s": 78.478,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-OCO-155746": {
+   "clip_id": "2023-bahrain-r-OCO-155746",
+   "utc": "2023-03-05T15:58:13.769000",
+   "lap": 33,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.7,
+    "track_temp_c": 29.6,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 212,
+    "track_temp_delta_from_start_c": -5.5,
+    "grip_proxy_s": 97.775,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 1,
+    "stint_number": 4,
+    "laps_into_stint": 1,
+    "deg_slope_s_per_lap": 0.121,
+    "stint_vs_driver_median_laps": -2,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 159.7,
+    "lap_length_m": 5381.7,
+    "pct_of_lap": 3.0,
+    "nearest_corner": 1,
+    "distance_to_corner_m": 552.2,
+    "sector": 1,
+    "speed_kph": 37.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 0,
+    "rpm": 3877,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 19,
+    "gap_ahead_s": 30.37,
+    "gap_to_leader_s": 151.863,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-NOR-160632": {
+   "clip_id": "2023-bahrain-r-NOR-160632",
+   "utc": "2023-03-05T16:07:05.681000",
+   "lap": 38,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.5,
+    "track_temp_c": 29.5,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.0,
+    "wind_direction_deg": 0,
+    "track_temp_delta_from_start_c": -5.6,
+    "grip_proxy_s": 98.015,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 1,
+    "stint_number": 5,
+    "laps_into_stint": 1,
+    "deg_slope_s_per_lap": 0.216,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 553.2,
+    "lap_length_m": 5395.1,
+    "pct_of_lap": 10.3,
+    "nearest_corner": 1,
+    "distance_to_corner_m": 158.8,
+    "sector": 1,
+    "speed_kph": 182.0,
+    "throttle_pct": 61.0,
+    "brake": false,
+    "gear": 4,
+    "rpm": 10895,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 19,
+    "gap_ahead_s": 8.573,
+    "gap_to_leader_s": 134.675,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:07:05",
+      "lap": 39,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 4 (NOR) TIMED AT 19:07:05",
+      "offset_s": -0.7
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-ALO-160629": {
+   "clip_id": "2023-bahrain-r-ALO-160629",
+   "utc": "2023-03-05T16:07:06.087000",
+   "lap": 39,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.5,
+    "track_temp_c": 29.5,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.0,
+    "wind_direction_deg": 0,
+    "track_temp_delta_from_start_c": -5.6,
+    "grip_proxy_s": 97.784,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 5,
+    "stint_number": 3,
+    "laps_into_stint": 5,
+    "deg_slope_s_per_lap": 0.024,
+    "stint_vs_driver_median_laps": 3,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 549.0,
+    "lap_length_m": 5376.2,
+    "pct_of_lap": 10.2,
+    "nearest_corner": 1,
+    "distance_to_corner_m": 163.0,
+    "sector": 1,
+    "speed_kph": 305.0,
+    "throttle_pct": 99.0,
+    "brake": false,
+    "gear": 8,
+    "rpm": 11186,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 5,
+    "gap_ahead_s": 2.535,
+    "gap_to_leader_s": 36.185,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:07:05",
+      "lap": 39,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 4 (NOR) TIMED AT 19:07:05",
+      "offset_s": -1.1
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-OCO-160907": {
+   "clip_id": "2023-bahrain-r-OCO-160907",
+   "utc": "2023-03-05T16:09:53.100000",
+   "lap": 39,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.5,
+    "track_temp_c": 29.5,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.4,
+    "wind_direction_deg": 0,
+    "track_temp_delta_from_start_c": -5.6,
+    "grip_proxy_s": 97.784,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 7,
+    "stint_number": 4,
+    "laps_into_stint": 7,
+    "deg_slope_s_per_lap": 0.121,
+    "stint_vs_driver_median_laps": -2,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 4465.9,
+    "lap_length_m": 5368.5,
+    "pct_of_lap": 83.2,
+    "nearest_corner": 13,
+    "distance_to_corner_m": -381.2,
+    "sector": 3,
+    "speed_kph": 274.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 7,
+    "rpm": 10464,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 18,
+    "gap_ahead_s": 37.676,
+    "gap_to_leader_s": 127.179,
+    "track_status": "12",
+    "active_flags": [
+     "YELLOW",
+     "CLEAR"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:09:58",
+      "lap": 41,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:38.184 DELETED - TRACK LIMITS AT TURN 4 LAP 39 19:08:20",
+      "offset_s": 4.9
+     },
+     {
+      "utc": "2023-03-05T16:10:01",
+      "lap": 41,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "message": "YELLOW IN TRACK SECTOR 16",
+      "offset_s": 7.9
+     },
+     {
+      "utc": "2023-03-05T16:10:19",
+      "lap": 41,
+      "category": "SafetyCar",
+      "flag": null,
+      "scope": null,
+      "message": "VIRTUAL SAFETY CAR DEPLOYED",
+      "offset_s": 25.9
+     },
+     {
+      "utc": "2023-03-05T16:11:53",
+      "lap": 42,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Sector",
+      "message": "CLEAR IN TRACK SECTOR 16",
+      "offset_s": 119.9
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-NOR-161646": {
+   "clip_id": "2023-bahrain-r-NOR-161646",
+   "utc": "2023-03-05T16:17:07.217000",
+   "lap": 43,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.4,
+    "track_temp_c": 29.2,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.3,
+    "wind_direction_deg": 129,
+    "track_temp_delta_from_start_c": -5.9,
+    "grip_proxy_s": 97.028,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 6,
+    "stint_number": 5,
+    "laps_into_stint": 6,
+    "deg_slope_s_per_lap": 0.216,
+    "stint_vs_driver_median_laps": 0,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 4887.0,
+    "lap_length_m": 5371.5,
+    "pct_of_lap": 91.0,
+    "nearest_corner": 14,
+    "distance_to_corner_m": 2.9,
+    "sector": 3,
+    "speed_kph": 111.0,
+    "throttle_pct": 5.0,
+    "brake": false,
+    "gear": 3,
+    "rpm": 8103,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 17,
+    "gap_ahead_s": 27.73,
+    "gap_to_leader_s": 135.455,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:16:18",
+      "lap": 44,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 10 (GAS) TIME 1:35.942 DELETED - TRACK LIMITS AT TURN 4 LAP 43 19:15:07",
+      "offset_s": -49.2
+     },
+     {
+      "utc": "2023-03-05T16:17:53",
+      "lap": 45,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 10 (GAS) TIME 1:35.792 DELETED - TRACK LIMITS AT TURN 4 LAP 44 19:16:41",
+      "offset_s": 45.8
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-SAI-161631": {
+   "clip_id": "2023-bahrain-r-SAI-161631",
+   "utc": "2023-03-05T16:17:07.217000",
+   "lap": 44,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.4,
+    "track_temp_c": 29.2,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.3,
+    "wind_direction_deg": 129,
+    "track_temp_delta_from_start_c": -5.9,
+    "grip_proxy_s": 97.219,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 13,
+    "stint_number": 3,
+    "laps_into_stint": 13,
+    "deg_slope_s_per_lap": 0.021,
+    "stint_vs_driver_median_laps": 8,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 5137.0,
+    "lap_length_m": 5371.4,
+    "pct_of_lap": 95.6,
+    "nearest_corner": 15,
+    "distance_to_corner_m": -166.9,
+    "sector": 3,
+    "speed_kph": 249.0,
+    "throttle_pct": 99.0,
+    "brake": false,
+    "gear": 6,
+    "rpm": 11395,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 3,
+    "gap_ahead_s": 24.14,
+    "gap_to_leader_s": 34.344,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:16:18",
+      "lap": 44,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 10 (GAS) TIME 1:35.942 DELETED - TRACK LIMITS AT TURN 4 LAP 43 19:15:07",
+      "offset_s": -49.2
+     },
+     {
+      "utc": "2023-03-05T16:17:53",
+      "lap": 45,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 10 (GAS) TIME 1:35.792 DELETED - TRACK LIMITS AT TURN 4 LAP 44 19:16:41",
+      "offset_s": 45.8
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-DEV-161647": {
+   "clip_id": "2023-bahrain-r-DEV-161647",
+   "utc": "2023-03-05T16:17:07.217000",
+   "lap": 44,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.4,
+    "track_temp_c": 29.2,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.3,
+    "wind_direction_deg": 129,
+    "track_temp_delta_from_start_c": -5.9,
+    "grip_proxy_s": 97.219,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 17,
+    "stint_number": 3,
+    "laps_into_stint": 17,
+    "deg_slope_s_per_lap": 0.071,
+    "stint_vs_driver_median_laps": 13,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2206.2,
+    "lap_length_m": 5350.6,
+    "pct_of_lap": 41.2,
+    "nearest_corner": 8,
+    "distance_to_corner_m": 26.5,
+    "sector": 2,
+    "speed_kph": 73.0,
+    "throttle_pct": 0.0,
+    "brake": false,
+    "gear": 2,
+    "rpm": 6334,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 14,
+    "gap_ahead_s": 2.132,
+    "gap_to_leader_s": 89.756,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:16:18",
+      "lap": 44,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 10 (GAS) TIME 1:35.942 DELETED - TRACK LIMITS AT TURN 4 LAP 43 19:15:07",
+      "offset_s": -49.2
+     },
+     {
+      "utc": "2023-03-05T16:17:53",
+      "lap": 45,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 10 (GAS) TIME 1:35.792 DELETED - TRACK LIMITS AT TURN 4 LAP 44 19:16:41",
+      "offset_s": 45.8
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-PER-161725": {
+   "clip_id": "2023-bahrain-r-PER-161725",
+   "utc": "2023-03-05T16:17:40.029000",
+   "lap": 45,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.4,
+    "track_temp_c": 29.1,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.5,
+    "wind_direction_deg": 0,
+    "track_temp_delta_from_start_c": -6.0,
+    "grip_proxy_s": 97.426,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 11,
+    "stint_number": 3,
+    "laps_into_stint": 11,
+    "deg_slope_s_per_lap": 0.022,
+    "stint_vs_driver_median_laps": 6,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2761.7,
+    "lap_length_m": 5374.7,
+    "pct_of_lap": 51.4,
+    "nearest_corner": 10,
+    "distance_to_corner_m": -70.0,
+    "sector": 2,
+    "speed_kph": 130.0,
+    "throttle_pct": 86.0,
+    "brake": false,
+    "gear": 2,
+    "rpm": 10743,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 2,
+    "gap_ahead_s": 10.117,
+    "gap_to_leader_s": 10.117,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:16:18",
+      "lap": 44,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 10 (GAS) TIME 1:35.942 DELETED - TRACK LIMITS AT TURN 4 LAP 43 19:15:07",
+      "offset_s": -82.0
+     },
+     {
+      "utc": "2023-03-05T16:17:53",
+      "lap": 45,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 10 (GAS) TIME 1:35.792 DELETED - TRACK LIMITS AT TURN 4 LAP 44 19:16:41",
+      "offset_s": 13.0
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-HUL-161807": {
+   "clip_id": "2023-bahrain-r-HUL-161807",
+   "utc": "2023-03-05T16:18:47.497000",
+   "lap": 45,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.4,
+    "track_temp_c": 29.1,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 181,
+    "track_temp_delta_from_start_c": -6.0,
+    "grip_proxy_s": 97.426,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 8,
+    "stint_number": 4,
+    "laps_into_stint": 5,
+    "deg_slope_s_per_lap": 0.095,
+    "stint_vs_driver_median_laps": 2,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 1387.9,
+    "lap_length_m": 5368.3,
+    "pct_of_lap": 25.9,
+    "nearest_corner": 4,
+    "distance_to_corner_m": 119.1,
+    "sector": 1,
+    "speed_kph": 255.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 7,
+    "rpm": 10185,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 16,
+    "gap_ahead_s": 9.31,
+    "gap_to_leader_s": 108.864,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:17:53",
+      "lap": 45,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 10 (GAS) TIME 1:35.792 DELETED - TRACK LIMITS AT TURN 4 LAP 44 19:16:41",
+      "offset_s": -54.5
+     }
+    ],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-BOT-162018": {
+   "clip_id": "2023-bahrain-r-BOT-162018",
+   "utc": "2023-03-05T16:20:27.776000",
+   "lap": 46,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.4,
+    "track_temp_c": 29.0,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.0,
+    "wind_speed_ms": 0.3,
+    "wind_direction_deg": 207,
+    "track_temp_delta_from_start_c": -6.1,
+    "grip_proxy_s": 97.589,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 17,
+    "stint_number": 3,
+    "laps_into_stint": 17,
+    "deg_slope_s_per_lap": 0.013,
+    "stint_vs_driver_median_laps": 10,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3949.1,
+    "lap_length_m": 5354.5,
+    "pct_of_lap": 73.8,
+    "nearest_corner": 12,
+    "distance_to_corner_m": -73.3,
+    "sector": 3,
+    "speed_kph": 242.0,
+    "throttle_pct": 52.0,
+    "brake": true,
+    "gear": 6,
+    "rpm": 10601,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 8,
+    "gap_ahead_s": 14.662,
+    "gap_to_leader_s": 61.994,
+    "track_status": "1",
+    "active_flags": [],
+    "nearby_messages": [],
+    "in_traffic": false
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-ALO-162303": {
+   "clip_id": "2023-bahrain-r-ALO-162303",
+   "utc": "2023-03-05T16:23:14.477000",
+   "lap": 48,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.4,
+    "track_temp_c": 29.0,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.2,
+    "wind_speed_ms": 0.3,
+    "wind_direction_deg": 302,
+    "track_temp_delta_from_start_c": -6.1,
+    "grip_proxy_s": 97.5,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 14,
+    "stint_number": 3,
+    "laps_into_stint": 14,
+    "deg_slope_s_per_lap": 0.024,
+    "stint_vs_driver_median_laps": 3,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 3830.9,
+    "lap_length_m": 5361.4,
+    "pct_of_lap": 71.5,
+    "nearest_corner": 12,
+    "distance_to_corner_m": 44.9,
+    "sector": 2,
+    "speed_kph": 257.0,
+    "throttle_pct": 92.0,
+    "brake": false,
+    "gear": 7,
+    "rpm": 10599,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 3,
+    "gap_ahead_s": 26.204,
+    "gap_to_leader_s": 36.47,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE",
+     "BLACK AND WHITE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:23:02",
+      "lap": 48,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 21 (DEV) TIMED AT 19:23:01",
+      "offset_s": -12.5
+     },
+     {
+      "utc": "2023-03-05T16:24:12",
+      "lap": 49,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:36.806 DELETED - TRACK LIMITS AT TURN 4 LAP 47 19:22:09",
+      "offset_s": 57.5
+     },
+     {
+      "utc": "2023-03-05T16:24:21",
+      "lap": 49,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 4 (NOR) TIMED AT 19:24:20",
+      "offset_s": 66.5
+     },
+     {
+      "utc": "2023-03-05T16:24:25",
+      "lap": 49,
+      "category": "Flag",
+      "flag": "BLACK AND WHITE",
+      "scope": "Driver",
+      "message": "BLACK AND WHITE FLAG FOR CAR 27 (HUL) - TRACK LIMITS",
+      "offset_s": 70.5
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-ALO-162511": {
+   "clip_id": "2023-bahrain-r-ALO-162511",
+   "utc": "2023-03-05T16:26:01.004000",
+   "lap": 50,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.3,
+    "track_temp_c": 29.0,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.2,
+    "wind_speed_ms": 0.0,
+    "wind_direction_deg": 0,
+    "track_temp_delta_from_start_c": -6.1,
+    "grip_proxy_s": 97.604,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 16,
+    "stint_number": 3,
+    "laps_into_stint": 16,
+    "deg_slope_s_per_lap": 0.024,
+    "stint_vs_driver_median_laps": 3,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2370.2,
+    "lap_length_m": 5364.5,
+    "pct_of_lap": 44.2,
+    "nearest_corner": 8,
+    "distance_to_corner_m": -137.5,
+    "sector": 2,
+    "speed_kph": 198.0,
+    "throttle_pct": 99.0,
+    "brake": false,
+    "gear": 5,
+    "rpm": 10834,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 3,
+    "gap_ahead_s": 24.481,
+    "gap_to_leader_s": 35.315,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE",
+     "BLACK AND WHITE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:24:12",
+      "lap": 49,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:36.806 DELETED - TRACK LIMITS AT TURN 4 LAP 47 19:22:09",
+      "offset_s": -109.0
+     },
+     {
+      "utc": "2023-03-05T16:24:21",
+      "lap": 49,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 4 (NOR) TIMED AT 19:24:20",
+      "offset_s": -100.0
+     },
+     {
+      "utc": "2023-03-05T16:24:25",
+      "lap": 49,
+      "category": "Flag",
+      "flag": "BLACK AND WHITE",
+      "scope": "Driver",
+      "message": "BLACK AND WHITE FLAG FOR CAR 27 (HUL) - TRACK LIMITS",
+      "offset_s": -96.0
+     },
+     {
+      "utc": "2023-03-05T16:27:18",
+      "lap": 51,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 19:27:17",
+      "offset_s": 77.0
+     },
+     {
+      "utc": "2023-03-05T16:27:24",
+      "lap": 51,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 24 (ZHO) TIMED AT 19:27:24",
+      "offset_s": 83.0
+     },
+     {
+      "utc": "2023-03-05T16:27:25",
+      "lap": 51,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 44 (HAM) TIME 1:37.770 DELETED - TRACK LIMITS AT TURN 8 LAP 50 19:26:02",
+      "offset_s": 84.0
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-ALO-162918": {
+   "clip_id": "2023-bahrain-r-ALO-162918",
+   "utc": "2023-03-05T16:29:54.906000",
+   "lap": 52,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.3,
+    "track_temp_c": 28.9,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.4,
+    "wind_speed_ms": 0.0,
+    "wind_direction_deg": 0,
+    "track_temp_delta_from_start_c": -6.2,
+    "grip_proxy_s": 97.589,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 18,
+    "stint_number": 3,
+    "laps_into_stint": 18,
+    "deg_slope_s_per_lap": 0.024,
+    "stint_vs_driver_median_laps": 3,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 4646.9,
+    "lap_length_m": 5363.3,
+    "pct_of_lap": 86.6,
+    "nearest_corner": 14,
+    "distance_to_corner_m": 243.1,
+    "sector": 3,
+    "speed_kph": 292.0,
+    "throttle_pct": 99.0,
+    "brake": false,
+    "gear": 8,
+    "rpm": 10756,
+    "drs_active": false,
+    "zone": "high_speed"
+   },
+   "situation": {
+    "position": 3,
+    "gap_ahead_s": 24.34,
+    "gap_to_leader_s": 34.939,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:28:38",
+      "lap": 52,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 21 (DEV) TIME 1:39.089 DELETED - TRACK LIMITS AT TURN 4 LAP 50 19:26:51",
+      "offset_s": -76.9
+     },
+     {
+      "utc": "2023-03-05T16:29:05",
+      "lap": 52,
+      "category": "CarEvent",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 18 (STR) OFF TRACK AND CONTINUED AT TURN 10",
+      "offset_s": -49.9
+     },
+     {
+      "utc": "2023-03-05T16:29:55",
+      "lap": 53,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 21 (DEV) TIMED AT 19:29:55",
+      "offset_s": 0.1
+     },
+     {
+      "utc": "2023-03-05T16:31:31",
+      "lap": 54,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:37.917 DELETED - TRACK LIMITS AT TURN 4 LAP 52 19:30:15",
+      "offset_s": 96.1
+     },
+     {
+      "utc": "2023-03-05T16:31:38",
+      "lap": 54,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "INCIDENT INVOLVING CAR 27 (HUL) NOTED - MULTIPLE TRACK LIMITS",
+      "offset_s": 103.1
+     },
+     {
+      "utc": "2023-03-05T16:31:52",
+      "lap": 54,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 27 (HUL) UNDER INVESTIGATION - MULTIPLE TRACK LIMITS",
+      "offset_s": 117.1
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-STR-163228": {
+   "clip_id": "2023-bahrain-r-STR-163228",
+   "utc": "2023-03-05T16:32:41.778000",
+   "lap": 54,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.2,
+    "track_temp_c": 28.8,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.2,
+    "wind_speed_ms": 0.3,
+    "wind_direction_deg": 269,
+    "track_temp_delta_from_start_c": -6.3,
+    "grip_proxy_s": 97.78,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "HARD",
+    "tyre_age_laps": 24,
+    "stint_number": 3,
+    "laps_into_stint": 24,
+    "deg_slope_s_per_lap": 0.03,
+    "stint_vs_driver_median_laps": 12,
+    "past_cliff": false,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 2281.3,
+    "lap_length_m": 5351.8,
+    "pct_of_lap": 42.6,
+    "nearest_corner": 8,
+    "distance_to_corner_m": -48.6,
+    "sector": 2,
+    "speed_kph": 117.0,
+    "throttle_pct": 63.0,
+    "brake": false,
+    "gear": 3,
+    "rpm": 9333,
+    "drs_active": false,
+    "zone": "corner"
+   },
+   "situation": {
+    "position": 6,
+    "gap_ahead_s": 4.044,
+    "gap_to_leader_s": 50.6,
+    "track_status": "1",
+    "active_flags": [
+     "BLACK AND WHITE",
+     "BLUE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:31:31",
+      "lap": 54,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:37.917 DELETED - TRACK LIMITS AT TURN 4 LAP 52 19:30:15",
+      "offset_s": -70.8
+     },
+     {
+      "utc": "2023-03-05T16:31:38",
+      "lap": 54,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "INCIDENT INVOLVING CAR 27 (HUL) NOTED - MULTIPLE TRACK LIMITS",
+      "offset_s": -63.8
+     },
+     {
+      "utc": "2023-03-05T16:31:52",
+      "lap": 54,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 27 (HUL) UNDER INVESTIGATION - MULTIPLE TRACK LIMITS",
+      "offset_s": -49.8
+     },
+     {
+      "utc": "2023-03-05T16:32:12",
+      "lap": 54,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 5 SECOND TIME PENALTY FOR CAR 27 (HUL) - MULTIPLE TRACK LIMITS",
+      "offset_s": -29.8
+     },
+     {
+      "utc": "2023-03-05T16:32:50",
+      "lap": 55,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 4 (NOR) TIME 1:35.257 DELETED - TRACK LIMITS AT TURN 7 LAP 50 19:28:08",
+      "offset_s": 8.2
+     },
+     {
+      "utc": "2023-03-05T16:33:02",
+      "lap": 55,
+      "category": "Flag",
+      "flag": "BLACK AND WHITE",
+      "scope": "Driver",
+      "message": "BLACK AND WHITE FLAG FOR CAR 4 (NOR) - TRACK LIMITS",
+      "offset_s": 20.2
+     },
+     {
+      "utc": "2023-03-05T16:33:50",
+      "lap": 55,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 20 (MAG) TIMED AT 19:33:50",
+      "offset_s": 68.2
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-NOR-163402": {
+   "clip_id": "2023-bahrain-r-NOR-163402",
+   "utc": "2023-03-05T16:34:22.308000",
+   "lap": 54,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.2,
+    "track_temp_c": 28.8,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.4,
+    "wind_speed_ms": 0.5,
+    "wind_direction_deg": 95,
+    "track_temp_delta_from_start_c": -6.3,
+    "grip_proxy_s": 97.78,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 11,
+    "stint_number": 6,
+    "laps_into_stint": 7,
+    "deg_slope_s_per_lap": -0.674,
+    "stint_vs_driver_median_laps": -3,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 1476.0,
+    "lap_length_m": 5330.6,
+    "pct_of_lap": 27.7,
+    "nearest_corner": 4,
+    "distance_to_corner_m": 30.9,
+    "sector": 1,
+    "speed_kph": 126.0,
+    "throttle_pct": 0.0,
+    "brake": true,
+    "gear": 3,
+    "rpm": 8847,
+    "drs_active": false,
+    "zone": "braking"
+   },
+   "situation": {
+    "position": 17,
+    "gap_ahead_s": 55.648,
+    "gap_to_leader_s": 171.689,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE",
+     "BLACK AND WHITE"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:32:50",
+      "lap": 55,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 4 (NOR) TIME 1:35.257 DELETED - TRACK LIMITS AT TURN 7 LAP 50 19:28:08",
+      "offset_s": -92.3
+     },
+     {
+      "utc": "2023-03-05T16:33:02",
+      "lap": 55,
+      "category": "Flag",
+      "flag": "BLACK AND WHITE",
+      "scope": "Driver",
+      "message": "BLACK AND WHITE FLAG FOR CAR 4 (NOR) - TRACK LIMITS",
+      "offset_s": -80.3
+     },
+     {
+      "utc": "2023-03-05T16:33:50",
+      "lap": 55,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 20 (MAG) TIMED AT 19:33:50",
+      "offset_s": -32.3
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-ZHO-163627": {
+   "clip_id": "2023-bahrain-r-ZHO-163627",
+   "utc": "2023-03-05T16:36:36.884000",
+   "lap": 55,
+   "phase": "racing",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.3,
+    "track_temp_c": 28.7,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.4,
+    "wind_speed_ms": 0.6,
+    "wind_direction_deg": 116,
+    "track_temp_delta_from_start_c": -6.4,
+    "grip_proxy_s": 97.86,
+    "is_wet": false
+   },
+   "tyre": {
+    "compound": "SOFT",
+    "tyre_age_laps": 4,
+    "stint_number": 4,
+    "laps_into_stint": 1,
+    "deg_slope_s_per_lap": null,
+    "stint_vs_driver_median_laps": -14,
+    "past_cliff": null,
+    "basis": "modelled"
+   },
+   "position": {
+    "distance_into_lap_m": 5092.3,
+    "lap_length_m": 5404.1,
+    "pct_of_lap": 94.2,
+    "nearest_corner": 15,
+    "distance_to_corner_m": -122.2,
+    "sector": 3,
+    "speed_kph": 232.0,
+    "throttle_pct": 100.0,
+    "brake": false,
+    "gear": 6,
+    "rpm": 10509,
+    "drs_active": false,
+    "zone": "other"
+   },
+   "situation": {
+    "position": 16,
+    "gap_ahead_s": 20.948,
+    "gap_to_leader_s": 139.231,
+    "track_status": "1",
+    "active_flags": [
+     "BLUE",
+     "CHEQUERED"
+    ],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:36:52",
+      "lap": 57,
+      "category": "Flag",
+      "flag": "BLUE",
+      "scope": "Driver",
+      "message": "WAVED BLUE FLAG FOR CAR 2 (SAR) TIMED AT 19:36:51",
+      "offset_s": 15.1
+     },
+     {
+      "utc": "2023-03-05T16:37:31",
+      "lap": 57,
+      "category": "Flag",
+      "flag": "CHEQUERED",
+      "scope": "Track",
+      "message": "CHEQUERED FLAG",
+      "offset_s": 54.1
+     }
+    ],
+    "in_traffic": true
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-ALO-163945": {
+   "clip_id": "2023-bahrain-r-ALO-163945",
+   "utc": "2023-03-05T16:40:31.629000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.3,
+    "track_temp_c": 28.7,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.4,
+    "wind_speed_ms": 0.5,
+    "wind_direction_deg": 352,
+    "track_temp_delta_from_start_c": -6.4,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:40:53",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:39.206 DELETED - TRACK LIMITS AT TURN 13 LAP 56 19:37:41",
+      "offset_s": 21.4
+     },
+     {
+      "utc": "2023-03-05T16:42:16",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "INCIDENT INVOLVING CAR 27 (HUL) NOTED - MULTIPLE TRACK LIMITS",
+      "offset_s": 104.4
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-SAR-164323": {
+   "clip_id": "2023-bahrain-r-SAR-164323",
+   "utc": "2023-03-05T16:42:52.674000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.2,
+    "track_temp_c": 28.7,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.5,
+    "wind_speed_ms": 0.3,
+    "wind_direction_deg": 215,
+    "track_temp_delta_from_start_c": -6.4,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:40:53",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:39.206 DELETED - TRACK LIMITS AT TURN 13 LAP 56 19:37:41",
+      "offset_s": -119.7
+     },
+     {
+      "utc": "2023-03-05T16:42:16",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "INCIDENT INVOLVING CAR 27 (HUL) NOTED - MULTIPLE TRACK LIMITS",
+      "offset_s": -36.7
+     },
+     {
+      "utc": "2023-03-05T16:42:37",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 27 (HUL) UNDER INVESTIGATION - MULTIPLE TRACK LIMITS",
+      "offset_s": -15.7
+     },
+     {
+      "utc": "2023-03-05T16:42:52",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 27 (HUL) - MULTIPLE TRACK LIMITS",
+      "offset_s": -0.7
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-ALO-164341": {
+   "clip_id": "2023-bahrain-r-ALO-164341",
+   "utc": "2023-03-05T16:42:52.674000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.2,
+    "track_temp_c": 28.7,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.5,
+    "wind_speed_ms": 0.3,
+    "wind_direction_deg": 215,
+    "track_temp_delta_from_start_c": -6.4,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:40:53",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:39.206 DELETED - TRACK LIMITS AT TURN 13 LAP 56 19:37:41",
+      "offset_s": -119.7
+     },
+     {
+      "utc": "2023-03-05T16:42:16",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "INCIDENT INVOLVING CAR 27 (HUL) NOTED - MULTIPLE TRACK LIMITS",
+      "offset_s": -36.7
+     },
+     {
+      "utc": "2023-03-05T16:42:37",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 27 (HUL) UNDER INVESTIGATION - MULTIPLE TRACK LIMITS",
+      "offset_s": -15.7
+     },
+     {
+      "utc": "2023-03-05T16:42:52",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 27 (HUL) - MULTIPLE TRACK LIMITS",
+      "offset_s": -0.7
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-RUS-164410": {
+   "clip_id": "2023-bahrain-r-RUS-164410",
+   "utc": "2023-03-05T16:42:52.674000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.2,
+    "track_temp_c": 28.7,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.5,
+    "wind_speed_ms": 0.3,
+    "wind_direction_deg": 215,
+    "track_temp_delta_from_start_c": -6.4,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:40:53",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:39.206 DELETED - TRACK LIMITS AT TURN 13 LAP 56 19:37:41",
+      "offset_s": -119.7
+     },
+     {
+      "utc": "2023-03-05T16:42:16",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "INCIDENT INVOLVING CAR 27 (HUL) NOTED - MULTIPLE TRACK LIMITS",
+      "offset_s": -36.7
+     },
+     {
+      "utc": "2023-03-05T16:42:37",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 27 (HUL) UNDER INVESTIGATION - MULTIPLE TRACK LIMITS",
+      "offset_s": -15.7
+     },
+     {
+      "utc": "2023-03-05T16:42:52",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 27 (HUL) - MULTIPLE TRACK LIMITS",
+      "offset_s": -0.7
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-ALB-164612": {
+   "clip_id": "2023-bahrain-r-ALB-164612",
+   "utc": "2023-03-05T16:42:52.674000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.2,
+    "track_temp_c": 28.7,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.5,
+    "wind_speed_ms": 0.3,
+    "wind_direction_deg": 215,
+    "track_temp_delta_from_start_c": -6.4,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:40:53",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:39.206 DELETED - TRACK LIMITS AT TURN 13 LAP 56 19:37:41",
+      "offset_s": -119.7
+     },
+     {
+      "utc": "2023-03-05T16:42:16",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "INCIDENT INVOLVING CAR 27 (HUL) NOTED - MULTIPLE TRACK LIMITS",
+      "offset_s": -36.7
+     },
+     {
+      "utc": "2023-03-05T16:42:37",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 27 (HUL) UNDER INVESTIGATION - MULTIPLE TRACK LIMITS",
+      "offset_s": -15.7
+     },
+     {
+      "utc": "2023-03-05T16:42:52",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 27 (HUL) - MULTIPLE TRACK LIMITS",
+      "offset_s": -0.7
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-TSU-164722": {
+   "clip_id": "2023-bahrain-r-TSU-164722",
+   "utc": "2023-03-05T16:42:52.674000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.2,
+    "track_temp_c": 28.7,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.5,
+    "wind_speed_ms": 0.3,
+    "wind_direction_deg": 215,
+    "track_temp_delta_from_start_c": -6.4,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:40:53",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:39.206 DELETED - TRACK LIMITS AT TURN 13 LAP 56 19:37:41",
+      "offset_s": -119.7
+     },
+     {
+      "utc": "2023-03-05T16:42:16",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "INCIDENT INVOLVING CAR 27 (HUL) NOTED - MULTIPLE TRACK LIMITS",
+      "offset_s": -36.7
+     },
+     {
+      "utc": "2023-03-05T16:42:37",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 27 (HUL) UNDER INVESTIGATION - MULTIPLE TRACK LIMITS",
+      "offset_s": -15.7
+     },
+     {
+      "utc": "2023-03-05T16:42:52",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 27 (HUL) - MULTIPLE TRACK LIMITS",
+      "offset_s": -0.7
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-PER-164706": {
+   "clip_id": "2023-bahrain-r-PER-164706",
+   "utc": "2023-03-05T16:42:52.674000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.2,
+    "track_temp_c": 28.7,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.5,
+    "wind_speed_ms": 0.3,
+    "wind_direction_deg": 215,
+    "track_temp_delta_from_start_c": -6.4,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:40:53",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:39.206 DELETED - TRACK LIMITS AT TURN 13 LAP 56 19:37:41",
+      "offset_s": -119.7
+     },
+     {
+      "utc": "2023-03-05T16:42:16",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "INCIDENT INVOLVING CAR 27 (HUL) NOTED - MULTIPLE TRACK LIMITS",
+      "offset_s": -36.7
+     },
+     {
+      "utc": "2023-03-05T16:42:37",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 27 (HUL) UNDER INVESTIGATION - MULTIPLE TRACK LIMITS",
+      "offset_s": -15.7
+     },
+     {
+      "utc": "2023-03-05T16:42:52",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 27 (HUL) - MULTIPLE TRACK LIMITS",
+      "offset_s": -0.7
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-DEV-164854": {
+   "clip_id": "2023-bahrain-r-DEV-164854",
+   "utc": "2023-03-05T16:42:52.674000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.2,
+    "track_temp_c": 28.7,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.5,
+    "wind_speed_ms": 0.3,
+    "wind_direction_deg": 215,
+    "track_temp_delta_from_start_c": -6.4,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:40:53",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:39.206 DELETED - TRACK LIMITS AT TURN 13 LAP 56 19:37:41",
+      "offset_s": -119.7
+     },
+     {
+      "utc": "2023-03-05T16:42:16",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "INCIDENT INVOLVING CAR 27 (HUL) NOTED - MULTIPLE TRACK LIMITS",
+      "offset_s": -36.7
+     },
+     {
+      "utc": "2023-03-05T16:42:37",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 27 (HUL) UNDER INVESTIGATION - MULTIPLE TRACK LIMITS",
+      "offset_s": -15.7
+     },
+     {
+      "utc": "2023-03-05T16:42:52",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 27 (HUL) - MULTIPLE TRACK LIMITS",
+      "offset_s": -0.7
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-GAS-164848": {
+   "clip_id": "2023-bahrain-r-GAS-164848",
+   "utc": "2023-03-05T16:42:52.674000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.2,
+    "track_temp_c": 28.7,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.5,
+    "wind_speed_ms": 0.3,
+    "wind_direction_deg": 215,
+    "track_temp_delta_from_start_c": -6.4,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:40:53",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:39.206 DELETED - TRACK LIMITS AT TURN 13 LAP 56 19:37:41",
+      "offset_s": -119.7
+     },
+     {
+      "utc": "2023-03-05T16:42:16",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "INCIDENT INVOLVING CAR 27 (HUL) NOTED - MULTIPLE TRACK LIMITS",
+      "offset_s": -36.7
+     },
+     {
+      "utc": "2023-03-05T16:42:37",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 27 (HUL) UNDER INVESTIGATION - MULTIPLE TRACK LIMITS",
+      "offset_s": -15.7
+     },
+     {
+      "utc": "2023-03-05T16:42:52",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 27 (HUL) - MULTIPLE TRACK LIMITS",
+      "offset_s": -0.7
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-HUL-165025": {
+   "clip_id": "2023-bahrain-r-HUL-165025",
+   "utc": "2023-03-05T16:42:52.674000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.2,
+    "track_temp_c": 28.7,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.5,
+    "wind_speed_ms": 0.3,
+    "wind_direction_deg": 215,
+    "track_temp_delta_from_start_c": -6.4,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:40:53",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:39.206 DELETED - TRACK LIMITS AT TURN 13 LAP 56 19:37:41",
+      "offset_s": -119.7
+     },
+     {
+      "utc": "2023-03-05T16:42:16",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "INCIDENT INVOLVING CAR 27 (HUL) NOTED - MULTIPLE TRACK LIMITS",
+      "offset_s": -36.7
+     },
+     {
+      "utc": "2023-03-05T16:42:37",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 27 (HUL) UNDER INVESTIGATION - MULTIPLE TRACK LIMITS",
+      "offset_s": -15.7
+     },
+     {
+      "utc": "2023-03-05T16:42:52",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 27 (HUL) - MULTIPLE TRACK LIMITS",
+      "offset_s": -0.7
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-MAG-165155": {
+   "clip_id": "2023-bahrain-r-MAG-165155",
+   "utc": "2023-03-05T16:42:52.674000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.2,
+    "track_temp_c": 28.7,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.5,
+    "wind_speed_ms": 0.3,
+    "wind_direction_deg": 215,
+    "track_temp_delta_from_start_c": -6.4,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:40:53",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:39.206 DELETED - TRACK LIMITS AT TURN 13 LAP 56 19:37:41",
+      "offset_s": -119.7
+     },
+     {
+      "utc": "2023-03-05T16:42:16",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "INCIDENT INVOLVING CAR 27 (HUL) NOTED - MULTIPLE TRACK LIMITS",
+      "offset_s": -36.7
+     },
+     {
+      "utc": "2023-03-05T16:42:37",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 27 (HUL) UNDER INVESTIGATION - MULTIPLE TRACK LIMITS",
+      "offset_s": -15.7
+     },
+     {
+      "utc": "2023-03-05T16:42:52",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 27 (HUL) - MULTIPLE TRACK LIMITS",
+      "offset_s": -0.7
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  },
+  "2023-bahrain-r-BOT-165208": {
+   "clip_id": "2023-bahrain-r-BOT-165208",
+   "utc": "2023-03-05T16:42:52.674000",
+   "lap": null,
+   "phase": "post_race",
+   "resolved_from": "utc",
+   "track": {
+    "air_temp_c": 26.2,
+    "track_temp_c": 28.7,
+    "rainfall": false,
+    "humidity_pct": 21.0,
+    "pressure_hpa": 1017.5,
+    "wind_speed_ms": 0.3,
+    "wind_direction_deg": 215,
+    "track_temp_delta_from_start_c": -6.4,
+    "grip_proxy_s": null,
+    "is_wet": false
+   },
+   "tyre": null,
+   "position": null,
+   "situation": {
+    "position": null,
+    "gap_ahead_s": null,
+    "gap_to_leader_s": null,
+    "track_status": null,
+    "active_flags": [],
+    "nearby_messages": [
+     {
+      "utc": "2023-03-05T16:40:53",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "CAR 27 (HUL) TIME 1:39.206 DELETED - TRACK LIMITS AT TURN 13 LAP 56 19:37:41",
+      "offset_s": -119.7
+     },
+     {
+      "utc": "2023-03-05T16:42:16",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "INCIDENT INVOLVING CAR 27 (HUL) NOTED - MULTIPLE TRACK LIMITS",
+      "offset_s": -36.7
+     },
+     {
+      "utc": "2023-03-05T16:42:37",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: INCIDENT INVOLVING CAR 27 (HUL) UNDER INVESTIGATION - MULTIPLE TRACK LIMITS",
+      "offset_s": -15.7
+     },
+     {
+      "utc": "2023-03-05T16:42:52",
+      "lap": 57,
+      "category": "Other",
+      "flag": null,
+      "scope": null,
+      "message": "FIA STEWARDS: 10 SECOND TIME PENALTY FOR CAR 27 (HUL) - MULTIPLE TRACK LIMITS",
+      "offset_s": -0.7
+     }
+    ],
+    "in_traffic": null
+   },
+   "biometrics": null
+  }
+ },
+ "unmatched_clips": [
+  "2023-bahrain-r-PER-155209"
+ ]
+}

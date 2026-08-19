@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-singapore-r-HUL-150135",
+  "driver": "HUL",
+  "session_id": "2023-singapore-r",
+  "lap": 62,
+  "duration_s": 9.63,
+  "audio_url": "/api/clips/2023-singapore-r-HUL-150135",
+  "transcript": {
+    "text": "Hi Nico, it's I am here. Yeah, you are I, missed the opportunity, really sorry, we should have stopped, stopped under, VSC. You missed out on the points, apologies about that.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 21.7,
+      "f0_mean_z": 1.34,
+      "f0_std_z": -0.565,
+      "rms_mean_z": 0.545,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.257,
+      "jitter_z": 0.92
+    },
+    "acoustic": {
+      "score": 21.3,
+      "probabilities": {
+        "hap": 0.5652,
+        "neu": 0.425,
+        "sad": 0.005,
+        "ang": 0.0048
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 61.8,
+      "probabilities": {
+        "sadness": 0.8634,
+        "surprise": 0.0481,
+        "neutral": 0.048,
+        "disgust": 0.0168,
+        "anger": 0.0087,
+        "fear": 0.0085,
+        "joy": 0.0065
+      },
+      "top_label": "sadness",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.975,
+    "stress_index": 88.8,
+    "probabilities": {
+      "Calm": 0.015,
+      "Stressed": 0.01,
+      "Tired": 0.975
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.565,
+    "stress_index": 21.3,
+    "probabilities": {
+      "Calm": 0.935,
+      "Stressed": 0.005,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3658,
+  "cached": false
+}

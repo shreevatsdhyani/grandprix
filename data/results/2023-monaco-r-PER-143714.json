@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-PER-143714",
+  "driver": "PER",
+  "session_id": "2023-monaco-r",
+  "lap": 26,
+  "duration_s": 2.94,
+  "audio_url": "/api/clips/2023-monaco-r-PER-143714",
+  "transcript": {
+    "text": "One left, my concern. Watch this. Watch the lock here.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 41.8,
+      "f0_mean_z": -1.948,
+      "f0_std_z": -1.747,
+      "rms_mean_z": -1.266,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.27,
+      "jitter_z": -1.593
+    },
+    "acoustic": {
+      "score": 26.4,
+      "probabilities": {
+        "hap": 0.7166,
+        "neu": 0.2276,
+        "ang": 0.0491,
+        "sad": 0.0067
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 82.5,
+      "probabilities": {
+        "fear": 0.9412,
+        "neutral": 0.0283,
+        "anger": 0.0108,
+        "sadness": 0.0097,
+        "disgust": 0.0048,
+        "surprise": 0.0035,
+        "joy": 0.0018
+      },
+      "top_label": "fear",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.998,
+    "stress_index": 89.8,
+    "probabilities": {
+      "Calm": 0.002,
+      "Stressed": 0.0,
+      "Tired": 0.998
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.717,
+    "stress_index": 26.4,
+    "probabilities": {
+      "Calm": 0.894,
+      "Stressed": 0.046,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2360,
+  "cached": false
+}

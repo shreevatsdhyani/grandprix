@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-SAI-160709",
+  "driver": "SAI",
+  "session_id": "2024-monaco-r",
+  "lap": 18,
+  "duration_s": 7.1,
+  "audio_url": "/api/clips/2024-monaco-r-SAI-160709",
+  "transcript": {
+    "text": "Shells managing I guess because that was close with just one love in my family",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 27.6,
+      "f0_mean_z": -1.688,
+      "f0_std_z": -0.833,
+      "rms_mean_z": -0.437,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.494,
+      "jitter_z": 4.474
+    },
+    "acoustic": {
+      "score": 28.4,
+      "probabilities": {
+        "hap": 0.9318,
+        "sad": 0.0378,
+        "ang": 0.0293,
+        "neu": 0.0012
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.8,
+      "probabilities": {
+        "neutral": 0.8797,
+        "joy": 0.0502,
+        "surprise": 0.0343,
+        "sadness": 0.0199,
+        "anger": 0.0085,
+        "disgust": 0.0056,
+        "fear": 0.0018
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.989,
+    "stress_index": 89.0,
+    "probabilities": {
+      "Calm": 0.011,
+      "Stressed": 0.0,
+      "Tired": 0.989
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.932,
+    "stress_index": 28.4,
+    "probabilities": {
+      "Calm": 0.912,
+      "Stressed": 0.028,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2734,
+  "cached": false
+}

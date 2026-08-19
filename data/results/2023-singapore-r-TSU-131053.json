@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-singapore-r-TSU-131053",
+  "driver": "TSU",
+  "session_id": "2023-singapore-r",
+  "lap": 1,
+  "duration_s": 5.25,
+  "audio_url": "/api/clips/2023-singapore-r-TSU-131053",
+  "transcript": {
+    "text": "I have fun chewing I think. Yeah, Paris just, just, Paris, honestly.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 69.5,
+      "f0_mean_z": 5.449,
+      "f0_std_z": 1.537,
+      "rms_mean_z": 0.921,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.781,
+      "jitter_z": 2.231
+    },
+    "acoustic": {
+      "score": 40.8,
+      "probabilities": {
+        "hap": 0.6826,
+        "ang": 0.191,
+        "sad": 0.0825,
+        "neu": 0.0439
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.2,
+      "probabilities": {
+        "joy": 0.4957,
+        "neutral": 0.437,
+        "disgust": 0.0302,
+        "sadness": 0.015,
+        "anger": 0.011,
+        "surprise": 0.0094,
+        "fear": 0.0018
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.999,
+    "stress_index": 99.9,
+    "probabilities": {
+      "Calm": 0.001,
+      "Stressed": 0.999,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.683,
+    "stress_index": 40.8,
+    "probabilities": {
+      "Calm": 0.76,
+      "Stressed": 0.18,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1633,
+  "cached": false
+}

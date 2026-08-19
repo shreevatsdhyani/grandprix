@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-singapore-r-HAM-143747",
+  "driver": "HAM",
+  "session_id": "2023-singapore-r",
+  "lap": 55,
+  "duration_s": 6.82,
+  "audio_url": "/api/clips/2023-singapore-r-HAM-143747",
+  "transcript": {
+    "text": "7 seconds Norris The typical gap was to catch negative, let's go for it",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 15.4,
+      "f0_mean_z": 0.0,
+      "f0_std_z": 0.0,
+      "rms_mean_z": -1.677,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.246,
+      "jitter_z": 0.0
+    },
+    "acoustic": {
+      "score": 25.3,
+      "probabilities": {
+        "hap": 0.9601,
+        "neu": 0.0313,
+        "ang": 0.0086,
+        "sad": 0.0001
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.8,
+      "probabilities": {
+        "neutral": 0.9658,
+        "anger": 0.0121,
+        "surprise": 0.0087,
+        "disgust": 0.0055,
+        "sadness": 0.0029,
+        "fear": 0.0026,
+        "joy": 0.0024
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.842,
+    "stress_index": 14.5,
+    "probabilities": {
+      "Calm": 0.842,
+      "Stressed": 0.024,
+      "Tired": 0.134
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.96,
+    "stress_index": 25.3,
+    "probabilities": {
+      "Calm": 0.932,
+      "Stressed": 0.008,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2646,
+  "cached": false
+}

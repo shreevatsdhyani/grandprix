@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-BOT-150813",
+  "driver": "BOT",
+  "session_id": "2023-monaco-r",
+  "lap": 50,
+  "duration_s": 3.04,
+  "audio_url": "/api/clips/2023-monaco-r-BOT-150813",
+  "transcript": {
+    "text": "Suggest special two for turn six through eight.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 41.9,
+      "f0_mean_z": -2.142,
+      "f0_std_z": -2.031,
+      "rms_mean_z": -0.085,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.978,
+      "jitter_z": -0.956
+    },
+    "acoustic": {
+      "score": 40.9,
+      "probabilities": {
+        "neu": 0.6045,
+        "ang": 0.3118,
+        "hap": 0.0798,
+        "sad": 0.0038
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.1,
+      "probabilities": {
+        "neutral": 0.9739,
+        "surprise": 0.0102,
+        "anger": 0.004,
+        "disgust": 0.0039,
+        "joy": 0.0033,
+        "sadness": 0.0032,
+        "fear": 0.0014
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.57,
+    "stress_index": 51.4,
+    "probabilities": {
+      "Calm": 0.429,
+      "Stressed": 0.001,
+      "Tired": 0.57
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.605,
+    "stress_index": 40.9,
+    "probabilities": {
+      "Calm": 0.647,
+      "Stressed": 0.293,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2490,
+  "cached": false
+}

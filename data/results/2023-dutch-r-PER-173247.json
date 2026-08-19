@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-PER-173247",
+  "driver": "PER",
+  "session_id": "2023-dutch-r",
+  "lap": 72,
+  "duration_s": 23.3,
+  "audio_url": "/api/clips/2023-dutch-r-PER-173247",
+  "transcript": {
+    "text": "Hard like Cheko, unfortunately the speeding was on the way into the pit lane for the red flag. I assume. It was a good drive today. It was a good drive. A great call on our first lap. Ah, what a shame. Sorry the tires weren't ready on the second one, which was at late call, but we very very late into the pit lane.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 14.4,
+      "f0_mean_z": -1.282,
+      "f0_std_z": 0.093,
+      "rms_mean_z": -0.285,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.145,
+      "jitter_z": -0.242
+    },
+    "acoustic": {
+      "score": 27.0,
+      "probabilities": {
+        "hap": 0.9145,
+        "sad": 0.062,
+        "neu": 0.0229,
+        "ang": 0.0006
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 55.0,
+      "probabilities": {
+        "sadness": 0.6666,
+        "surprise": 0.177,
+        "neutral": 0.1046,
+        "joy": 0.0296,
+        "fear": 0.0138,
+        "disgust": 0.0057,
+        "anger": 0.0027
+      },
+      "top_label": "sadness",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.731,
+    "stress_index": 67.0,
+    "probabilities": {
+      "Calm": 0.257,
+      "Stressed": 0.012,
+      "Tired": 0.731
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.914,
+    "stress_index": 27.0,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3639,
+  "cached": false
+}

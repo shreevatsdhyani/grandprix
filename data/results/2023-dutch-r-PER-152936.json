@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-PER-152936",
+  "driver": "PER",
+  "session_id": "2023-dutch-r",
+  "lap": 18,
+  "duration_s": 6.37,
+  "audio_url": "/api/clips/2023-dutch-r-PER-152936",
+  "transcript": {
+    "text": "Is there more rain expected? There are cells on the radar, first one, 35 minutes away.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 20.3,
+      "f0_mean_z": 0.613,
+      "f0_std_z": 1.124,
+      "rms_mean_z": -0.324,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.472,
+      "jitter_z": -0.106
+    },
+    "acoustic": {
+      "score": 25.0,
+      "probabilities": {
+        "hap": 0.6741,
+        "neu": 0.2843,
+        "ang": 0.0399,
+        "sad": 0.0017
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 20.7,
+      "probabilities": {
+        "neutral": 0.827,
+        "surprise": 0.1421,
+        "sadness": 0.0102,
+        "anger": 0.0067,
+        "joy": 0.0063,
+        "fear": 0.0051,
+        "disgust": 0.0026
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.753,
+    "stress_index": 24.1,
+    "probabilities": {
+      "Calm": 0.753,
+      "Stressed": 0.191,
+      "Tired": 0.056
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.674,
+    "stress_index": 25.0,
+    "probabilities": {
+      "Calm": 0.902,
+      "Stressed": 0.038,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1781,
+  "cached": false
+}

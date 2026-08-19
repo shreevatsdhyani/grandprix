@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-OCO-131556",
+  "driver": "OCO",
+  "session_id": "2023-dutch-r",
+  "lap": null,
+  "duration_s": 18.85,
+  "audio_url": "/api/clips/2023-dutch-r-OCO-131556",
+  "transcript": {
+    "text": "Okay mate, so it'll be recharge on it, turn 7 this time. How's the balance please? Bands is okay so far. Okay mate, keep your pace up and go to the grid, please go to the grid. Okay mate, and if you can test your drinks kit, if you haven't already as well. Okay, go to the back of the grid. Come to a stop and go to P1.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 27.3,
+      "f0_mean_z": 0.008,
+      "f0_std_z": 1.281,
+      "rms_mean_z": -1.054,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.069,
+      "jitter_z": 1.34
+    },
+    "acoustic": {
+      "score": 27.8,
+      "probabilities": {
+        "hap": 0.9459,
+        "ang": 0.0384,
+        "neu": 0.0105,
+        "sad": 0.0052
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 24.5,
+      "probabilities": {
+        "neutral": 0.842,
+        "anger": 0.0532,
+        "disgust": 0.0435,
+        "fear": 0.0267,
+        "sadness": 0.0228,
+        "joy": 0.0072,
+        "surprise": 0.0046
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.691,
+    "stress_index": 29.0,
+    "probabilities": {
+      "Calm": 0.691,
+      "Stressed": 0.114,
+      "Tired": 0.196
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.946,
+    "stress_index": 27.8,
+    "probabilities": {
+      "Calm": 0.904,
+      "Stressed": 0.036,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3555,
+  "cached": false
+}

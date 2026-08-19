@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-PIA-170051",
+  "driver": "PIA",
+  "session_id": "2023-sao-paulo-r",
+  "lap": null,
+  "duration_s": 18.71,
+  "audio_url": "/api/clips/2023-sao-paulo-r-PIA-170051",
+  "transcript": {
+    "text": "car tire info almost all the cars on soft tires the only new medium starter is sergeant in p19 the new soft cars are LeClaire strol Holkenberg Magnuson Ricardo Botas and Joe have a good race thank you",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 14.8,
+      "f0_mean_z": -1.175,
+      "f0_std_z": -0.498,
+      "rms_mean_z": -0.073,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.1,
+      "jitter_z": -0.782
+    },
+    "acoustic": {
+      "score": 59.1,
+      "probabilities": {
+        "ang": 0.4246,
+        "hap": 0.2428,
+        "sad": 0.1708,
+        "neu": 0.1618
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 22.2,
+      "probabilities": {
+        "neutral": 0.4197,
+        "joy": 0.3144,
+        "surprise": 0.2359,
+        "sadness": 0.022,
+        "anger": 0.0049,
+        "fear": 0.0018,
+        "disgust": 0.0013
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.509,
+    "stress_index": 45.6,
+    "probabilities": {
+      "Calm": 0.509,
+      "Stressed": 0.145,
+      "Tired": 0.346
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.425,
+    "stress_index": 59.1,
+    "probabilities": {
+      "Calm": 0.541,
+      "Stressed": 0.399,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3197,
+  "cached": false
+}

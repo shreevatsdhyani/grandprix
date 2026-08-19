@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-VER-150635",
+  "driver": "VER",
+  "session_id": "2023-monaco-r",
+  "lap": 50,
+  "duration_s": 3.46,
+  "audio_url": "/api/clips/2023-monaco-r-VER-150635",
+  "transcript": {
+    "text": "maybe drop some rain around turn six to turn eight.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 21.7,
+      "f0_mean_z": -0.077,
+      "f0_std_z": -0.881,
+      "rms_mean_z": -0.152,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.603,
+      "jitter_z": -0.812
+    },
+    "acoustic": {
+      "score": 19.8,
+      "probabilities": {
+        "neu": 0.6345,
+        "hap": 0.3427,
+        "sad": 0.0129,
+        "ang": 0.0099
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.7,
+      "probabilities": {
+        "neutral": 0.9597,
+        "surprise": 0.0153,
+        "sadness": 0.0088,
+        "joy": 0.0046,
+        "anger": 0.0046,
+        "fear": 0.0035,
+        "disgust": 0.0034
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.891,
+    "stress_index": 10.0,
+    "probabilities": {
+      "Calm": 0.891,
+      "Stressed": 0.014,
+      "Tired": 0.095
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.634,
+    "stress_index": 19.8,
+    "probabilities": {
+      "Calm": 0.931,
+      "Stressed": 0.009,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2522,
+  "cached": false
+}

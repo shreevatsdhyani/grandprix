@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-VER-161813",
+  "driver": "VER",
+  "session_id": "2023-dutch-r",
+  "lap": 56,
+  "duration_s": 6.43,
+  "audio_url": "/api/clips/2023-dutch-r-VER-161813",
+  "transcript": {
+    "text": "So we are expecting rain around 10 laps from the end max, some of which could be pretty heavy.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 18.1,
+      "f0_mean_z": -0.659,
+      "f0_std_z": -0.884,
+      "rms_mean_z": 0.23,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.493,
+      "jitter_z": -0.741
+    },
+    "acoustic": {
+      "score": 25.2,
+      "probabilities": {
+        "hap": 0.985,
+        "neu": 0.0086,
+        "sad": 0.0046,
+        "ang": 0.0018
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 22.1,
+      "probabilities": {
+        "neutral": 0.8512,
+        "sadness": 0.069,
+        "surprise": 0.0336,
+        "fear": 0.0139,
+        "anger": 0.0138,
+        "disgust": 0.0115,
+        "joy": 0.0071
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.673,
+    "stress_index": 29.6,
+    "probabilities": {
+      "Calm": 0.673,
+      "Stressed": 0.023,
+      "Tired": 0.303
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.985,
+    "stress_index": 25.2,
+    "probabilities": {
+      "Calm": 0.938,
+      "Stressed": 0.002,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2210,
+  "cached": false
+}

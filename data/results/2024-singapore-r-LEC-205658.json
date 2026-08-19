@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-LEC-205658",
+  "driver": "LEC",
+  "session_id": "2024-singapore-r",
+  "lap": 33,
+  "duration_s": 2.85,
+  "audio_url": "/api/clips/2024-singapore-r-LEC-205658",
+  "transcript": {
+    "text": "And these labs are crucial. Keep driving like this.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 29.8,
+      "f0_mean_z": -0.246,
+      "f0_std_z": 1.56,
+      "rms_mean_z": -1.143,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.778,
+      "jitter_z": 0.57
+    },
+    "acoustic": {
+      "score": 26.4,
+      "probabilities": {
+        "hap": 0.4669,
+        "neu": 0.4486,
+        "ang": 0.083,
+        "sad": 0.0014
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 22.3,
+      "probabilities": {
+        "neutral": 0.8839,
+        "anger": 0.0615,
+        "disgust": 0.0238,
+        "sadness": 0.0108,
+        "fear": 0.0106,
+        "joy": 0.0048,
+        "surprise": 0.0047
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.812,
+    "stress_index": 18.0,
+    "probabilities": {
+      "Calm": 0.812,
+      "Stressed": 0.11,
+      "Tired": 0.078
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.467,
+    "stress_index": 26.4,
+    "probabilities": {
+      "Calm": 0.862,
+      "Stressed": 0.078,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1607,
+  "cached": false
+}

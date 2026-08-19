@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-singapore-r-LEC-131913",
+  "driver": "LEC",
+  "session_id": "2023-singapore-r",
+  "lap": 10,
+  "duration_s": 7.9,
+  "audio_url": "/api/clips/2023-singapore-r-LEC-131913",
+  "transcript": {
+    "text": "and target gap to sign we need three seconds at the moment it's 1.0",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 7.2,
+      "f0_mean_z": -0.081,
+      "f0_std_z": -0.056,
+      "rms_mean_z": -0.406,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.356,
+      "jitter_z": 1.154
+    },
+    "acoustic": {
+      "score": 27.8,
+      "probabilities": {
+        "hap": 0.8564,
+        "neu": 0.0874,
+        "ang": 0.0474,
+        "sad": 0.0088
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 19.9,
+      "probabilities": {
+        "neutral": 0.8782,
+        "surprise": 0.0671,
+        "fear": 0.0185,
+        "anger": 0.0141,
+        "joy": 0.0098,
+        "sadness": 0.0092,
+        "disgust": 0.0031
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.623,
+    "stress_index": 34.2,
+    "probabilities": {
+      "Calm": 0.623,
+      "Stressed": 0.03,
+      "Tired": 0.347
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.856,
+    "stress_index": 27.8,
+    "probabilities": {
+      "Calm": 0.895,
+      "Stressed": 0.045,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2993,
+  "cached": false
+}

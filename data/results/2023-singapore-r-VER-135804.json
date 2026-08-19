@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-singapore-r-VER-135804",
+  "driver": "VER",
+  "session_id": "2023-singapore-r",
+  "lap": 33,
+  "duration_s": 2.53,
+  "audio_url": "/api/clips/2023-singapore-r-VER-135804",
+  "transcript": {
+    "text": "So driving on ice.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 52.2,
+      "f0_mean_z": 2.839,
+      "f0_std_z": -0.938,
+      "rms_mean_z": 0.589,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 2.164,
+      "jitter_z": -1.363
+    },
+    "acoustic": {
+      "score": 25.9,
+      "probabilities": {
+        "hap": 0.6622,
+        "neu": 0.2839,
+        "ang": 0.0535,
+        "sad": 0.0004
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 70.3,
+      "probabilities": {
+        "fear": 0.6343,
+        "neutral": 0.1601,
+        "sadness": 0.1119,
+        "anger": 0.0465,
+        "disgust": 0.0234,
+        "surprise": 0.0183,
+        "joy": 0.0056
+      },
+      "top_label": "fear",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.887,
+    "stress_index": 89.6,
+    "probabilities": {
+      "Calm": 0.014,
+      "Stressed": 0.098,
+      "Tired": 0.887
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.662,
+    "stress_index": 25.9,
+    "probabilities": {
+      "Calm": 0.89,
+      "Stressed": 0.05,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2280,
+  "cached": false
+}

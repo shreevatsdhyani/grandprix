@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-LEC-211423",
+  "driver": "LEC",
+  "session_id": "2024-singapore-r",
+  "lap": 43,
+  "duration_s": 3.14,
+  "audio_url": "/api/clips/2024-singapore-r-LEC-211423",
+  "transcript": {
+    "text": "If you keep this pace, we should catch Hamilton at the end.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 9.9,
+      "f0_mean_z": 0.389,
+      "f0_std_z": 0.552,
+      "rms_mean_z": -0.093,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.201,
+      "jitter_z": 2.262
+    },
+    "acoustic": {
+      "score": 29.3,
+      "probabilities": {
+        "neu": 0.6081,
+        "hap": 0.2422,
+        "ang": 0.1455,
+        "sad": 0.0042
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.1,
+      "probabilities": {
+        "neutral": 0.9399,
+        "surprise": 0.0187,
+        "anger": 0.0186,
+        "fear": 0.0115,
+        "sadness": 0.0041,
+        "joy": 0.0038,
+        "disgust": 0.0036
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.551,
+    "stress_index": 41.8,
+    "probabilities": {
+      "Calm": 0.551,
+      "Stressed": 0.14,
+      "Tired": 0.309
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.608,
+    "stress_index": 29.3,
+    "probabilities": {
+      "Calm": 0.803,
+      "Stressed": 0.137,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1741,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-ALO-151907",
+  "driver": "ALO",
+  "session_id": "2023-dutch-r",
+  "lap": 56,
+  "duration_s": 2.69,
+  "audio_url": "/api/clips/2023-dutch-r-ALO-151907",
+  "transcript": {
+    "text": "When the rain comes it will be heavier than the start of the rain.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 27.6,
+      "f0_mean_z": -0.128,
+      "f0_std_z": -1.007,
+      "rms_mean_z": 0.388,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.929,
+      "jitter_z": -0.16
+    },
+    "acoustic": {
+      "score": 23.3,
+      "probabilities": {
+        "hap": 0.7645,
+        "neu": 0.2271,
+        "ang": 0.0068,
+        "sad": 0.0016
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 37.2,
+      "probabilities": {
+        "neutral": 0.5856,
+        "sadness": 0.1717,
+        "disgust": 0.1488,
+        "fear": 0.0494,
+        "anger": 0.0202,
+        "surprise": 0.0156,
+        "joy": 0.0086
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.638,
+    "stress_index": 60.0,
+    "probabilities": {
+      "Calm": 0.335,
+      "Stressed": 0.026,
+      "Tired": 0.638
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.764,
+    "stress_index": 23.3,
+    "probabilities": {
+      "Calm": 0.934,
+      "Stressed": 0.006,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1881,
+  "cached": false
+}

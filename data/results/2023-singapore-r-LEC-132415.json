@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-singapore-r-LEC-132415",
+  "driver": "LEC",
+  "session_id": "2023-singapore-r",
+  "lap": 13,
+  "duration_s": 5.34,
+  "audio_url": "/api/clips/2023-singapore-r-LEC-132415",
+  "transcript": {
+    "text": "I think Carlos is a clung up. Copy understood.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 22.9,
+      "f0_mean_z": 0.552,
+      "f0_std_z": -1.768,
+      "rms_mean_z": 0.216,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.322,
+      "jitter_z": 0.064
+    },
+    "acoustic": {
+      "score": 32.1,
+      "probabilities": {
+        "hap": 0.4424,
+        "neu": 0.2875,
+        "sad": 0.2556,
+        "ang": 0.0146
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.3,
+      "probabilities": {
+        "neutral": 0.9147,
+        "surprise": 0.0436,
+        "disgust": 0.0205,
+        "joy": 0.0076,
+        "sadness": 0.0064,
+        "anger": 0.0058,
+        "fear": 0.0014
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.787,
+    "stress_index": 72.7,
+    "probabilities": {
+      "Calm": 0.194,
+      "Stressed": 0.019,
+      "Tired": 0.787
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.442,
+    "stress_index": 32.1,
+    "probabilities": {
+      "Calm": 0.926,
+      "Stressed": 0.014,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2498,
+  "cached": false
+}

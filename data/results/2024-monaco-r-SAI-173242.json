@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-SAI-173242",
+  "driver": "SAI",
+  "session_id": "2024-monaco-r",
+  "lap": 78,
+  "duration_s": 8.1,
+  "audio_url": "/api/clips/2024-monaco-r-SAI-173242",
+  "transcript": {
+    "text": "Yeah, congrats guys. Great weekend for the thing of our Charles. Very happy for you guys, up for him. Congrats.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 34.4,
+      "f0_mean_z": -0.019,
+      "f0_std_z": 1.74,
+      "rms_mean_z": -2.415,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.127,
+      "jitter_z": 0.821
+    },
+    "acoustic": {
+      "score": 26.4,
+      "probabilities": {
+        "hap": 0.9594,
+        "sad": 0.0388,
+        "neu": 0.0016,
+        "ang": 0.0003
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 11.1,
+      "probabilities": {
+        "joy": 0.9597,
+        "surprise": 0.0175,
+        "neutral": 0.0169,
+        "sadness": 0.0029,
+        "anger": 0.0017,
+        "disgust": 0.0008,
+        "fear": 0.0003
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.948,
+    "stress_index": 5.1,
+    "probabilities": {
+      "Calm": 0.948,
+      "Stressed": 0.042,
+      "Tired": 0.01
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.959,
+    "stress_index": 26.4,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1999,
+  "cached": false
+}

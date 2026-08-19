@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-OCO-144015",
+  "driver": "OCO",
+  "session_id": "2023-monaco-r",
+  "lap": 29,
+  "duration_s": 6.66,
+  "audio_url": "/api/clips/2023-monaco-r-OCO-144015",
+  "transcript": {
+    "text": "Tell me when you want maximum phase. Yeah, we'll do keep what you're doing for now, please. Briary, again, frustrated behind him, keep it up.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 31.1,
+      "f0_mean_z": 1.388,
+      "f0_std_z": 1.856,
+      "rms_mean_z": 0.137,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.502,
+      "jitter_z": -0.817
+    },
+    "acoustic": {
+      "score": 24.9,
+      "probabilities": {
+        "neu": 0.4744,
+        "hap": 0.4196,
+        "sad": 0.0788,
+        "ang": 0.0272
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 80.5,
+      "probabilities": {
+        "anger": 0.8384,
+        "neutral": 0.1102,
+        "disgust": 0.0273,
+        "sadness": 0.0132,
+        "fear": 0.0048,
+        "surprise": 0.0042,
+        "joy": 0.0019
+      },
+      "top_label": "anger",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.583,
+    "stress_index": 75.5,
+    "probabilities": {
+      "Calm": 0.226,
+      "Stressed": 0.583,
+      "Tired": 0.191
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.474,
+    "stress_index": 24.9,
+    "probabilities": {
+      "Calm": 0.914,
+      "Stressed": 0.026,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3064,
+  "cached": false
+}

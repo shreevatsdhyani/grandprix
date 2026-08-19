@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-DEV-131611",
+  "driver": "DEV",
+  "session_id": "2023-monaco-r",
+  "lap": null,
+  "duration_s": 2.98,
+  "audio_url": "/api/clips/2023-monaco-r-DEV-131611",
+  "transcript": {
+    "text": "Copy dots on drink system tests before you jump out.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 43.6,
+      "f0_mean_z": 2.883,
+      "f0_std_z": 1.246,
+      "rms_mean_z": -0.552,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.764,
+      "jitter_z": 1.324
+    },
+    "acoustic": {
+      "score": 44.6,
+      "probabilities": {
+        "neu": 0.3493,
+        "ang": 0.3287,
+        "hap": 0.3197,
+        "sad": 0.0024
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 20.1,
+      "probabilities": {
+        "neutral": 0.9105,
+        "fear": 0.0443,
+        "surprise": 0.018,
+        "disgust": 0.0133,
+        "anger": 0.0071,
+        "sadness": 0.0044,
+        "joy": 0.0024
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.97,
+    "stress_index": 97.3,
+    "probabilities": {
+      "Calm": 0.027,
+      "Stressed": 0.97,
+      "Tired": 0.003
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.349,
+    "stress_index": 44.6,
+    "probabilities": {
+      "Calm": 0.631,
+      "Stressed": 0.309,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1630,
+  "cached": false
+}

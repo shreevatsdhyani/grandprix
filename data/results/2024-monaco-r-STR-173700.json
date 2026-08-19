@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-STR-173700",
+  "driver": "STR",
+  "session_id": "2024-monaco-r",
+  "lap": 76,
+  "duration_s": 8.42,
+  "audio_url": "/api/clips/2024-monaco-r-STR-173700",
+  "transcript": {
+    "text": "So just a couple of things. Yeah, sorry about that. It's okay mate, don't worry, we're pretty, we're kind something, so that's very good. There's nothing else on the table, so it's worth a go, isn't it?",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 27.0,
+      "f0_mean_z": -1.172,
+      "f0_std_z": -1.086,
+      "rms_mean_z": -0.421,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.701,
+      "jitter_z": -1.12
+    },
+    "acoustic": {
+      "score": 26.7,
+      "probabilities": {
+        "hap": 0.7978,
+        "neu": 0.1295,
+        "sad": 0.059,
+        "ang": 0.0137
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 25.9,
+      "probabilities": {
+        "neutral": 0.595,
+        "joy": 0.211,
+        "anger": 0.0568,
+        "disgust": 0.0558,
+        "fear": 0.0441,
+        "sadness": 0.022,
+        "surprise": 0.0152
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.685,
+    "stress_index": 28.4,
+    "probabilities": {
+      "Calm": 0.685,
+      "Stressed": 0.004,
+      "Tired": 0.311
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.798,
+    "stress_index": 26.7,
+    "probabilities": {
+      "Calm": 0.927,
+      "Stressed": 0.013,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2249,
+  "cached": false
+}

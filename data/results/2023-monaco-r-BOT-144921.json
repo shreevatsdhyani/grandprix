@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-BOT-144921",
+  "driver": "BOT",
+  "session_id": "2023-monaco-r",
+  "lap": 36,
+  "duration_s": 2.14,
+  "audio_url": "/api/clips/2023-monaco-r-BOT-144921",
+  "transcript": {
+    "text": "This is getting frustrating, it's so slow.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 10.9,
+      "f0_mean_z": 0.0,
+      "f0_std_z": 0.0,
+      "rms_mean_z": -0.407,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.952,
+      "jitter_z": 0.0
+    },
+    "acoustic": {
+      "score": 42.3,
+      "probabilities": {
+        "hap": 0.6512,
+        "ang": 0.1737,
+        "sad": 0.1541,
+        "neu": 0.021
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 55.7,
+      "probabilities": {
+        "sadness": 0.3911,
+        "neutral": 0.1928,
+        "disgust": 0.1541,
+        "surprise": 0.1479,
+        "anger": 0.0934,
+        "fear": 0.0174,
+        "joy": 0.0033
+      },
+      "top_label": "sadness",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.834,
+    "stress_index": 80.6,
+    "probabilities": {
+      "Calm": 0.11,
+      "Stressed": 0.055,
+      "Tired": 0.834
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.651,
+    "stress_index": 42.3,
+    "probabilities": {
+      "Calm": 0.777,
+      "Stressed": 0.163,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2400,
+  "cached": false
+}

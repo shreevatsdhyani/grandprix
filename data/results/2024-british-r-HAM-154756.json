@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-british-r-HAM-154756",
+  "driver": "HAM",
+  "session_id": "2024-british-r",
+  "lap": 29,
+  "duration_s": 1.38,
+  "audio_url": "/api/clips/2024-british-r-HAM-154756",
+  "transcript": {
+    "text": "If you lose, this is our time.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 23.4,
+      "f0_mean_z": 0.0,
+      "f0_std_z": 0.0,
+      "rms_mean_z": -1.27,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.658,
+      "jitter_z": 0.0
+    },
+    "acoustic": {
+      "score": 21.4,
+      "probabilities": {
+        "hap": 0.631,
+        "neu": 0.3671,
+        "sad": 0.0014,
+        "ang": 0.0006
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 25.9,
+      "probabilities": {
+        "neutral": 0.8314,
+        "anger": 0.0935,
+        "disgust": 0.031,
+        "sadness": 0.0252,
+        "fear": 0.0107,
+        "surprise": 0.0052,
+        "joy": 0.0029
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.671,
+    "stress_index": 30.1,
+    "probabilities": {
+      "Calm": 0.671,
+      "Stressed": 0.051,
+      "Tired": 0.278
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.631,
+    "stress_index": 21.4,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1639,
+  "cached": false
+}

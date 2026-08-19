@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-ALB-215542",
+  "driver": "ALB",
+  "session_id": "2024-singapore-r",
+  "lap": 15,
+  "duration_s": 1.5,
+  "audio_url": "/api/clips/2024-singapore-r-ALB-215542",
+  "transcript": {
+    "text": "Brilliant, brilliant race.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 42.2,
+      "f0_mean_z": 1.624,
+      "f0_std_z": -0.814,
+      "rms_mean_z": -1.384,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.457,
+      "jitter_z": -0.557
+    },
+    "acoustic": {
+      "score": 25.0,
+      "probabilities": {
+        "hap": 0.9981,
+        "neu": 0.0009,
+        "sad": 0.0008,
+        "ang": 0.0001
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 13.5,
+      "probabilities": {
+        "joy": 0.8788,
+        "neutral": 0.0624,
+        "surprise": 0.0282,
+        "fear": 0.0202,
+        "sadness": 0.0042,
+        "disgust": 0.0032,
+        "anger": 0.003
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.613,
+    "stress_index": 36.8,
+    "probabilities": {
+      "Calm": 0.613,
+      "Stressed": 0.194,
+      "Tired": 0.193
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.998,
+    "stress_index": 25.0,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1415,
+  "cached": false
+}

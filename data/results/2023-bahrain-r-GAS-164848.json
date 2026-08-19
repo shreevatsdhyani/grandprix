@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-GAS-164848",
+  "driver": "GAS",
+  "session_id": "2023-bahrain-r",
+  "lap": 57,
+  "duration_s": 30.0,
+  "audio_url": "/api/clips/2023-bahrain-r-GAS-164848",
+  "transcript": {
+    "text": "Okay, I did. There's a P9. So can I go, Senio 12, please? Senio 12. Nice work, mate there. Impressive, fast stint. Good to get in the points on your first race with us. We know where to work on, and we'll definitely get some more points. It's a good start, mate.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 28.8,
+      "f0_mean_z": -0.688,
+      "f0_std_z": 2.267,
+      "rms_mean_z": -0.083,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.559,
+      "jitter_z": 2.426
+    },
+    "acoustic": {
+      "score": 21.2,
+      "probabilities": {
+        "hap": 0.6141,
+        "neu": 0.3852,
+        "sad": 0.0005,
+        "ang": 0.0002
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 13.5,
+      "probabilities": {
+        "joy": 0.6572,
+        "neutral": 0.3014,
+        "surprise": 0.0235,
+        "disgust": 0.0065,
+        "sadness": 0.0044,
+        "anger": 0.0043,
+        "fear": 0.0027
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.967,
+    "stress_index": 3.1,
+    "probabilities": {
+      "Calm": 0.967,
+      "Stressed": 0.018,
+      "Tired": 0.014
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.614,
+    "stress_index": 21.2,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 5192,
+  "cached": false
+}

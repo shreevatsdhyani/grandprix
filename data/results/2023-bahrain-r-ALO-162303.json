@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-ALO-162303",
+  "driver": "ALO",
+  "session_id": "2023-bahrain-r",
+  "lap": 48,
+  "duration_s": 4.67,
+  "audio_url": "/api/clips/2023-bahrain-r-ALO-162303",
+  "transcript": {
+    "text": "We are okay on show and all these things not. Everything is great. Everything is good.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 34.7,
+      "f0_mean_z": 0.667,
+      "f0_std_z": 1.202,
+      "rms_mean_z": -1.744,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.728,
+      "jitter_z": 1.766
+    },
+    "acoustic": {
+      "score": 33.5,
+      "probabilities": {
+        "hap": 0.6025,
+        "sad": 0.2417,
+        "neu": 0.1363,
+        "ang": 0.0196
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.7,
+      "probabilities": {
+        "neutral": 0.7607,
+        "joy": 0.1638,
+        "disgust": 0.0341,
+        "anger": 0.0222,
+        "sadness": 0.0102,
+        "fear": 0.0048,
+        "surprise": 0.0042
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.664,
+    "stress_index": 32.5,
+    "probabilities": {
+      "Calm": 0.664,
+      "Stressed": 0.233,
+      "Tired": 0.102
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.603,
+    "stress_index": 33.5,
+    "probabilities": {
+      "Calm": 0.922,
+      "Stressed": 0.018,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2496,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-STR-155420",
+  "driver": "STR",
+  "session_id": "2023-bahrain-r",
+  "lap": 31,
+  "duration_s": 5.14,
+  "audio_url": "/api/clips/2023-bahrain-r-STR-155420",
+  "transcript": {
+    "text": "Kay Lance, let's push up to Russell. Use the tires, push up to Russell. I can't push the Russ over a heap.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 24.6,
+      "f0_mean_z": -0.039,
+      "f0_std_z": -1.848,
+      "rms_mean_z": 0.528,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.656,
+      "jitter_z": -0.946
+    },
+    "acoustic": {
+      "score": 29.4,
+      "probabilities": {
+        "neu": 0.4859,
+        "hap": 0.3539,
+        "ang": 0.1051,
+        "sad": 0.0551
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 37.7,
+      "probabilities": {
+        "neutral": 0.6469,
+        "anger": 0.1766,
+        "fear": 0.0759,
+        "disgust": 0.0423,
+        "sadness": 0.0281,
+        "surprise": 0.0153,
+        "joy": 0.0149
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.871,
+    "stress_index": 79.0,
+    "probabilities": {
+      "Calm": 0.122,
+      "Stressed": 0.006,
+      "Tired": 0.871
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.486,
+    "stress_index": 29.4,
+    "probabilities": {
+      "Calm": 0.841,
+      "Stressed": 0.099,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2880,
+  "cached": false
+}

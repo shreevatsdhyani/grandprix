@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-HAM-184621",
+  "driver": "HAM",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 60,
+  "duration_s": 4.03,
+  "audio_url": "/api/clips/2023-sao-paulo-r-HAM-184621",
+  "transcript": {
+    "text": "What happened? The choice looks like an issue on the cooling system.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 27.7,
+      "f0_mean_z": 0.985,
+      "f0_std_z": 1.965,
+      "rms_mean_z": -0.033,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.481,
+      "jitter_z": 0.701
+    },
+    "acoustic": {
+      "score": 24.6,
+      "probabilities": {
+        "hap": 0.9386,
+        "neu": 0.0584,
+        "ang": 0.0022,
+        "sad": 0.0008
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 41.3,
+      "probabilities": {
+        "surprise": 0.5992,
+        "neutral": 0.2649,
+        "anger": 0.0476,
+        "disgust": 0.0476,
+        "sadness": 0.0238,
+        "fear": 0.0137,
+        "joy": 0.0032
+      },
+      "top_label": "surprise",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.511,
+    "stress_index": 47.9,
+    "probabilities": {
+      "Calm": 0.511,
+      "Stressed": 0.384,
+      "Tired": 0.105
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.939,
+    "stress_index": 24.6,
+    "probabilities": {
+      "Calm": 0.938,
+      "Stressed": 0.002,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1904,
+  "cached": false
+}

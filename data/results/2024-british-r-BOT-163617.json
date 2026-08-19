@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-british-r-BOT-163617",
+  "driver": "BOT",
+  "session_id": "2024-british-r",
+  "lap": 51,
+  "duration_s": 19.65,
+  "audio_url": "/api/clips/2024-british-r-BOT-163617",
+  "transcript": {
+    "text": "15 for us? Was it really difficult race, Beltree? But you did well? I think we... Yeah, with the tie changes and with the course, I think it was spot on, we were just lacking some place. Yeah, I was gonna say the exact same thing.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 39.7,
+      "f0_mean_z": -1.005,
+      "f0_std_z": 0.484,
+      "rms_mean_z": 1.887,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.581,
+      "jitter_z": -0.157
+    },
+    "acoustic": {
+      "score": 25.4,
+      "probabilities": {
+        "hap": 0.9842,
+        "sad": 0.0111,
+        "neu": 0.0037,
+        "ang": 0.001
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 28.2,
+      "probabilities": {
+        "neutral": 0.6258,
+        "surprise": 0.2906,
+        "disgust": 0.038,
+        "anger": 0.0146,
+        "sadness": 0.0146,
+        "fear": 0.0091,
+        "joy": 0.0074
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.812,
+    "stress_index": 17.3,
+    "probabilities": {
+      "Calm": 0.812,
+      "Stressed": 0.036,
+      "Tired": 0.152
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.984,
+    "stress_index": 25.4,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3058,
+  "cached": false
+}

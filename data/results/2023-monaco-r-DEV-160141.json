@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-DEV-160141",
+  "driver": "DEV",
+  "session_id": "2023-monaco-r",
+  "lap": 77,
+  "duration_s": 30.0,
+  "audio_url": "/api/clips/2023-monaco-r-DEV-160141",
+  "transcript": {
+    "text": "Okay Nick, so obviously first hint, this middle part of the stint, we really have to understand what's happened there. And then we picked up a very good place. So we'll review that on otherwise. You should be pleased. Clean weekend. You kept it all together and a lot to look forward to. It's what a clean weekend. A lot of work ahead of us, but a lot of positive this weekend. Where at least are nice? P12.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 55.8,
+      "f0_mean_z": 2.878,
+      "f0_std_z": 0.69,
+      "rms_mean_z": 2.761,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.645,
+      "jitter_z": 0.538
+    },
+    "acoustic": {
+      "score": 28.9,
+      "probabilities": {
+        "hap": 0.9086,
+        "sad": 0.0467,
+        "ang": 0.0333,
+        "neu": 0.0114
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 14.7,
+      "probabilities": {
+        "joy": 0.5161,
+        "neutral": 0.4337,
+        "surprise": 0.0245,
+        "sadness": 0.0109,
+        "disgust": 0.0074,
+        "anger": 0.0064,
+        "fear": 0.0011
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.877,
+    "stress_index": 88.0,
+    "probabilities": {
+      "Calm": 0.12,
+      "Stressed": 0.877,
+      "Tired": 0.003
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.909,
+    "stress_index": 28.9,
+    "probabilities": {
+      "Calm": 0.909,
+      "Stressed": 0.031,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3673,
+  "cached": false
+}

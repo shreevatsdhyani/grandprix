@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-MAG-151909",
+  "driver": "MAG",
+  "session_id": "2023-monaco-r",
+  "lap": 56,
+  "duration_s": 3.26,
+  "audio_url": "/api/clips/2023-monaco-r-MAG-151909",
+  "transcript": {
+    "text": "We're going to box for full wets, Kevin. We're going to box for full wets.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 27.3,
+      "f0_mean_z": 1.383,
+      "f0_std_z": 0.862,
+      "rms_mean_z": 0.454,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.709,
+      "jitter_z": 2.25
+    },
+    "acoustic": {
+      "score": 26.5,
+      "probabilities": {
+        "neu": 0.6264,
+        "hap": 0.2622,
+        "ang": 0.1112,
+        "sad": 0.0002
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.7,
+      "probabilities": {
+        "neutral": 0.9494,
+        "surprise": 0.0184,
+        "joy": 0.0128,
+        "disgust": 0.0065,
+        "sadness": 0.0057,
+        "anger": 0.0051,
+        "fear": 0.0021
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.537,
+    "stress_index": 45.3,
+    "probabilities": {
+      "Calm": 0.537,
+      "Stressed": 0.362,
+      "Tired": 0.101
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.626,
+    "stress_index": 26.5,
+    "probabilities": {
+      "Calm": 0.835,
+      "Stressed": 0.105,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2684,
+  "cached": false
+}

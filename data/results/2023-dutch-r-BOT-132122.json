@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-BOT-132122",
+  "driver": "BOT",
+  "session_id": "2023-dutch-r",
+  "lap": null,
+  "duration_s": 7.58,
+  "audio_url": "/api/clips/2023-dutch-r-BOT-132122",
+  "transcript": {
+    "text": "40 minutes ago, all cars on great except MacLusan, the race start will be tried.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 42.4,
+      "f0_mean_z": 1.597,
+      "f0_std_z": 0.949,
+      "rms_mean_z": -1.494,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.266,
+      "jitter_z": -0.898
+    },
+    "acoustic": {
+      "score": 27.7,
+      "probabilities": {
+        "hap": 0.8529,
+        "neu": 0.0777,
+        "sad": 0.0406,
+        "ang": 0.0288
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 22.4,
+      "probabilities": {
+        "neutral": 0.8087,
+        "surprise": 0.1049,
+        "sadness": 0.055,
+        "fear": 0.0087,
+        "anger": 0.0083,
+        "joy": 0.0082,
+        "disgust": 0.0061
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.54,
+    "stress_index": 45.6,
+    "probabilities": {
+      "Calm": 0.54,
+      "Stressed": 0.418,
+      "Tired": 0.042
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.853,
+    "stress_index": 27.7,
+    "probabilities": {
+      "Calm": 0.913,
+      "Stressed": 0.027,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2310,
+  "cached": false
+}

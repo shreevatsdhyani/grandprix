@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-ALB-143905",
+  "driver": "ALB",
+  "session_id": "2023-dutch-r",
+  "lap": 24,
+  "duration_s": 6.75,
+  "audio_url": "/api/clips/2023-dutch-r-ALB-143905",
+  "transcript": {
+    "text": "What the fuck was that? Copy Alex, we saw it, we're on it. Alex, we've reported it, let's just get him next lap.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 100.0,
+      "f0_mean_z": 3.625,
+      "f0_std_z": 7.25,
+      "rms_mean_z": -1.907,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.991,
+      "jitter_z": 4.129
+    },
+    "acoustic": {
+      "score": 27.1,
+      "probabilities": {
+        "hap": 0.9539,
+        "ang": 0.0321,
+        "neu": 0.0137,
+        "sad": 0.0002
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 96.8,
+      "probabilities": {
+        "anger": 0.8047,
+        "disgust": 0.1533,
+        "surprise": 0.0156,
+        "neutral": 0.014,
+        "sadness": 0.0055,
+        "fear": 0.0044,
+        "joy": 0.0026
+      },
+      "top_label": "anger",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.993,
+    "stress_index": 99.5,
+    "probabilities": {
+      "Calm": 0.005,
+      "Stressed": 0.993,
+      "Tired": 0.002
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.954,
+    "stress_index": 27.1,
+    "probabilities": {
+      "Calm": 0.91,
+      "Stressed": 0.03,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2174,
+  "cached": false
+}

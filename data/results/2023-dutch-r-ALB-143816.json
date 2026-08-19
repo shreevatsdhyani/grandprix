@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-ALB-143816",
+  "driver": "ALB",
+  "session_id": "2023-dutch-r",
+  "lap": 23,
+  "duration_s": 3.62,
+  "audio_url": "/api/clips/2023-dutch-r-ALB-143816",
+  "transcript": {
+    "text": "What the fuck was that? Yeah, copyatics, we saw it, we're on it.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 100.0,
+      "f0_mean_z": 4.075,
+      "f0_std_z": 7.276,
+      "rms_mean_z": -1.286,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.501,
+      "jitter_z": 1.623
+    },
+    "acoustic": {
+      "score": 26.3,
+      "probabilities": {
+        "hap": 0.8802,
+        "neu": 0.0882,
+        "ang": 0.0315,
+        "sad": 0.0
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 93.3,
+      "probabilities": {
+        "anger": 0.6509,
+        "disgust": 0.2884,
+        "surprise": 0.0328,
+        "neutral": 0.0136,
+        "sadness": 0.0067,
+        "fear": 0.0042,
+        "joy": 0.0032
+      },
+      "top_label": "anger",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.996,
+    "stress_index": 99.6,
+    "probabilities": {
+      "Calm": 0.003,
+      "Stressed": 0.996,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.88,
+    "stress_index": 26.3,
+    "probabilities": {
+      "Calm": 0.91,
+      "Stressed": 0.03,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1574,
+  "cached": false
+}

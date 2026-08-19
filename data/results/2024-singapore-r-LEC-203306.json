@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-LEC-203306",
+  "driver": "LEC",
+  "session_id": "2024-singapore-r",
+  "lap": 18,
+  "duration_s": 4.51,
+  "audio_url": "/api/clips/2024-singapore-r-LEC-203306",
+  "transcript": {
+    "text": "And good job on the brakes. Yeah, but they react completely differently now.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 11.8,
+      "f0_mean_z": -0.031,
+      "f0_std_z": -0.784,
+      "rms_mean_z": -0.371,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.291,
+      "jitter_z": -0.166
+    },
+    "acoustic": {
+      "score": 18.5,
+      "probabilities": {
+        "neu": 0.7957,
+        "hap": 0.1745,
+        "sad": 0.0183,
+        "ang": 0.0114
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.2,
+      "probabilities": {
+        "neutral": 0.9025,
+        "joy": 0.0323,
+        "sadness": 0.0186,
+        "surprise": 0.0175,
+        "disgust": 0.0143,
+        "anger": 0.0114,
+        "fear": 0.0034
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.683,
+    "stress_index": 28.8,
+    "probabilities": {
+      "Calm": 0.683,
+      "Stressed": 0.025,
+      "Tired": 0.292
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.796,
+    "stress_index": 18.5,
+    "probabilities": {
+      "Calm": 0.929,
+      "Stressed": 0.011,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1643,
+  "cached": false
+}

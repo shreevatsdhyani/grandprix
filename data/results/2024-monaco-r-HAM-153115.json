@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-HAM-153115",
+  "driver": "HAM",
+  "session_id": "2024-monaco-r",
+  "lap": 1,
+  "duration_s": 6.78,
+  "audio_url": "/api/clips/2024-monaco-r-HAM-153115",
+  "transcript": {
+    "text": "Red flag, red flag, keep Delta positive. Staying in the past. Told you guys. Told you guys.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 3.6,
+      "f0_mean_z": 0.0,
+      "f0_std_z": 0.0,
+      "rms_mean_z": 0.328,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.122,
+      "jitter_z": 0.0
+    },
+    "acoustic": {
+      "score": 26.2,
+      "probabilities": {
+        "hap": 0.9359,
+        "neu": 0.033,
+        "sad": 0.0181,
+        "ang": 0.013
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 67.0,
+      "probabilities": {
+        "anger": 0.5449,
+        "neutral": 0.2498,
+        "disgust": 0.1134,
+        "fear": 0.0418,
+        "sadness": 0.0366,
+        "surprise": 0.0072,
+        "joy": 0.0063
+      },
+      "top_label": "anger",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.932,
+    "stress_index": 84.8,
+    "probabilities": {
+      "Calm": 0.059,
+      "Stressed": 0.009,
+      "Tired": 0.932
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.936,
+    "stress_index": 26.2,
+    "probabilities": {
+      "Calm": 0.928,
+      "Stressed": 0.012,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3008,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-HUL-151854",
+  "driver": "HUL",
+  "session_id": "2023-monaco-r",
+  "lap": 56,
+  "duration_s": 2.91,
+  "audio_url": "/api/clips/2023-monaco-r-HUL-151854",
+  "transcript": {
+    "text": "Kevin ahead is still undries, very slow.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 28.4,
+      "f0_mean_z": -1.774,
+      "f0_std_z": -0.571,
+      "rms_mean_z": 1.004,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.195,
+      "jitter_z": -0.955
+    },
+    "acoustic": {
+      "score": 27.9,
+      "probabilities": {
+        "hap": 0.7786,
+        "neu": 0.1459,
+        "ang": 0.0489,
+        "sad": 0.0265
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 35.3,
+      "probabilities": {
+        "neutral": 0.55,
+        "surprise": 0.1688,
+        "sadness": 0.1465,
+        "disgust": 0.0905,
+        "fear": 0.0246,
+        "anger": 0.0167,
+        "joy": 0.0028
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.7,
+    "stress_index": 27.1,
+    "probabilities": {
+      "Calm": 0.7,
+      "Stressed": 0.003,
+      "Tired": 0.298
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.779,
+    "stress_index": 27.9,
+    "probabilities": {
+      "Calm": 0.894,
+      "Stressed": 0.046,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2482,
+  "cached": false
+}

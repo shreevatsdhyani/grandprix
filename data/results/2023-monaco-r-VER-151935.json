@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-VER-151935",
+  "driver": "VER",
+  "session_id": "2023-monaco-r",
+  "lap": 58,
+  "duration_s": 4.38,
+  "audio_url": "/api/clips/2023-monaco-r-VER-151935",
+  "transcript": {
+    "text": "So let me know if you're ready for extremes at any point. I'll wait for your call.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 40.5,
+      "f0_mean_z": -0.84,
+      "f0_std_z": -1.069,
+      "rms_mean_z": 1.99,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.161,
+      "jitter_z": -0.583
+    },
+    "acoustic": {
+      "score": 36.4,
+      "probabilities": {
+        "hap": 0.8184,
+        "ang": 0.159,
+        "neu": 0.0124,
+        "sad": 0.0102
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.8,
+      "probabilities": {
+        "neutral": 0.9616,
+        "fear": 0.0102,
+        "anger": 0.0079,
+        "joy": 0.0075,
+        "surprise": 0.0064,
+        "sadness": 0.0041,
+        "disgust": 0.0022
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.724,
+    "stress_index": 24.9,
+    "probabilities": {
+      "Calm": 0.724,
+      "Stressed": 0.015,
+      "Tired": 0.26
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.818,
+    "stress_index": 36.4,
+    "probabilities": {
+      "Calm": 0.791,
+      "Stressed": 0.149,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2680,
+  "cached": false
+}

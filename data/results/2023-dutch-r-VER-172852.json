@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-VER-172852",
+  "driver": "VER",
+  "session_id": "2023-dutch-r",
+  "lap": 72,
+  "duration_s": 28.86,
+  "audio_url": "/api/clips/2023-dutch-r-VER-172852",
+  "transcript": {
+    "text": "It's not a fate. Fantastic job. Yes! Wow. Didn't make it easy for us today in weather, but again, I'm believe it. Guys. Way to come back after the break as well. Well, our backs. That match is the best run ever of Sebastian. So nine rins in a row, it's amazing. So, yeah, taking every moment of this in-lap, they, I'm sure they're going to celebrate you all the way around.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 39.3,
+      "f0_mean_z": 0.94,
+      "f0_std_z": 1.476,
+      "rms_mean_z": -1.731,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.764,
+      "jitter_z": -0.591
+    },
+    "acoustic": {
+      "score": 25.7,
+      "probabilities": {
+        "hap": 0.9724,
+        "sad": 0.0214,
+        "neu": 0.0059,
+        "ang": 0.0003
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 29.4,
+      "probabilities": {
+        "surprise": 0.4966,
+        "joy": 0.4031,
+        "neutral": 0.0767,
+        "anger": 0.0106,
+        "sadness": 0.0054,
+        "disgust": 0.0049,
+        "fear": 0.0027
+      },
+      "top_label": "surprise",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.681,
+    "stress_index": 31.2,
+    "probabilities": {
+      "Calm": 0.681,
+      "Stressed": 0.251,
+      "Tired": 0.068
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.972,
+    "stress_index": 25.7,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 4411,
+  "cached": false
+}

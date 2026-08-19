@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-MAG-141704",
+  "driver": "MAG",
+  "session_id": "2023-dutch-r",
+  "lap": 10,
+  "duration_s": 8.38,
+  "audio_url": "/api/clips/2023-dutch-r-MAG-141704",
+  "transcript": {
+    "text": "but we still need to pit if we get a cab because if there's more rain then these times are going to be f-t. Copy, understood.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 100.0,
+      "f0_mean_z": 8.42,
+      "f0_std_z": 10.261,
+      "rms_mean_z": -2.02,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.498,
+      "jitter_z": 0.591
+    },
+    "acoustic": {
+      "score": 51.3,
+      "probabilities": {
+        "sad": 0.6939,
+        "hap": 0.2466,
+        "ang": 0.0331,
+        "neu": 0.0265
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 26.1,
+      "probabilities": {
+        "neutral": 0.8081,
+        "anger": 0.0693,
+        "sadness": 0.0459,
+        "disgust": 0.0289,
+        "surprise": 0.0229,
+        "fear": 0.0191,
+        "joy": 0.0059
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 1.0,
+    "stress_index": 100.0,
+    "probabilities": {
+      "Calm": 0.0,
+      "Stressed": 1.0,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.694,
+    "stress_index": 51.3,
+    "probabilities": {
+      "Calm": 0.909,
+      "Stressed": 0.031,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2023,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-ALB-153603",
+  "driver": "ALB",
+  "session_id": "2023-dutch-r",
+  "lap": 64,
+  "duration_s": 4.03,
+  "audio_url": "/api/clips/2023-dutch-r-ALB-153603",
+  "transcript": {
+    "text": "So Alex, we're going to get at least 10 minutes warning if you want to jump out of the car, you can.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 34.7,
+      "f0_mean_z": -0.794,
+      "f0_std_z": -1.224,
+      "rms_mean_z": -1.235,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.088,
+      "jitter_z": 0.81
+    },
+    "acoustic": {
+      "score": 29.3,
+      "probabilities": {
+        "hap": 0.9095,
+        "ang": 0.0597,
+        "neu": 0.0219,
+        "sad": 0.0089
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 29.0,
+      "probabilities": {
+        "neutral": 0.7745,
+        "fear": 0.1375,
+        "sadness": 0.0279,
+        "anger": 0.0253,
+        "disgust": 0.0142,
+        "surprise": 0.0127,
+        "joy": 0.0078
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.8,
+    "stress_index": 72.8,
+    "probabilities": {
+      "Calm": 0.192,
+      "Stressed": 0.008,
+      "Tired": 0.8
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.909,
+    "stress_index": 29.3,
+    "probabilities": {
+      "Calm": 0.884,
+      "Stressed": 0.056,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1993,
+  "cached": false
+}

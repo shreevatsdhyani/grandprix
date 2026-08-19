@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-OCO-161620",
+  "driver": "OCO",
+  "session_id": "2023-sao-paulo-r",
+  "lap": null,
+  "duration_s": 11.97,
+  "audio_url": "/api/clips/2023-sao-paulo-r-OCO-161620",
+  "transcript": {
+    "text": "You see anything with the brakes? No we're still looking at this, same feeling as the previous lap question. A little bit better, but not by much. Can't understand that this is.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 71.7,
+      "f0_mean_z": -0.572,
+      "f0_std_z": -2.104,
+      "rms_mean_z": 1.53,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 4.757,
+      "jitter_z": -0.914
+    },
+    "acoustic": {
+      "score": 34.6,
+      "probabilities": {
+        "hap": 0.8201,
+        "ang": 0.1274,
+        "sad": 0.0264,
+        "neu": 0.0261
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 43.6,
+      "probabilities": {
+        "surprise": 0.8009,
+        "neutral": 0.1174,
+        "disgust": 0.0517,
+        "anger": 0.0115,
+        "sadness": 0.0087,
+        "fear": 0.0069,
+        "joy": 0.0028
+      },
+      "top_label": "surprise",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.902,
+    "stress_index": 81.7,
+    "probabilities": {
+      "Calm": 0.093,
+      "Stressed": 0.005,
+      "Tired": 0.902
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.82,
+    "stress_index": 34.6,
+    "probabilities": {
+      "Calm": 0.82,
+      "Stressed": 0.12,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2727,
+  "cached": false
+}

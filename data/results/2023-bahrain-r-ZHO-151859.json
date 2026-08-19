@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-ZHO-151859",
+  "driver": "ZHO",
+  "session_id": "2023-bahrain-r",
+  "lap": 10,
+  "duration_s": 3.42,
+  "audio_url": "/api/clips/2023-bahrain-r-ZHO-151859",
+  "transcript": {
+    "text": "We are being stuck here on the train. Let's keep focus.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 86.8,
+      "f0_mean_z": 7.884,
+      "f0_std_z": 0.103,
+      "rms_mean_z": -0.762,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -2.096,
+      "jitter_z": -0.743
+    },
+    "acoustic": {
+      "score": 28.2,
+      "probabilities": {
+        "hap": 0.8674,
+        "sad": 0.0967,
+        "neu": 0.0332,
+        "ang": 0.0027
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 28.3,
+      "probabilities": {
+        "neutral": 0.7663,
+        "sadness": 0.0821,
+        "disgust": 0.0814,
+        "anger": 0.0501,
+        "fear": 0.0115,
+        "surprise": 0.0052,
+        "joy": 0.0034
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 1.0,
+    "stress_index": 100.0,
+    "probabilities": {
+      "Calm": 0.0,
+      "Stressed": 1.0,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.867,
+    "stress_index": 28.2,
+    "probabilities": {
+      "Calm": 0.937,
+      "Stressed": 0.003,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2465,
+  "cached": false
+}

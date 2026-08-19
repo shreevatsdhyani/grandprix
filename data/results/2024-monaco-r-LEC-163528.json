@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-LEC-163528",
+  "driver": "LEC",
+  "session_id": "2024-monaco-r",
+  "lap": 39,
+  "duration_s": 18.85,
+  "audio_url": "/api/clips/2024-monaco-r-LEC-163528",
+  "transcript": {
+    "text": "If you can we need to slow down a bit. Yeah, what's the scope of that? We are preventing McLaren to have a pit stop window because we have no rush in this happening. I didn't get it, but that makes me push in the slow speed which I don't like.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 7.8,
+      "f0_mean_z": -0.564,
+      "f0_std_z": 0.092,
+      "rms_mean_z": 0.309,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.005,
+      "jitter_z": 0.695
+    },
+    "acoustic": {
+      "score": 37.2,
+      "probabilities": {
+        "hap": 0.6566,
+        "sad": 0.2987,
+        "ang": 0.027,
+        "neu": 0.0176
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 29.3,
+      "probabilities": {
+        "neutral": 0.7502,
+        "anger": 0.0699,
+        "disgust": 0.0582,
+        "surprise": 0.0521,
+        "fear": 0.0484,
+        "sadness": 0.0179,
+        "joy": 0.0032
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.541,
+    "stress_index": 41.7,
+    "probabilities": {
+      "Calm": 0.541,
+      "Stressed": 0.04,
+      "Tired": 0.419
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.657,
+    "stress_index": 37.2,
+    "probabilities": {
+      "Calm": 0.915,
+      "Stressed": 0.025,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 5026,
+  "cached": false
+}

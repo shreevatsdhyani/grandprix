@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-ALO-140132",
+  "driver": "ALO",
+  "session_id": "2023-monaco-r",
+  "lap": null,
+  "duration_s": 7.72,
+  "audio_url": "/api/clips/2023-monaco-r-ALO-140132",
+  "transcript": {
+    "text": "We'll take another break if you can. Happy with another break if you can. We'll take another break if you can. We're okay for seven burnouts. We're all good.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 32.7,
+      "f0_mean_z": -0.787,
+      "f0_std_z": -0.862,
+      "rms_mean_z": -1.805,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.633,
+      "jitter_z": 0.35
+    },
+    "acoustic": {
+      "score": 26.2,
+      "probabilities": {
+        "hap": 0.9285,
+        "neu": 0.0432,
+        "ang": 0.019,
+        "sad": 0.0093
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 15.7,
+      "probabilities": {
+        "joy": 0.7881,
+        "neutral": 0.1167,
+        "sadness": 0.0691,
+        "surprise": 0.0144,
+        "anger": 0.0058,
+        "disgust": 0.0049,
+        "fear": 0.001
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.537,
+    "stress_index": 48.6,
+    "probabilities": {
+      "Calm": 0.46,
+      "Stressed": 0.003,
+      "Tired": 0.537
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.928,
+    "stress_index": 26.2,
+    "probabilities": {
+      "Calm": 0.922,
+      "Stressed": 0.018,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1998,
+  "cached": false
+}

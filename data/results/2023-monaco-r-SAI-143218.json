@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-SAI-143218",
+  "driver": "SAI",
+  "session_id": "2023-monaco-r",
+  "lap": 23,
+  "duration_s": 5.44,
+  "audio_url": "/api/clips/2023-monaco-r-SAI-143218",
+  "transcript": {
+    "text": "For influence reporting, rear left graining on the heart and also lap time 7.9.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 17.5,
+      "f0_mean_z": -0.478,
+      "f0_std_z": 0.267,
+      "rms_mean_z": -0.644,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.794,
+      "jitter_z": 0.134
+    },
+    "acoustic": {
+      "score": 17.1,
+      "probabilities": {
+        "neu": 0.7898,
+        "hap": 0.209,
+        "sad": 0.0011,
+        "ang": 0.0001
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 18.6,
+      "probabilities": {
+        "neutral": 0.9222,
+        "surprise": 0.0281,
+        "disgust": 0.0251,
+        "sadness": 0.0122,
+        "anger": 0.007,
+        "fear": 0.0035,
+        "joy": 0.0018
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.938,
+    "stress_index": 5.8,
+    "probabilities": {
+      "Calm": 0.938,
+      "Stressed": 0.009,
+      "Tired": 0.054
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.79,
+    "stress_index": 17.1,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2666,
+  "cached": false
+}

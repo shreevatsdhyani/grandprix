@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-sao-paulo-r-TSU-191124",
+  "driver": "TSU",
+  "session_id": "2023-sao-paulo-r",
+  "lap": 71,
+  "duration_s": 10.66,
+  "audio_url": "/api/clips/2023-sao-paulo-r-TSU-191124",
+  "transcript": {
+    "text": "Sorry guys, my mistake. That's okay, UK is still a good progress from P16, so we should be happy.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 32.0,
+      "f0_mean_z": -1.104,
+      "f0_std_z": 0.509,
+      "rms_mean_z": 0.849,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.537,
+      "jitter_z": -3.379
+    },
+    "acoustic": {
+      "score": 26.9,
+      "probabilities": {
+        "hap": 0.9652,
+        "ang": 0.0251,
+        "sad": 0.0053,
+        "neu": 0.0044
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 52.7,
+      "probabilities": {
+        "sadness": 0.7348,
+        "neutral": 0.1256,
+        "joy": 0.1018,
+        "surprise": 0.0266,
+        "disgust": 0.0059,
+        "anger": 0.003,
+        "fear": 0.0023
+      },
+      "top_label": "sadness",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.816,
+    "stress_index": 16.9,
+    "probabilities": {
+      "Calm": 0.816,
+      "Stressed": 0.04,
+      "Tired": 0.143
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.965,
+    "stress_index": 26.9,
+    "probabilities": {
+      "Calm": 0.916,
+      "Stressed": 0.024,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2285,
+  "cached": false
+}

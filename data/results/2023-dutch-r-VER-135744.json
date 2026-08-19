@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-VER-135744",
+  "driver": "VER",
+  "session_id": "2023-dutch-r",
+  "lap": null,
+  "duration_s": 30.0,
+  "audio_url": "/api/clips/2023-dutch-r-VER-135744",
+  "transcript": {
+    "text": "Okay, first thing was a weather update. That cell that I said could be hitting around 10 laps into the race that look quite short and sharp. That is maybe breaking up a little bit or at least reducing it in intensity. So I'll keep the updated over the first port by lab to the race. May well be something we could drive through at this day now, whereas the board's looking like it. We're looking at a requirement for a switch to it.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 45.4,
+      "f0_mean_z": -1.383,
+      "f0_std_z": -1.558,
+      "rms_mean_z": 1.461,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 1.275,
+      "jitter_z": -1.718
+    },
+    "acoustic": {
+      "score": 21.2,
+      "probabilities": {
+        "hap": 0.5961,
+        "neu": 0.3995,
+        "sad": 0.0044,
+        "ang": 0.0
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 19.4,
+      "probabilities": {
+        "neutral": 0.8988,
+        "surprise": 0.0475,
+        "disgust": 0.0191,
+        "sadness": 0.0174,
+        "anger": 0.0088,
+        "fear": 0.0061,
+        "joy": 0.0023
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.746,
+    "stress_index": 22.9,
+    "probabilities": {
+      "Calm": 0.746,
+      "Stressed": 0.006,
+      "Tired": 0.248
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.596,
+    "stress_index": 21.2,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 4492,
+  "cached": false
+}

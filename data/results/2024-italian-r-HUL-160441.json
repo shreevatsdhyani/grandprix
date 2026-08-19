@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-italian-r-HUL-160441",
+  "driver": "HUL",
+  "session_id": "2024-italian-r",
+  "lap": 43,
+  "duration_s": 9.41,
+  "audio_url": "/api/clips/2024-italian-r-HUL-160441",
+  "transcript": {
+    "text": "It's quite a lot of bouncing into 2011. It's pretty disturbing. We may have some damage because we see elevated bouncing everywhere so that may be the cause.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 31.3,
+      "f0_mean_z": -0.839,
+      "f0_std_z": 0.073,
+      "rms_mean_z": 2.382,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.616,
+      "jitter_z": 0.128
+    },
+    "acoustic": {
+      "score": 38.3,
+      "probabilities": {
+        "hap": 0.4404,
+        "sad": 0.3908,
+        "neu": 0.1527,
+        "ang": 0.016
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 80.4,
+      "probabilities": {
+        "disgust": 0.8662,
+        "fear": 0.0503,
+        "neutral": 0.0321,
+        "surprise": 0.0268,
+        "sadness": 0.0133,
+        "anger": 0.0105,
+        "joy": 0.0009
+      },
+      "top_label": "disgust",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Tired",
+    "confidence": 0.931,
+    "stress_index": 85.6,
+    "probabilities": {
+      "Calm": 0.051,
+      "Stressed": 0.018,
+      "Tired": 0.931
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.44,
+    "stress_index": 38.3,
+    "probabilities": {
+      "Calm": 0.925,
+      "Stressed": 0.015,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2359,
+  "cached": false
+}

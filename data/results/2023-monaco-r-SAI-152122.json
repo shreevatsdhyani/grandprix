@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-SAI-152122",
+  "driver": "SAI",
+  "session_id": "2023-monaco-r",
+  "lap": 59,
+  "duration_s": 10.18,
+  "audio_url": "/api/clips/2023-monaco-r-SAI-152122",
+  "transcript": {
+    "text": "What is the forecast? Stay for 5 minutes, this kind of rain? Only 5 minutes, I need more to go to extreme. That's our best guess, but can be anything as you know.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 13.5,
+      "f0_mean_z": 0.086,
+      "f0_std_z": 0.588,
+      "rms_mean_z": -0.636,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.374,
+      "jitter_z": 0.934
+    },
+    "acoustic": {
+      "score": 23.1,
+      "probabilities": {
+        "hap": 0.7815,
+        "neu": 0.2131,
+        "sad": 0.0046,
+        "ang": 0.0007
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.8,
+      "probabilities": {
+        "neutral": 0.9352,
+        "surprise": 0.0316,
+        "anger": 0.01,
+        "sadness": 0.0092,
+        "fear": 0.0056,
+        "disgust": 0.0055,
+        "joy": 0.003
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.875,
+    "stress_index": 11.6,
+    "probabilities": {
+      "Calm": 0.875,
+      "Stressed": 0.038,
+      "Tired": 0.087
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.781,
+    "stress_index": 23.1,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3386,
+  "cached": false
+}

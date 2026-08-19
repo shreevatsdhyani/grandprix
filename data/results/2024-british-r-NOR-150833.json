@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-british-r-NOR-150833",
+  "driver": "NOR",
+  "session_id": "2024-british-r",
+  "lap": 4,
+  "duration_s": 6.66,
+  "audio_url": "/api/clips/2024-british-r-NOR-150833",
+  "transcript": {
+    "text": "And I know there is a small shower that might appear on lap six, but it might just affect 1015. We'll keep that dated.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 32.5,
+      "f0_mean_z": 1.338,
+      "f0_std_z": 1.768,
+      "rms_mean_z": -0.001,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.957,
+      "jitter_z": 0.66
+    },
+    "acoustic": {
+      "score": 24.6,
+      "probabilities": {
+        "hap": 0.9546,
+        "neu": 0.0446,
+        "sad": 0.0004,
+        "ang": 0.0003
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.1,
+      "probabilities": {
+        "neutral": 0.9466,
+        "surprise": 0.0324,
+        "sadness": 0.0062,
+        "disgust": 0.0061,
+        "anger": 0.0045,
+        "joy": 0.0025,
+        "fear": 0.0018
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.571,
+    "stress_index": 42.6,
+    "probabilities": {
+      "Calm": 0.571,
+      "Stressed": 0.405,
+      "Tired": 0.023
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.955,
+    "stress_index": 24.6,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1776,
+  "cached": false
+}

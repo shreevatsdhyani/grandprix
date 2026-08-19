@@ -24,9 +24,17 @@ FASTF1_CACHE_DIR = DATA_DIR / "cache"  # FastF1's own on-disk cache
 CLIPS_DIR = DATA_DIR / "clips"  # curated + uploaded radio audio
 LABELS_DIR = DATA_DIR / "labels"  # human annotations, fusion training set
 RESULTS_DIR = DATA_DIR / "results"  # analysed clips, so the demo never re-infers
+# Precomputed race context (track/tyre/position/situation) per session. Built
+# offline by scripts/build_context.py because resolving it needs FastF1 loaded
+# with telemetry, which costs ~19s and ~80MB per session — far too much for the
+# request path. Runtime only ever reads these JSON files.
+CONTEXT_DIR = DATA_DIR / "context"
+# Uploaded driver biometrics, one file per (session, driver). Absent file means
+# no data; nothing here is ever synthesised.
+BIOMETRICS_DIR = DATA_DIR / "biometrics"
 FIXTURES_DIR = Path(__file__).resolve().parent / "fixtures"
 
-for _d in (FASTF1_CACHE_DIR, CLIPS_DIR, LABELS_DIR, RESULTS_DIR):
+for _d in (FASTF1_CACHE_DIR, CLIPS_DIR, LABELS_DIR, RESULTS_DIR, CONTEXT_DIR, BIOMETRICS_DIR):
     _d.mkdir(parents=True, exist_ok=True)
 
 # --------------------------------------------------------------------------
@@ -102,6 +110,29 @@ OFFLINE_MODE = os.getenv("GP_OFFLINE", "0") == "1"
 #
 # Set GP_USE_FIXTURES=1 deliberately for frontend work with no models present.
 USE_FIXTURES = os.getenv("GP_USE_FIXTURES", "0") == "1"
+
+# --------------------------------------------------------------------------
+# Race context resolution
+# --------------------------------------------------------------------------
+
+# How far either side of a radio call to collect race-control messages. Two
+# minutes is roughly a lap at most circuits, so an engineer sees the flags the
+# driver had actually just driven through.
+RACE_CONTROL_WINDOW_S = 120
+
+# A stint needs this many timed laps before a degradation slope means anything.
+# Below it we report None rather than fitting a line through two points.
+MIN_LAPS_FOR_DEG_SLOPE = 4
+
+# Gap to the car ahead below which a driver counts as "in traffic" — inside
+# DRS range plus a margin, i.e. close enough that the car ahead is dictating
+# their lap rather than their own pace.
+IN_TRAFFIC_GAP_S = 1.5
+
+# Telemetry classification thresholds for the intra-lap zone label.
+BRAKING_ZONE_MIN_BRAKE = 0.5  # FastF1 Brake is 0/1
+HIGH_SPEED_MIN_KPH = 250
+CORNER_PROXIMITY_M = 60  # within this of a mapped corner apex
 
 CORS_ORIGINS = [
     "http://localhost:5173",

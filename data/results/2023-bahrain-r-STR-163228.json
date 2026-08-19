@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-bahrain-r-STR-163228",
+  "driver": "STR",
+  "session_id": "2023-bahrain-r",
+  "lap": 54,
+  "duration_s": 8.83,
+  "audio_url": "/api/clips/2023-bahrain-r-STR-163228",
+  "transcript": {
+    "text": "Carl will turn it. He'll turn it. Copy that. Copy that last. We need to break earlier. We can't push the front like that. Lock up is not going to work.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 31.8,
+      "f0_mean_z": 0.207,
+      "f0_std_z": 1.134,
+      "rms_mean_z": -2.494,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.142,
+      "jitter_z": -0.046
+    },
+    "acoustic": {
+      "score": 24.3,
+      "probabilities": {
+        "hap": 0.8609,
+        "neu": 0.1283,
+        "ang": 0.0061,
+        "sad": 0.0047
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 20.3,
+      "probabilities": {
+        "neutral": 0.9133,
+        "anger": 0.0411,
+        "sadness": 0.0152,
+        "disgust": 0.0127,
+        "surprise": 0.0093,
+        "fear": 0.0067,
+        "joy": 0.0017
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.926,
+    "stress_index": 7.1,
+    "probabilities": {
+      "Calm": 0.926,
+      "Stressed": 0.047,
+      "Tired": 0.027
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.861,
+    "stress_index": 24.3,
+    "probabilities": {
+      "Calm": 0.934,
+      "Stressed": 0.006,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3250,
+  "cached": false
+}

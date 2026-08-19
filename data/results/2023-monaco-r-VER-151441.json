@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-VER-151441",
+  "driver": "VER",
+  "session_id": "2023-monaco-r",
+  "lap": 55,
+  "duration_s": 8.03,
+  "audio_url": "/api/clips/2023-monaco-r-VER-151441",
+  "transcript": {
+    "text": "Alonso has pitted for dry tires. Understood Max. We're in, enters, enters. Understood Max, we are pitting for enters.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 49.0,
+      "f0_mean_z": 1.676,
+      "f0_std_z": 2.964,
+      "rms_mean_z": -0.094,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -1.386,
+      "jitter_z": 1.226
+    },
+    "acoustic": {
+      "score": 25.4,
+      "probabilities": {
+        "hap": 0.9767,
+        "neu": 0.0116,
+        "sad": 0.01,
+        "ang": 0.0017
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 55.0,
+      "probabilities": {
+        "neutral": 0.3654,
+        "disgust": 0.2545,
+        "anger": 0.2163,
+        "fear": 0.1078,
+        "sadness": 0.0329,
+        "surprise": 0.0195,
+        "joy": 0.0036
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.798,
+    "stress_index": 80.9,
+    "probabilities": {
+      "Calm": 0.19,
+      "Stressed": 0.798,
+      "Tired": 0.012
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.977,
+    "stress_index": 25.4,
+    "probabilities": {
+      "Calm": 0.938,
+      "Stressed": 0.002,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3114,
+  "cached": false
+}

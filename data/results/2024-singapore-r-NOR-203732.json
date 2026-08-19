@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-singapore-r-NOR-203732",
+  "driver": "NOR",
+  "session_id": "2024-singapore-r",
+  "lap": 21,
+  "duration_s": 7.55,
+  "audio_url": "/api/clips/2024-singapore-r-NOR-203732",
+  "transcript": {
+    "text": "Lando for our race, we just want to go as long as possible so if we need to look after times we will we just don't want to be the first person to pit between you and that's.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 15.4,
+      "f0_mean_z": -0.413,
+      "f0_std_z": -0.402,
+      "rms_mean_z": -0.116,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.998,
+      "jitter_z": 0.941
+    },
+    "acoustic": {
+      "score": 24.2,
+      "probabilities": {
+        "hap": 0.7671,
+        "neu": 0.2087,
+        "sad": 0.0123,
+        "ang": 0.0119
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.8,
+      "probabilities": {
+        "neutral": 0.9647,
+        "disgust": 0.0075,
+        "anger": 0.0074,
+        "sadness": 0.0059,
+        "fear": 0.0055,
+        "surprise": 0.0049,
+        "joy": 0.004
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.63,
+    "stress_index": 33.6,
+    "probabilities": {
+      "Calm": 0.63,
+      "Stressed": 0.032,
+      "Tired": 0.338
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.767,
+    "stress_index": 24.2,
+    "probabilities": {
+      "Calm": 0.929,
+      "Stressed": 0.011,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2086,
+  "cached": false
+}

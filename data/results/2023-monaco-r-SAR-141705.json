@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-monaco-r-SAR-141705",
+  "driver": "SAR",
+  "session_id": "2023-monaco-r",
+  "lap": 11,
+  "duration_s": 3.78,
+  "audio_url": "/api/clips/2023-monaco-r-SAR-141705",
+  "transcript": {
+    "text": "I recover them, recover them. Target the lico, watch on your slip.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 22.9,
+      "f0_mean_z": 0.022,
+      "f0_std_z": -1.828,
+      "rms_mean_z": 0.552,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.462,
+      "jitter_z": -0.932
+    },
+    "acoustic": {
+      "score": 17.8,
+      "probabilities": {
+        "neu": 0.9405,
+        "ang": 0.0273,
+        "hap": 0.0242,
+        "sad": 0.008
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 20.6,
+      "probabilities": {
+        "neutral": 0.9091,
+        "anger": 0.036,
+        "fear": 0.0276,
+        "surprise": 0.0109,
+        "sadness": 0.0077,
+        "disgust": 0.0046,
+        "joy": 0.004
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.529,
+    "stress_index": 42.5,
+    "probabilities": {
+      "Calm": 0.529,
+      "Stressed": 0.006,
+      "Tired": 0.465
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.941,
+    "stress_index": 17.8,
+    "probabilities": {
+      "Calm": 0.914,
+      "Stressed": 0.026,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2567,
+  "cached": false
+}

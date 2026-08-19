@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-singapore-r-RUS-130449",
+  "driver": "RUS",
+  "session_id": "2023-singapore-r",
+  "lap": 1,
+  "duration_s": 2.27,
+  "audio_url": "/api/clips/2023-singapore-r-RUS-130449",
+  "transcript": {
+    "text": "So you're gonna let me back pass off?",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 53.1,
+      "f0_mean_z": 1.852,
+      "f0_std_z": 2.945,
+      "rms_mean_z": 1.434,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.407,
+      "jitter_z": 1.99
+    },
+    "acoustic": {
+      "score": 37.9,
+      "probabilities": {
+        "hap": 0.632,
+        "ang": 0.171,
+        "neu": 0.1322,
+        "sad": 0.0647
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 59.5,
+      "probabilities": {
+        "anger": 0.3795,
+        "neutral": 0.2521,
+        "disgust": 0.1605,
+        "surprise": 0.1105,
+        "fear": 0.0346,
+        "sadness": 0.0329,
+        "joy": 0.0298
+      },
+      "top_label": "anger",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.941,
+    "stress_index": 95.6,
+    "probabilities": {
+      "Calm": 0.043,
+      "Stressed": 0.941,
+      "Tired": 0.017
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.632,
+    "stress_index": 37.9,
+    "probabilities": {
+      "Calm": 0.779,
+      "Stressed": 0.161,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 18947,
+  "cached": false
+}

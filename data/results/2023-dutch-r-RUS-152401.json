@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-dutch-r-RUS-152401",
+  "driver": "RUS",
+  "session_id": "2023-dutch-r",
+  "lap": 14,
+  "duration_s": 4.77,
+  "audio_url": "/api/clips/2023-dutch-r-RUS-152401",
+  "transcript": {
+    "text": "I was forecasting a podium. How do we mess it up?",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 100.0,
+      "f0_mean_z": 4.23,
+      "f0_std_z": 6.934,
+      "rms_mean_z": 3.387,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 2.361,
+      "jitter_z": 2.664
+    },
+    "acoustic": {
+      "score": 50.8,
+      "probabilities": {
+        "hap": 0.6064,
+        "ang": 0.366,
+        "neu": 0.0169,
+        "sad": 0.0107
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 57.7,
+      "probabilities": {
+        "surprise": 0.2916,
+        "anger": 0.2828,
+        "neutral": 0.1965,
+        "disgust": 0.1478,
+        "fear": 0.041,
+        "sadness": 0.0359,
+        "joy": 0.0044
+      },
+      "top_label": "surprise",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.999,
+    "stress_index": 99.9,
+    "probabilities": {
+      "Calm": 0.001,
+      "Stressed": 0.999,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.606,
+    "stress_index": 50.8,
+    "probabilities": {
+      "Calm": 0.596,
+      "Stressed": 0.344,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1567,
+  "cached": false
+}

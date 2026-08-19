@@ -1,0 +1,76 @@
+{
+  "clip_id": "2023-singapore-r-NOR-145420",
+  "driver": "NOR",
+  "session_id": "2023-singapore-r",
+  "lap": 62,
+  "duration_s": 9.44,
+  "audio_url": "/api/clips/2023-singapore-r-NOR-145420",
+  "transcript": {
+    "text": "Awesome job boys. Thank girls, thank you so much. Oh, is this tough one? Amazing result, thank you, I love you all so much.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 49.9,
+      "f0_mean_z": 4.128,
+      "f0_std_z": 1.479,
+      "rms_mean_z": -0.174,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.46,
+      "jitter_z": 0.572
+    },
+    "acoustic": {
+      "score": 27.8,
+      "probabilities": {
+        "hap": 0.916,
+        "sad": 0.0785,
+        "neu": 0.0045,
+        "ang": 0.0009
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 21.0,
+      "probabilities": {
+        "joy": 0.6042,
+        "surprise": 0.2304,
+        "neutral": 0.1328,
+        "anger": 0.0155,
+        "sadness": 0.0075,
+        "disgust": 0.0073,
+        "fear": 0.0023
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.979,
+    "stress_index": 98.0,
+    "probabilities": {
+      "Calm": 0.02,
+      "Stressed": 0.979,
+      "Tired": 0.001
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.916,
+    "stress_index": 27.8,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3248,
+  "cached": false
+}

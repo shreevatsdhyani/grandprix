@@ -1,0 +1,76 @@
+{
+  "clip_id": "2024-monaco-r-PIA-171518",
+  "driver": "PIA",
+  "session_id": "2024-monaco-r",
+  "lap": null,
+  "duration_s": 1.79,
+  "audio_url": "/api/clips/2024-monaco-r-PIA-171518",
+  "transcript": {
+    "text": "Sorry for all the wounds.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 24.7,
+      "f0_mean_z": 2.824,
+      "f0_std_z": 0.159,
+      "rms_mean_z": 0.088,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.016,
+      "jitter_z": 0.79
+    },
+    "acoustic": {
+      "score": 53.7,
+      "probabilities": {
+        "ang": 0.4364,
+        "hap": 0.3397,
+        "neu": 0.2162,
+        "sad": 0.0078
+      },
+      "top_label": "ang",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 63.4,
+      "probabilities": {
+        "sadness": 0.9436,
+        "neutral": 0.0282,
+        "surprise": 0.0118,
+        "disgust": 0.0084,
+        "fear": 0.0042,
+        "joy": 0.0022,
+        "anger": 0.0016
+      },
+      "top_label": "sadness",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.725,
+    "stress_index": 96.8,
+    "probabilities": {
+      "Calm": 0.005,
+      "Stressed": 0.725,
+      "Tired": 0.27
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Stressed",
+    "confidence": 0.436,
+    "stress_index": 53.7,
+    "probabilities": {
+      "Calm": 0.53,
+      "Stressed": 0.41,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 1537,
+  "cached": false
+}

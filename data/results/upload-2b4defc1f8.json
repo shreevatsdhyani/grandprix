@@ -1,0 +1,76 @@
+{
+  "clip_id": "upload-2b4defc1f8",
+  "driver": "ALO",
+  "session_id": "2023-bahrain-r",
+  "lap": null,
+  "duration_s": 17.5,
+  "audio_url": "/api/clips/upload-2b4defc1f8",
+  "transcript": {
+    "text": "Yes, yes, yes mate, well done, that's P3. Yes, what you have done guys, what you have done, I'm so proud of you, this is amazing. That's for Jim's 60's birthday. Happy birthday! The 60s are the new 40s!",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 55.2,
+      "f0_mean_z": 2.705,
+      "f0_std_z": 2.732,
+      "rms_mean_z": -1.248,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 0.209,
+      "jitter_z": 0.504
+    },
+    "acoustic": {
+      "score": 30.5,
+      "probabilities": {
+        "hap": 0.6357,
+        "neu": 0.1889,
+        "sad": 0.1411,
+        "ang": 0.0343
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 17.7,
+      "probabilities": {
+        "joy": 0.7391,
+        "surprise": 0.1698,
+        "neutral": 0.0712,
+        "anger": 0.0114,
+        "sadness": 0.0037,
+        "disgust": 0.0034,
+        "fear": 0.0015
+      },
+      "top_label": "joy",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.888,
+    "stress_index": 88.8,
+    "probabilities": {
+      "Calm": 0.112,
+      "Stressed": 0.888,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.636,
+    "stress_index": 30.5,
+    "probabilities": {
+      "Calm": 0.908,
+      "Stressed": 0.032,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 4511,
+  "cached": false
+}

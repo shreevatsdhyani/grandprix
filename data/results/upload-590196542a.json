@@ -1,0 +1,76 @@
+{
+  "clip_id": "upload-590196542a",
+  "driver": "ALO",
+  "session_id": "2023-bahrain-r",
+  "lap": null,
+  "duration_s": 29.66,
+  "audio_url": "/api/clips/upload-590196542a",
+  "transcript": {
+    "text": "It's just a shame for everyone here in the team. I mean, we all wanted to do well here and prep and then you get this. Oh, I think I'm going to un install the game. Oh, I think I'm going to un install the game. That's nice. There's up a bit of space on the PC anyway. And I really hope everyone in install the game.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 88.8,
+      "f0_mean_z": 1.031,
+      "f0_std_z": 0.122,
+      "rms_mean_z": 5.36,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 4.59,
+      "jitter_z": -0.214
+    },
+    "acoustic": {
+      "score": 15.2,
+      "probabilities": {
+        "neu": 0.9842,
+        "hap": 0.0158,
+        "ang": 0.0,
+        "sad": 0.0
+      },
+      "top_label": "neu",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 23.4,
+      "probabilities": {
+        "neutral": 0.7569,
+        "disgust": 0.0905,
+        "joy": 0.0663,
+        "surprise": 0.042,
+        "sadness": 0.0311,
+        "anger": 0.0105,
+        "fear": 0.0028
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.849,
+    "stress_index": 14.5,
+    "probabilities": {
+      "Calm": 0.849,
+      "Stressed": 0.087,
+      "Tired": 0.064
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.984,
+    "stress_index": 15.2,
+    "probabilities": {
+      "Calm": 0.94,
+      "Stressed": 0.0,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3620,
+  "cached": false
+}

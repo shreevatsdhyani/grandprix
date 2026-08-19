@@ -1,0 +1,76 @@
+{
+  "clip_id": "upload-8ceb0cc60b",
+  "driver": "ALO",
+  "session_id": "2023-bahrain-r",
+  "lap": null,
+  "duration_s": 25.95,
+  "audio_url": "/api/clips/upload-8ceb0cc60b",
+  "transcript": {
+    "text": "Oh, why did you try to make... Oh, no. No, it was quite a wreck. Yeah. You don't know. Look at the young girl's car. Oh. Look at her! Oh, that's... Look at the front end, different. Optimal performance, that me.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 100.0,
+      "f0_mean_z": 4.163,
+      "f0_std_z": 5.157,
+      "rms_mean_z": 0.844,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": 2.568,
+      "jitter_z": 1.292
+    },
+    "acoustic": {
+      "score": 28.9,
+      "probabilities": {
+        "hap": 0.9018,
+        "sad": 0.0758,
+        "ang": 0.0182,
+        "neu": 0.0042
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 59.8,
+      "probabilities": {
+        "surprise": 0.3712,
+        "disgust": 0.3149,
+        "anger": 0.1284,
+        "fear": 0.0727,
+        "neutral": 0.0725,
+        "sadness": 0.0327,
+        "joy": 0.0076
+      },
+      "top_label": "surprise",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Stressed",
+    "confidence": 0.998,
+    "stress_index": 99.8,
+    "probabilities": {
+      "Calm": 0.002,
+      "Stressed": 0.998,
+      "Tired": 0.0
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.902,
+    "stress_index": 28.9,
+    "probabilities": {
+      "Calm": 0.923,
+      "Stressed": 0.017,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 3505,
+  "cached": false
+}

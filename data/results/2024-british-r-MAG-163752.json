@@ -16,9 +16,9 @@
       "score": 100.0,
       "f0_mean_z": 0.0,
       "f0_std_z": 0.0,
-      "rms_mean_z": -23.42,
+      "rms_mean_z": -28.421,
       "speech_rate_z": 0.0,
-      "pause_ratio_z": 10.062,
+      "pause_ratio_z": 12.045,
       "jitter_z": 0.0
     },
     "acoustic": {
@@ -49,12 +49,12 @@
   },
   "fusion": {
     "mood": "Tired",
-    "confidence": 0.996,
-    "stress_index": 89.8,
+    "confidence": 1.0,
+    "stress_index": 90.0,
     "probabilities": {
-      "Calm": 0.002,
-      "Stressed": 0.002,
-      "Tired": 0.996
+      "Calm": 0.0,
+      "Stressed": 0.0,
+      "Tired": 1.0
     },
     "mode": "fusion",
     "fitted": true
@@ -71,6 +71,6 @@
     "mode": "naive",
     "fitted": false
   },
-  "processing_ms": 1535,
+  "processing_ms": 1706,
   "cached": false
 }

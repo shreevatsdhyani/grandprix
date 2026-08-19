@@ -1,0 +1,76 @@
+{
+  "clip_id": "upload-4f3014473a",
+  "driver": "ALO",
+  "session_id": "2023-bahrain-r",
+  "lap": null,
+  "duration_s": 6.66,
+  "audio_url": "/api/clips/upload-4f3014473a",
+  "transcript": {
+    "text": "Hey, wake up. It's time to eat, uh, race.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 55.9,
+      "f0_mean_z": -1.654,
+      "f0_std_z": 3.528,
+      "rms_mean_z": 1.488,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.316,
+      "jitter_z": 2.144
+    },
+    "acoustic": {
+      "score": 29.6,
+      "probabilities": {
+        "hap": 0.7684,
+        "sad": 0.1459,
+        "neu": 0.0807,
+        "ang": 0.005
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 37.3,
+      "probabilities": {
+        "neutral": 0.5894,
+        "disgust": 0.1259,
+        "sadness": 0.0854,
+        "anger": 0.0818,
+        "fear": 0.0633,
+        "joy": 0.0298,
+        "surprise": 0.0244
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.962,
+    "stress_index": 3.7,
+    "probabilities": {
+      "Calm": 0.962,
+      "Stressed": 0.031,
+      "Tired": 0.007
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.768,
+    "stress_index": 29.6,
+    "probabilities": {
+      "Calm": 0.935,
+      "Stressed": 0.005,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2016,
+  "cached": false
+}

@@ -1,0 +1,76 @@
+{
+  "clip_id": "upload-a3e7166417",
+  "driver": "ALO",
+  "session_id": "2023-bahrain-r",
+  "lap": null,
+  "duration_s": 5.79,
+  "audio_url": "/api/clips/upload-a3e7166417",
+  "transcript": {
+    "text": "I'm on level 7, avoiding all the curves. Just let me know if the situation changes behind.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 20.4,
+      "f0_mean_z": 0.594,
+      "f0_std_z": 0.961,
+      "rms_mean_z": 0.347,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.653,
+      "jitter_z": 0.038
+    },
+    "acoustic": {
+      "score": 42.5,
+      "probabilities": {
+        "sad": 0.5943,
+        "neu": 0.3414,
+        "hap": 0.0631,
+        "ang": 0.0013
+      },
+      "top_label": "sad",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 16.4,
+      "probabilities": {
+        "neutral": 0.9708,
+        "surprise": 0.007,
+        "sadness": 0.0067,
+        "anger": 0.0053,
+        "fear": 0.0037,
+        "joy": 0.0033,
+        "disgust": 0.0033
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.592,
+    "stress_index": 40.7,
+    "probabilities": {
+      "Calm": 0.592,
+      "Stressed": 0.396,
+      "Tired": 0.012
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.594,
+    "stress_index": 42.5,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 2001,
+  "cached": false
+}

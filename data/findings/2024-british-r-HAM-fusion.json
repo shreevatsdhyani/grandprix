@@ -1,0 +1,156 @@
+{
+  "session_id": "2024-british-r",
+  "driver": "HAM",
+  "mode": "fusion",
+  "findings": [
+    {
+      "rank": 1,
+      "severity": "info",
+      "headline": "High stress on lap 37 did not degrade pace – hold strategy is safe",
+      "detail": "Stress rose sharply to 92.6 on lap 37 while on 10‑lap‑old Intermediates in wet conditions; despite the spike the pace delta stayed at 0.000s, confirming the strategy call to hold the stop. The driver can tolerate short stress spikes without pace loss, but monitoring is advised if stress exceeds 95.",
+      "laps": [
+        37
+      ],
+      "domains": [
+        "stress",
+        "pace",
+        "tyre",
+        "track",
+        "radio"
+      ],
+      "evidence": [
+        "stress 92.6 on lap 37",
+        "pace delta 0.000 on lap 37",
+        "tyre=INTERMEDIATE age 10 on lap 37",
+        "track 21.4C surface=WET on lap 37"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "rank": 2,
+      "severity": "info",
+      "headline": "Switch to Intermediates at lap 28 gave immediate pace boost",
+      "detail": "The first tyre change to Intermediates at lap 28 coincided with a drop in pace delta to -0.047 on lap 29 (best lap 97.220s) while stress was low (30.1). The modelled degradation (+0.055 s/lap) suggests the fresh Intermediates provided a clear pace gain; keeping the medium longer would have cost ~0.3 s per lap.",
+      "laps": [
+        28,
+        29
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "track",
+        "radio"
+      ],
+      "evidence": [
+        "pace delta -0.047 on lap 29",
+        "stress 30.1 on lap 29",
+        "compound INTERMEDIATE age 2 on lap 29",
+        "track 20.9C surface=WET on lap 29"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "rank": 3,
+      "severity": "warning",
+      "headline": "Mid‑stint stress rise may foreshadow later pace loss",
+      "detail": "Stress climbed to 57.7 on lap 35 (age 8 Intermediates) while pace delta stayed at 0.000, but the next recorded stress spike (92.6) on lap 37 was preceded by a +0.322s delta on lap 34, indicating a possible early fatigue cue; consider a brief driver‑coach check after lap 34 if stress exceeds 55.",
+      "laps": [
+        34,
+        35
+      ],
+      "domains": [
+        "stress",
+        "pace",
+        "tyre",
+        "track"
+      ],
+      "evidence": [
+        "stress 57.7 on lap 35",
+        "pace delta +0.322 on lap 34",
+        "tyre=INTERMEDIATE age 8 on lap 35",
+        "track 21.3C surface=WET on lap 35"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "rank": 4,
+      "severity": "info",
+      "headline": "Softs on drying track provided measurable pace gain",
+      "detail": "After the track dried (lap 40), the Softs delivered a -0.176s improvement on lap 42 (age 5) despite a modest stress of 39.8 on lap 41, confirming the modelled negative degradation (-0.017 s/lap). Maintaining Softs to the end gave a net gain of ~0.3 s over staying on Intermediates.",
+      "laps": [
+        40,
+        41,
+        42
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "track",
+        "stress"
+      ],
+      "evidence": [
+        "pace delta -0.176 on lap 42",
+        "stress 39.8 on lap 41",
+        "compound SOFT age 5 on lap 42",
+        "track 24.2C surface=dry on lap 41"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "rank": 5,
+      "severity": "info",
+      "headline": "Blue‑flag traffic has negligible impact on lap times",
+      "detail": "Blue‑flag periods (laps 21, 23‑27, 35‑37, 41) did not produce any noticeable pace penalty; pace delta remained within ±0.1 s despite traffic and blue‑flag constraints, suggesting the driver manages back‑marker overtakes without loss of time.",
+      "laps": [
+        21,
+        23,
+        35,
+        37,
+        41
+      ],
+      "domains": [
+        "pace",
+        "position",
+        "radio",
+        "track"
+      ],
+      "evidence": [
+        "pace delta +0.000 on lap 21",
+        "pace delta +0.000 on lap 23",
+        "pace delta +0.000 on lap 35",
+        "pace delta +0.000 on lap 37",
+        "pace delta +0.000 on lap 41"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "rank": 6,
+      "severity": "info",
+      "headline": "Post‑race stress peak is non‑actionable for race strategy",
+      "detail": "The final post‑race stress reading of 97.6 (lap 52) is not comparable to in‑race stress; however, the deterministic strategy note to monitor at 98/100 aligns, so no immediate action is required beyond standard post‑race debrief.",
+      "laps": [
+        52
+      ],
+      "domains": [
+        "stress",
+        "radio"
+      ],
+      "evidence": [
+        "stress 97.6 on lap 52"
+      ],
+      "confidence": 0.4
+    }
+  ],
+  "model": "openai/gpt-oss-120b",
+  "context_domains": [
+    "pace",
+    "position",
+    "radio",
+    "situation",
+    "stress",
+    "track",
+    "tyre"
+  ],
+  "dropped_findings": 0,
+  "cached": false
+}

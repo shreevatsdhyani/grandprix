@@ -306,3 +306,56 @@ def test_rate_limit_and_truncation_errors_are_told_apart():
     assert findings._looks_truncated(truncated)
     assert not findings._looks_rate_limited(truncated)
     assert findings._looks_rate_limited(limited)
+
+
+# ---------------------------------------------------------------------------
+# The on-disk store
+#
+# The point of the store is that a briefing is written once per (session, driver,
+# mode) and read forever after, so these lock the two things that would quietly
+# break that: a key that ignores one of its three parts, and a corrupt file that
+# hard-fails instead of falling back to regeneration.
+# ---------------------------------------------------------------------------
+
+
+def test_store_round_trips_and_keys_on_all_three_parts(tmp_path, monkeypatch):
+    from app import config
+    from app.data import findings_store
+
+    monkeypatch.setattr(config, "FINDINGS_DIR", tmp_path)
+
+    payload = {"session_id": "2024-italian-r", "driver": "GAS", "findings": [{"rank": 1}]}
+    findings_store.save("2024-italian-r", "GAS", "fusion", payload)
+
+    assert findings_store.load("2024-italian-r", "GAS", "fusion") == payload
+    # Driver code is case-insensitive; everything else must miss.
+    assert findings_store.load("2024-italian-r", "gas", "fusion") == payload
+    assert findings_store.load("2024-italian-r", "GAS", "naive") is None
+    assert findings_store.load("2024-monaco-r", "GAS", "fusion") is None
+    assert findings_store.load("2024-italian-r", "HAM", "fusion") is None
+
+
+def test_store_treats_unusable_files_as_a_miss(tmp_path, monkeypatch):
+    from app import config
+    from app.data import findings_store
+
+    monkeypatch.setattr(config, "FINDINGS_DIR", tmp_path)
+
+    (tmp_path / "2024-italian-r-GAS-fusion.json").write_text("{not json", encoding="utf-8")
+    assert findings_store.load("2024-italian-r", "GAS", "fusion") is None
+
+    # Valid JSON, but not a findings payload — also a miss, not a KeyError later.
+    (tmp_path / "2024-italian-r-HAM-fusion.json").write_text("[]", encoding="utf-8")
+    assert findings_store.load("2024-italian-r", "HAM", "fusion") is None
+
+
+def test_store_never_writes_outside_its_directory(tmp_path, monkeypatch):
+    from app import config
+    from app.data import findings_store
+
+    monkeypatch.setattr(config, "FINDINGS_DIR", tmp_path)
+
+    findings_store.save("../../etc/passwd", "../HAM", "fusion", {"findings": []})
+    written = list(tmp_path.iterdir())
+    assert len(written) == 1
+    assert written[0].parent == tmp_path

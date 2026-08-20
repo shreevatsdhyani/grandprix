@@ -113,6 +113,22 @@ export function TrackTrace({
   const active = marks.find((m) => m.clipId === (hovered ?? selectedClipId)) ?? null
   const unplaced = clips.length - marks.length
 
+  /**
+   * Why nothing could be placed, when nothing could.
+   *
+   * The three reasons are not the same and the reader needs to know which one
+   * they are looking at. A driver whose only two calls were on the grid and
+   * after the flag has a perfectly healthy pipeline and an empty trace; telling
+   * them to re-run build_context.py sends them chasing a bug that isn't there.
+   */
+  const emptyReason = useMemo(() => {
+    if (clips.length === 0) return 'no_clips' as const
+    const resolved = clips.filter((c) => contexts[c.clip_id])
+    if (resolved.length === 0) return 'unresolved' as const
+    if (!resolved.some((c) => contexts[c.clip_id].phase === 'racing')) return 'off_lap' as const
+    return 'no_position' as const
+  }, [clips, contexts])
+
   return (
     <section className="panel overflow-hidden" aria-label="Radio calls by track position">
       <header className="px-4 pb-3 pt-4 sm:px-5">
@@ -125,9 +141,28 @@ export function TrackTrace({
 
       {marks.length === 0 ? (
         <p className="px-4 pb-5 text-sm leading-relaxed text-ink-muted sm:px-5">
-          No calls could be placed on the lap. Run{' '}
-          <span className="mono text-[11px]">scripts/build_context.py</span> to resolve radio
-          timestamps to track positions.
+          {emptyReason === 'no_clips' && 'No radio calls in this session for this driver.'}
+          {emptyReason === 'off_lap' && (
+            <>
+              Nothing to place: all {clips.length}{' '}
+              {clips.length === 1 ? 'call was' : 'calls were'} transmitted off the racing lap — on
+              the grid or after the chequered flag — so {clips.length === 1 ? 'it has' : 'they have'}{' '}
+              no position on the trace.
+            </>
+          )}
+          {emptyReason === 'no_position' && (
+            <>
+              Calls were made on the lap, but none fell inside a stretch with position telemetry, so
+              none can be placed on the trace.
+            </>
+          )}
+          {emptyReason === 'unresolved' && (
+            <>
+              These calls have not been resolved to a time on the lap yet. Run{' '}
+              <span className="mono text-[11px]">scripts/build_context.py</span> to resolve radio
+              timestamps to track positions.
+            </>
+          )}
         </p>
       ) : (
         <>

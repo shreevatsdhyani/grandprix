@@ -4,10 +4,12 @@ Mounted behind GP_AGENT, the same flag as /api/agent/ask, so a deployment withou
 a Groq key 404s consistently rather than exposing an endpoint that always 500s.
 The frontend uses that 404 to hide the panel.
 
-Cached for an hour using the same store as the chat agent. The cache key is the
-findings marker plus session, driver and mode — findings are expensive (one large
-prompt) and completely deterministic in their inputs, so a cache hit is free
-correctness rather than a shortcut.
+Cached twice, on purpose. The in-memory store shared with the chat agent absorbs
+the repeat traffic inside one process; `data/findings_store.py` writes the answer
+to disk so it survives restarts and so every driver in every race is generated at
+most once ever. Findings are expensive (one large prompt) and completely
+deterministic in their inputs, so a cache hit is free correctness rather than a
+shortcut. `?refresh=true` bypasses and overwrites both.
 """
 
 from __future__ import annotations
@@ -16,7 +18,7 @@ import logging
 
 from fastapi import APIRouter, HTTPException, Query
 
-from app.data import timeline as timeline_module
+from app.data import findings_store, timeline as timeline_module
 from app.pipeline import findings as findings_module
 from app.routers.agent_cache import get_cache
 from app.schemas import FindingsResponse, ScoringMode
@@ -43,6 +45,13 @@ def get_findings(
         if cached is not None:
             return FindingsResponse(**{**cached, "cached": True})
 
+        # Disk next. Promoted into memory on the way out so the next reader in
+        # this process does not touch the filesystem either.
+        stored = findings_store.load(session_id, driver, mode.value)
+        if stored is not None:
+            cache.set(cache_key, session_id, driver, stored)
+            return FindingsResponse(**{**stored, "cached": True})
+
     try:
         tl = timeline_module.build(session_id, driver, mode)
     except KeyError as exc:
@@ -56,5 +65,7 @@ def get_findings(
         # which should say "findings unavailable" rather than "something broke".
         raise HTTPException(503, str(exc)) from exc
 
-    cache.set(cache_key, session_id, driver, result.model_dump())
+    payload = result.model_dump(mode="json")
+    cache.set(cache_key, session_id, driver, payload)
+    findings_store.save(session_id, driver, mode.value, payload)
     return result

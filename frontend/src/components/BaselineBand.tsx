@@ -117,7 +117,7 @@ export function BaselineBand({
                   m === 'Calm' ? '' : 'border-l border-hairline'
                 }`}
                 style={{
-                  background: `color-mix(in srgb, ${MOOD_COLOR[m]} ${on ? 26 : 8}%, transparent)`,
+                  background: `color-mix(in srgb, ${MOOD_COLOR[m]} ${on ? 90 : 70}%, transparent)`,
                 }}
                 // Carries the same number where hover does not exist, and on a
                 // zone too narrow to print it into.
@@ -127,7 +127,7 @@ export function BaselineBand({
               >
                 <span
                   className="tower text-[12px]"
-                  style={{ color: MOOD_COLOR[m], opacity: on ? 1 : 0.55 }}
+                  style={{ color: 'var(--carbon)', opacity: on ? 1 : 0.7 }}
                 >
                   {m.toUpperCase()}
                 </span>
@@ -138,7 +138,7 @@ export function BaselineBand({
                 {result && (
                   <span
                     className="mono absolute right-2 hidden text-[10px] leading-none opacity-0 transition-opacity duration-150 group-hover:opacity-100 sm:block"
-                    style={{ color: MOOD_COLOR[m] }}
+                    style={{ color: 'var(--carbon)' }}
                     aria-hidden
                   >
                     {pct}%

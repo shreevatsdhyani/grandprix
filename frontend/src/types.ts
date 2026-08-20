@@ -430,9 +430,9 @@ export interface ProgressEvent {
  * a distinct shape too.
  */
 export const MOOD_COLOR: Record<Mood, string> = {
-  Calm: 'var(--status-good)',
-  Stressed: 'var(--status-warning)',
-  Tired: 'var(--status-critical)',
+  Calm: 'var(--status-good)',      // #00ff88 - Bright green
+  Stressed: 'var(--status-warning)',  // #ffaa00 - Bright orange/amber
+  Tired: 'var(--status-critical)',     // #ff0050 - Hot pink/red
 }
 
 /** The secondary encoding that makes mood readable without color. */

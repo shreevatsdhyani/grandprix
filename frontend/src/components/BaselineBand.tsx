@@ -157,11 +157,23 @@ export function BaselineBand({
           // Get current clip's prosody features
           const currentProsody = clip?.signals.prosody
 
+          // Position tooltip based on hovered zone
+          const zoneIndex = ZONES.indexOf(hoveredZone)
+          const positionStyle = zoneIndex === 0
+            ? { left: '0' }  // CALM - left aligned
+            : zoneIndex === 1
+            ? { left: '33.33%', transform: 'translateX(-50%)' }  // TIRED - center
+            : { right: '0' }  // STRESSED - right aligned
+
           return (
             <div
-              className="absolute left-0 right-0 top-full z-10 mt-2 rounded-lg border border-hairline bg-raised p-3 shadow-lg"
+              className="absolute top-full z-10 mt-2 rounded-lg border border-hairline p-3 shadow-lg"
               style={{
                 background: 'var(--panel)',
+                borderColor: 'var(--hairline)',
+                minWidth: '280px',
+                maxWidth: '320px',
+                ...positionStyle,
               }}
             >
               <div className="mb-2 flex items-center gap-2">
@@ -171,7 +183,7 @@ export function BaselineBand({
               </div>
 
               {/* Baseline features */}
-              <div className="grid grid-cols-2 gap-x-6 gap-y-2 sm:grid-cols-3">
+              <div className="space-y-2">
                 <div>
                   <dt className="eyebrow text-[9px] uppercase tracking-wider text-ink-muted">
                     Reference
@@ -250,7 +262,7 @@ export function BaselineBand({
                         </span>
                       )}
                     </div>
-                    <div className="grid grid-cols-2 gap-x-6 gap-y-2 sm:grid-cols-3">
+                    <div className="space-y-2">
                       <div>
                         <dt className="eyebrow text-[9px] uppercase tracking-wider text-ink-muted">
                           Pitch (z)

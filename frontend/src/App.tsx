@@ -652,31 +652,36 @@ function Baseline({
         </div>
 
         {b && (
-          <dl
-            className="grid flex-1 gap-x-6 gap-y-3"
-            style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))' }}
-          >
-            {[
-              ['Reference', b.source],
-              ['Baseline clips', String(b.n_baseline_clips)],
-              ['Mean pitch (z)', b.f0_mean.toFixed(2)],
-              ['Mean energy (z)', b.rms_mean.toFixed(3)],
-              ['Speech rate (z)', b.speech_rate.toFixed(2)],
-            ].map(([k, v]) => (
-              <div key={k} style={{ minWidth: '140px' }}>
-                <dt className="eyebrow" style={{ fontSize: 9 }}>
-                  {k}
-                </dt>
-                <dd className="mono mt-1 text-[15px] text-ink-primary">{v}</dd>
-              </div>
-            ))}
-          </dl>
+          <div className="flex-1">
+            <p className="mb-2 text-[10px] text-ink-muted">
+              Each driver is compared to their own baseline — ensuring a naturally loud driver isn't flagged as constantly stressed
+            </p>
+            <dl
+              className="grid gap-x-6 gap-y-3"
+              style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))' }}
+            >
+              {[
+                ['Reference', b.source],
+                ['Baseline clips', String(b.n_baseline_clips)],
+                ['Mean pitch (z)', b.f0_mean.toFixed(2)],
+                ['Mean energy (z)', b.rms_mean.toFixed(3)],
+                ['Speech rate (z)', b.speech_rate.toFixed(2)],
+              ].map(([k, v]) => (
+                <div key={k} style={{ minWidth: '140px' }}>
+                  <dt className="eyebrow" style={{ fontSize: 9 }}>
+                    {k}
+                  </dt>
+                  <dd className="mono mt-1 text-[15px] text-ink-primary">{v}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         )}
       </div>
 
       {/* The numbers above say what the reference is. This says where the call
           came out against it, which is the only thing anyone reads them for. */}
-      <BaselineBand result={result} />
+      <BaselineBand result={result} baseline={b} clip={clip} />
     </section>
   )
 }

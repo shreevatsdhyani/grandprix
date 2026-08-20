@@ -8,6 +8,8 @@
 .venv/
 venv/
 env/
+myenv/
+mynenv/
 __pycache__/
 *.py[cod]
 *.egg-info/

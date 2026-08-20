@@ -1,0 +1,629 @@
+{
+  "GAS": {
+    "Calm": {
+      "n_clips": 15,
+      "f0_mean": -0.3211333333333333,
+      "rms_mean": -0.09453333333333333,
+      "speech_rate": 0.0,
+      "f0_std": 0.6941979819152733,
+      "rms_std": 0.8496899322413918,
+      "speech_rate_std": 0.0
+    },
+    "Tired": {
+      "n_clips": 7,
+      "f0_mean": -0.4184285714285714,
+      "rms_mean": -4.926571428571428,
+      "speech_rate": 0.0,
+      "f0_std": 0.6996972814827036,
+      "rms_std": 6.37703358041294,
+      "speech_rate_std": 0.0
+    },
+    "Stressed": {
+      "n_clips": 7,
+      "f0_mean": 4.743142857142857,
+      "rms_mean": 0.5091428571428571,
+      "speech_rate": 0.0,
+      "f0_std": 5.152450660561808,
+      "rms_std": 0.8518664661732355,
+      "speech_rate_std": 0.0
+    }
+  },
+  "OCO": {
+    "Calm": {
+      "n_clips": 4,
+      "f0_mean": -0.40225,
+      "rms_mean": -0.7065,
+      "speech_rate": 0.0,
+      "f0_std": 0.5042462196189477,
+      "rms_std": 0.4812653460756689,
+      "speech_rate_std": 0.0
+    },
+    "Tired": {
+      "n_clips": 19,
+      "f0_mean": -0.15836842105263157,
+      "rms_mean": -0.10884210526315788,
+      "speech_rate": 0.0,
+      "f0_std": 0.9240711378656176,
+      "rms_std": 1.3254654638678567,
+      "speech_rate_std": 0.0
+    },
+    "Stressed": {
+      "n_clips": 15,
+      "f0_mean": 5.7644,
+      "rms_mean": 0.19886666666666666,
+      "speech_rate": 0.0,
+      "f0_std": 5.365116012592033,
+      "rms_std": 2.2867332553125608,
+      "speech_rate_std": 0.0
+    }
+  },
+  "ALO": {
+    "Calm": {
+      "n_clips": 25,
+      "f0_mean": -0.088,
+      "rms_mean": 0.22127999999999998,
+      "speech_rate": 0.0,
+      "f0_std": 0.8334678058169573,
+      "rms_std": 1.329532640943175,
+      "speech_rate_std": 0.0
+    },
+    "Tired": {
+      "n_clips": 10,
+      "f0_mean": -0.2472,
+      "rms_mean": -2.1188000000000002,
+      "speech_rate": 0.0,
+      "f0_std": 0.6199829388333556,
+      "rms_std": 5.679530317044027,
+      "speech_rate_std": 0.0
+    },
+    "Stressed": {
+      "n_clips": 14,
+      "f0_mean": 1.7401428571428572,
+      "rms_mean": 0.09742857142857143,
+      "speech_rate": 0.0,
+      "f0_std": 1.6949712889396298,
+      "rms_std": 0.7969374760038209,
+      "speech_rate_std": 0.0
+    }
+  },
+  "RUS": {
+    "Calm": {
+      "n_clips": 25,
+      "f0_mean": -0.24416000000000002,
+      "rms_mean": -0.12892,
+      "speech_rate": 0.0,
+      "f0_std": 0.8817054818172941,
+      "rms_std": 1.4783489078473098,
+      "speech_rate_std": 0.0
+    },
+    "Tired": {
+      "n_clips": 24,
+      "f0_mean": -0.03108333333333336,
+      "rms_mean": -1.207125,
+      "speech_rate": 0.0,
+      "f0_std": 1.2871330770246776,
+      "rms_std": 3.986826484621354,
+      "speech_rate_std": 0.0
+    },
+    "Stressed": {
+      "n_clips": 27,
+      "f0_mean": 2.30237037037037,
+      "rms_mean": 0.7929259259259259,
+      "speech_rate": 0.0,
+      "f0_std": 1.7274240080836274,
+      "rms_std": 1.4041205823171348,
+      "speech_rate_std": 0.0
+    }
+  },
+  "SAI": {
+    "Calm": {
+      "n_clips": 33,
+      "f0_mean": -0.21206060606060606,
+      "rms_mean": -0.07763636363636364,
+      "speech_rate": 0.0,
+      "f0_std": 0.4269288538060191,
+      "rms_std": 1.0087715864537243,
+      "speech_rate_std": 0.0
+    },
+    "Tired": {
+      "n_clips": 23,
+      "f0_mean": 0.08708695652173913,
+      "rms_mean": -4.022304347826087,
+      "speech_rate": 0.0,
+      "f0_std": 0.8561596555148024,
+      "rms_std": 8.250871366846836,
+      "speech_rate_std": 0.0
+    },
+    "Stressed": {
+      "n_clips": 14,
+      "f0_mean": 3.6940714285714287,
+      "rms_mean": 0.6552142857142857,
+      "speech_rate": 0.0,
+      "f0_std": 4.080731598515256,
+      "rms_std": 0.9352150866200557,
+      "speech_rate_std": 0.0
+    }
+  },
+  "HUL": {
+    "Calm": {
+      "n_clips": 23,
+      "f0_mean": -0.21608695652173915,
+      "rms_mean": 0.13995652173913045,
+      "speech_rate": 0.0,
+      "f0_std": 0.9354255673728732,
+      "rms_std": 1.094386564505052,
+      "speech_rate_std": 0.0
+    },
+    "Tired": {
+      "n_clips": 14,
+      "f0_mean": -0.05457142857142857,
+      "rms_mean": -2.4674285714285715,
+      "speech_rate": 0.0,
+      "f0_std": 1.0481367874827814,
+      "rms_std": 7.788067013206666,
+      "speech_rate_std": 0.0
+    },
+    "Stressed": {
+      "n_clips": 15,
+      "f0_mean": 2.2654,
+      "rms_mean": 1.768,
+      "speech_rate": 0.0,
+      "f0_std": 1.2220020925864712,
+      "rms_std": 1.5829378653991084,
+      "speech_rate_std": 0.0
+    }
+  },
+  "HAM": {
+    "Calm": {
+      "n_clips": 34,
+      "f0_mean": -0.009323529411764701,
+      "rms_mean": -0.14311764705882352,
+      "speech_rate": 0.0,
+      "f0_std": 0.6644759940752692,
+      "rms_std": 1.1182295737813164,
+      "speech_rate_std": 0.0
+    },
+    "Tired": {
+      "n_clips": 21,
+      "f0_mean": -0.5370952380952381,
+      "rms_mean": -0.16219047619047616,
+      "speech_rate": 0.0,
+      "f0_std": 1.0743323929195239,
+      "rms_std": 1.1784529952037808,
+      "speech_rate_std": 0.0
+    },
+    "Stressed": {
+      "n_clips": 6,
+      "f0_mean": 1.5473333333333332,
+      "rms_mean": 0.48783333333333334,
+      "speech_rate": 0.0,
+      "f0_std": 1.2840189510543318,
+      "rms_std": 0.6461056931080755,
+      "speech_rate_std": 0.0
+    }
+  },
+  "VER": {
+    "Calm": {
+      "n_clips": 35,
+      "f0_mean": 0.05151428571428569,
+      "rms_mean": -0.21682857142857143,
+      "speech_rate": 0.0,
+      "f0_std": 1.0614829629684448,
+      "rms_std": 1.3684872817589993,
+      "speech_rate_std": 0.0
+    },
+    "Tired": {
+      "n_clips": 14,
+      "f0_mean": 0.6819285714285714,
+      "rms_mean": -4.9115714285714285,
+      "speech_rate": 0.0,
+      "f0_std": 1.365731613699903,
+      "rms_std": 12.270012881406855,
+      "speech_rate_std": 0.0
+    },
+    "Stressed": {
+      "n_clips": 24,
+      "f0_mean": 3.144375,
+      "rms_mean": 0.40475,
+      "speech_rate": 0.0,
+      "f0_std": 0.8347736903678953,
+      "rms_std": 1.5704635219937595,
+      "speech_rate_std": 0.0
+    }
+  },
+  "LEC": {
+    "Calm": {
+      "n_clips": 20,
+      "f0_mean": -0.0025000000000000057,
+      "rms_mean": 0.010550000000000016,
+      "speech_rate": 0.0,
+      "f0_std": 1.0702541016530902,
+      "rms_std": 0.9602726846825169,
+      "speech_rate_std": 0.0
+    },
+    "Tired": {
+      "n_clips": 24,
+      "f0_mean": 0.03441666666666668,
+      "rms_mean": -0.08870833333333333,
+      "speech_rate": 0.0,
+      "f0_std": 1.2736804567069016,
+      "rms_std": 0.8764738880590085,
+      "speech_rate_std": 0.0
+    },
+    "Stressed": {
+      "n_clips": 6,
+      "f0_mean": 4.192333333333333,
+      "rms_mean": -0.047000000000000014,
+      "speech_rate": 0.0,
+      "f0_std": 3.1157023392273318,
+      "rms_std": 0.5825159225291614,
+      "speech_rate_std": 0.0
+    }
+  },
+  "STR": {
+    "Calm": {
+      "n_clips": 12,
+      "f0_mean": 0.3456666666666667,
+      "rms_mean": -0.16866666666666666,
+      "speech_rate": 0.0,
+      "f0_std": 0.9431510371026895,
+      "rms_std": 1.4188242464887053,
+      "speech_rate_std": 0.0
+    },
+    "Tired": {
+      "n_clips": 8,
+      "f0_mean": -0.1255,
+      "rms_mean": -0.07562500000000001,
+      "speech_rate": 0.0,
+      "f0_std": 1.4042704257269782,
+      "rms_std": 1.0494154750553826,
+      "speech_rate_std": 0.0
+    },
+    "Stressed": {
+      "n_clips": 4,
+      "f0_mean": 4.202,
+      "rms_mean": -0.319,
+      "speech_rate": 0.0,
+      "f0_std": 4.7136791009429855,
+      "rms_std": 1.163816423095441,
+      "speech_rate_std": 0.0
+    }
+  },
+  "ZHO": {
+    "Calm": {
+      "n_clips": 9,
+      "f0_mean": -0.006444444444444453,
+      "rms_mean": -0.1988888888888889,
+      "speech_rate": 0.0,
+      "f0_std": 0.9497441907049381,
+      "rms_std": 1.1181861925060206,
+      "speech_rate_std": 0.0
+    },
+    "Tired": {
+      "n_clips": 1,
+      "f0_mean": 0.0,
+      "rms_mean": -12.077,
+      "speech_rate": 0.0,
+      "f0_std": 0,
+      "rms_std": 0,
+      "speech_rate_std": 0
+    },
+    "Stressed": {
+      "n_clips": 12,
+      "f0_mean": 9.603583333333333,
+      "rms_mean": 0.051250000000000025,
+      "speech_rate": 0.0,
+      "f0_std": 3.754511479136759,
+      "rms_std": 2.853824041368162,
+      "speech_rate_std": 0.0
+    }
+  },
+  "PER": {
+    "Calm": {
+      "n_clips": 19,
+      "f0_mean": -0.6068947368421053,
+      "rms_mean": 0.09284210526315789,
+      "speech_rate": 0.0,
+      "f0_std": 1.405861258159205,
+      "rms_std": 1.5243110743749086,
+      "speech_rate_std": 0.0
+    },
+    "Tired": {
+      "n_clips": 25,
+      "f0_mean": -0.015799999999999995,
+      "rms_mean": -2.23428,
+      "speech_rate": 0.0,
+      "f0_std": 1.6310322907083519,
+      "rms_std": 4.876443363422431,
+      "speech_rate_std": 0.0
+    },
+    "Stressed": {
+      "n_clips": 4,
+      "f0_mean": 4.67975,
+      "rms_mean": 0.68975,
+      "speech_rate": 0.0,
+      "f0_std": 0.9950207284273028,
+      "rms_std": 0.6335410405017184,
+      "speech_rate_std": 0.0
+    }
+  },
+  "NOR": {
+    "Calm": {
+      "n_clips": 29,
+      "f0_mean": -0.023000000000000003,
+      "rms_mean": -0.19455172413793104,
+      "speech_rate": 0.0,
+      "f0_std": 0.8568194925753866,
+      "rms_std": 0.9554031156012066,
+      "speech_rate_std": 0.0
+    },
+    "Tired": {
+      "n_clips": 15,
+      "f0_mean": -0.008933333333333342,
+      "rms_mean": -1.9941999999999998,
+      "speech_rate": 0.0,
+      "f0_std": 1.1222636860169632,
+      "rms_std": 3.820665316033695,
+      "speech_rate_std": 0.0
+    },
+    "Stressed": {
+      "n_clips": 13,
+      "f0_mean": 5.066538461538461,
+      "rms_mean": -0.6965384615384616,
+      "speech_rate": 0.0,
+      "f0_std": 6.375516928262688,
+      "rms_std": 1.1663381881901875,
+      "speech_rate_std": 0.0
+    }
+  },
+  "BOT": {
+    "Calm": {
+      "n_clips": 8,
+      "f0_mean": -0.322625,
+      "rms_mean": -0.437,
+      "speech_rate": 0.0,
+      "f0_std": 0.8676473835279267,
+      "rms_std": 1.1201563666356076,
+      "speech_rate_std": 0.0
+    },
+    "Tired": {
+      "n_clips": 17,
+      "f0_mean": 0.2551764705882353,
+      "rms_mean": -0.6315294117647059,
+      "speech_rate": 0.0,
+      "f0_std": 2.1105500833696804,
+      "rms_std": 2.634403255901777,
+      "speech_rate_std": 0.0
+    },
+    "Stressed": {
+      "n_clips": 3,
+      "f0_mean": 11.810666666666668,
+      "rms_mean": -0.7193333333333334,
+      "speech_rate": 0.0,
+      "f0_std": 15.711161170751618,
+      "rms_std": 0.2528088869745945,
+      "speech_rate_std": 0.0
+    }
+  },
+  "SAR": {
+    "Calm": {
+      "n_clips": 7,
+      "f0_mean": -0.0652857142857143,
+      "rms_mean": 0.10114285714285717,
+      "speech_rate": 0.0,
+      "f0_std": 1.0517093569178566,
+      "rms_std": 1.1026638092322048,
+      "speech_rate_std": 0.0
+    },
+    "Tired": {
+      "n_clips": 6,
+      "f0_mean": 0.8193333333333334,
+      "rms_mean": -0.4743333333333333,
+      "speech_rate": 0.0,
+      "f0_std": 1.5792279970500356,
+      "rms_std": 1.7846981444117285,
+      "speech_rate_std": 0.0
+    },
+    "Stressed": {
+      "n_clips": 3,
+      "f0_mean": 1.923,
+      "rms_mean": 2.061,
+      "speech_rate": 0.0,
+      "f0_std": 0.8138482659562531,
+      "rms_std": 2.1860933191426204,
+      "speech_rate_std": 0.0
+    }
+  },
+  "PIA": {
+    "Calm": {
+      "n_clips": 28,
+      "f0_mean": -0.10821428571428571,
+      "rms_mean": -0.08242857142857143,
+      "speech_rate": 0.0,
+      "f0_std": 1.0495534979092513,
+      "rms_std": 1.0667608440567635,
+      "speech_rate_std": 0.0
+    },
+    "Tired": {
+      "n_clips": 9,
+      "f0_mean": -0.26699999999999996,
+      "rms_mean": 0.16744444444444445,
+      "speech_rate": 0.0,
+      "f0_std": 1.2476834534448231,
+      "rms_std": 1.0057821721316091,
+      "speech_rate_std": 0.0
+    },
+    "Stressed": {
+      "n_clips": 4,
+      "f0_mean": 2.0765000000000002,
+      "rms_mean": -0.8375,
+      "speech_rate": 0.0,
+      "f0_std": 0.8837245045827347,
+      "rms_std": 0.9459818532438488,
+      "speech_rate_std": 0.0
+    }
+  },
+  "LAW": {
+    "Calm": null,
+    "Tired": null,
+    "Stressed": {
+      "n_clips": 7,
+      "f0_mean": 3.064142857142857,
+      "rms_mean": 0.004285714285714286,
+      "speech_rate": 0.0,
+      "f0_std": 0.7722938621559863,
+      "rms_std": 1.0138579312516645,
+      "speech_rate_std": 0.0
+    }
+  },
+  "ALB": {
+    "Calm": {
+      "n_clips": 14,
+      "f0_mean": -0.0674285714285714,
+      "rms_mean": -0.332,
+      "speech_rate": 0.0,
+      "f0_std": 1.079420764490468,
+      "rms_std": 1.601050712693194,
+      "speech_rate_std": 0.0
+    },
+    "Tired": {
+      "n_clips": 13,
+      "f0_mean": -0.413,
+      "rms_mean": -1.6486153846153846,
+      "speech_rate": 0.0,
+      "f0_std": 0.8025926737766798,
+      "rms_std": 4.198049319593993,
+      "speech_rate_std": 0.0
+    },
+    "Stressed": {
+      "n_clips": 7,
+      "f0_mean": 3.5708571428571427,
+      "rms_mean": -0.022142857142857148,
+      "speech_rate": 0.0,
+      "f0_std": 2.336309156809192,
+      "rms_std": 2.1318474326720653,
+      "speech_rate_std": 0.0
+    }
+  },
+  "MAG": {
+    "Calm": {
+      "n_clips": 18,
+      "f0_mean": -0.3616666666666667,
+      "rms_mean": 0.23194444444444445,
+      "speech_rate": 0.0,
+      "f0_std": 1.1919850472808693,
+      "rms_std": 1.0310946480331544,
+      "speech_rate_std": 0.0
+    },
+    "Tired": {
+      "n_clips": 10,
+      "f0_mean": -0.8725,
+      "rms_mean": -4.2948,
+      "speech_rate": 0.0,
+      "f0_std": 1.5034720741596026,
+      "rms_std": 8.878560704178227,
+      "speech_rate_std": 0.0
+    },
+    "Stressed": {
+      "n_clips": 7,
+      "f0_mean": 4.408142857142857,
+      "rms_mean": 0.6871428571428572,
+      "speech_rate": 0.0,
+      "f0_std": 2.376337478037118,
+      "rms_std": 1.5148635173475122,
+      "speech_rate_std": 0.0
+    }
+  },
+  "DEV": {
+    "Calm": null,
+    "Tired": null,
+    "Stressed": {
+      "n_clips": 9,
+      "f0_mean": 3.6935555555555557,
+      "rms_mean": 0.08433333333333337,
+      "speech_rate": 0.0,
+      "f0_std": 1.0999369426370667,
+      "rms_std": 1.4630883431973614,
+      "speech_rate_std": 0.0
+    }
+  },
+  "TSU": {
+    "Calm": {
+      "n_clips": 6,
+      "f0_mean": -0.05850000000000003,
+      "rms_mean": 0.1468333333333333,
+      "speech_rate": 0.0,
+      "f0_std": 1.1610043496903877,
+      "rms_std": 0.9948164487314566,
+      "speech_rate_std": 0.0
+    },
+    "Tired": {
+      "n_clips": 2,
+      "f0_mean": 0.37,
+      "rms_mean": 0.921,
+      "speech_rate": 0.0,
+      "f0_std": 0.1767766952966369,
+      "rms_std": 0.787716954241814,
+      "speech_rate_std": 0.0
+    },
+    "Stressed": {
+      "n_clips": 14,
+      "f0_mean": 6.691357142857143,
+      "rms_mean": -0.32935714285714285,
+      "speech_rate": 0.0,
+      "f0_std": 3.786111534931988,
+      "rms_std": 1.0527083464271396,
+      "speech_rate_std": 0.0
+    }
+  },
+  "RIC": {
+    "Calm": {
+      "n_clips": 4,
+      "f0_mean": 0.0,
+      "rms_mean": 0.00025000000000000716,
+      "speech_rate": 0.0,
+      "f0_std": 1.1544531172810786,
+      "rms_std": 1.1543019174664255,
+      "speech_rate_std": 0.0
+    },
+    "Tired": {
+      "n_clips": 1,
+      "f0_mean": -1.064,
+      "rms_mean": -0.202,
+      "speech_rate": 0.0,
+      "f0_std": 0,
+      "rms_std": 0,
+      "speech_rate_std": 0
+    },
+    "Stressed": {
+      "n_clips": 4,
+      "f0_mean": 1.3875,
+      "rms_mean": -0.43674999999999997,
+      "speech_rate": 0.0,
+      "f0_std": 1.0346627469857026,
+      "rms_std": 0.2854859891483293,
+      "speech_rate_std": 0.0
+    }
+  },
+  "COL": {
+    "Calm": {
+      "n_clips": 1,
+      "f0_mean": -1.087,
+      "rms_mean": -1.084,
+      "speech_rate": 0.0,
+      "f0_std": 0,
+      "rms_std": 0,
+      "speech_rate_std": 0
+    },
+    "Tired": null,
+    "Stressed": {
+      "n_clips": 1,
+      "f0_mean": 2.086,
+      "rms_mean": -1.938,
+      "speech_rate": 0.0,
+      "f0_std": 0,
+      "rms_std": 0,
+      "speech_rate_std": 0
+    }
+  }
+}

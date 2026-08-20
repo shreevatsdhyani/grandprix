@@ -148,6 +148,16 @@ export interface TimelinePoint {
   situation: RaceSituation | null
 }
 
+export interface MoodSpecificBaseline {
+  n_clips: number
+  f0_mean: number
+  rms_mean: number
+  speech_rate: number
+  f0_std: number
+  rms_std: number
+  speech_rate_std: number
+}
+
 export interface DriverBaseline {
   driver: string
   n_baseline_clips: number
@@ -156,6 +166,8 @@ export interface DriverBaseline {
   speech_rate: number
   /** 'prior' means population defaults — do NOT claim per-driver calibration. */
   source: 'driver' | 'cohort' | 'prior'
+  /** Baseline features grouped by mood (Calm, Tired, Stressed) */
+  mood_baselines: Record<string, MoodSpecificBaseline | null>
 }
 
 export interface Timeline {

@@ -1,0 +1,76 @@
+{
+  "clip_id": "upload-d850e1be68",
+  "driver": "HAM",
+  "session_id": "2024-british-r",
+  "lap": null,
+  "duration_s": 5.41,
+  "audio_url": "/api/clips/upload-d850e1be68",
+  "transcript": {
+    "text": "Can we also just check my seat? There's a bit of heat coming up around my bum.",
+    "words": [],
+    "language": "en",
+    "stt_model": "distil-whisper/distil-small.en"
+  },
+  "signals": {
+    "prosody": {
+      "score": 22.4,
+      "f0_mean_z": -0.869,
+      "f0_std_z": -0.811,
+      "rms_mean_z": -0.59,
+      "speech_rate_z": 0.0,
+      "pause_ratio_z": -0.533,
+      "jitter_z": -0.753
+    },
+    "acoustic": {
+      "score": 27.1,
+      "probabilities": {
+        "hap": 0.9218,
+        "sad": 0.0624,
+        "neu": 0.0144,
+        "ang": 0.0015
+      },
+      "top_label": "hap",
+      "model_id": "superb/wav2vec2-base-superb-er"
+    },
+    "text": {
+      "score": 23.8,
+      "probabilities": {
+        "neutral": 0.8298,
+        "disgust": 0.0597,
+        "surprise": 0.0354,
+        "sadness": 0.0342,
+        "anger": 0.0209,
+        "fear": 0.0166,
+        "joy": 0.0033
+      },
+      "top_label": "neutral",
+      "model_id": "j-hartmann/emotion-english-distilroberta-base"
+    }
+  },
+  "fusion": {
+    "mood": "Calm",
+    "confidence": 0.722,
+    "stress_index": 25.1,
+    "probabilities": {
+      "Calm": 0.722,
+      "Stressed": 0.007,
+      "Tired": 0.271
+    },
+    "mode": "fusion",
+    "fitted": true
+  },
+  "naive": {
+    "mood": "Calm",
+    "confidence": 0.922,
+    "stress_index": 27.1,
+    "probabilities": {
+      "Calm": 0.939,
+      "Stressed": 0.001,
+      "Tired": 0.06
+    },
+    "mode": "naive",
+    "fitted": false
+  },
+  "processing_ms": 4406,
+  "cached": false
+}

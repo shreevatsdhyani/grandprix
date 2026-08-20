@@ -10,7 +10,9 @@ badge, driven by /api/health, reports whether real models are behind it.
 
 from __future__ import annotations
 
+import json
 import logging
+from pathlib import Path
 
 from app.context import provider as context_provider, situation as situation_mod
 from app.data import fastf1_client, store
@@ -21,6 +23,7 @@ from app.schemas import (
     ClipAnalysis,
     ClipContext,
     DriverBaseline,
+    MoodSpecificBaseline,
     RaceSituation,
     ScoringMode,
     Timeline,
@@ -236,6 +239,22 @@ def _track_for_lap(session_context, lap: int, clip_ctx):
     return None
 
 
+def _load_mood_baselines() -> dict[str, dict[str, dict]]:
+    """Load pre-computed mood-specific baselines from disk."""
+    # Go up to grandprix/ directory, then into data/
+    mood_baselines_path = Path(__file__).parent.parent.parent.parent / "data" / "mood_baselines.json"
+    if not mood_baselines_path.exists():
+        log.warning(f"Mood baselines file not found: {mood_baselines_path}")
+        return {}
+
+    try:
+        with open(mood_baselines_path, "r") as f:
+            return json.load(f)
+    except Exception as e:
+        log.error(f"Failed to load mood baselines: {e}")
+        return {}
+
+
 def _baseline(driver: str, analyses: list[ClipAnalysis]) -> DriverBaseline | None:
     """Surface the driver's calm-lap reference so per-driver calibration is
     visible in the UI rather than merely claimed in the pitch.
@@ -245,6 +264,28 @@ def _baseline(driver: str, analyses: list[ClipAnalysis]) -> DriverBaseline | Non
         return None
     n = len(calm)
     source = baseline_mod.source_for(driver)
+
+    # Load mood-specific baselines
+    all_mood_baselines = _load_mood_baselines()
+    driver_mood_baselines = all_mood_baselines.get(driver, {})
+
+    # Convert to MoodSpecificBaseline objects
+    mood_baselines_dict = {}
+    for mood in ["Calm", "Tired", "Stressed"]:
+        mood_data = driver_mood_baselines.get(mood)
+        if mood_data:
+            mood_baselines_dict[mood] = MoodSpecificBaseline(
+                n_clips=mood_data["n_clips"],
+                f0_mean=mood_data["f0_mean"],
+                rms_mean=mood_data["rms_mean"],
+                speech_rate=mood_data["speech_rate"],
+                f0_std=mood_data.get("f0_std", 0.0),
+                rms_std=mood_data.get("rms_std", 0.0),
+                speech_rate_std=mood_data.get("speech_rate_std", 0.0),
+            )
+        else:
+            mood_baselines_dict[mood] = None
+
     return DriverBaseline(
         driver=driver,
         n_baseline_clips=n,
@@ -254,4 +295,5 @@ def _baseline(driver: str, analyses: list[ClipAnalysis]) -> DriverBaseline | Non
         rms_mean=round(sum(c.signals.prosody.rms_mean_z for c in calm) / n, 4),
         speech_rate=round(sum(c.signals.prosody.speech_rate_z for c in calm) / n, 2),
         source=source,
+        mood_baselines=mood_baselines_dict,
     )

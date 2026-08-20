@@ -330,6 +330,18 @@ class TimelinePoint(BaseModel):
     situation: RaceSituation | None = None
 
 
+class MoodSpecificBaseline(BaseModel):
+    """Baseline features for a specific mood state."""
+
+    n_clips: int
+    f0_mean: float
+    rms_mean: float
+    speech_rate: float
+    f0_std: float = 0.0
+    rms_std: float = 0.0
+    speech_rate_std: float = 0.0
+
+
 class DriverBaseline(BaseModel):
     """Surfaced in the UI so per-driver calibration is visible, not just claimed."""
 
@@ -345,6 +357,11 @@ class DriverBaseline(BaseModel):
             "defaults — no annotations exist yet, so the UI must not claim this "
             "driver has been individually calibrated."
         ),
+    )
+    # Mood-specific baselines for better context on hover
+    mood_baselines: dict[str, MoodSpecificBaseline | None] = Field(
+        default_factory=dict,
+        description="Baseline features grouped by mood (Calm, Tired, Stressed)"
     )
 
 

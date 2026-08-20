@@ -32,9 +32,23 @@ CONTEXT_DIR = DATA_DIR / "context"
 # Uploaded driver biometrics, one file per (session, driver). Absent file means
 # no data; nothing here is ever synthesised.
 BIOMETRICS_DIR = DATA_DIR / "biometrics"
+# LLM-authored top findings, one file per (session, driver, mode). Persistent
+# rather than in-memory because findings are deterministic in their inputs and
+# expensive in their generation: the same driver's briefing should be written
+# once and then read for free, across restarts and across deploys of the same
+# data. `?refresh=true` is the only thing that overwrites a file here.
+FINDINGS_DIR = DATA_DIR / "findings"
 FIXTURES_DIR = Path(__file__).resolve().parent / "fixtures"
 
-for _d in (FASTF1_CACHE_DIR, CLIPS_DIR, LABELS_DIR, RESULTS_DIR, CONTEXT_DIR, BIOMETRICS_DIR):
+for _d in (
+    FASTF1_CACHE_DIR,
+    CLIPS_DIR,
+    LABELS_DIR,
+    RESULTS_DIR,
+    CONTEXT_DIR,
+    BIOMETRICS_DIR,
+    FINDINGS_DIR,
+):
     _d.mkdir(parents=True, exist_ok=True)
 
 # --------------------------------------------------------------------------

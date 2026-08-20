@@ -77,6 +77,25 @@ function AppContent() {
   const [findingsAvailable, setFindingsAvailable] = useState(true)
   // Bumped by the panel's "regenerate" control to re-run the effect.
   const [findingsNonce, setFindingsNonce] = useState(0)
+  /**
+   * Findings already seen this visit, keyed session|driver|mode.
+   *
+   * The backend caches these to disk, so a revisit is a fast request rather than
+   * a slow one — but "fast request" still means clearing the panel and showing
+   * "Reading the session across voice, pace…" for a round trip, every single time
+   * the user clicks through the driver list. Findings never change for a fixed
+   * key, so holding them here makes going back to a driver instant and silent.
+   * A ref, not state: writing to it must not itself trigger a render.
+   */
+  const findingsSeen = useRef<Map<string, FindingsResponse>>(new Map())
+  /**
+   * True only for the one fetch the "regenerate" button asked for.
+   *
+   * Reading `findingsNonce > 0` instead would make refresh sticky: after one
+   * press, every later driver switch would bypass both caches for the rest of
+   * the visit and pay the full LLM cost again.
+   */
+  const findingsForceRefresh = useRef(false)
   // Set by a biometrics upload so the panel updates without a timeline refetch.
   // Cleared whenever the session or driver changes, since it belongs to one pair.
   const [biometrics, setBiometrics] = useState<BiometricSeries | null>(null)
@@ -124,14 +143,28 @@ function AppContent() {
   // so blocking the chart on them would make every driver switch feel broken.
   useEffect(() => {
     if (!sessionId) return
+    const key = `${sessionId}|${driver}|${mode}`
+    const refresh = findingsForceRefresh.current
+    findingsForceRefresh.current = false
+
+    // Served from what we already hold: no request, no spinner, no flicker.
+    const remembered = refresh ? undefined : findingsSeen.current.get(key)
+    if (remembered) {
+      setFindings(remembered)
+      setFindingsError(null)
+      setFindingsLoading(false)
+      return
+    }
+
     let live = true
     setFindings(null)
     setFindingsError(null)
     setFindingsLoading(true)
-    // A nonce above zero means the user pressed "regenerate", so bypass the
-    // server-side cache — otherwise the button would re-read the same answer.
-    getFindings(sessionId, driver, mode, { refresh: findingsNonce > 0 })
+    // Only "regenerate" bypasses the server caches — otherwise the button would
+    // re-read the same answer it was pressed to replace.
+    getFindings(sessionId, driver, mode, { refresh })
       .then((f) => {
+        findingsSeen.current.set(key, f)
         if (live) setFindings(f)
       })
       .catch((e: unknown) => {
@@ -502,7 +535,10 @@ function AppContent() {
                         loading={findingsLoading}
                         error={findingsError}
                         onSelectLap={selectLap}
-                        onRefresh={() => setFindingsNonce((n) => n + 1)}
+                        onRefresh={() => {
+                          findingsForceRefresh.current = true
+                          setFindingsNonce((n) => n + 1)
+                        }}
                       />
                     </div>
                   </ComponentErrorBoundary>

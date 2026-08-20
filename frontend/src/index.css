@@ -329,6 +329,142 @@ input.control {
   padding: 0 12px;
 }
 
+/* ── Glass pickers ─────────────────────────────────────────────────────────
+   The header is a blurred plate, and a solid `.control` punched a flat opaque
+   rectangle out of it — which is exactly why the two selects read as bolted on
+   rather than part of the bar. These share the 40px metrics so the row still
+   lines up, but the fill is translucent and picks up the blur behind it.
+
+   Two inset hairlines do the work: light along the top edge, dark along the
+   bottom. That is the whole trick — it is what makes a translucent panel read as
+   a pane of glass rather than a washed-out box. Used by SelectMenu.tsx. */
+
+.control-glass {
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 10px 0 11px;
+  border-radius: 11px;
+  cursor: pointer;
+  color: var(--ice);
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.075) 0%,
+      rgba(255, 255, 255, 0.018) 46%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    color-mix(in srgb, var(--panel-2) 74%, transparent);
+  backdrop-filter: blur(18px) saturate(155%);
+  -webkit-backdrop-filter: blur(18px) saturate(155%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.09) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.4) inset,
+    0 10px 24px -18px rgba(0, 0, 0, 0.9);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.control-glass:hover:not(:disabled) {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.control-glass:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Open is a state worth seeing from across a room: the trigger and the list it
+   owns are separate boxes, and the cyan rim is what ties them together. */
+.control-glass[aria-expanded='true'] {
+  border-color: color-mix(in srgb, var(--accent-cyan) 55%, transparent);
+  box-shadow:
+    0 0 0 3px rgba(0, 217, 255, 0.13),
+    0 1px 0 rgba(255, 255, 255, 0.09) inset;
+}
+
+/* The list runs over the headline and the charts, so the fill is only lightly
+   translucent — 92%, not the 74% the trigger can afford. Enough for the colour
+   underneath to warm it, not enough for text to read through. Blur is a bonus
+   here rather than the thing holding legibility up: it is dropped on software
+   rendering, over a remote desktop and on a projector, all of which this has to
+   survive. */
+.menu-pop {
+  border-radius: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055) 0%, rgba(255, 255, 255, 0) 34%),
+    color-mix(in srgb, var(--panel) 92%, transparent);
+  backdrop-filter: blur(28px) saturate(165%);
+  -webkit-backdrop-filter: blur(28px) saturate(165%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.07) inset,
+    0 30px 70px -26px rgba(0, 0, 0, 0.95),
+    0 0 0 1px rgba(0, 0, 0, 0.45);
+  animation: gp-menu-in 0.16s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.menu-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  padding: 7px 9px 7px 11px;
+  border-radius: 8px;
+  cursor: pointer;
+  /* Falls back to cyan so a row without a livery still gets a rail. */
+  --row-accent: var(--accent-cyan);
+}
+
+/* Hover and keyboard cursor are the same state — `data-active` is set from
+   pointer move as well as arrow keys, so the mouse and the keyboard can never
+   disagree about which row is about to be chosen. */
+.menu-row[data-active] {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.menu-row[aria-selected='true'] {
+  background: color-mix(in srgb, var(--row-accent) 13%, transparent);
+}
+
+.menu-row[aria-selected='true']::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 7px;
+  bottom: 7px;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--row-accent);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--row-accent) 65%, transparent);
+}
+
+@keyframes gp-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Without backdrop blur the translucent fills read as muddy grey, so fall back
+   to the opaque surfaces the rest of the page uses. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .control-glass {
+    background: var(--panel-2);
+  }
+  .menu-pop {
+    background: var(--panel);
+  }
+}
+
 .btn {
   display: inline-flex;
   align-items: center;

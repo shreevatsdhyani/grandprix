@@ -50,8 +50,33 @@ function Cell({ label, children }: { label: string; children: React.ReactNode })
   )
 }
 
-export function ClipContextCard({ context }: { context: ClipContext | null }) {
-  if (!context) return null
+export function ClipContextCard({
+  context,
+  detached = false,
+}: {
+  context: ClipContext | null
+  /** Clip uploaded with no lap, so no race context can exist for it. */
+  detached?: boolean
+}) {
+  // Same argument as the non-racing branch below, for the other way a clip can
+  // have no context: an upload never appears in `timeline.clip_contexts`, so this
+  // used to `return null` and the whole card vanished from the sidebar without a
+  // word. On stage that reads as a broken panel rather than an honest one.
+  if (!context) {
+    if (!detached) return null
+    return (
+      <div className="mt-3 rounded-lg border border-hairline bg-raised px-3 py-2.5">
+        <p className="eyebrow">No race context</p>
+        <p className="mt-0.5 text-[12px] leading-relaxed text-ink">
+          Uploaded clip with no lap number.
+        </p>
+        <p className="mt-1.5 text-[11px] leading-relaxed text-ink-muted">
+          Tyre, track position and race situation are all resolved from the lap, so none of them
+          exist for this clip. The voice reading above needs only the audio and is unaffected.
+        </p>
+      </div>
+    )
+  }
 
   const { position: pos, tyre, track, situation: sit, phase } = context
 

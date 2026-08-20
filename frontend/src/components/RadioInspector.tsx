@@ -72,14 +72,31 @@ export function RadioInspector({
   const result = clip ? (mode === 'fusion' ? clip.fusion : clip.naive) : null
   const stress = Math.round(result?.stress_index ?? 0)
 
+  // A clip uploaded without a lap number cannot be placed in the race: the
+  // backend keys race context off the lap, so there is no tyre, track position
+  // or situation to resolve for it. The voice analysis is entirely unaffected —
+  // it needs only audio — which is exactly the distinction the UI has to make
+  // visible instead of rendering blanks and letting the viewer guess.
+  const isDetached = clip != null && clip.clip_id.startsWith('upload-') && clip.lap == null
+
   return (
     <section className="panel panel-team flex flex-col p-4 sm:p-5" aria-label="Radio inspector">
       <div className="flex items-baseline justify-between gap-3">
         <h2 className="card-title">Radio call</h2>
-        {clip?.lap != null && (
+        {clip?.lap != null ? (
           <span className="tower text-ink-secondary" style={{ fontSize: 14 }}>
             LAP&nbsp;&nbsp;{clip.lap}
           </span>
+        ) : (
+          // An upload with no lap used to render nothing here, leaving a blank
+          // where every other clip shows LAP nn. Blank space is read as a bug,
+          // or worse, skimmed over — so state the absence instead of leaving the
+          // viewer to infer it.
+          isDetached && (
+            <span className="tower text-ink-muted" style={{ fontSize: 12 }}>
+              UPLOADED&nbsp;·&nbsp;NO&nbsp;LAP
+            </span>
+          )
         )}
       </div>
 
@@ -228,7 +245,10 @@ export function RadioInspector({
           {/* What the driver was reacting to. Sits directly under the quote
               because the two are read together — the transcript is the symptom
               and this is the situation. */}
-          <ClipContextCard context={timeline?.clip_contexts[clip.clip_id] ?? null} />
+          <ClipContextCard
+            context={timeline?.clip_contexts[clip.clip_id] ?? null}
+            detached={isDetached}
+          />
 
           <p className="mono mt-3 border-t border-hairline pt-2.5 text-[10px] text-ink-muted">
             {clip.transcript.stt_model}

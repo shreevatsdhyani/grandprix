@@ -8,6 +8,7 @@ import {
   getSessions,
   getTimeline,
 } from './api'
+import { BaselineBand } from './components/BaselineBand'
 import { ClipBrowser } from './components/ClipBrowser'
 import { ComponentErrorBoundary, ErrorBoundary } from './components/ErrorBoundary'
 import { Header } from './components/Header'
@@ -279,6 +280,21 @@ function AppContent() {
 
   const noClips = timeline != null && timeline.clips.length === 0 && uploaded == null
 
+  // A clip uploaded without a lap number belongs to no lap, so every panel in the
+  // left column describes a race it is not connected to. Leaving them at full
+  // strength is the actual risk: a full timeline beside a freshly uploaded clip
+  // reads as being *about* that clip. Dimming them is the honest signal, and it
+  // beats blanking them — the session data is still real, it just isn't related.
+  const detachedUpload =
+    selectedClip != null &&
+    selectedClip.clip_id.startsWith('upload-') &&
+    selectedClip.lap == null
+
+  // SignalBars is deliberately excluded from this: voice features are intrinsic
+  // to the audio, so they are exactly as valid for a random clip off the internet
+  // as for a curated one. Dimming it would disown the one panel that still holds.
+  const unrelated = detachedUpload ? 'opacity-40 saturate-50' : ''
+
   return (
     <div className="relative z-10 min-h-full" style={teamVars}>
       <Header
@@ -385,24 +401,66 @@ function AppContent() {
               </div>
             )}
 
-            {/* Redesigned 2-column layout: 65-70% evidence + 30-35% sticky sidebar */}
-            <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(340px,420px)] lg:gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(360px,450px)]">
-              {/* LEFT PANEL: Evidence charts, strategies, methodology */}
+            {/* 2-column layout: 65-70% evidence + 30-35% inspector sidebar.
+                `items-start` so the sidebar's own height is its own business and it
+                is not stretched to match the (much taller) evidence column. */}
+            <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(340px,420px)] lg:items-start lg:gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(360px,450px)]">
+              {/* LEFT PANEL: Evidence charts, strategies, methodology. Scrolls with
+                  the document — it is the tall column, so the page scrollbar is its
+                  scrollbar and the 392px hero above is free to scroll away. */}
               <div className="min-w-0 space-y-4 lg:space-y-5">
+                {/* Says out loud what the dimming below only implies. Sticky so it
+                    stays with you down the column — the panels it disclaims are
+                    4000px tall, and a banner that scrolls away stops disclaiming
+                    them about one screen in. */}
+                {detachedUpload && (
+                  <div
+                    className="sticky top-[88px] z-20 flex items-start gap-2.5 rounded-xl border px-4 py-2.5 backdrop-blur-xl"
+                    style={{
+                      borderColor: 'rgba(0,217,255,0.3)',
+                      background: 'color-mix(in srgb, var(--plane) 85%, transparent)',
+                    }}
+                    role="status"
+                  >
+                    <svg
+                      className="mt-0.5 h-4 w-4 shrink-0 text-accent-cyan"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <p className="text-[12px] leading-relaxed text-ink-secondary">
+                      Showing{' '}
+                      <span className="text-ink">
+                        {timeline.session.year} {timeline.session.event_name} · {timeline.driver}
+                      </span>{' '}
+                      — <span className="text-ink">not linked to the uploaded clip</span>. Add a lap
+                      number to place it in the race. The voice breakdown below is still this
+                      clip&rsquo;s own.
+                    </p>
+                  </div>
+                )}
+
                 <ComponentErrorBoundary>
-                  <RaceTimeline
-                    timeline={timeline}
-                    selectedClipId={selectedClipId}
-                    onSelectClip={setSelectedClipId}
-                    verdict={verdict}
-                  />
+                  <div className={unrelated}>
+                    <RaceTimeline
+                      timeline={timeline}
+                      selectedClipId={selectedClipId}
+                      onSelectClip={setSelectedClipId}
+                      verdict={verdict}
+                    />
+                  </div>
                 </ComponentErrorBoundary>
 
                 {/* Where it happened, then what the track was doing — the two
                     readings that give the chart above its meaning. The trace is
                     wide because its whole value is spatial; conditions is narrow
                     because it is three numbers and a line. */}
-                <div className="grid gap-4 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:gap-5">
+                <div
+                  className={`grid gap-4 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:gap-5 ${unrelated}`}
+                >
                   {circuit && (
                   <ComponentErrorBoundary>
                     <TrackTrace
@@ -438,17 +496,19 @@ function AppContent() {
 
                 {findingsAvailable && (
                   <ComponentErrorBoundary>
-                    <TopFindings
-                      findings={findings}
-                      loading={findingsLoading}
-                      error={findingsError}
-                      onSelectLap={selectLap}
-                      onRefresh={() => setFindingsNonce((n) => n + 1)}
-                    />
+                    <div className={unrelated}>
+                      <TopFindings
+                        findings={findings}
+                        loading={findingsLoading}
+                        error={findingsError}
+                        onSelectLap={selectLap}
+                        onRefresh={() => setFindingsNonce((n) => n + 1)}
+                      />
+                    </div>
                   </ComponentErrorBoundary>
                 )}
 
-                <div className="grid gap-4 md:grid-cols-2 lg:gap-5">
+                <div className={`grid gap-4 md:grid-cols-2 lg:gap-5 ${unrelated}`}>
                   <ComponentErrorBoundary>
                     <StrategyCalls calls={timeline.strategy_calls} onSelectLap={selectLap} />
                   </ComponentErrorBoundary>
@@ -457,8 +517,17 @@ function AppContent() {
                   </ComponentErrorBoundary>
                 </div>
 
-                <Baseline timeline={timeline} />
+                {/* Dimmed with the rest: the baseline shown here is the picker
+                    driver's, and an uploaded clip was scored against that driver
+                    only because they happened to be selected — not because the
+                    voice belongs to them. */}
+                <div className={unrelated}>
+                  <Baseline timeline={timeline} clip={selectedClip} mode={mode} />
+                </div>
 
+                {/* SignalBars and BiometricsPanel share this row but not this
+                    judgement, so they are wrapped separately: the voice bars are
+                    the clip's own, the biometrics are the session's. */}
                 <div className="grid gap-4 md:grid-cols-2 lg:gap-5">
                   {selectedClip ? (
                     <ComponentErrorBoundary>
@@ -468,18 +537,30 @@ function AppContent() {
                     <div />
                   )}
                   <ComponentErrorBoundary>
-                    <BiometricsPanel
-                      sessionId={sessionId ?? ''}
-                      driver={driver}
-                      series={biometrics ?? timeline.biometrics}
-                      onUploaded={setBiometrics}
-                    />
+                    <div className={unrelated}>
+                      <BiometricsPanel
+                        sessionId={sessionId ?? ''}
+                        driver={driver}
+                        series={biometrics ?? timeline.biometrics}
+                        onUploaded={setBiometrics}
+                      />
+                    </div>
                   </ComponentErrorBoundary>
                 </div>
               </div>
 
-              {/* RIGHT PANEL: Sticky sidebar with Radio Inspector and Library */}
-              <aside className="min-w-0 space-y-6 lg:sticky lg:top-[88px] lg:h-fit lg:space-y-6">
+              {/* RIGHT PANEL: Radio Inspector and Library.
+                  This used to be `sticky top-[88px] h-fit`, which is exactly why it
+                  felt stuck. `h-fit` let it grow past the viewport while `sticky`
+                  pinned its top, so its lower half sat permanently below the fold
+                  with no way to reach it: the only scrollbar on the page belonged to
+                  the document, and spending that scrollbar ran the tall left column
+                  to the bottom while this panel sat still.
+                  Now it is capped to the visible area and owns its own scrollbar, so
+                  the wheel acts on whichever panel the pointer is over.
+                  `overscroll-contain` keeps a fling that reaches the end of this
+                  panel from chaining into the page and re-coupling the two. */}
+              <aside className="min-w-0 space-y-6 lg:sticky lg:top-[88px] lg:h-[calc(100vh-104px)] lg:space-y-6 lg:overflow-y-auto lg:overscroll-contain lg:pr-1.5">
                 <ComponentErrorBoundary>
                   <RadioInspector
                     clip={selectedClip}
@@ -501,7 +582,11 @@ function AppContent() {
 
                 {sessionId && (
                   <ComponentErrorBoundary>
-                    <div style={{ maxHeight: '400px' }}>
+                    {/* The old `maxHeight: 400px` wrapper set a cap with no
+                        `overflow`, so it never scrolled — it just cropped the
+                        panel's own footer. ClipBrowser already scrolls its list
+                        internally; the sidebar scrolls the rest. */}
+                    <div>
                       <ClipBrowser
                         sessionId={sessionId}
                         driver={driver}
@@ -538,45 +623,60 @@ function AppContent() {
  * sounds loud" and "this driver sounds loud *for them*" — so it says which of
  * the three references is actually in play rather than implying the best case.
  */
-function Baseline({ timeline }: { timeline: Timeline }) {
+function Baseline({
+  timeline,
+  clip,
+  mode,
+}: {
+  timeline: Timeline
+  clip: ClipAnalysis | null
+  mode: ScoringMode
+}) {
   const b = timeline.baseline
+  const result = clip ? (mode === 'fusion' ? clip.fusion : clip.naive) : null
 
   return (
-    <section
-      className="panel flex flex-col gap-4 p-4 sm:p-5 lg:flex-row lg:items-center lg:gap-8"
-      aria-label="Driver baseline"
-    >
-      <div className="lg:max-w-[46ch]">
-        <h2 className="card-title">Scored against</h2>
-        <p className="mt-2 text-[12px] leading-relaxed text-ink-secondary">
-          {!b
-            ? 'Population priors. No calm calls have been scored for this driver, so there is no personal reference to calibrate against yet.'
-            : b.source === 'driver'
-              ? `${b.driver}’s own calm calls, so a naturally loud driver doesn’t read as permanently stressed.`
-              : b.source === 'cohort'
-                ? 'The pooled cohort — this driver has too few calm calls for an individual baseline yet.'
-                : 'Population priors, not this driver. No annotated calls exist yet, so nothing is individually calibrated.'}
-        </p>
+    <section className="panel p-4 sm:p-5" aria-label="Driver baseline">
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-8">
+        <div className="lg:max-w-[46ch]">
+          <h2 className="card-title">Scored against</h2>
+          <p className="mt-2 text-[12px] leading-relaxed text-ink-secondary">
+            {!b
+              ? 'Population priors. No calm calls have been scored for this driver, so there is no personal reference to calibrate against yet.'
+              : b.source === 'driver'
+                ? `${b.driver}’s own calm calls, so a naturally loud driver doesn’t read as permanently stressed.`
+                : b.source === 'cohort'
+                  ? 'The pooled cohort — this driver has too few calm calls for an individual baseline yet.'
+                  : 'Population priors, not this driver. No annotated calls exist yet, so nothing is individually calibrated.'}
+          </p>
+        </div>
+
+        {b && (
+          <dl
+            className="grid flex-1 gap-x-6 gap-y-3"
+            style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))' }}
+          >
+            {[
+              ['Reference', b.source],
+              ['Baseline clips', String(b.n_baseline_clips)],
+              ['Mean pitch (z)', b.f0_mean.toFixed(2)],
+              ['Mean energy (z)', b.rms_mean.toFixed(3)],
+              ['Speech rate (z)', b.speech_rate.toFixed(2)],
+            ].map(([k, v]) => (
+              <div key={k} style={{ minWidth: '140px' }}>
+                <dt className="eyebrow" style={{ fontSize: 9 }}>
+                  {k}
+                </dt>
+                <dd className="mono mt-1 text-[15px] text-ink-primary">{v}</dd>
+              </div>
+            ))}
+          </dl>
+        )}
       </div>
 
-      {b && (
-        <dl className="grid flex-1 gap-x-6 gap-y-3" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))' }}>
-          {[
-            ['Reference', b.source],
-            ['Baseline clips', String(b.n_baseline_clips)],
-            ['Mean pitch (z)', b.f0_mean.toFixed(2)],
-            ['Mean energy (z)', b.rms_mean.toFixed(3)],
-            ['Speech rate (z)', b.speech_rate.toFixed(2)],
-          ].map(([k, v]) => (
-            <div key={k} style={{ minWidth: '140px' }}>
-              <dt className="eyebrow" style={{ fontSize: 9 }}>
-                {k}
-              </dt>
-              <dd className="mono mt-1 text-[15px] text-ink-primary">{v}</dd>
-            </div>
-          ))}
-        </dl>
-      )}
+      {/* The numbers above say what the reference is. This says where the call
+          came out against it, which is the only thing anyone reads them for. */}
+      <BaselineBand result={result} />
     </section>
   )
 }

@@ -1,6 +1,7 @@
 import { CIRCUITS } from '../lib/circuits'
 import { getDriver } from '../lib/drivers'
 import type { HealthResponse, ScoringMode, SessionMeta } from '../types'
+import { SelectMenu, type SelectOption } from './SelectMenu'
 
 interface Props {
   sessions: SessionMeta[]
@@ -39,6 +40,66 @@ export function Header({
 }: Props) {
   const drivers = currentSession?.drivers ?? [driver]
 
+  // Both pickers show the same identity twice: compact on the closed trigger,
+  // then with the detail that helps you choose once the list is open. A code and
+  // a year are enough to confirm a choice; they are not enough to make one.
+  const sessionOptions: SelectOption[] = sessions.map((s) => {
+    const c = CIRCUITS[s.session_id]
+    return {
+      value: s.session_id,
+      text: s.event_name,
+      label: (
+        <span className="flex min-w-0 items-center gap-2">
+          <Flag flag={c?.flag ?? '🏁'} />
+          <span className="truncate">
+            {s.event_name} <span className="text-ink-secondary">{s.year}</span>
+          </span>
+        </span>
+      ),
+      row: (
+        <span className="flex min-w-0 items-center gap-2.5">
+          <Flag flag={c?.flag ?? '🏁'} />
+          <span className="min-w-0">
+            <span className="block truncate text-[13px] leading-tight">{s.event_name}</span>
+            <span className="mono block truncate text-[10px] leading-tight text-ink-muted">
+              {s.year}
+              {c && ` · ${c.short} · ${c.laps} laps`}
+            </span>
+          </span>
+        </span>
+      ),
+    }
+  })
+
+  const driverOptions: SelectOption[] = drivers.map((code) => {
+    const d = getDriver(code)
+    return {
+      value: code,
+      text: d.last,
+      accent: d.team.color,
+      label: (
+        <span className="flex min-w-0 items-center gap-2">
+          <NumberChip n={d.number} color={d.team.color} />
+          <span className="truncate">{d.last.toUpperCase()}</span>
+        </span>
+      ),
+      row: (
+        <span className="flex min-w-0 items-center gap-2.5">
+          <NumberChip n={d.number} color={d.team.color} />
+          <span className="min-w-0">
+            <span className="block truncate text-[13px] leading-tight">
+              {d.last.toUpperCase()}
+              <span className="text-ink-muted"> {d.first}</span>
+            </span>
+            <span className="block truncate text-[10px] leading-tight text-ink-muted">
+              {d.team.name}
+            </span>
+          </span>
+        </span>
+      ),
+    }
+  })
+
   return (
     <header className="sticky top-0 z-40 border-b border-hairline bg-plane/85 backdrop-blur-xl">
       <div className="mx-auto flex max-w-[1680px] flex-wrap items-center gap-x-4 gap-y-3 px-4 py-3 sm:px-6">
@@ -59,44 +120,30 @@ export function Header({
         {/* Full-width and left-aligned once the row wraps: right-aligned
             controls under a left-aligned wordmark read as two unrelated bars. */}
         <div className="flex w-full flex-wrap items-end gap-2 sm:ml-auto sm:w-auto sm:flex-1 sm:justify-end sm:gap-3">
-          <label className="flex min-w-0 flex-[1_1_180px] flex-col gap-1 sm:flex-none">
-            <span className="field-label">Grand Prix</span>
-            <select
-              className="control w-full sm:min-w-[168px] sm:max-w-[260px]"
-              value={sessionId ?? ''}
-              onChange={(e) => onSessionChange(e.target.value)}
-            >
-              {sessions.map((s) => (
-                <option key={s.session_id} value={s.session_id}>
-                  {CIRCUITS[s.session_id]?.flag ?? '🏁'} {s.event_name} {s.year}
-                </option>
-              ))}
-            </select>
-          </label>
+          <SelectMenu
+            label="Grand Prix"
+            value={sessionId ?? ''}
+            options={sessionOptions}
+            onChange={onSessionChange}
+            className="flex-[1_1_190px] sm:flex-none sm:w-[218px]"
+            menuClassName="max-w-[min(320px,calc(100vw-2rem))]"
+          />
 
-          <label className="flex min-w-0 flex-[1_1_150px] flex-col gap-1 sm:flex-none">
-            <span className="field-label">Driver</span>
-            <select
-              className="control w-full sm:min-w-[160px] sm:max-w-[230px]"
-              value={driver}
-              onChange={(e) => onDriverChange(e.target.value)}
-            >
-              {drivers.map((code) => {
-                const d = getDriver(code)
-                return (
-                  <option key={code} value={code}>
-                    {d.number > 0 ? `${d.number} · ` : ''}
-                    {d.last.toUpperCase()}
-                  </option>
-                )
-              })}
-            </select>
-          </label>
+          <SelectMenu
+            label="Driver"
+            value={driver}
+            options={driverOptions}
+            onChange={onDriverChange}
+            className="flex-[1_1_150px] sm:flex-none sm:w-[178px]"
+            menuClassName="max-w-[min(290px,calc(100vw-2rem))]"
+          />
 
           <div className="flex flex-col gap-1">
             <span className="field-label">Scoring</span>
+            {/* Glass too, or it reads as a solid block wedged between two panes
+                of glass — the three controls are one row and have to agree. */}
             <div
-              className="control flex items-center overflow-hidden p-0"
+              className="control-glass cursor-default overflow-hidden p-0"
               role="group"
               aria-label="Scoring model"
             >
@@ -122,6 +169,39 @@ export function Header({
         </div>
       </div>
     </header>
+  )
+}
+
+/** Country flag on a glass tile, so the emoji sits on the design instead of
+ *  floating in the middle of a text run at whatever size the OS renders it. */
+function Flag({ flag }: { flag: string }) {
+  return (
+    <span
+      className="grid h-[22px] w-[22px] shrink-0 place-items-center rounded-[7px] border text-[12px] leading-none"
+      style={{ borderColor: 'rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.055)' }}
+      aria-hidden
+    >
+      {flag}
+    </span>
+  )
+}
+
+/** The car number in livery colour — how a driver is identified on a timing
+ *  tower, and readable a row at a time in a way three letters is not. */
+function NumberChip({ n, color }: { n: number; color: string }) {
+  if (n <= 0) return null
+  return (
+    <span
+      className="tower grid h-[22px] min-w-[26px] shrink-0 place-items-center rounded-[6px] border px-1 text-[13px]"
+      style={{
+        color,
+        borderColor: `color-mix(in srgb, ${color} 40%, transparent)`,
+        background: `color-mix(in srgb, ${color} 15%, transparent)`,
+      }}
+      aria-hidden
+    >
+      {n}
+    </span>
   )
 }
 

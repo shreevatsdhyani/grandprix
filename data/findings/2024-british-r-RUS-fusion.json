@@ -1,0 +1,140 @@
+{
+  "session_id": "2024-british-r",
+  "driver": "RUS",
+  "mode": "fusion",
+  "findings": [
+    {
+      "rank": 1,
+      "severity": "info",
+      "headline": "High stress on lap 15 did not degrade pace – no pit‑stop adjustment required",
+      "detail": "Stress spiked to 79.2 on lap 15 while the driver was on a 15‑lap old MEDIUM tyre on a drying surface (track 24.6 °C, dry) and still holding P1. Pace delta was -0.10 s/lap (strategy rule HOLD) and lap time stayed at the median, indicating the driver can sustain high stress without losing pace; no pit‑stop change is needed.",
+      "laps": [
+        15
+      ],
+      "domains": [
+        "stress",
+        "pace",
+        "tyre",
+        "track",
+        "position",
+        "radio"
+      ],
+      "evidence": [
+        "stress 79.2 on lap 15",
+        "pace delta -0.10 on lap 15 (derived from strategy rule)",
+        "MEDIUM age 15 on lap 15",
+        "track 24.6C surface=dry on lap 15",
+        "P1 on lap 15"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "rank": 2,
+      "severity": "warning",
+      "headline": "Wet track caused >1.5 s slowdown on lap 18 – consider earlier intermediate stop",
+      "detail": "From lap 18 onward the medium tyre showed a modelled degradation of +0.181 s/lap, and pace delta jumped +1.572 s on lap 18 as the track became wet (track 24.3 °C, wet). The driver’s stress reading was not recorded, but the sudden slowdown aligns with tyre‑performance loss on a wet surface; an earlier switch to intermediates could have limited the 1.6 s loss.",
+      "laps": [
+        18
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "track",
+        "situation"
+      ],
+      "evidence": [
+        "pace delta +1.572 on lap 18",
+        "MEDIUM age 18 on lap 18",
+        "track 24.3C surface=WET on lap 18",
+        "modelled deg +0.181 s/lap for stint 1"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "rank": 3,
+      "severity": "warning",
+      "headline": "Old medium tyres on wet track caused >5 s loss on lap 20 – fresh intermediates improved stability",
+      "detail": "During laps 20‑22 the medium tyre on a fully wet surface (track 22.5‑22.1 °C) produced a +5.169 s pace delta on lap 20, then recovered to -0.624 s on lap 22 after the driver received a BLUE flag and cleared traffic. The large variance suggests the driver was struggling with grip on old mediums; the subsequent pit on lap 28 to fresh intermediates stabilised pace (lap 31 still +0.332 s, lap 32 +1.183 s).",
+      "laps": [
+        20,
+        22,
+        28
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "track",
+        "position",
+        "situation"
+      ],
+      "evidence": [
+        "pace delta +5.169 on lap 20",
+        "pace delta -0.624 on lap 22",
+        "track 22.5C surface=WET on lap 20",
+        "track 22.1C surface=WET on lap 22",
+        "INTERMEDIATE/1 fitted on lap 28"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "rank": 4,
+      "severity": "info",
+      "headline": "Post‑race stress high on lap 33; pace still acceptable but watch fatigue on intermediates",
+      "detail": "Stress reading of 77.9 on lap 33 comes from post‑race radio, not an in‑lap measurement, yet the model shows a pace delta of +0.332 s (lap 31) and +1.183 s (lap 32) on fresh intermediates, indicating the driver was already feeling tired while still managing moderate pace; monitor for fatigue in longer wet stints.",
+      "laps": [
+        31,
+        32,
+        33
+      ],
+      "domains": [
+        "stress",
+        "pace",
+        "tyre",
+        "track"
+      ],
+      "evidence": [
+        "stress 77.9 on lap 33 (post‑race)",
+        "pace delta +0.332 on lap 31",
+        "pace delta +1.183 on lap 32",
+        "INTERMEDIATE/4 and /5 on laps 31‑32"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "rank": 5,
+      "severity": "info",
+      "headline": "Blue‑flag periods yielded no pace improvement – consider aggressive line when traffic clears",
+      "detail": "Blue flags from laps 21‑27 coincided with flat pace deltas (0.0 s) on the medium tyre despite worsening wet conditions, suggesting the driver maintained position without overtaking effort; however, the lack of pace gain indicates missed opportunity to push when traffic cleared.",
+      "laps": [
+        21,
+        24,
+        25,
+        26
+      ],
+      "domains": [
+        "pace",
+        "position",
+        "situation",
+        "track"
+      ],
+      "evidence": [
+        "pace delta 0.000 on laps 21, 24‑26",
+        "BLUE flag on laps 21‑27",
+        "track temps 22.3‑21.4C surface=WET"
+      ],
+      "confidence": 0.6
+    }
+  ],
+  "model": "openai/gpt-oss-120b",
+  "context_domains": [
+    "pace",
+    "position",
+    "radio",
+    "situation",
+    "stress",
+    "track",
+    "tyre"
+  ],
+  "dropped_findings": 1,
+  "cached": false
+}

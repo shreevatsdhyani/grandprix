@@ -1,0 +1,138 @@
+{
+  "session_id": "2024-british-r",
+  "driver": "PIA",
+  "mode": "fusion",
+  "findings": [
+    {
+      "rank": 1,
+      "severity": "info",
+      "headline": "Medium tyres perform flat‑out on drying track from lap 39‑40",
+      "detail": "During the wet-to-dry transition (lap 40), the driver switched back to Medium tyres (lap 39) and immediately posted a flat pace delta (+0.000) despite the track drying to 24.6 °C, indicating the Medium can maintain competitive lap times on a drying surface. No stress spike was observed (stress not recorded), so the tyre change did not raise driver anxiety.",
+      "laps": [
+        39,
+        40
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "track",
+        "situation"
+      ],
+      "evidence": [
+        "lap 39 tyre=MEDIUM age 1 track 24.2C surface=WET pace delta -",
+        "lap 40 pace delta +0.000 tyre=MEDIUM age 2 track 24.6C surface=dry"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "rank": 2,
+      "severity": "warning",
+      "headline": "Stress spikes under blue‑flag traffic on fresh Mediums (lap 41)",
+      "detail": "Stress rose to 35.7 on lap 41 while the driver was on a fresh Medium (age 3) on a dry track, 10.7 s behind P4 and under a blue flag. The higher stress coincides with the driver confirming tyre choice under pressure, suggesting mental load spikes when defending position under blue‑flag traffic.",
+      "laps": [
+        41
+      ],
+      "domains": [
+        "stress",
+        "pace",
+        "position",
+        "radio"
+      ],
+      "evidence": [
+        "stress 35.7 on lap 41",
+        "lap 41 pace delta -0.007 tyre=MEDIUM age 3 track 24.2C surface=dry gap-to-car-ahead 10.7s flags BLUE"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "rank": 3,
+      "severity": "warning",
+      "headline": "Medium tyre unsuitable for sudden wet; switch to Intermediates needed",
+      "detail": "The large pace penalty (+6.459 s) on lap 19 coincides with the onset of wet conditions (track 23.2 °C, surface=WET) while still on the initial Medium tyre (age 19). The model suggests the Medium struggled on the sudden wet surface; switching to Intermediates at lap 29 recovered pace to sub‑second deltas.",
+      "laps": [
+        19,
+        29
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "track",
+        "situation"
+      ],
+      "evidence": [
+        "lap 19 pace delta +6.459 tyre=MEDIUM age 19 track 23.2C surface=WET",
+        "lap 29 tyre=INTERMEDIATE age 1 track 21.0C surface=WET"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "rank": 4,
+      "severity": "info",
+      "headline": "Intermediate tyres showed negligible degradation across wet‑to‑dry phase",
+      "detail": "During the Intermediate stint (laps 30‑38) pace delta stayed within ±1 s despite a drying track (track temp rose from 20.7 °C to 23.8 °C). The modelled degradation is -0.036 s/lap, indicating the Intermediates were stable and did not degrade noticeably, so no performance loss to worry about.",
+      "laps": [
+        30,
+        38
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "track"
+      ],
+      "evidence": [
+        "lap 30 pace delta -1.669 tyre=INTERMEDIATE age 2 track 20.7C surface=WET",
+        "lap 38 tyre=INTERMEDIATE age 10 track 23.8C surface=WET"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "rank": 5,
+      "severity": "info",
+      "headline": "Low stress on old Mediums in wet traffic (lap 26)",
+      "detail": "A single stress reading at lap 26 (23.2, Calm) occurred while the driver was on a 26‑lap‑old Medium in wet conditions and under blue‑flag traffic. With only one data point, confidence is low, but the modest stress suggests the driver was coping adequately despite tyre age and traffic.",
+      "laps": [
+        26
+      ],
+      "domains": [
+        "stress",
+        "tyre",
+        "track",
+        "position"
+      ],
+      "evidence": [
+        "stress 23.2 on lap 26",
+        "lap 26 pace delta +0.130 tyre=MEDIUM age 26 track 22.0C surface=WET flags BLUE"
+      ],
+      "confidence": 0.4
+    },
+    {
+      "rank": 6,
+      "severity": "info",
+      "headline": "Post‑race stress reading not usable for in‑race analysis",
+      "detail": "The final lap (52) shows a stress value of 20.2, but it is from post‑race radio and not an in‑lap measurement; therefore it cannot be used to assess race‑end fatigue.",
+      "laps": [
+        52
+      ],
+      "domains": [
+        "stress",
+        "radio"
+      ],
+      "evidence": [
+        "stress 20.2 on lap 52 (post‑race radio)"
+      ],
+      "confidence": 0.3
+    }
+  ],
+  "model": "openai/gpt-oss-120b",
+  "context_domains": [
+    "pace",
+    "position",
+    "radio",
+    "situation",
+    "stress",
+    "track",
+    "tyre"
+  ],
+  "dropped_findings": 0,
+  "cached": false
+}

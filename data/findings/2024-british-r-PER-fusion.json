@@ -1,0 +1,95 @@
+{
+  "session_id": "2024-british-r",
+  "driver": "PER",
+  "mode": "fusion",
+  "findings": [
+    {
+      "rank": 1,
+      "severity": "info",
+      "headline": "Peak stress at lap 21 did not affect pace – monitor early wet‑dry transition stress",
+      "detail": "Stress spiked to 100 at lap 21 while the driver was on intermediate tyre age 2, lapping backmarkers under blue flags on a wet track (22.1 °C). Pace delta was 0 s, indicating the driver maintained median pace despite the stress, so the high stress did not translate into a time loss. The engineer should monitor stress triggers around early wet‑to‑dry transitions but no immediate pace‑related action is required.",
+      "laps": [
+        21
+      ],
+      "domains": [
+        "stress",
+        "pace",
+        "track",
+        "position",
+        "situation"
+      ],
+      "evidence": [
+        "stress 100.0 on lap 21",
+        "pace delta +0.000 on lap 21",
+        "track C 22.1 on lap 21",
+        "flags CLEAR,BLUE on lap 21",
+        "INTERMEDIATE/2 tyre on lap 21"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "rank": 2,
+      "severity": "warning",
+      "headline": "Medium tyres gained pace as track dried; brief loss on lap 40 suggests earlier soft switch",
+      "detail": "When the medium tyres came on lap 38 the modelled degradation turned negative (‑0.383 s/lap) and pace delta fell to –0.497 s on lap 39, showing the medium brought a performance gain as the track dried (track temp 24.2 °C). However, a +0.497 s delta on lap 40 coincided with the first dry‑track crossover and a blue flag, suggesting the driver lost the medium’s advantage briefly. The engineer should consider a slightly earlier medium‑to‑soft switch to lock in the gain before the dry crossover.",
+      "laps": [
+        38,
+        39,
+        40
+      ],
+      "domains": [
+        "tyre",
+        "pace",
+        "track",
+        "situation"
+      ],
+      "evidence": [
+        "pace delta -0.497 on lap 39",
+        "pace delta +0.497 on lap 40",
+        "track C 24.2 on lap 39",
+        "track C 24.6 on lap 40",
+        "MEDIUM/2 tyre on lap 39",
+        "MEDIUM/3 tyre on lap 40",
+        "flags BLUE on lap 40"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "rank": 3,
+      "severity": "info",
+      "headline": "Soft tyres delivered peak speed but suffered large delta when blue‑flagged; avoid traffic early in soft stint",
+      "detail": "The soft tyre stint (laps 48‑50) produced the fastest lap of the race (89.707 s) but also a +7.010 s delta on lap 49, likely caused by a blue‑flag encounter on a dry track (25.2 °C). Stress reading of 85.6 on lap 50 is post‑race, so cannot confirm fatigue impact. The engineer should note that softs are highly sensitive to traffic; a clean lap early in the stint could extract more consistent gain.",
+      "laps": [
+        48,
+        49
+      ],
+      "domains": [
+        "tyre",
+        "pace",
+        "position",
+        "situation"
+      ],
+      "evidence": [
+        "best lap 89.707s on soft stint",
+        "pace delta +7.010 on lap 49",
+        "track C 25.2 on lap 49",
+        "flags BLUE on lap 49",
+        "SOFT/1 tyre on lap 48",
+        "SOFT/2 tyre on lap 49"
+      ],
+      "confidence": 0.5
+    }
+  ],
+  "model": "openai/gpt-oss-120b",
+  "context_domains": [
+    "pace",
+    "position",
+    "radio",
+    "situation",
+    "stress",
+    "track",
+    "tyre"
+  ],
+  "dropped_findings": 0,
+  "cached": false
+}

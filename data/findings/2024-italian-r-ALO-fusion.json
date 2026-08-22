@@ -1,0 +1,144 @@
+{
+  "session_id": "2024-italian-r",
+  "driver": "ALO",
+  "mode": "fusion",
+  "findings": [
+    {
+      "rank": 1,
+      "severity": "info",
+      "headline": "Engine note raised early stress but did not affect early pace",
+      "detail": "Stress spiked to 33.9 on the formation lap while the driver reported a thin engine note between cylinders 6 and 7; this coincided with the first medium tyre stint where pace was within 0.1s of median, suggesting the driver was able to maintain performance despite early concern. No action needed on tyre strategy, but a quick engine check before race start could prevent later power loss.",
+      "laps": [
+        1
+      ],
+      "domains": [
+        "stress",
+        "pace",
+        "radio"
+      ],
+      "evidence": [
+        "stress 33.9 on lap 1 (pre‑race)"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "rank": 2,
+      "severity": "warning",
+      "headline": "Hard tyre pace fell as track cooled around laps 20‑22",
+      "detail": "During laps 20‑22 on the hard tyres the pace delta jumped to +0.362 s then +0.154 s while track temperature fell 0.8 °C per lap; the modelled tyre degradation was still flat (-0.003 s/lap). The driver’s stress reading is missing, but the sudden slowdown aligns with a temperature‑related loss of grip, indicating the hard tyre may have been sub‑optimal on the cooling track.",
+      "laps": [
+        20,
+        22
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "track"
+      ],
+      "evidence": [
+        "pace delta +0.362 on lap 20",
+        "pace delta +0.154 on lap 22",
+        "track C 46.6 on lap 20",
+        "track C 46.3 on lap 22",
+        "modelled deg -0.003 s/lap for hard stint"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "rank": 3,
+      "severity": "info",
+      "headline": "Hard tyre hit performance sweet‑spot laps 24‑25",
+      "detail": "From lap 24 to 28 the hard tyre showed a sharp improvement of -0.349 s then -0.387 s delta, coinciding with a stable track temperature around 45.8 °C and no blue‑flag traffic; the model suggests the tyre was coming into optimal operating window, so keeping the stint longer could yield further gains.",
+      "laps": [
+        24,
+        25
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "track"
+      ],
+      "evidence": [
+        "pace delta -0.349 on lap 24",
+        "pace delta -0.387 on lap 25",
+        "track C 45.8 on laps 24‑26"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "rank": 4,
+      "severity": "warning",
+      "headline": "Blue‑flag traffic cost ~0.1‑0.2 s per lap",
+      "detail": "Blue‑flag periods on laps 32, 36‑44 repeatedly added +0.1‑+0.2 s to pace delta despite the hard tyre being at low degradation; the driver likely lost time defending position while lapping backmarkers, indicating a need to improve overtaking strategy under blue‑flag conditions.",
+      "laps": [
+        32,
+        33,
+        38,
+        41
+      ],
+      "domains": [
+        "pace",
+        "situation"
+      ],
+      "evidence": [
+        "pace delta +0.190 on lap 33",
+        "pace delta +0.077 on lap 38",
+        "pace delta +0.139 on lap 41",
+        "blue flag on laps 32,36‑44"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "rank": 5,
+      "severity": "warning",
+      "headline": "Potential tyre swap benefit after lap 45",
+      "detail": "Late‑race laps 46‑52 on hard tyres showed a mixed pattern: a strong drop of -0.301 s on lap 46 followed by small positive deltas (+0.057, +0.162) as track cooled to 44.1 °C; with tyre age 13‑19 the model suggests the tyre was still capable but losing grip as temperature fell, so a tyre change at lap 45 could have secured more consistent lap times.",
+      "laps": [
+        46,
+        49,
+        52
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "track"
+      ],
+      "evidence": [
+        "pace delta -0.301 on lap 46",
+        "pace delta +0.057 on lap 49",
+        "pace delta +0.162 on lap 52",
+        "track C 44.6 on lap 46",
+        "track C 44.1 on laps 51‑53"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "rank": 6,
+      "severity": "info",
+      "headline": "Insufficient stress data to assess in‑race anxiety",
+      "detail": "Only two stress readings are available (pre‑race 33.9 and none thereafter); with such sparse data we cannot correlate stress to pace variations, but the low baseline suggests the driver remained generally calm throughout the race.",
+      "laps": [
+        1
+      ],
+      "domains": [
+        "stress",
+        "radio"
+      ],
+      "evidence": [
+        "stress 33.9 on lap 1 (pre‑race)"
+      ],
+      "confidence": 0.4
+    }
+  ],
+  "model": "openai/gpt-oss-120b",
+  "context_domains": [
+    "pace",
+    "radio",
+    "situation",
+    "stress",
+    "track",
+    "tyre"
+  ],
+  "dropped_findings": 0,
+  "cached": false
+}

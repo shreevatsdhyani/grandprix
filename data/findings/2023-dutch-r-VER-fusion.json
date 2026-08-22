@@ -1,0 +1,159 @@
+{
+  "session_id": "2023-dutch-r",
+  "driver": "VER",
+  "mode": "fusion",
+  "findings": [
+    {
+      "rank": 1,
+      "severity": "warning",
+      "headline": "High stress at lap 31 coincides with early soft‑tyre fatigue – consider earlier pit or driver break",
+      "detail": "Stress spiked to 87.8 on lap 31 while the driver was on a 20‑lap soft tyre set (age 20) and still leading. The model shows a slight degradation (+0.057 s/lap) but pace delta rose to +0.147 s, indicating the stress‑fatigue link triggered the first strategy warning. A short rest or earlier pit could prevent the later larger stress spikes.",
+      "laps": [
+        31
+      ],
+      "domains": [
+        "stress",
+        "pace",
+        "tyre",
+        "radio"
+      ],
+      "evidence": [
+        "stress 87.8 on lap 31",
+        "pace delta +0.147 on lap 31",
+        "compound SOFT age 20 on lap 31",
+        "PIT_WINDOW_OPENING warning at lap 31"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "rank": 2,
+      "severity": "info",
+      "headline": "Stress spike at lap 58 did not hurt pace – no pit change needed",
+      "detail": "Stress rose to 79.9 on lap 58 while on a soft tyre set (age 10) that was still modelling a small negative degradation (‑0.057 s/lap). Pace delta dropped to –0.207 s, showing no loss despite stress. The strategy rule correctly logged an INFO hold, confirming the driver can maintain performance under stress at this stage.",
+      "laps": [
+        58
+      ],
+      "domains": [
+        "stress",
+        "pace",
+        "tyre",
+        "radio"
+      ],
+      "evidence": [
+        "stress 79.9 on lap 58",
+        "pace delta -0.207 on lap 58",
+        "compound SOFT age 10 on lap 58",
+        "HOLD info at lap 58"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "rank": 3,
+      "severity": "warning",
+      "headline": "Intermediate tyres struggled on drying track – consider harder compound or earlier wet switch",
+      "detail": "From laps 63‑71 the driver switched to intermediate tyres (age 13‑11) while the track cooled to 20 °C and rain returned. Pace delta rose sharply to +3.777 on lap 67, the worst of the stint, matching the modelled degradation of +0.844 s/lap for the final intermediate set. This suggests the intermediate compound was too soft for the drying track; a harder compound or earlier switch to wets could have limited the time loss.",
+      "laps": [
+        63,
+        67,
+        70
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "track",
+        "situation"
+      ],
+      "evidence": [
+        "pace delta +3.777 on lap 67",
+        "compound INTERMEDIATE age 7 on lap 67",
+        "track temp 19.7C on lap 67",
+        "rain sensor wet on lap 70"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "rank": 4,
+      "severity": "info",
+      "headline": "Blue‑flag periods on intermediates caused no significant pace loss",
+      "detail": "During laps 7‑10 the driver was blue‑flagged while on intermediate tyres (age 5‑8) on a drying surface. Pace delta stayed within ±0.5 s, indicating the driver managed traffic without losing time despite the extra workload.",
+      "laps": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "domains": [
+        "pace",
+        "position",
+        "situation",
+        "tyre"
+      ],
+      "evidence": [
+        "pace delta +1.790 on lap 4 (pre‑blue)",
+        "pace delta -1.116 on lap 7 (blue flag)",
+        "pace delta +0.000 on lap 8 (blue flag)",
+        "pace delta +0.081 on lap 9 (blue flag)",
+        "pace delta +0.466 on lap 10 (blue flag)",
+        "compound INTERMEDIATE ages 5‑8"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "rank": 5,
+      "severity": "info",
+      "headline": "Early stress spike on lap 2 while on softs in wet – watch for repeat after tyre swaps",
+      "detail": "The driver’s stress reading of 69 on lap 2 coincided with the first wet‑track laps on soft tyres (age 2) and a 1.2 s gap to car ahead. No pace delta is recorded, but the early high stress may reflect grid‑to‑track adaptation; monitor for similar spikes after future tyre changes.",
+      "laps": [
+        2
+      ],
+      "domains": [
+        "stress",
+        "tyre",
+        "track",
+        "position"
+      ],
+      "evidence": [
+        "stress 69.0 on lap 2",
+        "compound SOFT age 2 on lap 2",
+        "track temp 28.5C wet on lap 2",
+        "gap-to-car-ahead 1.2s"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "rank": 6,
+      "severity": "info",
+      "headline": "Rapid stress rise between laps 30‑31 correlates with slight pace loss – flag for fatigue monitoring",
+      "detail": "From lap 30 to 31 stress jumped from 23.2 to 87.8 while the driver was still on a soft set (age 19‑20) and the track was dry. The pace delta increased from +0.011 to +0.147, hinting at a rapid fatigue onset. With only two data points this pattern is tentative, but it aligns with the strategy’s fatigue monitor at lap 31.",
+      "laps": [
+        30,
+        31
+      ],
+      "domains": [
+        "stress",
+        "pace",
+        "tyre"
+      ],
+      "evidence": [
+        "stress 23.2 on lap 30",
+        "stress 87.8 on lap 31",
+        "pace delta +0.011 on lap 30",
+        "pace delta +0.147 on lap 31",
+        "compound SOFT ages 19‑20"
+      ],
+      "confidence": 0.4
+    }
+  ],
+  "model": "openai/gpt-oss-120b",
+  "context_domains": [
+    "pace",
+    "position",
+    "radio",
+    "situation",
+    "stress",
+    "track",
+    "tyre"
+  ],
+  "dropped_findings": 0,
+  "cached": false
+}

@@ -1,0 +1,147 @@
+{
+  "session_id": "2024-british-r",
+  "driver": "NOR",
+  "mode": "fusion",
+  "findings": [
+    {
+      "rank": 1,
+      "severity": "info",
+      "headline": "Stress spike on lap 19 coincides with wet track and DRS loss but did not degrade position",
+      "detail": "Stress spiked to 62 on lap 19 as the track went wet and DRS was disabled; despite a 7.3s pace delta the driver held P2 with a 0.2s gap, indicating the stress was reactionary rather than performance‑limiting. No further stress spikes occurred after the tyre change to Intermediates, so the driver coped well once the wet tyre was fitted.",
+      "laps": [
+        19
+      ],
+      "domains": [
+        "stress",
+        "pace",
+        "track",
+        "tyre",
+        "situation"
+      ],
+      "evidence": [
+        "stress 62.0 on lap 19",
+        "pace delta +7.311 on lap 19",
+        "track surface=WET on lap 19",
+        "DRS disabled race control -8s on lap 19",
+        "P2 gap-to-car-ahead 0.2s on lap 19"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "rank": 2,
+      "severity": "info",
+      "headline": "Medium tyres degraded slowly; lap 15 pace gain suggests driver lifted to manage cooling track",
+      "detail": "The medium tyre stint (laps 1‑27) showed a modelled degradation of +0.147 s/lap while pace stayed within ±0.2 s until lap 15, after which a sudden -0.526 s improvement occurred (lap 15) likely due to the driver lifting to preserve grip as the track cooled to 24.6 °C.",
+      "laps": [
+        15
+      ],
+      "domains": [
+        "tyre",
+        "pace",
+        "track"
+      ],
+      "evidence": [
+        "modelled deg +0.147 s/lap for medium stint",
+        "pace delta -0.526 on lap 15",
+        "track temp 24.6C at lap 15"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "rank": 3,
+      "severity": "info",
+      "headline": "Intermediates gave a performance boost on wet track (negative degradation)",
+      "detail": "After switching to Intermediates on lap 28, the modelled degradation turned negative (-0.116 s/lap) and pace improved by up to -0.596 s (lap 30) despite the track remaining wet, indicating the intermediate tyres provided a clear performance advantage on the wet surface.",
+      "laps": [
+        28,
+        30
+      ],
+      "domains": [
+        "tyre",
+        "pace",
+        "track"
+      ],
+      "evidence": [
+        "modelled deg -0.116 s/lap for intermediate stint",
+        "pace delta -0.596 on lap 30",
+        "track surface=WET on lap 30"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "rank": 4,
+      "severity": "info",
+      "headline": "Softs held pace despite slight degradation; rain on lap 45 caused a minor slowdown",
+      "detail": "During the soft tyre stint (laps 40‑52) the modelled degradation was +0.123 s/lap, yet pace remained within ±0.27 s; the only notable slowdown was on lap 45 (+0.122 s) when rain returned, suggesting the softs were marginally sensitive to brief wet patches.",
+      "laps": [
+        45
+      ],
+      "domains": [
+        "tyre",
+        "pace",
+        "track"
+      ],
+      "evidence": [
+        "modelled deg +0.123 s/lap for soft stint",
+        "pace delta +0.122 on lap 45",
+        "track surface=WET on lap 45"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "rank": 5,
+      "severity": "warning",
+      "headline": "Blue‑flag traffic caused a +1.25 s pace loss on lap 26",
+      "detail": "Blue flags appeared from lap 21 onward while the driver was on medium tyres; the only lap with a measurable pace delta during blue‑flag periods was lap 26 (+1.249 s), likely reflecting traffic management rather than tyre performance.",
+      "laps": [
+        26
+      ],
+      "domains": [
+        "position",
+        "pace",
+        "situation",
+        "tyre"
+      ],
+      "evidence": [
+        "pace delta +1.249 on lap 26",
+        "flags BLUE on lap 26",
+        "medium tyre age 26 on lap 26"
+      ],
+      "confidence": 0.4
+    },
+    {
+      "rank": 6,
+      "severity": "info",
+      "headline": "Driver remains calm until wet conditions arrive, stress only spikes at lap 19",
+      "detail": "Radio calls at laps 4 and 11 show calm stress (≈43) despite the driver noting a potential shower; the lack of stress rise before the actual wet onset suggests the driver’s anticipation does not translate into measurable stress until conditions change.",
+      "laps": [
+        4,
+        11
+      ],
+      "domains": [
+        "stress",
+        "track",
+        "radio"
+      ],
+      "evidence": [
+        "stress 42.6 on lap 4",
+        "stress 44.5 on lap 11",
+        "track dry on laps 4 and 11",
+        "rain sensor wet starts lap 19"
+      ],
+      "confidence": 0.3
+    }
+  ],
+  "model": "openai/gpt-oss-120b",
+  "context_domains": [
+    "pace",
+    "position",
+    "radio",
+    "situation",
+    "stress",
+    "track",
+    "tyre"
+  ],
+  "dropped_findings": 0,
+  "cached": false
+}

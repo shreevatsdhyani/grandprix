@@ -36,6 +36,7 @@ from __future__ import annotations
 
 import json
 import logging
+import re
 from typing import Any
 
 from app import agent_config, groq_client
@@ -606,9 +607,44 @@ def _looks_truncated(exc: Exception) -> bool:
 
 
 def _looks_rate_limited(exc: Exception) -> bool:
-    """Whether a Groq error is the per-minute token quota rather than a real fault."""
+    """Whether a Groq error is a token quota rather than a real fault."""
     text = str(exc)
-    return "rate_limit_exceeded" in text or "Request too large" in text or "413" in text
+    # Both the machine-readable code and the prose are matched: Groq sends the
+    # code in the error body today, but a 429 whose wording changes must not be
+    # reported to the user as "the model is unavailable" — that reads as a fault
+    # and sends them looking for a broken deployment instead of a spent quota.
+    return (
+        "rate_limit_exceeded" in text
+        or "Rate limit reached" in text
+        or "Request too large" in text
+        or "413" in text
+    )
+
+
+def _is_daily_quota(exc: Exception) -> bool:
+    """Whether the exhausted quota is the per-day one rather than per-minute.
+
+    The difference is everything for the caller. A per-minute limit clears on its
+    own in seconds, so "wait a moment and regenerate" is honest advice. A per-day
+    limit does not, and telling someone to retry in a moment sends them pressing
+    a button that cannot work for hours — which is exactly what happened to a
+    prewarm run that read a TPD rejection as a transient one.
+    """
+    return "(TPD)" in str(exc) or "tokens per day" in str(exc)
+
+
+def quota_retry_hint(exc: Exception) -> float | None:
+    """Seconds Groq says to wait, from "Please try again in 16m55.632s".
+
+    Both units are optional and either can be absent, so the minutes and seconds
+    groups are matched separately rather than assuming one shape. Returns None
+    when the error carries no hint.
+    """
+    match = re.search(r"try again in (?:([\d.]+)m)?([\d.]+)s", str(exc))
+    if not match:
+        return None
+    minutes, seconds = match.groups()
+    return (float(minutes) * 60 if minutes else 0.0) + float(seconds)
 
 
 def generate(timeline: Timeline, mode: ScoringMode) -> FindingsResponse:
@@ -679,9 +715,21 @@ def generate(timeline: Timeline, mode: ScoringMode) -> FindingsResponse:
                 )
                 continue
             if _looks_rate_limited(exc):
+                hint = quota_retry_hint(exc)
+                if _is_daily_quota(exc):
+                    when = (
+                        f" The quota frees up in about {hint / 60:.0f} min."
+                        if hint
+                        else ""
+                    )
+                    raise FindingsUnavailable(
+                        "The findings model has used its whole daily token allowance, so "
+                        "regenerating will not help until it resets." + when +
+                        " Raise the tier on the Groq account to lift it."
+                    ) from exc
+                when = f" Try again in about {hint:.0f}s." if hint else " Wait a moment and try again."
                 raise FindingsUnavailable(
-                    "The findings model hit its per-minute token limit. Wait a moment and "
-                    "regenerate, or raise the tier on the Groq account."
+                    "The findings model hit its per-minute token limit." + when
                 ) from exc
             log.error("findings generation failed: %s", exc)
             raise FindingsUnavailable(f"The findings model is unavailable: {exc}") from exc

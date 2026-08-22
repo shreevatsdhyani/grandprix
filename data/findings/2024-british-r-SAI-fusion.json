@@ -1,0 +1,148 @@
+{
+  "session_id": "2024-british-r",
+  "driver": "SAI",
+  "mode": "fusion",
+  "findings": [
+    {
+      "rank": 1,
+      "severity": "warning",
+      "headline": "Rapid pace recovery after early wet‑to‑dry switch suggests earlier intermediate call",
+      "detail": "During the wet‑to‑dry transition (lap 19‑22) the medium tyres showed a +6.2 s delta then a -0.577 s improvement while stress stayed unrecorded; the huge delta indicates loss of grip, but the subsequent -0.577 s suggests the driver adapted quickly. Maintaining pace on the drying line avoided a larger time loss, so future strategy should consider an earlier switch to intermediates before lap 19.",
+      "laps": [
+        19,
+        22
+      ],
+      "domains": [
+        "pace",
+        "track",
+        "tyre",
+        "situation"
+      ],
+      "evidence": [
+        "pace delta +6.200 on lap 19",
+        "pace delta -0.577 on lap 22",
+        "track temp 23.2C on lap 19",
+        "rain wet on lap 19-45"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "rank": 2,
+      "severity": "info",
+      "headline": "Intermediate tyres gained grip as track dried, no extra pit required",
+      "detail": "From laps 27‑34 on intermediates the modelled degradation was -0.325 s/lap overall, yet lap 34 showed a -0.407 s improvement while track temp rose to 21.0 C. The driver extracted extra performance as the surface dried, indicating good tyre‑temperature management; no further tyre change was needed until lap 40.",
+      "laps": [
+        27,
+        34
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "track"
+      ],
+      "evidence": [
+        "best lap 96.802s on intermediate stint",
+        "pace delta -0.407 on lap 34",
+        "track temp 21.0C on lap 34",
+        "modelled deg -0.325 s/lap for stint 2"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "rank": 3,
+      "severity": "warning",
+      "headline": "Hard tyres hold pace under blue flags but show minor slip on lap 49",
+      "detail": "When the hard tyres were introduced on lap 40 (dry) the pace delta stayed at 0.0 s despite a blue flag on lap 41‑44, showing the driver could hold median pace under traffic. However lap 49 showed a +0.012 s delta with a blue flag, hinting a slight degradation when defending. Consider conserving a few seconds on lap 48‑49 to avoid losing position under blue.",
+      "laps": [
+        40,
+        49
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "situation"
+      ],
+      "evidence": [
+        "pace delta 0.000 on laps 40‑44",
+        "blue flag on lap 41",
+        "pace delta +0.012 on lap 49",
+        "blue flag on lap 49"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "rank": 4,
+      "severity": "info",
+      "headline": "Low end‑race stress implies mental fatigue was not a factor",
+      "detail": "Stress reading is missing for the critical wet‑to‑dry window (laps 19‑22), but the post‑race calm (16.4) and pre‑race tired (52.0) suggest the driver was not overly stressed during the race. With only two stress points the confidence is low; still, the low stress at the end indicates the driver finished relaxed, so mental fatigue likely did not affect final laps.",
+      "laps": [
+        52
+      ],
+      "domains": [
+        "stress",
+        "radio"
+      ],
+      "evidence": [
+        "pre‑race stress 52.0",
+        "post‑race stress 16.4"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "rank": 5,
+      "severity": "info",
+      "headline": "Soft tyres gave a clear pace boost on final laps",
+      "detail": "The soft tyre stint on laps 51‑52 delivered the fastest lap (88.293 s) with a -1.122 s delta on lap 52, but the stress value comes from post‑race radio, not in‑lap measurement. The performance gain is clear, yet we cannot confirm driver stress impact; still, the softs proved decisive for a final push.",
+      "laps": [
+        51,
+        52
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "stress"
+      ],
+      "evidence": [
+        "pace delta -1.122 on lap 52",
+        "best lap 88.293s on soft stint"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "rank": 6,
+      "severity": "info",
+      "headline": "Blue‑flag traffic had minimal impact on lap times",
+      "detail": "Blue flags appeared frequently from lap 21 onward, yet no pace delta spikes were recorded except a minor +0.012 on lap 49. With only a handful of blue‑flag laps, the data suggests the driver managed traffic without major time loss, but the sample is small.",
+      "laps": [
+        21,
+        23,
+        24,
+        41,
+        49
+      ],
+      "domains": [
+        "situation",
+        "pace"
+      ],
+      "evidence": [
+        "blue flag on lap 21",
+        "blue flag on lap 23",
+        "blue flag on lap 24",
+        "blue flag on lap 41",
+        "pace delta +0.012 on lap 49"
+      ],
+      "confidence": 0.4
+    }
+  ],
+  "model": "openai/gpt-oss-120b",
+  "context_domains": [
+    "pace",
+    "radio",
+    "situation",
+    "stress",
+    "track",
+    "tyre"
+  ],
+  "dropped_findings": 0,
+  "cached": false
+}

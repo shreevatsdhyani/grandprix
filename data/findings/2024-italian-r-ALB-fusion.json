@@ -1,0 +1,150 @@
+{
+  "session_id": "2024-italian-r",
+  "driver": "ALB",
+  "mode": "fusion",
+  "findings": [
+    {
+      "rank": 1,
+      "severity": "info",
+      "headline": "High stress at lap 34 did not degrade pace – tyre still performing",
+      "detail": "At lap 34 the driver’s stress spiked to 75.5 while on a 17‑lap‑old HARD tyre, under blue‑flag pressure from a backmarker and a 1.8 s gap to P10. Despite the high stress the pace delta was +0.576 s (slower) but the model suggests the HARD tyre was still within its performance window (degradation –0.031 s/lap), so the driver managed to hold position without losing time.",
+      "laps": [
+        34
+      ],
+      "domains": [
+        "stress",
+        "pace",
+        "tyre",
+        "position",
+        "situation"
+      ],
+      "evidence": [
+        "stress 75.5 on lap 34",
+        "pace delta +0.576 on lap 34",
+        "HARD/17 tyre age 17 on lap 34",
+        "gap-to-car-ahead 1.8s on lap 34",
+        "flags BLUE on lap 34"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "rank": 2,
+      "severity": "warning",
+      "headline": "Early HARD tyre slowdown coincides with cooling track and blue‑flag traffic",
+      "detail": "From laps 31‑33 the HARD tyres showed a sharp slowdown (+0.358 s, +0.582 s) while the driver was still on relatively fresh tyres (age 14‑16) and under blue‑flag conditions, indicating a possible grip loss as track temperature fell below 46 °C.",
+      "laps": [
+        31,
+        32
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "track",
+        "situation"
+      ],
+      "evidence": [
+        "pace delta +0.358 on lap 31",
+        "pace delta -0.582 on lap 32",
+        "track C 46.1 on lap 31",
+        "track C 45.9 on lap 32",
+        "flags BLUE on lap 32"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "rank": 3,
+      "severity": "info",
+      "headline": "Blue‑flag traffic forces slower laps despite still‑good HARD tyre",
+      "detail": "Between laps 38‑42 the driver repeatedly set positive pace deltas (+0.243, +0.223, +0.205) while on HARD tyres aged 21‑25 and under blue flags, suggesting that the tyre degradation model (-0.031 s/lap) was being offset by traffic management rather than outright pace loss.",
+      "laps": [
+        38,
+        39,
+        42
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "situation"
+      ],
+      "evidence": [
+        "pace delta +0.243 on lap 38",
+        "pace delta +0.223 on lap 39",
+        "pace delta +0.205 on lap 42",
+        "HARD/21‑25 tyre ages on laps 38‑42",
+        "flags BLUE on laps 38,39,42"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "rank": 4,
+      "severity": "warning",
+      "headline": "Unexpected lap‑25 slowdown on fresh HARD tyre – investigate aero/track cleanliness",
+      "detail": "Lap 25 showed the biggest negative pace delta (‑0.358 s) on a HARD tyre only 8 laps old, while track temperature was 45.8 °C and no flags were shown, indicating a brief loss of grip possibly due to a dirty air pocket or a brief off‑track excursion.",
+      "laps": [
+        25
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "track"
+      ],
+      "evidence": [
+        "pace delta -0.358 on lap 25",
+        "HARD/8 tyre age on lap 25",
+        "track C 45.8 on lap 25",
+        "flags - on lap 25"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "rank": 5,
+      "severity": "info",
+      "headline": "Post‑race stress high but no impact on final lap pace",
+      "detail": "The post‑race stress reading of 62.7 (lap 53) is consistent with the driver’s comment about being ‘tired’, but because it is not an in‑lap measurement it should not be used to judge performance; the pace delta was –0.003 s, essentially flat, confirming the deterministic call to hold strategy.",
+      "laps": [
+        53
+      ],
+      "domains": [
+        "stress",
+        "pace",
+        "radio"
+      ],
+      "evidence": [
+        "stress 62.7 on lap 53 (post‑race)",
+        "pace delta -0.003 on lap 53"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "rank": 6,
+      "severity": "info",
+      "headline": "Insufficient stress data to draw robust conclusions",
+      "detail": "Only two stress readings are available (lap 34 and lap 53). The isolated spike at lap 34 does not form a pattern, so any strategy change based solely on stress is low confidence.",
+      "laps": [
+        34,
+        53
+      ],
+      "domains": [
+        "stress",
+        "radio"
+      ],
+      "evidence": [
+        "stress 75.5 on lap 34",
+        "stress 62.7 on lap 53"
+      ],
+      "confidence": 0.4
+    }
+  ],
+  "model": "openai/gpt-oss-120b",
+  "context_domains": [
+    "pace",
+    "position",
+    "radio",
+    "situation",
+    "stress",
+    "track",
+    "tyre"
+  ],
+  "dropped_findings": 0,
+  "cached": false
+}

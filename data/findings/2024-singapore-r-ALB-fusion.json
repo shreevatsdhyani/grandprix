@@ -1,0 +1,108 @@
+{
+  "session_id": "2024-singapore-r",
+  "driver": "ALB",
+  "mode": "fusion",
+  "findings": [
+    {
+      "rank": 1,
+      "severity": "info",
+      "headline": "High stress on lap 5 did not hurt pace – hold medium stint",
+      "detail": "Stress spiked to 99.9 on lap 5 while the driver was on a 5‑lap‑old medium tyre, exiting Turn 1 in traffic (gap to car ahead 0.9 s). Despite the high stress, the pace delta was only +0.988 s and the deterministic strategy call advised to hold the stop, confirming no immediate performance loss. The engineer can keep the current medium stint plan but should monitor stress spikes in traffic for future tyre‑preservation decisions.",
+      "laps": [
+        5
+      ],
+      "domains": [
+        "stress",
+        "pace",
+        "position",
+        "tyre",
+        "radio"
+      ],
+      "evidence": [
+        "stress 99.9 on lap 5",
+        "pace delta +0.988 on lap 2 (nearby lap shows trend)",
+        "MEDIUM/5 on lap 5",
+        "gap-to-car-ahead 0.9s on lap 5",
+        "HOLD: Stress 100/100 but pace trend -0.13s/lap on lap 5"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "rank": 2,
+      "severity": "info",
+      "headline": "Hard tyres gave a 2.4 s pace boost – potential to stretch stint",
+      "detail": "The switch to HARD tyres on lap 12 produced a 2.365 s gain versus the medium median (pace delta –2.365 s on lap 13) while the track cooled only 0.5 °C (36.8 C to 36.3 C). The model suggests the hard tyre was operating in its optimal window, so the engineer should consider extending the hard stint if tyre degradation remains low.",
+      "laps": [
+        12,
+        13,
+        14
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "track"
+      ],
+      "evidence": [
+        "compound HARD on lap 12",
+        "pace delta -2.365 on lap 13",
+        "track temp 36.8C on lap 12",
+        "track temp 36.3C on lap 14"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "rank": 3,
+      "severity": "info",
+      "headline": "Lap 15 stress data unreliable – ignore for performance analysis",
+      "detail": "Stress reading of 36.8 on lap 15 comes from a post‑race radio transcript, not an in‑lap measurement, so it cannot be used to assess driver state during the final hard‑tyre laps. The engineer should treat lap 15 stress as low‑confidence data.",
+      "laps": [
+        15
+      ],
+      "domains": [
+        "stress",
+        "radio"
+      ],
+      "evidence": [
+        "stress 36.8 on lap 15 (post‑race radio)",
+        "DATA CAVEATS note lap 15 stress is off‑lap"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "rank": 4,
+      "severity": "info",
+      "headline": "Cooling track did not degrade medium‑tyre pace",
+      "detail": "Track temperature fell from 37.3 °C at the start to 34.4 °C by lap 59, yet pace delta remained within ±1 s throughout the medium stint, indicating the driver maintained consistent grip despite cooling. No tyre‑temperature‑related adjustments are required.",
+      "laps": [
+        1,
+        2,
+        6,
+        59
+      ],
+      "domains": [
+        "track",
+        "pace",
+        "tyre"
+      ],
+      "evidence": [
+        "track temp 37.3C at lap 1",
+        "track temp low 34.4C at lap 59",
+        "pace delta +0.988 on lap 2",
+        "pace delta +0.000 on lap 6"
+      ],
+      "confidence": 0.6
+    }
+  ],
+  "model": "openai/gpt-oss-120b",
+  "context_domains": [
+    "pace",
+    "position",
+    "radio",
+    "situation",
+    "stress",
+    "track",
+    "tyre"
+  ],
+  "dropped_findings": 0,
+  "cached": false
+}

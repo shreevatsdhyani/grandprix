@@ -1,0 +1,151 @@
+{
+  "session_id": "2024-british-r",
+  "driver": "VER",
+  "mode": "fusion",
+  "findings": [
+    {
+      "rank": 1,
+      "severity": "info",
+      "headline": "Early‑race stress high but pace unchanged – keep current plan",
+      "detail": "Stress spiked to 64.7 on lap 6 while on dry medium tyres (age 6) and the driver was 1.5 s off the car ahead in P3. The model shows negligible degradation (+0.174 s/lap) and pace delta was -0.222 s, so the high stress did not translate into slower laps. No strategy change is needed; monitor but keep the current plan.",
+      "laps": [
+        6
+      ],
+      "domains": [
+        "stress",
+        "pace",
+        "tyre",
+        "position",
+        "radio"
+      ],
+      "evidence": [
+        "stress 64.7 on lap 6",
+        "pace delta -0.222 on lap 6",
+        "MEDIUM/6 tyre age 6",
+        "gap-to-car-ahead 1.5s"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "rank": 2,
+      "severity": "info",
+      "headline": "Grip loss on lap 19‑22 caused major slowdown – timing of intermediate switch was optimal",
+      "detail": "During the wet‑to‑dry transition (lap 19‑22) the medium tyres showed a +6.313 s pace delta on lap 19, then recovered to -1.116 s by lap 22 as the track cooled to 22.1 °C. Stress remained low (no reading) and the driver stayed in P5‑P4. The modelled degradation stayed flat, indicating the large slowdown was purely grip‑related; an early switch to intermediates at lap 27 avoided further loss.",
+      "laps": [
+        19,
+        22
+      ],
+      "domains": [
+        "pace",
+        "track",
+        "tyre",
+        "situation"
+      ],
+      "evidence": [
+        "pace delta +6.313 on lap 19",
+        "pace delta -1.116 on lap 22",
+        "track temp 22.1C on lap 22",
+        "surface=WET on laps 19‑22"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "rank": 3,
+      "severity": "warning",
+      "headline": "High stress on lap 28 under blue flag – brief focus cue may unlock tyre potential",
+      "detail": "Stress rose to 67.4 on lap 28 while on fresh intermediates (age 2) in heavy wet and a blue‑flag situation. Pace delta was 0.000 s, but the model suggests the tyres were still gaining grip (modelled deg -0.072 s/lap). The driver’s fatigue rating (Tired) and blue‑flag traffic likely limited exploitation of the tyre advantage; consider a brief driver‑focus reminder when blue‑flags appear on wet tyres.",
+      "laps": [
+        28
+      ],
+      "domains": [
+        "stress",
+        "tyre",
+        "situation",
+        "radio"
+      ],
+      "evidence": [
+        "stress 67.4 on lap 28",
+        "INTERMEDIATE/2 tyre age 2",
+        "surface=WET on lap 28",
+        "flags BLUE on lap 28"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "rank": 4,
+      "severity": "info",
+      "headline": "Stress fell as track warmed – driver adapted well to wet intermediates",
+      "detail": "From lap 31 to 38 stress dropped from 44.9 to 18.5 while on intermediates (age 5‑12) and the track warmed from 20.7 °C to 23.8 °C. Pace delta stayed around 0 s, and the modelled degradation remained slight (-0.072 s/lap). The decreasing stress suggests the driver adapted to wet conditions; no action needed but note the positive adaptation for future wet‑to‑dry phases.",
+      "laps": [
+        31,
+        38
+      ],
+      "domains": [
+        "stress",
+        "track",
+        "tyre",
+        "pace"
+      ],
+      "evidence": [
+        "stress 44.9 on lap 31",
+        "stress 18.5 on lap 38",
+        "track temp 20.7C on lap 31",
+        "track temp 23.8C on lap 38",
+        "pace delta 0.000 on lap 31",
+        "pace delta 0.000 on lap 38"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "rank": 5,
+      "severity": "warning",
+      "headline": "Very high stress on lap 45 despite stable pace – schedule post‑race aero check",
+      "detail": "Stress peaked at 83.2 on lap 45 while on hard tyres (age 7) in wet conditions and a blue‑flag situation. Pace delta was +0.000 s, but the model shows a slight negative degradation (-0.036 s/lap) meaning the hard tyre was still performing. The high stress may be linked to perceived front‑left damage on cars ahead. Recommend a quick visual check of front‑left aero after the race to confirm driver perception.",
+      "laps": [
+        45
+      ],
+      "domains": [
+        "stress",
+        "tyre",
+        "situation",
+        "radio"
+      ],
+      "evidence": [
+        "stress 83.2 on lap 45",
+        "HARD/7 tyre age 7",
+        "surface=WET on lap 45",
+        "flags BLUE on lap 45"
+      ],
+      "confidence": 0.4
+    },
+    {
+      "rank": 6,
+      "severity": "info",
+      "headline": "Post‑race stress 90 not relevant to lap performance",
+      "detail": "The final lap shows a post‑race stress reading of 90.0, not an in‑lap value, so it cannot be linked to performance. No actionable insight for race pace.",
+      "laps": [
+        52
+      ],
+      "domains": [
+        "stress",
+        "radio"
+      ],
+      "evidence": [
+        "stress 90.0 on lap 52 (post‑race)"
+      ],
+      "confidence": 0.3
+    }
+  ],
+  "model": "openai/gpt-oss-120b",
+  "context_domains": [
+    "pace",
+    "position",
+    "radio",
+    "situation",
+    "stress",
+    "track",
+    "tyre"
+  ],
+  "dropped_findings": 0,
+  "cached": false
+}

@@ -1,0 +1,148 @@
+{
+  "session_id": "2024-british-r",
+  "driver": "MAG",
+  "mode": "fusion",
+  "findings": [
+    {
+      "rank": 1,
+      "severity": "warning",
+      "headline": "Late‑race stress high despite fresh softs and drying track",
+      "detail": "Stress spiked to 90 on lap 52 (post‑race radio) while the driver was on brand‑new softs (lap 15) and the track had just dried to 25.3 °C. The model shows the soft tyre was still gaining grip (‑0.026 s/lap trend) so the high stress was not caused by tyre degradation but by the transition to dry and the final chequered‑flag pressure. Recommend monitoring stress in the last 5 laps of future wet‑to‑dry races and consider a brief de‑brief on mental load rather than tyre strategy.",
+      "laps": [
+        52
+      ],
+      "domains": [
+        "stress",
+        "tyre",
+        "track",
+        "situation"
+      ],
+      "evidence": [
+        "stress 90.0 on lap 52",
+        "SOFT/15 on lap 52",
+        "track temp 25.3C on lap 52",
+        "soft modelled deg -0.026 s/lap"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "rank": 2,
+      "severity": "warning",
+      "headline": "Medium tyre struggled on sudden wet, early pit to intermediates would have saved ~2 s/lap",
+      "detail": "During the wet stint (laps 19‑27) the medium tyre modelled degradation (+0.183 s/lap) caused a large pace delta spike of +8.775 s on lap 19 when the rain started, but pace recovered to within +0.451 s by lap 20 and even dropped to –0.718 s on lap 22 after the driver cleared blue flags. The early wet lap cost ~8 s, suggesting the medium was ill‑suited for the sudden wet. Switching to intermediates at lap 28 saved ~2 s per lap thereafter.",
+      "laps": [
+        19,
+        20,
+        22
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "track",
+        "situation"
+      ],
+      "evidence": [
+        "pace delta +8.775 on lap 19",
+        "medium tyre modelled deg +0.183 s/lap",
+        "rain wet on lap 19",
+        "pace delta -0.718 on lap 22"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "rank": 3,
+      "severity": "info",
+      "headline": "Intermediates losing pace as track dried; soft change at lap 38 justified",
+      "detail": "From lap 30 to 35 the intermediate tyre showed a slight slowdown (+0.869 s on lap 34) while track temperature rose from 20.7 °C to 21.2 °C and the rain began to lift (crossover at lap 40). The modelled degradation (+0.344 s/lap) indicates the intermediates were losing grip faster than the drying track could compensate, supporting the decision to switch to softs on lap 38.",
+      "laps": [
+        30,
+        34
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "track",
+        "situation"
+      ],
+      "evidence": [
+        "pace delta +0.869 on lap 34",
+        "intermediate modelled deg +0.344 s/lap",
+        "track temp 20.7C at lap 30",
+        "track temp 21.2C at lap 34"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "rank": 4,
+      "severity": "info",
+      "headline": "Driver held pace under blue‑flag pressure in wet medium stint",
+      "detail": "Blue‑flag periods (laps 21‑27) coincided with flat or negative pace deltas (‑0.718 s on lap 22, 0.0 on laps 24‑25) despite the medium tyre still relatively fresh. The driver managed to hold position without losing time, indicating good situational awareness. No action needed but note the driver can maintain pace under blue‑flag pressure.",
+      "laps": [
+        21,
+        22,
+        24,
+        25
+      ],
+      "domains": [
+        "pace",
+        "situation",
+        "radio"
+      ],
+      "evidence": [
+        "blue flag on lap 21",
+        "pace delta -0.718 on lap 22",
+        "pace delta 0.0 on laps 24,25"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "rank": 5,
+      "severity": "info",
+      "headline": "Isolated low‑stress comment aligns with improved position after lap 30",
+      "detail": "The single calm radio reading (stress 20.7) after the wet period praised the driver’s island‑keeping and step from P17 to P12, but with only one data point we cannot infer a broader stress trend. Still, it suggests the driver felt comfortable once the track stabilized around lap 30.",
+      "laps": [
+        30
+      ],
+      "domains": [
+        "stress",
+        "radio"
+      ],
+      "evidence": [
+        "stress 20.7 Calm on radio 2024-british-r-MAG-163730"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "rank": 6,
+      "severity": "info",
+      "headline": "Softs provided stable pace; potential to extract more lap time late race",
+      "detail": "The soft tyre stint (laps 38‑52) showed a flat to slightly improving pace (best lap 90.093 s, pace delta near 0) despite the modelled degradation being negative (‑0.026 s/lap). This suggests the softs were operating in their optimal window and the driver could have pushed harder in the final laps without tyre penalty.",
+      "laps": [
+        38,
+        41
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "track"
+      ],
+      "evidence": [
+        "soft best lap 90.093s",
+        "soft modelled deg -0.026 s/lap",
+        "pace delta 0.0 on laps 38‑41"
+      ],
+      "confidence": 0.4
+    }
+  ],
+  "model": "openai/gpt-oss-120b",
+  "context_domains": [
+    "pace",
+    "radio",
+    "situation",
+    "stress",
+    "track",
+    "tyre"
+  ],
+  "dropped_findings": 0,
+  "cached": false
+}

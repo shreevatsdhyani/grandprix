@@ -1,0 +1,138 @@
+{
+  "session_id": "2024-british-r",
+  "driver": "BOT",
+  "mode": "fusion",
+  "findings": [
+    {
+      "rank": 1,
+      "severity": "info",
+      "headline": "In‑race stress stayed low through wet‑dry transition",
+      "detail": "The driver’s stress spiked to 17.3 only after the race, confirming that in‑race stress remained low despite the wet‑to‑dry transition; no in‑race stress data exceed 10, so the driver handled the changing conditions without physiological strain.",
+      "laps": [
+        51
+      ],
+      "domains": [
+        "stress",
+        "track",
+        "situation"
+      ],
+      "evidence": [
+        "stress 17.3 on lap 51"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "rank": 2,
+      "severity": "warning",
+      "headline": "Wet surface caused major pace loss, tyres not at fault",
+      "detail": "Pace dropped sharply (+8.351 s) on lap 19 when the track went wet, but the modelled tyre degradation on the medium tyres stayed low (+0.177 s/lap) indicating the slowdown was surface‑driven, not tyre‑related; the driver should focus on tyre choice rather than tyre wear for wet periods.",
+      "laps": [
+        19
+      ],
+      "domains": [
+        "pace",
+        "track",
+        "tyre"
+      ],
+      "evidence": [
+        "pace delta +8.351 on lap 19",
+        "modelled deg +0.177 s/lap for medium stint 1‑26"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "rank": 3,
+      "severity": "info",
+      "headline": "Intermediates restored pace but began degrading as track cooled",
+      "detail": "After switching to intermediates (lap 27) the driver’s pace delta fell back to near‑zero despite the track remaining wet, showing the tyre change recovered lost time; however, a slight +0.353 s on lap 33 suggests the intermediate set began to lose grip as the track cooled to 20.7 °C.",
+      "laps": [
+        33
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "track"
+      ],
+      "evidence": [
+        "pace delta +0.353 on lap 33",
+        "track temp 20.7 on lap 33",
+        "intermediate stint laps 27‑37"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "rank": 4,
+      "severity": "warning",
+      "headline": "Softs lost time when rain returned on lap 45",
+      "detail": "The soft tyre stint (lap 38‑51) delivered a best lap of 91.277 s and a negative modelled degradation (‑0.224 s/lap), yet pace rose again (+1.728 s) on lap 45 when rain returned, indicating the softs were vulnerable to sudden wet patches; consider delaying soft deployment until after lap 45 or preparing a quicker intermediate swap.",
+      "laps": [
+        45
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "track",
+        "situation"
+      ],
+      "evidence": [
+        "best lap 91.277 on soft stint",
+        "modelled deg -0.224 s/lap for soft stint",
+        "pace delta +1.728 on lap 45",
+        "rain on lap 45"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "rank": 5,
+      "severity": "info",
+      "headline": "No pace loss while lapping backmarkers under blue flags",
+      "detail": "Blue flags appeared from lap 21 onward while the driver was on medium tyres; despite the extra traffic the pace delta stayed at 0 s on laps 21‑25, suggesting the driver managed backmarkers without losing time, but the lack of stress data means confidence is limited.",
+      "laps": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "domains": [
+        "pace",
+        "radio"
+      ],
+      "evidence": [
+        "pace delta 0 on laps 21-25",
+        "flags BLUE on laps 21‑25"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "rank": 6,
+      "severity": "info",
+      "headline": "Minor pace rise on lap 41 under blue flag, stress unknown",
+      "detail": "A small pace increase (+0.371 s) on lap 41 occurred on soft tyres under dry conditions with a blue flag, but the driver’s stress reading is unavailable; with only one data point the pattern is uncertain, so monitor for possible concentration dips on similar laps.",
+      "laps": [
+        41
+      ],
+      "domains": [
+        "pace",
+        "stress",
+        "situation"
+      ],
+      "evidence": [
+        "pace delta +0.371 on lap 41",
+        "flags BLUE on lap 41"
+      ],
+      "confidence": 0.4
+    }
+  ],
+  "model": "openai/gpt-oss-120b",
+  "context_domains": [
+    "pace",
+    "radio",
+    "situation",
+    "stress",
+    "track",
+    "tyre"
+  ],
+  "dropped_findings": 0,
+  "cached": false
+}

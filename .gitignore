@@ -79,6 +79,26 @@ data/clips/*
 # data/results/
 
 # --------------------------------------------------------------------------
+# Top findings cache        regenerate: python scripts/build_findings.py
+#
+# Committed, for the same reason data/results/ is. One JSON per (session,
+# driver, mode), ~5 KB each, 179 pairs — under a megabyte all in.
+#
+# The difference from every other cache here is that this one cannot be
+# regenerated offline at all: each file is one Groq call, so rebuilding the set
+# needs somebody's API key and about half an hour. A fresh clone without these
+# shows "Reading the session across voice, pace, track, tyre and race data..."
+# on every driver the visitor clicks, forever, if they have no key — and pays
+# for 179 LLM calls if they do. Committing them is what makes the panel instant
+# for everyone.
+#
+# Regenerate a single briefing from the UI's "regenerate" control, or a whole
+# race with --session; --force rewrites pairs already stored, which is what to
+# run after changing the prompt in app/pipeline/findings.py.
+# --------------------------------------------------------------------------
+# data/findings/
+
+# --------------------------------------------------------------------------
 # Fusion training artifacts  regenerate: python scripts/fit_fusion.py
 #
 # features.json is a per-clip inference cache (STT + SER + text over every

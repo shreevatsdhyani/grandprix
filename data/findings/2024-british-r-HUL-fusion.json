@@ -1,0 +1,157 @@
+{
+  "session_id": "2024-british-r",
+  "driver": "HUL",
+  "mode": "fusion",
+  "findings": [
+    {
+      "rank": 1,
+      "severity": "info",
+      "headline": "High stress on lap 13 despite flat pace – communication tweak needed before first stop",
+      "detail": "Stress spiked to 88.8 on lap 13 while the driver was on medium tyre age 13, exiting Turn 8 at 276 kph on a dry surface. Pace delta was flat (‑0.00 s) and the driver was only 0.7 s behind P9 in traffic, indicating the high stress did not yet affect lap time. The strategy call correctly held the stop, but the early stress suggests a mental load that could be mitigated with clearer communication before the first tyre change.",
+      "laps": [
+        13
+      ],
+      "domains": [
+        "stress",
+        "pace",
+        "tyre",
+        "position",
+        "radio"
+      ],
+      "evidence": [
+        "stress 88.8 on lap 13",
+        "pace delta -0.00 on lap 13",
+        "MEDIUM/13 on lap 13",
+        "Turn 8 exit speed 276kph",
+        "gap-to-car-ahead 0.7s on lap 13"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "rank": 2,
+      "severity": "warning",
+      "headline": "Wet‑track lap 19 caused >9 s loss on mediums – confirms need for early intermediate switch",
+      "detail": "When the track went wet at lap 19 the medium tyres showed a +9.918 s pace delta, the largest single‑lap slowdown, and the driver remained on the same set (age 19). The model suggests the medium compound was ill‑suited to the sudden wet, causing massive degradation. Switching to intermediates at lap 27 avoided further loss, confirming the tyre choice was the right corrective action.",
+      "laps": [
+        19,
+        27
+      ],
+      "domains": [
+        "track",
+        "tyre",
+        "pace"
+      ],
+      "evidence": [
+        "pace delta +9.918 on lap 19",
+        "MEDIUM/19 on lap 19",
+        "rain wet on lap 19",
+        "INTERMEDIATE/1 on lap 27"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "rank": 3,
+      "severity": "info",
+      "headline": "Intermediates gaining grip – could have delayed soft switch by one lap",
+      "detail": "During the intermediate stint (laps 27‑39) the modelled degradation was –0.189 s/lap, meaning the tyres were actually gaining grip as they warmed. Pace delta stayed around 0 s except for a +0.449 s spike on lap 32 and a –0.357 s dip on lap 33, both correlating with minor track‑temperature fluctuations (20.7 C to 21.4 C). This indicates the intermediate set was well‑matched to the wet surface and could have been extended a lap longer.",
+      "laps": [
+        27,
+        32,
+        33
+      ],
+      "domains": [
+        "tyre",
+        "pace",
+        "track"
+      ],
+      "evidence": [
+        "modelled deg -0.189 s/lap for stint 2",
+        "pace delta +0.449 on lap 32",
+        "pace delta -0.357 on lap 33",
+        "track temp 20.7C on laps 30‑33"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "rank": 4,
+      "severity": "info",
+      "headline": "Softs delivered flat pace but driver stress rose – monitor mental load in final stint",
+      "detail": "After the soft tyres were fitted at lap 40 the pace delta fell to –0.556 s on lap 43, the best soft lap (89.836 s). However, the model shows almost no degradation (+0.008 s/lap) through the stint, yet the driver’s stress rose to 53.4 in the post‑race radio (conf 0.48). The discrepancy suggests mental fatigue rather than tyre wear, so future debriefs should monitor stress trends more closely during the final stint.",
+      "laps": [
+        40,
+        43,
+        52
+      ],
+      "domains": [
+        "tyre",
+        "pace",
+        "stress",
+        "radio"
+      ],
+      "evidence": [
+        "SOFT/4 on lap 40",
+        "pace delta -0.556 on lap 43",
+        "modelled deg +0.008 s/lap for stint 3",
+        "stress 53.4 post‑race (conf 0.48)"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "rank": 5,
+      "severity": "info",
+      "headline": "Blue‑flag periods did not affect pace – need more stress data to assess driver load",
+      "detail": "Blue flags appeared from lap 21 onward while the driver was on medium tyres in wet conditions. Despite the additional overtaking pressure, pace delta remained at 0 s on laps 21‑25, indicating the driver managed traffic without losing time. However, the lack of stress data for these laps means we cannot confirm mental impact; a higher‑frequency stress capture would be advisable.",
+      "laps": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "domains": [
+        "position",
+        "situation",
+        "pace",
+        "stress"
+      ],
+      "evidence": [
+        "BLUE flag on lap 21",
+        "pace delta 0.000 on laps 21‑25",
+        "MEDIUM/21‑25 on laps 21‑25"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "rank": 6,
+      "severity": "info",
+      "headline": "Limited stress data suggests possible reduction after soft switch",
+      "detail": "The only in‑race stress reading (lap 13) was high, and the post‑race reading (lap 52) was moderate. With only two data points the sample is too small to infer a trend, but the contrast hints that stress may have decreased after the tyre change to softs. Caution is advised before using this to adjust strategy.",
+      "laps": [
+        13,
+        52
+      ],
+      "domains": [
+        "stress",
+        "tyre",
+        "radio"
+      ],
+      "evidence": [
+        "stress 88.8 on lap 13",
+        "stress 53.4 post‑race (conf 0.48) on lap 52"
+      ],
+      "confidence": 0.4
+    }
+  ],
+  "model": "openai/gpt-oss-120b",
+  "context_domains": [
+    "pace",
+    "position",
+    "radio",
+    "situation",
+    "stress",
+    "track",
+    "tyre"
+  ],
+  "dropped_findings": 0,
+  "cached": false
+}

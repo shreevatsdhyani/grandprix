@@ -359,3 +359,40 @@ def test_store_never_writes_outside_its_directory(tmp_path, monkeypatch):
     written = list(tmp_path.iterdir())
     assert len(written) == 1
     assert written[0].parent == tmp_path
+
+
+# ---------------------------------------------------------------------------
+# Quota classification
+#
+# A per-minute limit and a per-day limit look almost identical in Groq's error
+# text and mean opposite things: one clears in seconds, the other not until the
+# day resets. Reading a daily rejection as transient is what made a prewarm run
+# burn its whole allowance retrying, so the distinction is worth a test.
+# ---------------------------------------------------------------------------
+
+_TPD = (
+    "Error code: 429 - Rate limit reached for model `openai/gpt-oss-120b` on "
+    "tokens per day (TPD): Limit 200000, Used 198999, Requested 3352. "
+    "Please try again in 16m55.632s."
+)
+_TPM = (
+    "Error code: 429 - Rate limit reached on tokens per minute (TPM): "
+    "Limit 8000, Used 7920. Please try again in 6.253s."
+)
+
+
+def test_daily_and_minute_quotas_are_told_apart():
+    assert findings._looks_rate_limited(Exception(_TPD))
+    assert findings._looks_rate_limited(Exception(_TPM))
+    assert findings._is_daily_quota(Exception(_TPD))
+    assert not findings._is_daily_quota(Exception(_TPM))
+    # A genuine fault is neither, and must not be mistaken for a quota.
+    assert not findings._looks_rate_limited(Exception("connection reset"))
+
+
+def test_retry_hint_reads_both_minute_and_second_forms():
+    # "16m55.632s" is the shape that a seconds-only regex silently misreads as
+    # 55 seconds — a seventeen-minute wait turned into an instant retry.
+    assert findings.quota_retry_hint(Exception(_TPD)) == 1015.632
+    assert findings.quota_retry_hint(Exception(_TPM)) == 6.253
+    assert findings.quota_retry_hint(Exception("no hint here")) is None

@@ -1,0 +1,161 @@
+{
+  "session_id": "2024-british-r",
+  "driver": "ALB",
+  "mode": "fusion",
+  "findings": [
+    {
+      "rank": 1,
+      "severity": "warning",
+      "headline": "Early‑race stress high on fresh Mediums but no pace hit – monitor mental load",
+      "detail": "Stress spiked to 88.8 on lap 2 (the only in‑race reading) while the driver was on fresh Medium tyres (age 2) in dry conditions, holding P12 with a 0.4 s gap and DRS enabled. The high stress coincided with a +0.000 s pace delta, indicating no immediate pace loss, but the driver’s tone (Tired) suggests early‑race mental load that could affect later performance if not managed.",
+      "laps": [
+        2
+      ],
+      "domains": [
+        "stress",
+        "pace",
+        "position",
+        "radio"
+      ],
+      "evidence": [
+        "stress 20.3 on lap 2",
+        "pace delta +0.000 on lap 2",
+        "P12 gap-to-car-ahead 0.4s",
+        "DRS ENABLED"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "rank": 2,
+      "severity": "info",
+      "headline": "Mediums struggled on wet; Intermediates recovered lap time",
+      "detail": "When the wet track began (lap 19) the Medium tyres showed a +9.296 s pace delta, a clear loss of grip. Switching to Intermediates at lap 28 reduced the delta to –1.503 s by lap 29, confirming the tyre change restored performance despite the wet surface.",
+      "laps": [
+        19,
+        28,
+        29
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "track"
+      ],
+      "evidence": [
+        "pace delta +9.296 on lap 19",
+        "track wet on lap 19",
+        "pace delta -1.503 on lap 29",
+        "compound INTERMEDIATE from lap 28"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "rank": 3,
+      "severity": "info",
+      "headline": "Third Medium stint shows stable pace despite modelled degradation",
+      "detail": "During the second Medium stint (laps 39‑52) the modelled degradation was –0.086 s/lap, yet pace delta stayed around 0 s until lap 45 when a brief wet patch returned (+0.172 s). The driver maintained consistent pace on dry‑track laps 40‑44, indicating the tyre model is reliable for predicting performance on a drying circuit.",
+      "laps": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "track"
+      ],
+      "evidence": [
+        "pace delta +0.000 on lap 40",
+        "pace delta +0.000 on lap 41",
+        "pace delta -0.257 on lap 42",
+        "pace delta -0.332 on lap 43",
+        "pace delta +0.334 on lap 44",
+        "pace delta +0.172 on lap 45",
+        "modelled deg -0.086 s/lap for stint 3"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "rank": 4,
+      "severity": "info",
+      "headline": "High stress reading at lap 52 did not affect pace – sample too small",
+      "detail": "The only post‑race stress reading (9.7) is from a non‑racing lap and should not be used to assess in‑race fatigue; however, the deterministic strategy call at lap 52 notes stress 89/100 with no performance loss, suggesting the driver can tolerate high stress without pace degradation, but the sample size is too small to generalise.",
+      "laps": [
+        52
+      ],
+      "domains": [
+        "stress",
+        "pace",
+        "radio"
+      ],
+      "evidence": [
+        "stress 9.7 on lap 52 (post‑race)",
+        "strategy call: Stress 89/100 but pace trend -0.01s/lap"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "rank": 5,
+      "severity": "info",
+      "headline": "Blue‑flag periods did not impact lap time",
+      "detail": "Blue flags appeared from lap 21 onward while on Mediums; despite being required to let faster cars through, pace delta remained near zero (laps 21‑27), indicating the driver managed back‑marker traffic without losing time.",
+      "laps": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "domains": [
+        "position",
+        "pace",
+        "situation"
+      ],
+      "evidence": [
+        "BLUE flag on lap 21",
+        "pace delta +0.000 on lap 21",
+        "BLUE flag on lap 22‑27",
+        "pace delta +0.000 on laps 22‑27"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "rank": 6,
+      "severity": "info",
+      "headline": "Temperature drop did not correlate with pace loss",
+      "detail": "Track temperature fell from 33.0 °C at start to 20.7 °C by lap 30, yet pace delta did not show a systematic slowdown; the best lap in the first Medium stint (92.265 s) occurred on a warm track, while the best lap in the Intermediate stint (97.843 s) was on a cooler, wet track, suggesting temperature alone was not the dominant factor.",
+      "laps": [
+        1,
+        30
+      ],
+      "domains": [
+        "track",
+        "pace",
+        "tyre"
+      ],
+      "evidence": [
+        "track temp 33.0C at lap 1",
+        "track temp 20.7C at lap 30",
+        "best lap 92.265s in stint 1",
+        "best lap 97.843s in stint 2"
+      ],
+      "confidence": 0.4
+    }
+  ],
+  "model": "openai/gpt-oss-120b",
+  "context_domains": [
+    "pace",
+    "position",
+    "radio",
+    "situation",
+    "stress",
+    "track",
+    "tyre"
+  ],
+  "dropped_findings": 0,
+  "cached": false
+}

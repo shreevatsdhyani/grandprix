@@ -1,0 +1,154 @@
+{
+  "session_id": "2024-british-r",
+  "driver": "LEC",
+  "mode": "fusion",
+  "findings": [
+    {
+      "rank": 1,
+      "severity": "info",
+      "headline": "High stress on lap 9 did not affect pace – mental load from rain forecast, not tyre wear.",
+      "detail": "Stress spiked to 61.7 on lap 9 while the driver was on medium tyres (age 9) in dry conditions, fighting traffic (P8, 0.7s gap) and received a rain forecast. Pace delta was -0.170 s, indicating no loss despite high stress. The model suggests the medium tyre was still within its performance window, so the stress was likely mental (rain anticipation) rather than tyre‑related.",
+      "laps": [
+        9
+      ],
+      "domains": [
+        "stress",
+        "pace",
+        "position",
+        "situation",
+        "radio"
+      ],
+      "evidence": [
+        "stress 61.7 on lap 9",
+        "pace delta -0.170 on lap 9",
+        "P8 gap-to-car-ahead 0.7s on lap 9",
+        "MEDIUM/9 on lap 9",
+        "track 25.7C dry on lap 9",
+        "rain forecast announced lap 9"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "rank": 2,
+      "severity": "warning",
+      "headline": "Intermediate tyre degradation caused a 3.6 s slowdown under blue flags; fresh intermediates restored pace.",
+      "detail": "From laps 23‑25 on intermediate tyres the pace delta jumped to +3.646 s on lap 25 while the driver was under blue flags and the track was wet. The modelled degradation for the intermediate stint (+0.815 s/lap) aligns with the large slowdown, indicating the tyre was losing grip. Switching to fresh intermediates at lap 28 recovered pace (‑2.348 s on lap 29).",
+      "laps": [
+        23,
+        25,
+        29
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "situation",
+        "position"
+      ],
+      "evidence": [
+        "pace delta +0.938 on lap 23",
+        "pace delta +3.646 on lap 25",
+        "blue flag on laps 23‑25",
+        "INTERMEDIATE/6 on lap 25",
+        "track 22.0C wet on lap 25",
+        "pace delta -2.348 on lap 29",
+        "INTERMEDIATE/2 on lap 29"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "rank": 3,
+      "severity": "info",
+      "headline": "Soft tyres performed consistently through the wet‑dry transition, no pace loss.",
+      "detail": "During the wet‑to‑dry crossover at lap 40 the driver stayed on soft tyres (age 3) and maintained a flat pace delta (+0.000). The model suggests the softs were still optimal (+0.028 s/lap overall) and the driver handled the drying line without losing time, despite blue flags on lap 40‑41.",
+      "laps": [
+        40,
+        41
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "track",
+        "situation"
+      ],
+      "evidence": [
+        "pace delta +0.000 on lap 40",
+        "SOFT/3 on lap 40",
+        "track 24.6C dry on lap 40",
+        "blue flag on lap 40",
+        "pace delta +0.000 on lap 41",
+        "SOFT/4 on lap 41",
+        "track 24.2C dry on lap 41"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "rank": 4,
+      "severity": "info",
+      "headline": "Low stress on lap 16 coincided with an ageing medium tyre; monitor for degradation before next stop.",
+      "detail": "Stress dropped to 30.1 on lap 16 while the driver was on medium tyres (age 16) on a clear track, with a 5.9 s gap to the car ahead. Pace delta was flat (+0.000), indicating the driver was relaxed but the tyre was already modelled as past its optimal window (medium stint degradation +0.103 s/lap). No immediate performance hit, but the tyre may have been nearing the limit for the next stint.",
+      "laps": [
+        16
+      ],
+      "domains": [
+        "stress",
+        "pace",
+        "tyre",
+        "position"
+      ],
+      "evidence": [
+        "stress 30.1 on lap 16",
+        "pace delta +0.000 on lap 16",
+        "MEDIUM/16 on lap 16",
+        "track 24.3C dry on lap 16",
+        "P7 gap-to-car-ahead 5.9s on lap 16"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "rank": 5,
+      "severity": "info",
+      "headline": "Soft tyre pace variation late race driven by surface changes, not tyre degradation.",
+      "detail": "From lap 45 to 51 on soft tyres the pace delta fluctuated (+0.000 to +0.745 s) while the track alternated between wet and dry and blue flags appeared intermittently. The modelled soft degradation (+0.028 s/lap) is small, so the variability is likely due to changing surface conditions rather than tyre wear.",
+      "laps": [
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51
+      ],
+      "domains": [
+        "pace",
+        "tyre",
+        "track",
+        "situation"
+      ],
+      "evidence": [
+        "pace delta -0.022 on lap 45 (wet)",
+        "pace delta +0.000 on lap 46 (dry)",
+        "pace delta +0.085 on lap 47 (dry)",
+        "pace delta -0.085 on lap 48 (dry)",
+        "pace delta +0.441 on lap 49 (dry)",
+        "pace delta -0.221 on lap 50 (dry)",
+        "pace delta +0.745 on lap 51 (dry)",
+        "SOFT/8‑14 on laps 45‑51",
+        "track wet on lap 45, dry on 46‑51",
+        "blue flag on laps 46,49,50,51"
+      ],
+      "confidence": 0.5
+    }
+  ],
+  "model": "openai/gpt-oss-120b",
+  "context_domains": [
+    "pace",
+    "position",
+    "radio",
+    "situation",
+    "stress",
+    "track",
+    "tyre"
+  ],
+  "dropped_findings": 1,
+  "cached": false
+}

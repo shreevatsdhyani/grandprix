@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import ReactMarkdown from 'react-markdown'
 
 /**
  * Ask the pit wall.
@@ -174,9 +175,9 @@ export function PitWallChat({ sessionId, driver }: Props) {
               <p className="eyebrow" style={msg.role === 'user' ? { color: 'var(--team)' } : undefined}>
                 {msg.role === 'user' ? 'You' : 'Pit wall'}
               </p>
-              <p className="mt-1.5 whitespace-pre-wrap text-[13px] leading-relaxed text-ink-primary">
-                {msg.content}
-              </p>
+              <div className="mt-1.5 whitespace-pre-wrap text-[13px] leading-relaxed text-ink-primary prose-p:my-0 prose-strong:font-semibold prose-strong:text-ink-primary">
+                <ReactMarkdown>{msg.content}</ReactMarkdown>
+              </div>
 
               {/* Which data the answer came from, so it can be checked. */}
               {msg.tools_used && msg.tools_used.length > 0 && (
